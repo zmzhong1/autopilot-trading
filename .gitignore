@@ -1,0 +1,21 @@
+# Local environment
+.env
+.env.local
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# state.json IS tracked — committed by GitHub Actions to persist seen filings between runs.

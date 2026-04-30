@@ -1,0 +1,34 @@
+{
+  "_README": "Add or remove entries below to control what gets watched. Look up CIKs at https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany. Pad to 10 digits with leading zeros. After editing, delete state.json (or set first_run_done=false) to re-seed without spam.",
+  "_form_types_reference": {
+    "4": "Insider trade by officer/director/10%+ holder (2 BD after trade)",
+    "4/A": "Amendment to Form 4",
+    "SC 13D": "Activist 5%+ stake (5 BD after acquisition; was 10 BD pre-Feb-2024)",
+    "SC 13D/A": "Amendment to 13D (2 BD)",
+    "SC 13G": "Passive 5%+ stake (5 BD passive; up to 45 days for QIIs)",
+    "SC 13G/A": "Amendment to 13G",
+    "13F-HR": "Hedge fund / institutional manager quarterly holdings (45 days post-quarter)",
+    "13F-HR/A": "Amendment to 13F",
+    "8-K": "Material corporate event (4 BD)",
+    "10-K": "Annual report",
+    "10-Q": "Quarterly report",
+    "S-1": "IPO registration",
+    "424B5": "Prospectus supplement"
+  },
+  "_form_match_behavior": "Filter matches exact form OR form + '/A' (amendments). So forms: ['SC 13D'] catches both 'SC 13D' and 'SC 13D/A'.",
+  "sec_ciks": [
+    { "cik": "0000320193", "name": "Apple Inc",                         "forms": ["4", "8-K"] },
+    { "cik": "0000789019", "name": "Microsoft Corp",                    "forms": ["4", "8-K"] },
+    { "cik": "0001018724", "name": "Amazon.com Inc",                    "forms": ["4", "8-K"] },
+    { "cik": "0001652044", "name": "Alphabet Inc (Google)",             "forms": ["4", "8-K"] },
+    { "cik": "0001318605", "name": "Tesla Inc",                         "forms": ["4", "8-K"] },
+    { "cik": "0001045810", "name": "NVIDIA Corp",                       "forms": ["4", "8-K"] },
+    { "cik": "0001067983", "name": "Berkshire Hathaway (Buffett)",      "forms": ["13F-HR", "SC 13D", "SC 13G", "4", "8-K"] },
+    { "cik": "0001649339", "name": "Scion Asset Management (Burry)",    "forms": ["13F-HR", "SC 13D", "SC 13G"] },
+    { "cik": "0001336528", "name": "Pershing Square Capital (Ackman)",  "forms": ["13F-HR", "SC 13D", "SC 13G"] },
+    { "cik": "0001350694", "name": "Bridgewater Associates (Dalio)",    "forms": ["13F-HR"] },
+    { "cik": "0001037389", "name": "Renaissance Technologies (Simons)", "forms": ["13F-HR"] },
+    { "cik": "0001423053", "name": "Citadel Advisors (Griffin)",        "forms": ["13F-HR", "SC 13D", "SC 13G"] },
+    { "cik": "0001029160", "name": "Soros Fund Management",             "forms": ["13F-HR", "SC 13D"] }
+  ]
+}
