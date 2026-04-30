@@ -1,0 +1,42 @@
+name: Congress Watcher
+
+on:
+  schedule:
+    # Hourly, weekdays 12:00-23:00 UTC (8 AM - 7 PM ET).
+    # Capitol Trades has a 30-day median disclosure lag, so sub-hourly polling adds no value.
+    - cron: '7 12-23 * * 1-5'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: congress-watcher
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run watcher
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          MAX_ALERTS_PER_RUN: '20'
+        run: python3 congress_watcher.py
+
+      - name: Commit state if changed
+        run: |
+          if [ -n "$(git status --porcelain congress_state.json 2>/dev/null)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add congress_state.json
+            git commit -m "chore: update congress watcher state [skip ci]"
+            git push
+          fi

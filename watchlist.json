@@ -30,5 +30,12 @@
     { "cik": "0001037389", "name": "Renaissance Technologies (Simons)", "forms": ["13F-HR"] },
     { "cik": "0001423053", "name": "Citadel Advisors (Griffin)",        "forms": ["13F-HR", "SC 13D", "SC 13G"] },
     { "cik": "0001029160", "name": "Soros Fund Management",             "forms": ["13F-HR", "SC 13D"] }
+  ],
+  "_congress_members_help": "List of name substrings to match against Capitol Trades politician strings. Case-insensitive. Use last names for the prolific traders (Pelosi, Crenshaw, Tuberville) or full names for ambiguous ones. Empty list = match ALL politicians. Used by congress_watcher.py.",
+  "congress_members": [
+    "Pelosi",
+    "Crenshaw",
+    "Tuberville",
+    "Greene"
   ]
 }

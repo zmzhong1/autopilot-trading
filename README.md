@@ -1,17 +1,22 @@
-# Autopilot Trading — Free SEC EDGAR Watcher
+# Autopilot Trading — Free SEC + Congress Watcher
 
-A $0/month, sub-15-minute alert pipeline for SEC insider/institutional filings that mirrors what paid apps like [Autopilot](https://www.joinautopilot.com), Quiver Quant, and Unusual Whales charge for. Polls SEC EDGAR every 15 minutes via GitHub Actions, posts new filings to a Discord channel via webhook.
+A $0/month alert pipeline for the data Autopilot, Quiver Quant, and Unusual Whales charge for:
 
-Built because Autopilot's underlying data is 100% free public data, and they don't have a time edge — they just sell automation. This script gives you the data layer for free.
+- **SEC insider / institutional filings** (Form 4, 13D, 13G, 13F, 8-K) — sub-15-minute alerts via [sec_watcher.py](sec_watcher.py)
+- **Congressional trades** (STOCK Act PTRs scraped from Capitol Trades) — hourly alerts via [congress_watcher.py](congress_watcher.py)
+
+Both watchers run on GitHub Actions cron and post new filings to a Discord webhook. Built because the upstream data is 100% public, and the paid apps just sell the automation layer.
 
 ## What it watches
 
-By default, the [watchlist.json](watchlist.json) tracks:
+By default, [watchlist.json](watchlist.json) tracks:
+
+**SEC EDGAR (`sec_watcher.py`)**
 
 | Group | What | Default form filter |
 |---|---|---|
 | Big tech (Apple, Microsoft, Amazon, Alphabet, Tesla, NVIDIA) | Insider trades + material events | Form 4, 8-K |
-| Berkshire Hathaway (Buffett) | Quarterly holdings + activist stakes + Berkshire's own insiders | 13F-HR, SC 13D, SC 13G, 4, 8-K |
+| Berkshire Hathaway (Buffett) | Quarterly holdings + activist stakes + insiders | 13F-HR, SC 13D, SC 13G, 4, 8-K |
 | Scion Asset Management (Burry) | Quarterly holdings + activist stakes | 13F-HR, SC 13D, SC 13G |
 | Pershing Square (Ackman) | Quarterly holdings + activist stakes | 13F-HR, SC 13D, SC 13G |
 | Bridgewater (Dalio) | Quarterly holdings | 13F-HR |
@@ -19,7 +24,17 @@ By default, the [watchlist.json](watchlist.json) tracks:
 | Citadel Advisors (Griffin) | Quarterly holdings + activist stakes | 13F-HR, SC 13D, SC 13G |
 | Soros Fund Management | Quarterly holdings + activist stakes | 13F-HR, SC 13D |
 
-All CIKs verified against SEC EDGAR. Edit [watchlist.json](watchlist.json) to add/remove.
+All CIKs verified against SEC EDGAR.
+
+**Capitol Trades (`congress_watcher.py`)**
+
+Default `congress_members` watchlist matches by name substring (case-insensitive):
+- Pelosi
+- Crenshaw
+- Tuberville
+- Greene
+
+Empty list = match all politicians. Add/remove names in [watchlist.json](watchlist.json).
 
 ## Disclosure timing — what's actually achievable
 
@@ -52,16 +67,21 @@ cd "$(pwd)"
 export SEC_USER_AGENT="Your Name your@email.com"
 export DISCORD_WEBHOOK="https://discord.com/api/webhooks/..."
 
-# First run: seeds state, posts ZERO alerts
+# SEC watcher — first run seeds state, posts ZERO alerts
 python3 sec_watcher.py
+
+# Congress watcher — same first-run silent-seed behavior
+python3 congress_watcher.py
 
 # Subsequent runs: alerts on truly new filings only
 python3 sec_watcher.py
+python3 congress_watcher.py
 ```
 
-Flags:
-- `DRY_RUN=1` — log alerts to stdout instead of Discord (useful for editing watchlist)
-- `MAX_ALERTS_PER_RUN=20` — cap per-run alerts (default 20; raise if you watch many CIKs)
+Flags (apply to both watchers):
+- `DRY_RUN=1` — log alerts to stdout instead of Discord (useful when editing watchlist)
+- `MAX_ALERTS_PER_RUN=20` — cap per-run alerts (default 20)
+- `CAPITOL_TRADES_PAGE_SIZE=96` — Congress watcher only; max trades fetched per run
 
 ### 3. Push to GitHub for free 24/7 monitoring
 
@@ -76,7 +96,11 @@ Then add two secrets in `Repo Settings → Secrets and variables → Actions →
 - `SEC_USER_AGENT` = `Your Name your@email.com`
 - `DISCORD_WEBHOOK` = your full webhook URL
 
-The [.github/workflows/sec-watcher.yml](.github/workflows/sec-watcher.yml) cron fires every 15 min, weekdays, 12:00–23:00 UTC (8 AM – 7 PM ET). Edit the cron to taste. Free GitHub Actions minutes (2,000/mo) are plenty — each run uses ~30 seconds.
+Two workflows run on cron:
+- [sec-watcher.yml](.github/workflows/sec-watcher.yml) — every 15 min, weekdays 12:00–23:00 UTC (8 AM – 7 PM ET). ~30s per run.
+- [congress-watcher.yml](.github/workflows/congress-watcher.yml) — hourly at :07 past, weekdays 12:00–23:00 UTC. ~10s per run.
+
+Total cost: ~150 min/mo, well within GitHub's free 2,000 min/mo. Edit cron schedules to taste.
 
 ### 4. Trigger the first run manually
 
@@ -84,7 +108,9 @@ In GitHub: `Actions → SEC Watcher → Run workflow`. The first run is silent (
 
 ## Editing the watchlist
 
-[watchlist.json](watchlist.json) has two arrays plus reference comments (any `_*` keys are ignored by the script). Each entry:
+[watchlist.json](watchlist.json) has two top-level arrays plus reference comments (any `_*` keys are ignored).
+
+### `sec_ciks` — for SEC watcher
 
 ```json
 { "cik": "0001067983", "name": "Berkshire Hathaway", "forms": ["13F-HR", "SC 13D"] }
@@ -94,13 +120,28 @@ In GitHub: `Actions → SEC Watcher → Run workflow`. The first run is silent (
 - **`name`** — Display name in Discord alerts.
 - **`forms`** — Form types to watch. Empty/omitted = all forms.
 
-The form filter matches exactly OR with `/A` amendment suffix. So `["SC 13D"]` catches both `SC 13D` and `SC 13D/A` (amendments).
+The form filter matches exactly OR with `/A` amendment suffix. So `["SC 13D"]` catches both `SC 13D` and `SC 13D/A`.
 
-After editing, **delete `state.json`** to re-seed without spamming alerts on already-seen filings:
+Adding a new CIK after first run is safe — the script silently seeds new CIKs without spamming.
+
+### `congress_members` — for Congress watcher
+
+```json
+"congress_members": ["Pelosi", "Crenshaw", "Tuberville", "Greene"]
+```
+
+Each entry is a case-insensitive substring matched against Capitol Trades' politician string (which has format "Name Party Chamber State", e.g. "Nancy Pelosi Democrat House CA"). Use last names for unambiguous folks, full names if needed.
+
+**Empty list `[]` = match ALL politicians** (firehose mode — ~96 trades per run).
+
+### Re-seeding
+
+To wipe state and re-seed silently:
 
 ```bash
-rm state.json
-python3 sec_watcher.py   # silent re-seed
+rm state.json congress_state.json
+python3 sec_watcher.py
+python3 congress_watcher.py
 ```
 
 ## Common CIKs to add
@@ -129,17 +170,29 @@ curl -s -H "User-Agent: $SEC_USER_AGENT" \
   | python3 -c "import json,sys; [print(h['_source']['ciks'][0],'-',h['_source']['display_names'][0]) for h in json.load(sys.stdin).get('hits',{}).get('hits',[])[:5]]"
 ```
 
+## How the Congress watcher works
+
+Capitol Trades' BFF API blocks the `/trades` endpoint, but the SSR HTML at `https://www.capitoltrades.com/trades?pageSize=96` exposes the latest 96 trades server-rendered. The script:
+
+1. Fetches that HTML with a browser User-Agent (no Playwright at runtime — stdlib `urllib`).
+2. Splits by `<tr data-state="false">` boundaries and extracts each row's politician ID, issuer ID, trade ID, and 9 displayed cells.
+3. Filters by configured `congress_members` substrings.
+4. Compares trade IDs against `congress_state.json` to find new ones.
+5. Posts each new trade to Discord with type emoji, size range, owner, dates, and a link to the trade detail page.
+
+Trade IDs are stable and sequential, so `sorted(trade_id)` ≈ chronological — alerts go oldest-first so newest is most-recent in Discord.
+
+If Capitol Trades changes their HTML structure, the parser will return zero trades and the script logs `[WARN] No trades parsed`. Re-run discovery with `playwright-cli goto https://www.capitoltrades.com/trades` to update the row boundary regex.
+
 ## What this does NOT cover
 
-### Congressional trades (Pelosi, Crenshaw, etc.)
-Not in this watcher. Congressional STOCK Act PTRs are filed at house.gov/senate.gov, not SEC EDGAR. The free aggregators that used to expose them as JSON (House Stock Watcher, Senate Stock Watcher) appear to be defunct. Best free alternatives:
+### Real-time congressional alerts (faster than Capitol Trades)
+This script polls Capitol Trades hourly. If you want **minute-latency** Congress alerts (5-10 min faster than Capitol Trades reflects them), you still need:
 
-- **[Unusual Whales free Discord](https://discord.com/invite/unusualwhales)** — auto-posts congressional trades within minutes of filing. Best free real-time option.
-- **[Capitol Trades](https://www.capitoltrades.com)** — cleanest browse UI; pair with [Visualping](https://visualping.io) free tier for change-detection alerts on a politician's page.
-- **Twitter follows:** [@PelosiTracker_](https://twitter.com/PelosiTracker_), [@unusualwhales](https://twitter.com/unusualwhales), [@capitol2iq](https://twitter.com/capitol2iq).
-- Primary source: [disclosures-clerk.house.gov](https://disclosures-clerk.house.gov/FinancialDisclosure) (PDFs, painful) and [efdsearch.senate.gov](https://efdsearch.senate.gov).
+- **[Unusual Whales free Discord](https://discord.com/invite/unusualwhales)** — auto-posts within minutes of EDGAR/PTR acceptance.
+- Twitter follows: [@PelosiTracker_](https://twitter.com/PelosiTracker_), [@unusualwhales](https://twitter.com/unusualwhales), [@capitol2iq](https://twitter.com/capitol2iq).
 
-A future enhancement could add a Capitol Trades scraper to this same watcher.
+Capitol Trades has its own ingestion lag of ~15-60 min from when a PTR hits house.gov/senate.gov. Plus the underlying STOCK Act 30-day median filing lag. Best case end-to-end: ~30 days from trade to alert.
 
 ### Real-time options flow / dark pool / unusual activity
 Out of scope. This watches official SEC disclosures only. For options flow, that's what Unusual Whales / Cheddar Flow paid tiers actually sell — there's no free equivalent because the data feeds are licensed by exchanges.
@@ -147,7 +200,7 @@ Out of scope. This watches official SEC disclosures only. For options flow, that
 ### Trade execution
 This is a data-alerting watcher, not a copy-trading platform. To actually copy-trade based on alerts, manually place orders in a free broker (Fidelity, Schwab, Robinhood) when an alert fires. Or use a paid copy-trading service like [Dub](https://www.dubapp.com) ($9.99/mo unlimited) or [Autopilot](https://www.joinautopilot.com) ($100/yr per portfolio).
 
-## How it works
+## How the SEC watcher works
 
 1. Reads [watchlist.json](watchlist.json) → list of CIK + form-type filters.
 2. For each entry, hits `https://data.sec.gov/submissions/CIK{cik}.json` (free, no key, just `User-Agent`).
@@ -173,7 +226,11 @@ State.json caps per-CIK history at 2,000 accessions (well above EDGAR's ~1,000-e
 
 **"Discord rate limit"** — Default is 0.5s between posts. If you have many alerts at once, raise `MAX_ALERTS_PER_RUN` in the workflow but stay under Discord's webhook rate limit (~30/min).
 
-**"I want a different CIK"** — Add it to [watchlist.json](watchlist.json), then `rm state.json` and re-run to re-seed silently.
+**"I want a different CIK"** — Add it to [watchlist.json](watchlist.json). The SEC watcher silent-seeds new CIKs automatically on the next run.
+
+**"Congress watcher returns 0 trades / `No trades parsed`"** — Capitol Trades changed their HTML. Re-run discovery: `playwright-cli goto https://www.capitoltrades.com/trades`, then `playwright-cli --raw eval "JSON.stringify([...document.querySelectorAll('table tbody tr')].slice(0,1).map(r => ({cells: [...r.querySelectorAll('td')].map(td => td.innerText.trim())})))"` and update the regex in `parse_trades()`.
+
+**"Congress watcher missing my favorite politician"** — They probably haven't traded in the last 96 trades on Capitol Trades. Increase `CAPITOL_TRADES_PAGE_SIZE` env var (max ~96 confirmed working; higher may break) or check their politician page directly.
 
 ## Hard truths
 
@@ -183,10 +240,13 @@ State.json caps per-CIK history at 2,000 accessions (well above EDGAR's ~1,000-e
 
 ## Files
 
-- [sec_watcher.py](sec_watcher.py) — main script (stdlib only, no pip deps)
-- [watchlist.json](watchlist.json) — your CIK + form-type config
-- [state.json](state.json) — seen-accession state (auto-managed; safe to delete to reset)
-- [.github/workflows/sec-watcher.yml](.github/workflows/sec-watcher.yml) — 15-min cron
+- [sec_watcher.py](sec_watcher.py) — SEC EDGAR watcher (stdlib only)
+- [congress_watcher.py](congress_watcher.py) — Capitol Trades scraper (stdlib only)
+- [watchlist.json](watchlist.json) — CIK list + form-type filter + congress_members list
+- [state.json](state.json) — SEC seen-accession state (auto-managed)
+- [congress_state.json](congress_state.json) — Congress seen-trade-ID state (auto-managed)
+- [.github/workflows/sec-watcher.yml](.github/workflows/sec-watcher.yml) — SEC cron, every 15 min
+- [.github/workflows/congress-watcher.yml](.github/workflows/congress-watcher.yml) — Congress cron, hourly
 - [.gitignore](.gitignore)
 
 ## License
