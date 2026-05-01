@@ -108,7 +108,10 @@ def post_discord(content):
     req = urllib.request.Request(
         DISCORD_WEBHOOK,
         data=body,
-        headers={"Content-Type": "application/json"},
+        headers={
+            "Content-Type": "application/json",
+            "User-Agent": "AutopilotWatcher/1.0 (+https://github.com/zmzhong1/autopilot-trading)",
+        },
         method="POST",
     )
     try:
