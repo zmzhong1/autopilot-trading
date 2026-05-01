@@ -51,8 +51,9 @@ def http_get_json(url):
 
 
 def post_discord(content):
+    """Returns True on confirmed delivery, False on any failure."""
     if not DISCORD_WEBHOOK:
-        return
+        return False
     body = json.dumps({"content": content[:1900]}).encode("utf-8")
     req = urllib.request.Request(
         DISCORD_WEBHOOK,
@@ -63,20 +64,25 @@ def post_discord(content):
         },
         method="POST",
     )
+    ok = False
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
-            if resp.status not in (200, 204):
+            if resp.status in (200, 204):
+                ok = True
+            else:
                 print(f"[WARN] Discord status {resp.status}", file=sys.stderr)
     except Exception as e:
         print(f"[ERROR] Discord post failed: {e}", file=sys.stderr)
     time.sleep(DISCORD_RATE_DELAY_SEC)
+    return ok
 
 
 def alert(message):
+    """Returns True if the alert is considered delivered (or DRY_RUN)."""
     print(f"[ALERT] {message.splitlines()[0]}")
     if DRY_RUN:
-        return
-    post_discord(message)
+        return True
+    return post_discord(message)
 
 
 def load_state():
@@ -181,11 +187,14 @@ def check_entry(entry, state, is_first_run, alerts_left):
             f"📄 **{name}** — **{f['form']}** filed {f['filing_date']}\n"
             f"<{url}>"
         )
-        alert(msg)
-        seen_list.append(f["accession"])
-        seen_set.add(f["accession"])
-        sent += 1
+        # Decrement budget regardless to prevent infinite retry within a single
+        # run. Only mark as seen on confirmed delivery so transient Discord
+        # failures get retried on the next cron tick.
         alerts_left -= 1
+        if alert(msg):
+            seen_list.append(f["accession"])
+            seen_set.add(f["accession"])
+            sent += 1
 
     state["sec_seen"][cik] = seen_list
     return sent

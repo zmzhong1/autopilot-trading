@@ -102,8 +102,9 @@ def matches_watchlist(politician_str, watchlist):
 
 
 def post_discord(content):
+    """Returns True on confirmed delivery, False on any failure."""
     if not DISCORD_WEBHOOK:
-        return
+        return False
     body = json.dumps({"content": content[:1900]}).encode("utf-8")
     req = urllib.request.Request(
         DISCORD_WEBHOOK,
@@ -114,20 +115,25 @@ def post_discord(content):
         },
         method="POST",
     )
+    ok = False
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
-            if resp.status not in (200, 204):
+            if resp.status in (200, 204):
+                ok = True
+            else:
                 print(f"[WARN] Discord status {resp.status}", file=sys.stderr)
     except Exception as e:
         print(f"[ERROR] Discord post failed: {e}", file=sys.stderr)
     time.sleep(DISCORD_RATE_DELAY_SEC)
+    return ok
 
 
 def alert(message):
+    """Returns True if the alert is considered delivered (or DRY_RUN)."""
     print(f"[ALERT] {message.splitlines()[0]}")
     if DRY_RUN:
-        return
-    post_discord(message)
+        return True
+    return post_discord(message)
 
 
 def load_state():
@@ -207,19 +213,23 @@ def main():
         return 0
 
     sent = 0
-    # Alphabetic sort on numeric trade IDs gives chronological-ish order
-    # (Capitol Trades issues IDs sequentially). Send oldest-first.
+    attempted = 0
+    # Capitol Trades issues trade IDs sequentially, so alphabetic-sort ≈ chronological. Send oldest-first.
     for trade in sorted(new, key=lambda t: t["trade_id"]):
-        if sent >= MAX_ALERTS_PER_RUN:
+        if attempted >= MAX_ALERTS_PER_RUN:
             print(f"[INFO] Alert budget hit ({MAX_ALERTS_PER_RUN}); deferring rest to next run")
             break
-        alert(format_alert(trade))
-        seen.add(trade["trade_id"])
-        sent += 1
+        # Count attempts (success or fail) toward the budget so a broken Discord
+        # doesn't loop forever in one run; only mark seen on confirmed delivery
+        # so transient failures get retried next tick.
+        attempted += 1
+        if alert(format_alert(trade)):
+            seen.add(trade["trade_id"])
+            sent += 1
 
     state["seen_trade_ids"] = sorted(seen)
     save_state(state)
-    print(f"[DONE] alerts_sent={sent}")
+    print(f"[DONE] alerts_sent={sent}  attempted={attempted}")
     return 0
 
 
