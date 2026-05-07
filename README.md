@@ -2,10 +2,11 @@
 
 A $0/month alert pipeline for the data Autopilot, Quiver Quant, and Unusual Whales charge for:
 
-- **SEC insider / institutional filings** (Form 4, 13D, 13G, 13F, 8-K) — sub-15-minute alerts via [sec_watcher.py](sec_watcher.py)
-- **Congressional trades** (STOCK Act PTRs scraped from Capitol Trades) — hourly alerts via [congress_watcher.py](congress_watcher.py)
+- **SEC insider / institutional filings** (Form 4, 13D, 13G, 13F, 8-K) — sub-15-minute alerts via [sec_watcher.py](sec_watcher.py), enriched with parsed transaction details (insider name, buy/sell, shares, $-value, 8-K item codes, 13D stake size, 13F quarter-over-quarter diff).
+- **Congressional trades** (STOCK Act PTRs scraped from Capitol Trades) — hourly alerts via [congress_watcher.py](congress_watcher.py), colour-coded buy/sell with structured fields.
+- **Weekly heartbeat** — every Monday morning, a digest of the past 7 days of alerts plus a watcher-health check via [heartbeat.py](heartbeat.py).
 
-Both watchers run on GitHub Actions cron and post new filings to a Discord webhook. Built because the upstream data is 100% public, and the paid apps just sell the automation layer.
+Both watchers run on GitHub Actions cron and post Discord rich embeds (no plain-text spam). Built because the upstream data is 100% public, and the paid apps just sell the automation layer.
 
 ## What it watches
 
@@ -96,9 +97,10 @@ Then add two secrets in `Repo Settings → Secrets and variables → Actions →
 - `SEC_USER_AGENT` = `Your Name your@email.com`
 - `DISCORD_WEBHOOK` = your full webhook URL
 
-Two workflows run on cron:
+Three workflows run on cron:
 - [sec-watcher.yml](.github/workflows/sec-watcher.yml) — every 15 min, weekdays 12:00–23:00 UTC (8 AM – 7 PM ET). ~30s per run.
 - [congress-watcher.yml](.github/workflows/congress-watcher.yml) — hourly at :07 past, weekdays 12:00–23:00 UTC. ~10s per run.
+- [heartbeat.yml](.github/workflows/heartbeat.yml) — Mondays at 13:00 UTC. Posts a 7-day digest + health check. ~5s per run.
 
 Total cost: ~150 min/mo, well within GitHub's free 2,000 min/mo. Edit cron schedules to taste.
 
@@ -238,15 +240,32 @@ State.json caps per-CIK history at 2,000 accessions (well above EDGAR's ~1,000-e
 - **Pro algos trade Form 4 within seconds.** Free retail can move from "weeks behind" to "minutes behind," not "ahead."
 - **All free copy-trading carries lag risk** — Autopilot, Dub, eToro all wait for the public filing. No time machines.
 
+## What the Discord alerts look like
+
+Alerts are Discord rich embeds (colour-coded, structured fields, hyperlinked). The watchers fetch each filing's structured data (XML where available) and surface the parts that matter:
+
+| Form | Embed surfaces |
+|---|---|
+| **Form 4** (insider) | 🟢/🔴 buy or sell · insider name + role · transaction code (P/S/A/M/F…) · shares × price = $-value · post-transaction holdings · per-leg breakdown for multi-leg filings |
+| **8-K** | 📋 yellow embed · all SEC item codes (e.g. `2.02` Results of Operations, `5.02` Officer Departure) with human-readable labels, so boring routine 8-Ks are visually distinct from material events |
+| **SC 13D / 13G** | 🎯 purple embed · target issuer name + CUSIP · % of class · aggregate shares (parsed from post-2024 mandated XML schema) |
+| **13F-HR** | 🏦 blue embed · position count · total $-value · diff vs. prior quarter: 🆕 new positions, ❌ exits, 📈 increases, 📉 decreases (top 5 each, ranked by $) |
+| **Congress trade** | 🏛️ green/red embed · politician · buy/sell · issuer · size range · owner · trade date / pub date / lag |
+
+Where structured XML is unavailable (older filings, malformed XML), the watcher falls back gracefully to the original "Filer — form filed date + link" format.
+
 ## Files
 
 - [sec_watcher.py](sec_watcher.py) — SEC EDGAR watcher (stdlib only)
+- [sec_enrich.py](sec_enrich.py) — Form 4 / 8-K / 13D-G / 13F-HR XML parsers + diff helpers (stdlib only)
 - [congress_watcher.py](congress_watcher.py) — Capitol Trades scraper (stdlib only)
+- [heartbeat.py](heartbeat.py) — Weekly digest + watcher-health check (stdlib only)
 - [watchlist.json](watchlist.json) — CIK list + form-type filter + congress_members list
-- [state.json](state.json) — SEC seen-accession state (auto-managed)
-- [congress_state.json](congress_state.json) — Congress seen-trade-ID state (auto-managed)
+- [state.json](state.json) — SEC seen-accession state + rolling alert history (auto-managed)
+- [congress_state.json](congress_state.json) — Congress seen-trade-ID state + rolling alert history (auto-managed)
 - [.github/workflows/sec-watcher.yml](.github/workflows/sec-watcher.yml) — SEC cron, every 15 min
 - [.github/workflows/congress-watcher.yml](.github/workflows/congress-watcher.yml) — Congress cron, hourly
+- [.github/workflows/heartbeat.yml](.github/workflows/heartbeat.yml) — Heartbeat cron, weekly Monday
 - [.gitignore](.gitignore)
 
 ## License

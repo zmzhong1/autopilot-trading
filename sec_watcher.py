@@ -24,6 +24,8 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+import sec_enrich
+
 ROOT = Path(__file__).parent
 WATCHLIST_PATH = ROOT / "watchlist.json"
 STATE_PATH = ROOT / "state.json"
@@ -32,6 +34,7 @@ USER_AGENT = os.environ.get("SEC_USER_AGENT", "").strip()
 DISCORD_WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "").strip()
 DRY_RUN = os.environ.get("DRY_RUN", "").lower() in ("1", "true", "yes")
 MAX_ALERTS_PER_RUN = int(os.environ.get("MAX_ALERTS_PER_RUN", "20"))
+ALERT_HISTORY_CAP = 200  # rolling window kept in state.json for the heartbeat
 SEC_RATE_DELAY_SEC = 0.15  # SEC limit is 10 req/sec; stay polite at ~6/sec
 DISCORD_RATE_DELAY_SEC = 0.5
 
@@ -43,6 +46,14 @@ if not USER_AGENT:
 
 SEC_HEADERS = {"User-Agent": USER_AGENT, "Accept": "application/json"}
 
+# Discord embed colours
+COLOR_BUY = 0x2ECC71
+COLOR_SELL = 0xE74C3C
+COLOR_NEUTRAL = 0x95A5A6
+COLOR_8K = 0xF1C40F
+COLOR_13F = 0x3498DB
+COLOR_13DG = 0x9B59B6
+
 
 def http_get_json(url):
     req = urllib.request.Request(url, headers=SEC_HEADERS)
@@ -50,11 +61,22 @@ def http_get_json(url):
         return json.loads(resp.read().decode("utf-8"))
 
 
-def post_discord(content):
+def http_get_text(url):
+    req = urllib.request.Request(url, headers=SEC_HEADERS)
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        return resp.read().decode("utf-8", errors="replace")
+
+
+def post_discord(content=None, embed=None):
     """Returns True on confirmed delivery, False on any failure."""
     if not DISCORD_WEBHOOK:
         return False
-    body = json.dumps({"content": content[:1900]}).encode("utf-8")
+    payload = {}
+    if content:
+        payload["content"] = content[:1900]
+    if embed:
+        payload["embeds"] = [embed]
+    body = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(
         DISCORD_WEBHOOK,
         data=body,
@@ -77,22 +99,26 @@ def post_discord(content):
     return ok
 
 
-def alert(message):
+def alert(headline, embed=None, fallback_content=None):
     """Returns True if the alert is considered delivered (or DRY_RUN)."""
-    print(f"[ALERT] {message.splitlines()[0]}")
+    print(f"[ALERT] {headline}")
     if DRY_RUN:
         return True
-    return post_discord(message)
+    if embed is None:
+        return post_discord(content=fallback_content or headline)
+    return post_discord(embed=embed)
 
 
 def load_state():
     if not STATE_PATH.exists():
-        return {"sec_seen": {}, "first_run_done": False}
+        return {"sec_seen": {}, "first_run_done": False, "alert_history": []}
     try:
-        return json.loads(STATE_PATH.read_text())
+        state = json.loads(STATE_PATH.read_text())
     except json.JSONDecodeError:
         print(f"[WARN] state.json malformed; starting fresh", file=sys.stderr)
-        return {"sec_seen": {}, "first_run_done": False}
+        return {"sec_seen": {}, "first_run_done": False, "alert_history": []}
+    state.setdefault("alert_history", [])
+    return state
 
 
 def save_state(state):
@@ -101,6 +127,8 @@ def save_state(state):
     for cik, accs in list(state.get("sec_seen", {}).items()):
         if len(accs) > 2000:
             state["sec_seen"][cik] = accs[-2000:]
+    if len(state.get("alert_history", [])) > ALERT_HISTORY_CAP:
+        state["alert_history"] = state["alert_history"][-ALERT_HISTORY_CAP:]
     STATE_PATH.write_text(json.dumps(state, indent=2, sort_keys=True))
 
 
@@ -123,6 +151,239 @@ def filing_url(cik, accession, primary_doc):
     return f"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={cik}&owner=include&count=40"
 
 
+def build_embed(filer_name, form, filing_date, url, cik, accession, primary_doc, items_str):
+    """Returns (embed_dict, headline_str). Falls back gracefully if enrichment fails."""
+    base_form = form[:-2] if form.endswith("/A") else form
+    timestamp = None
+    if filing_date:
+        try:
+            timestamp = datetime.fromisoformat(filing_date).replace(tzinfo=timezone.utc).isoformat()
+        except ValueError:
+            pass
+
+    if base_form == "4":
+        return _form4_embed(filer_name, form, filing_date, url, cik, accession,
+                            primary_doc, timestamp)
+    if base_form == "8-K":
+        return _form8k_embed(filer_name, form, filing_date, url, items_str, timestamp)
+    if base_form in ("SC 13D", "SC 13G"):
+        return _sc13_embed(filer_name, form, filing_date, url, cik, accession,
+                           primary_doc, timestamp)
+    if base_form == "13F-HR":
+        return _form13f_embed(filer_name, form, filing_date, url, cik, accession,
+                              timestamp)
+    # Default — generic embed.
+    headline = f"📄 {filer_name} — {form} filed {filing_date}"
+    embed = {
+        "title": f"{filer_name} — {form}",
+        "description": f"Filed {filing_date}",
+        "url": url,
+        "color": COLOR_NEUTRAL,
+    }
+    if timestamp:
+        embed["timestamp"] = timestamp
+    return embed, headline
+
+
+def _form4_embed(filer_name, form, filing_date, url, cik, accession, primary_doc, timestamp):
+    enriched = None
+    try:
+        enriched = sec_enrich.enrich_form4(cik, accession, primary_doc,
+                                           http_get_text, http_get_json)
+    except Exception as e:
+        print(f"[WARN] Form 4 enrichment failed: {e}", file=sys.stderr)
+
+    if not enriched:
+        headline = f"📄 {filer_name} — {form} filed {filing_date}"
+        embed = {
+            "title": f"{filer_name} — {form}",
+            "description": f"Filed {filing_date}",
+            "url": url,
+            "color": COLOR_NEUTRAL,
+        }
+        if timestamp:
+            embed["timestamp"] = timestamp
+        return embed, headline
+
+    side = enriched["dominant_side"]
+    side_emoji = {"buy": "🟢", "sell": "🔴", "grant": "🎁",
+                  "exercise": "🔁", "neutral": "⚪"}.get(side, "⚪")
+    color = {"buy": COLOR_BUY, "sell": COLOR_SELL, "grant": COLOR_NEUTRAL,
+             "exercise": COLOR_NEUTRAL, "neutral": COLOR_NEUTRAL}.get(side, COLOR_NEUTRAL)
+
+    insider = enriched.get("insider") or "Unknown insider"
+    role = enriched.get("role") or "—"
+    issuer = enriched.get("issuer_name") or filer_name
+    ticker = enriched.get("ticker")
+    title_suffix = f" ({ticker})" if ticker else ""
+
+    headline = (f"{side_emoji} {side.upper()} · {insider} ({role}) — "
+                f"{issuer}{title_suffix}, {sec_enrich.fmt_money(enriched.get('total_value'))}")
+
+    txs = enriched["transactions"][:5]
+    lines = []
+    for t in txs:
+        shares = sec_enrich.fmt_shares(t.get("shares"))
+        price = f"@ ${t['price']:.2f}" if t.get("price") else ""
+        value = sec_enrich.fmt_money(t.get("value")) if t.get("value") else ""
+        post = (f" → holds {sec_enrich.fmt_shares(t['post_holdings'])}"
+                if t.get("post_holdings") is not None else "")
+        deriv = " (derivative)" if t.get("derivative") else ""
+        lines.append(f"`{t['code']}` {t['label']}{deriv}: {shares} sh {price} {value}{post}".rstrip())
+    desc = "\n".join(lines)
+    if len(enriched["transactions"]) > 5:
+        desc += f"\n…and {len(enriched['transactions']) - 5} more"
+
+    embed = {
+        "title": f"{side_emoji} {insider} — {form} on {issuer}{title_suffix}",
+        "url": url,
+        "color": color,
+        "description": desc[:4000],
+        "fields": [
+            {"name": "Role", "value": role, "inline": True},
+            {"name": "Total value", "value": sec_enrich.fmt_money(enriched.get("total_value")),
+             "inline": True},
+            {"name": "Filed", "value": filing_date or "—", "inline": True},
+        ],
+    }
+    if timestamp:
+        embed["timestamp"] = timestamp
+    return embed, headline
+
+
+def _form8k_embed(filer_name, form, filing_date, url, items_str, timestamp):
+    items = sec_enrich.parse_8k_items(items_str or "")
+    if items:
+        item_lines = "\n".join(f"`{i['code']}` {i['label']}" for i in items)
+        item_codes = ", ".join(i["code"] for i in items)
+        headline = f"📋 {filer_name} — 8-K [{item_codes}]"
+    else:
+        item_lines = "_(no item codes reported)_"
+        headline = f"📋 {filer_name} — 8-K filed {filing_date}"
+
+    embed = {
+        "title": f"{filer_name} — {form}",
+        "url": url,
+        "color": COLOR_8K,
+        "description": item_lines[:4000],
+        "fields": [{"name": "Filed", "value": filing_date or "—", "inline": True}],
+    }
+    if timestamp:
+        embed["timestamp"] = timestamp
+    return embed, headline
+
+
+def _sc13_embed(filer_name, form, filing_date, url, cik, accession, primary_doc, timestamp):
+    enriched = None
+    try:
+        enriched = sec_enrich.enrich_sc13(cik, accession, primary_doc,
+                                          http_get_text, http_get_json)
+    except Exception as e:
+        print(f"[WARN] SC 13 enrichment failed: {e}", file=sys.stderr)
+
+    if not enriched:
+        headline = f"🎯 {filer_name} — {form} filed {filing_date}"
+        embed = {
+            "title": f"{filer_name} — {form}",
+            "description": f"Filed {filing_date}",
+            "url": url,
+            "color": COLOR_13DG,
+        }
+        if timestamp:
+            embed["timestamp"] = timestamp
+        return embed, headline
+
+    target = enriched.get("issuer_name") or "Unknown target"
+    pct = enriched.get("percent_of_class")
+    pct_str = f"{pct:.2f}%" if pct is not None else "?"
+    shares = sec_enrich.fmt_shares(enriched.get("aggregate_amount"))
+    headline = f"🎯 {filer_name} — {form} on {target}: {pct_str} ({shares} sh)"
+
+    fields = [
+        {"name": "Target", "value": target, "inline": False},
+        {"name": "% of class", "value": pct_str, "inline": True},
+        {"name": "Shares", "value": shares, "inline": True},
+        {"name": "Filed", "value": filing_date or "—", "inline": True},
+    ]
+    if enriched.get("issuer_cusip"):
+        fields.append({"name": "CUSIP", "value": enriched["issuer_cusip"], "inline": True})
+
+    embed = {
+        "title": f"{filer_name} — {form}",
+        "url": url,
+        "color": COLOR_13DG,
+        "fields": fields,
+    }
+    if timestamp:
+        embed["timestamp"] = timestamp
+    return embed, headline
+
+
+def _form13f_embed(filer_name, form, filing_date, url, cik, accession, timestamp):
+    enriched = None
+    try:
+        enriched = sec_enrich.enrich_13fhr(cik, accession, http_get_text, http_get_json)
+    except Exception as e:
+        print(f"[WARN] 13F enrichment failed: {e}", file=sys.stderr)
+
+    if not enriched:
+        headline = f"🏦 {filer_name} — {form} filed {filing_date}"
+        embed = {
+            "title": f"{filer_name} — {form}",
+            "description": f"Filed {filing_date}",
+            "url": url,
+            "color": COLOR_13F,
+        }
+        if timestamp:
+            embed["timestamp"] = timestamp
+        return embed, headline
+
+    pos_count = enriched["position_count"]
+    aum = sec_enrich.fmt_money(enriched["total_value_usd"])
+    headline = f"🏦 {filer_name} — {form}: {pos_count} positions, {aum} AUM"
+
+    def list_holdings(items, with_pct=False):
+        if not items:
+            return "_none_"
+        out = []
+        for h in items:
+            line = f"• {h['issuer'][:40]} — {sec_enrich.fmt_money(h['value_usd'])}"
+            if with_pct and "pct_change" in h:
+                line += f" ({h['pct_change']:+.0%})"
+            out.append(line)
+        return "\n".join(out)
+
+    fields = [
+        {"name": "Positions", "value": str(pos_count), "inline": True},
+        {"name": "Total value", "value": aum, "inline": True},
+        {"name": "Filed", "value": filing_date or "—", "inline": True},
+    ]
+    if enriched.get("prior_accession"):
+        fields.extend([
+            {"name": f"🆕 New ({len(enriched['new_positions'])})",
+             "value": list_holdings(enriched["new_positions"])[:1024], "inline": False},
+            {"name": f"❌ Exited ({len(enriched['exited'])})",
+             "value": list_holdings(enriched["exited"])[:1024], "inline": False},
+            {"name": f"📈 Increased ({len(enriched['increased'])})",
+             "value": list_holdings(enriched["increased"], with_pct=True)[:1024], "inline": False},
+            {"name": f"📉 Decreased ({len(enriched['decreased'])})",
+             "value": list_holdings(enriched["decreased"], with_pct=True)[:1024], "inline": False},
+        ])
+    else:
+        fields.append({"name": "Diff", "value": "_(no prior 13F-HR found for comparison)_",
+                       "inline": False})
+
+    embed = {
+        "title": f"{filer_name} — {form}",
+        "url": url,
+        "color": COLOR_13F,
+        "fields": fields,
+    }
+    if timestamp:
+        embed["timestamp"] = timestamp
+    return embed, headline
+
+
 def check_entry(entry, state, is_first_run, alerts_left):
     cik = str(entry["cik"]).zfill(10)
     name = entry.get("name", cik)
@@ -143,6 +404,7 @@ def check_entry(entry, state, is_first_run, alerts_left):
     forms_arr = recent.get("form", [])
     dates_arr = recent.get("filingDate", [])
     docs_arr = recent.get("primaryDocument", [])
+    items_arr = recent.get("items", [])
 
     relevant = []
     for i, acc in enumerate(accessions):
@@ -154,6 +416,7 @@ def check_entry(entry, state, is_first_run, alerts_left):
             "form": form,
             "filing_date": dates_arr[i] if i < len(dates_arr) else "",
             "primary_doc": docs_arr[i] if i < len(docs_arr) else "",
+            "items": items_arr[i] if i < len(items_arr) else "",
         })
 
     is_new_cik = cik not in state["sec_seen"]
@@ -183,18 +446,32 @@ def check_entry(entry, state, is_first_run, alerts_left):
         if alerts_left <= 0:
             break
         url = filing_url(cik, f["accession"], f["primary_doc"])
-        msg = (
-            f"📄 **{name}** — **{f['form']}** filed {f['filing_date']}\n"
-            f"<{url}>"
-        )
+        try:
+            embed, headline = build_embed(name, f["form"], f["filing_date"], url,
+                                          cik, f["accession"], f["primary_doc"],
+                                          f["items"])
+        except Exception as e:
+            print(f"[WARN] embed build failed for {name} {f['accession']}: {e}", file=sys.stderr)
+            embed = None
+            headline = f"📄 {name} — {f['form']} filed {f['filing_date']}\n<{url}>"
         # Decrement budget regardless to prevent infinite retry within a single
         # run. Only mark as seen on confirmed delivery so transient Discord
         # failures get retried on the next cron tick.
         alerts_left -= 1
-        if alert(msg):
+        delivered = alert(headline, embed=embed,
+                          fallback_content=f"{headline}\n<{url}>")
+        if delivered:
             seen_list.append(f["accession"])
             seen_set.add(f["accession"])
             sent += 1
+            state["alert_history"].append({
+                "ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                "kind": "sec",
+                "filer": name,
+                "form": f["form"],
+                "filing_date": f["filing_date"],
+                "accession": f["accession"],
+            })
 
     state["sec_seen"][cik] = seen_list
     return sent
@@ -235,6 +512,7 @@ def main():
         state["first_run_done"] = True
         print(f"[INIT-DONE] State seeded; subsequent runs alert on truly new filings only.")
 
+    state["last_run"] = started
     save_state(state)
     print(f"[DONE] alerts_sent={total_sent}")
     return 0
