@@ -5,6 +5,7 @@ A $0/month alert pipeline for the data Autopilot, Quiver Quant, and Unusual Whal
 - **SEC insider / institutional filings** (Form 4, 13D, 13G, 13F, 8-K) — sub-15-minute alerts via [sec_watcher.py](sec_watcher.py), enriched with parsed transaction details (insider name, buy/sell, shares, $-value, 8-K item codes, 13D stake size, 13F quarter-over-quarter diff).
 - **Congressional trades** (STOCK Act PTRs scraped from Capitol Trades) — hourly alerts via [congress_watcher.py](congress_watcher.py), colour-coded buy/sell with structured fields.
 - **Weekly heartbeat** — every Monday morning, a digest of the past 7 days of alerts plus a watcher-health check via [heartbeat.py](heartbeat.py).
+- **Ticker discovery** — also Mondays, a digest of NEW tickers worth adding to your news/research list, surfaced from the Capitol Trades + EDGAR 8-K firehoses, via [discovery.py](discovery.py).
 
 Both watchers run on GitHub Actions cron and post Discord rich embeds (no plain-text spam). Built because the upstream data is 100% public, and the paid apps just sell the automation layer.
 
@@ -100,7 +101,7 @@ Then add two secrets in `Repo Settings → Secrets and variables → Actions →
 Three workflows run on cron:
 - [sec-watcher.yml](.github/workflows/sec-watcher.yml) — every 15 min, weekdays 12:00–23:00 UTC (8 AM – 7 PM ET). ~30s per run.
 - [congress-watcher.yml](.github/workflows/congress-watcher.yml) — hourly at :07 past, weekdays 12:00–23:00 UTC. ~10s per run.
-- [heartbeat.yml](.github/workflows/heartbeat.yml) — Mondays at 13:00 UTC. Posts a 7-day digest + health check. ~5s per run.
+- [heartbeat.yml](.github/workflows/heartbeat.yml) — Mondays at 13:00 UTC. Posts a 7-day digest + health check, then runs [discovery.py](discovery.py) to surface candidate tickers for your stocknews list. ~30s per run.
 
 Total cost: ~150 min/mo, well within GitHub's free 2,000 min/mo. Edit cron schedules to taste.
 
@@ -254,13 +255,27 @@ Alerts are Discord rich embeds (colour-coded, structured fields, hyperlinked). T
 
 Where structured XML is unavailable (older filings, malformed XML), the watcher falls back gracefully to the original "Filer — form filed date + link" format.
 
+## Ticker discovery
+
+`discovery.py` runs every Monday alongside the heartbeat and posts a 🔎 digest of tickers worth adding to your news / research list (e.g. a sister project like StockNews). Two signals:
+
+- **Capitol Trades firehose** — across ALL politicians (not just your watchlist), tickers traded by the most distinct politicians in the last ~96 trades. More distinct politicians ≈ stronger signal.
+- **EDGAR 8-K firehose** — across the entire market, CIKs filing the most 8-Ks in the latest atom snapshot, mapped to tickers via SEC's `company_tickers.json`. Noisy on its own — the embed includes the issuer name so you can eyeball.
+
+Tickers already in `watchlist.json → stocknews_tickers` are excluded — populate that list with what your news project already covers, and the digest will only surface NEW candidates. To suppress a suggestion permanently, just add its ticker.
+
+Tunables (env vars):
+- `DISCOVERY_TOP_N=10` — entries per source in the digest.
+- `DISCOVERY_8K_FEED_COUNT=100` — atom feed page size.
+
 ## Files
 
 - [sec_watcher.py](sec_watcher.py) — SEC EDGAR watcher (stdlib only)
 - [sec_enrich.py](sec_enrich.py) — Form 4 / 8-K / 13D-G / 13F-HR XML parsers + diff helpers (stdlib only)
 - [congress_watcher.py](congress_watcher.py) — Capitol Trades scraper (stdlib only)
 - [heartbeat.py](heartbeat.py) — Weekly digest + watcher-health check (stdlib only)
-- [watchlist.json](watchlist.json) — CIK list + form-type filter + congress_members list
+- [discovery.py](discovery.py) — Weekly ticker-discovery digest from Capitol Trades + 8-K firehoses (stdlib only)
+- [watchlist.json](watchlist.json) — CIK list + form-type filter + congress_members + stocknews_tickers exclusion list
 - [state.json](state.json) — SEC seen-accession state + rolling alert history (auto-managed)
 - [congress_state.json](congress_state.json) — Congress seen-trade-ID state + rolling alert history (auto-managed)
 - [.github/workflows/sec-watcher.yml](.github/workflows/sec-watcher.yml) — SEC cron, every 15 min

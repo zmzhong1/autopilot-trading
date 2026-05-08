@@ -37,5 +37,7 @@
     "Crenshaw",
     "Tuberville",
     "Greene"
-  ]
+  ],
+  "_stocknews_tickers_help": "Tickers your sister project (e.g. StockNews) already tracks. discovery.py uses this as an exclusion list — its weekly digest only suggests NEW tickers worth adding. Empty = every discovered ticker is a candidate. Case-insensitive, must match Capitol Trades / EDGAR ticker format (e.g. 'AAPL', 'BRK.B').",
+  "stocknews_tickers": []
 }
