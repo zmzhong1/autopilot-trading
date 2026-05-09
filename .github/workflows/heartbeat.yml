@@ -1,0 +1,46 @@
+name: Heartbeat Digest
+
+on:
+  schedule:
+    # Mondays at 13:00 UTC (9 AM ET) — weekly health check + 7-day digest.
+    - cron: '0 13 * * 1'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: heartbeat
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Post heartbeat
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: python3 heartbeat.py
+
+      - name: Post ticker discovery digest
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: python3 discovery.py
+
+      - name: Post StockNews state digest
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          # PAT with Contents:Read on zmzhong1/StockNews — required because
+          # the StockNews repo is private. Default GITHUB_TOKEN doesn't reach
+          # other repos. Falls back to GITHUB_TOKEN if STOCKNEWS_GH_TOKEN
+          # isn't configured (works only if StockNews is made public).
+          STOCKNEWS_GH_TOKEN: ${{ secrets.STOCKNEWS_GH_TOKEN }}
+        run: python3 stocknews_digest.py

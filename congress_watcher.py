@@ -36,7 +36,12 @@ DISCORD_WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "").strip()
 DRY_RUN = os.environ.get("DRY_RUN", "").lower() in ("1", "true", "yes")
 MAX_ALERTS_PER_RUN = int(os.environ.get("MAX_ALERTS_PER_RUN", "20"))
 PAGE_SIZE = int(os.environ.get("CAPITOL_TRADES_PAGE_SIZE", "96"))
+ALERT_HISTORY_CAP = 200
 DISCORD_RATE_DELAY_SEC = 0.5
+
+COLOR_BUY = 0x2ECC71
+COLOR_SELL = 0xE74C3C
+COLOR_NEUTRAL = 0x95A5A6
 
 BROWSER_UA = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -101,11 +106,16 @@ def matches_watchlist(politician_str, watchlist):
     return any(w.lower() in pol_lower for w in watchlist)
 
 
-def post_discord(content):
+def post_discord(content=None, embed=None):
     """Returns True on confirmed delivery, False on any failure."""
     if not DISCORD_WEBHOOK:
         return False
-    body = json.dumps({"content": content[:1900]}).encode("utf-8")
+    payload = {}
+    if content:
+        payload["content"] = content[:1900]
+    if embed:
+        payload["embeds"] = [embed]
+    body = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(
         DISCORD_WEBHOOK,
         data=body,
@@ -128,41 +138,69 @@ def post_discord(content):
     return ok
 
 
-def alert(message):
+def alert(headline, embed=None, fallback_content=None):
     """Returns True if the alert is considered delivered (or DRY_RUN)."""
-    print(f"[ALERT] {message.splitlines()[0]}")
+    print(f"[ALERT] {headline}")
     if DRY_RUN:
         return True
-    return post_discord(message)
+    if embed is None:
+        return post_discord(content=fallback_content or headline)
+    return post_discord(embed=embed)
 
 
 def load_state():
     if not STATE_PATH.exists():
-        return {"seen_trade_ids": [], "first_run_done": False}
+        return {"seen_trade_ids": [], "first_run_done": False, "alert_history": []}
     try:
-        return json.loads(STATE_PATH.read_text())
+        state = json.loads(STATE_PATH.read_text())
     except json.JSONDecodeError:
         print("[WARN] congress_state.json malformed; starting fresh", file=sys.stderr)
-        return {"seen_trade_ids": [], "first_run_done": False}
+        return {"seen_trade_ids": [], "first_run_done": False, "alert_history": []}
+    state.setdefault("alert_history", [])
+    return state
 
 
 def save_state(state):
-    # Cap seen trade IDs at 5000 (way above any single-page batch).
     if len(state.get("seen_trade_ids", [])) > 5000:
         state["seen_trade_ids"] = state["seen_trade_ids"][-5000:]
+    if len(state.get("alert_history", [])) > ALERT_HISTORY_CAP:
+        state["alert_history"] = state["alert_history"][-ALERT_HISTORY_CAP:]
     STATE_PATH.write_text(json.dumps(state, indent=2, sort_keys=True))
 
 
-def format_alert(trade):
+def build_alert(trade):
+    """Return (embed, headline) for a Capitol Trades trade row."""
     politician = trade["politician"]
     issuer = trade["issuer"]
-    type_emoji = "🟢" if "buy" in trade["trade_type"].lower() else "🔴"
-    return (
-        f"🏛️ {type_emoji} **{politician}**\n"
-        f"**{trade['trade_type'].upper()}** {issuer}  ·  size: {trade['size_range']}  ·  owner: {trade['owner']}\n"
-        f"trade date: {trade['tx_date']}  ·  pub: {trade['pub_time']}  ·  lag: {trade['days_lag']}\n"
-        f"<https://www.capitoltrades.com/trades/{trade['trade_id']}>"
-    )
+    trade_type = (trade["trade_type"] or "").lower()
+    is_buy = "buy" in trade_type
+    is_sell = "sell" in trade_type
+    if is_buy:
+        emoji, color = "🟢", COLOR_BUY
+    elif is_sell:
+        emoji, color = "🔴", COLOR_SELL
+    else:
+        emoji, color = "⚪", COLOR_NEUTRAL
+
+    url = f"https://www.capitoltrades.com/trades/{trade['trade_id']}"
+    headline = (f"🏛️ {emoji} {politician} {trade['trade_type'].upper()} {issuer} "
+                f"· {trade['size_range']}")
+
+    embed = {
+        "title": f"🏛️ {emoji} {politician}",
+        "description": f"**{trade['trade_type'].upper()}** {issuer}",
+        "url": url,
+        "color": color,
+        "fields": [
+            {"name": "Size", "value": trade["size_range"] or "—", "inline": True},
+            {"name": "Owner", "value": trade["owner"] or "—", "inline": True},
+            {"name": "Price", "value": trade["price"] or "—", "inline": True},
+            {"name": "Trade date", "value": trade["tx_date"] or "—", "inline": True},
+            {"name": "Published", "value": trade["pub_time"] or "—", "inline": True},
+            {"name": "Lag", "value": trade["days_lag"] or "—", "inline": True},
+        ],
+    }
+    return embed, headline
 
 
 def main():
@@ -203,31 +241,40 @@ def main():
     print(f"[FILTER] {len(matched)} match watchlist, {len(new)} are new")
 
     if is_first_run:
-        # Seed: mark all current matched trades as seen, no alerts
         for t in matched:
             seen.add(t["trade_id"])
         state["seen_trade_ids"] = sorted(seen)
         state["first_run_done"] = True
+        state["last_run"] = started
         save_state(state)
         print(f"[INIT-DONE] Seeded {len(matched)} trade IDs; subsequent runs alert on truly new only.")
         return 0
 
     sent = 0
     attempted = 0
-    # Capitol Trades issues trade IDs sequentially, so alphabetic-sort ≈ chronological. Send oldest-first.
     for trade in sorted(new, key=lambda t: t["trade_id"]):
         if attempted >= MAX_ALERTS_PER_RUN:
             print(f"[INFO] Alert budget hit ({MAX_ALERTS_PER_RUN}); deferring rest to next run")
             break
-        # Count attempts (success or fail) toward the budget so a broken Discord
-        # doesn't loop forever in one run; only mark seen on confirmed delivery
-        # so transient failures get retried next tick.
         attempted += 1
-        if alert(format_alert(trade)):
+        embed, headline = build_alert(trade)
+        url = f"https://www.capitoltrades.com/trades/{trade['trade_id']}"
+        if alert(headline, embed=embed, fallback_content=f"{headline}\n<{url}>"):
             seen.add(trade["trade_id"])
             sent += 1
+            state["alert_history"].append({
+                "ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                "kind": "congress",
+                "politician": trade["politician"],
+                "issuer": trade["issuer"],
+                "trade_type": trade["trade_type"],
+                "size_range": trade["size_range"],
+                "tx_date": trade["tx_date"],
+                "trade_id": trade["trade_id"],
+            })
 
     state["seen_trade_ids"] = sorted(seen)
+    state["last_run"] = started
     save_state(state)
     print(f"[DONE] alerts_sent={sent}  attempted={attempted}")
     return 0

@@ -2,10 +2,13 @@
 
 A $0/month alert pipeline for the data Autopilot, Quiver Quant, and Unusual Whales charge for:
 
-- **SEC insider / institutional filings** (Form 4, 13D, 13G, 13F, 8-K) — sub-15-minute alerts via [sec_watcher.py](sec_watcher.py)
-- **Congressional trades** (STOCK Act PTRs scraped from Capitol Trades) — hourly alerts via [congress_watcher.py](congress_watcher.py)
+- **SEC insider / institutional filings** (Form 4, 13D, 13G, 13F, 8-K) — sub-15-minute alerts via [sec_watcher.py](sec_watcher.py), enriched with parsed transaction details (insider name, buy/sell, shares, $-value, 8-K item codes, 13D stake size, 13F quarter-over-quarter diff).
+- **Congressional trades** (STOCK Act PTRs scraped from Capitol Trades) — hourly alerts via [congress_watcher.py](congress_watcher.py), colour-coded buy/sell with structured fields.
+- **Weekly heartbeat** — every Monday morning, a digest of the past 7 days of alerts plus a watcher-health check via [heartbeat.py](heartbeat.py).
+- **Ticker discovery** — also Mondays, a digest of NEW tickers worth adding to your news/research list, surfaced from the Capitol Trades + EDGAR 8-K firehoses, via [discovery.py](discovery.py).
+- **StockNews state digest** — also Mondays, a cross-portfolio research view pulled from the sister [StockNews](https://github.com/zmzhong1/StockNews) repo via [stocknews_digest.py](stocknews_digest.py): action items due this week + top tickers by Section XII score.
 
-Both watchers run on GitHub Actions cron and post new filings to a Discord webhook. Built because the upstream data is 100% public, and the paid apps just sell the automation layer.
+Both watchers run on GitHub Actions cron and post Discord rich embeds (no plain-text spam). Built because the upstream data is 100% public, and the paid apps just sell the automation layer.
 
 ## What it watches
 
@@ -96,9 +99,10 @@ Then add two secrets in `Repo Settings → Secrets and variables → Actions →
 - `SEC_USER_AGENT` = `Your Name your@email.com`
 - `DISCORD_WEBHOOK` = your full webhook URL
 
-Two workflows run on cron:
+Three workflows run on cron:
 - [sec-watcher.yml](.github/workflows/sec-watcher.yml) — every 15 min, weekdays 12:00–23:00 UTC (8 AM – 7 PM ET). ~30s per run.
 - [congress-watcher.yml](.github/workflows/congress-watcher.yml) — hourly at :07 past, weekdays 12:00–23:00 UTC. ~10s per run.
+- [heartbeat.yml](.github/workflows/heartbeat.yml) — Mondays at 13:00 UTC. Posts the 7-day digest + health check, runs [discovery.py](discovery.py) for ticker candidates, then runs [stocknews_digest.py](stocknews_digest.py) for the StockNews portfolio view. ~30s per run.
 
 Total cost: ~150 min/mo, well within GitHub's free 2,000 min/mo. Edit cron schedules to taste.
 
@@ -232,21 +236,72 @@ State.json caps per-CIK history at 2,000 accessions (well above EDGAR's ~1,000-e
 
 **"Congress watcher missing my favorite politician"** — They probably haven't traded in the last 96 trades on Capitol Trades. Increase `CAPITOL_TRADES_PAGE_SIZE` env var (max ~96 confirmed working; higher may break) or check their politician page directly.
 
+**"StockNews digest empty / fetch failed"** — The digest reads `dashboards/watchlist_state.md` from the StockNews repo's `phase-1-scaffold` branch. If StockNews moved its default branch, set `STOCKNEWS_BRANCH=<new-branch>` in the heartbeat workflow env. If the markdown structure changed, update `parse_action_items` / `parse_ranked_table` in [stocknews_digest.py](stocknews_digest.py).
+
 ## Hard truths
 
 - **You cannot beat 13F's 45-day window for free, period.** Statutory.
 - **Pro algos trade Form 4 within seconds.** Free retail can move from "weeks behind" to "minutes behind," not "ahead."
 - **All free copy-trading carries lag risk** — Autopilot, Dub, eToro all wait for the public filing. No time machines.
 
+## What the Discord alerts look like
+
+Alerts are Discord rich embeds (colour-coded, structured fields, hyperlinked). The watchers fetch each filing's structured data (XML where available) and surface the parts that matter:
+
+| Form | Embed surfaces |
+|---|---|
+| **Form 4** (insider) | 🟢/🔴 buy or sell · insider name + role · transaction code (P/S/A/M/F…) · shares × price = $-value · post-transaction holdings · per-leg breakdown for multi-leg filings |
+| **8-K** | 📋 yellow embed · all SEC item codes (e.g. `2.02` Results of Operations, `5.02` Officer Departure) with human-readable labels, so boring routine 8-Ks are visually distinct from material events |
+| **SC 13D / 13G** | 🎯 purple embed · target issuer name + CUSIP · % of class · aggregate shares (parsed from post-2024 mandated XML schema) |
+| **13F-HR** | 🏦 blue embed · position count · total $-value · diff vs. prior quarter: 🆕 new positions, ❌ exits, 📈 increases, 📉 decreases (top 5 each, ranked by $) |
+| **Congress trade** | 🏛️ green/red embed · politician · buy/sell · issuer · size range · owner · trade date / pub date / lag |
+
+Where structured XML is unavailable (older filings, malformed XML), the watcher falls back gracefully to the original "Filer — form filed date + link" format.
+
+## Ticker discovery
+
+`discovery.py` runs every Monday alongside the heartbeat and posts a 🔎 digest of tickers worth adding to your news / research list (e.g. a sister project like StockNews). Two signals:
+
+- **Capitol Trades firehose** — across ALL politicians (not just your watchlist), tickers traded by the most distinct politicians in the last ~96 trades. More distinct politicians ≈ stronger signal.
+- **EDGAR 8-K firehose** — across the entire market, CIKs filing the most 8-Ks in the latest atom snapshot, mapped to tickers via SEC's `company_tickers.json`. Noisy on its own — the embed includes the issuer name so you can eyeball.
+
+Tickers already in `watchlist.json → stocknews_tickers` are excluded — populate that list with what your news project already covers, and the digest will only surface NEW candidates. To suppress a suggestion permanently, just add its ticker.
+
+Tunables (env vars):
+- `DISCOVERY_TOP_N=10` — entries per source in the digest.
+- `DISCOVERY_8K_FEED_COUNT=100` — atom feed page size.
+
+## StockNews state digest
+
+`stocknews_digest.py` runs every Monday alongside the heartbeat. It fetches `dashboards/watchlist_state.md` from the [zmzhong1/StockNews](https://github.com/zmzhong1/StockNews) sister repo (research project that produces falsifiable investment trees per ticker), parses it, and posts a 📊 embed combining the most actionable parts:
+
+- **🔔 Today** — events triggering today (earnings, refresh-due dates).
+- **⏳ Reviews due within 7 days** — thesis updates approaching their cadence threshold.
+- **📄 10-K cache stale** — source filings older than the methodology threshold.
+- **🏆 Top N by Section XII** — ranked tickers from the K.3.5 weighted-score table, with archetype + current action band.
+
+This pairs with the existing `heartbeat` + `discovery` posts: filings + research land in one Discord channel.
+
+Tunables (env vars):
+- `STOCKNEWS_BRANCH=phase-1-scaffold` — which StockNews branch to read from.
+- `STOCKNEWS_TOP_N=5` — ranked-table rows to surface.
+
+The StockNews repo also pushes its own event-driven embeds (routine summaries, scaffold completions, new tree publications) via `orchestration/notify.py` — those use the same `DISCORD_WEBHOOK` secret on the StockNews side.
+
 ## Files
 
 - [sec_watcher.py](sec_watcher.py) — SEC EDGAR watcher (stdlib only)
+- [sec_enrich.py](sec_enrich.py) — Form 4 / 8-K / 13D-G / 13F-HR XML parsers + diff helpers (stdlib only)
 - [congress_watcher.py](congress_watcher.py) — Capitol Trades scraper (stdlib only)
-- [watchlist.json](watchlist.json) — CIK list + form-type filter + congress_members list
-- [state.json](state.json) — SEC seen-accession state (auto-managed)
-- [congress_state.json](congress_state.json) — Congress seen-trade-ID state (auto-managed)
+- [heartbeat.py](heartbeat.py) — Weekly digest + watcher-health check (stdlib only)
+- [discovery.py](discovery.py) — Weekly ticker-discovery digest from Capitol Trades + 8-K firehoses (stdlib only)
+- [stocknews_digest.py](stocknews_digest.py) — Weekly cross-portfolio research digest fetched from the StockNews sister repo (stdlib only)
+- [watchlist.json](watchlist.json) — CIK list + form-type filter + congress_members + stocknews_tickers exclusion list
+- [state.json](state.json) — SEC seen-accession state + rolling alert history (auto-managed)
+- [congress_state.json](congress_state.json) — Congress seen-trade-ID state + rolling alert history (auto-managed)
 - [.github/workflows/sec-watcher.yml](.github/workflows/sec-watcher.yml) — SEC cron, every 15 min
 - [.github/workflows/congress-watcher.yml](.github/workflows/congress-watcher.yml) — Congress cron, hourly
+- [.github/workflows/heartbeat.yml](.github/workflows/heartbeat.yml) — Heartbeat cron, weekly Monday (heartbeat → discovery → stocknews_digest)
 - [.gitignore](.gitignore)
 
 ## License
