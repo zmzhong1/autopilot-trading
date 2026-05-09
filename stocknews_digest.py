@@ -13,8 +13,12 @@ Dry-run:
     DRY_RUN=1 python3 stocknews_digest.py
 
 Tunables (env vars):
+    STOCKNEWS_REPO         = owner/repo of StockNews (default: zmzhong1/StockNews)
     STOCKNEWS_BRANCH       = StockNews branch to read (default: phase-1-scaffold)
     STOCKNEWS_TOP_N        = ranked-table rows to surface (default: 5)
+    STOCKNEWS_GH_TOKEN     = PAT with Contents:Read on the StockNews repo;
+                             required when StockNews is a private repo. Falls
+                             back to GH_TOKEN / GITHUB_TOKEN if unset.
 """
 
 import json
@@ -22,29 +26,73 @@ import os
 import re
 import sys
 import time
+import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 
+STOCKNEWS_REPO = os.environ.get("STOCKNEWS_REPO", "zmzhong1/StockNews")
 STOCKNEWS_BRANCH = os.environ.get("STOCKNEWS_BRANCH", "phase-1-scaffold")
+WATCHLIST_STATE_PATH = "dashboards/watchlist_state.md"
 WATCHLIST_STATE_URL = (
-    f"https://raw.githubusercontent.com/zmzhong1/StockNews/"
-    f"{STOCKNEWS_BRANCH}/dashboards/watchlist_state.md"
+    f"https://raw.githubusercontent.com/{STOCKNEWS_REPO}/"
+    f"{STOCKNEWS_BRANCH}/{WATCHLIST_STATE_PATH}"
 )
 WATCHLIST_STATE_HTML = (
-    f"https://github.com/zmzhong1/StockNews/blob/{STOCKNEWS_BRANCH}/dashboards/watchlist_state.md"
+    f"https://github.com/{STOCKNEWS_REPO}/blob/{STOCKNEWS_BRANCH}/{WATCHLIST_STATE_PATH}"
+)
+WATCHLIST_STATE_API = (
+    f"https://api.github.com/repos/{STOCKNEWS_REPO}/contents/"
+    f"{WATCHLIST_STATE_PATH}?ref={STOCKNEWS_BRANCH}"
 )
 
 DISCORD_WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "").strip()
 DRY_RUN = os.environ.get("DRY_RUN", "").lower() in ("1", "true", "yes")
 TOP_N = int(os.environ.get("STOCKNEWS_TOP_N", "5"))
+# Optional GitHub token for reading a private StockNews repo. Falls back to
+# unauthenticated raw.githubusercontent.com when unset.
+GH_TOKEN = (
+    os.environ.get("STOCKNEWS_GH_TOKEN")
+    or os.environ.get("GH_TOKEN")
+    or os.environ.get("GITHUB_TOKEN")
+    or ""
+).strip()
 
 COLOR_DIGEST = 0x3498DB
 USER_AGENT = "AutopilotWatcher-StockNewsDigest/1.0"
 
 
 def fetch_watchlist_state():
-    req = urllib.request.Request(WATCHLIST_STATE_URL, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=20) as resp:
+    """Fetch dashboards/watchlist_state.md, with auth fallback for private repos.
+
+    Order of attempts:
+      1. raw.githubusercontent.com with optional Bearer token (works for both
+         public and private repos when token has Contents:Read)
+      2. api.github.com contents endpoint with Bearer token (private-repo
+         fallback for tokens that aren't accepted on raw.githubusercontent.com)
+    """
+    headers = {"User-Agent": USER_AGENT}
+    if GH_TOKEN:
+        headers["Authorization"] = f"Bearer {GH_TOKEN}"
+
+    req = urllib.request.Request(WATCHLIST_STATE_URL, headers=headers)
+    try:
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            return resp.read().decode("utf-8")
+    except urllib.error.HTTPError as e:
+        if e.code != 404 or not GH_TOKEN:
+            raise
+        print(
+            f"[INFO] raw.githubusercontent.com 404 — falling back to GitHub contents API",
+            file=sys.stderr,
+        )
+
+    api_headers = {
+        "User-Agent": USER_AGENT,
+        "Accept": "application/vnd.github.raw",
+        "Authorization": f"Bearer {GH_TOKEN}",
+    }
+    api_req = urllib.request.Request(WATCHLIST_STATE_API, headers=api_headers)
+    with urllib.request.urlopen(api_req, timeout=20) as resp:
         return resp.read().decode("utf-8")
 
 

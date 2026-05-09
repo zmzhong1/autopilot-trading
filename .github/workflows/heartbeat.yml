@@ -38,4 +38,9 @@ jobs:
       - name: Post StockNews state digest
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          # PAT with Contents:Read on zmzhong1/StockNews — required because
+          # the StockNews repo is private. Default GITHUB_TOKEN doesn't reach
+          # other repos. Falls back to GITHUB_TOKEN if STOCKNEWS_GH_TOKEN
+          # isn't configured (works only if StockNews is made public).
+          STOCKNEWS_GH_TOKEN: ${{ secrets.STOCKNEWS_GH_TOKEN }}
         run: python3 stocknews_digest.py
