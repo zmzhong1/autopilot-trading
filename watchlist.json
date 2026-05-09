@@ -38,6 +38,14 @@
     "Tuberville",
     "Greene"
   ],
-  "_stocknews_tickers_help": "Tickers your sister project (e.g. StockNews) already tracks. discovery.py uses this as an exclusion list — its weekly digest only suggests NEW tickers worth adding. Empty = every discovered ticker is a candidate. Case-insensitive, must match Capitol Trades / EDGAR ticker format (e.g. 'AAPL', 'BRK.B').",
-  "stocknews_tickers": []
+  "_stocknews_tickers_help": "Tickers your sister project (e.g. StockNews) already tracks. discovery.py uses this as an exclusion list — its weekly digest only suggests NEW tickers worth adding. Empty = every discovered ticker is a candidate. Case-insensitive, must match Capitol Trades / EDGAR ticker format (e.g. 'AAPL', 'BRK.B'). Seeded from zmzhong1/StockNews reports/ + reports/_watchlist.json (queue + completed + tier_2_backlog) on 2026-05-09. Pre-IPO entries (ANTHROPIC, OPENAI, SPACEX) and the directory-name 'RESONAC' are included as harmless fillers — they will never appear in EDGAR/CapitolTrades data so the exclusion is a no-op.",
+  "stocknews_tickers": [
+    "AAPL", "AJNMY", "AMD", "AMZN", "ANET", "ANTHROPIC", "ASML", "AVGO",
+    "BABA", "BIDU", "BYD", "CAT", "COIN", "COST", "CRWD", "DELL", "DIS",
+    "F", "FCX", "GOOGL", "GS", "HMC", "HOOD", "JD", "JPM", "META", "MP",
+    "MS", "MSFT", "MU", "NEM", "NET", "NOK", "NTES", "NVDA", "OPENAI",
+    "ORCL", "PATH", "PDD", "PLTR", "RESONAC", "SFTBY", "SHEL", "SNOW",
+    "SONY", "SPACEX", "STLD", "TCEHY", "TM", "TOTDY", "TSLA", "TSM",
+    "V", "WMT"
+  ]
 }
