@@ -32,6 +32,11 @@ from datetime import datetime, timezone
 
 STOCKNEWS_REPO = os.environ.get("STOCKNEWS_REPO", "zmzhong1/StockNews")
 STOCKNEWS_BRANCH = os.environ.get("STOCKNEWS_BRANCH", "phase-1-scaffold")
+# Cloudflare Pages production deploy. Override if the project is renamed
+# or a custom domain is added.
+STOCKNEWS_SITE_BASE_URL = os.environ.get(
+    "STOCKNEWS_SITE_BASE_URL", "https://stocknews-87v.pages.dev"
+).rstrip("/")
 WATCHLIST_STATE_PATH = "dashboards/watchlist_state.md"
 WATCHLIST_STATE_URL = (
     f"https://raw.githubusercontent.com/{STOCKNEWS_REPO}/"
@@ -44,6 +49,9 @@ WATCHLIST_STATE_API = (
     f"https://api.github.com/repos/{STOCKNEWS_REPO}/contents/"
     f"{WATCHLIST_STATE_PATH}?ref={STOCKNEWS_BRANCH}"
 )
+# Cloudflare-rendered equivalents the user can actually click and read.
+WATCHLIST_STATE_SITE = f"{STOCKNEWS_SITE_BASE_URL}/dashboards/watchlist_state.html"
+SITE_INDEX_URL = f"{STOCKNEWS_SITE_BASE_URL}/"
 
 DISCORD_WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "").strip()
 DRY_RUN = os.environ.get("DRY_RUN", "").lower() in ("1", "true", "yes")
@@ -229,8 +237,11 @@ def build_embed(action_sections, ranked):
             arch_raw = r.get("Archetype", "")
             am = re.search(r"`([^`]+)`", arch_raw)
             arch = am.group(1) if am else arch_raw
+            # Hyperlink each ticker to its rendered Cloudflare page so the
+            # user can click straight into the full article from Discord.
+            ticker_link = f"[**{t}**]({STOCKNEWS_SITE_BASE_URL}/{t}/tree_v1_en.html)" if t and t != "?" else f"**{t}**"
             lines.append(
-                f"**{t}** — XII {xii} · H-0 {h0} · Dur {dur} {ff_marker}\n"
+                f"{ticker_link} — XII {xii} · H-0 {h0} · Dur {dur} {ff_marker}\n"
                 f"   _{arch}_ · {action}"
             )
         fields.append({
@@ -247,9 +258,14 @@ def build_embed(action_sections, ranked):
         })
 
     fields.append({
+        "name": "📖 Read on site",
+        "value": f"[Open dashboard]({WATCHLIST_STATE_SITE}) · [Index]({SITE_INDEX_URL})",
+        "inline": True,
+    })
+    fields.append({
         "name": "Source",
         "value": f"[`dashboards/watchlist_state.md`]({WATCHLIST_STATE_HTML})",
-        "inline": False,
+        "inline": True,
     })
 
     return {
