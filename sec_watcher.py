@@ -148,7 +148,18 @@ def filing_url(cik, accession, primary_doc):
     acc_clean = accession.replace("-", "")
     if primary_doc:
         return f"https://www.sec.gov/Archives/edgar/data/{cik_int}/{acc_clean}/{primary_doc}"
-    return f"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={cik}&owner=include&count=40"
+    return edgar_index_url(cik, accession)
+
+
+def edgar_index_url(cik, accession):
+    """Human-readable EDGAR filing-index page for an accession.
+
+    Always resolvable from cik+accession alone (no primary_doc needed), so it's
+    the reliable deep link to surface even when enrichment / doc lookup fails.
+    """
+    cik_int = int(cik)
+    acc_clean = accession.replace("-", "")
+    return f"https://www.sec.gov/Archives/edgar/data/{cik_int}/{acc_clean}/{accession}-index.htm"
 
 
 def build_embed(filer_name, form, filing_date, url, cik, accession, primary_doc, items_str):
@@ -162,26 +173,34 @@ def build_embed(filer_name, form, filing_date, url, cik, accession, primary_doc,
             pass
 
     if base_form == "4":
-        return _form4_embed(filer_name, form, filing_date, url, cik, accession,
-                            primary_doc, timestamp)
-    if base_form == "8-K":
-        return _form8k_embed(filer_name, form, filing_date, url, items_str, timestamp)
-    if base_form in ("SC 13D", "SC 13G"):
-        return _sc13_embed(filer_name, form, filing_date, url, cik, accession,
-                           primary_doc, timestamp)
-    if base_form == "13F-HR":
-        return _form13f_embed(filer_name, form, filing_date, url, cik, accession,
-                              timestamp)
-    # Default — generic embed.
-    headline = f"📄 {filer_name} — {form} filed {filing_date}"
-    embed = {
-        "title": f"{filer_name} — {form}",
-        "description": f"Filed {filing_date}",
-        "url": url,
-        "color": COLOR_NEUTRAL,
-    }
-    if timestamp:
-        embed["timestamp"] = timestamp
+        embed, headline = _form4_embed(filer_name, form, filing_date, url, cik,
+                                       accession, primary_doc, timestamp)
+    elif base_form == "8-K":
+        embed, headline = _form8k_embed(filer_name, form, filing_date, url,
+                                        items_str, timestamp)
+    elif base_form in ("SC 13D", "SC 13G"):
+        embed, headline = _sc13_embed(filer_name, form, filing_date, url, cik,
+                                      accession, primary_doc, timestamp)
+    elif base_form == "13F-HR":
+        embed, headline = _form13f_embed(filer_name, form, filing_date, url, cik,
+                                         accession, timestamp)
+    else:
+        # Default — generic embed.
+        headline = f"📄 {filer_name} — {form} filed {filing_date}"
+        embed = {
+            "title": f"{filer_name} — {form}",
+            "description": f"Filed {filing_date}",
+            "url": url,
+            "color": COLOR_NEUTRAL,
+        }
+        if timestamp:
+            embed["timestamp"] = timestamp
+
+    # Stamp every card with its accession number. Multiple same-day filings from
+    # one issuer (e.g. several insiders each filing a Form 4) are distinct
+    # accessions but otherwise render identically — the footer guarantees each
+    # card is visibly self-distinguishing even when enrichment falls back.
+    embed.setdefault("footer", {"text": f"📎 {accession}"})
     return embed, headline
 
 
@@ -194,12 +213,20 @@ def _form4_embed(filer_name, form, filing_date, url, cik, accession, primary_doc
         print(f"[WARN] Form 4 enrichment failed: {e}", file=sys.stderr)
 
     if not enriched:
-        headline = f"📄 {filer_name} — {form} filed {filing_date}"
+        # Enrichment failed (no parseable XML/transactions). Keep the card
+        # self-distinguishing anyway: the accession + EDGAR link make otherwise
+        # identical-looking same-day Form 4s tell-apart-able.
+        index_url = edgar_index_url(cik, accession)
+        headline = f"📄 {filer_name} — {form} filed {filing_date} ({accession})"
         embed = {
             "title": f"{filer_name} — {form}",
-            "description": f"Filed {filing_date}",
-            "url": url,
+            "description": f"Filed {filing_date}\n[View filing on EDGAR]({index_url})",
+            "url": index_url,
             "color": COLOR_NEUTRAL,
+            "fields": [
+                {"name": "Accession", "value": accession, "inline": True},
+                {"name": "Filed", "value": filing_date or "—", "inline": True},
+            ],
         }
         if timestamp:
             embed["timestamp"] = timestamp
@@ -244,6 +271,8 @@ def _form4_embed(filer_name, form, filing_date, url, cik, accession, primary_doc
             {"name": "Total value", "value": sec_enrich.fmt_money(enriched.get("total_value")),
              "inline": True},
             {"name": "Filed", "value": filing_date or "—", "inline": True},
+            {"name": "Filing", "value": f"[{accession}]({edgar_index_url(cik, accession)})",
+             "inline": False},
         ],
     }
     if timestamp:
