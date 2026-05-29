@@ -34,6 +34,10 @@ USER_AGENT = os.environ.get("SEC_USER_AGENT", "").strip()
 DISCORD_WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "").strip()
 DRY_RUN = os.environ.get("DRY_RUN", "").lower() in ("1", "true", "yes")
 MAX_ALERTS_PER_RUN = int(os.environ.get("MAX_ALERTS_PER_RUN", "20"))
+# Same-day Form 4 filings from one issuer get batched into a single card once
+# this many pile up (set high to disable batching). Lone filings keep their
+# richer per-insider card.
+FORM4_BATCH_MIN = int(os.environ.get("FORM4_BATCH_MIN", "2"))
 ALERT_HISTORY_CAP = 200  # rolling window kept in state.json for the heartbeat
 SEC_RATE_DELAY_SEC = 0.15  # SEC limit is 10 req/sec; stay polite at ~6/sec
 DISCORD_RATE_DELAY_SEC = 0.5
@@ -280,6 +284,87 @@ def _form4_embed(filer_name, form, filing_date, url, cik, accession, primary_doc
     return embed, headline
 
 
+def _form4_batch_embed(filer_name, cik, filings, filing_date):
+    """One card summarizing multiple same-day Form 4 filings for an issuer.
+
+    Each line is one insider's net activity with a deep link to that specific
+    filing, so the batched card stays self-distinguishing per accession even
+    though it's a single Discord post. Returns (embed, headline)."""
+    timestamp = None
+    if filing_date:
+        try:
+            timestamp = datetime.fromisoformat(filing_date).replace(
+                tzinfo=timezone.utc).isoformat()
+        except ValueError:
+            pass
+
+    side_emoji = {"buy": "🟢", "sell": "🔴", "grant": "🎁",
+                  "exercise": "🔁", "neutral": "⚪"}
+    lines = []
+    net = {"buy": 0.0, "sell": 0.0}
+    ticker = None
+    for f in filings:
+        acc = f["accession"]
+        idx = edgar_index_url(cik, acc)
+        enriched = None
+        try:
+            enriched = sec_enrich.enrich_form4(cik, acc, f["primary_doc"],
+                                               http_get_text, http_get_json)
+        except Exception as e:
+            print(f"[WARN] Form 4 enrichment failed ({acc}): {e}", file=sys.stderr)
+        amend = " · 4/A" if f["form"].endswith("/A") else ""
+        if enriched:
+            ticker = ticker or enriched.get("ticker")
+            insider = enriched.get("insider") or "Unknown insider"
+            role = enriched.get("role") or "—"
+            side = enriched.get("dominant_side", "neutral")
+            val = enriched.get("total_value")
+            if side in net:
+                net[side] += val or 0.0
+            lines.append(f"{side_emoji.get(side, '⚪')} [{insider}]({idx}) · "
+                         f"{role} · {side.upper()} {sec_enrich.fmt_money(val)}{amend}")
+        else:
+            # Enrichment unavailable — still link the exact filing so the line is
+            # distinguishable.
+            lines.append(f"⚪ [{acc}]({idx}){amend} — _details unavailable_")
+
+    if net["sell"] > net["buy"] and net["sell"] > 0:
+        color = COLOR_SELL
+    elif net["buy"] > net["sell"] and net["buy"] > 0:
+        color = COLOR_BUY
+    else:
+        color = COLOR_NEUTRAL
+
+    title_suffix = f" ({ticker})" if ticker else ""
+    headline = (f"📄 {filer_name}{title_suffix} — {len(filings)} Form 4 filings "
+                f"on {filing_date}")
+
+    shown = lines[:25]
+    desc = "\n".join(shown)
+    if len(lines) > len(shown):
+        desc += f"\n…and {len(lines) - len(shown)} more"
+
+    all_url = (f"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany"
+               f"&CIK={cik}&type=4&dateb=&owner=include&count=40")
+    embed = {
+        "title": f"{filer_name}{title_suffix} — {len(filings)} Form 4 filings",
+        "url": all_url,
+        "color": color,
+        "description": desc[:4000],
+        "fields": [
+            {"name": "Filings", "value": str(len(filings)), "inline": True},
+            {"name": "Net buy / sell",
+             "value": f"{sec_enrich.fmt_money(net['buy'])} / {sec_enrich.fmt_money(net['sell'])}",
+             "inline": True},
+            {"name": "Filed", "value": filing_date or "—", "inline": True},
+        ],
+        "footer": {"text": f"📎 {len(filings)} accessions on {filing_date}"},
+    }
+    if timestamp:
+        embed["timestamp"] = timestamp
+    return embed, headline
+
+
 def _form8k_embed(filer_name, form, filing_date, url, items_str, timestamp):
     items = sec_enrich.parse_8k_items(items_str or "")
     if items:
@@ -469,38 +554,77 @@ def check_entry(entry, state, is_first_run, alerts_left):
     if not new:
         return 0
 
+    # Group same-day Form 4 filings (incl. 4/A) per filing date. A large-cap
+    # issuer can file many insider Form 4s in one day; one card each is noise and
+    # the cards look near-identical. Lone Form 4s and all other forms keep their
+    # own (richer) card. Each `unit` is the set of filings sharing one post.
+    form4_by_date = {}
+    units = []
+    for f in new:
+        base = f["form"][:-2] if f["form"].endswith("/A") else f["form"]
+        if base == "4":
+            form4_by_date.setdefault(f["filing_date"], []).append(f)
+        else:
+            units.append([f])
+    for group in form4_by_date.values():
+        if len(group) >= FORM4_BATCH_MIN:
+            units.append(group)
+        else:
+            units.extend([f] for f in group)
+    # Send oldest-first so alert_history stays chronological and seen_list keeps
+    # the newest accessions at its tail (matching the trim in save_state).
+    units.sort(key=lambda u: (min(f["filing_date"] for f in u),
+                              min(f["accession"] for f in u)))
+
+    def record(filing):
+        seen_list.append(filing["accession"])
+        seen_set.add(filing["accession"])
+        state["alert_history"].append({
+            "ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "kind": "sec",
+            "filer": name,
+            "form": filing["form"],
+            "filing_date": filing["filing_date"],
+            "accession": filing["accession"],
+        })
+
     sent = 0
-    # `relevant` is newest-first; reverse so we send/store oldest-first.
-    for f in reversed(new):
+    for unit in units:
         if alerts_left <= 0:
             break
-        url = filing_url(cik, f["accession"], f["primary_doc"])
-        try:
-            embed, headline = build_embed(name, f["form"], f["filing_date"], url,
-                                          cik, f["accession"], f["primary_doc"],
-                                          f["items"])
-        except Exception as e:
-            print(f"[WARN] embed build failed for {name} {f['accession']}: {e}", file=sys.stderr)
-            embed = None
-            headline = f"📄 {name} — {f['form']} filed {f['filing_date']}\n<{url}>"
-        # Decrement budget regardless to prevent infinite retry within a single
-        # run. Only mark as seen on confirmed delivery so transient Discord
-        # failures get retried on the next cron tick.
+        # One Discord post per unit (batched or not). Decrement budget regardless
+        # of delivery to prevent infinite retry within a run; only mark filings
+        # seen on confirmed delivery so transient failures retry next cron tick.
         alerts_left -= 1
-        delivered = alert(headline, embed=embed,
-                          fallback_content=f"{headline}\n<{url}>")
+        if len(unit) == 1:
+            f = unit[0]
+            url = filing_url(cik, f["accession"], f["primary_doc"])
+            try:
+                embed, headline = build_embed(name, f["form"], f["filing_date"], url,
+                                              cik, f["accession"], f["primary_doc"],
+                                              f["items"])
+            except Exception as e:
+                print(f"[WARN] embed build failed for {name} {f['accession']}: {e}",
+                      file=sys.stderr)
+                embed = None
+                headline = f"📄 {name} — {f['form']} filed {f['filing_date']}\n<{url}>"
+            delivered = alert(headline, embed=embed,
+                              fallback_content=f"{headline}\n<{url}>")
+        else:
+            filing_date = unit[0]["filing_date"]
+            try:
+                embed, headline = _form4_batch_embed(name, cik, unit, filing_date)
+            except Exception as e:
+                print(f"[WARN] batch embed build failed for {name} {filing_date}: {e}",
+                      file=sys.stderr)
+                embed = None
+                headline = f"📄 {name} — {len(unit)} Form 4 filings on {filing_date}"
+            delivered = alert(headline, embed=embed, fallback_content=headline)
+
         if delivered:
-            seen_list.append(f["accession"])
-            seen_set.add(f["accession"])
             sent += 1
-            state["alert_history"].append({
-                "ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-                "kind": "sec",
-                "filer": name,
-                "form": f["form"],
-                "filing_date": f["filing_date"],
-                "accession": f["accession"],
-            })
+            for f in unit:
+                record(f)
 
     state["sec_seen"][cik] = seen_list
     return sent

@@ -128,5 +128,62 @@ class SelfDistinguishingEmbedTest(unittest.TestCase):
         self.assertIn("-index.htm", filing_fields[0]["value"])
 
 
+class SameDayForm4BatchingTest(unittest.TestCase):
+    def setUp(self):
+        self._orig_get_json = sec_watcher.http_get_json
+        sec_watcher.http_get_json = lambda url: _submissions(ACCESSIONS, form="4")
+        # Distinct insider per accession so the batched card has distinct lines.
+        self._orig_enrich = sec_watcher.sec_enrich.enrich_form4
+
+        def fake_enrich(cik, acc, primary_doc, *_a, **_k):
+            idx = ACCESSIONS.index(acc)
+            return {
+                "issuer_name": "Alphabet Inc.", "ticker": "GOOGL",
+                "insider": f"INSIDER {idx}", "role": "Director",
+                "transactions": [{"code": "S", "label": "Sale", "side": "sell",
+                                  "shares": 100.0, "price": 10.0, "value": 1000.0,
+                                  "post_holdings": None, "security": "A",
+                                  "derivative": False}],
+                "total_value": 1000.0, "dominant_side": "sell",
+            }
+
+        sec_watcher.sec_enrich.enrich_form4 = fake_enrich
+
+    def tearDown(self):
+        sec_watcher.http_get_json = self._orig_get_json
+        sec_watcher.sec_enrich.enrich_form4 = self._orig_enrich
+
+    def test_same_day_form4s_collapse_to_one_post(self):
+        entry = {"cik": ALPHABET_CIK, "name": "Alphabet Inc (Google)", "forms": ["4"]}
+        state = {"sec_seen": {ALPHABET_CIK: ["0000000000-00-000000"]},
+                 "first_run_done": True, "alert_history": []}
+
+        posts = sec_watcher.check_entry(entry, state, is_first_run=False, alerts_left=20)
+        self.assertEqual(posts, 1, "five same-day Form 4s batch into a single card")
+        # All five accessions are still individually recorded (dedup + digest).
+        for acc in ACCESSIONS:
+            self.assertIn(acc, state["sec_seen"][ALPHABET_CIK])
+        self.assertEqual(len(state["alert_history"]), len(ACCESSIONS))
+
+        # Nothing re-posts on the next identical poll.
+        resent = sec_watcher.check_entry(entry, state, is_first_run=False, alerts_left=20)
+        self.assertEqual(resent, 0)
+
+    def test_batch_embed_lists_every_accession_distinctly(self):
+        filings = [{"accession": a, "form": "4", "filing_date": "2026-05-27",
+                    "primary_doc": "primary.xml", "items": ""} for a in ACCESSIONS]
+        embed, headline = sec_watcher._form4_batch_embed(
+            "Alphabet Inc (Google)", ALPHABET_CIK, filings, "2026-05-27")
+
+        self.assertIn(str(len(ACCESSIONS)), embed["title"])
+        for idx, acc in enumerate(ACCESSIONS):
+            self.assertIn(f"INSIDER {idx}", embed["description"])
+            self.assertIn(sec_watcher.edgar_index_url(ALPHABET_CIK, acc),
+                          embed["description"])
+        self.assertEqual(embed["footer"]["text"], f"📎 {len(ACCESSIONS)} accessions on 2026-05-27")
+        net_field = [f for f in embed["fields"] if f["name"] == "Net buy / sell"]
+        self.assertTrue(net_field)
+
+
 if __name__ == "__main__":
     unittest.main()

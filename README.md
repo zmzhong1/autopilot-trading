@@ -83,7 +83,8 @@ python3 congress_watcher.py
 
 Flags (apply to both watchers):
 - `DRY_RUN=1` — log alerts to stdout instead of Discord (useful when editing watchlist)
-- `MAX_ALERTS_PER_RUN=20` — cap per-run alerts (default 20)
+- `MAX_ALERTS_PER_RUN=20` — cap per-run Discord posts (default 20). A batched same-day Form 4 card counts as one post.
+- `FORM4_BATCH_MIN=2` — SEC watcher only; batch same-day Form 4 filings from one issuer into a single card once this many pile up (default 2). Lone Form 4s keep their richer per-insider card. Set very high to disable batching.
 - `CAPITOL_TRADES_PAGE_SIZE=96` — Congress watcher only; max trades fetched per run
 
 ### 3. Push to GitHub for free 24/7 monitoring
@@ -250,7 +251,8 @@ Alerts are Discord rich embeds (colour-coded, structured fields, hyperlinked). T
 
 | Form | Embed surfaces |
 |---|---|
-| **Form 4** (insider) | 🟢/🔴 buy or sell · insider name + role · transaction code (P/S/A/M/F…) · shares × price = $-value · post-transaction holdings · per-leg breakdown for multi-leg filings |
+| **Form 4** (insider) | 🟢/🔴 buy or sell · insider name + role · transaction code (P/S/A/M/F…) · shares × price = $-value · post-transaction holdings · per-leg breakdown for multi-leg filings · accession + EDGAR deep link |
+| **Form 4 (same-day batch)** | 📄 one card when an issuer files ≥`FORM4_BATCH_MIN` insider Form 4s on the same day · one line per insider (side · role · $-value · deep link) · net buy/sell totals — collapses high-volume large-cap insider noise into a single notification |
 | **8-K** | 📋 yellow embed · all SEC item codes (e.g. `2.02` Results of Operations, `5.02` Officer Departure) with human-readable labels, so boring routine 8-Ks are visually distinct from material events |
 | **SC 13D / 13G** | 🎯 purple embed · target issuer name + CUSIP · % of class · aggregate shares (parsed from post-2024 mandated XML schema) |
 | **13F-HR** | 🏦 blue embed · position count · total $-value · diff vs. prior quarter: 🆕 new positions, ❌ exits, 📈 increases, 📉 decreases (top 5 each, ranked by $) |
