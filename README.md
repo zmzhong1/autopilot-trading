@@ -7,6 +7,9 @@ A $0/month alert pipeline for the data Autopilot, Quiver Quant, and Unusual Whal
 - **Weekly heartbeat** — every Monday morning, a digest of the past 7 days of alerts plus a watcher-health check via [heartbeat.py](heartbeat.py).
 - **Ticker discovery** — also Mondays, a digest of NEW tickers worth adding to your news/research list, surfaced from the Capitol Trades + EDGAR 8-K firehoses, via [discovery.py](discovery.py).
 - **13F crowding** — also Mondays, a digest of names multiple tracked funds hold (and newly bought) the same quarter — smart-money consensus from the 13F filings you already parse, via [crowding.py](crowding.py).
+- **Insider cluster buys** — every weekday evening, an alert when multiple insiders make open-market *purchases* of the same company in a rolling window — the high-signal opposite of routine sales, via [cluster_buys.py](cluster_buys.py).
+- **Market regime gauge** — also Mondays, a "risk weather" snapshot (S&P trend, VIX, yield curve, credit spreads) that describes conditions — *not* a crash predictor — via [regime.py](regime.py).
+- **Cross-feed confluence** — also Mondays, tickers lit up by multiple feeds at once (politician + insider + 8-K + crowded 13F) via [confluence.py](confluence.py).
 - **StockNews state digest** — also Mondays, a cross-portfolio research view pulled from the sister [StockNews](https://github.com/zmzhong1/StockNews) repo via [stocknews_digest.py](stocknews_digest.py): action items due this week + top tickers by Section XII score.
 
 Both watchers run on GitHub Actions cron and post Discord rich embeds (no plain-text spam). Built because the upstream data is 100% public, and the paid apps just sell the automation layer.
@@ -104,7 +107,8 @@ Then add two secrets in `Repo Settings → Secrets and variables → Actions →
 Three workflows run on cron:
 - [sec-watcher.yml](.github/workflows/sec-watcher.yml) — every 15 min, weekdays 12:00–23:00 UTC (8 AM – 7 PM ET). ~30s per run.
 - [congress-watcher.yml](.github/workflows/congress-watcher.yml) — hourly at :07 past, weekdays 12:00–23:00 UTC. ~10s per run.
-- [heartbeat.yml](.github/workflows/heartbeat.yml) — Mondays at 13:00 UTC. Posts the 7-day digest + health check, runs [discovery.py](discovery.py) for ticker candidates, [crowding.py](crowding.py) for the 13F smart-money consensus view, then [stocknews_digest.py](stocknews_digest.py) for the StockNews portfolio view. ~45s per run.
+- [cluster-buys.yml](.github/workflows/cluster-buys.yml) — weekdays at 22:30 UTC (after the Form 4 acceptance window). Runs [cluster_buys.py](cluster_buys.py) and commits `cluster_state.json`.
+- [heartbeat.yml](.github/workflows/heartbeat.yml) — Mondays at 13:00 UTC. Posts the 7-day digest + health check, then runs [discovery.py](discovery.py) (ticker candidates), [crowding.py](crowding.py) (13F consensus), [regime.py](regime.py) (risk weather), [confluence.py](confluence.py) (cross-feed overlap), and [stocknews_digest.py](stocknews_digest.py) (StockNews portfolio view). ~60s per run.
 
 Total cost: ~150 min/mo, well within GitHub's free 2,000 min/mo. Edit cron schedules to taste.
 
@@ -285,6 +289,45 @@ Flags:
 
 Overlap is computed by CUSIP, so different share classes (e.g. GOOGL vs GOOG) are kept distinct.
 
+## Insider cluster buys
+
+`cluster_buys.py` runs every weekday evening and alerts 🟢 when **multiple distinct insiders make open-market purchases (Form 4 transaction code `P`) of the same company** within a rolling window. A lone insider *sale* is routine (10b5-1 plans, RSU vesting, tax withholding); multiple insiders *buying* their own stock with their own cash is one of the few insider signals with real predictive history. Only code-`P` purchases count — grants, option exercises, and sales are ignored.
+
+It reuses `sec_enrich.enrich_form4` (no new data source) and de-dups via `cluster_state.json`: a cluster alerts once, and again only when a genuinely new purchase joins it (e.g. "now 3 insiders"). Window aging or unchanged clusters don't re-fire.
+
+Flags:
+- `CLUSTER_LOOKBACK_DAYS=14` — rolling window for "within N days" (default 14).
+- `CLUSTER_MIN_INSIDERS=2` — distinct insiders needed to call it a cluster (default 2).
+- `CLUSTER_MAX_FORM4_PER_CIK=60` — cap on Form 4s parsed per company per run (politeness/runtime guard).
+
+## Market regime gauge
+
+`regime.py` runs every Monday and posts a 🌡️ "risk weather" card. It does **not** predict crashes — it *describes* current conditions from free public data and rolls them into a calm / mixed / stressed read so you have context, not a forecast. Signals (each contributes risk points):
+
+- **Trend** — S&P 500 vs its 200-day moving average (Stooq, no key).
+- **Volatility** — VIX level (Stooq, no key).
+- **Yield curve** — 10y−2y Treasury spread (FRED, optional key).
+- **Credit** — high-yield OAS credit spread (FRED, optional key).
+
+Works out of the box on Stooq alone. Set `FRED_API_KEY` (free from the [FRED API](https://fred.stlouisfed.org/docs/api/api_key.html)) as a repo secret to add the yield-curve and credit legs.
+
+## Cross-feed confluence
+
+`confluence.py` runs every Monday and surfaces 🎯 tickers lit up by **multiple independent feeds at once** — any one feed is noise, but overlap is worth a look. It stitches together signals the project already collects:
+
+- **🏛️ congress** — recent Capitol Trades (`congress_state.json`).
+- **🧑‍💼 insider** — recent Form 4 alerts (`state.json`).
+- **📋 corporate** — recent 8-K alerts (`state.json`).
+- **🏦 institutional** — crowded names from the latest 13F-HRs (reuses `crowding.py`).
+
+Everything is keyed to a ticker (watchlist CIK→ticker via SEC's `company_tickers.json`, best-effort issuer-name matching for 13F holdings). Names active across ≥`CONFLUENCE_MIN_FEEDS` feeds are ranked by feed count; ≥3-feed overlaps get a ⭐.
+
+Flags:
+- `CONFLUENCE_LOOKBACK_DAYS=30` — window for the dated feeds (default 30).
+- `CONFLUENCE_MIN_FEEDS=2` — minimum distinct feeds to report a ticker (default 2).
+- `CONFLUENCE_INCLUDE_13F=1` — set to `0` to skip the (networked) 13F leg.
+- `CONFLUENCE_TOP_N=12` — max tickers shown (default 12).
+
 Tunables (env vars):
 - `DISCOVERY_TOP_N=10` — entries per source in the digest.
 - `DISCOVERY_8K_FEED_COUNT=100` — atom feed page size.
@@ -314,13 +357,18 @@ The StockNews repo also pushes its own event-driven embeds (routine summaries, s
 - [heartbeat.py](heartbeat.py) — Weekly digest + watcher-health check (stdlib only)
 - [discovery.py](discovery.py) — Weekly ticker-discovery digest from Capitol Trades + 8-K firehoses (stdlib only)
 - [crowding.py](crowding.py) — Weekly 13F cross-fund crowding digest; reuses sec_enrich's 13F parser (stdlib only)
+- [cluster_buys.py](cluster_buys.py) — Daily insider cluster-buy detector (open-market code-P purchases); reuses sec_enrich.enrich_form4 (stdlib only)
+- [regime.py](regime.py) — Weekly market regime gauge from Stooq (S&P/VIX) + optional FRED macro (stdlib only)
+- [confluence.py](confluence.py) — Weekly cross-feed confluence over congress + insider + 8-K + 13F (stdlib only)
 - [stocknews_digest.py](stocknews_digest.py) — Weekly cross-portfolio research digest fetched from the StockNews sister repo (stdlib only)
 - [watchlist.json](watchlist.json) — CIK list + form-type filter + congress_members + stocknews_tickers exclusion list
 - [state.json](state.json) — SEC seen-accession state + rolling alert history (auto-managed)
 - [congress_state.json](congress_state.json) — Congress seen-trade-ID state + rolling alert history (auto-managed)
+- [cluster_state.json](cluster_state.json) — Insider cluster-buy alerted-accession state (auto-managed)
 - [.github/workflows/sec-watcher.yml](.github/workflows/sec-watcher.yml) — SEC cron, every 15 min
 - [.github/workflows/congress-watcher.yml](.github/workflows/congress-watcher.yml) — Congress cron, hourly
-- [.github/workflows/heartbeat.yml](.github/workflows/heartbeat.yml) — Heartbeat cron, weekly Monday (heartbeat → discovery → stocknews_digest)
+- [.github/workflows/cluster-buys.yml](.github/workflows/cluster-buys.yml) — Cluster-buy cron, weekday evenings
+- [.github/workflows/heartbeat.yml](.github/workflows/heartbeat.yml) — Heartbeat cron, weekly Monday (heartbeat → discovery → crowding → regime → confluence → stocknews_digest)
 - [.gitignore](.gitignore)
 
 ## License
