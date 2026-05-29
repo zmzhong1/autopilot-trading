@@ -6,6 +6,7 @@ A $0/month alert pipeline for the data Autopilot, Quiver Quant, and Unusual Whal
 - **Congressional trades** (STOCK Act PTRs scraped from Capitol Trades) — hourly alerts via [congress_watcher.py](congress_watcher.py), colour-coded buy/sell with structured fields.
 - **Weekly heartbeat** — every Monday morning, a digest of the past 7 days of alerts plus a watcher-health check via [heartbeat.py](heartbeat.py).
 - **Ticker discovery** — also Mondays, a digest of NEW tickers worth adding to your news/research list, surfaced from the Capitol Trades + EDGAR 8-K firehoses, via [discovery.py](discovery.py).
+- **13F crowding** — also Mondays, a digest of names multiple tracked funds hold (and newly bought) the same quarter — smart-money consensus from the 13F filings you already parse, via [crowding.py](crowding.py).
 - **StockNews state digest** — also Mondays, a cross-portfolio research view pulled from the sister [StockNews](https://github.com/zmzhong1/StockNews) repo via [stocknews_digest.py](stocknews_digest.py): action items due this week + top tickers by Section XII score.
 
 Both watchers run on GitHub Actions cron and post Discord rich embeds (no plain-text spam). Built because the upstream data is 100% public, and the paid apps just sell the automation layer.
@@ -103,7 +104,7 @@ Then add two secrets in `Repo Settings → Secrets and variables → Actions →
 Three workflows run on cron:
 - [sec-watcher.yml](.github/workflows/sec-watcher.yml) — every 15 min, weekdays 12:00–23:00 UTC (8 AM – 7 PM ET). ~30s per run.
 - [congress-watcher.yml](.github/workflows/congress-watcher.yml) — hourly at :07 past, weekdays 12:00–23:00 UTC. ~10s per run.
-- [heartbeat.yml](.github/workflows/heartbeat.yml) — Mondays at 13:00 UTC. Posts the 7-day digest + health check, runs [discovery.py](discovery.py) for ticker candidates, then runs [stocknews_digest.py](stocknews_digest.py) for the StockNews portfolio view. ~30s per run.
+- [heartbeat.yml](.github/workflows/heartbeat.yml) — Mondays at 13:00 UTC. Posts the 7-day digest + health check, runs [discovery.py](discovery.py) for ticker candidates, [crowding.py](crowding.py) for the 13F smart-money consensus view, then [stocknews_digest.py](stocknews_digest.py) for the StockNews portfolio view. ~45s per run.
 
 Total cost: ~150 min/mo, well within GitHub's free 2,000 min/mo. Edit cron schedules to taste.
 
@@ -269,6 +270,21 @@ Where structured XML is unavailable (older filings, malformed XML), the watcher 
 
 Tickers already in `watchlist.json → stocknews_tickers` are excluded — populate that list with what your news project already covers, and the digest will only surface NEW candidates. To suppress a suggestion permanently, just add its ticker.
 
+## 13F crowding digest
+
+`crowding.py` runs every Monday alongside the heartbeat and posts a 🏦 digest cross-referencing the latest 13F-HR holdings of every tracked fund (the `watchlist.json → sec_ciks` entries whose `forms` include `13F-HR`). When several smart-money managers hold the *same* security, that overlap is a consensus signal; when several *newly* bought it the same quarter, that's the strongest version.
+
+It reuses the same `sec_enrich.fetch_13f_holdings` parser the SEC watcher relies on — no new data source. Two sections:
+
+- **🤝 Most crowded** — names held by the most distinct funds, ranked by fund count then aggregate $-value, with each holder's position size (🆕 marks a newly added position).
+- **🆕 New consensus this quarter** — names ≥2 funds *newly* bought, the highest-signal subset.
+
+Flags:
+- `CROWDING_MIN_FUNDS=2` — minimum distinct funds holding a name for it to count (default 2).
+- `CROWDING_TOP_N=12` — max names shown per section (default 12).
+
+Overlap is computed by CUSIP, so different share classes (e.g. GOOGL vs GOOG) are kept distinct.
+
 Tunables (env vars):
 - `DISCOVERY_TOP_N=10` — entries per source in the digest.
 - `DISCOVERY_8K_FEED_COUNT=100` — atom feed page size.
@@ -297,6 +313,7 @@ The StockNews repo also pushes its own event-driven embeds (routine summaries, s
 - [congress_watcher.py](congress_watcher.py) — Capitol Trades scraper (stdlib only)
 - [heartbeat.py](heartbeat.py) — Weekly digest + watcher-health check (stdlib only)
 - [discovery.py](discovery.py) — Weekly ticker-discovery digest from Capitol Trades + 8-K firehoses (stdlib only)
+- [crowding.py](crowding.py) — Weekly 13F cross-fund crowding digest; reuses sec_enrich's 13F parser (stdlib only)
 - [stocknews_digest.py](stocknews_digest.py) — Weekly cross-portfolio research digest fetched from the StockNews sister repo (stdlib only)
 - [watchlist.json](watchlist.json) — CIK list + form-type filter + congress_members + stocknews_tickers exclusion list
 - [state.json](state.json) — SEC seen-accession state + rolling alert history (auto-managed)
