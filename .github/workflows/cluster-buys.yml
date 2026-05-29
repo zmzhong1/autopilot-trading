@@ -1,0 +1,42 @@
+name: Insider Cluster Buys
+
+on:
+  schedule:
+    # Once per weekday at 22:30 UTC (6:30 PM ET) — after the SEC's daily Form 4
+    # acceptance window closes, so the day's insider purchases are in.
+    - cron: '30 22 * * 1-5'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cluster-buys
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Scan for insider cluster buys
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: python3 cluster_buys.py
+
+      - name: Commit state if changed
+        run: |
+          if [ -n "$(git status --porcelain cluster_state.json 2>/dev/null)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add cluster_state.json
+            git commit -m "chore: update cluster-buy state [skip ci]"
+            git push
+          fi

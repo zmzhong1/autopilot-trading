@@ -35,6 +35,26 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: python3 discovery.py
 
+      - name: Post 13F crowding digest
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: python3 crowding.py
+
+      - name: Post market regime gauge
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          # Optional: a free FRED key adds yield-curve + credit-spread legs.
+          # Without it the gauge runs on Stooq (S&P trend + VIX) alone.
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python3 regime.py
+
+      - name: Post cross-feed confluence
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: python3 confluence.py
+
       - name: Post StockNews state digest
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
