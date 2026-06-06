@@ -28,6 +28,15 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+# Windows consoles default to a non-UTF-8 codec (e.g. GBK), so printing the
+# emoji in alert output raises UnicodeEncodeError. Force UTF-8 — a no-op on the
+# UTF-8 CI runner and when stdout isn't reconfigurable (e.g. captured).
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except (AttributeError, ValueError):
+    pass
+
 ROOT = Path(__file__).parent
 WATCHLIST_PATH = ROOT / "watchlist.json"
 STATE_PATH = ROOT / "congress_state.json"
@@ -38,6 +47,19 @@ MAX_ALERTS_PER_RUN = int(os.environ.get("MAX_ALERTS_PER_RUN", "20"))
 PAGE_SIZE = int(os.environ.get("CAPITOL_TRADES_PAGE_SIZE", "96"))
 ALERT_HISTORY_CAP = 200
 DISCORD_RATE_DELAY_SEC = 0.5
+
+# Capitol Trades intermittently rate-limits (HTTP 429) the GitHub Actions
+# runner IP. A throttle is a "try again later" signal, not a watcher bug, so we
+# retry with backoff and — if it persists — skip the run instead of failing the
+# workflow. The watcher is idempotent and Capitol Trades has a ~30-day median
+# disclosure lag, so a skipped poll costs nothing.
+FETCH_RETRIES = int(os.environ.get("CAPITOL_TRADES_RETRIES", "3"))
+BACKOFF_BASE_SEC = 5
+BACKOFF_CAP_SEC = 30
+RETRYABLE_HTTP = frozenset({429, 500, 502, 503, 504})
+# Escalate to Discord after this many consecutive failed fetches so a genuine
+# outage (e.g. a hard IP block or changed HTML) isn't silently swallowed.
+ESCALATE_AFTER_FAILURES = int(os.environ.get("CONGRESS_ESCALATE_AFTER", "12"))
 
 COLOR_BUY = 0x2ECC71
 COLOR_SELL = 0xE74C3C
@@ -50,11 +72,45 @@ BROWSER_UA = (
 )
 
 
-def fetch_trades_html(page_size):
+def _retry_after_seconds(http_error, attempt):
+    """Honor a numeric Retry-After header (capped); else exponential backoff."""
+    backoff = min(BACKOFF_BASE_SEC * (2 ** attempt), BACKOFF_CAP_SEC)
+    headers = getattr(http_error, "headers", None)
+    raw = headers.get("Retry-After") if headers else None
+    if raw:
+        try:
+            return min(int(raw), BACKOFF_CAP_SEC)
+        except ValueError:
+            pass  # HTTP-date form — fall back to backoff
+    return backoff
+
+
+def fetch_trades_html(page_size, retries=FETCH_RETRIES):
+    """Fetch the SSR trades page, retrying transient throttling/network errors.
+
+    Raises the last error if all attempts fail; non-retryable HTTP codes
+    (e.g. 403/404) raise immediately.
+    """
     url = f"https://www.capitoltrades.com/trades?pageSize={page_size}"
     req = urllib.request.Request(url, headers={"User-Agent": BROWSER_UA})
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return resp.read().decode("utf-8")
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return resp.read().decode("utf-8")
+        except urllib.error.HTTPError as e:
+            if e.code not in RETRYABLE_HTTP or attempt == retries - 1:
+                raise
+            wait = _retry_after_seconds(e, attempt)
+            print(f"[WARN] Capitol Trades HTTP {e.code}; retry "
+                  f"{attempt + 1}/{retries} in {wait}s", file=sys.stderr)
+            time.sleep(wait)
+        except (urllib.error.URLError, TimeoutError) as e:
+            if attempt == retries - 1:
+                raise
+            wait = min(BACKOFF_BASE_SEC * (2 ** attempt), BACKOFF_CAP_SEC)
+            print(f"[WARN] Capitol Trades network error ({e}); retry "
+                  f"{attempt + 1}/{retries} in {wait}s", file=sys.stderr)
+            time.sleep(wait)
 
 
 def strip_tags(s):
@@ -152,7 +208,7 @@ def load_state():
     if not STATE_PATH.exists():
         return {"seen_trade_ids": [], "first_run_done": False, "alert_history": []}
     try:
-        state = json.loads(STATE_PATH.read_text())
+        state = json.loads(STATE_PATH.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
         print("[WARN] congress_state.json malformed; starting fresh", file=sys.stderr)
         return {"seen_trade_ids": [], "first_run_done": False, "alert_history": []}
@@ -165,7 +221,7 @@ def save_state(state):
         state["seen_trade_ids"] = state["seen_trade_ids"][-5000:]
     if len(state.get("alert_history", [])) > ALERT_HISTORY_CAP:
         state["alert_history"] = state["alert_history"][-ALERT_HISTORY_CAP:]
-    STATE_PATH.write_text(json.dumps(state, indent=2, sort_keys=True))
+    STATE_PATH.write_text(json.dumps(state, indent=2, sort_keys=True), encoding="utf-8")
 
 
 def build_alert(trade):
@@ -208,7 +264,7 @@ def main():
         print(f"ERROR: watchlist.json not found at {WATCHLIST_PATH}", file=sys.stderr)
         return 1
 
-    watchlist_data = json.loads(WATCHLIST_PATH.read_text())
+    watchlist_data = json.loads(WATCHLIST_PATH.read_text(encoding="utf-8"))
     watchlist = watchlist_data.get("congress_members", [])
 
     state = load_state()
@@ -220,19 +276,38 @@ def main():
     print(f"        DRY_RUN={DRY_RUN}  Discord={'configured' if DISCORD_WEBHOOK else 'NOT SET'}")
     print(f"        first_run={is_first_run}  watchlist={watchlist or '(all politicians)'}  page_size={PAGE_SIZE}")
 
+    def soft_fail(reason):
+        """Record a transient fetch failure and exit 0 instead of crashing.
+
+        Persists a streak counter to state (runs are stateless) and pings
+        Discord every ESCALATE_AFTER_FAILURES failures so a real outage surfaces.
+        """
+        fails = state.get("consecutive_fetch_failures", 0) + 1
+        state["consecutive_fetch_failures"] = fails
+        state["last_fetch_error"] = f"{reason} @ {started}"
+        save_state(state)
+        print(f"[SOFT-FAIL] {reason}; consecutive={fails}. Skipping run.", file=sys.stderr)
+        if fails % ESCALATE_AFTER_FAILURES == 0:
+            alert(f"⚠️ Congress Watcher: {fails} consecutive failed fetches. "
+                  f"Latest: {reason}. Capitol Trades may be blocking the runner.")
+        return 0
+
     try:
         html = fetch_trades_html(PAGE_SIZE)
     except urllib.error.HTTPError as e:
-        print(f"[ERROR] Capitol Trades HTTP {e.code} {e.reason}", file=sys.stderr)
-        return 1
+        return soft_fail(f"Capitol Trades HTTP {e.code} {e.reason}")
     except Exception as e:
-        print(f"[ERROR] Capitol Trades fetch failed: {e}", file=sys.stderr)
-        return 1
+        return soft_fail(f"Capitol Trades fetch failed: {e}")
 
     trades = parse_trades(html)
     if not trades:
-        print("[WARN] No trades parsed — Capitol Trades HTML may have changed.", file=sys.stderr)
-        return 1
+        return soft_fail("No trades parsed (HTML changed or challenge page served)")
+
+    # Usable data in hand — clear any prior failure streak.
+    if state.get("consecutive_fetch_failures"):
+        print(f"[RECOVERED] fetch ok after {state['consecutive_fetch_failures']} failed run(s)")
+        state["consecutive_fetch_failures"] = 0
+        state.pop("last_fetch_error", None)
 
     print(f"[FETCH] {len(trades)} trades on page")
 
