@@ -30,6 +30,15 @@ import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 
+# Windows consoles default to a non-UTF-8 codec (e.g. GBK), so printing the
+# emoji in alert output raises UnicodeEncodeError. Force UTF-8 — a no-op on the
+# UTF-8 CI runner and when stdout isn't reconfigurable (e.g. captured).
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except (AttributeError, ValueError):
+    pass
+
 STOCKNEWS_REPO = os.environ.get("STOCKNEWS_REPO", "zmzhong1/StockNews")
 STOCKNEWS_BRANCH = os.environ.get("STOCKNEWS_BRANCH", "phase-1-scaffold")
 # Cloudflare Pages production deploy. Override if the project is renamed

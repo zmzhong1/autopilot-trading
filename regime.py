@@ -31,6 +31,15 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+# Windows consoles default to a non-UTF-8 codec (e.g. GBK), so printing the
+# emoji in alert output raises UnicodeEncodeError. Force UTF-8 — a no-op on the
+# UTF-8 CI runner and when stdout isn't reconfigurable (e.g. captured).
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except (AttributeError, ValueError):
+    pass
+
 DISCORD_WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "").strip()
 DRY_RUN = os.environ.get("DRY_RUN", "").lower() in ("1", "true", "yes")
 FRED_API_KEY = os.environ.get("FRED_API_KEY", "").strip()
