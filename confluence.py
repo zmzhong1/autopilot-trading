@@ -32,6 +32,15 @@ from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+# Windows consoles default to a non-UTF-8 codec (e.g. GBK), so printing the
+# emoji in alert output raises UnicodeEncodeError. Force UTF-8 — a no-op on the
+# UTF-8 CI runner and when stdout isn't reconfigurable (e.g. captured).
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except (AttributeError, ValueError):
+    pass
+
 ROOT = Path(__file__).parent
 WATCHLIST_PATH = ROOT / "watchlist.json"
 SEC_STATE_PATH = ROOT / "state.json"
