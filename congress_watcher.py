@@ -64,6 +64,10 @@ KADOA_URL = os.environ.get(
 KADOA_STALE_DAYS = int(os.environ.get("KADOA_STALE_DAYS", "4"))
 FMP_API_KEY = os.environ.get("FMP_API_KEY", "").strip()
 FMP_BASE = os.environ.get("FMP_BASE", "https://financialmodelingprep.com/stable")
+# FMP's free tier rejects limit > 20 (HTTP 402 Payment Required). 20 newest per
+# chamber is plenty for a fallback that only runs while kadoa is down; raise it
+# (or page) on a paid plan.
+FMP_LIMIT = int(os.environ.get("FMP_LIMIT", "20"))
 # Bump when the upstream source / id scheme changes to force a one-time reseed,
 # so a swap doesn't re-alert the entire backlog under new ids.
 SOURCE_VERSION = "kadoa-fmp-v1"
@@ -249,8 +253,8 @@ def fetch_kadoa_trades():
 def fetch_fmp_trades():
     if not FMP_API_KEY:
         raise RuntimeError("FMP_API_KEY not set — no fallback source configured")
-    house = fetch_json(f"{FMP_BASE}/house-latest?page=0&limit=100&apikey={FMP_API_KEY}")
-    senate = fetch_json(f"{FMP_BASE}/senate-latest?page=0&limit=100&apikey={FMP_API_KEY}")
+    house = fetch_json(f"{FMP_BASE}/house-latest?page=0&limit={FMP_LIMIT}&apikey={FMP_API_KEY}")
+    senate = fetch_json(f"{FMP_BASE}/senate-latest?page=0&limit={FMP_LIMIT}&apikey={FMP_API_KEY}")
     return parse_fmp(house, "house") + parse_fmp(senate, "senate")
 
 
