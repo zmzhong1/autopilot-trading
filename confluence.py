@@ -151,7 +151,9 @@ def collect_signals(sec_history, congress_history, name_to_ticker, cik_to_ticker
         ts = parse_iso(h.get("ts"))
         if cutoff and ts and ts < cutoff:
             continue
-        ticker = extract_ticker(h.get("issuer", ""))
+        # New congress entries carry an explicit ticker; older ones only have a
+        # 'Name TICKER:US' issuer string, so fall back to parsing that.
+        ticker = h.get("ticker") or extract_ticker(h.get("issuer", ""))
         add(ticker, "congress", h.get("issuer", ""))
 
     for h in sec_history or []:
