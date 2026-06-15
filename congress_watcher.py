@@ -166,7 +166,9 @@ def post_discord(content=None, embed=None):
     """Returns True on confirmed delivery, False on any failure."""
     if not DISCORD_WEBHOOK:
         return False
-    payload = {}
+    # parse:[] makes @everyone/@here/role mentions inert even if scraped trade
+    # text reaches `content` (mentions only ping from the content field).
+    payload = {"allowed_mentions": {"parse": []}}
     if content:
         payload["content"] = content[:1900]
     if embed:
@@ -224,6 +226,14 @@ def save_state(state):
     STATE_PATH.write_text(json.dumps(state, indent=2, sort_keys=True), encoding="utf-8")
 
 
+def _clip(value, limit):
+    """Clip a scraped cell to a Discord title/field limit. An over-long value
+    makes Discord reject the whole embed, which would wedge that trade forever
+    (never marked seen -> retried and rejected every run)."""
+    s = value or "—"
+    return s if len(s) <= limit else s[:limit - 1] + "…"
+
+
 def build_alert(trade):
     """Return (embed, headline) for a Capitol Trades trade row."""
     politician = trade["politician"]
@@ -243,17 +253,17 @@ def build_alert(trade):
                 f"· {trade['size_range']}")
 
     embed = {
-        "title": f"🏛️ {emoji} {politician}",
-        "description": f"**{trade['trade_type'].upper()}** {issuer}",
+        "title": _clip(f"🏛️ {emoji} {politician}", 256),
+        "description": _clip(f"**{trade['trade_type'].upper()}** {issuer}", 4096),
         "url": url,
         "color": color,
         "fields": [
-            {"name": "Size", "value": trade["size_range"] or "—", "inline": True},
-            {"name": "Owner", "value": trade["owner"] or "—", "inline": True},
-            {"name": "Price", "value": trade["price"] or "—", "inline": True},
-            {"name": "Trade date", "value": trade["tx_date"] or "—", "inline": True},
-            {"name": "Published", "value": trade["pub_time"] or "—", "inline": True},
-            {"name": "Lag", "value": trade["days_lag"] or "—", "inline": True},
+            {"name": "Size", "value": _clip(trade["size_range"], 1024), "inline": True},
+            {"name": "Owner", "value": _clip(trade["owner"], 1024), "inline": True},
+            {"name": "Price", "value": _clip(trade["price"], 1024), "inline": True},
+            {"name": "Trade date", "value": _clip(trade["tx_date"], 1024), "inline": True},
+            {"name": "Published", "value": _clip(trade["pub_time"], 1024), "inline": True},
+            {"name": "Lag", "value": _clip(trade["days_lag"], 1024), "inline": True},
         ],
     }
     return embed, headline

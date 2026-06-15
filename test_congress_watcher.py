@@ -131,5 +131,34 @@ class SoftFailTest(unittest.TestCase):
         self.assertNotIn("last_fetch_error", st)
 
 
+class BuildAlertClipTest(unittest.TestCase):
+    """A malformed scrape that stuffs a giant blob into one cell must not produce
+    an embed Discord rejects (>1024-char field / >256-char title) — that would
+    wedge the trade forever (never marked seen, re-rejected every run)."""
+
+    def _trade(self, **over):
+        t = {"trade_id": "1", "politician": "Jane Doe", "issuer": "ACME INC",
+             "trade_type": "buy", "owner": "Self", "price": "$100",
+             "size_range": "$1K–$15K", "tx_date": "2026-06-01",
+             "pub_time": "2026-06-10", "days_lag": "9"}
+        t.update(over)
+        return t
+
+    def test_oversized_cell_is_clipped_to_field_limit(self):
+        embed, _ = cw.build_alert(self._trade(size_range="X" * 5000))
+        self.assertTrue(all(len(f["value"]) <= 1024 for f in embed["fields"]))
+        self.assertLessEqual(len(embed["title"]), 256)
+
+    def test_normal_values_pass_through_unchanged(self):
+        embed, _ = cw.build_alert(self._trade())
+        size = [f for f in embed["fields"] if f["name"] == "Size"][0]
+        self.assertEqual(size["value"], "$1K–$15K")
+
+    def test_empty_cell_falls_back_to_dash(self):
+        embed, _ = cw.build_alert(self._trade(owner=""))
+        owner = [f for f in embed["fields"] if f["name"] == "Owner"][0]
+        self.assertEqual(owner["value"], "—")
+
+
 if __name__ == "__main__":
     unittest.main()
