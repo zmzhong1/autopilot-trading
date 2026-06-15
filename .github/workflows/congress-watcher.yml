@@ -28,6 +28,9 @@ jobs:
       - name: Run watcher
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          # Optional: a free FMP key enables the fallback source when the
+          # primary (kadoa) mirror is unreachable or stale. Unset = kadoa only.
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
           MAX_ALERTS_PER_RUN: '20'
         run: python3 congress_watcher.py
 

@@ -16,7 +16,7 @@ concurrency:
 jobs:
   digest:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v5
 
@@ -40,6 +40,8 @@ jobs:
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          # Optional FMP fallback for the congress half of discovery (kadoa primary).
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python3 discovery.py
 
       - name: Post 13F crowding digest

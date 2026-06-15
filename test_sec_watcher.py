@@ -185,5 +185,31 @@ class SameDayForm4BatchingTest(unittest.TestCase):
         self.assertTrue(net_field)
 
 
+class ThirteenFValueScaleTest(unittest.TestCase):
+    """13F infotable `value` units: the pre-2023 SEC schema reports $thousands,
+    the 2023+ schema reports whole dollars. The scaler must NOT inflate a modern
+    dollar-denominated filing 1000x (the old unconditional *1000 bug)."""
+
+    def test_modern_dollar_schema_not_scaled(self):
+        # A ~$5B filing already in whole dollars (2023+ schema).
+        raw = [2_000_000_000, 2_000_000_000, 1_000_000_000]
+        self.assertEqual(sec_enrich._thirteenf_value_scale(raw), 1)
+
+    def test_legacy_thousands_schema_scaled_up(self):
+        # The same ~$5B filing in the old $thousands schema.
+        raw = [2_000_000, 2_000_000, 1_000_000]
+        self.assertEqual(sec_enrich._thirteenf_value_scale(raw), 1000)
+
+    def test_empty_or_zero_filing_scale_is_one(self):
+        self.assertEqual(sec_enrich._thirteenf_value_scale([]), 1)
+        self.assertEqual(sec_enrich._thirteenf_value_scale([0, 0]), 1)
+
+    def test_hundred_million_floor_treated_as_dollars(self):
+        # At/above the $100M 13F reporting floor, values are already dollars.
+        self.assertEqual(sec_enrich._thirteenf_value_scale([100_000_000]), 1)
+        # Just below the floor in raw terms -> must be thousands.
+        self.assertEqual(sec_enrich._thirteenf_value_scale([99_000_000]), 1000)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -5,8 +5,12 @@ Stdlib-only, no network. SEC_USER_AGENT is set so the module imports past its
 startup guard.
 """
 
+import json
 import os
+import tempfile
 import unittest
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
 
 os.environ.setdefault("SEC_USER_AGENT", "test test@example.com")
 
@@ -77,6 +81,32 @@ class ComputeCrowdingTest(unittest.TestCase):
         self.assertEqual(z["fund_count"], 2, "F1's two lots count as one fund")
         f1 = [f for f in z["funds"] if f["name"] == "F1"][0]
         self.assertEqual(f1["value_usd"], 200, "lots summed within a fund")
+
+
+class CrowdedCacheTest(unittest.TestCase):
+    """crowding.py caches its crowded list so confluence.py reuses it instead of
+    re-fetching every 13F in the same heartbeat job."""
+
+    def setUp(self):
+        self._orig = crowding.CROWDED_CACHE_PATH
+        crowding.CROWDED_CACHE_PATH = Path(tempfile.mkdtemp()) / ".crowded_cache.json"
+
+    def tearDown(self):
+        crowding.CROWDED_CACHE_PATH = self._orig
+
+    def test_write_then_read_roundtrip(self):
+        crowded = [{"cusip": "X", "issuer": "X CO", "fund_count": 2}]
+        crowding.write_crowded_cache(crowded)
+        self.assertEqual(crowding.read_crowded_cache(), crowded)
+
+    def test_absent_cache_returns_none(self):
+        self.assertIsNone(crowding.read_crowded_cache())
+
+    def test_stale_cache_returns_none(self):
+        old = (datetime.now(timezone.utc) - timedelta(hours=5)).isoformat()
+        crowding.CROWDED_CACHE_PATH.write_text(
+            json.dumps({"ts": old, "crowded": [{"cusip": "X"}]}), encoding="utf-8")
+        self.assertIsNone(crowding.read_crowded_cache(max_age_sec=3600))
 
 
 if __name__ == "__main__":

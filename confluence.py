@@ -151,7 +151,9 @@ def collect_signals(sec_history, congress_history, name_to_ticker, cik_to_ticker
         ts = parse_iso(h.get("ts"))
         if cutoff and ts and ts < cutoff:
             continue
-        ticker = extract_ticker(h.get("issuer", ""))
+        # New congress entries carry an explicit ticker; older ones only have a
+        # 'Name TICKER:US' issuer string, so fall back to parsing that.
+        ticker = h.get("ticker") or extract_ticker(h.get("issuer", ""))
         add(ticker, "congress", h.get("issuer", ""))
 
     for h in sec_history or []:
@@ -207,10 +209,21 @@ def load_crowded_names(watchlist):
     except Exception as e:
         print(f"[WARN] crowding import failed: {e}", file=sys.stderr)
         return []
+    # In the weekly heartbeat job, crowding.py runs just before this and caches
+    # its computed crowded list — reuse it instead of re-fetching every 13F.
+    cached = crowding.read_crowded_cache()
+    if cached is not None:
+        print(f"[INFO] reusing crowding cache ({len(cached)} names)", file=sys.stderr)
+        return cached
     funds = []
+    deadline = time.monotonic() + crowding.LOAD_BUDGET_SEC
     for e in watchlist.get("sec_ciks", []):
         if "13F-HR" not in set(e.get("forms", [])):
             continue
+        if time.monotonic() > deadline:
+            print("[WARN] 13F load budget hit; using the funds fetched so far",
+                  file=sys.stderr)
+            break
         cik = str(e["cik"]).zfill(10)
         fund = crowding.load_fund_holdings(cik, e.get("name", cik))
         if fund:

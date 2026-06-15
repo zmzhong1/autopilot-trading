@@ -198,7 +198,7 @@ def _parse_form4_tx(tx: ET.Element, derivative: bool) -> Optional[dict]:
     ad = _find_text(tx, "transactionAmounts/transactionAcquiredDisposedCode/value")
     # If the SEC tags it as a disposition, override side toward sell.
     if ad == "D" and side not in ("exercise",):
-        side = "sell" if side != "neutral" else "sell"
+        side = "sell"
     elif ad == "A" and side == "neutral":
         side = "buy"
     post = _to_float(_find_text(tx, "postTransactionAmounts/sharesOwnedFollowingTransaction/value"))
@@ -297,6 +297,20 @@ def enrich_sc13(cik: str, accession: str, primary_doc: str,
 
 # -------------------- 13F-HR --------------------
 
+def _thirteenf_value_scale(raw_values) -> int:
+    """Scale factor to turn 13F infotable `value` fields into whole dollars.
+
+    The SEC's pre-2023 13F schema reports `value` in $thousands; the 2023+ schema
+    reports whole dollars. The old code multiplied by 1000 unconditionally, which
+    inflated every modern (dollar-denominated) filing 1000x. A 13F filer must hold
+    >= $100M in 13(f) securities, so if a filing's raw value total is below that
+    floor the values must still be in thousands (scale 1000); otherwise they are
+    already dollars (scale 1).
+    """
+    raw_total = sum(v for v in raw_values if v)
+    return 1000 if 0 < raw_total < 100_000_000 else 1
+
+
 def fetch_13f_holdings(cik: str, accession: str,
                        http_get_text: Callable, http_get_json: Callable) -> Optional[list[dict]]:
     """Returns list of {cusip, issuer, value_usd, shares} or None."""
@@ -317,21 +331,22 @@ def fetch_13f_holdings(cik: str, accession: str,
         return None
     _strip_ns(root)
 
+    # Determine the value unit (thousands vs dollars) once per filing from the
+    # aggregate magnitude, then scale every holding consistently.
+    info_tables = root.findall(".//infoTable")
+    raw_values = [_to_float(_find_text(it, "value")) or 0 for it in info_tables]
+    scale = _thirteenf_value_scale(raw_values)
+
     holdings = []
-    for it in root.findall(".//infoTable"):
+    for it, value_raw in zip(info_tables, raw_values):
         cusip = _find_text(it, "cusip") or ""
-        # Old 13F values are reported in $thousands; normalize to dollars.
-        value_raw = _to_float(_find_text(it, "value")) or 0
-        # Heuristic: schema 2022+ uses dollars; older uses thousands.
-        # Most filings use thousands. Multiply by 1000.
-        value_usd = value_raw * 1000
         shares = _to_float(_find_text(it, "shrsOrPrnAmt/sshPrnamt")) or 0
         issuer = _find_text(it, "nameOfIssuer") or ""
         if cusip:
             holdings.append({
                 "cusip": cusip,
                 "issuer": issuer,
-                "value_usd": value_usd,
+                "value_usd": value_raw * scale,
                 "shares": shares,
             })
     return holdings or None

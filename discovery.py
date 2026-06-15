@@ -51,16 +51,9 @@ DISCORD_WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "").strip()
 DRY_RUN = os.environ.get("DRY_RUN", "").lower() in ("1", "true", "yes")
 TOP_N = int(os.environ.get("DISCOVERY_TOP_N", "10"))
 EIGHTK_FEED_COUNT = int(os.environ.get("DISCOVERY_8K_FEED_COUNT", "100"))
-CAPITOL_TRADES_PAGE_SIZE = int(os.environ.get("CAPITOL_TRADES_PAGE_SIZE", "96"))
 
 COLOR_DISCOVERY = 0x9B59B6  # purple
 DISCORD_RATE_DELAY_SEC = 0.5
-
-BROWSER_UA = (
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-    "AppleWebKit/537.36 (KHTML, like Gecko) "
-    "Chrome/120.0.0.0 Safari/537.36"
-)
 
 if not USER_AGENT:
     sys.exit(
@@ -71,39 +64,23 @@ if not USER_AGENT:
 SEC_HEADERS = {"User-Agent": USER_AGENT, "Accept": "*/*"}
 
 
-# -------------------- Source 1: Capitol Trades --------------------
+# -------------------- Source 1: Congress trades (kadoa / FMP) --------------------
 
-def fetch_capitol_trades_html():
-    url = f"https://www.capitoltrades.com/trades?pageSize={CAPITOL_TRADES_PAGE_SIZE}"
-    req = urllib.request.Request(url, headers={"User-Agent": BROWSER_UA})
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return resp.read().decode("utf-8")
-
-
-# Reuse the existing scraper rather than duplicating.
+# Reuse the watcher's resilient kadoa-primary + FMP-fallback fetch + parsing.
 import congress_watcher  # noqa: E402
-
-
-_CT_TICKER_RE = re.compile(r"\b([A-Z][A-Z0-9.]{0,5}):(?:US|N|Q|UN|CA|UK)\b")
-
-
-def extract_ticker(issuer_cell: str):
-    """Capitol Trades issuer cells look like 'Apple Inc AAPL:US'. Pull the ticker."""
-    m = _CT_TICKER_RE.search(issuer_cell or "")
-    return m.group(1) if m else None
 
 
 def discover_from_congress(stocknews_set):
     """Return list of dicts: {ticker, issuer, politician_count, trade_count, sample_politicians}."""
     try:
-        html = fetch_capitol_trades_html()
+        trades, source = congress_watcher.fetch_congress_trades()
     except Exception as e:
-        print(f"[ERROR] Capitol Trades fetch failed: {e}", file=sys.stderr)
+        print(f"[ERROR] Congress trade fetch failed: {e}", file=sys.stderr)
         return []
-    trades = congress_watcher.parse_trades(html)
     if not trades:
-        print("[WARN] Capitol Trades returned no trades.", file=sys.stderr)
+        print("[WARN] No congress trades returned.", file=sys.stderr)
         return []
+    print(f"[INFO] congress discovery via {source}: {len(trades)} trades", file=sys.stderr)
 
     by_ticker = defaultdict(lambda: {
         "issuer": None,
@@ -113,7 +90,7 @@ def discover_from_congress(stocknews_set):
         "sell_count": 0,
     })
     for t in trades:
-        ticker = extract_ticker(t.get("issuer", ""))
+        ticker = t.get("ticker")
         if not ticker or ticker.upper() in stocknews_set:
             continue
         rec = by_ticker[ticker]
