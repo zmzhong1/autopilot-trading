@@ -53,6 +53,14 @@ MIN_FUNDS = int(os.environ.get("CROWDING_MIN_FUNDS", "2"))
 TOP_N = int(os.environ.get("CROWDING_TOP_N", "12"))
 SEC_RATE_DELAY_SEC = 0.15
 DISCORD_RATE_DELAY_SEC = 0.5
+# Wall-clock budget for the 13F fetch loop, so a slow SEC day can't run the
+# weekly heartbeat job into its timeout and silently kill the steps that follow.
+LOAD_BUDGET_SEC = int(os.environ.get("CROWDING_LOAD_BUDGET_SEC", "120"))
+# Cache the computed crowded list so confluence.py (a separate process in the
+# same heartbeat job, run right after this one) can reuse it instead of
+# re-fetching every tracked fund's 13F.
+CROWDED_CACHE_PATH = ROOT / ".crowded_cache.json"
+CROWDED_CACHE_MAX_AGE_SEC = int(os.environ.get("CROWDED_CACHE_MAX_AGE_SEC", "10800"))
 
 COLOR_CROWDING = 0x3498DB  # blue, matching the 13F embed family
 
@@ -269,6 +277,30 @@ def build_embed(crowded, fund_count, missing):
     }
 
 
+def write_crowded_cache(crowded):
+    """Persist the computed crowded list so confluence.py — a separate process
+    in the same heartbeat job — can reuse it instead of re-fetching every 13F."""
+    try:
+        CROWDED_CACHE_PATH.write_text(json.dumps(
+            {"ts": datetime.now(timezone.utc).isoformat(), "crowded": crowded}),
+            encoding="utf-8")
+    except OSError as e:
+        print(f"[WARN] could not write crowded cache: {e}", file=sys.stderr)
+
+
+def read_crowded_cache(max_age_sec=CROWDED_CACHE_MAX_AGE_SEC):
+    """Return the cached crowded list if present and fresh, else None."""
+    try:
+        data = json.loads(CROWDED_CACHE_PATH.read_text(encoding="utf-8"))
+        age = (datetime.now(timezone.utc)
+               - datetime.fromisoformat(data["ts"])).total_seconds()
+        if 0 <= age <= max_age_sec:
+            return data.get("crowded", [])
+    except (OSError, ValueError, KeyError, json.JSONDecodeError):
+        pass
+    return None
+
+
 def main():
     if not WATCHLIST_PATH.exists():
         print(f"ERROR: watchlist.json not found at {WATCHLIST_PATH}", file=sys.stderr)
@@ -284,7 +316,12 @@ def main():
     print(f"        DRY_RUN={DRY_RUN}  Discord={'configured' if DISCORD_WEBHOOK else 'NOT SET'}")
 
     funds, missing = [], []
+    deadline = time.monotonic() + LOAD_BUDGET_SEC
     for e in entries:
+        if time.monotonic() > deadline:
+            print(f"[WARN] fetch budget ({LOAD_BUDGET_SEC}s) hit; computing "
+                  f"crowding on the {len(funds)} funds fetched so far", file=sys.stderr)
+            break
         cik = str(e["cik"]).zfill(10)
         name = e.get("name", cik)
         fund = load_fund_holdings(cik, name)
@@ -301,6 +338,7 @@ def main():
         return 0
 
     crowded = compute_crowding(funds)
+    write_crowded_cache(crowded)  # let confluence.py reuse this fetch
     print(f"[CROWDING] {len(crowded)} names held by ≥{MIN_FUNDS} funds")
     if not crowded:
         print("[INFO] No crowded names this run; skipping Discord post.")

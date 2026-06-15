@@ -209,10 +209,21 @@ def load_crowded_names(watchlist):
     except Exception as e:
         print(f"[WARN] crowding import failed: {e}", file=sys.stderr)
         return []
+    # In the weekly heartbeat job, crowding.py runs just before this and caches
+    # its computed crowded list — reuse it instead of re-fetching every 13F.
+    cached = crowding.read_crowded_cache()
+    if cached is not None:
+        print(f"[INFO] reusing crowding cache ({len(cached)} names)", file=sys.stderr)
+        return cached
     funds = []
+    deadline = time.monotonic() + crowding.LOAD_BUDGET_SEC
     for e in watchlist.get("sec_ciks", []):
         if "13F-HR" not in set(e.get("forms", [])):
             continue
+        if time.monotonic() > deadline:
+            print("[WARN] 13F load budget hit; using the funds fetched so far",
+                  file=sys.stderr)
+            break
         cik = str(e["cik"]).zfill(10)
         fund = crowding.load_fund_holdings(cik, e.get("name", cik))
         if fund:
