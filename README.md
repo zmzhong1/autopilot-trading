@@ -3,9 +3,9 @@
 A $0/month alert pipeline for the data Autopilot, Quiver Quant, and Unusual Whales charge for:
 
 - **SEC insider / institutional filings** (Form 4, 13D, 13G, 13F, 8-K) — sub-15-minute alerts via [sec_watcher.py](sec_watcher.py), enriched with parsed transaction details (insider name, buy/sell, shares, $-value, 8-K item codes, 13D stake size, 13F quarter-over-quarter diff).
-- **Congressional trades** (STOCK Act PTRs scraped from Capitol Trades) — hourly alerts via [congress_watcher.py](congress_watcher.py), colour-coded buy/sell with structured fields.
+- **Congressional trades** (STOCK Act PTRs, House + Senate) — hourly alerts via [congress_watcher.py](congress_watcher.py), colour-coded buy/sell with structured fields. Sourced from a CDN-hosted mirror (kadoa) with a Financial Modeling Prep fallback — no fragile site-scraping that datacenter IP-blocks can kill.
 - **Weekly heartbeat** — every Monday morning, a digest of the past 7 days of alerts plus a watcher-health check via [heartbeat.py](heartbeat.py).
-- **Ticker discovery** — also Mondays, a digest of NEW tickers worth adding to your news/research list, surfaced from the Capitol Trades + EDGAR 8-K firehoses, via [discovery.py](discovery.py).
+- **Ticker discovery** — also Mondays, a digest of NEW tickers worth adding to your news/research list, surfaced from the congressional-trades + EDGAR 8-K firehoses, via [discovery.py](discovery.py).
 - **13F crowding** — also Mondays, a digest of names multiple tracked funds hold (and newly bought) the same quarter — smart-money consensus from the 13F filings you already parse, via [crowding.py](crowding.py).
 - **Insider cluster buys** — every weekday evening, an alert when multiple insiders make open-market *purchases* of the same company in a rolling window — the high-signal opposite of routine sales, via [cluster_buys.py](cluster_buys.py).
 - **Market regime gauge** — also Mondays, a "risk weather" snapshot (S&P trend, VIX, yield curve, credit spreads) that describes conditions — *not* a crash predictor — via [regime.py](regime.py).
@@ -33,7 +33,7 @@ By default, [watchlist.json](watchlist.json) tracks:
 
 All CIKs verified against SEC EDGAR.
 
-**Capitol Trades (`congress_watcher.py`)**
+**Congress trades (`congress_watcher.py`)**
 
 Default `congress_members` watchlist matches by name substring (case-insensitive):
 - Pelosi
@@ -89,7 +89,8 @@ Flags (apply to both watchers):
 - `DRY_RUN=1` — log alerts to stdout instead of Discord (useful when editing watchlist)
 - `MAX_ALERTS_PER_RUN=20` — cap per-run Discord posts (default 20). A batched same-day Form 4 card counts as one post.
 - `FORM4_BATCH_MIN=2` — SEC watcher only; batch same-day Form 4 filings from one issuer into a single card once this many pile up (default 2). Lone Form 4s keep their richer per-insider card. Set very high to disable batching.
-- `CAPITOL_TRADES_PAGE_SIZE=96` — Congress watcher only; max trades fetched per run
+- `FMP_API_KEY` — Congress watcher only; a free [Financial Modeling Prep](https://site.financialmodelingprep.com/) key enabling the fallback source when the kadoa mirror is down/stale. Unset = kadoa only.
+- `KADOA_STALE_DAYS=4` — Congress watcher only; if the mirror's newest filing is older than this many days, fall back to FMP.
 
 ### 3. Push to GitHub for free 24/7 monitoring
 
@@ -140,9 +141,9 @@ Adding a new CIK after first run is safe — the script silently seeds new CIKs 
 "congress_members": ["Pelosi", "Crenshaw", "Tuberville", "Greene"]
 ```
 
-Each entry is a case-insensitive substring matched against Capitol Trades' politician string (which has format "Name Party Chamber State", e.g. "Nancy Pelosi Democrat House CA"). Use last names for unambiguous folks, full names if needed.
+Each entry is a case-insensitive substring matched against the filer's name (e.g. "Nancy Pelosi"). Use last names for unambiguous folks, full names if needed.
 
-**Empty list `[]` = match ALL politicians** (firehose mode — ~96 trades per run).
+**Empty list `[]` = match ALL politicians** (firehose mode — the full recent-disclosure window, House + Senate).
 
 ### Re-seeding
 
@@ -182,27 +183,25 @@ curl -s -H "User-Agent: $SEC_USER_AGENT" \
 
 ## How the Congress watcher works
 
-Capitol Trades' BFF API blocks the `/trades` endpoint, but the SSR HTML at `https://www.capitoltrades.com/trades?pageSize=96` exposes the latest 96 trades server-rendered. The script:
+Disclosures come from two CDN/API sources, so no single blocked site can take the watcher dark (Capitol Trades and Senate eFD both IP-block datacenter runners — this watcher previously went silent for ~10 days when Capitol Trades started 429ing CI). The script:
 
-1. Fetches that HTML with a browser User-Agent (no Playwright at runtime — stdlib `urllib`).
-2. Splits by `<tr data-state="false">` boundaries and extracts each row's politician ID, issuer ID, trade ID, and 9 displayed cells.
-3. Filters by configured `congress_members` substrings.
-4. Compares trade IDs against `congress_state.json` to find new ones.
-5. Posts each new trade to Discord with type emoji, size range, owner, dates, and a link to the trade detail page.
+1. **Primary — kadoa**: pulls a static JSON mirror of recent House + Senate PTRs from GitHub's CDN (`raw.githubusercontent.com`), which can't IP-block CI. Executive-branch / OGE rows (no chamber) are filtered out.
+2. **Fallback — Financial Modeling Prep**: if kadoa is unreachable or its newest filing is older than `KADOA_STALE_DAYS` (default 4), it calls FMP's `house-latest` / `senate-latest` endpoints. Needs a free `FMP_API_KEY` secret; without one the watcher runs on kadoa alone.
+3. Normalizes both sources into one trade shape and filters by the configured `congress_members` substrings.
+4. Dedupes against `congress_state.json` using a **stable, source-agnostic synthetic id** (name + ticker + date + type + amount), so a disclosure posts once regardless of which source served it.
+5. Posts each new trade to Discord with type emoji, size range, owner, dates, and a link to the filing.
 
-Trade IDs are stable and sequential, so `sorted(trade_id)` ≈ chronological — alerts go oldest-first so newest is most-recent in Discord.
-
-If Capitol Trades changes their HTML structure, the parser will return zero trades and the script logs `[WARN] No trades parsed`. Re-run discovery with `playwright-cli goto https://www.capitoltrades.com/trades` to update the row boundary regex.
+A `SOURCE_VERSION` constant guards the id scheme — bumping it triggers a one-time silent reseed, so a source/format change never re-alerts the whole backlog. Transient fetch errors retry with backoff, then soft-fail (exit 0) so a throttle never fails the workflow; after `CONGRESS_ESCALATE_AFTER` consecutive failures it pings Discord so a real outage surfaces.
 
 ## What this does NOT cover
 
-### Real-time congressional alerts (faster than Capitol Trades)
-This script polls Capitol Trades hourly. If you want **minute-latency** Congress alerts (5-10 min faster than Capitol Trades reflects them), you still need:
+### Real-time congressional alerts (minute-latency)
+This script polls hourly off a daily-refreshed mirror. If you want **minute-latency** Congress alerts, you still need:
 
 - **[Unusual Whales free Discord](https://discord.com/invite/unusualwhales)** — auto-posts within minutes of EDGAR/PTR acceptance.
 - Twitter follows: [@PelosiTracker_](https://twitter.com/PelosiTracker_), [@unusualwhales](https://twitter.com/unusualwhales), [@capitol2iq](https://twitter.com/capitol2iq).
 
-Capitol Trades has its own ingestion lag of ~15-60 min from when a PTR hits house.gov/senate.gov. Plus the underlying STOCK Act 30-day median filing lag. Best case end-to-end: ~30 days from trade to alert.
+The upstream mirror has its own ingestion lag (hours) from when a PTR hits house.gov/senate.gov, plus the underlying STOCK Act 30-day median filing lag. Best case end-to-end: ~30 days from trade to alert — a research feed, not a front-running tool.
 
 ### Real-time options flow / dark pool / unusual activity
 Out of scope. This watches official SEC disclosures only. For options flow, that's what Unusual Whales / Cheddar Flow paid tiers actually sell — there's no free equivalent because the data feeds are licensed by exchanges.
@@ -238,9 +237,9 @@ State.json caps per-CIK history at 2,000 accessions (well above EDGAR's ~1,000-e
 
 **"I want a different CIK"** — Add it to [watchlist.json](watchlist.json). The SEC watcher silent-seeds new CIKs automatically on the next run.
 
-**"Congress watcher returns 0 trades / `No trades parsed`"** — Capitol Trades changed their HTML. Re-run discovery: `playwright-cli goto https://www.capitoltrades.com/trades`, then `playwright-cli --raw eval "JSON.stringify([...document.querySelectorAll('table tbody tr')].slice(0,1).map(r => ({cells: [...r.querySelectorAll('td')].map(td => td.innerText.trim())})))"` and update the regex in `parse_trades()`.
+**"Congress watcher: `No congress trades returned` / soft-failing"** — the kadoa mirror is unreachable or stale and there's no FMP fallback configured. Check the source directly (`curl -s "$KADOA_TRADES_URL" | head -c 200`); if kadoa is down, add a free `FMP_API_KEY` secret to enable the fallback. The watcher soft-fails (exit 0) and pings Discord after `CONGRESS_ESCALATE_AFTER` consecutive failures.
 
-**"Congress watcher missing my favorite politician"** — They probably haven't traded in the last 96 trades on Capitol Trades. Increase `CAPITOL_TRADES_PAGE_SIZE` env var (max ~96 confirmed working; higher may break) or check their politician page directly.
+**"Congress watcher missing my favorite politician"** — confirm the name substring matches the filer name the mirror uses, and that they've filed a PTR recently (the mirror is a rolling ~6-month, ~5,000-record window). Empty `congress_members` = match everyone.
 
 **"StockNews digest empty / fetch failed"** — The digest reads `dashboards/watchlist_state.md` from the StockNews repo's `phase-1-scaffold` branch. If StockNews moved its default branch, set `STOCKNEWS_BRANCH=<new-branch>` in the heartbeat workflow env. If the markdown structure changed, update `parse_action_items` / `parse_ranked_table` in [stocknews_digest.py](stocknews_digest.py).
 
@@ -269,7 +268,7 @@ Where structured XML is unavailable (older filings, malformed XML), the watcher 
 
 `discovery.py` runs every Monday alongside the heartbeat and posts a 🔎 digest of tickers worth adding to your news / research list (e.g. a sister project like StockNews). Two signals:
 
-- **Capitol Trades firehose** — across ALL politicians (not just your watchlist), tickers traded by the most distinct politicians in the last ~96 trades. More distinct politicians ≈ stronger signal.
+- **Congress firehose** — across ALL politicians (not just your watchlist), tickers traded by the most distinct politicians in the recent-disclosure window (same kadoa/FMP source as the watcher). More distinct politicians ≈ stronger signal.
 - **EDGAR 8-K firehose** — across the entire market, CIKs filing the most 8-Ks in the latest atom snapshot, mapped to tickers via SEC's `company_tickers.json`. Noisy on its own — the embed includes the issuer name so you can eyeball.
 
 Tickers already in `watchlist.json → stocknews_tickers` are excluded — populate that list with what your news project already covers, and the digest will only surface NEW candidates. To suppress a suggestion permanently, just add its ticker.
@@ -315,7 +314,7 @@ Works out of the box on Stooq alone. Set `FRED_API_KEY` (free from the [FRED API
 
 `confluence.py` runs every Monday and surfaces 🎯 tickers lit up by **multiple independent feeds at once** — any one feed is noise, but overlap is worth a look. It stitches together signals the project already collects:
 
-- **🏛️ congress** — recent Capitol Trades (`congress_state.json`).
+- **🏛️ congress** — recent congressional trades (`congress_state.json`).
 - **🧑‍💼 insider** — recent Form 4 alerts (`state.json`).
 - **📋 corporate** — recent 8-K alerts (`state.json`).
 - **🏦 institutional** — crowded names from the latest 13F-HRs (reuses `crowding.py`).
@@ -353,9 +352,9 @@ The StockNews repo also pushes its own event-driven embeds (routine summaries, s
 
 - [sec_watcher.py](sec_watcher.py) — SEC EDGAR watcher (stdlib only)
 - [sec_enrich.py](sec_enrich.py) — Form 4 / 8-K / 13D-G / 13F-HR XML parsers + diff helpers (stdlib only)
-- [congress_watcher.py](congress_watcher.py) — Capitol Trades scraper (stdlib only)
+- [congress_watcher.py](congress_watcher.py) — Congress-trades watcher: kadoa primary + FMP fallback (stdlib only)
 - [heartbeat.py](heartbeat.py) — Weekly digest + watcher-health check (stdlib only)
-- [discovery.py](discovery.py) — Weekly ticker-discovery digest from Capitol Trades + 8-K firehoses (stdlib only)
+- [discovery.py](discovery.py) — Weekly ticker-discovery digest from congressional-trades + 8-K firehoses (stdlib only)
 - [crowding.py](crowding.py) — Weekly 13F cross-fund crowding digest; reuses sec_enrich's 13F parser (stdlib only)
 - [cluster_buys.py](cluster_buys.py) — Daily insider cluster-buy detector (open-market code-P purchases); reuses sec_enrich.enrich_form4 (stdlib only)
 - [regime.py](regime.py) — Weekly market regime gauge from Stooq (S&P/VIX) + optional FRED macro (stdlib only)
