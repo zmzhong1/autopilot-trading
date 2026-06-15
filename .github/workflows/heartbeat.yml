@@ -7,7 +7,7 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  contents: read
+  contents: write  # commit producer_status.json so liveness persists between runs
 
 concurrency:
   group: heartbeat
@@ -77,3 +77,20 @@ jobs:
           # isn't configured (works only if StockNews is made public).
           STOCKNEWS_GH_TOKEN: ${{ secrets.STOCKNEWS_GH_TOKEN }}
         run: python3 stocknews_digest.py
+
+      # Persist the per-producer liveness ledger the digest steps just wrote, so
+      # next week's heartbeat can flag any producer that silently stopped posting.
+      # pull --rebase guards against racing the SEC/Congress state pushes.
+      - name: Persist producer status
+        if: ${{ !cancelled() }}
+        run: |
+          if [ -n "$(git status --porcelain producer_status.json 2>/dev/null)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add producer_status.json
+            git commit -m "chore: update producer status [skip ci]"
+            for i in 1 2 3; do
+              git pull --rebase --autostash && git push && break
+              sleep $((RANDOM % 4 + 2))
+            done
+          fi

@@ -24,6 +24,8 @@ from collections import Counter
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+import producer_status
+
 # Windows consoles default to a non-UTF-8 codec (e.g. GBK), so printing the
 # emoji in alert output raises UnicodeEncodeError. Force UTF-8 — a no-op on the
 # UTF-8 CI runner and when stdout isn't reconfigurable (e.g. captured).
@@ -41,6 +43,10 @@ CONGRESS_STATE_PATH = ROOT / "congress_state.json"
 DISCORD_WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "").strip()
 DRY_RUN = os.environ.get("DRY_RUN", "").lower() in ("1", "true", "yes")
 WINDOW_DAYS = int(os.environ.get("HEARTBEAT_WINDOW_DAYS", "7"))
+# The weekly digest producers that keep no state of their own — tracked via
+# producer_status.json so a silent stop (a crash, a dead data source) surfaces
+# here instead of the watcher still looking healthy.
+DIGEST_PRODUCERS = ("discovery", "crowding", "regime", "confluence", "stocknews")
 
 COLOR_HEALTHY = 0x2ECC71
 COLOR_STALE = 0xE67E22
@@ -130,6 +136,9 @@ def main():
             f"Congress watcher last ran "
             f"{congress_last.isoformat(timespec='minutes') if congress_last else 'never'}"
         )
+    for name, note in producer_status.stale(producer_status.load(), DIGEST_PRODUCERS, now):
+        healthy = False
+        stale_notes.append(f"{name} digest — {note}")
 
     cik_count = len(watchlist.get("sec_ciks", []))
     pol_count = len(watchlist.get("congress_members", []))
