@@ -24,24 +24,33 @@ jobs:
         with:
           python-version: '3.12'
 
+      # Each digest leg below runs independently: `if: ${{ !cancelled() }}` lets a
+      # later leg post even when an earlier one fails, so one flaky data source
+      # never skips the rest of the digest. The job still reports failure if any
+      # leg exits non-zero, so real problems stay visible.
+
       - name: Post heartbeat
+        if: ${{ !cancelled() }}
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: python3 heartbeat.py
 
       - name: Post ticker discovery digest
+        if: ${{ !cancelled() }}
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: python3 discovery.py
 
       - name: Post 13F crowding digest
+        if: ${{ !cancelled() }}
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: python3 crowding.py
 
       - name: Post market regime gauge
+        if: ${{ !cancelled() }}
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           # Optional: a free FRED key adds yield-curve + credit-spread legs.
@@ -50,12 +59,14 @@ jobs:
         run: python3 regime.py
 
       - name: Post cross-feed confluence
+        if: ${{ !cancelled() }}
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: python3 confluence.py
 
       - name: Post StockNews state digest
+        if: ${{ !cancelled() }}
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           # PAT with Contents:Read on zmzhong1/StockNews — required because
