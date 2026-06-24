@@ -1,8 +1,31 @@
 {
-  "alert_history": [],
+  "alert_history": [
+    {
+      "issuer": "Uber Technologies Inc UBER",
+      "kind": "congress",
+      "politician": "Nancy Pelosi",
+      "size_range": "$500,001 - $1,000,000",
+      "ticker": "UBER",
+      "trade_id": "c7e4888895459ccd8",
+      "trade_type": "Buy",
+      "ts": "2026-06-24T17:11:19+00:00",
+      "tx_date": "2026-05-29"
+    },
+    {
+      "issuer": "Intel Corp INTC",
+      "kind": "congress",
+      "politician": "Nancy Pelosi",
+      "size_range": "$1,000,001 - $5,000,000",
+      "ticker": "INTC",
+      "trade_id": "ca1979a7a3c38e19d",
+      "trade_type": "Buy",
+      "ts": "2026-06-24T17:11:20+00:00",
+      "tx_date": "2026-05-29"
+    }
+  ],
   "consecutive_fetch_failures": 0,
   "first_run_done": true,
-  "last_run": "2026-06-24T14:49:13+00:00",
+  "last_run": "2026-06-24T17:11:17+00:00",
   "seen_trade_ids": [
     "10000064890",
     "10000064891",
@@ -91,12 +114,14 @@
     "c7047ef69ae27b09d",
     "c7246b5b6d154b86b",
     "c7446f5149ce70083",
+    "c7e4888895459ccd8",
     "c82d10331a5cf906b",
     "c8438758db28047f6",
     "c88f7046cd1848a93",
     "c9539116de20bebee",
     "c973a8baf3f0ef3c2",
     "c9feefae488ff8e14",
+    "ca1979a7a3c38e19d",
     "cb4bd24bc2fa0afdf",
     "cb826f7768eb248aa",
     "cbf5cea0ae01926d9",
