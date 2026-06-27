@@ -10,44 +10,57 @@ contradictions a rule can't see.
 Run **both**: the script on a GitHub Actions cron (always-on, free), and this
 routine on a Claude Code web schedule when you want the deeper read.
 
-## How to enable it (Claude Code on the web)
+## Heads up: the deterministic version already runs
 
-1. Open this repo (`zmzhong1/autopilot-trading`) in Claude Code on the web.
-2. Create a **scheduled session / trigger** (see
-   https://code.claude.com/docs/en/claude-code-on-the-web) on a daily weekday
-   cadence — e.g. ~07:45 ET, after `research.yml` has refreshed the cache.
-3. Set the session prompt to the **Routine prompt** below.
-4. Ensure the session env has `FINNHUB_API_KEY` (and `STOCKNEWS_GH_TOKEN` if the
-   StockNews repo is private) so the routine can read fundamentals + the thesis.
+You do **not** need this routine for the daily digest — [research.yml](../.github/workflows/research.yml)
+already runs `research.py` every weekday on GitHub Actions (with your
+`FINNHUB_API_KEY`) and posts the digest. This routine is the *optional*
+LLM-synthesis layer on top: it adds a reasoned `claude_note` per company.
 
-> Scheduling lives in the web UI — it can't be created from inside a session.
-> This file is the prompt + contract; you turn on the schedule once.
+## How to enable it (one-time, in your claude.ai account)
+
+Routine creation is account-gated — it has to be done by you, from the web UI or
+the CLI. It can't be created from inside a session.
+
+1. Go to **[claude.ai/code/routines](https://claude.ai/code/routines) → New routine**
+   (or run `/schedule weekdays at 7:45am — run routines/daily-research.md research`
+   in a local CLI session logged in with your subscription).
+2. **Prompt:** paste the **Routine prompt** block below.
+3. **Repository:** `zmzhong1/autopilot-trading`.
+4. **Environment — this is the step that makes it actually work:**
+   - Env vars: `FINNHUB_API_KEY` (and `STOCKNEWS_GH_TOKEN` if StockNews is private).
+   - **Network access → Custom**, and allow `finnhub.io`, `raw.githubusercontent.com`,
+     `api.github.com` (keep the default package list checked). The Default
+     "Trusted" network **blocks `finnhub.io`**, so without this the routine can't
+     fetch quotes — this is the usual reason it "doesn't work".
+5. **Trigger:** Schedule → **Weekdays** (minimum interval is 1 hour).
+6. **Create**, then **Run now** to test.
 
 ## Routine prompt
 
 ```
-You are the daily research analyst for the autopilot-trading system. Today, deep-research
-the rotating slice of tickers for this weekday (use research.py's daily_slice over the
-guardrails.json allow_list, or just read today's research/*.json the cron already wrote).
+You are the daily research analyst for the autopilot-trading repo. This is read-only
+research — NEVER place, review, or stage a trade.
 
-For each ticker:
-1. Read the fresh Finnhub data (fundamentals, recent news, earnings, analyst trend) and
-   the cached snapshot in research/{TICKER}.json.
-2. Read the StockNews thesis (reports/{TICKER}/tree_v1_en.md INDEX_META + Section XII).
-3. Write a 3-5 sentence "understanding" note: what the business is doing now, what changed
-   this week, and whether the fresh data SUPPORTS or CONTRADICTS the StockNews thesis.
-4. If it contradicts (analysts cooling on a buy-rated name, earnings miss under high H-0,
-   thesis past review_due, a material news event), say so explicitly and recommend a
-   StockNews refresh.
+Step 1 — run the deterministic pass:
+  python3 research.py
+It researches today's rotating slice of the allow-list (Finnhub fundamentals + news +
+earnings + analyst trend), writes research/{TICKER}.json, and posts the digest. (Requires
+FINNHUB_API_KEY and finnhub.io network access — see this file's setup section.)
 
-Then:
-- Append your per-company notes to research/{TICKER}.json under a "claude_note" field.
-- Commit the updated research/ files (message: "chore: daily research notes [skip ci]").
-- Post a concise digest to the agentic Discord channel via orchestration/notify or by
-  running: do NOT place any trades — this is research only.
+Step 2 — add judgment the script can't:
+For each research/{TICKER}.json written today, also read the StockNews thesis at
+reports/{TICKER}/tree_v1_en.md (INDEX_META + Section XII) and append a "claude_note" field:
+a 3-5 sentence read of what the business is doing now, what changed this week, and whether
+the fresh data SUPPORTS or CONTRADICTS the thesis. If it contradicts (analysts cooling on a
+buy-rated name, earnings miss under high H-0, past review_due, a material news event), say so
+explicitly and recommend a StockNews refresh. Cite the XII/H-0 numbers you react to.
 
-Be skeptical and specific. Flag divergences loudly; a quiet "all fine" is the least useful
-outcome. Keep notes English-only and cite the StockNews XII/H-0 numbers you're reacting to.
+Step 3 — commit the enriched cache:
+  git add research/ && git commit -m "chore: daily research notes [skip ci]"
+(Claude Code on the web pushes this to a claude/ branch automatically.)
+
+Be skeptical and specific. A quiet "all fine" is the least useful outcome.
 ```
 
 ## What it must NOT do
