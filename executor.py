@@ -609,10 +609,12 @@ def build_embed(results, rejected, mode, account_value, gr, notes):
 
 # -------------------- Signal gathering (reuses confluence) ------------------
 
-def gather_signals(min_feeds):
-    """Compute ranked confluence signals the same way the Monday digest does.
-    Returns [] on any failure so the executor degrades to 'nothing to do' rather
-    than crashing. Networked (SEC company_tickers + optional 13F)."""
+def gather_signals(min_feeds, universe=None):
+    """Compute ranked confluence signals the same way the Monday digest does,
+    then extend them with the Finnhub market-wide feeds over `universe` (the
+    allow-list) so non-SEC-watched industries (MU, CAT, …) can surface. Returns
+    [] on any failure so the executor degrades to 'nothing to do' rather than
+    crashing. Networked (SEC company_tickers + optional 13F + Finnhub)."""
     if not os.environ.get("SEC_USER_AGENT", "").strip():
         # confluence.py sys.exit()s at import if this is unset; bail with a clear
         # message instead of letting that abort the executor.
@@ -643,6 +645,22 @@ def gather_signals(min_feeds):
             congress_state.get("alert_history", []),
             name_to_ticker, cik_to_ticker, crowded=crowded, cutoff=cutoff,
         )
+        # Extend with Finnhub's market-wide feeds (insider buys, analyst
+        # upgrades, earnings beats) over the tradable universe. Set semantics
+        # mean a Finnhub insider hit merges into the same 'insider' feed as an
+        # SEC Form-4 hit (no double counting); 'analyst'/'earnings' are new.
+        try:
+            import finnhub_signals
+            fh = finnhub_signals.gather(universe or [], cutoff)
+            for tk, feeds in fh.items():
+                rec = signals[tk]
+                if not rec["issuer"]:
+                    rec["issuer"] = tk
+                for feed, n in feeds.items():
+                    rec["feeds"].add(feed)
+                    rec["counts"][feed] += n
+        except Exception as e:
+            print(f"[WARN] Finnhub feeds failed: {e}", file=sys.stderr)
         # Score with our own floor so the executor's min isn't capped by
         # confluence's display min.
         return confluence.score_confluence(signals, min_feeds=min(min_feeds, 2))
@@ -671,7 +689,8 @@ def main():
           f"kill={KILL})  account=${account_value:,.0f}")
     print(f"        DRY_RUN={DRY_RUN}  Discord={'configured' if DISCORD_WEBHOOK else 'NOT SET'}")
 
-    ranked = gather_signals(int(gr.get("min_signal_feeds", 3)))
+    ranked = gather_signals(int(gr.get("min_signal_feeds", 3)),
+                            universe=gr.get("allow_list", []))
     print(f"[SIGNALS] {len(ranked)} confluence candidates")
 
     approved, rejected = evaluate_proposals(ranked, gr, account_value, state, now)

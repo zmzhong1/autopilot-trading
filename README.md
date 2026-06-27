@@ -255,6 +255,16 @@ SEC_USER_AGENT='...' python3 executor.py
 
 CI runs [executor.yml](.github/workflows/executor.yml) every Monday at 14:00 UTC, **propose-only** (with `EXECUTOR_KILL=1` as a hard stop), so you get the proposal card weekly without any execution risk.
 
+### Market-wide signal feeds (Finnhub)
+
+The SEC watcher only follows insider/8-K filings for a handful of watched CIKs, so non-tech names (MU, CAT, …) could never reach the ≥3-feed bar. [finnhub_signals.py](finnhub_signals.py) closes that gap with a keyed, cloud-reliable, **market-wide** layer (free tier, `FINNHUB_API_KEY`) that scans the tradable universe (the allow-list) and adds three confluence feeds:
+
+- **insider** — open-market insider *purchases* (Form 3/4/5), market-wide. Merges with the SEC Form-4 feed (set semantics — no double count), extending it to every industry.
+- **analyst** — a net upgrade in the analyst recommendation trend month-over-month.
+- **earnings** — a recent positive earnings surprise.
+
+`analyst` and `earnings` are genuinely new, independent corroboration dimensions. Every feed degrades to "no signal" on any error (missing key, premium-gated endpoint, throttle) — it never fails a run, and SEC/congress/13F keep working without it. This is what lets MU/WMT/CAT and other industries surface, still gated by ≥3-feed confluence **and** the StockNews conviction check below.
+
 ### Research + portfolio grounding (every trade)
 
 A confluence signal alone never books a trade. Each guardrail-approved proposal is then **grounded in** ([enrichment.py](enrichment.py)):
@@ -446,6 +456,7 @@ The StockNews repo also pushes its own event-driven embeds (routine summaries, s
 - [stocknews_digest.py](stocknews_digest.py) — Weekly cross-portfolio research digest fetched from the StockNews sister repo (stdlib only)
 - [executor.py](executor.py) — Guardrailed execution layer; turns confluence signals into vetted order proposals (propose-only by default), reuses confluence.py (stdlib only)
 - [robinhood_mcp.py](robinhood_mcp.py) — Robinhood Agentic MCP adapter; documented stub at the live-execution boundary until you wire it (stdlib only)
+- [finnhub_signals.py](finnhub_signals.py) — Market-wide signal layer (Finnhub free tier): insider buys + analyst upgrades + earnings beats as confluence feeds, so non-SEC-watched industries surface (stdlib only)
 - [enrichment.py](enrichment.py) — Per-trade grounding: reads the StockNews thesis (INDEX_META) + portfolio position so each proposal is gated on and acknowledges the research (stdlib only)
 - [scorecard.py](scorecard.py) — Weekly proposal track record: marks logged proposals to market, posts hit-rate + avg return to the agentic channel (stdlib only)
 - [prices.py](prices.py) — Keyless Stooq equity-price helper shared by executor (entry price) + scorecard (mark-to-market) (stdlib only)
@@ -463,6 +474,7 @@ The StockNews repo also pushes its own event-driven embeds (routine summaries, s
 - [test_executor.py](test_executor.py) — Tests for the executor's pure sizing + guardrail logic (stdlib unittest, no network)
 - [test_scorecard.py](test_scorecard.py) — Tests for scorecard scoring + executor size-label/track-record helpers (stdlib unittest, no network)
 - [test_enrichment.py](test_enrichment.py) — Tests for StockNews/portfolio enrichment + the executor thesis/portfolio gate (stdlib unittest, no network)
+- [test_finnhub_signals.py](test_finnhub_signals.py) — Tests for Finnhub feed scoring (insider buys, net upgrade, earnings beat) (stdlib unittest, no network)
 - [.gitignore](.gitignore)
 
 ## License
