@@ -1,0 +1,58 @@
+name: Execution Proposals
+
+# Propose-only by design. This workflow runs executor.py, which vets the same
+# congress/insider/8-K/13F confluence signals against guardrails.json and posts
+# a "PROPOSED orders" card to Discord. It NEVER places a trade:
+#   - guardrails.json ships enabled=false (propose-only), and this workflow does
+#     not override it.
+#   - EXECUTOR_KILL=1 is set below as a belt-and-suspenders hard stop, so even a
+#     committed enabled=true can't make CI trade. Remove it only deliberately.
+# Going live is an interactive, reviewed step on your own machine with the
+# Robinhood MCP connected — not an unattended cron. See README.md >
+# 'Agentic execution (Robinhood MCP)'.
+
+on:
+  schedule:
+    # Mondays at 14:00 UTC (10 AM ET), after the heartbeat digest has refreshed
+    # the feeds the proposals are built from.
+    - cron: '0 14 * * 1'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write  # commit producer_status.json so liveness persists between runs
+
+concurrency:
+  group: executor
+  cancel-in-progress: false
+
+jobs:
+  propose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Run executor (propose-only)
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          EXECUTOR_KILL: '1'  # hard stop — CI can never place a real order
+        run: python3 executor.py
+
+      - name: Persist producer status
+        if: ${{ !cancelled() }}
+        run: |
+          if [ -n "$(git status --porcelain producer_status.json 2>/dev/null)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add producer_status.json
+            git commit -m "chore: update producer status [skip ci]"
+            for i in 1 2 3; do
+              git pull --rebase --autostash && git push && break
+              sleep $((RANDOM % 4 + 2))
+            done
+          fi

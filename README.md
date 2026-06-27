@@ -207,7 +207,63 @@ The upstream mirror has its own ingestion lag (hours) from when a PTR hits house
 Out of scope. This watches official SEC disclosures only. For options flow, that's what Unusual Whales / Cheddar Flow paid tiers actually sell — there's no free equivalent because the data feeds are licensed by exchanges.
 
 ### Trade execution
-This is a data-alerting watcher, not a copy-trading platform. To actually copy-trade based on alerts, manually place orders in a free broker (Fidelity, Schwab, Robinhood) when an alert fires. Or use a paid copy-trading service like [Dub](https://www.dubapp.com) ($9.99/mo unlimited) or [Autopilot](https://www.joinautopilot.com) ($100/yr per portfolio).
+This started as a data-alerting watcher, not a copy-trading platform. The optional **execution layer** below now closes that loop — behind hard risk limits, propose-only by default. You can still just place orders by hand in any broker when an alert fires, or use a paid copy-trading service like [Dub](https://www.dubapp.com) ($9.99/mo unlimited) or [Autopilot](https://www.joinautopilot.com) ($100/yr per portfolio).
+
+## Agentic execution (Robinhood MCP)
+
+> **Status: propose-only by default. Nothing trades unless you explicitly opt in. Read this whole section before flipping a switch.**
+
+Robinhood shipped an official **Agentic Trading** product (announced 2026-05-27): an [MCP](https://modelcontextprotocol.io) server your AI agent connects to, which can read your accounts and place orders inside a dedicated, **isolated "Agentic account"**. It's the sanctioned replacement for the deprecated, reverse-engineered `robin-stocks` path. Access is still rolling out — Robinhood emails you when you're in.
+
+This repo adds the layer that turns the signals it already computes (insider cluster buys + congressional trades + crowded 13Fs + cross-feed [confluence](confluence.py)) into **vetted order proposals**, with live trading off by default.
+
+### The three modes (`mode` in [guardrails.json](guardrails.json))
+
+| Mode | What happens | Real money? |
+|---|---|---|
+| `propose` *(default)* | Vets signals against the guardrails, logs + posts a "PROPOSED orders" Discord card. **Never executes.** | No |
+| `paper` | Simulates fills against a virtual cash balance to watch the loop behave. | No |
+| `live` | Places real orders via the Robinhood Agentic MCP. Requires `enabled: true` **and** a wired [robinhood_mcp.py](robinhood_mcp.py) (not shipped — see below). | Yes |
+
+Two independent stops guard execution: `enabled: false` (master switch, shipped off) collapses any mode to propose-only, and `EXECUTOR_KILL=1` (set in the CI workflow) force-disables execution even if `enabled` is true. **Live trading is impossible by config alone** — it also needs the MCP adapter wired, which this repo deliberately leaves as a stub.
+
+### Guardrails ([guardrails.json](guardrails.json))
+
+Every limit is enforced in the pure, unit-tested core ([test_executor.py](test_executor.py)):
+
+- **`allow_list`** — only these tickers can ever be traded. **Empty = nothing tradable (fail-closed).** Primary blast-radius limit; seed from what you research in StockNews.
+- **`block_list`** — hard deny, checked after the allow-list.
+- **`allowed_sides`** — `["buy"]` by default (accumulate-only; the agent can never sell your position).
+- **`min_signal_feeds`** — only act on confluence corroborated by ≥N independent feeds (default 3 = all-feed overlap).
+- **`max_notional_per_order_usd`** / **`max_pct_account_per_order`** — order size is the *smaller* of the two caps.
+- **`max_orders_per_day`** — daily order cap, counted from `executor_state.json`.
+- **`max_total_deployed_pct`** — stop opening new positions past this fraction of the account.
+- **`allow_options` / `allow_leverage`** — both forced false; the executor never constructs derivatives or margin orders.
+
+### How to run it
+
+```bash
+# Propose-only, no Discord, prints the card it would post:
+SEC_USER_AGENT='Your Name you@email.com' DRY_RUN=1 python3 executor.py
+
+# Propose-only to Discord (safe to schedule; CI does exactly this):
+SEC_USER_AGENT='Your Name you@email.com' DISCORD_WEBHOOK='https://...' python3 executor.py
+
+# Paper-trade once you trust the proposals (edit guardrails.json: enabled=true, mode=paper):
+SEC_USER_AGENT='...' python3 executor.py
+```
+
+CI runs [executor.yml](.github/workflows/executor.yml) every Monday at 14:00 UTC, **propose-only** (with `EXECUTOR_KILL=1` as a hard stop), so you get the proposal card weekly without any execution risk.
+
+### Going live (when you have access)
+
+Live order placement is intentionally **not wired** — [robinhood_mcp.py](robinhood_mcp.py) is a documented stub, and `mode: live` degrades to clearly-labelled proposals until you implement it. The recommended path isn't an unattended cron: connect the MCP to **Claude Code** and review/place orders interactively from the proposal list —
+
+```bash
+claude mcp add robinhood-trading --transport http https://agent.robinhood.com/mcp/trading
+```
+
+(Claude Desktop, ChatGPT, Cursor, and Codex connect the same endpoint a different way — see the [Agentic Trading overview](https://robinhood.com/us/en/support/articles/agentic-trading-overview/).) Headless programmatic trading would additionally require Agentic access, an OAuth token, and an MCP client — built only once you've watched the loop behave. Until then, the safe default holds: the pipeline proposes, a human disposes.
 
 ## How the SEC watcher works
 
@@ -360,6 +416,9 @@ The StockNews repo also pushes its own event-driven embeds (routine summaries, s
 - [regime.py](regime.py) — Weekly market regime gauge from Stooq (S&P/VIX) + optional FRED macro (stdlib only)
 - [confluence.py](confluence.py) — Weekly cross-feed confluence over congress + insider + 8-K + 13F (stdlib only)
 - [stocknews_digest.py](stocknews_digest.py) — Weekly cross-portfolio research digest fetched from the StockNews sister repo (stdlib only)
+- [executor.py](executor.py) — Guardrailed execution layer; turns confluence signals into vetted order proposals (propose-only by default), reuses confluence.py (stdlib only)
+- [robinhood_mcp.py](robinhood_mcp.py) — Robinhood Agentic MCP adapter; documented stub at the live-execution boundary until you wire it (stdlib only)
+- [guardrails.json](guardrails.json) — Risk limits for the executor: allow-list, per-order + daily + deployment caps, mode + kill switch
 - [watchlist.json](watchlist.json) — CIK list + form-type filter + congress_members + stocknews_tickers exclusion list
 - [state.json](state.json) — SEC seen-accession state + rolling alert history (auto-managed)
 - [congress_state.json](congress_state.json) — Congress seen-trade-ID state + rolling alert history (auto-managed)
@@ -368,6 +427,8 @@ The StockNews repo also pushes its own event-driven embeds (routine summaries, s
 - [.github/workflows/congress-watcher.yml](.github/workflows/congress-watcher.yml) — Congress cron, hourly
 - [.github/workflows/cluster-buys.yml](.github/workflows/cluster-buys.yml) — Cluster-buy cron, weekday evenings
 - [.github/workflows/heartbeat.yml](.github/workflows/heartbeat.yml) — Heartbeat cron, weekly Monday (heartbeat → discovery → crowding → regime → confluence → stocknews_digest)
+- [.github/workflows/executor.yml](.github/workflows/executor.yml) — Executor cron, weekly Monday — propose-only (EXECUTOR_KILL=1 hard stop)
+- [test_executor.py](test_executor.py) — Tests for the executor's pure sizing + guardrail logic (stdlib unittest, no network)
 - [.gitignore](.gitignore)
 
 ## License

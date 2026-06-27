@@ -22,3 +22,9 @@ Thumbs.db
 .crowded_cache.json
 
 # state.json IS tracked — committed by GitHub Actions to persist seen filings between runs.
+
+# executor_state.json is NOT tracked — it holds personal (paper/live) order
+# history. The propose-only CI run is stateless; local paper/live runs keep
+# their order log out of git on purpose.
+executor_state.json
+
