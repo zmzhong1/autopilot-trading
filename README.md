@@ -255,6 +255,14 @@ SEC_USER_AGENT='...' python3 executor.py
 
 CI runs [executor.yml](.github/workflows/executor.yml) every Monday at 14:00 UTC, **propose-only** (with `EXECUTOR_KILL=1` as a hard stop), so you get the proposal card weekly without any execution risk.
 
+### Track record + scorecard (shareable)
+
+Every proposal is appended to the committed [proposals_log.json](proposals_log.json), stamped with its **entry price** at proposal time ([prices.py](prices.py), keyless Stooq). Each Monday [scorecard.py](scorecard.py) marks every open proposal to the latest close and posts an 📈 **Agentic proposal scorecard** — per-signal return + aggregate **hit-rate** and **average return**. That's the track record that lets you (and anyone you share with) judge *how good* the signals are. It's read-only and never touches Robinhood.
+
+### Sharing it (separate channel for a shared audience)
+
+The agentic output (proposal cards + scorecard) posts to its **own** webhook, `EXECUTOR_DISCORD_WEBHOOK`, falling back to `DISCORD_WEBHOOK` only when that isn't set. Point `EXECUTOR_DISCORD_WEBHOOK` at a channel you're happy to share, and the SEC/Congress/heartbeat watcher noise stays on your private `DISCORD_WEBHOOK` — so the shared channel is **agentic trades and nothing else**. Sizing on those cards is shown as **% of account** (`share_size_display: "pct"` in guardrails.json), so a channel with other people in it never leaks your balance — switch to `"usd"` or `"none"` if you prefer.
+
 ### Going live (when you have access)
 
 Live order placement is intentionally **not wired** — [robinhood_mcp.py](robinhood_mcp.py) is a documented stub, and `mode: live` degrades to clearly-labelled proposals until you implement it. The recommended path isn't an unattended cron: connect the MCP to **Claude Code** and review/place orders interactively from the proposal list —
@@ -418,7 +426,10 @@ The StockNews repo also pushes its own event-driven embeds (routine summaries, s
 - [stocknews_digest.py](stocknews_digest.py) — Weekly cross-portfolio research digest fetched from the StockNews sister repo (stdlib only)
 - [executor.py](executor.py) — Guardrailed execution layer; turns confluence signals into vetted order proposals (propose-only by default), reuses confluence.py (stdlib only)
 - [robinhood_mcp.py](robinhood_mcp.py) — Robinhood Agentic MCP adapter; documented stub at the live-execution boundary until you wire it (stdlib only)
-- [guardrails.json](guardrails.json) — Risk limits for the executor: allow-list, per-order + daily + deployment caps, mode + kill switch
+- [scorecard.py](scorecard.py) — Weekly proposal track record: marks logged proposals to market, posts hit-rate + avg return to the agentic channel (stdlib only)
+- [prices.py](prices.py) — Keyless Stooq equity-price helper shared by executor (entry price) + scorecard (mark-to-market) (stdlib only)
+- [guardrails.json](guardrails.json) — Risk limits for the executor: allow-list, per-order + daily + deployment caps, mode + kill switch, share_size_display
+- [proposals_log.json](proposals_log.json) — Committed track record: one entry-priced row per proposal, scored weekly (auto-managed)
 - [watchlist.json](watchlist.json) — CIK list + form-type filter + congress_members + stocknews_tickers exclusion list
 - [state.json](state.json) — SEC seen-accession state + rolling alert history (auto-managed)
 - [congress_state.json](congress_state.json) — Congress seen-trade-ID state + rolling alert history (auto-managed)
@@ -427,8 +438,9 @@ The StockNews repo also pushes its own event-driven embeds (routine summaries, s
 - [.github/workflows/congress-watcher.yml](.github/workflows/congress-watcher.yml) — Congress cron, hourly
 - [.github/workflows/cluster-buys.yml](.github/workflows/cluster-buys.yml) — Cluster-buy cron, weekday evenings
 - [.github/workflows/heartbeat.yml](.github/workflows/heartbeat.yml) — Heartbeat cron, weekly Monday (heartbeat → discovery → crowding → regime → confluence → stocknews_digest)
-- [.github/workflows/executor.yml](.github/workflows/executor.yml) — Executor cron, weekly Monday — propose-only (EXECUTOR_KILL=1 hard stop)
+- [.github/workflows/executor.yml](.github/workflows/executor.yml) — Executor + scorecard cron, weekly Monday — propose-only (EXECUTOR_KILL=1 hard stop)
 - [test_executor.py](test_executor.py) — Tests for the executor's pure sizing + guardrail logic (stdlib unittest, no network)
+- [test_scorecard.py](test_scorecard.py) — Tests for scorecard scoring + executor size-label/track-record helpers (stdlib unittest, no network)
 - [.gitignore](.gitignore)
 
 ## License
