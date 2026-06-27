@@ -7,8 +7,8 @@
   "mode": "propose",
   "_mode_help": "'propose' = vet + log proposals, never execute (safe default). 'paper' = simulate fills against a virtual cash balance, no real money. 'live' = place real orders via the Robinhood Agentic MCP (requires enabled=true AND robinhood_mcp wiring — see robinhood_mcp.py; access is still rolling out).",
 
-  "account_value_usd": 1000.0,
-  "_account_value_help": "Sizing basis in propose/paper mode. In live mode this is ignored and the real Agentic-account buying power is read from the MCP.",
+  "account_value_usd": 500.0,
+  "_account_value_help": "Sizing basis in propose/paper mode; set to the actual Agentic-account funding ($500, confirmed via Robinhood MCP 2026-06-27). In live mode this is ignored and the real Agentic-account buying power is read from the MCP.",
 
   "allow_list": [
     "AAPL", "AJNMY", "AMD", "AMZN", "ANET", "ASML", "AVGO", "BABA", "BIDU",
@@ -33,7 +33,7 @@
   "_max_notional_help": "Hard ceiling on a single order's dollar size.",
 
   "max_pct_account_per_order": 0.10,
-  "_max_pct_help": "Single order may not exceed this fraction of account value. Order size = min(max_notional_per_order_usd, account_value * max_pct_account_per_order). At $1,000 basis this resolves to $100/order (10% binds before the $250 ceiling).",
+  "_max_pct_help": "Single order may not exceed this fraction of account value. Order size = min(max_notional_per_order_usd, account_value * max_pct_account_per_order). At $500 basis this resolves to $50/order (10% binds before the $250 ceiling).",
 
   "max_orders_per_day": 5,
   "_max_orders_help": "Cap on orders placed (or proposed-as-executable) per calendar day, counted from executor_state.json.",
