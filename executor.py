@@ -301,7 +301,8 @@ def gate_on_context(approved, gr, account_value, enrich_fn, today=None):
         ctx = enrich_fn(p["ticker"], account_value) or {}
         th = ctx.get("thesis", {}) or {}
         pf = ctx.get("portfolio", {}) or {}
-        p = dict(p, thesis=th, portfolio=pf)  # acknowledge on the proposal
+        rs = ctx.get("research", {}) or {}
+        p = dict(p, thesis=th, portfolio=pf, research=rs)  # acknowledge on the proposal
 
         if require and not th.get("found"):
             rejected.append(dict(p, reason="no StockNews thesis on file"))
@@ -540,6 +541,9 @@ def _ack_label(r):
         parts.append("💼 " + ("already held" if pf.get("held") else "not held"))
     else:
         parts.append("💼 portfolio not checked")
+    rs = r.get("research") or {}
+    if rs.get("flags"):
+        parts.append(f"🔬 ⚠️ {rs['flags'][0]}")
     return " · ".join(parts)
 
 

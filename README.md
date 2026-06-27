@@ -265,6 +265,16 @@ The SEC watcher only follows insider/8-K filings for a handful of watched CIKs, 
 
 `analyst` and `earnings` are genuinely new, independent corroboration dimensions. Every feed degrades to "no signal" on any error (missing key, premium-gated endpoint, throttle) — it never fails a run, and SEC/congress/13F keep working without it. This is what lets MU/WMT/CAT and other industries surface, still gated by ≥3-feed confluence **and** the StockNews conviction check below.
 
+### Daily company research (rotating, Finnhub budget-aware)
+
+To use the free Finnhub quota productively, [research.py](research.py) deep-dives a **rotating slice** of the allow-list each weekday (~`RESEARCH_PER_DAY`/day → the full list weekly) instead of shallow-polling everything daily. Per name it pulls fundamentals + recent news + earnings + analyst trend, builds an "understanding" snapshot, **cross-checks the StockNews thesis**, and:
+
+1. caches `research/{TICKER}.json` (committed) — the executor's `enrichment.research_note` reads the `flags`, so any open proposal for that name shows a `🔬 ⚠️ …` line;
+2. flags stale/contradicted theses (analyst cooling on a buy-rated name, earnings miss under high H-0, past `review_due`);
+3. posts a daily digest to the agentic channel.
+
+Runs two ways (build both): the deterministic cron ([research.yml](.github/workflows/research.yml), weekday mornings) and an LLM-synthesis **Claude cloud routine** you enable on the web — see [routines/daily-research.md](routines/daily-research.md) for the prompt + setup. Both are read-only; neither ever trades.
+
 ### Research + portfolio grounding (every trade)
 
 A confluence signal alone never books a trade. Each guardrail-approved proposal is then **grounded in** ([enrichment.py](enrichment.py)):
@@ -457,9 +467,10 @@ The StockNews repo also pushes its own event-driven embeds (routine summaries, s
 - [executor.py](executor.py) — Guardrailed execution layer; turns confluence signals into vetted order proposals (propose-only by default), reuses confluence.py (stdlib only)
 - [robinhood_mcp.py](robinhood_mcp.py) — Robinhood Agentic MCP adapter; documented stub at the live-execution boundary until you wire it (stdlib only)
 - [finnhub_signals.py](finnhub_signals.py) — Market-wide signal layer (Finnhub free tier): insider buys + analyst upgrades + earnings beats as confluence feeds, so non-SEC-watched industries surface (stdlib only)
+- [research.py](research.py) — Daily rotating company research: fundamentals + news + earnings + analyst trend, cross-checked vs the StockNews thesis; caches research/ + posts a digest (stdlib only)
+- [prices.py](prices.py) — Equity price helper: Finnhub /quote (primary) + Stooq fallback; entry price + scorecard mark-to-market (stdlib only)
 - [enrichment.py](enrichment.py) — Per-trade grounding: reads the StockNews thesis (INDEX_META) + portfolio position so each proposal is gated on and acknowledges the research (stdlib only)
 - [scorecard.py](scorecard.py) — Weekly proposal track record: marks logged proposals to market, posts hit-rate + avg return to the agentic channel (stdlib only)
-- [prices.py](prices.py) — Keyless Stooq equity-price helper shared by executor (entry price) + scorecard (mark-to-market) (stdlib only)
 - [guardrails.json](guardrails.json) — Risk limits for the executor: allow-list, per-order + daily + deployment caps, mode + kill switch, share_size_display
 - [proposals_log.json](proposals_log.json) — Committed track record: one entry-priced row per proposal, scored weekly (auto-managed)
 - [watchlist.json](watchlist.json) — CIK list + form-type filter + congress_members + stocknews_tickers exclusion list
@@ -474,7 +485,8 @@ The StockNews repo also pushes its own event-driven embeds (routine summaries, s
 - [test_executor.py](test_executor.py) — Tests for the executor's pure sizing + guardrail logic (stdlib unittest, no network)
 - [test_scorecard.py](test_scorecard.py) — Tests for scorecard scoring + executor size-label/track-record helpers (stdlib unittest, no network)
 - [test_enrichment.py](test_enrichment.py) — Tests for StockNews/portfolio enrichment + the executor thesis/portfolio gate (stdlib unittest, no network)
-- [test_finnhub_signals.py](test_finnhub_signals.py) — Tests for Finnhub feed scoring (insider buys, net upgrade, earnings beat) (stdlib unittest, no network)
+- [test_finnhub_signals.py](test_finnhub_signals.py) — Tests for Finnhub feed scoring (insider buys, net upgrade, earnings beat) + quote parsing (stdlib unittest, no network)
+- [test_research.py](test_research.py) — Tests for daily-research helpers (rotation slice, metric pick, thesis flags) (stdlib unittest, no network)
 - [.gitignore](.gitignore)
 
 ## License

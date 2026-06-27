@@ -309,9 +309,26 @@ def portfolio_context(ticker, account_value=None, _opener=None):
     }
 
 
+def research_note(ticker, root=None):
+    """Read the latest daily-research cache (research/{TICKER}.json, written by
+    research.py) for a ticker. Returns {flags, researched_at} or {} when absent.
+    Lets a trade surface the freshest understanding/flags about the name."""
+    from pathlib import Path as _Path
+    base = _Path(root) if root else _Path(__file__).parent
+    p = base / "research" / f"{ticker}.json"
+    try:
+        data = json.loads(p.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        return {}
+    snap = data.get("snapshot", {}) if isinstance(data, dict) else {}
+    return {"flags": data.get("flags", []),
+            "researched_at": snap.get("researched_at")}
+
+
 def enrich(ticker, account_value=None):
-    """Combined per-trade context: {thesis, portfolio}."""
+    """Combined per-trade context: {thesis, portfolio, research}."""
     return {
         "thesis": stocknews_thesis(ticker),
         "portfolio": portfolio_context(ticker, account_value=account_value),
+        "research": research_note(ticker),
     }
