@@ -52,5 +52,17 @@
   "_derivatives_help": "Both stay false. The executor never constructs options or margin orders; these flags exist so a future change can't silently enable them.",
 
   "share_size_display": "pct",
-  "_share_size_display_help": "How order size is shown on cards/scorecards posted to the (shared) agentic Discord: 'pct' = percentage of account (hides your balance), 'usd' = dollar amounts, 'none' = tickers only. Set to 'pct' so a channel with other people in it never leaks the account size."
+  "_share_size_display_help": "How order size is shown on cards/scorecards posted to the (shared) agentic Discord: 'pct' = percentage of account (hides your balance), 'usd' = dollar amounts, 'none' = tickers only. Set to 'pct' so a channel with other people in it never leaks the account size.",
+
+  "require_stocknews_thesis": true,
+  "_require_stocknews_thesis_help": "Every trade must be backed by a StockNews research tree (reports/{TICKER}/tree_v1_en.md). true = skip any ticker with no thesis on file. The thesis is read and acknowledged on the proposal card + track record (see enrichment.py).",
+
+  "max_fatal_flags": 0,
+  "_max_fatal_flags_help": "Skip a buy when the StockNews durability test fired more than this many fatal flags (Q3 capital allocation, Q4 disruption survival, balance-sheet survivability). 0 = any fatal flag blocks the trade.",
+
+  "min_xii_score": 45,
+  "_min_xii_score_help": "Skip a buy when the StockNews Section XII weighted score is below this %. Bands: >=85 strong, >=65 moderate-buy, >=45 wait, <45 avoid. 45 = never buy a name the research rates 'avoid'.",
+
+  "max_existing_position_pct": 25.0,
+  "_max_existing_position_help": "Skip adding to a name already worth more than this % of the account, per the Stock-Portfolio app (read when STOCK_PORTFOLIO_URL + STOCK_PORTFOLIO_TOKEN are set; otherwise the portfolio check is skipped and noted, not failed)."
 }

@@ -80,6 +80,12 @@ DEFAULT_GUARDRAILS = {
     "allow_options": False,
     "allow_leverage": False,
     "share_size_display": "pct",  # pct | usd | none — for the shared channel
+    # Research/portfolio grounding — every trade must agree with the StockNews
+    # thesis and respect the existing book (see enrichment.py).
+    "require_stocknews_thesis": True,
+    "max_fatal_flags": 0,
+    "min_xii_score": 45,
+    "max_existing_position_pct": 25.0,
 }
 
 
@@ -267,6 +273,53 @@ def evaluate_proposals(ranked, gr, account_value, state, now):
     return approved, rejected
 
 
+def gate_on_context(approved, gr, account_value, enrich_fn):
+    """Ground each guardrail-approved proposal in the StockNews thesis and the
+    existing portfolio (enrich_fn(ticker, account_value) -> {thesis, portfolio}).
+
+    Returns (kept, rejected). Every kept proposal carries the context under
+    'thesis'/'portfolio' so it is *acknowledged* on the card and in the track
+    record. A proposal is dropped when the research contradicts the buy (no
+    thesis / fatal flag / XII below the floor) or it would over-concentrate an
+    existing holding. Pure given enrich_fn (injected in tests)."""
+    require = gr.get("require_stocknews_thesis", True)
+    max_fatal = int(gr.get("max_fatal_flags", 0))
+    min_xii = int(gr.get("min_xii_score", 45))
+    max_pos = float(gr.get("max_existing_position_pct", 100))
+
+    kept, rejected = [], []
+    for p in approved:
+        ctx = enrich_fn(p["ticker"], account_value) or {}
+        th = ctx.get("thesis", {}) or {}
+        pf = ctx.get("portfolio", {}) or {}
+        p = dict(p, thesis=th, portfolio=pf)  # acknowledge on the proposal
+
+        if require and not th.get("found"):
+            rejected.append(dict(p, reason="no StockNews thesis on file"))
+            continue
+        if th.get("found") and th.get("fatal_flags", 0) > max_fatal:
+            rejected.append(dict(p, reason=(
+                f"StockNews fatal flag ({th['fatal_flags']} > {max_fatal})")))
+            continue
+        xii = th.get("xii_score")
+        if th.get("found") and xii is not None and xii < min_xii:
+            rejected.append(dict(p, reason=(
+                f"StockNews XII {xii}% < {min_xii}% (verdict {th.get('verdict')})")))
+            continue
+        if pf.get("checked") and pf.get("held") and account_value:
+            val = pf.get("value_usd")
+            try:
+                pos_pct = float(val) / account_value * 100 if val else 0.0
+            except (TypeError, ValueError):
+                pos_pct = 0.0
+            if pos_pct > max_pos:
+                rejected.append(dict(p, reason=(
+                    f"already {pos_pct:.0f}% of acct (> {max_pos:.0f}% cap)")))
+                continue
+        kept.append(p)
+    return kept, rejected
+
+
 def decide_mode(gr):
     """Resolve the effective execution mode after the kill switch + enabled flag.
     Returns one of 'propose', 'paper', 'live'. Anything not explicitly enabled
@@ -365,6 +418,8 @@ def record_proposals_log(results, account_value, now, path=PROPOSALS_LOG_PATH,
     for r in results:
         if r.get("status") not in TRACKED_STATUSES:
             continue
+        th = r.get("thesis") or {}
+        pf = r.get("portfolio") or {}
         rows.append({
             "date": date,
             "ts": r.get("ts"),
@@ -376,6 +431,12 @@ def record_proposals_log(results, account_value, now, path=PROPOSALS_LOG_PATH,
             "feeds": r.get("feeds", []),
             "feed_count": r.get("feed_count"),
             "status": r["status"],
+            # Acknowledge the grounding in the committed record too.
+            "stocknews": {"xii_score": th.get("xii_score"),
+                          "verdict": th.get("verdict"),
+                          "fatal_flags": th.get("fatal_flags"),
+                          "found": th.get("found", False)},
+            "portfolio": {"held": pf.get("held"), "checked": pf.get("checked")},
         })
     log["proposals"] = rows[-1000:]
     log["last_run"] = now.isoformat(timespec="seconds")
@@ -428,6 +489,28 @@ def _size_label(notional, account_value, gr):
     return f"{pct:.1f}% acct"
 
 
+def _ack_label(r):
+    """One-line acknowledgment of the StockNews thesis + portfolio context that
+    cleared this trade — rendered under each order so the grounding is visible."""
+    th = r.get("thesis") or {}
+    pf = r.get("portfolio") or {}
+    parts = []
+    if th.get("found"):
+        seg = f"📚 StockNews XII {th.get('xii_score')}% {th.get('verdict')}"
+        if th.get("fatal_flags"):
+            seg += f", {th['fatal_flags']}⚑"
+        if th.get("h0"):
+            seg += f", H-0 {th['h0']}"
+        parts.append(seg)
+    elif th:
+        parts.append("📚 no StockNews thesis")
+    if pf.get("checked"):
+        parts.append("💼 " + ("already held" if pf.get("held") else "not held"))
+    else:
+        parts.append("💼 portfolio not checked")
+    return " · ".join(parts)
+
+
 def build_embed(results, rejected, mode, account_value, gr, notes):
     executed = mode in ("paper", "live") and any(
         r["status"] in ("paper_filled", "live_filled") for r in results)
@@ -451,6 +534,9 @@ def build_embed(results, rejected, mode, account_value, gr, notes):
         lines.append(f"**{verb}** {r['side'].upper()} `{r['ticker']}` "
                      f"{size}({r['order_type']}) "
                      f"· {r.get('feed_count', 0)} feeds [{feeds}]")
+        ack = _ack_label(r)
+        if ack:
+            lines.append(f"   ↳ {ack}")
     if not lines:
         lines.append("_No proposals cleared the guardrails this run._")
 
@@ -558,6 +644,14 @@ def main():
 
     approved, rejected = evaluate_proposals(ranked, gr, account_value, state, now)
     print(f"[GUARDRAILS] {len(approved)} approved, {len(rejected)} rejected")
+
+    # Ground each surviving proposal in the StockNews thesis + existing book.
+    import enrichment
+    approved, ctx_rejected = gate_on_context(approved, gr, account_value,
+                                             enrichment.enrich)
+    rejected = rejected + ctx_rejected
+    print(f"[CONTEXT] {len(approved)} pass thesis/portfolio, "
+          f"{len(ctx_rejected)} dropped")
 
     results, notes = execute(approved, mode, now)
     for r in results:

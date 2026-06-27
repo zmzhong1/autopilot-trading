@@ -255,6 +255,25 @@ SEC_USER_AGENT='...' python3 executor.py
 
 CI runs [executor.yml](.github/workflows/executor.yml) every Monday at 14:00 UTC, **propose-only** (with `EXECUTOR_KILL=1` as a hard stop), so you get the proposal card weekly without any execution risk.
 
+### Research + portfolio grounding (every trade)
+
+A confluence signal alone never books a trade. Each guardrail-approved proposal is then **grounded in** ([enrichment.py](enrichment.py)):
+
+- **StockNews thesis** — the `INDEX_META` in `reports/{TICKER}/tree_v1_en.md` (read from a local checkout or the private repo via `STOCKNEWS_GH_TOKEN`). The trade is **skipped** if there's no thesis on file, if the durability test fired a fatal flag (`max_fatal_flags`), or if the Section XII score is below `min_xii_score` (the "avoid" band). So the agent can never buy a name the research rates avoid.
+- **Portfolio position** — the current holding from the Stock-Portfolio app (`GET /api/portfolio`, when `STOCK_PORTFOLIO_URL` + `STOCK_PORTFOLIO_TOKEN` are set). The trade is skipped if it would push an existing holding past `max_existing_position_pct`. Without creds the check is **noted, not failed**.
+
+Both are **acknowledged on the proposal** — each order on the card carries a `↳ 📚 StockNews XII 90% strong-buy · 💼 not held` line, and the same context is written into the committed track record. Example decision trace:
+
+```
+### MSFT — signal: 2 feeds [corporate, insider]
+  [2] guardrails : ✅ in allow-list, $50, within caps
+  [3] StockNews  : XII 90% -> strong-buy | fatal_flags 0 | H-0 63%
+  [4] portfolio  : not checked (no creds) — noted, not failed
+  [5] DECISION   : ✅ PROPOSE BUY MSFT 10% acct (market)
+### SIVE — XII 22% / 3 fatal flags
+  [5] DECISION   : ❌ SKIP — StockNews fatal flag (3 > 0)
+```
+
 ### Track record + scorecard (shareable)
 
 Every proposal is appended to the committed [proposals_log.json](proposals_log.json), stamped with its **entry price** at proposal time ([prices.py](prices.py), keyless Stooq). Each Monday [scorecard.py](scorecard.py) marks every open proposal to the latest close and posts an 📈 **Agentic proposal scorecard** — per-signal return + aggregate **hit-rate** and **average return**. That's the track record that lets you (and anyone you share with) judge *how good* the signals are. It's read-only and never touches Robinhood.
@@ -426,6 +445,7 @@ The StockNews repo also pushes its own event-driven embeds (routine summaries, s
 - [stocknews_digest.py](stocknews_digest.py) — Weekly cross-portfolio research digest fetched from the StockNews sister repo (stdlib only)
 - [executor.py](executor.py) — Guardrailed execution layer; turns confluence signals into vetted order proposals (propose-only by default), reuses confluence.py (stdlib only)
 - [robinhood_mcp.py](robinhood_mcp.py) — Robinhood Agentic MCP adapter; documented stub at the live-execution boundary until you wire it (stdlib only)
+- [enrichment.py](enrichment.py) — Per-trade grounding: reads the StockNews thesis (INDEX_META) + portfolio position so each proposal is gated on and acknowledges the research (stdlib only)
 - [scorecard.py](scorecard.py) — Weekly proposal track record: marks logged proposals to market, posts hit-rate + avg return to the agentic channel (stdlib only)
 - [prices.py](prices.py) — Keyless Stooq equity-price helper shared by executor (entry price) + scorecard (mark-to-market) (stdlib only)
 - [guardrails.json](guardrails.json) — Risk limits for the executor: allow-list, per-order + daily + deployment caps, mode + kill switch, share_size_display
@@ -441,6 +461,7 @@ The StockNews repo also pushes its own event-driven embeds (routine summaries, s
 - [.github/workflows/executor.yml](.github/workflows/executor.yml) — Executor + scorecard cron, weekly Monday — propose-only (EXECUTOR_KILL=1 hard stop)
 - [test_executor.py](test_executor.py) — Tests for the executor's pure sizing + guardrail logic (stdlib unittest, no network)
 - [test_scorecard.py](test_scorecard.py) — Tests for scorecard scoring + executor size-label/track-record helpers (stdlib unittest, no network)
+- [test_enrichment.py](test_enrichment.py) — Tests for StockNews/portfolio enrichment + the executor thesis/portfolio gate (stdlib unittest, no network)
 - [.gitignore](.gitignore)
 
 ## License
