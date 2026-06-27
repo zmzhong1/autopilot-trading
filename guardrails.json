@@ -49,5 +49,8 @@
 
   "allow_options": false,
   "allow_leverage": false,
-  "_derivatives_help": "Both stay false. The executor never constructs options or margin orders; these flags exist so a future change can't silently enable them."
+  "_derivatives_help": "Both stay false. The executor never constructs options or margin orders; these flags exist so a future change can't silently enable them.",
+
+  "share_size_display": "pct",
+  "_share_size_display_help": "How order size is shown on cards/scorecards posted to the (shared) agentic Discord: 'pct' = percentage of account (hides your balance), 'usd' = dollar amounts, 'none' = tickers only. Set to 'pct' so a channel with other people in it never leaks the account size."
 }

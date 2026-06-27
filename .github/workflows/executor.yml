@@ -39,18 +39,28 @@ jobs:
       - name: Run executor (propose-only)
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          # Agentic output goes to its own (shared) channel; falls back to
+          # DISCORD_WEBHOOK if EXECUTOR_DISCORD_WEBHOOK isn't configured.
+          EXECUTOR_DISCORD_WEBHOOK: ${{ secrets.EXECUTOR_DISCORD_WEBHOOK }}
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           EXECUTOR_KILL: '1'  # hard stop — CI can never place a real order
         run: python3 executor.py
 
-      - name: Persist producer status
+      - name: Post proposal scorecard
+        if: ${{ !cancelled() }}
+        env:
+          EXECUTOR_DISCORD_WEBHOOK: ${{ secrets.EXECUTOR_DISCORD_WEBHOOK }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: python3 scorecard.py
+
+      - name: Persist producer status + proposal track record
         if: ${{ !cancelled() }}
         run: |
-          if [ -n "$(git status --porcelain producer_status.json 2>/dev/null)" ]; then
+          if [ -n "$(git status --porcelain producer_status.json proposals_log.json 2>/dev/null)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add producer_status.json
-            git commit -m "chore: update producer status [skip ci]"
+            git add producer_status.json proposals_log.json
+            git commit -m "chore: update producer status + proposals log [skip ci]"
             for i in 1 2 3; do
               git pull --rebase --autostash && git push && break
               sleep $((RANDOM % 4 + 2))

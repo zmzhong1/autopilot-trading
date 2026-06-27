@@ -45,8 +45,14 @@ except (AttributeError, ValueError):
 ROOT = Path(__file__).parent
 GUARDRAILS_PATH = ROOT / "guardrails.json"
 STATE_PATH = ROOT / "executor_state.json"
+PROPOSALS_LOG_PATH = ROOT / "proposals_log.json"  # committed track record
 
-DISCORD_WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "").strip()
+# Agentic output (proposals + scorecard) posts to its OWN webhook so a shared
+# Discord channel carries only agentic-trade content — not the SEC/Congress/
+# heartbeat watcher noise, which stays on DISCORD_WEBHOOK. Falls back to
+# DISCORD_WEBHOOK when the dedicated one isn't set (single-channel setups).
+DISCORD_WEBHOOK = (os.environ.get("EXECUTOR_DISCORD_WEBHOOK", "").strip()
+                   or os.environ.get("DISCORD_WEBHOOK", "").strip())
 DRY_RUN = os.environ.get("DRY_RUN", "").lower() in ("1", "true", "yes")
 KILL = os.environ.get("EXECUTOR_KILL", "").lower() in ("1", "true", "yes")
 DISCORD_RATE_DELAY_SEC = 0.5
@@ -73,6 +79,7 @@ DEFAULT_GUARDRAILS = {
     "limit_offset_pct": 0.0,
     "allow_options": False,
     "allow_leverage": False,
+    "share_size_display": "pct",  # pct | usd | none — for the shared channel
 }
 
 
@@ -337,6 +344,47 @@ def record_state(state, results, path=STATE_PATH):
         print(f"[WARN] could not write {path.name}: {e}", file=sys.stderr)
 
 
+# Statuses that represent a position the system took (or would have): these go
+# into the committed track record so the weekly scorecard can score them.
+TRACKED_STATUSES = ("proposed", "proposed_live_unwired", "paper_filled",
+                    "live_filled")
+
+
+def record_proposals_log(results, account_value, now, path=PROPOSALS_LOG_PATH,
+                         price_fn=None):
+    """Append one shareable track-record row per tracked order, stamped with the
+    entry price at proposal time. Unlike executor_state.json this file IS
+    committed, so the weekly scorecard can mark each row to market later.
+    Best-effort; never raises. `price_fn` is injectable for tests."""
+    if price_fn is None:
+        import prices
+        price_fn = prices.latest_close
+    log = load_json(path, {"proposals": []})
+    rows = log.get("proposals", [])
+    date = now.date().isoformat()
+    for r in results:
+        if r.get("status") not in TRACKED_STATUSES:
+            continue
+        rows.append({
+            "date": date,
+            "ts": r.get("ts"),
+            "ticker": r["ticker"],
+            "side": r["side"],
+            "size_pct": (round(r["notional_usd"] / account_value * 100, 3)
+                         if account_value else None),
+            "entry_price": price_fn(r["ticker"]),
+            "feeds": r.get("feeds", []),
+            "feed_count": r.get("feed_count"),
+            "status": r["status"],
+        })
+    log["proposals"] = rows[-1000:]
+    log["last_run"] = now.isoformat(timespec="seconds")
+    try:
+        path.write_text(json.dumps(log, indent=2), encoding="utf-8")
+    except OSError as e:
+        print(f"[WARN] could not write {path.name}: {e}", file=sys.stderr)
+
+
 # -------------------- Discord --------------------
 
 def post_discord(embed):
@@ -368,6 +416,18 @@ _STATUS_VERB = {
 }
 
 
+def _size_label(notional, account_value, gr):
+    """Render order size per share_size_display. 'pct' keeps a shared channel
+    from leaking the account balance; 'usd' shows dollars; 'none' hides size."""
+    mode = gr.get("share_size_display", "pct")
+    if mode == "none":
+        return ""
+    if mode == "usd":
+        return f"${notional:,.2f}"
+    pct = (notional / account_value * 100) if account_value else 0.0
+    return f"{pct:.1f}% acct"
+
+
 def build_embed(results, rejected, mode, account_value, gr, notes):
     executed = mode in ("paper", "live") and any(
         r["status"] in ("paper_filled", "live_filled") for r in results)
@@ -386,8 +446,10 @@ def build_embed(results, rejected, mode, account_value, gr, notes):
     for r in results:
         verb = _STATUS_VERB.get(r["status"], r["status"])
         feeds = "+".join(r.get("feeds", []))
+        size = _size_label(r["notional_usd"], account_value, gr)
+        size = f"{size} " if size else ""
         lines.append(f"**{verb}** {r['side'].upper()} `{r['ticker']}` "
-                     f"${r['notional_usd']:,.2f} ({r['order_type']}) "
+                     f"{size}({r['order_type']}) "
                      f"· {r.get('feed_count', 0)} feeds [{feeds}]")
     if not lines:
         lines.append("_No proposals cleared the guardrails this run._")
@@ -511,6 +573,9 @@ def main():
     # fills) or recorded proposals worth keeping for the daily-cap count.
     if results:
         record_state(state, results)
+        # Stamp the shareable, committed track record with entry prices so the
+        # weekly scorecard can mark these to market.
+        record_proposals_log(results, account_value, now)
 
     ok = post_discord(embed) if DISCORD_WEBHOOK else True
     print(f"[DONE] mode={mode} posted={ok}")
