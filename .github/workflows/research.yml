@@ -1,0 +1,54 @@
+name: Daily Company Research
+
+# Rotating daily deep-dive: research.py studies a slice of the allow-list each
+# weekday (full list weekly), caches per-company understanding to research/,
+# flags stale/contradicted theses, and posts a digest to the agentic channel.
+# Read-only research — never trades. Spreads the free Finnhub budget across days.
+
+on:
+  schedule:
+    # Weekdays at 11:32 UTC (~7:32 AM ET), before the open.
+    - cron: '32 11 * * 1-5'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write  # commit research/ cache + producer_status.json
+
+concurrency:
+  group: research
+  cancel-in-progress: false
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Run daily research
+        env:
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          EXECUTOR_DISCORD_WEBHOOK: ${{ secrets.EXECUTOR_DISCORD_WEBHOOK }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          # StockNews thesis cross-check (private repo -> needs Contents:Read PAT).
+          STOCKNEWS_GH_TOKEN: ${{ secrets.STOCKNEWS_GH_TOKEN }}
+          STOCKNEWS_BRANCH: ${{ vars.STOCKNEWS_BRANCH || 'phase-1-scaffold' }}
+        run: python3 research.py
+
+      - name: Persist research cache + producer status
+        if: ${{ !cancelled() }}
+        run: |
+          if [ -n "$(git status --porcelain research producer_status.json 2>/dev/null)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add research producer_status.json
+            git commit -m "chore: daily research cache [skip ci]"
+            for i in 1 2 3; do
+              git pull --rebase --autostash && git push && break
+              sleep $((RANDOM % 4 + 2))
+            done
+          fi
