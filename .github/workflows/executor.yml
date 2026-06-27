@@ -51,6 +51,9 @@ jobs:
           # unset = the portfolio check is skipped and noted, never fails a run.
           STOCK_PORTFOLIO_URL: ${{ secrets.STOCK_PORTFOLIO_URL }}
           STOCK_PORTFOLIO_TOKEN: ${{ secrets.STOCK_PORTFOLIO_TOKEN }}
+          # Finnhub market-wide feeds (insider buys / analyst upgrades / earnings
+          # beats). Unset = those feeds are skipped; SEC/congress/13F still run.
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
         run: python3 executor.py
 
       - name: Post proposal scorecard
