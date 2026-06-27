@@ -61,6 +61,8 @@ jobs:
         env:
           EXECUTOR_DISCORD_WEBHOOK: ${{ secrets.EXECUTOR_DISCORD_WEBHOOK }}
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          # Mark-to-market price source (Finnhub /quote, Stooq fallback).
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
         run: python3 scorecard.py
 
       - name: Persist producer status + proposal track record

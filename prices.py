@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""Tiny keyless equity-price helper (Stooq daily close).
+"""Equity-price helper: Finnhub /quote (keyed, reliable on cloud IPs) with a
+keyless Stooq fallback.
 
 Shared by executor.py (capture an entry price when a proposal fires) and
-scorecard.py (mark open proposals to market). Stooq is the same keyless source
-regime.py already uses for the S&P/VIX legs — no new dependency, no API key.
+scorecard.py (mark open proposals to market). Stooq alone returns nothing on
+GitHub's datacenter IPs (the entry_price=null gap), so we prefer Finnhub's
+/quote when FINNHUB_API_KEY is set and fall back to Stooq otherwise.
 
-US equities use the `{ticker}.us` Stooq symbol. Returns None on any failure so
-callers degrade (skip the entry price / skip that row) rather than crash.
+Returns None on any failure so callers degrade (skip the entry price / skip that
+row) rather than crash.
 
 Stdlib-only.
 """
@@ -24,8 +26,36 @@ def stooq_symbol(ticker):
     return f"{ticker.strip().lower().replace('.', '-')}.us"
 
 
-def latest_close(ticker):
-    """Most recent daily close for a US equity ticker as a float, or None."""
+# -------------------- Finnhub /quote (primary) --------------------
+
+def parse_finnhub_quote(data):
+    """Extract the last price from a Finnhub /quote payload. Pure. Finnhub
+    returns {"c": current, "pc": prev close, ...} and uses c==0 to mean
+    'unknown symbol', which we treat as no data (-> None so we fall back)."""
+    if not isinstance(data, dict):
+        return None
+    try:
+        c = float(data.get("c"))
+    except (TypeError, ValueError):
+        return None
+    return c if c > 0 else None
+
+
+def _finnhub_close(ticker):
+    try:
+        import finnhub_signals
+    except Exception:
+        return None
+    if not finnhub_signals.enabled():
+        return None
+    data = finnhub_signals._get("/quote", {"symbol": ticker})
+    return parse_finnhub_quote(data)
+
+
+# -------------------- Stooq daily close (fallback) --------------------
+
+def _stooq_close(ticker):
+    """Most recent daily close for a US equity ticker via Stooq, or None."""
     symbol = stooq_symbol(ticker)
     url = f"https://stooq.com/q/d/l/?s={symbol}&i=d"
     req = urllib.request.Request(url, headers={"User-Agent": BROWSER_UA})
@@ -33,7 +63,7 @@ def latest_close(ticker):
         with urllib.request.urlopen(req, timeout=30) as resp:
             text = resp.read().decode("utf-8", errors="replace")
     except Exception as e:
-        print(f"[WARN] price fetch failed for {ticker}: {e}", file=sys.stderr)
+        print(f"[WARN] Stooq price fetch failed for {ticker}: {e}", file=sys.stderr)
         return None
     lines = text.strip().splitlines()
     if len(lines) < 2 or not lines[0].lower().startswith("date"):
@@ -48,6 +78,12 @@ def latest_close(ticker):
         except ValueError:
             continue
     return None
+
+
+def latest_close(ticker):
+    """Last price for a US equity ticker: Finnhub /quote first (cloud-reliable),
+    then Stooq. None if both fail."""
+    return _finnhub_close(ticker) or _stooq_close(ticker)
 
 
 def latest_closes(tickers):
