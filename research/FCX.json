@@ -1,0 +1,26 @@
+{
+  "snapshot": {
+    "ticker": "FCX",
+    "researched_at": "2026-06-27T17:59:04+00:00",
+    "name": "Freeport-McMoRan Inc",
+    "industry": "Metals & Mining",
+    "market_cap": 89775.60932205335,
+    "metrics": {
+      "P/E": 33.06,
+      "net margin %": 10.41,
+      "rev growth %": -24.23,
+      "ROE %": 14.52,
+      "current ratio": 2.39
+    },
+    "news": [
+      "The Real Engine Driving Southern Copper Stock Isn't Copper",
+      "Can Freeport-McMoRan's Expansion Pipeline Fuel the Next Growth Wave?",
+      "Why Mario Gabelli Is Smiling \u2014 His ETF Delivers 7.5% in Monthly Dividends in 2 Must-Own Sectors"
+    ],
+    "analyst_upgrade": true,
+    "earnings_beat": false
+  },
+  "flags": [
+    "no StockNews thesis on file"
+  ]
+}

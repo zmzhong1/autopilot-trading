@@ -1,0 +1,25 @@
+{
+  "snapshot": {
+    "ticker": "F",
+    "researched_at": "2026-06-27T17:59:02+00:00",
+    "name": "Ford Motor Co",
+    "industry": "Automobiles",
+    "market_cap": 56303.7058051042,
+    "metrics": {
+      "net margin %": -3.22,
+      "rev growth %": 3.82,
+      "ROE %": -14.72,
+      "current ratio": 1.09
+    },
+    "news": [
+      "Ford (F) Stock After 37% Year Return Is There Still Upside Potential",
+      "Does Ford\u2019s LFP EV Push and Quality Win Reshape the Bull Case For Ford Motor (F)?",
+      "GM raises stakes in battle for America's most profitable trucks"
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": false
+  },
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
+}

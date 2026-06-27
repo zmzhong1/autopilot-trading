@@ -1,0 +1,26 @@
+{
+  "snapshot": {
+    "ticker": "GS",
+    "researched_at": "2026-06-27T17:59:08+00:00",
+    "name": "Goldman Sachs Group Inc",
+    "industry": "Financial Services",
+    "market_cap": 300792.50154226535,
+    "metrics": {
+      "P/E": 16.65,
+      "net margin %": 14.13,
+      "rev growth %": 1.28,
+      "ROE %": 14.56,
+      "current ratio": 0.3
+    },
+    "news": [
+      "Best CD rates today, Saturday, June 27, 2026: Best account provides 4.10% APY",
+      "Berkshire CEO Greg Abel sworn in as U.S. citizen at baseball game",
+      "City of London Braces for Burnham Government\u2019s Chancellor Pick"
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": false
+  },
+  "flags": [
+    "no StockNews thesis on file"
+  ]
+}

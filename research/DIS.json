@@ -1,0 +1,24 @@
+{
+  "snapshot": {
+    "ticker": "DIS",
+    "researched_at": "2026-06-27T17:59:00+00:00",
+    "name": "Walt Disney Co",
+    "industry": "Media",
+    "market_cap": 171549.96185687548,
+    "metrics": {
+      "P/E": 15.35,
+      "net margin %": 11.54,
+      "rev growth %": 3.43,
+      "ROE %": 10.29,
+      "current ratio": 0.68
+    },
+    "news": [
+      "\u2018Heated Rivalry\u2019 fuels a boom in gay romance stories, with women leading the fandom",
+      "The summer box office has had a surprisingly strong start",
+      "Disney settles YouTube TV and DirecTV lawsuit for $50 million: Here's who gets paid"
+    ],
+    "analyst_upgrade": true,
+    "earnings_beat": false
+  },
+  "flags": []
+}

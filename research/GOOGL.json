@@ -1,0 +1,27 @@
+{
+  "snapshot": {
+    "ticker": "GOOGL",
+    "researched_at": "2026-06-27T17:59:06+00:00",
+    "name": "Alphabet Inc",
+    "industry": "Media",
+    "market_cap": 4107574.7983999997,
+    "metrics": {
+      "P/E": 25.64,
+      "net margin %": 37.92,
+      "rev growth %": 17.45,
+      "ROE %": 38.98,
+      "current ratio": 1.92
+    },
+    "news": [
+      "Alphabet Is Joining the Dow Jones Industrial Average. 3 Surprising Reasons Why SpaceX Could Be Next.",
+      "Stock Market Week Ahead: Rotating, For Now, Away From The AI Boom",
+      "Microsoft vs. Alphabet: What Their Revenue Trends Tell Investors"
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": false
+  },
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis",
+    "recent earnings did not beat, despite high H-0"
+  ]
+}
