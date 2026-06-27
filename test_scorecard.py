@@ -135,5 +135,46 @@ class RecordProposalsLogTest(unittest.TestCase):
         self.assertEqual(len(log["proposals"]), 2)
 
 
+class PriceSanityTest(unittest.TestCase):
+    def test_accepts_in_band(self):
+        # MU $1132 vs anchor $919 -> ~1.23x, well within 5x.
+        self.assertTrue(executor.price_is_sane(1132.33, 919.53, 5.0))
+
+    def test_rejects_order_of_magnitude_error(self):
+        self.assertFalse(executor.price_is_sane(9190.0, 919.53, 5.0))  # ~10x high
+        self.assertFalse(executor.price_is_sane(90.0, 919.53, 5.0))     # ~10x low
+
+    def test_no_anchor_accepts(self):
+        self.assertTrue(executor.price_is_sane(1234.0, None, 5.0))
+        self.assertTrue(executor.price_is_sane(1234.0, 0, 5.0))
+
+    def test_none_or_nonpositive_not_sane(self):
+        self.assertFalse(executor.price_is_sane(None, 100.0, 5.0))
+        self.assertFalse(executor.price_is_sane(0, 100.0, 5.0))
+        self.assertFalse(executor.price_is_sane("oops", 100.0, 5.0))
+
+    def test_record_drops_insane_entry_to_null(self):
+        results = [{"ticker": "MU", "side": "buy", "notional_usd": 50.0,
+                    "status": "proposed", "ts": "t", "feeds": [], "feed_count": 3,
+                    "thesis": {"anchor_price": 919.53}}]
+        p = Path(tempfile.mkdtemp()) / "proposals_log.json"
+        now = datetime(2026, 6, 27, tzinfo=timezone.utc)
+        executor.record_proposals_log(results, 500.0, now, path=p,
+                                      price_fn=lambda t: 9190.0, max_anchor_ratio=5.0)
+        row = json.loads(p.read_text())["proposals"][0]
+        self.assertIsNone(row["entry_price"])
+
+    def test_record_keeps_sane_entry(self):
+        results = [{"ticker": "MU", "side": "buy", "notional_usd": 50.0,
+                    "status": "proposed", "ts": "t", "feeds": [], "feed_count": 3,
+                    "thesis": {"anchor_price": 919.53}}]
+        p = Path(tempfile.mkdtemp()) / "proposals_log.json"
+        now = datetime(2026, 6, 27, tzinfo=timezone.utc)
+        executor.record_proposals_log(results, 500.0, now, path=p,
+                                      price_fn=lambda t: 1132.33, max_anchor_ratio=5.0)
+        row = json.loads(p.read_text())["proposals"][0]
+        self.assertEqual(row["entry_price"], 1132.33)
+
+
 if __name__ == "__main__":
     unittest.main()

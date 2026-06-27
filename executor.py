@@ -87,6 +87,7 @@ DEFAULT_GUARDRAILS = {
     "min_xii_score": 45,
     "max_existing_position_pct": 25.0,
     "min_conviction": "medium",  # research-based purchase conviction floor
+    "entry_price_anchor_max_ratio": 5.0,  # drop quotes >5x off the StockNews anchor
 }
 
 
@@ -424,12 +425,33 @@ TRACKED_STATUSES = ("proposed", "proposed_live_unwired", "paper_filled",
                     "live_filled")
 
 
+def price_is_sane(price, anchor, max_ratio):
+    """Reject a quote that's off by more than max_ratio× the StockNews anchor — a
+    cheap guard against a fat-fingered / wrong-symbol print polluting the track
+    record. Pure. With no price -> not sane; with no usable anchor -> accept
+    (can't check). A legit move (even +50%) passes; a 10× error is caught."""
+    if price is None:
+        return False
+    try:
+        price = float(price)
+    except (TypeError, ValueError):
+        return False
+    if price <= 0:
+        return False
+    if not anchor or anchor <= 0:
+        return True  # no anchor to compare against; accept the quote
+    ratio = max(price / anchor, anchor / price)
+    return ratio <= max_ratio
+
+
 def record_proposals_log(results, account_value, now, path=PROPOSALS_LOG_PATH,
-                         price_fn=None):
+                         price_fn=None, max_anchor_ratio=5.0):
     """Append one shareable track-record row per tracked order, stamped with the
     entry price at proposal time. Unlike executor_state.json this file IS
     committed, so the weekly scorecard can mark each row to market later.
-    Best-effort; never raises. `price_fn` is injectable for tests."""
+    An entry price wildly off the StockNews anchor (>max_anchor_ratio×) is
+    dropped to null rather than recorded. Best-effort; never raises. `price_fn`
+    is injectable for tests."""
     if price_fn is None:
         import prices
         price_fn = prices.latest_close
@@ -441,6 +463,12 @@ def record_proposals_log(results, account_value, now, path=PROPOSALS_LOG_PATH,
             continue
         th = r.get("thesis") or {}
         pf = r.get("portfolio") or {}
+        entry = price_fn(r["ticker"])
+        if not price_is_sane(entry, th.get("anchor_price"), max_anchor_ratio):
+            if entry is not None:
+                print(f"[WARN] {r['ticker']} quote {entry} implausible vs anchor "
+                      f"{th.get('anchor_price')}; dropping entry price", file=sys.stderr)
+            entry = None
         rows.append({
             "date": date,
             "ts": r.get("ts"),
@@ -448,7 +476,7 @@ def record_proposals_log(results, account_value, now, path=PROPOSALS_LOG_PATH,
             "side": r["side"],
             "size_pct": (round(r["notional_usd"] / account_value * 100, 3)
                          if account_value else None),
-            "entry_price": price_fn(r["ticker"]),
+            "entry_price": entry,
             "feeds": r.get("feeds", []),
             "feed_count": r.get("feed_count"),
             "status": r["status"],
@@ -521,7 +549,8 @@ def _ack_label(r):
     a = r.get("assessment") or {}
     parts = []
     if th.get("found"):
-        seg = f"📚 XII {th.get('xii_score')}%"
+        xii = th.get("xii_score")
+        seg = f"📚 XII {xii}%" if xii is not None else "📚 thesis"
         if a.get("conviction"):
             seg += f" · conviction {a['conviction'].upper()}"
         if th.get("h0") is not None:
@@ -724,7 +753,9 @@ def main():
         record_state(state, results)
         # Stamp the shareable, committed track record with entry prices so the
         # weekly scorecard can mark these to market.
-        record_proposals_log(results, account_value, now)
+        record_proposals_log(results, account_value, now,
+                             max_anchor_ratio=float(
+                                 gr.get("entry_price_anchor_max_ratio", 5.0)))
 
     ok = post_discord(embed) if DISCORD_WEBHOOK else True
     print(f"[DONE] mode={mode} posted={ok}")

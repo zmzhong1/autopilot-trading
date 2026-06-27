@@ -158,7 +158,8 @@ def research_company(ticker, since_date, today_date):
     news = fh._get("/company-news",
                    {"symbol": ticker, "from": since_date, "to": today_date})
     if isinstance(news, list):
-        snap["news"] = [n.get("headline") for n in news[:3] if n.get("headline")]
+        snap["news"] = [n.get("headline") for n in news[:3]
+                        if isinstance(n, dict) and n.get("headline")]
 
     snap["analyst_upgrade"] = fh.analyst_upgrade(ticker)
     snap["earnings_beat"] = fh.earnings_beat(ticker, since_date)
@@ -231,8 +232,8 @@ def build_embed(results, today_slice):
 def main():
     import enrichment
     gr = load_json(GUARDRAILS_PATH, {})
-    universe = [t for t in gr.get("allow_list", []) if not t.startswith("_")] \
-        if isinstance(gr.get("allow_list"), list) else []
+    al = gr.get("allow_list", [])
+    universe = [t for t in al if isinstance(t, str) and t] if isinstance(al, list) else []
     now = datetime.now(timezone.utc)
     today = now.date()
     ordinal = today.toordinal()
