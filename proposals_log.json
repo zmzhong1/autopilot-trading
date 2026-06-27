@@ -1,3 +1,80 @@
 {
-  "proposals": []
+  "proposals": [
+    {
+      "date": "2026-06-27",
+      "ts": "2026-06-27T08:04:46+00:00",
+      "ticker": "MSFT",
+      "side": "buy",
+      "size_pct": 10.0,
+      "entry_price": null,
+      "feeds": [
+        "corporate",
+        "insider",
+        "institutional"
+      ],
+      "feed_count": 3,
+      "status": "proposed",
+      "stocknews": {
+        "xii_score": 90,
+        "verdict": "strong-buy",
+        "fatal_flags": 0,
+        "found": true
+      },
+      "portfolio": {
+        "held": null,
+        "checked": false
+      }
+    },
+    {
+      "date": "2026-06-27",
+      "ts": "2026-06-27T08:04:46+00:00",
+      "ticker": "NVDA",
+      "side": "buy",
+      "size_pct": 10.0,
+      "entry_price": null,
+      "feeds": [
+        "corporate",
+        "insider",
+        "institutional"
+      ],
+      "feed_count": 3,
+      "status": "proposed",
+      "stocknews": {
+        "xii_score": 86,
+        "verdict": "strong-buy",
+        "fatal_flags": 0,
+        "found": true
+      },
+      "portfolio": {
+        "held": null,
+        "checked": false
+      }
+    },
+    {
+      "date": "2026-06-27",
+      "ts": "2026-06-27T08:04:46+00:00",
+      "ticker": "AMZN",
+      "side": "buy",
+      "size_pct": 10.0,
+      "entry_price": null,
+      "feeds": [
+        "corporate",
+        "insider",
+        "institutional"
+      ],
+      "feed_count": 3,
+      "status": "proposed",
+      "stocknews": {
+        "xii_score": 78,
+        "verdict": "moderate-buy",
+        "fatal_flags": 0,
+        "found": true
+      },
+      "portfolio": {
+        "held": null,
+        "checked": false
+      }
+    }
+  ],
+  "last_run": "2026-06-27T08:04:46+00:00"
 }
