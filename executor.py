@@ -86,6 +86,7 @@ DEFAULT_GUARDRAILS = {
     "max_fatal_flags": 0,
     "min_xii_score": 45,
     "max_existing_position_pct": 25.0,
+    "min_conviction": "medium",  # research-based purchase conviction floor
 }
 
 
@@ -273,19 +274,27 @@ def evaluate_proposals(ranked, gr, account_value, state, now):
     return approved, rejected
 
 
-def gate_on_context(approved, gr, account_value, enrich_fn):
-    """Ground each guardrail-approved proposal in the StockNews thesis and the
+_CONVICTION_RANK = {"none": 0, "avoid": 0, "low": 1, "medium": 2, "high": 3}
+
+
+def gate_on_context(approved, gr, account_value, enrich_fn, today=None):
+    """Ground each guardrail-approved proposal in the StockNews research and the
     existing portfolio (enrich_fn(ticker, account_value) -> {thesis, portfolio}).
 
-    Returns (kept, rejected). Every kept proposal carries the context under
-    'thesis'/'portfolio' so it is *acknowledged* on the card and in the track
-    record. A proposal is dropped when the research contradicts the buy (no
-    thesis / fatal flag / XII below the floor) or it would over-concentrate an
-    existing holding. Pure given enrich_fn (injected in tests)."""
+    Returns (kept, rejected). Every kept proposal carries the thesis, portfolio,
+    and a research-based purchase `assessment` (conviction from XII + H-0 +
+    durability + asymmetry + freshness) so it is *acknowledged* on the card and
+    in the track record. A proposal is dropped when the research contradicts the
+    buy (no thesis / fatal flag / XII below the floor / conviction below
+    min_conviction) or it would over-concentrate an existing holding. Pure given
+    enrich_fn (injected in tests)."""
+    import enrichment
     require = gr.get("require_stocknews_thesis", True)
     max_fatal = int(gr.get("max_fatal_flags", 0))
     min_xii = int(gr.get("min_xii_score", 45))
     max_pos = float(gr.get("max_existing_position_pct", 100))
+    min_conv = gr.get("min_conviction", "medium")
+    min_conv_rank = _CONVICTION_RANK.get(min_conv, 2)
 
     kept, rejected = [], []
     for p in approved:
@@ -306,6 +315,17 @@ def gate_on_context(approved, gr, account_value, enrich_fn):
             rejected.append(dict(p, reason=(
                 f"StockNews XII {xii}% < {min_xii}% (verdict {th.get('verdict')})")))
             continue
+
+        # Research-based conviction: quality + confidence + durability +
+        # asymmetry + freshness, not just the headline XII number.
+        assessment = enrichment.assess_purchase(th, today=today)
+        p = dict(p, assessment=assessment)
+        if _CONVICTION_RANK.get(assessment["conviction"], 0) < min_conv_rank:
+            reasons = "; ".join(assessment.get("reasons", [])[:3])
+            rejected.append(dict(p, reason=(
+                f"conviction {assessment['conviction']} < {min_conv} ({reasons})")))
+            continue
+
         if pf.get("checked") and pf.get("held") and account_value:
             val = pf.get("value_usd")
             try:
@@ -434,6 +454,9 @@ def record_proposals_log(results, account_value, now, path=PROPOSALS_LOG_PATH,
             # Acknowledge the grounding in the committed record too.
             "stocknews": {"xii_score": th.get("xii_score"),
                           "verdict": th.get("verdict"),
+                          "h0": th.get("h0"),
+                          "durability": th.get("durability"),
+                          "conviction": (r.get("assessment") or {}).get("conviction"),
                           "fatal_flags": th.get("fatal_flags"),
                           "found": th.get("found", False)},
             "portfolio": {"held": pf.get("held"), "checked": pf.get("checked")},
@@ -494,13 +517,22 @@ def _ack_label(r):
     cleared this trade — rendered under each order so the grounding is visible."""
     th = r.get("thesis") or {}
     pf = r.get("portfolio") or {}
+    a = r.get("assessment") or {}
     parts = []
     if th.get("found"):
-        seg = f"📚 StockNews XII {th.get('xii_score')}% {th.get('verdict')}"
+        seg = f"📚 XII {th.get('xii_score')}%"
+        if a.get("conviction"):
+            seg += f" · conviction {a['conviction'].upper()}"
+        if th.get("h0") is not None:
+            seg += f" · H-0 {th['h0']}%"
+        if th.get("durability") is not None:
+            seg += f" · dur {th['durability']}/25"
+        if a.get("asymmetry"):
+            seg += f" · {a['asymmetry']} asym"
+        if a.get("stale"):
+            seg += " · ⏳stale"
         if th.get("fatal_flags"):
-            seg += f", {th['fatal_flags']}⚑"
-        if th.get("h0"):
-            seg += f", H-0 {th['h0']}"
+            seg += f" · {th['fatal_flags']}⚑"
         parts.append(seg)
     elif th:
         parts.append("📚 no StockNews thesis")
@@ -648,9 +680,9 @@ def main():
     # Ground each surviving proposal in the StockNews thesis + existing book.
     import enrichment
     approved, ctx_rejected = gate_on_context(approved, gr, account_value,
-                                             enrichment.enrich)
+                                             enrichment.enrich, today=now.date())
     rejected = rejected + ctx_rejected
-    print(f"[CONTEXT] {len(approved)} pass thesis/portfolio, "
+    print(f"[CONTEXT] {len(approved)} pass thesis/conviction/portfolio, "
           f"{len(ctx_rejected)} dropped")
 
     results, notes = execute(approved, mode, now)

@@ -86,58 +86,105 @@ def _gr(**over):
     return g
 
 
+def _thesis(xii=90, h0=85, dur=21, prob=(30, 50, 20), fatal=0, found=True,
+            verdict="strong-buy", **extra):
+    t = {"found": found, "xii_score": xii, "h0": h0, "durability": dur,
+         "prob": prob, "fatal_flags": fatal, "verdict": verdict}
+    t.update(extra)
+    return t
+
+
+def _enr(thesis, portfolio=None):
+    return lambda t, av: {"thesis": thesis, "portfolio": portfolio or {"checked": False}}
+
+
+class AssessPurchaseTest(unittest.TestCase):
+    def test_high_conviction_quality_plus_confidence(self):
+        # GOOGL-like: XII 90, H-0 90, durable, favorable asymmetry, fresh.
+        a = enrichment.assess_purchase(_thesis(xii=90, h0=90, dur=20, prob=(30, 55, 15)))
+        self.assertEqual(a["conviction"], "high")
+        self.assertTrue(a["good_purchase"])
+        self.assertEqual(a["asymmetry"], "favorable")
+
+    def test_high_xii_low_confidence_unfavorable_is_low(self):
+        # COST-like: XII 91 but H-0 60, bull<bear, 'unfavorable' mispricing.
+        a = enrichment.assess_purchase(_thesis(
+            xii=91, h0=60, dur=23, prob=(18, 52, 30),
+            mispricing_source="asymmetric-upside-vs-downside-unfavorable",
+            archetype_category="compounder-under-review"))
+        self.assertEqual(a["conviction"], "low")
+        self.assertFalse(a["good_purchase"])
+        self.assertEqual(a["asymmetry"], "unfavorable")
+
+    def test_fatal_flag_is_avoid(self):
+        a = enrichment.assess_purchase(_thesis(xii=81, fatal=1))
+        self.assertEqual(a["conviction"], "avoid")
+
+    def test_stale_caps_high_to_medium(self):
+        from datetime import date
+        a = enrichment.assess_purchase(
+            _thesis(xii=90, h0=90, dur=21, prob=(30, 50, 20),
+                    review_due="2026-06-09"), today=date(2026, 6, 27))
+        self.assertTrue(a["stale"])
+        self.assertEqual(a["conviction"], "medium")  # capped from high
+
+    def test_missing_thesis(self):
+        a = enrichment.assess_purchase({"found": False})
+        self.assertEqual(a["conviction"], "none")
+        self.assertFalse(a["good_purchase"])
+
+
 class GateOnContextTest(unittest.TestCase):
     def test_keeps_and_acknowledges_good_thesis(self):
-        enr = lambda t, av: {"thesis": {"found": True, "xii_score": 85,
-                                        "verdict": "strong-buy", "fatal_flags": 0},
-                             "portfolio": {"checked": False}}
-        kept, rej = executor.gate_on_context([_prop("AAPL")], _gr(), 500.0, enr)
+        kept, rej = executor.gate_on_context(
+            [_prop("GOOGL")], _gr(), 500.0, _enr(_thesis(xii=90, h0=90)))
         self.assertEqual(len(kept), 1)
-        self.assertEqual(kept[0]["thesis"]["xii_score"], 85)  # acknowledged
+        self.assertEqual(kept[0]["thesis"]["xii_score"], 90)        # acknowledged
+        self.assertEqual(kept[0]["assessment"]["conviction"], "high")  # acknowledged
         self.assertEqual(rej, [])
 
     def test_blocks_missing_thesis_when_required(self):
-        enr = lambda t, av: {"thesis": {"found": False}, "portfolio": {"checked": False}}
-        kept, rej = executor.gate_on_context([_prop("ZZZZ")],
-                                             _gr(require_stocknews_thesis=True), 500.0, enr)
+        kept, rej = executor.gate_on_context(
+            [_prop("ZZZZ")], _gr(require_stocknews_thesis=True), 500.0,
+            _enr({"found": False}))
         self.assertEqual(kept, [])
         self.assertIn("no StockNews thesis", rej[0]["reason"])
 
     def test_blocks_on_fatal_flag(self):
-        enr = lambda t, av: {"thesis": {"found": True, "xii_score": 90,
-                                        "verdict": "strong-buy", "fatal_flags": 1},
-                             "portfolio": {"checked": False}}
-        kept, rej = executor.gate_on_context([_prop("AAPL")], _gr(), 500.0, enr)
+        kept, rej = executor.gate_on_context(
+            [_prop("F")], _gr(), 500.0, _enr(_thesis(xii=81, fatal=1)))
         self.assertEqual(kept, [])
         self.assertIn("fatal flag", rej[0]["reason"])
 
     def test_blocks_below_min_xii(self):
-        enr = lambda t, av: {"thesis": {"found": True, "xii_score": 38,
-                                        "verdict": "avoid", "fatal_flags": 0},
-                             "portfolio": {"checked": False}}
-        kept, rej = executor.gate_on_context([_prop("PLTR")], _gr(min_xii_score=45),
-                                             500.0, enr)
+        kept, rej = executor.gate_on_context(
+            [_prop("SIVE")], _gr(min_xii_score=45), 500.0,
+            _enr(_thesis(xii=38, verdict="avoid")))
         self.assertEqual(kept, [])
         self.assertIn("XII 38%", rej[0]["reason"])
 
+    def test_blocks_low_conviction_even_with_high_xii(self):
+        # The crux: XII 91% but the research says low conviction -> skipped.
+        kept, rej = executor.gate_on_context(
+            [_prop("COST")], _gr(min_conviction="medium"), 500.0,
+            _enr(_thesis(xii=91, h0=60, dur=23, prob=(18, 52, 30),
+                         mispricing_source="...unfavorable")))
+        self.assertEqual(kept, [])
+        self.assertIn("conviction low", rej[0]["reason"])
+
     def test_blocks_overconcentrated_holding(self):
-        enr = lambda t, av: {"thesis": {"found": True, "xii_score": 85,
-                                        "verdict": "strong-buy", "fatal_flags": 0},
-                             "portfolio": {"checked": True, "held": True,
-                                           "value_usd": 200}}
-        # 200/500 = 40% > 25% cap -> blocked
-        kept, rej = executor.gate_on_context([_prop("NVDA")],
-                                             _gr(max_existing_position_pct=25), 500.0, enr)
+        kept, rej = executor.gate_on_context(
+            [_prop("NVDA")], _gr(max_existing_position_pct=25), 500.0,
+            _enr(_thesis(xii=90, h0=85), {"checked": True, "held": True,
+                                          "value_usd": 200}))  # 40% > 25%
         self.assertEqual(kept, [])
         self.assertIn("of acct", rej[0]["reason"])
 
     def test_allows_held_under_cap(self):
-        enr = lambda t, av: {"thesis": {"found": True, "xii_score": 85,
-                                        "verdict": "strong-buy", "fatal_flags": 0},
-                             "portfolio": {"checked": True, "held": True,
-                                           "value_usd": 50}}  # 10% < 25%
-        kept, rej = executor.gate_on_context([_prop("NVDA")],
-                                             _gr(max_existing_position_pct=25), 500.0, enr)
+        kept, rej = executor.gate_on_context(
+            [_prop("NVDA")], _gr(max_existing_position_pct=25), 500.0,
+            _enr(_thesis(xii=90, h0=85), {"checked": True, "held": True,
+                                          "value_usd": 50}))  # 10% < 25%
         self.assertEqual(len(kept), 1)
 
 
