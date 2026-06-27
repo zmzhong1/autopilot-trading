@@ -67,5 +67,8 @@
   "_max_existing_position_help": "Skip adding to a name already worth more than this % of the account, per the Stock-Portfolio app (read when STOCK_PORTFOLIO_URL + STOCK_PORTFOLIO_TOKEN are set; otherwise the portfolio check is skipped and noted, not failed).",
 
   "min_conviction": "medium",
-  "_min_conviction_help": "Research-based purchase conviction floor: 'high' | 'medium' | 'low'. Conviction is computed from the FULL StockNews thesis (XII quality + H-0 confidence + durability/25 + bull/bear asymmetry + thesis freshness), not the headline XII alone — so a high-XII / low-confidence / unfavorable-asymmetry name (e.g. COST: XII 91% but H-0 60%, bull<bear) lands at LOW and is skipped, while a high-XII / high-confidence / favorable name (e.g. GOOGL) lands at HIGH. 'medium' = only buy names the research backs with real confidence."
+  "_min_conviction_help": "Research-based purchase conviction floor: 'high' | 'medium' | 'low'. Conviction is computed from the FULL StockNews thesis (XII quality + H-0 confidence + durability/25 + bull/bear asymmetry + thesis freshness), not the headline XII alone — so a high-XII / low-confidence / unfavorable-asymmetry name (e.g. COST: XII 91% but H-0 60%, bull<bear) lands at LOW and is skipped, while a high-XII / high-confidence / favorable name (e.g. GOOGL) lands at HIGH. 'medium' = only buy names the research backs with real confidence.",
+
+  "entry_price_anchor_max_ratio": 5.0,
+  "_entry_price_anchor_max_ratio_help": "Sanity guard on the entry price recorded in the track record: if a quote is more than this multiple off the StockNews anchor price (in either direction), it's treated as a bad print (wrong symbol / decimal error) and the entry price is left null rather than polluting the scorecard. 5.0 catches order-of-magnitude errors while letting any realistic price move through. No anchor on file -> the quote is accepted as-is."
 }
