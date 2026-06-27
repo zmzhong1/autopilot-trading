@@ -85,14 +85,67 @@ def load_json(path, default):
         return default
 
 
+def _as_float(value, default, lo=None, hi=None):
+    """Parse value as float, falling back to default on garbage, then clamp.
+    Used to sanitize numeric guardrails: a fat-fingered string can't crash a run
+    mid-flight, and a negative cap can't silently disable a limit."""
+    try:
+        x = float(value)
+    except (TypeError, ValueError):
+        return default
+    if lo is not None:
+        x = max(lo, x)
+    if hi is not None:
+        x = min(hi, x)
+    return x
+
+
+def _as_int(value, default, lo=None, hi=None):
+    """Integer counterpart of _as_float (caps that must be whole numbers)."""
+    try:
+        x = int(value)
+    except (TypeError, ValueError):
+        return default
+    if lo is not None:
+        x = max(lo, x)
+    if hi is not None:
+        x = min(hi, x)
+    return x
+
+
 def load_guardrails(path=GUARDRAILS_PATH):
-    """Merge on top of defaults so partial/old config files still work. Keys
-    starting with '_' (the inline help in guardrails.json) are ignored."""
+    """Merge on top of defaults so partial/old config files still work, then
+    sanitize the numeric limits. Keys starting with '_' (the inline help in
+    guardrails.json) are ignored.
+
+    Sanitizing matters because these numbers are the safety net: a negative
+    `max_total_deployed_pct` would otherwise make the deploy check always pass,
+    and a non-numeric value would crash the run after some orders already went
+    out. Percentages clamp to [0,1]; dollars/counts floor at 0; anything
+    unparseable reverts to the shipped default."""
     raw = load_json(path, {})
     gr = dict(DEFAULT_GUARDRAILS)
     for k, v in raw.items():
         if not k.startswith("_"):
             gr[k] = v
+    d = DEFAULT_GUARDRAILS
+    gr["account_value_usd"] = _as_float(gr.get("account_value_usd"),
+                                        d["account_value_usd"], lo=0.0)
+    gr["max_notional_per_order_usd"] = _as_float(
+        gr.get("max_notional_per_order_usd"), d["max_notional_per_order_usd"], lo=0.0)
+    gr["max_pct_account_per_order"] = _as_float(
+        gr.get("max_pct_account_per_order"), d["max_pct_account_per_order"],
+        lo=0.0, hi=1.0)
+    gr["max_total_deployed_pct"] = _as_float(
+        gr.get("max_total_deployed_pct"), d["max_total_deployed_pct"], lo=0.0, hi=1.0)
+    gr["limit_offset_pct"] = _as_float(gr.get("limit_offset_pct"),
+                                       d["limit_offset_pct"], lo=0.0, hi=1.0)
+    gr["max_orders_per_day"] = _as_int(gr.get("max_orders_per_day"),
+                                       d["max_orders_per_day"], lo=0)
+    # min_signal_feeds: a non-int or negative value reverts to the default floor
+    # (3) rather than 0 — a typo must never *weaken* the corroboration bar.
+    mf = _as_int(gr.get("min_signal_feeds"), d["min_signal_feeds"])
+    gr["min_signal_feeds"] = mf if mf >= 0 else d["min_signal_feeds"]
     return gr
 
 
@@ -113,8 +166,8 @@ def orders_today(state, now):
     today = now.date().isoformat()
     n = 0
     for o in state.get("orders", []):
-        ts = o.get("ts", "")
-        if ts[:10] == today:
+        ts = o.get("ts") or ""  # tolerate missing/None ts in a corrupt state file
+        if isinstance(ts, str) and ts[:10] == today:
             n += 1
     return n
 
@@ -124,7 +177,10 @@ def deployed_notional(state):
     total = 0.0
     for o in state.get("orders", []):
         if o.get("status") in ("paper_filled", "live_filled"):
-            total += float(o.get("notional_usd", 0) or 0)
+            try:
+                total += float(o.get("notional_usd", 0) or 0)
+            except (TypeError, ValueError):
+                continue  # skip a corrupt entry rather than crash the run
     return total
 
 
@@ -239,8 +295,13 @@ def execute(approved, mode, now):
         return results, notes
 
     # mode == "live"
-    import robinhood_mcp
-    if not robinhood_mcp.is_wired():
+    try:
+        import robinhood_mcp
+        wired = robinhood_mcp.is_wired()
+    except Exception as e:  # import/attr error must degrade, never trade blindly
+        notes.append(f"⚠️ Robinhood MCP unavailable ({e}); proposing, not placing.")
+        wired = False
+    if not wired:
         notes.append(
             "⚠️ Live mode requested but the Robinhood MCP is not wired — "
             "orders below are PROPOSED, not placed. See robinhood_mcp.py."
@@ -372,9 +433,17 @@ def gather_signals(min_feeds):
     """Compute ranked confluence signals the same way the Monday digest does.
     Returns [] on any failure so the executor degrades to 'nothing to do' rather
     than crashing. Networked (SEC company_tickers + optional 13F)."""
+    if not os.environ.get("SEC_USER_AGENT", "").strip():
+        # confluence.py sys.exit()s at import if this is unset; bail with a clear
+        # message instead of letting that abort the executor.
+        print("[WARN] SEC_USER_AGENT not set; cannot gather signals.",
+              file=sys.stderr)
+        return []
     try:
+        # confluence does a module-level sys.exit() guard; SystemExit is NOT an
+        # Exception subclass, so catch it explicitly or it would kill the run.
         import confluence
-    except Exception as e:
+    except (Exception, SystemExit) as e:
         print(f"[WARN] confluence import failed: {e}", file=sys.stderr)
         return []
     try:
@@ -408,15 +477,15 @@ def main():
     now = datetime.now(timezone.utc)
     state = load_json(STATE_PATH, {})
 
-    account_value = float(gr.get("account_value_usd", 0))
+    account_value = gr["account_value_usd"]  # already sanitized to a float >= 0
     if mode == "live":
-        import robinhood_mcp
-        if robinhood_mcp.is_wired():
-            try:
+        try:
+            import robinhood_mcp
+            if robinhood_mcp.is_wired():
                 account_value = float(robinhood_mcp.get_account()["account_value_usd"])
-            except Exception as e:
-                print(f"[WARN] could not read live account, using config: {e}",
-                      file=sys.stderr)
+        except Exception as e:
+            print(f"[WARN] could not read live account, using config: {e}",
+                  file=sys.stderr)
 
     print(f"[START] executor — mode={mode} (config enabled={gr.get('enabled')}, "
           f"kill={KILL})  account=${account_value:,.0f}")

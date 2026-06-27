@@ -142,13 +142,13 @@ class EvaluateProposalsTest(unittest.TestCase):
         self.assertIn("deployed", rejected[0]["reason"])
 
     def test_deploy_cap_reserves_within_run(self):
-        # account 1000, deploy cap 50% = 500, size 50 -> at most 10 fit; daily
-        # cap is the tighter limit, so check deploy cap alone with high daily cap.
+        # Deploy cap reserves notional within a single run. Use a high daily cap
+        # so the deploy cap is the binding limit: 10% of 1000 = $100 room, order
+        # size $50 -> exactly 2 orders fit before the cap blocks the third.
         signals = [sig(t) for t in ["AAPL", "MSFT", "NVDA"]]
         approved, _ = executor.evaluate_proposals(
             signals, gr(max_orders_per_day=99, max_total_deployed_pct=0.10),
             1000.0, {}, NOW)
-        # 10% of 1000 = 100; size 50 -> exactly 2 fit.
         self.assertEqual(len(approved), 2)
 
     def test_sell_side_not_allowed_by_default(self):
@@ -183,9 +183,117 @@ class ExecuteTest(unittest.TestCase):
 
     def test_live_mode_degrades_when_unwired(self):
         # robinhood_mcp.is_wired() ships False, so live must NOT place orders.
-        results, notes = executor.execute(self._approved(), "live", NOW)
+        # Patch place_order to blow up if it's ever reached — the unwired guard
+        # must short-circuit before any order is placed.
+        import robinhood_mcp
+        orig_wired, orig_place = robinhood_mcp.is_wired, robinhood_mcp.place_order
+
+        def _boom(*a, **k):
+            raise AssertionError("place_order called while MCP unwired!")
+
+        robinhood_mcp.is_wired = lambda: False
+        robinhood_mcp.place_order = _boom
+        try:
+            results, notes = executor.execute(self._approved(), "live", NOW)
+        finally:
+            robinhood_mcp.is_wired, robinhood_mcp.place_order = orig_wired, orig_place
         self.assertEqual(results[0]["status"], "proposed_live_unwired")
         self.assertTrue(any("not wired" in n for n in notes))
+
+    def test_live_mode_places_order_when_wired(self):
+        # When the MCP reports wired, execute() MUST forward each approved order
+        # to place_order with the right args, and mark it live_filled.
+        import robinhood_mcp
+        orig_wired, orig_place = robinhood_mcp.is_wired, robinhood_mcp.place_order
+        calls = []
+
+        def _record(**kwargs):
+            calls.append(kwargs)
+            return {"id": "ord_1", "status": "accepted"}
+
+        robinhood_mcp.is_wired = lambda: True
+        robinhood_mcp.place_order = _record
+        try:
+            results, notes = executor.execute(self._approved(), "live", NOW)
+        finally:
+            robinhood_mcp.is_wired, robinhood_mcp.place_order = orig_wired, orig_place
+        self.assertEqual(len(calls), 1)
+        self.assertEqual(calls[0]["ticker"], "AAPL")
+        self.assertEqual(calls[0]["side"], "buy")
+        self.assertEqual(calls[0]["notional_usd"], 50.0)
+        self.assertEqual(results[0]["status"], "live_filled")
+        self.assertEqual(results[0]["broker_response"], {"id": "ord_1", "status": "accepted"})
+
+    def test_live_order_error_does_not_abort_batch(self):
+        # A failing order is marked live_error; the rest of the batch still runs.
+        import robinhood_mcp
+        orig_wired, orig_place = robinhood_mcp.is_wired, robinhood_mcp.place_order
+        approved = [
+            {"ticker": "AAPL", "side": "buy", "notional_usd": 50.0,
+             "order_type": "market", "feed_count": 3, "feeds": ["x"]},
+            {"ticker": "MSFT", "side": "buy", "notional_usd": 50.0,
+             "order_type": "market", "feed_count": 3, "feeds": ["x"]},
+        ]
+
+        def _fail_first(**kwargs):
+            if kwargs["ticker"] == "AAPL":
+                raise RuntimeError("no buying power")
+            return {"id": "ok"}
+
+        robinhood_mcp.is_wired = lambda: True
+        robinhood_mcp.place_order = _fail_first
+        try:
+            results, _ = executor.execute(approved, "live", NOW)
+        finally:
+            robinhood_mcp.is_wired, robinhood_mcp.place_order = orig_wired, orig_place
+        self.assertEqual(results[0]["status"], "live_error")
+        self.assertEqual(results[1]["status"], "live_filled")
+
+
+class GuardrailSanitizationTest(unittest.TestCase):
+    """load_guardrails must neutralize fat-fingered config rather than crash or
+    silently weaken a limit."""
+
+    def _load(self, raw):
+        import json
+        import tempfile
+        from pathlib import Path
+        p = Path(tempfile.mkdtemp()) / "guardrails.json"
+        p.write_text(json.dumps(raw), encoding="utf-8")
+        return executor.load_guardrails(p)
+
+    def test_missing_file_returns_defaults(self):
+        from pathlib import Path
+        g = executor.load_guardrails(Path("/nonexistent/guardrails.json"))
+        self.assertEqual(g["max_total_deployed_pct"],
+                         executor.DEFAULT_GUARDRAILS["max_total_deployed_pct"])
+
+    def test_negative_deploy_pct_clamped_to_zero(self):
+        # A negative cap must NOT become "always passes"; clamp to 0 (fail-closed).
+        g = self._load({"max_total_deployed_pct": -0.5})
+        self.assertEqual(g["max_total_deployed_pct"], 0.0)
+
+    def test_pct_over_one_clamped(self):
+        g = self._load({"max_pct_account_per_order": 5})  # 500% -> 100%
+        self.assertEqual(g["max_pct_account_per_order"], 1.0)
+
+    def test_non_numeric_reverts_to_default(self):
+        g = self._load({"account_value_usd": "lots", "max_orders_per_day": "x"})
+        self.assertEqual(g["account_value_usd"],
+                         executor.DEFAULT_GUARDRAILS["account_value_usd"])
+        self.assertEqual(g["max_orders_per_day"],
+                         executor.DEFAULT_GUARDRAILS["max_orders_per_day"])
+
+    def test_negative_min_feeds_reverts_to_default_not_zero(self):
+        # A typo'd negative must never *weaken* the corroboration bar to 0.
+        g = self._load({"min_signal_feeds": -1})
+        self.assertEqual(g["min_signal_feeds"],
+                         executor.DEFAULT_GUARDRAILS["min_signal_feeds"])
+
+    def test_underscore_help_keys_ignored(self):
+        g = self._load({"_README": "ignore me", "max_orders_per_day": 2})
+        self.assertNotIn("_README", g)
+        self.assertEqual(g["max_orders_per_day"], 2)
 
 
 class StateAccountingTest(unittest.TestCase):
@@ -203,6 +311,22 @@ class StateAccountingTest(unittest.TestCase):
             {"ts": "2026-06-26T23:59:00+00:00"},  # prior day
         ]}
         self.assertEqual(executor.orders_today(state, NOW), 1)
+
+    def test_orders_today_tolerates_malformed_ts(self):
+        # A corrupt state entry (None / missing ts) must not crash the cap check.
+        state = {"orders": [
+            {"ts": NOW.isoformat()},
+            {"ts": None},
+            {},
+        ]}
+        self.assertEqual(executor.orders_today(state, NOW), 1)
+
+    def test_deployed_notional_tolerates_corrupt_value(self):
+        state = {"orders": [
+            {"status": "paper_filled", "notional_usd": 50},
+            {"status": "live_filled", "notional_usd": "oops"},  # corrupt
+        ]}
+        self.assertEqual(executor.deployed_notional(state), 50.0)
 
 
 if __name__ == "__main__":
