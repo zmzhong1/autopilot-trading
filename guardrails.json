@@ -64,5 +64,8 @@
   "_min_xii_score_help": "Skip a buy when the StockNews Section XII weighted score is below this %. Bands: >=85 strong, >=65 moderate-buy, >=45 wait, <45 avoid. 45 = never buy a name the research rates 'avoid'.",
 
   "max_existing_position_pct": 25.0,
-  "_max_existing_position_help": "Skip adding to a name already worth more than this % of the account, per the Stock-Portfolio app (read when STOCK_PORTFOLIO_URL + STOCK_PORTFOLIO_TOKEN are set; otherwise the portfolio check is skipped and noted, not failed)."
+  "_max_existing_position_help": "Skip adding to a name already worth more than this % of the account, per the Stock-Portfolio app (read when STOCK_PORTFOLIO_URL + STOCK_PORTFOLIO_TOKEN are set; otherwise the portfolio check is skipped and noted, not failed).",
+
+  "min_conviction": "medium",
+  "_min_conviction_help": "Research-based purchase conviction floor: 'high' | 'medium' | 'low'. Conviction is computed from the FULL StockNews thesis (XII quality + H-0 confidence + durability/25 + bull/bear asymmetry + thesis freshness), not the headline XII alone — so a high-XII / low-confidence / unfavorable-asymmetry name (e.g. COST: XII 91% but H-0 60%, bull<bear) lands at LOW and is skipped, while a high-XII / high-confidence / favorable name (e.g. GOOGL) lands at HIGH. 'medium' = only buy names the research backs with real confidence."
 }
