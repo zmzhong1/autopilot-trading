@@ -93,5 +93,22 @@ class GatherTest(unittest.TestCase):
             fh.API_KEY = orig
 
 
+class FinnhubQuoteParseTest(unittest.TestCase):
+    def test_parses_current_price(self):
+        import prices
+        self.assertEqual(prices.parse_finnhub_quote({"c": 224.36, "pc": 220.0}),
+                         224.36)
+
+    def test_zero_means_unknown_symbol(self):
+        # Finnhub returns c==0 for an unknown symbol -> None so we fall back.
+        import prices
+        self.assertIsNone(prices.parse_finnhub_quote({"c": 0}))
+
+    def test_garbage_is_none(self):
+        import prices
+        self.assertIsNone(prices.parse_finnhub_quote(None))
+        self.assertIsNone(prices.parse_finnhub_quote({"c": "n/a"}))
+
+
 if __name__ == "__main__":
     unittest.main()
