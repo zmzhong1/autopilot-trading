@@ -46,7 +46,8 @@ WINDOW_DAYS = int(os.environ.get("HEARTBEAT_WINDOW_DAYS", "7"))
 # The weekly digest producers that keep no state of their own — tracked via
 # producer_status.json so a silent stop (a crash, a dead data source) surfaces
 # here instead of the watcher still looking healthy.
-DIGEST_PRODUCERS = ("discovery", "crowding", "regime", "confluence", "stocknews")
+DIGEST_PRODUCERS = ("discovery", "crowding", "regime", "confluence", "stocknews",
+                    "executor")
 
 COLOR_HEALTHY = 0x2ECC71
 COLOR_STALE = 0xE67E22
