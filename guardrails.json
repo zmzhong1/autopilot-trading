@@ -10,8 +10,15 @@
   "account_value_usd": 1000.0,
   "_account_value_help": "Sizing basis in propose/paper mode. In live mode this is ignored and the real Agentic-account buying power is read from the MCP.",
 
-  "allow_list": ["AAPL", "MSFT", "AMZN", "GOOGL", "NVDA", "COST"],
-  "_allow_list_help": "ONLY these tickers can be traded. Empty list = nothing is tradable (fail-closed). Keep this tight; it is the primary blast-radius limit. Seed from tickers you already research in StockNews.",
+  "allow_list": [
+    "AAPL", "AJNMY", "AMD", "AMZN", "ANET", "ASML", "AVGO", "BABA", "BIDU",
+    "BYD", "CAT", "COIN", "COST", "CRWD", "DELL", "DIS", "F", "FCX", "GOOGL",
+    "GS", "HMC", "HOOD", "JD", "JPM", "META", "MP", "MS", "MSFT", "MU", "NEM",
+    "NET", "NOK", "NTES", "NVDA", "ORCL", "PATH", "PDD", "PLTR", "SFTBY",
+    "SHEL", "SNOW", "SONY", "STLD", "TCEHY", "TM", "TOTDY", "TSLA", "TSM",
+    "V", "WMT"
+  ],
+  "_allow_list_help": "ONLY these tickers can be traded. Empty list = nothing is tradable (fail-closed). This mirrors the StockNews stocknews_tickers coverage list, minus the non-tradable placeholders (ANTHROPIC, OPENAI, RESONAC). It is the primary blast-radius limit; trim it any time. Some entries are ADRs/foreign names that rarely surface in the SEC/Congress feeds — harmless, since a name still needs a live confluence signal to be proposed.",
 
   "block_list": [],
   "_block_list_help": "Hard deny, checked after allow_list. Use to pause a name without editing allow_list.",
@@ -22,16 +29,16 @@
   "min_signal_feeds": 3,
   "_min_signal_feeds_help": "Only act on confluence signals corroborated by at least this many independent feeds (congress / insider / 8-K / 13F). 3 = all-feed overlap only — the highest-signal subset.",
 
-  "max_notional_per_order_usd": 100.0,
+  "max_notional_per_order_usd": 250.0,
   "_max_notional_help": "Hard ceiling on a single order's dollar size.",
 
-  "max_pct_account_per_order": 0.05,
-  "_max_pct_help": "Single order may not exceed this fraction of account value. Order size = min(max_notional_per_order_usd, account_value * max_pct_account_per_order).",
+  "max_pct_account_per_order": 0.10,
+  "_max_pct_help": "Single order may not exceed this fraction of account value. Order size = min(max_notional_per_order_usd, account_value * max_pct_account_per_order). At $1,000 basis this resolves to $100/order (10% binds before the $250 ceiling).",
 
-  "max_orders_per_day": 3,
+  "max_orders_per_day": 5,
   "_max_orders_help": "Cap on orders placed (or proposed-as-executable) per calendar day, counted from executor_state.json.",
 
-  "max_total_deployed_pct": 0.50,
+  "max_total_deployed_pct": 0.70,
   "_max_total_deployed_help": "Stop opening new positions once cumulative deployed capital (sum of filled notionals) reaches this fraction of account value.",
 
   "order_type": "market",
