@@ -44,6 +44,13 @@ jobs:
           EXECUTOR_DISCORD_WEBHOOK: ${{ secrets.EXECUTOR_DISCORD_WEBHOOK }}
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           EXECUTOR_KILL: '1'  # hard stop — CI can never place a real order
+          # StockNews thesis grounding (private repo -> needs Contents:Read PAT).
+          STOCKNEWS_GH_TOKEN: ${{ secrets.STOCKNEWS_GH_TOKEN }}
+          STOCKNEWS_BRANCH: ${{ vars.STOCKNEWS_BRANCH || 'phase-1-scaffold' }}
+          # Optional portfolio grounding — set both to enable the holding check;
+          # unset = the portfolio check is skipped and noted, never fails a run.
+          STOCK_PORTFOLIO_URL: ${{ secrets.STOCK_PORTFOLIO_URL }}
+          STOCK_PORTFOLIO_TOKEN: ${{ secrets.STOCK_PORTFOLIO_TOKEN }}
         run: python3 executor.py
 
       - name: Post proposal scorecard
