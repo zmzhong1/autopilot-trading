@@ -1,0 +1,27 @@
+{
+  "snapshot": {
+    "ticker": "NVDA",
+    "researched_at": "2026-06-29T14:58:44+00:00",
+    "name": "NVIDIA Corp",
+    "industry": "Semiconductors",
+    "market_cap": 4659226.130754958,
+    "metrics": {
+      "P/E": 29.64,
+      "net margin %": 62.97,
+      "rev growth %": 70.68,
+      "ROE %": 111.66,
+      "current ratio": 3.44
+    },
+    "news": [
+      "1 Unstoppable Banking Juggernaut to Buy Hand Over Fist and Hold for the Next 20 Years",
+      "Wall Street Is Divided On Tesla, but I Keep Buying The Stock",
+      "Price Prediction: Synopsys\u2019 Chip-Design Moat and The Path to 24% Upside"
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": true
+  },
+  "flags": [
+    "thesis stale (review due 2026-06-09)",
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
+}

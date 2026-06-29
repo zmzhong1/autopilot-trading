@@ -1,0 +1,25 @@
+{
+  "snapshot": {
+    "ticker": "NET",
+    "researched_at": "2026-06-29T14:58:39+00:00",
+    "name": "Cloudflare Inc",
+    "industry": "Technology",
+    "market_cap": 84249.31703618795,
+    "metrics": {
+      "net margin %": -3.72,
+      "rev growth %": 31.55,
+      "ROE %": -6.23,
+      "current ratio": 1.96
+    },
+    "news": [
+      "Cloudflare: A Brilliant Business Trapped Inside A Punishing Valuation",
+      "Cloudflare: Structural Acceleration Driven By Agentic AI Traffic",
+      "SpaceX: Has the Story Run Ahead Of The Stock \u2014 Or The Other Way Around?"
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": false
+  },
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
+}

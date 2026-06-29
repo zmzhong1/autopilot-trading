@@ -1,0 +1,24 @@
+{
+  "snapshot": {
+    "ticker": "MU",
+    "researched_at": "2026-06-29T14:58:35+00:00",
+    "name": "Micron Technology Inc",
+    "industry": "Semiconductors",
+    "market_cap": 1276967.1118271174,
+    "metrics": {
+      "P/E": 52.96,
+      "net margin %": 41.49,
+      "rev growth %": 85.55,
+      "ROE %": 40.84,
+      "current ratio": 2.9
+    },
+    "news": [
+      "Mizuho says ignore Apple noise, flags key catalyst for Micron and memory in H2",
+      "Micron Technology Stock: Is It Heading for a $2 Trillion Valuation?",
+      "Samsung, SK Hynix, Micron face antitrust class action lawsuit"
+    ],
+    "analyst_upgrade": true,
+    "earnings_beat": true
+  },
+  "flags": []
+}

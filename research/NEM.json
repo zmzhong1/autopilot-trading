@@ -1,0 +1,26 @@
+{
+  "snapshot": {
+    "ticker": "NEM",
+    "researched_at": "2026-06-29T14:58:37+00:00",
+    "name": "Newmont Corporation",
+    "industry": "Metals & Mining",
+    "market_cap": 102623.84271348946,
+    "metrics": {
+      "P/E": 12.14,
+      "net margin %": 33.87,
+      "rev growth %": 26.93,
+      "ROE %": 25.22,
+      "current ratio": 2.44
+    },
+    "news": [
+      "Newmont Corp (NYSE:NEM) Shines on CAN SLIM Stock Screener With Strong Earnings and Relative Strength",
+      "Newmont Corporation (NEM) Provides Update Following Seismic Event",
+      "The Real Engine Driving Southern Copper Stock Isn't Copper"
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": false
+  },
+  "flags": [
+    "no StockNews thesis on file"
+  ]
+}

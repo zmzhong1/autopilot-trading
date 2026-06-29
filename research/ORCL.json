@@ -1,0 +1,26 @@
+{
+  "snapshot": {
+    "ticker": "ORCL",
+    "researched_at": "2026-06-29T14:58:46+00:00",
+    "name": "Oracle Corp",
+    "industry": "Technology",
+    "market_cap": 427836.3686377428,
+    "metrics": {
+      "P/E": 25.88,
+      "net margin %": 25.37,
+      "rev growth %": 17.35,
+      "ROE %": 50.38,
+      "current ratio": 1.11
+    },
+    "news": [
+      "These S&P500 stocks that are showing activity before the opening bell on Monday.",
+      "Dan Ives Says MSFT, ORCL Are 'Way Oversold', Expects A Reversal In Next 6-9 Months",
+      "Oracle Financial Services Named Leader Across Four Categories in Chartis Credit Lending Operations Report"
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": true
+  },
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
+}
