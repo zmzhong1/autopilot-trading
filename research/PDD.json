@@ -1,0 +1,26 @@
+{
+  "snapshot": {
+    "ticker": "PDD",
+    "researched_at": "2026-06-30T13:22:51+00:00",
+    "name": "PDD Holdings Inc",
+    "industry": "Retail",
+    "market_cap": 108961.00351,
+    "metrics": {
+      "P/E": 7.73,
+      "net margin %": 21.62,
+      "rev growth %": 9.86,
+      "ROE %": 24.06,
+      "current ratio": 2.54
+    },
+    "news": [
+      "KWEB: World Class Tech Weighed By The China Discount",
+      "Reported Earlier: 'France Passes New Law to Fine Shein, Temu and Ultrafast Fashion' - WSJ",
+      "Is PDD Holdings (PDD) One of the Best Non-Tech Stocks to Buy According to Analysts?"
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": false
+  },
+  "flags": [
+    "no StockNews thesis on file"
+  ]
+}

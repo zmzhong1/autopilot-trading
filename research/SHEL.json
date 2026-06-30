@@ -1,0 +1,26 @@
+{
+  "snapshot": {
+    "ticker": "SHEL",
+    "researched_at": "2026-06-30T13:22:58+00:00",
+    "name": "Shell PLC",
+    "industry": "Energy",
+    "market_cap": 160866.010555,
+    "metrics": {
+      "P/E": 11.35,
+      "net margin %": 7.01,
+      "rev growth %": -4.88,
+      "ROE %": 10.05,
+      "current ratio": 1.3
+    },
+    "news": [
+      "My Top 10 High-Yield Picks For July 2026: One Yields More Than 13%",
+      "Confessions Of An Oil Bull",
+      "Why Aren\u2019t Gas Prices Falling Faster? Chevron CFO Responds As Trump Turns Up The Heat On Big Oil: 'Doing Everything That We Can...'"
+    ],
+    "analyst_upgrade": true,
+    "earnings_beat": false
+  },
+  "flags": [
+    "no StockNews thesis on file"
+  ]
+}

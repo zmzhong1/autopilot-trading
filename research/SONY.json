@@ -1,0 +1,25 @@
+{
+  "snapshot": {
+    "ticker": "SONY",
+    "researched_at": "2026-06-30T13:23:02+00:00",
+    "name": "Sony Group Corp",
+    "industry": "Consumer products",
+    "market_cap": 18955782.278809,
+    "metrics": {
+      "net margin %": -2.62,
+      "rev growth %": 5.22,
+      "ROE %": -4.05,
+      "current ratio": 1.18
+    },
+    "news": [
+      "Xbox Prices Surge Again As Microsoft Expects Memory Costs To Double By Fall 2027, Joins Apple, Sony And Nintendo In Wave Of Hardware Price Hikes",
+      "Hasbro Is So Much More Than Just A Toy Company",
+      "Sony Pictures Entertainment Invests $100M In Cosm"
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": false
+  },
+  "flags": [
+    "no StockNews thesis on file"
+  ]
+}

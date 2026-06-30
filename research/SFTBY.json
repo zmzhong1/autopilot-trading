@@ -1,0 +1,26 @@
+{
+  "snapshot": {
+    "ticker": "SFTBY",
+    "researched_at": "2026-06-30T13:22:56+00:00",
+    "name": "SoftBank Group Corp",
+    "industry": "Telecommunication",
+    "market_cap": 35541148.360352,
+    "metrics": {
+      "P/E": 7.11,
+      "net margin %": 64.14,
+      "rev growth %": 7.66,
+      "ROE %": 34.06,
+      "current ratio": 0.8
+    },
+    "news": [
+      "Why Is Intel Stock Gaining Monday?",
+      "Markets Starting To Choke On Massive Surge In Debt Issuance",
+      "Why OpenAI's Listing Timeline Matters For SoftBank Stock"
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": false
+  },
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
+}
