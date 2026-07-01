@@ -1,0 +1,24 @@
+{
+  "snapshot": {
+    "ticker": "TSLA",
+    "researched_at": "2026-07-01T13:52:13+00:00",
+    "name": "Tesla Inc",
+    "industry": "Automobiles",
+    "market_cap": 1579657.3459148952,
+    "metrics": {
+      "P/E": 409.03,
+      "net margin %": 3.95,
+      "rev growth %": 2.25,
+      "ROE %": 4.77,
+      "current ratio": 2.04
+    },
+    "news": [
+      "Battery Theme Splits: Lithium Miners Outperform as Automakers Face EV Margin Squeeze",
+      "Tesla Deliveries Should Show a Second Straight Quarter of Growth",
+      "Tesla Q2 deliveries seen rising as European demand gathers pace (TSLA)"
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": false
+  },
+  "flags": []
+}

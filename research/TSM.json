@@ -1,0 +1,26 @@
+{
+  "snapshot": {
+    "ticker": "TSM",
+    "researched_at": "2026-07-01T13:52:15+00:00",
+    "name": "Taiwan Semiconductor Manufacturing Co Ltd",
+    "industry": "Semiconductors",
+    "market_cap": 61459714.863281,
+    "metrics": {
+      "P/E": 31.86,
+      "net margin %": 47.0,
+      "rev growth %": 30.66,
+      "ROE %": 36.93,
+      "current ratio": 2.49
+    },
+    "news": [
+      "More Bark, More Beta: Corgi Debuts 31 Single-Stock ETFs Covering Nvidia, Tesla And More",
+      "Taiwan Semiconductor Manufacturing Company Limited - Depositary Receipt (TSM) Price Target Increased by 13.92% to 496.82",
+      "Monolithic Power Systems shares are trading higher after Stifel maintained its Buy rating on the stock and raised its price target from $1300 to $1500."
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": false
+  },
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
+}

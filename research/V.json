@@ -1,0 +1,26 @@
+{
+  "snapshot": {
+    "ticker": "V",
+    "researched_at": "2026-07-01T13:52:16+00:00",
+    "name": "Visa Inc",
+    "industry": "Financial Services",
+    "market_cap": 645764.9442537623,
+    "metrics": {
+      "P/E": 28.77,
+      "net margin %": 51.68,
+      "rev growth %": 14.37,
+      "ROE %": 58.9,
+      "current ratio": 1.09
+    },
+    "news": [
+      "Visa, Mastercard, Coinbase and BlackRock Unite Behind Open USD (OUSD): The First Real Threat to USDT and USDC?",
+      "Open Standard unveils dollar stablecoin backed by Visa and Mastercard",
+      "S&P 500, Nasdaq End Higher As Chipmakers Rally, While Dow Posts Best First Half In Five Years \u2014 LUNR, AMZN, PLTR, XYZ, AVAV In Focus"
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": false
+  },
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
+}

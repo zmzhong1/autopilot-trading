@@ -1,0 +1,27 @@
+{
+  "snapshot": {
+    "ticker": "TCEHY",
+    "researched_at": "2026-07-01T13:52:07+00:00",
+    "name": "Tencent Holdings Ltd",
+    "industry": "Media",
+    "market_cap": 3792534.086347,
+    "metrics": {
+      "P/E": 13.96,
+      "net margin %": 30.61,
+      "rev growth %": 12.84,
+      "ROE %": 20.07,
+      "current ratio": 1.44
+    },
+    "news": [
+      "Tencent: Take Advantage Of This Opportunity",
+      "KWEB: World Class Tech Weighed By The China Discount",
+      "Pop Mart: Not Your Parents' Toy Company"
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": false
+  },
+  "flags": [
+    "thesis stale (review due 2026-06-30)",
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
+}

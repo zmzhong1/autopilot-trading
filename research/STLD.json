@@ -1,0 +1,26 @@
+{
+  "snapshot": {
+    "ticker": "STLD",
+    "researched_at": "2026-07-01T13:52:05+00:00",
+    "name": "Steel Dynamics Inc",
+    "industry": "Metals & Mining",
+    "market_cap": 33091.06554646683,
+    "metrics": {
+      "P/E": 24.52,
+      "net margin %": 7.22,
+      "rev growth %": 10.44,
+      "ROE %": 15.25,
+      "current ratio": 3.13
+    },
+    "news": [
+      "Top S&P500 movers in Monday's session",
+      "Discover which S&P500 stocks are making waves on Monday.",
+      "USNZY vs. STLD: Which Stock Is the Better Value Option?"
+    ],
+    "analyst_upgrade": true,
+    "earnings_beat": false
+  },
+  "flags": [
+    "no StockNews thesis on file"
+  ]
+}
