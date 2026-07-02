@@ -12,13 +12,13 @@
 
   "allow_list": [
     "AAPL", "AJNMY", "AMD", "AMZN", "ANET", "ASML", "AVGO", "BABA", "BIDU",
-    "BYD", "CAT", "COIN", "COST", "CRWD", "DELL", "DIS", "F", "FCX", "GOOGL",
+    "CAT", "COIN", "COST", "CRWD", "DELL", "DIS", "F", "FCX", "GOOGL",
     "GS", "HMC", "HOOD", "JD", "JPM", "META", "MP", "MS", "MSFT", "MU", "NEM",
     "NET", "NOK", "NTES", "NVDA", "ORCL", "PATH", "PDD", "PLTR", "SFTBY",
     "SHEL", "SNOW", "SONY", "STLD", "TCEHY", "TM", "TOTDY", "TSLA", "TSM",
     "V", "WMT"
   ],
-  "_allow_list_help": "ONLY these tickers can be traded. Empty list = nothing is tradable (fail-closed). This mirrors the StockNews stocknews_tickers coverage list, minus the non-tradable placeholders (ANTHROPIC, OPENAI, RESONAC). It is the primary blast-radius limit; trim it any time. Some entries are ADRs/foreign names that rarely surface in the SEC/Congress feeds — harmless, since a name still needs a live confluence signal to be proposed.",
+  "_allow_list_help": "ONLY these tickers can be traded. Empty list = nothing is tradable (fail-closed). This mirrors the StockNews stocknews_tickers coverage list, minus the non-tradable placeholders (ANTHROPIC, OPENAI, RESONAC). It is the primary blast-radius limit; trim it any time. Some entries are ADRs/foreign names that rarely surface in the SEC/Congress feeds — harmless, since a name still needs a live confluence signal to be proposed. REMOVED 2026-07-02: 'BYD' — on US exchanges that symbol is Boyd Gaming, NOT BYD Company (1211.HK, which the StockNews reports/BYD thesis covers); an order for 'BYD' would have bought the casino operator grounded in the Chinese EV maker's research, and the HK$305 anchor is unparseable so the price-sanity guard could not catch it. Re-add as BYDDY only once a reports/BYDDY thesis exists.",
 
   "block_list": [],
   "_block_list_help": "Hard deny, checked after allow_list. Use to pause a name without editing allow_list.",
