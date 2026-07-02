@@ -71,6 +71,7 @@ DEFAULT_GUARDRAILS = {
     "block_list": [],
     "allowed_sides": ["buy"],
     "min_signal_feeds": 3,
+    "require_conviction_feed": True,
     "max_notional_per_order_usd": 100.0,
     "max_pct_account_per_order": 0.05,
     "max_orders_per_day": 3,
@@ -164,6 +165,13 @@ def load_guardrails(path=GUARDRAILS_PATH):
     return gr
 
 
+# Feeds where someone put real skin in the game (a politician's own trade, an
+# insider's open-market buy, a filed material event) — as opposed to the
+# derived/observational feeds (analyst trend, earnings beat, crowded 13F),
+# which all correlate with "had a good quarter" and are not independent.
+CONVICTION_FEEDS = {"congress", "insider", "corporate"}
+
+
 # -------------------- Pure sizing + guardrail logic (unit-tested) -----------
 
 def size_order(account_value, gr):
@@ -251,6 +259,11 @@ def evaluate_proposals(ranked, gr, account_value, state, now):
         if sig.get("feed_count", 0) < min_feeds:
             reject(f"only {sig.get('feed_count', 0)} feeds (< min {min_feeds})")
             continue
+        if (gr.get("require_conviction_feed", True)
+                and not (set(sig.get("feeds", [])) & CONVICTION_FEEDS)):
+            reject("no skin-in-the-game feed (needs congress/insider/8-K, "
+                   f"got {sig.get('feeds', [])})")
+            continue
         if ticker not in allow:  # empty allow_list => nothing tradable (fail-closed)
             reject("not in allow_list")
             continue
@@ -303,7 +316,9 @@ def gate_on_context(approved, gr, account_value, enrich_fn, today=None):
         th = ctx.get("thesis", {}) or {}
         pf = ctx.get("portfolio", {}) or {}
         rs = ctx.get("research", {}) or {}
-        p = dict(p, thesis=th, portfolio=pf, research=rs)  # acknowledge on the proposal
+        ev = ctx.get("events_8k") or []
+        # acknowledge on the proposal
+        p = dict(p, thesis=th, portfolio=pf, research=rs, events_8k=ev)
 
         if require and not th.get("found"):
             rejected.append(dict(p, reason="no StockNews thesis on file"))
@@ -573,6 +588,15 @@ def _ack_label(r):
     rs = r.get("research") or {}
     if rs.get("flags"):
         parts.append(f"🔬 ⚠️ {rs['flags'][0]}")
+    # Latest material 8-K from the analyzed events feed — so a buy proposal
+    # visibly knows about the earnings release / CFO exit it trades into.
+    hot = next((e for e in (r.get("events_8k") or [])
+                if e.get("materiality") in ("high", "critical")), None)
+    if hot:
+        codes = ",".join(c for c in hot.get("codes", []) if c)
+        parts.append(f"📋 8-K {hot.get('filing_date')} "
+                     f"{(hot.get('materiality') or '').upper()}"
+                     + (f" [{codes}]" if codes else ""))
     return " · ".join(parts)
 
 

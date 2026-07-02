@@ -304,4 +304,7 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    import producer_status
+    rc = main()
+    producer_status.record("cluster_buys", ok=(rc == 0))
+    sys.exit(rc)

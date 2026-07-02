@@ -31,12 +31,15 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: python3 cluster_buys.py
 
-      - name: Commit state if changed
+      - name: Commit state + producer status if changed
         run: |
-          if [ -n "$(git status --porcelain cluster_state.json 2>/dev/null)" ]; then
+          if [ -n "$(git status --porcelain cluster_state.json producer_status.json 2>/dev/null)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add cluster_state.json
+            git add cluster_state.json producer_status.json
             git commit -m "chore: update cluster-buy state [skip ci]"
-            git push
+            for i in 1 2 3; do
+              git pull --rebase --autostash && git push && break
+              sleep $((RANDOM % 4 + 2))
+            done
           fi

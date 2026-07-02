@@ -190,3 +190,35 @@ class GateOnContextTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class StaleHardCapTest(unittest.TestCase):
+    """2026-07-02 tuning: a thesis > STALE_HARD_CAP_DAYS past review_due caps
+    conviction at LOW (blocked by the default min_conviction=medium), while a
+    mildly stale one still only drops high -> medium."""
+
+    def test_mildly_stale_still_medium(self):
+        from datetime import date
+        a = enrichment.assess_purchase(
+            _thesis(xii=90, h0=90, dur=21, prob=(30, 50, 20),
+                    review_due="2026-06-09"), today=date(2026, 7, 2))
+        self.assertEqual(a["stale_days"], 23)
+        self.assertEqual(a["conviction"], "medium")
+
+    def test_month_overdue_caps_at_low(self):
+        from datetime import date
+        a = enrichment.assess_purchase(
+            _thesis(xii=90, h0=90, dur=21, prob=(30, 50, 20),
+                    review_due="2026-05-20"), today=date(2026, 7, 2))
+        self.assertGreater(a["stale_days"], enrichment.STALE_HARD_CAP_DAYS)
+        self.assertEqual(a["conviction"], "low")
+        self.assertFalse(a["good_purchase"])
+        self.assertTrue(any("caps conviction at low" in r for r in a["reasons"]))
+
+    def test_fresh_thesis_unaffected(self):
+        from datetime import date
+        a = enrichment.assess_purchase(
+            _thesis(xii=90, h0=90, dur=21, prob=(30, 50, 20),
+                    review_due="2026-08-30"), today=date(2026, 7, 2))
+        self.assertEqual(a["stale_days"], 0)
+        self.assertEqual(a["conviction"], "high")

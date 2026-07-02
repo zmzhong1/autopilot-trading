@@ -331,3 +331,31 @@ class StateAccountingTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ConvictionFeedRequirementTest(unittest.TestCase):
+    """2026-07-02 tuning: min_signal_feeds can be met by analyst + earnings +
+    institutional — three observational feeds that all correlate with "good
+    quarter". require_conviction_feed demands at least one skin-in-the-game
+    feed (congress / insider / corporate) among them."""
+
+    def test_observational_only_signal_rejected(self):
+        s = sig("MSFT", feed_count=3,
+                feeds=["analyst", "earnings", "institutional"])
+        approved, rejected = executor.evaluate_proposals(
+            [s], gr(), 1000.0, {}, NOW)
+        self.assertEqual(approved, [])
+        self.assertIn("skin-in-the-game", rejected[0]["reason"])
+
+    def test_one_conviction_feed_suffices(self):
+        s = sig("MSFT", feed_count=3,
+                feeds=["insider", "analyst", "earnings"])
+        approved, _ = executor.evaluate_proposals([s], gr(), 1000.0, {}, NOW)
+        self.assertEqual(len(approved), 1)
+
+    def test_opt_out_restores_old_behavior(self):
+        s = sig("MSFT", feed_count=3,
+                feeds=["analyst", "earnings", "institutional"])
+        approved, _ = executor.evaluate_proposals(
+            [s], gr(require_conviction_feed=False), 1000.0, {}, NOW)
+        self.assertEqual(len(approved), 1)

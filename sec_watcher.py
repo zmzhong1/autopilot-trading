@@ -38,6 +38,12 @@ except (AttributeError, ValueError):
 ROOT = Path(__file__).parent
 WATCHLIST_PATH = ROOT / "watchlist.json"
 STATE_PATH = ROOT / "state.json"
+# Committed 8-K analysis feed — one JSON line per analyzed 8-K. This is the
+# bridge into the StockNews repo: its stage-6 thesis-update routine reads this
+# file (see StockNews orchestration/autopilot_events.py) so every material
+# event lands in the research tree with the analysis already done.
+EVENTS_8K_PATH = ROOT / "events" / "8k_events.jsonl"
+EVENTS_8K_CAP = 500  # rolling window of committed event lines
 
 USER_AGENT = os.environ.get("SEC_USER_AGENT", "").strip()
 DISCORD_WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "").strip()
@@ -66,6 +72,16 @@ COLOR_NEUTRAL = 0x95A5A6
 COLOR_8K = 0xF1C40F
 COLOR_13F = 0x3498DB
 COLOR_13DG = 0x9B59B6
+
+# 8-K cards are coloured by materiality so a restatement never looks like a
+# routine Reg FD deck at a glance.
+COLOR_8K_BY_MATERIALITY = {
+    "critical": 0xE74C3C,  # red
+    "high": 0xE67E22,      # orange
+    "medium": COLOR_8K,    # yellow
+    "low": 0x95A5A6,       # grey
+}
+MATERIALITY_EMOJI = {"critical": "🚨", "high": "🔴", "medium": "🟡", "low": "⚪"}
 
 
 def http_get_json(url):
@@ -175,8 +191,12 @@ def edgar_index_url(cik, accession):
     return f"https://www.sec.gov/Archives/edgar/data/{cik_int}/{acc_clean}/{accession}-index.htm"
 
 
-def build_embed(filer_name, form, filing_date, url, cik, accession, primary_doc, items_str):
-    """Returns (embed_dict, headline_str). Falls back gracefully if enrichment fails."""
+def build_embed(filer_name, form, filing_date, url, cik, accession, primary_doc,
+                items_str, extras=None):
+    """Returns (embed_dict, headline_str). Falls back gracefully if enrichment
+    fails. `extras`, when given, is a dict the form-specific builders may fill
+    with side data the caller wants (currently: the 8-K analysis, under key
+    "analysis_8k", so check_entry can log it to the events feed)."""
     base_form = form[:-2] if form.endswith("/A") else form
     timestamp = None
     if filing_date:
@@ -190,7 +210,8 @@ def build_embed(filer_name, form, filing_date, url, cik, accession, primary_doc,
                                        accession, primary_doc, timestamp)
     elif base_form == "8-K":
         embed, headline = _form8k_embed(filer_name, form, filing_date, url,
-                                        items_str, timestamp)
+                                        items_str, timestamp, cik, accession,
+                                        primary_doc, extras)
     elif base_form in ("SC 13D", "SC 13G"):
         embed, headline = _sc13_embed(filer_name, form, filing_date, url, cik,
                                       accession, primary_doc, timestamp)
@@ -374,22 +395,91 @@ def _form4_batch_embed(filer_name, cik, filings, filing_date):
     return embed, headline
 
 
-def _form8k_embed(filer_name, form, filing_date, url, items_str, timestamp):
-    items = sec_enrich.parse_8k_items(items_str or "")
-    if items:
-        item_lines = "\n".join(f"`{i['code']}` {i['label']}" for i in items)
-        item_codes = ", ".join(i["code"] for i in items)
-        headline = f"📋 {filer_name} — 8-K [{item_codes}]"
-    else:
-        item_lines = "_(no item codes reported)_"
-        headline = f"📋 {filer_name} — 8-K filed {filing_date}"
+def _form8k_embed(filer_name, form, filing_date, url, items_str, timestamp,
+                  cik=None, accession=None, primary_doc=None, extras=None):
+    """Deep 8-K card: per-item summaries in the filing's own words, financial
+    highlights from the press-release exhibit, personnel changes, and a
+    materiality band. Falls back to the plain item-code list when the document
+    can't be fetched/parsed."""
+    analysis = None
+    if cik and accession:
+        try:
+            analysis = sec_enrich.enrich_8k(cik, accession, primary_doc,
+                                            items_str, http_get_text,
+                                            http_get_json)
+        except Exception as e:
+            print(f"[WARN] 8-K enrichment failed: {e}", file=sys.stderr)
+    if analysis and extras is not None:
+        extras["analysis_8k"] = analysis
+
+    items = (analysis or {}).get("items") or sec_enrich.parse_8k_items(items_str or "")
+
+    if not analysis:
+        # Legacy shallow card — item codes only.
+        if items:
+            item_lines = "\n".join(f"`{i['code']}` {i['label']}" for i in items)
+            item_codes = ", ".join(i["code"] for i in items)
+            headline = f"📋 {filer_name} — 8-K [{item_codes}]"
+        else:
+            item_lines = "_(no item codes reported)_"
+            headline = f"📋 {filer_name} — 8-K filed {filing_date}"
+        embed = {
+            "title": f"{filer_name} — {form}",
+            "url": url,
+            "color": COLOR_8K,
+            "description": item_lines[:4000],
+            "fields": [{"name": "Filed", "value": filing_date or "—", "inline": True}],
+        }
+        if timestamp:
+            embed["timestamp"] = timestamp
+        return embed, headline
+
+    level = analysis["materiality"]
+    emoji = MATERIALITY_EMOJI.get(level, "🟡")
+    item_codes = ", ".join(analysis["codes"])
+    headline = (f"📋 {filer_name} — 8-K [{item_codes}] · "
+                f"{emoji} {level.upper()} materiality")
+
+    desc_lines = []
+    for it in items:
+        desc_lines.append(f"`{it['code']}` **{it['label']}**")
+        if it.get("summary"):
+            desc_lines.append(f"> {it['summary']}")
+    if analysis.get("press_release_title"):
+        pr = analysis["press_release_title"]
+        if analysis.get("press_release_url"):
+            desc_lines.append(f"\n📰 [{pr}]({analysis['press_release_url']})")
+        else:
+            desc_lines.append(f"\n📰 {pr}")
+    desc = "\n".join(desc_lines) or "_(no item codes reported)_"
+
+    fields = [
+        {"name": "Materiality",
+         "value": f"{emoji} {level.upper()}"
+                  + (f" — {analysis['materiality_drivers'][0]}"
+                     if analysis.get("materiality_drivers") else ""),
+         "inline": False},
+    ]
+    if analysis.get("financial_highlights"):
+        fields.append({
+            "name": "💰 Key figures",
+            "value": "\n".join(f"• {h}" for h in analysis["financial_highlights"])[:1024],
+            "inline": False,
+        })
+    if analysis.get("personnel"):
+        fields.append({
+            "name": "👤 Leadership changes",
+            "value": "\n".join(f"• {p}" for p in analysis["personnel"])[:1024],
+            "inline": False,
+        })
+    fields.append({"name": "Filed", "value": filing_date or "—", "inline": True})
 
     embed = {
-        "title": f"{filer_name} — {form}",
+        "title": f"{emoji} {filer_name} — {form}",
         "url": url,
-        "color": COLOR_8K,
-        "description": item_lines[:4000],
-        "fields": [{"name": "Filed", "value": filing_date or "—", "inline": True}],
+        "color": COLOR_8K_BY_MATERIALITY.get(level, COLOR_8K),
+        "description": desc[:4000],
+        "fields": fields,
     }
     if timestamp:
         embed["timestamp"] = timestamp
@@ -507,6 +597,73 @@ def _form13f_embed(filer_name, form, filing_date, url, cik, accession, timestamp
     return embed, headline
 
 
+_TICKER_CACHE = None
+
+
+def ticker_for_cik(cik):
+    """CIK → primary ticker via SEC company_tickers.json, fetched at most once
+    per run and only when an 8-K event actually needs logging. Returns None on
+    any failure — the event still logs, keyed by filer name."""
+    global _TICKER_CACHE
+    if _TICKER_CACHE is None:
+        try:
+            raw = http_get_json("https://www.sec.gov/files/company_tickers.json")
+            _TICKER_CACHE = {str(v["cik_str"]).zfill(10): (v.get("ticker") or "").upper()
+                             for v in raw.values()}
+        except Exception as e:
+            print(f"[WARN] company_tickers fetch failed: {e}", file=sys.stderr)
+            _TICKER_CACHE = {}
+    return _TICKER_CACHE.get(str(cik).zfill(10)) or None
+
+
+def append_8k_event(record, path=None, cap=EVENTS_8K_CAP):
+    """Append one analyzed-8-K record to the committed events feed (JSONL),
+    deduping by accession and keeping a rolling window. Best-effort — an OSError
+    must never take down the watcher run. `path` resolves at call time so tests
+    can point EVENTS_8K_PATH at a temp file."""
+    path = path or EVENTS_8K_PATH
+    try:
+        lines = []
+        if path.exists():
+            lines = [ln for ln in path.read_text(encoding="utf-8").splitlines()
+                     if ln.strip()]
+        for ln in lines:
+            try:
+                if json.loads(ln).get("accession") == record.get("accession"):
+                    return False  # already logged (e.g. Discord retry)
+            except json.JSONDecodeError:
+                continue
+        lines.append(json.dumps(record, sort_keys=True))
+        path.parent.mkdir(exist_ok=True)
+        path.write_text("\n".join(lines[-cap:]) + "\n", encoding="utf-8")
+        return True
+    except OSError as e:
+        print(f"[WARN] could not write {path.name}: {e}", file=sys.stderr)
+        return False
+
+
+def build_8k_event_record(filer_name, cik, filing, analysis, url):
+    """Shape one committed events-feed row from an 8-K analysis. Pure."""
+    return {
+        "ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "ticker": ticker_for_cik(cik),
+        "filer": filer_name,
+        "cik": str(cik).zfill(10),
+        "accession": filing["accession"],
+        "filing_date": filing["filing_date"],
+        "form": filing["form"],
+        "items": [{"code": i["code"], "label": i["label"],
+                   "summary": i.get("summary", "")}
+                  for i in analysis.get("items", [])],
+        "materiality": analysis.get("materiality"),
+        "materiality_drivers": analysis.get("materiality_drivers", []),
+        "financial_highlights": analysis.get("financial_highlights", []),
+        "personnel": analysis.get("personnel", []),
+        "press_release_title": analysis.get("press_release_title"),
+        "url": url,
+    }
+
+
 def check_entry(entry, state, is_first_run, alerts_left):
     cik = str(entry["cik"]).zfill(10)
     name = entry.get("name", cik)
@@ -585,17 +742,19 @@ def check_entry(entry, state, is_first_run, alerts_left):
     units.sort(key=lambda u: (min(f["filing_date"] for f in u),
                               min(f["accession"] for f in u)))
 
-    def record(filing):
+    def record(filing, **extra_fields):
         seen_list.append(filing["accession"])
         seen_set.add(filing["accession"])
-        state["alert_history"].append({
+        row = {
             "ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "kind": "sec",
             "filer": name,
             "form": filing["form"],
             "filing_date": filing["filing_date"],
             "accession": filing["accession"],
-        })
+        }
+        row.update({k: v for k, v in extra_fields.items() if v is not None})
+        state["alert_history"].append(row)
 
     sent = 0
     for unit in units:
@@ -608,10 +767,11 @@ def check_entry(entry, state, is_first_run, alerts_left):
         if len(unit) == 1:
             f = unit[0]
             url = filing_url(cik, f["accession"], f["primary_doc"])
+            extras = {}
             try:
                 embed, headline = build_embed(name, f["form"], f["filing_date"], url,
                                               cik, f["accession"], f["primary_doc"],
-                                              f["items"])
+                                              f["items"], extras=extras)
             except Exception as e:
                 print(f"[WARN] embed build failed for {name} {f['accession']}: {e}",
                       file=sys.stderr)
@@ -619,6 +779,16 @@ def check_entry(entry, state, is_first_run, alerts_left):
                 headline = f"📄 {name} — {f['form']} filed {f['filing_date']}\n<{url}>"
             delivered = alert(headline, embed=embed,
                               fallback_content=f"{headline}\n<{url}>")
+            analysis = extras.get("analysis_8k")
+            if delivered and analysis:
+                # Persist the analysis: materiality flows into confluence via
+                # alert_history; the full breakdown flows to StockNews via the
+                # committed events feed.
+                record(f, items=[i["code"] for i in analysis.get("items", [])],
+                       materiality=analysis.get("materiality"))
+                append_8k_event(build_8k_event_record(name, cik, f, analysis, url))
+                sent += 1
+                continue
         else:
             filing_date = unit[0]["filing_date"]
             try:

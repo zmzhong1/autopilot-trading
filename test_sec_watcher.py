@@ -28,6 +28,10 @@ ACCESSIONS = [
 ]
 
 
+def _raise_network(url):
+    raise OSError("no network in tests")
+
+
 def _submissions(accessions, form="8-K"):
     """Minimal EDGAR submissions payload, newest-first like the real API."""
     accs = list(reversed(accessions))  # API returns reverse-chronological
@@ -47,12 +51,17 @@ def _submissions(accessions, form="8-K"):
 
 class DedupByAccessionTest(unittest.TestCase):
     def setUp(self):
-        # Stub the only network call check_entry makes for 8-K (no enrichment).
+        # Stub both network calls check_entry can make for 8-K: the submissions
+        # poll and the (new) document fetch inside enrich_8k. The text fetch
+        # raising exercises the graceful fallback to the plain item-code card.
         self._orig_get_json = sec_watcher.http_get_json
+        self._orig_get_text = sec_watcher.http_get_text
         sec_watcher.http_get_json = lambda url: _submissions(ACCESSIONS, form="8-K")
+        sec_watcher.http_get_text = _raise_network
 
     def tearDown(self):
         sec_watcher.http_get_json = self._orig_get_json
+        sec_watcher.http_get_text = self._orig_get_text
 
     def test_distinct_accessions_send_once_then_dedup(self):
         entry = {"cik": ALPHABET_CIK, "name": "Alphabet Inc (Google)", "forms": ["8-K"]}

@@ -32,12 +32,12 @@ jobs:
           MAX_ALERTS_PER_RUN: '20'
         run: python3 sec_watcher.py
 
-      - name: Commit state if changed
+      - name: Commit state + 8-K events if changed
         run: |
-          if [ -n "$(git status --porcelain state.json 2>/dev/null)" ]; then
+          if [ -n "$(git status --porcelain state.json events/ 2>/dev/null)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add state.json
-            git commit -m "chore: update watcher state [skip ci]"
+            git add state.json events/
+            git commit -m "chore: update watcher state + 8-K events [skip ci]"
             git push
           fi
