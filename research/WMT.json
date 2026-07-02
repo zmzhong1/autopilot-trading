@@ -1,0 +1,26 @@
+{
+  "snapshot": {
+    "ticker": "WMT",
+    "researched_at": "2026-07-02T13:17:31+00:00",
+    "name": "Walmart Inc",
+    "industry": "Retail",
+    "market_cap": 963166.32,
+    "metrics": {
+      "P/E": 40.49,
+      "net margin %": 3.13,
+      "rev growth %": 5.87,
+      "ROE %": 23.92,
+      "current ratio": 0.77
+    },
+    "news": [
+      "Meta Declares War on the Cloud Giants, and Chip Stocks Pay the Price",
+      "3 Profitable Stocks with Questionable Fundamentals",
+      "Walmart (WMT) Is Down 8.6% After Slowing U.S. Comps Raise Questions On Margin Strategy"
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": false
+  },
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
+}
