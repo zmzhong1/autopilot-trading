@@ -303,7 +303,9 @@ def gate_on_context(approved, gr, account_value, enrich_fn, today=None):
         th = ctx.get("thesis", {}) or {}
         pf = ctx.get("portfolio", {}) or {}
         rs = ctx.get("research", {}) or {}
-        p = dict(p, thesis=th, portfolio=pf, research=rs)  # acknowledge on the proposal
+        ev = ctx.get("events_8k") or []
+        # acknowledge on the proposal
+        p = dict(p, thesis=th, portfolio=pf, research=rs, events_8k=ev)
 
         if require and not th.get("found"):
             rejected.append(dict(p, reason="no StockNews thesis on file"))
@@ -573,6 +575,15 @@ def _ack_label(r):
     rs = r.get("research") or {}
     if rs.get("flags"):
         parts.append(f"🔬 ⚠️ {rs['flags'][0]}")
+    # Latest material 8-K from the analyzed events feed — so a buy proposal
+    # visibly knows about the earnings release / CFO exit it trades into.
+    hot = next((e for e in (r.get("events_8k") or [])
+                if e.get("materiality") in ("high", "critical")), None)
+    if hot:
+        codes = ",".join(c for c in hot.get("codes", []) if c)
+        parts.append(f"📋 8-K {hot.get('filing_date')} "
+                     f"{(hot.get('materiality') or '').upper()}"
+                     + (f" [{codes}]" if codes else ""))
     return " · ".join(parts)
 
 

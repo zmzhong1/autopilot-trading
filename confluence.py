@@ -167,6 +167,13 @@ def collect_signals(sec_history, congress_history, name_to_ticker, cik_to_ticker
         if base == "4":
             add(ticker, "insider", filer)
         elif base == "8-K":
+            # Materiality-aware (2026-07): the watcher now stamps analyzed 8-Ks
+            # with a materiality band. Routine "low" filings (Reg FD decks,
+            # exhibit-only 9.01s) are corporate housekeeping, not a trading
+            # signal — they must not push a name over min_signal_feeds. Legacy
+            # entries without the field keep counting (backward compatible).
+            if h.get("materiality") == "low":
+                continue
             add(ticker, "corporate", filer)
 
     for c in crowded or []:

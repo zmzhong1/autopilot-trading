@@ -2,7 +2,7 @@
 
 A $0/month alert pipeline for the data Autopilot, Quiver Quant, and Unusual Whales charge for:
 
-- **SEC insider / institutional filings** (Form 4, 13D, 13G, 13F, 8-K) — sub-15-minute alerts via [sec_watcher.py](sec_watcher.py), enriched with parsed transaction details (insider name, buy/sell, shares, $-value, 8-K item codes, 13D stake size, 13F quarter-over-quarter diff).
+- **SEC insider / institutional filings** (Form 4, 13D, 13G, 13F, 8-K) — sub-15-minute alerts via [sec_watcher.py](sec_watcher.py), enriched with parsed transaction details (insider name, buy/sell, shares, $-value, 8-K deep analysis with materiality + key figures, 13D stake size, 13F quarter-over-quarter diff).
 - **Congressional trades** (STOCK Act PTRs, House + Senate) — hourly alerts via [congress_watcher.py](congress_watcher.py), colour-coded buy/sell with structured fields. Sourced from a CDN-hosted mirror (kadoa) with a Financial Modeling Prep fallback — no fragile site-scraping that datacenter IP-blocks can kill.
 - **Weekly heartbeat** — every Monday morning, a digest of the past 7 days of alerts plus a watcher-health check via [heartbeat.py](heartbeat.py).
 - **Ticker discovery** — also Mondays, a digest of NEW tickers worth adding to your news/research list, surfaced from the congressional-trades + EDGAR 8-K firehoses, via [discovery.py](discovery.py).
@@ -361,12 +361,23 @@ Alerts are Discord rich embeds (colour-coded, structured fields, hyperlinked). T
 |---|---|
 | **Form 4** (insider) | 🟢/🔴 buy or sell · insider name + role · transaction code (P/S/A/M/F…) · shares × price = $-value · post-transaction holdings · per-leg breakdown for multi-leg filings · accession + EDGAR deep link |
 | **Form 4 (same-day batch)** | 📄 one card when an issuer files ≥`FORM4_BATCH_MIN` insider Form 4s on the same day · one line per insider (side · role · $-value · deep link) · net buy/sell totals — collapses high-volume large-cap insider noise into a single notification |
-| **8-K** | 📋 yellow embed · all SEC item codes (e.g. `2.02` Results of Operations, `5.02` Officer Departure) with human-readable labels, so boring routine 8-Ks are visually distinct from material events |
+| **8-K** | 📋 embed colour-coded by **materiality** (🚨 red critical — bankruptcy/restatement/delisting · 🔴 orange high — earnings/M&A/officer change · 🟡 yellow medium · ⚪ grey low — Reg FD decks) · the watcher fetches the actual filing + press-release exhibit and surfaces: per-item summaries in the filing's own words, 💰 key figures (revenue/EPS/margin/🔭 guidance) pulled from the earnings exhibit, 👤 leadership changes for `5.02`, and the press-release headline + link. Falls back to the plain item-code list when the document can't be parsed |
 | **SC 13D / 13G** | 🎯 purple embed · target issuer name + CUSIP · % of class · aggregate shares (parsed from post-2024 mandated XML schema) |
 | **13F-HR** | 🏦 blue embed · position count · total $-value · diff vs. prior quarter: 🆕 new positions, ❌ exits, 📈 increases, 📉 decreases (top 5 each, ranked by $) |
 | **Congress trade** | 🏛️ green/red embed · politician · buy/sell · issuer · size range · owner · trade date / pub date / lag |
 
 Where structured XML is unavailable (older filings, malformed XML), the watcher falls back gracefully to the original "Filer — form filed date + link" format.
+
+## 8-K deep analysis → events feed → StockNews
+
+Every 8-K the watcher alerts on is also **analyzed and persisted**, not just labeled:
+
+1. `sec_enrich.enrich_8k` fetches the filing's primary document and its press-release exhibit (EX-99), extracts per-item summaries, financial highlights, personnel changes, and assigns a **materiality band** (`critical` / `high` / `medium` / `low` per item code — see `ITEM_8K_MATERIALITY`).
+2. The full breakdown is appended to **[events/8k_events.jsonl](events/8k_events.jsonl)** (committed, rolling 500 events, deduped by accession) with the ticker resolved via SEC `company_tickers.json`.
+3. Three consumers read it:
+   - **StockNews** (`zmzhong1/StockNews`): its `orchestration/autopilot_events.py` pulls a ticker's recent analyzed 8-Ks straight into the stage-6 `thesis-update` evidence pass — material events arrive pre-summarized with materiality attached.
+   - **Confluence / executor signals**: the materiality lands in `state.json → alert_history`, and `confluence.py` now **skips `low`-materiality 8-Ks** (Reg FD decks, exhibit-only 9.01s) when counting the 📋 corporate feed — a routine investor-deck upload can no longer help push a name over `min_signal_feeds`.
+   - **Proposal cards**: `enrichment.recent_8k_events` surfaces the latest high/critical 8-K on each executor proposal (`📋 8-K 2026-07-02 HIGH [2.02]`), so a buy visibly knows about the earnings release or CFO exit it trades into.
 
 ## Ticker discovery
 
