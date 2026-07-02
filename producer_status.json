@@ -1,4 +1,8 @@
 {
+  "cluster_buys": {
+    "last_run": "2026-07-02T23:37:40+00:00",
+    "ok": true
+  },
   "confluence": {
     "last_run": "2026-06-29T16:38:25+00:00",
     "ok": true
