@@ -27,7 +27,10 @@
   "_allowed_sides_help": "['buy'] = accumulate-only (conservative default; the agent can never sell your position). Add 'sell' only once you trust the loop.",
 
   "min_signal_feeds": 3,
-  "_min_signal_feeds_help": "Only act on confluence signals corroborated by at least this many independent feeds (congress / insider / 8-K / 13F). 3 = all-feed overlap only — the highest-signal subset.",
+  "_min_signal_feeds_help": "Only act on confluence signals corroborated by at least this many independent feeds (congress / insider / 8-K / 13F / analyst / earnings). 3 = all-feed overlap only — the highest-signal subset.",
+
+  "require_conviction_feed": true,
+  "_require_conviction_feed_help": "Added 2026-07-02: at least one of the counted feeds must be skin-in-the-game (congress trade, insider open-market buy, or a material 8-K). Without this, analyst + earnings + 13F could clear min_signal_feeds on their own — three observational feeds that all just correlate with 'had a good quarter' (the 2026-06-29 MU proposal was exactly that).",
 
   "max_notional_per_order_usd": 250.0,
   "_max_notional_help": "Hard ceiling on a single order's dollar size.",
@@ -35,8 +38,8 @@
   "max_pct_account_per_order": 0.10,
   "_max_pct_help": "Single order may not exceed this fraction of account value. Order size = min(max_notional_per_order_usd, account_value * max_pct_account_per_order). At $500 basis this resolves to $50/order (10% binds before the $250 ceiling).",
 
-  "max_orders_per_day": 5,
-  "_max_orders_help": "Cap on orders placed (or proposed-as-executable) per calendar day, counted from executor_state.json.",
+  "max_orders_per_day": 2,
+  "_max_orders_help": "Cap on orders placed (or proposed-as-executable) per calendar day, counted from executor_state.json. Lowered 5 -> 2 on 2026-07-02: at $50/order, 5/day could deploy 50% of the account in one session and hit the 70% total-deploy cap within two days — 2/day forces time diversification across signals.",
 
   "max_total_deployed_pct": 0.70,
   "_max_total_deployed_help": "Stop opening new positions once cumulative deployed capital (sum of filled notionals) reaches this fraction of account value.",

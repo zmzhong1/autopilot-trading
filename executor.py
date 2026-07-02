@@ -71,6 +71,7 @@ DEFAULT_GUARDRAILS = {
     "block_list": [],
     "allowed_sides": ["buy"],
     "min_signal_feeds": 3,
+    "require_conviction_feed": True,
     "max_notional_per_order_usd": 100.0,
     "max_pct_account_per_order": 0.05,
     "max_orders_per_day": 3,
@@ -164,6 +165,13 @@ def load_guardrails(path=GUARDRAILS_PATH):
     return gr
 
 
+# Feeds where someone put real skin in the game (a politician's own trade, an
+# insider's open-market buy, a filed material event) — as opposed to the
+# derived/observational feeds (analyst trend, earnings beat, crowded 13F),
+# which all correlate with "had a good quarter" and are not independent.
+CONVICTION_FEEDS = {"congress", "insider", "corporate"}
+
+
 # -------------------- Pure sizing + guardrail logic (unit-tested) -----------
 
 def size_order(account_value, gr):
@@ -250,6 +258,11 @@ def evaluate_proposals(ranked, gr, account_value, state, now):
             continue
         if sig.get("feed_count", 0) < min_feeds:
             reject(f"only {sig.get('feed_count', 0)} feeds (< min {min_feeds})")
+            continue
+        if (gr.get("require_conviction_feed", True)
+                and not (set(sig.get("feeds", [])) & CONVICTION_FEEDS)):
+            reject("no skin-in-the-game feed (needs congress/insider/8-K, "
+                   f"got {sig.get('feeds', [])})")
             continue
         if ticker not in allow:  # empty allow_list => nothing tradable (fail-closed)
             reject("not in allow_list")

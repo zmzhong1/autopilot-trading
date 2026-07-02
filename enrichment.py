@@ -46,6 +46,11 @@ STOCK_PORTFOLIO_TOKEN = os.environ.get("STOCK_PORTFOLIO_TOKEN", "").strip()
 #   >=85 strong · >=65 moderate-buy-with-sizing · >=45 wait/skip · <45 avoid
 BAND_STRONG, BAND_MODERATE, BAND_WAIT = 85, 65, 45
 
+# A thesis this many days past review_due can no longer support a buy at all —
+# conviction is capped at "low" (below the default min_conviction=medium gate)
+# until the tree is refreshed. Within the window, stale only caps high→medium.
+STALE_HARD_CAP_DAYS = 30
+
 
 def _read_local_tree(ticker):
     if not STOCKNEWS_REPO_PATH:
@@ -195,7 +200,7 @@ def assess_purchase(thesis, today=None):
     while XII 90% GOOGL (H-0 90%, bull>bear, fresh) lands at HIGH."""
     if not thesis or not thesis.get("found"):
         return {"conviction": "none", "score": 0, "good_purchase": False,
-                "stale": False, "asymmetry": None,
+                "stale": False, "stale_days": 0, "asymmetry": None,
                 "reasons": ["no StockNews thesis"]}
 
     xii = thesis.get("xii_score")
@@ -206,7 +211,7 @@ def assess_purchase(thesis, today=None):
 
     if thesis.get("fatal_flags", 0) > 0 or (xii is not None and xii < BAND_WAIT):
         return {"conviction": "avoid", "score": 0, "good_purchase": False,
-                "stale": False, "asymmetry": None,
+                "stale": False, "stale_days": 0, "asymmetry": None,
                 "reasons": [f"XII {xii}% / {thesis.get('fatal_flags')} fatal flag(s)"]}
 
     score = 0
@@ -241,10 +246,13 @@ def assess_purchase(thesis, today=None):
 
     # Freshness: a thesis past its review_due can't be fully trusted.
     stale = False
+    stale_days = 0
     rd = _parse_date(thesis.get("review_due"))
     if rd and today and rd < today:
         stale = True
-        reasons.append(f"thesis stale (review due {thesis['review_due']})")
+        stale_days = (today - rd).days
+        reasons.append(f"thesis stale (review due {thesis['review_due']}, "
+                       f"{stale_days}d overdue)")
 
     if score >= 6:
         conviction = "high"
@@ -255,13 +263,20 @@ def assess_purchase(thesis, today=None):
     else:
         conviction = "avoid"
 
-    # A stale thesis caps conviction at medium — re-review before high conviction.
+    # A stale thesis caps conviction at medium — re-review before high
+    # conviction. Past a month overdue the research can no longer clear a
+    # buy at all: cap at LOW so the default min_conviction=medium blocks it
+    # until the tree is refreshed (2026-07-02 tuning).
     if stale and conviction == "high":
         conviction = "medium"
+    if stale_days > STALE_HARD_CAP_DAYS and conviction in ("high", "medium"):
+        conviction = "low"
+        reasons.append(f"stale > {STALE_HARD_CAP_DAYS}d caps conviction at low")
 
     return {"conviction": conviction, "score": score,
             "good_purchase": conviction in ("high", "medium"),
-            "stale": stale, "asymmetry": asymmetry, "reasons": reasons}
+            "stale": stale, "stale_days": stale_days,
+            "asymmetry": asymmetry, "reasons": reasons}
 
 
 def _parse_date(s):
