@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PDD",
-    "researched_at": "2026-06-30T13:22:51+00:00",
+    "researched_at": "2026-07-03T13:20:40+00:00",
     "name": "PDD Holdings Inc",
     "industry": "Retail",
-    "market_cap": 108961.00351,
+    "market_cap": 117458.671266,
     "metrics": {
-      "P/E": 7.73,
+      "P/E": 7.71,
       "net margin %": 21.62,
       "rev growth %": 9.86,
       "ROE %": 24.06,
       "current ratio": 2.54
     },
     "news": [
-      "KWEB: World Class Tech Weighed By The China Discount",
-      "Reported Earlier: 'France Passes New Law to Fine Shein, Temu and Ultrafast Fashion' - WSJ",
-      "Is PDD Holdings (PDD) One of the Best Non-Tech Stocks to Buy According to Analysts?"
+      "10 Consumer Discretionary Stocks With Whale Alerts In Today\u2019s Session",
+      "Coupang shares are trading higher. The company reported its Q4 financial results.",
+      "Daiwa Moves PDD Holdings (PDD) to Hold"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

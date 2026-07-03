@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PLTR",
-    "researched_at": "2026-06-30T13:22:53+00:00",
+    "researched_at": "2026-07-03T13:20:42+00:00",
     "name": "Palantir Technologies Inc",
     "industry": "Technology",
-    "market_cap": 277369.03259363765,
+    "market_cap": 309972.487251446,
     "metrics": {
-      "P/E": 122.08,
+      "P/E": 135.86,
       "net margin %": 43.67,
       "rev growth %": 67.71,
       "ROE %": 32.18,
       "current ratio": 6.91
     },
     "news": [
-      "Palantir Stock vs. Sandisk Stock: Wall Street Says Buy One and Sell the Other",
-      "Is The Deal Between Nvidia and Palantir a Game Changer?",
-      "5-star analyst gives beaten-down Palantir a surprise verdict"
+      "Palantir's Business Is Booming. So Why Has the Stock Dropped by More Than a Third?",
+      "Palantir CEO gets painfully honest about AI\u2019s biggest problem",
+      "From Punch Cards To Tokens: Some Thoughts On AI Pricing"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

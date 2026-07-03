@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SNOW",
-    "researched_at": "2026-06-30T13:23:00+00:00",
+    "researched_at": "2026-07-03T13:20:47+00:00",
     "name": "Snowflake Inc",
     "industry": "Technology",
-    "market_cap": 87221.89388856663,
+    "market_cap": 90167.99243028447,
     "metrics": {
       "net margin %": -23.79,
       "rev growth %": 31.07,
@@ -12,9 +12,9 @@
       "current ratio": 1.05
     },
     "news": [
-      "Snowflake: A Market Mirror With A Premium Price Tag (Rating Upgrade)",
-      "Snowflake: Beyond SaaSpocalypse, The New Narrative (Double Upgrade)",
-      "Snowflake: Proven AI Winner, But Time To Say Goodbye (Downgrade)"
+      "MongoDB: This Is Where I Will Put My Money Instead",
+      "Snowflake: The Valuation Wipes Out Opportunity",
+      "Snowflake: Value Maxed Tokens Drive Accelerating AI Monetization -\u00a0Valuation Risks Ahead (Rating Downgrade)"
     ],
     "analyst_upgrade": true,
     "earnings_beat": true

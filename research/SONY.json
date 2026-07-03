@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SONY",
-    "researched_at": "2026-06-30T13:23:02+00:00",
+    "researched_at": "2026-07-03T13:20:49+00:00",
     "name": "Sony Group Corp",
     "industry": "Consumer products",
-    "market_cap": 18955782.278809,
+    "market_cap": 19257984.49707,
     "metrics": {
       "net margin %": -2.62,
       "rev growth %": 5.22,
@@ -12,9 +12,9 @@
       "current ratio": 1.18
     },
     "news": [
-      "Xbox Prices Surge Again As Microsoft Expects Memory Costs To Double By Fall 2027, Joins Apple, Sony And Nintendo In Wave Of Hardware Price Hikes",
-      "Hasbro Is So Much More Than Just A Toy Company",
-      "Sony Pictures Entertainment Invests $100M In Cosm"
+      "Sony Ends Physical Discs For Games By 2028, Why GameStop Needs eBay Or Another Growth Plan",
+      "Sony Announces Physical Disc Production In January 2028 For New Games On PlayStation Consoles",
+      "As Stablecoins Lead Crypto Investment Themes, Bitcoin Is No Longer The Favorite Child"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

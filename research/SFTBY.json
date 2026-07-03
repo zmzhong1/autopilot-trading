@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "SFTBY",
-    "researched_at": "2026-06-30T13:22:56+00:00",
+    "researched_at": "2026-07-03T13:20:43+00:00",
     "name": "SoftBank Group Corp",
     "industry": "Telecommunication",
-    "market_cap": 35541148.360352,
+    "market_cap": 34251026.367188,
     "metrics": {
-      "P/E": 7.11,
+      "P/E": 6.8,
       "net margin %": 64.14,
       "rev growth %": 7.66,
       "ROE %": 34.06,
       "current ratio": 0.8
     },
     "news": [
-      "Why Is Intel Stock Gaining Monday?",
-      "Markets Starting To Choke On Massive Surge In Debt Issuance",
-      "Why OpenAI's Listing Timeline Matters For SoftBank Stock"
+      "Arm Holdings: Agentic Silicon Arbitrage Eclipsed By SoftBank Liquidation Threat (Rating Downgrade)",
+      "SoftBank Reopens Talks for $10 Billion Loan Backed by OpenAI Stake After Adding Repayment Guarantee to Ease Banks' Valuation Concerns: Report",
+      "'Softbank In Talks With Lenders On Securing $10B Margin Loan Backed By OpenAI Stake And Repayment Guarantee; Previous Softbank Efforts To Secure Loan Against Its OpenAI Stake Had Stalled Due To Lack Of Lender Support; Goldman Sachs, JPMorgan Chase And Mizuho Financial Group Expected To Be Included In Lending Consortium, Sources Say' - Reuters Exclusive"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
