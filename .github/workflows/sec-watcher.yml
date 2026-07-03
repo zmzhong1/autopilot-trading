@@ -34,10 +34,16 @@ jobs:
 
       - name: Commit state + 8-K events if changed
         run: |
-          if [ -n "$(git status --porcelain state.json events/ 2>/dev/null)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add state.json events/
+          # Stage each path independently — `git add state.json events/` fatals
+          # (exit 128) when events/ doesn't exist yet, which killed every run
+          # between the 8-K-feed merge and the first analyzed 8-K (2026-07-02).
+          # events/.gitkeep now pins the directory, and the guard makes the
+          # step immune even if it's ever removed.
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state.json
+          [ -d events ] && git add events
+          if ! git diff --cached --quiet; then
             git commit -m "chore: update watcher state + 8-K events [skip ci]"
             git push
           fi
