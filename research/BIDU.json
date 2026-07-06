@@ -1,0 +1,26 @@
+{
+  "snapshot": {
+    "ticker": "BIDU",
+    "researched_at": "2026-07-06T14:42:40+00:00",
+    "name": "Baidu Inc",
+    "industry": "Media",
+    "market_cap": 39071.7761441189,
+    "metrics": {
+      "P/E": 679.07,
+      "net margin %": 0.3,
+      "rev growth %": -4.0,
+      "ROE %": 0.15,
+      "current ratio": 1.85
+    },
+    "news": [
+      "Franklin Covey Cuts Revenue Forecast, Joins Ouster And Other Big Stocks Moving Lower In Thursday\u2019s Pre-Market Session",
+      "Baidu: Deeply Mispriced As The AI Pivot Accelerates",
+      "Tesla's Robotaxi Math Doesn't Work With Human Safety Drivers, Gary Black Says"
+    ],
+    "analyst_upgrade": true,
+    "earnings_beat": false
+  },
+  "flags": [
+    "no StockNews thesis on file"
+  ]
+}

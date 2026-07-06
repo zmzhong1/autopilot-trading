@@ -1,0 +1,26 @@
+{
+  "snapshot": {
+    "ticker": "COST",
+    "researched_at": "2026-07-06T14:42:45+00:00",
+    "name": "Costco Wholesale Corp",
+    "industry": "Retail",
+    "market_cap": 422045.481812,
+    "metrics": {
+      "P/E": 47.59,
+      "net margin %": 3.01,
+      "rev growth %": 9.23,
+      "ROE %": 28.27,
+      "current ratio": 1.07
+    },
+    "news": [
+      "Costco has found an AI use members will appreciate",
+      "Walmart quietly built a $6 billion business off its shoppers",
+      "Wall Street Week Ahead"
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": false
+  },
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
+}

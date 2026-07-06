@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DELL",
-    "researched_at": "2026-06-27T17:58:58+00:00",
+    "researched_at": "2026-07-06T14:42:49+00:00",
     "name": "Dell Technologies Inc",
     "industry": "Technology",
-    "market_cap": 258981.80154726395,
+    "market_cap": 255630.185582,
     "metrics": {
-      "P/E": 30.32,
+      "P/E": 30.4,
       "net margin %": 6.28,
       "rev growth %": 38.57,
       "ROE %": 130.7,
       "current ratio": 0.95
     },
     "news": [
-      "Before there were Trump Accounts, SEED OK gave some newborns $1,000 \u2014 how researchers say the grants affected kids",
-      "DELL TECHNOLOGIES -C (NYSE:DELL) Passes Minervini Trend Template and High Growth Momentum Screen",
-      "The Real Risk Inside Cisco Stock"
+      "Trump vs. Pelosi: Who Made More Money in the Stock Market Last Year?",
+      "5 Top-Ranked Growth Stocks to Buy for July After a Mixed June",
+      "Singapore Files New Charges in Nvidia Chip Fraud Case"
     ],
     "analyst_upgrade": false,
     "earnings_beat": true
