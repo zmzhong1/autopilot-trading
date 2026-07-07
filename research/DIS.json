@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "DIS",
-    "researched_at": "2026-06-27T17:59:00+00:00",
+    "researched_at": "2026-07-07T13:34:29+00:00",
     "name": "Walt Disney Co",
     "industry": "Media",
-    "market_cap": 171549.96185687548,
+    "market_cap": 169153.5708511857,
     "metrics": {
-      "P/E": 15.35,
+      "P/E": 15.09,
       "net margin %": 11.54,
       "rev growth %": 3.43,
       "ROE %": 10.29,
       "current ratio": 0.68
     },
     "news": [
-      "\u2018Heated Rivalry\u2019 fuels a boom in gay romance stories, with women leading the fandom",
-      "The summer box office has had a surprisingly strong start",
-      "Disney settles YouTube TV and DirecTV lawsuit for $50 million: Here's who gets paid"
+      "$50M Disney settlement: What to know to claim your share",
+      "Disney World closing one of Epcot's most iconic restaurants",
+      "Walt Disney (DIS) Stock Drops Despite Market Gains: Important Facts to Note"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }

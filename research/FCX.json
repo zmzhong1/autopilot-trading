@@ -1,23 +1,23 @@
 {
   "snapshot": {
     "ticker": "FCX",
-    "researched_at": "2026-06-27T17:59:04+00:00",
+    "researched_at": "2026-07-07T13:34:33+00:00",
     "name": "Freeport-McMoRan Inc",
     "industry": "Metals & Mining",
-    "market_cap": 89775.60932205335,
+    "market_cap": 87691.15043729702,
     "metrics": {
-      "P/E": 33.06,
+      "P/E": 32.07,
       "net margin %": 10.41,
       "rev growth %": -24.23,
       "ROE %": 14.52,
       "current ratio": 2.39
     },
     "news": [
-      "The Real Engine Driving Southern Copper Stock Isn't Copper",
-      "Can Freeport-McMoRan's Expansion Pipeline Fuel the Next Growth Wave?",
-      "Why Mario Gabelli Is Smiling \u2014 His ETF Delivers 7.5% in Monthly Dividends in 2 Must-Own Sectors"
+      "Forget Software: The COPX ETF Is the Pick-and-Shovel AI Trade Hiding in Plain Sight",
+      "Freeport-McMoRan Declares $0.15 Dividend After Strong Q1 2026 Results",
+      "Forget MP Materials. This Established \"Picks and Shovels\" Mining Giant Is the Safer Way to Play the Metals Supercycle."
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [

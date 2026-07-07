@@ -1,0 +1,26 @@
+{
+  "snapshot": {
+    "ticker": "HOOD",
+    "researched_at": "2026-07-07T13:34:40+00:00",
+    "name": "Robinhood Markets Inc",
+    "industry": "Financial Services",
+    "market_cap": 105948.4426260716,
+    "metrics": {
+      "P/E": 55.85,
+      "net margin %": 41.12,
+      "rev growth %": 41.5,
+      "ROE %": 21.62,
+      "current ratio": 1.22
+    },
+    "news": [
+      "3 Internet Stocks on Our Watchlist",
+      "Chips Get Their Confidence Back, the Dow Cracks 53,000, and Trump Moonlights as a Dell Salesman",
+      "Zacks Investment Ideas feature highlights: Robinhood"
+    ],
+    "analyst_upgrade": true,
+    "earnings_beat": false
+  },
+  "flags": [
+    "thesis stale (review due 2026-06-09)"
+  ]
+}

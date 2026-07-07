@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "HMC",
-    "researched_at": "2026-06-27T17:59:10+00:00",
+    "researched_at": "2026-07-07T13:34:38+00:00",
     "name": "Honda Motor Co Ltd",
     "industry": "Automobiles",
-    "market_cap": 5504067.840332,
+    "market_cap": 6033454.846191,
     "metrics": {
       "net margin %": -1.94,
       "rev growth %": 0.5,
@@ -12,10 +12,10 @@
       "current ratio": 1.28
     },
     "news": [
-      "Honda Strengthens Power Sports & Products Business With More Unified Structure",
-      "Elon Musk Says Tesla's Model Y And Model 3 Have The Highest US-Made Content"
+      "Honda Motor: Catalysts Galore",
+      "EV Company News For The Month Of June 2026"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
