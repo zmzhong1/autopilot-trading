@@ -1,0 +1,23 @@
+{
+  "snapshot": {
+    "ticker": "MP",
+    "researched_at": "2026-07-08T13:05:51+00:00",
+    "name": "MP Materials Corp",
+    "industry": "Metals & Mining",
+    "market_cap": 8943.835122339182,
+    "metrics": {
+      "net margin %": -20.48,
+      "rev growth %": 60.93,
+      "ROE %": -3.49,
+      "current ratio": 7.18
+    },
+    "news": [
+      "MP Materials Trades at a Premium Valuation: How to Play the Stock?",
+      "What Rare Earths Stock Can Best Deliver Gains From America's Reshoring Boom?",
+      "Is MP Materials Corp. (MP) A Good Stock To Buy Now?"
+    ],
+    "analyst_upgrade": true,
+    "earnings_beat": false
+  },
+  "flags": []
+}

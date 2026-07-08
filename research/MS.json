@@ -1,0 +1,26 @@
+{
+  "snapshot": {
+    "ticker": "MS",
+    "researched_at": "2026-07-08T13:05:53+00:00",
+    "name": "Morgan Stanley",
+    "industry": "Financial Services",
+    "market_cap": 349928.55379191414,
+    "metrics": {
+      "P/E": 19.32,
+      "net margin %": 14.65,
+      "rev growth %": 12.28,
+      "ROE %": 16.32,
+      "current ratio": 0.31
+    },
+    "news": [
+      "Major US Banks' Second-Quarter Earnings Poised for Upside, BofA Says",
+      "Governance Veteran Ken Bertsch Joins Anteris Advisors as Senior Advisor",
+      "Goldman Sachs and Morgan Stanley split on SpaceX stock price target"
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": false
+  },
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
+}

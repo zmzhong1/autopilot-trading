@@ -1,0 +1,26 @@
+{
+  "snapshot": {
+    "ticker": "META",
+    "researched_at": "2026-07-08T13:05:50+00:00",
+    "name": "Meta Platforms Inc",
+    "industry": "Media",
+    "market_cap": 1559835.5696960166,
+    "metrics": {
+      "P/E": 21.59,
+      "net margin %": 32.84,
+      "rev growth %": 26.18,
+      "ROE %": 33.22,
+      "current ratio": 2.35
+    },
+    "news": [
+      "The Cloud Backlog That Changed Everything For Google Stock",
+      "Shopify to Announce Second-Quarter 2026 Financial Results",
+      "Mark Cuban Tells Local Communities AI Firms Need Data Centers More Than Air\u2014 So Make Them Pay: 'If They Do Any Documentable Damage...'"
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": false
+  },
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
+}

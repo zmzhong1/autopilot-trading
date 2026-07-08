@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "MU",
-    "researched_at": "2026-06-29T14:58:35+00:00",
+    "researched_at": "2026-07-08T13:05:56+00:00",
     "name": "Micron Technology Inc",
     "industry": "Semiconductors",
-    "market_cap": 1276967.1118271174,
+    "market_cap": 1038420.4549076424,
     "metrics": {
-      "P/E": 52.96,
-      "net margin %": 41.49,
-      "rev growth %": 85.55,
-      "ROE %": 40.84,
-      "current ratio": 2.9
+      "P/E": 20.36,
+      "net margin %": 55.91,
+      "rev growth %": 166.98,
+      "ROE %": 70.55,
+      "current ratio": 3.42
     },
     "news": [
-      "Mizuho says ignore Apple noise, flags key catalyst for Micron and memory in H2",
-      "Micron Technology Stock: Is It Heading for a $2 Trillion Valuation?",
-      "Samsung, SK Hynix, Micron face antitrust class action lawsuit"
+      "Wednesday's pre-market session: top gainers and losers in the S&P500 index",
+      "Dow Jones Futures Tumble, Oil Prices Soar As Trump Says U.S.-Iran Ceasefire 'Over'",
+      "Micron Stock Tumbles Deeper Into Bear Market. Is It Time to Worry Yet?"
     ],
-    "analyst_upgrade": true,
-    "earnings_beat": true
+    "analyst_upgrade": false,
+    "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }

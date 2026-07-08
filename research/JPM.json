@@ -1,0 +1,25 @@
+{
+  "snapshot": {
+    "ticker": "JPM",
+    "researched_at": "2026-07-08T13:05:48+00:00",
+    "name": "JPMorgan Chase & Co",
+    "industry": "Banking",
+    "market_cap": 908327.5980610544,
+    "metrics": {
+      "P/E": 15.42,
+      "net margin %": 33.26,
+      "rev growth %": 108.98,
+      "ROE %": 16.32
+    },
+    "news": [
+      "Intel-Backed SambaNova Raises $1Billion",
+      "Dollar Tree Shares Edge Higher After Analysts Raise Price Targets (DLTR)",
+      "AI Chip Startup SambaNova Raises Funds at $11 Billion Valuation"
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": false
+  },
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
+}

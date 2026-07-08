@@ -1,0 +1,24 @@
+{
+  "snapshot": {
+    "ticker": "JD",
+    "researched_at": "2026-07-08T13:05:46+00:00",
+    "name": "JD.com Inc",
+    "industry": "Retail",
+    "market_cap": 255979.677734,
+    "metrics": {
+      "P/E": 16.02,
+      "net margin %": 1.05,
+      "rev growth %": 10.32,
+      "ROE %": 6.15,
+      "current ratio": 1.18
+    },
+    "news": [
+      "Coupang shares are trading higher. The company reported its Q4 financial results."
+    ],
+    "analyst_upgrade": false,
+    "earnings_beat": false
+  },
+  "flags": [
+    "no StockNews thesis on file"
+  ]
+}
