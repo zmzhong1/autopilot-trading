@@ -1,23 +1,23 @@
 {
   "snapshot": {
     "ticker": "NEM",
-    "researched_at": "2026-06-29T14:58:37+00:00",
+    "researched_at": "2026-07-09T14:05:25+00:00",
     "name": "Newmont Corporation",
     "industry": "Metals & Mining",
-    "market_cap": 102623.84271348946,
+    "market_cap": 99495.91228806648,
     "metrics": {
-      "P/E": 12.14,
+      "P/E": 11.77,
       "net margin %": 33.87,
       "rev growth %": 26.93,
       "ROE %": 25.22,
       "current ratio": 2.44
     },
     "news": [
-      "Newmont Corp (NYSE:NEM) Shines on CAN SLIM Stock Screener With Strong Earnings and Relative Strength",
-      "Newmont Corporation (NEM) Provides Update Following Seismic Event",
-      "The Real Engine Driving Southern Copper Stock Isn't Copper"
+      "Newmont (NEM) Welcomes Canada Funding for Red Chris",
+      "This $20 Billion Sector Is Flashing Signals of a Breakout",
+      "AU's Free Cash Flow Soars 190% in Q1: Is More Growth Ahead?"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
   "flags": [

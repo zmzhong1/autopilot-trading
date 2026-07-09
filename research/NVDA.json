@@ -1,27 +1,27 @@
 {
   "snapshot": {
     "ticker": "NVDA",
-    "researched_at": "2026-06-29T14:58:44+00:00",
+    "researched_at": "2026-07-09T14:05:33+00:00",
     "name": "NVIDIA Corp",
     "industry": "Semiconductors",
-    "market_cap": 4659226.130754958,
+    "market_cap": 4939703.816282672,
     "metrics": {
-      "P/E": 29.64,
+      "P/E": 30.07,
       "net margin %": 62.97,
       "rev growth %": 70.68,
       "ROE %": 111.66,
       "current ratio": 3.44
     },
     "news": [
-      "1 Unstoppable Banking Juggernaut to Buy Hand Over Fist and Hold for the Next 20 Years",
-      "Wall Street Is Divided On Tesla, but I Keep Buying The Stock",
-      "Price Prediction: Synopsys\u2019 Chip-Design Moat and The Path to 24% Upside"
+      "Dow Jones Futures Fall Amid Iran News But Nasdaq Eyes Key Levels; Nvidia, Valero, Dell, SpaceX In Focus",
+      "Meta Plans to Sell AI Compute \u2014 So Why Spend $10 Billion to Build Even More Data Centers?",
+      "Tech Stock Sell-Off: 1 ETF to Load Up On Right Now"
     ],
-    "analyst_upgrade": false,
-    "earnings_beat": true
+    "analyst_upgrade": true,
+    "earnings_beat": false
   },
   "flags": [
     "thesis stale (review due 2026-06-09)",
-    "analyst trend not upgrading vs buy-rated thesis"
+    "recent earnings did not beat, despite high H-0"
   ]
 }

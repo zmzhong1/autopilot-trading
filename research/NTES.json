@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NTES",
-    "researched_at": "2026-06-29T14:58:43+00:00",
+    "researched_at": "2026-07-09T14:05:31+00:00",
     "name": "NetEase Inc",
     "industry": "Media",
-    "market_cap": 73997.34903085446,
+    "market_cap": 83502.1070110292,
     "metrics": {
-      "P/E": 15.19,
+      "P/E": 17.33,
       "net margin %": 29.84,
       "rev growth %": 6.63,
       "ROE %": 21.64,
       "current ratio": 3.28
     },
     "news": [
-      "NetEase (NASDAQ:NTES) Screens as a Peter Lynch GARP Stock",
-      "NetEase Inc-ADR (NASDAQ:NTES): A Decent Value Play with Strong Fundamentals and Low Valuation",
-      "NetEase: Multiples Will Rise As International Business Expands"
+      "YSX Tech Sees 6 Months Ended Sept. 30, 2025 Revenue ~$41M",
+      "Baiya International Group shares are trading higher after the company announced that the Cryptocurrency Ark Plan completed its first round of public voting with Binance Coin",
+      "Top 50 High-Quality Dividend Growth Stocks For July 2026"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

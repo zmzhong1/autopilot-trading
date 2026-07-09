@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NOK",
-    "researched_at": "2026-06-29T14:58:41+00:00",
+    "researched_at": "2026-07-09T14:05:29+00:00",
     "name": "Nokia Oyj",
     "industry": "Communications",
-    "market_cap": 68010.752384,
+    "market_cap": 58159.377975,
     "metrics": {
-      "P/E": 87.08,
+      "P/E": 74.47,
       "net margin %": 3.91,
       "rev growth %": 4.33,
       "ROE %": 3.84,
       "current ratio": 1.57
     },
     "news": [
-      "Benzinga Bulls And Bears: Micron, Take-Two, SpaceX \u2014 And Nasdaq Posts Sharpest Decline In Months",
-      "These stocks are making the most noise in today's session.",
-      "What's Going On With Nokia Stock Friday?"
+      "Mobileye: Waiting For The 2027 Inflection Point",
+      "Nokia Shares Slip Wednesday Morning: What's Driving the Action?",
+      "Nokia Shares Slump 3% Premarket Despite Securing Orange Belgium AI Deal: What's Driving the Move?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

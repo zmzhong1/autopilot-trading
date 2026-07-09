@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PATH",
-    "researched_at": "2026-06-30T13:22:49+00:00",
+    "researched_at": "2026-07-09T14:05:36+00:00",
     "name": "UiPath Inc",
     "industry": "Technology",
-    "market_cap": 5533.527498849004,
+    "market_cap": 5916.936663845494,
     "metrics": {
-      "P/E": 16.9,
+      "P/E": 18.07,
       "net margin %": 19.58,
       "rev growth %": 15.24,
       "ROE %": 17.29,
       "current ratio": 2.31
     },
     "news": [
-      "UiPath Broadens Enterprise Automation Ambitions With Maestro Case",
-      "A Look Back at Automation Software Stocks\u2019 Q1 Earnings: UiPath (NYSE:PATH) Vs The Rest Of The Pack",
-      "UiPath (PATH) Stock After 35% Year-To-Date Slide Is The Market Too Pessimistic"
+      "UiPath, Inc. (PATH) Is a Trending Stock: Facts to Know Before Betting on It",
+      "1 Cash-Producing Stock Worth Your Attention and 2 We Find Risky",
+      "Stock Market Today, July 2: UiPath Gains as Agentic Automation Strategy Faces Earnings Test"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

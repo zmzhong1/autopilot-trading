@@ -1,24 +1,24 @@
 {
   "snapshot": {
     "ticker": "ORCL",
-    "researched_at": "2026-06-29T14:58:46+00:00",
+    "researched_at": "2026-07-09T14:05:35+00:00",
     "name": "Oracle Corp",
     "industry": "Technology",
-    "market_cap": 427836.3686377428,
+    "market_cap": 404677.3808247165,
     "metrics": {
-      "P/E": 25.88,
+      "P/E": 23.75,
       "net margin %": 25.37,
       "rev growth %": 17.35,
       "ROE %": 50.38,
       "current ratio": 1.11
     },
     "news": [
-      "These S&P500 stocks that are showing activity before the opening bell on Monday.",
-      "Dan Ives Says MSFT, ORCL Are 'Way Oversold', Expects A Reversal In Next 6-9 Months",
-      "Oracle Financial Services Named Leader Across Four Categories in Chartis Credit Lending Operations Report"
+      "Why SpaceX\u2019s Multi-Billion Dollar Debt Sale Is Already Losing Money for Investors",
+      "Jim Cramer Sees Tech Rebound And Oracle Upside as Data Center Spending Reshapes Market",
+      "Amazon\u2019s $25 billion \u2018surprise\u2019 bond sale dangled extra yield to lure in buyers\u2014and flashed a warning sign about the AI boom"
     ],
     "analyst_upgrade": false,
-    "earnings_beat": true
+    "earnings_beat": false
   },
   "flags": [
     "analyst trend not upgrading vs buy-rated thesis"
