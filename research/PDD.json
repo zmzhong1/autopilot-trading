@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PDD",
-    "researched_at": "2026-07-03T13:20:40+00:00",
+    "researched_at": "2026-07-10T13:27:27+00:00",
     "name": "PDD Holdings Inc",
     "industry": "Retail",
-    "market_cap": 117458.671266,
+    "market_cap": 120618.613149,
     "metrics": {
-      "P/E": 7.71,
+      "P/E": 8.66,
       "net margin %": 21.62,
       "rev growth %": 9.86,
       "ROE %": 24.06,
       "current ratio": 2.54
     },
     "news": [
-      "10 Consumer Discretionary Stocks With Whale Alerts In Today\u2019s Session",
-      "Coupang shares are trading higher. The company reported its Q4 financial results.",
-      "Daiwa Moves PDD Holdings (PDD) to Hold"
+      "Shein Is Said to Move Ahead With Preparations for Hong Kong IPO",
+      "PDD Holdings (PDD) Stock May Be Undervalued Despite A 26% Slide",
+      "Citi\u2019s Endorsement And Cash Focus Might Change The Case For Investing In PDD Holdings (PDD)"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

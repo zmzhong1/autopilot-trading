@@ -1,23 +1,23 @@
 {
   "snapshot": {
     "ticker": "STLD",
-    "researched_at": "2026-07-03T13:20:50+00:00",
+    "researched_at": "2026-07-10T13:27:42+00:00",
     "name": "Steel Dynamics Inc",
     "industry": "Metals & Mining",
-    "market_cap": 31783.054637071335,
+    "market_cap": 32023.890004651083,
     "metrics": {
-      "P/E": 23.13,
+      "P/E": 23.69,
       "net margin %": 7.22,
       "rev growth %": 10.44,
       "ROE %": 15.25,
       "current ratio": 3.13
     },
     "news": [
-      "Dividend Champion, Contender, And Challenger Highlights: Week Of July 5",
-      "Top S&P500 movers in Monday's session",
-      "Discover which S&P500 stocks are making waves on Monday."
+      "Steel Dynamics (STLD) Stock Drops Despite Market Gains: Important Facts to Note",
+      "Steel Dynamics Announces Second Quarter 2026 Earnings Conference Call and Webcast",
+      "Netflix To $100? Here Are 10 Top Analyst Forecasts For Thursday"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [

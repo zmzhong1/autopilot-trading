@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SNOW",
-    "researched_at": "2026-07-03T13:20:47+00:00",
+    "researched_at": "2026-07-10T13:27:35+00:00",
     "name": "Snowflake Inc",
     "industry": "Technology",
-    "market_cap": 90167.99243028447,
+    "market_cap": 92712.0347667139,
     "metrics": {
       "net margin %": -23.79,
       "rev growth %": 31.07,
@@ -12,12 +12,13 @@
       "current ratio": 1.05
     },
     "news": [
-      "MongoDB: This Is Where I Will Put My Money Instead",
-      "Snowflake: The Valuation Wipes Out Opportunity",
-      "Snowflake: Value Maxed Tokens Drive Accelerating AI Monetization -\u00a0Valuation Risks Ahead (Rating Downgrade)"
+      "Forget OpenAI: D.A. Davidson Calls Alex Karp's Palantir the 'Best Company' in Software With 'Main Character' Energy",
+      "Palantir Thinks AI's Competitive Moat Is Moving Beyond OpenAI and Anthropic"
     ],
-    "analyst_upgrade": true,
-    "earnings_beat": true
+    "analyst_upgrade": false,
+    "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }

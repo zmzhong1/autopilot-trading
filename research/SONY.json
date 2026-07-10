@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SONY",
-    "researched_at": "2026-07-03T13:20:49+00:00",
+    "researched_at": "2026-07-10T13:27:37+00:00",
     "name": "Sony Group Corp",
     "industry": "Consumer products",
-    "market_cap": 19257984.49707,
+    "market_cap": 20549750.841797,
     "metrics": {
       "net margin %": -2.62,
       "rev growth %": 5.22,
@@ -12,9 +12,9 @@
       "current ratio": 1.18
     },
     "news": [
-      "Sony Ends Physical Discs For Games By 2028, Why GameStop Needs eBay Or Another Growth Plan",
-      "Sony Announces Physical Disc Production In January 2028 For New Games On PlayStation Consoles",
-      "As Stablecoins Lead Crypto Investment Themes, Bitcoin Is No Longer The Favorite Child"
+      "Insider Unloading: Hiroki Totoki Sells $4.73M Worth Of Sony Group Shares",
+      "My (Still) 21% Yielding Portfolio Update",
+      "Japanese Car Makers Rally on Weak Yen; Hyundai and Kia Misstep "
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

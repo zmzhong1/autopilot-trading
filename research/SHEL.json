@@ -1,23 +1,23 @@
 {
   "snapshot": {
     "ticker": "SHEL",
-    "researched_at": "2026-07-03T13:20:45+00:00",
+    "researched_at": "2026-07-10T13:27:33+00:00",
     "name": "Shell PLC",
     "industry": "Energy",
-    "market_cap": 159410.189092,
+    "market_cap": 170897.710011,
     "metrics": {
-      "P/E": 11.58,
+      "P/E": 12.21,
       "net margin %": 7.01,
       "rev growth %": -4.88,
       "ROE %": 10.05,
       "current ratio": 1.3
     },
     "news": [
-      "'Shell Shuffles Energy Trading Bosses as David Wells Retires' - Bloomberg",
-      "Shell To Sell Gulf of America Platform Stake for $1.7 Billion",
-      "Talos Energy: An Acquisition That May Keep On Giving"
+      "What To Expect From June's Inflation Report As Chip Prices Rise, Energy Falls",
+      "Here\u2019s How Much You Would Have Made Owning Shell Stock In The Last 5 Years",
+      "Shell: Q2 Update Suggests A Share Price Bump, Once Iran Crisis Ends"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
