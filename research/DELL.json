@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "DELL",
-    "researched_at": "2026-07-06T14:42:49+00:00",
+    "researched_at": "2026-07-13T13:34:24+00:00",
     "name": "Dell Technologies Inc",
     "industry": "Technology",
-    "market_cap": 255630.185582,
+    "market_cap": 281982.8059920646,
     "metrics": {
-      "P/E": 30.4,
+      "P/E": 33.53,
       "net margin %": 6.28,
       "rev growth %": 38.57,
       "ROE %": 130.7,
       "current ratio": 0.95
     },
     "news": [
-      "Trump vs. Pelosi: Who Made More Money in the Stock Market Last Year?",
-      "5 Top-Ranked Growth Stocks to Buy for July After a Mixed June",
-      "Singapore Files New Charges in Nvidia Chip Fraud Case"
+      "1 Unpopular Stock That Deserves Some Love and 2 We Find Risky",
+      "Italy Data Center Market Report 2026-2031: Investment Analysis & Growth Opportunities Featuring AWS, Google, Oracle, OVHcloud, Atos, Cisco, Dell Technologies, NVIDIA and More",
+      "Bahrain Data Center Market Report 2026-2031: Investment Analysis & Growth Opportunities"
     ],
-    "analyst_upgrade": false,
-    "earnings_beat": true
+    "analyst_upgrade": true,
+    "earnings_beat": false
   },
-  "flags": [
-    "analyst trend not upgrading vs buy-rated thesis"
-  ]
+  "flags": []
 }

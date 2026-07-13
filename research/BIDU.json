@@ -1,23 +1,23 @@
 {
   "snapshot": {
     "ticker": "BIDU",
-    "researched_at": "2026-07-06T14:42:40+00:00",
+    "researched_at": "2026-07-13T13:34:14+00:00",
     "name": "Baidu Inc",
     "industry": "Media",
-    "market_cap": 39071.7761441189,
+    "market_cap": 40342.82588225796,
     "metrics": {
-      "P/E": 679.07,
+      "P/E": 705.02,
       "net margin %": 0.3,
       "rev growth %": -4.0,
       "ROE %": 0.15,
       "current ratio": 1.85
     },
     "news": [
-      "Franklin Covey Cuts Revenue Forecast, Joins Ouster And Other Big Stocks Moving Lower In Thursday\u2019s Pre-Market Session",
-      "Baidu: Deeply Mispriced As The AI Pivot Accelerates",
-      "Tesla's Robotaxi Math Doesn't Work With Human Safety Drivers, Gary Black Says"
+      "OpenAI, Google AI Models Being Sold to Pentagon-Blacklisted Chinese Tech Giants: Report",
+      "YSX Tech Sees 6 Months Ended Sept. 30, 2025 Revenue ~$41M",
+      "Baiya International Group shares are trading higher after the company announced that the Cryptocurrency Ark Plan completed its first round of public voting with Binance Coin"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [

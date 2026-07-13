@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "CRWD",
-    "researched_at": "2026-07-06T14:42:47+00:00",
+    "researched_at": "2026-07-13T13:34:22+00:00",
     "name": "CrowdStrike Holdings Inc",
     "industry": "Technology",
-    "market_cap": 197521.930269,
+    "market_cap": 190597.76566967642,
     "metrics": {
       "net margin %": -0.48,
       "rev growth %": 23.17,
@@ -12,12 +12,12 @@
       "current ratio": 1.53
     },
     "news": [
-      "Is CrowdStrike Stock a Buy After Its Stock Split?",
-      "NAVN, JNJ, CRWD Stocks Hit 52-Week Highs Last Week: What's Driving The Surge?",
-      "CrowdStrike (CRWD) Joins OpenID Foundation to Advance Risk-Aware Identity Security"
+      "Wall Street's Newest Blockbuster Stock Split Was Just Announced -- and This Non-Tech Titan Has Skyrocketed 457,000% Since Its IPO",
+      "CrowdStrike Just Completed a Stock Split. Is the Stock a Buy Now?",
+      "What's going on in today's session: S&P500 movers"
     ],
     "analyst_upgrade": false,
-    "earnings_beat": true
+    "earnings_beat": false
   },
   "flags": [
     "analyst trend not upgrading vs buy-rated thesis"

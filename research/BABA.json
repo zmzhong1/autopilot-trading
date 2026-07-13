@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "BABA",
-    "researched_at": "2026-07-06T14:42:38+00:00",
+    "researched_at": "2026-07-13T13:34:12+00:00",
     "name": "Alibaba Group Holding Ltd",
     "industry": "Retail",
-    "market_cap": 230360.23950115475,
+    "market_cap": 264226.3590740625,
     "metrics": {
-      "P/E": 14.78,
+      "P/E": 17.24,
       "net margin %": 10.35,
       "rev growth %": 2.74,
       "ROE %": 10.22,
       "current ratio": 1.28
     },
     "news": [
-      "ETW: Decent For Income, But Likely To Underperform Over The Long Term",
-      "Cathie Wood Buys the Tesla Dip, Keeps Dumping Alibaba Stock: What You Should Know About Ark's $38 Million Bet",
-      "10 Consumer Discretionary Stocks With Whale Alerts In Today\u2019s Session"
+      "Resilience In A Reflationary World: Navigating Concentration, Conflict, And Conviction In EM",
+      "Billionaire Investor Retreats From Retail, Exits Alibaba Entirely, Cuts Amazon Stake 10%",
+      "SK Hynix IPO Triggers Wall Street's Next Leveraged ETF Gold Rush"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }

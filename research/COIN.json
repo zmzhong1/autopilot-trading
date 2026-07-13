@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "COIN",
-    "researched_at": "2026-07-06T14:42:44+00:00",
+    "researched_at": "2026-07-13T13:34:19+00:00",
     "name": "Coinbase Global Inc",
     "industry": "Financial Services",
-    "market_cap": 43597.52628,
+    "market_cap": 41908.74127,
     "metrics": {
-      "P/E": 54.46,
+      "P/E": 52.35,
       "net margin %": 12.2,
       "rev growth %": -5.76,
       "ROE %": 5.68,
       "current ratio": 2.14
     },
     "news": [
-      "Strategy Sells Bitcoin Fresh Off Announcing New Capital Playbook",
-      "Binance Halts Crypto Trading in France and Parts of Europe After Missing MiCA License",
-      "Coinbase Under Fire After AI Invents World Cup Result Before Match Begins"
+      "Coinbase's Chief Policy Officer Tells Elizabeth Warren She Has CLARITY Act \u2018Exactly Backward\u2019 On National Security",
+      "Coinbase, Lyft, and Axon prove there's more going on in markets than the 'Magnificent 7'",
+      "Coinbase CEO Brian Armstrong Has a New Solution to America's $39 Trillion Debt Problem. (Hint: It Involves Bitcoin.)"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }
