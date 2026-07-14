@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "GOOGL",
-    "researched_at": "2026-07-07T13:34:35+00:00",
+    "researched_at": "2026-07-14T12:48:06+00:00",
     "name": "Alphabet Inc",
     "industry": "Media",
-    "market_cap": 4461489.257599999,
+    "market_cap": 4291654.145599999,
     "metrics": {
-      "P/E": 27.7,
+      "P/E": 27.03,
       "net margin %": 37.92,
       "rev growth %": 17.45,
       "ROE %": 38.98,
       "current ratio": 1.92
     },
     "news": [
-      "AI-Linked Bond Sales Hit $220 Billion as Credit Risk Concerns Grow",
-      "Is Google Cloud Officially Driving the Train?",
-      "What Could Really Power Microsoft Stock Higher From Here?"
+      "Uber Has 48% Upside on Paper",
+      "A $10,000 Investment in Google When Sundar Pichai Took Over Is Worth This Much Now",
+      "Alphabet Signs the Biggest Solar Deal of Its Kind in the U.S."
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

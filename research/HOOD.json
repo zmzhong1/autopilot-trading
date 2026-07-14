@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "HOOD",
-    "researched_at": "2026-07-07T13:34:40+00:00",
+    "researched_at": "2026-07-14T12:48:12+00:00",
     "name": "Robinhood Markets Inc",
     "industry": "Financial Services",
-    "market_cap": 105948.4426260716,
+    "market_cap": 99017.40269813414,
     "metrics": {
-      "P/E": 55.85,
+      "P/E": 52.2,
       "net margin %": 41.12,
       "rev growth %": 41.5,
       "ROE %": 21.62,
       "current ratio": 1.22
     },
     "news": [
-      "3 Internet Stocks on Our Watchlist",
-      "Chips Get Their Confidence Back, the Dow Cracks 53,000, and Trump Moonlights as a Dell Salesman",
-      "Zacks Investment Ideas feature highlights: Robinhood"
+      "Four Banks Raised Robinhood\u2019s Target in Eight Days: What Do They See Coming?",
+      "Binance Meme Coin Selling Tops $1.2 Billion Since Bitcoin\u2019s October Peak",
+      "Robinhood Chain Could Be Ethereum's Biggest Onboarding Engine, Not Its Biggest Fee Generator"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "thesis stale (review due 2026-06-09)"
-  ]
+  "flags": []
 }

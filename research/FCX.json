@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "FCX",
-    "researched_at": "2026-07-07T13:34:33+00:00",
+    "researched_at": "2026-07-14T12:48:04+00:00",
     "name": "Freeport-McMoRan Inc",
     "industry": "Metals & Mining",
-    "market_cap": 87691.15043729702,
+    "market_cap": 86210.46271402323,
     "metrics": {
-      "P/E": 32.07,
+      "P/E": 32.05,
       "net margin %": 10.41,
       "rev growth %": -24.23,
       "ROE %": 14.52,
       "current ratio": 2.39
     },
     "news": [
-      "Forget Software: The COPX ETF Is the Pick-and-Shovel AI Trade Hiding in Plain Sight",
-      "Freeport-McMoRan Declares $0.15 Dividend After Strong Q1 2026 Results",
-      "Forget MP Materials. This Established \"Picks and Shovels\" Mining Giant Is the Safer Way to Play the Metals Supercycle."
+      "REalloys shares are trading higher after Clear Street initiated its coverage on the stock with a Buy rating and announced a price target of $35.",
+      "Natural Gas Stocks: Short-Term Pain, Long-Term Opportunity?",
+      "Company News for July 13, 2026"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

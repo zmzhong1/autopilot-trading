@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "F",
-    "researched_at": "2026-07-07T13:34:31+00:00",
+    "researched_at": "2026-07-14T12:48:02+00:00",
     "name": "Ford Motor Co",
     "industry": "Automobiles",
-    "market_cap": 55108.29796339447,
+    "market_cap": 55187.99323217857,
     "metrics": {
       "net margin %": -3.22,
       "rev growth %": 3.82,
@@ -12,9 +12,9 @@
       "current ratio": 1.09
     },
     "news": [
-      "Micron Locks in Big Customers But Memory-Chip Fears Drag on Stock",
-      "Ford signs long-term chip supply deal with Micron, following GM",
-      "Micron: Why I Believe This Memory Cycle Isn't Fully Priced In Yet"
+      "Stay informed about the most active stocks in the S&P500 index on Monday's session.",
+      "Why I Won\u2019t Buy A Rivian",
+      "Ford Locks in Labor Deal With Unifor: Is F Stock a Buy Now?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
