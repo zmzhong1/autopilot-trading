@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "MP",
-    "researched_at": "2026-07-08T13:05:51+00:00",
+    "researched_at": "2026-07-15T12:52:11+00:00",
     "name": "MP Materials Corp",
     "industry": "Metals & Mining",
-    "market_cap": 8943.835122339182,
+    "market_cap": 9041.747779,
     "metrics": {
       "net margin %": -20.48,
       "rev growth %": 60.93,
@@ -12,9 +12,9 @@
       "current ratio": 7.18
     },
     "news": [
-      "MP Materials Trades at a Premium Valuation: How to Play the Stock?",
-      "What Rare Earths Stock Can Best Deliver Gains From America's Reshoring Boom?",
-      "Is MP Materials Corp. (MP) A Good Stock To Buy Now?"
+      "MP Materials: Execution Improves, But You're Paying For The Destination",
+      "REMX: Rare Earth Exposure Is Only One Half, And All Is Not Well On The Other Half",
+      "HyProMag is the Magnet Opportunity Hiding in America's Scrap Heap"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

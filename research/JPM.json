@@ -1,25 +1,26 @@
 {
   "snapshot": {
     "ticker": "JPM",
-    "researched_at": "2026-07-08T13:05:48+00:00",
+    "researched_at": "2026-07-15T12:52:06+00:00",
     "name": "JPMorgan Chase & Co",
     "industry": "Banking",
-    "market_cap": 908327.5980610544,
+    "market_cap": 918777.728779,
     "metrics": {
-      "P/E": 15.42,
+      "P/E": 15.41,
       "net margin %": 33.26,
       "rev growth %": 108.98,
       "ROE %": 16.32
     },
     "news": [
-      "Intel-Backed SambaNova Raises $1Billion",
-      "Dollar Tree Shares Edge Higher After Analysts Raise Price Targets (DLTR)",
-      "AI Chip Startup SambaNova Raises Funds at $11 Billion Valuation"
+      "Dow Jones Futures: Oil Prices Hit $80 On Iran News, ASML, Morgan Stanley Lead Earnings Movers",
+      "Market Chatter: JPMorgan Chase to Hire 30 Senior Bankers to Support EMEA Corporate Banking Business Expansion",
+      "JPMorgan\u2019s \u2018Aggressive Buy\u2019 Stock Pick Is Paying Off, Yet Insiders Aren\u2019t Convinced"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
+    "thesis stale (review due 2026-07-14)",
     "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

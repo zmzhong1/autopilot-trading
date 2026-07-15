@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MU",
-    "researched_at": "2026-07-08T13:05:56+00:00",
+    "researched_at": "2026-07-15T12:52:18+00:00",
     "name": "Micron Technology Inc",
     "industry": "Semiconductors",
-    "market_cap": 1038420.4549076424,
+    "market_cap": 1110328.905931,
     "metrics": {
-      "P/E": 20.36,
+      "P/E": 22.11,
       "net margin %": 55.91,
       "rev growth %": 166.98,
       "ROE %": 70.55,
       "current ratio": 3.42
     },
     "news": [
-      "Wednesday's pre-market session: top gainers and losers in the S&P500 index",
-      "Dow Jones Futures Tumble, Oil Prices Soar As Trump Says U.S.-Iran Ceasefire 'Over'",
-      "Micron Stock Tumbles Deeper Into Bear Market. Is It Time to Worry Yet?"
+      "Social Buzz: Wallstreetbets Stocks Mostly Advancing Pre-Bell Wednesday; ASML Holding, Nebius Group to Open Higher",
+      "Zacks Investment Ideas feature highlights: QQQ, SPY, SanDisk, Micron and Dell",
+      "China Hedge Funds That Won Big on AI Start Looking for Exits"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

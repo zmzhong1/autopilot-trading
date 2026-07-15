@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MS",
-    "researched_at": "2026-07-08T13:05:53+00:00",
+    "researched_at": "2026-07-15T12:52:13+00:00",
     "name": "Morgan Stanley",
     "industry": "Financial Services",
-    "market_cap": 349928.55379191414,
+    "market_cap": 359100.4530520001,
     "metrics": {
-      "P/E": 19.32,
+      "P/E": 19.84,
       "net margin %": 14.65,
       "rev growth %": 12.28,
       "ROE %": 16.32,
       "current ratio": 0.31
     },
     "news": [
-      "Major US Banks' Second-Quarter Earnings Poised for Upside, BofA Says",
-      "Governance Veteran Ken Bertsch Joins Anteris Advisors as Senior Advisor",
-      "Goldman Sachs and Morgan Stanley split on SpaceX stock price target"
+      "Morgan Stanley (NYSE:MS) Rallies on Record Trading Revenue and Latest Earnings Beat as Growth Stock Momentum Builds",
+      "Dow Jones Futures: Oil Prices Hit $80 On Iran News, ASML, Morgan Stanley Lead Earnings Movers",
+      "Morgan Stanley Reports Second Quarter 2026 Earnings Results"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

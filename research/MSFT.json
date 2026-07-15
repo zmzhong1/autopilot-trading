@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MSFT",
-    "researched_at": "2026-07-08T13:05:55+00:00",
+    "researched_at": "2026-07-15T12:52:15+00:00",
     "name": "Microsoft Corp",
     "industry": "Technology",
-    "market_cap": 2890552.38700991,
+    "market_cap": 2859427.2647429993,
     "metrics": {
-      "P/E": 23.17,
+      "P/E": 22.72,
       "net margin %": 39.34,
       "rev growth %": 17.87,
       "ROE %": 33.13,
       "current ratio": 1.28
     },
     "news": [
-      "Salesforce Upgraded Its Profit Engine. Quietly",
-      "Oracle Stock's Price Is Falling, But Its Business Is Building. What Gives?",
-      "The Cloud Backlog That Changed Everything For Google Stock"
+      "Morgan Stanley Drops a $50 Billion Bombshell \u2014 Can Big Tech Still Afford to Build the AI Factories of the Future?",
+      "TappAlpha Expands Growth + Income ETF Platform with TMGN, Bringing Tax-Efficient Income to the Cboe Magnificent 10 Index",
+      "Oracle shares gain after report it leads race for Japanese government cloud contract (ORCL)"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

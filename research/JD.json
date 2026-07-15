@@ -1,19 +1,21 @@
 {
   "snapshot": {
     "ticker": "JD",
-    "researched_at": "2026-07-08T13:05:46+00:00",
+    "researched_at": "2026-07-15T12:52:03+00:00",
     "name": "JD.com Inc",
     "industry": "Retail",
-    "market_cap": 255979.677734,
+    "market_cap": 276118.370686,
     "metrics": {
-      "P/E": 16.02,
+      "P/E": 17.17,
       "net margin %": 1.05,
       "rev growth %": 10.32,
       "ROE %": 6.15,
       "current ratio": 1.18
     },
     "news": [
-      "Coupang shares are trading higher. The company reported its Q4 financial results."
+      "JD.com: Add To Cart While China's On Sale",
+      "YSX Tech Sees 6 Months Ended Sept. 30, 2025 Revenue ~$41M",
+      "Baiya International Group shares are trading higher after the company announced that the Cryptocurrency Ark Plan completed its first round of public voting with Binance Coin"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
