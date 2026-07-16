@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NEM",
-    "researched_at": "2026-07-09T14:05:25+00:00",
+    "researched_at": "2026-07-16T13:00:11+00:00",
     "name": "Newmont Corporation",
     "industry": "Metals & Mining",
-    "market_cap": 99495.91228806648,
+    "market_cap": 101641.69583981235,
     "metrics": {
-      "P/E": 11.77,
+      "P/E": 12.06,
       "net margin %": 33.87,
       "rev growth %": 26.93,
       "ROE %": 25.22,
       "current ratio": 2.44
     },
     "news": [
-      "Newmont (NEM) Welcomes Canada Funding for Red Chris",
-      "This $20 Billion Sector Is Flashing Signals of a Breakout",
-      "AU's Free Cash Flow Soars 190% in Q1: Is More Growth Ahead?"
+      "Did Analyst Upgrades and Buybacks Just Shift Newmont's (NEM) Operational Efficiency Investment Narrative?",
+      "Newmont (NEM) Resumes Cadia Operations As It Pushes Ahead With Key Growth Projects",
+      "Newmont: The Permits That Set The Stage For A Re-Rating"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

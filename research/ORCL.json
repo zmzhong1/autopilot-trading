@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "ORCL",
-    "researched_at": "2026-07-09T14:05:35+00:00",
+    "researched_at": "2026-07-16T13:00:42+00:00",
     "name": "Oracle Corp",
     "industry": "Technology",
-    "market_cap": 404677.3808247165,
+    "market_cap": 381633.6030861712,
     "metrics": {
-      "P/E": 23.75,
+      "P/E": 21.96,
       "net margin %": 25.37,
       "rev growth %": 17.35,
       "ROE %": 50.38,
       "current ratio": 1.11
     },
     "news": [
-      "Why SpaceX\u2019s Multi-Billion Dollar Debt Sale Is Already Losing Money for Investors",
-      "Jim Cramer Sees Tech Rebound And Oracle Upside as Data Center Spending Reshapes Market",
-      "Amazon\u2019s $25 billion \u2018surprise\u2019 bond sale dangled extra yield to lure in buyers\u2014and flashed a warning sign about the AI boom"
+      "AI data centers divide communities and scramble midterm playbooks",
+      "2 Reasons Oracle Stock Could Double in Value by 2028",
+      "The Zacks Analyst Blog Highlights NVIDIA, Oracle, Analog Devices and Regis"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

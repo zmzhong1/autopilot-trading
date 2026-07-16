@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "NET",
-    "researched_at": "2026-07-09T14:05:27+00:00",
+    "researched_at": "2026-07-16T13:00:24+00:00",
     "name": "Cloudflare Inc",
     "industry": "Technology",
-    "market_cap": 97090.55280473533,
+    "market_cap": 96962.7134674428,
     "metrics": {
       "net margin %": -3.72,
       "rev growth %": 31.55,
@@ -12,9 +12,9 @@
       "current ratio": 1.96
     },
     "news": [
-      "Cloudflare Launches AI Search Research Pilot With OpenAI",
-      "Cloudflare And OpenAI Launch Research Pilot To Improve AI Discovery Of Web Content",
-      "SpaceX, ClearOne, FuelCell Energy, Cloudflare and Penguin Solutions: Why These 5 Stocks Are on Investors' Radars Today"
+      "IBM Says AI Spending Isn't Crowding Out Cybersecurity. These ETFs Are Gaining Momentum",
+      "Cloudflare: Valuation Is Now A Real Issue",
+      "IBM Heads for Worst Day Ever \u2014 But Why Are Cybersecurity Stocks Up?"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

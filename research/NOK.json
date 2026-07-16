@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NOK",
-    "researched_at": "2026-07-09T14:05:29+00:00",
+    "researched_at": "2026-07-16T13:00:29+00:00",
     "name": "Nokia Oyj",
     "industry": "Communications",
-    "market_cap": 58159.377975,
+    "market_cap": 57350.055866,
     "metrics": {
-      "P/E": 74.47,
+      "P/E": 73.43,
       "net margin %": 3.91,
       "rev growth %": 4.33,
       "ROE %": 3.84,
       "current ratio": 1.57
     },
     "news": [
-      "Mobileye: Waiting For The 2027 Inflection Point",
-      "Nokia Shares Slip Wednesday Morning: What's Driving the Action?",
-      "Nokia Shares Slump 3% Premarket Despite Securing Orange Belgium AI Deal: What's Driving the Move?"
+      "Most active stocks in Wednesday's session",
+      "Nokia\u2019s New AI Platform Could Transform Future 5G and 6G Networks",
+      "Nokia: Q2 Needs To Justify The AI Revaluation"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

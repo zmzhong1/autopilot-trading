@@ -1,21 +1,19 @@
 {
   "snapshot": {
     "ticker": "NTES",
-    "researched_at": "2026-07-09T14:05:31+00:00",
+    "researched_at": "2026-07-16T13:00:33+00:00",
     "name": "NetEase Inc",
     "industry": "Media",
-    "market_cap": 83502.1070110292,
+    "market_cap": 82163.63806280534,
     "metrics": {
-      "P/E": 17.33,
+      "P/E": 16.35,
       "net margin %": 29.84,
       "rev growth %": 6.63,
       "ROE %": 21.64,
       "current ratio": 3.28
     },
     "news": [
-      "YSX Tech Sees 6 Months Ended Sept. 30, 2025 Revenue ~$41M",
-      "Baiya International Group shares are trading higher after the company announced that the Cryptocurrency Ark Plan completed its first round of public voting with Binance Coin",
-      "Top 50 High-Quality Dividend Growth Stocks For July 2026"
+      "DeepSeek Plans to File for IPO as Soon as This Year: Report"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
