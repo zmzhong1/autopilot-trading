@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SONY",
-    "researched_at": "2026-07-10T13:27:37+00:00",
+    "researched_at": "2026-07-17T12:43:05+00:00",
     "name": "Sony Group Corp",
     "industry": "Consumer products",
-    "market_cap": 20549750.841797,
+    "market_cap": 20081633.680176,
     "metrics": {
       "net margin %": -2.62,
       "rev growth %": 5.22,
@@ -12,9 +12,9 @@
       "current ratio": 1.18
     },
     "news": [
-      "Insider Unloading: Hiroki Totoki Sells $4.73M Worth Of Sony Group Shares",
-      "My (Still) 21% Yielding Portfolio Update",
-      "Japanese Car Makers Rally on Weak Yen; Hyundai and Kia Misstep "
+      "Lionsgate Could Be Officially In Play",
+      "Disney Could Unlock 40% Upside by Returning to Its Pre-Streaming Model, Wells Fargo Says",
+      "Wall Street Week Ahead"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

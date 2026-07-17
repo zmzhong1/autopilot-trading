@@ -1,19 +1,19 @@
 {
   "snapshot": {
     "ticker": "SFTBY",
-    "researched_at": "2026-07-10T13:27:31+00:00",
+    "researched_at": "2026-07-17T12:42:59+00:00",
     "name": "SoftBank Group Corp",
     "industry": "Telecommunication",
-    "market_cap": 32898110.825684,
+    "market_cap": 36306087.949219,
     "metrics": {
-      "P/E": 6.58,
+      "P/E": 7.26,
       "net margin %": 64.14,
       "rev growth %": 7.66,
       "ROE %": 34.06,
       "current ratio": 0.8
     },
     "news": [
-      "Arm Holdings: Agentic Silicon Arbitrage Eclipsed By SoftBank Liquidation Threat (Rating Downgrade)"
+      "Hyundai Buys Out SoftBank Stake to Take Full Control of Boston Dynamics as Atlas Humanoid Robot Manufacturing Rollout Moves Closer"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

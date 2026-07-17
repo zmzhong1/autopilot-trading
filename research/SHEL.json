@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "SHEL",
-    "researched_at": "2026-07-10T13:27:33+00:00",
+    "researched_at": "2026-07-17T12:43:01+00:00",
     "name": "Shell PLC",
     "industry": "Energy",
-    "market_cap": 170897.710011,
+    "market_cap": 173672.473927,
     "metrics": {
-      "P/E": 12.21,
+      "P/E": 12.51,
       "net margin %": 7.01,
       "rev growth %": -4.88,
       "ROE %": 10.05,
       "current ratio": 1.3
     },
     "news": [
-      "What To Expect From June's Inflation Report As Chip Prices Rise, Energy Falls",
-      "Here\u2019s How Much You Would Have Made Owning Shell Stock In The Last 5 Years",
-      "Shell: Q2 Update Suggests A Share Price Bump, Once Iran Crisis Ends"
+      "Delta Air Lines Inks Five-Year Agreement With Shell Aviation Over Sustainable Aviation Fuel Access",
+      "Reported Earlier: 'India\u2019s Birla Taps MUFG for $1.5 Billion to Fund Shell Asset Buy' - Bloomberg",
+      "'Shell Gets More Tax Relief on $20 Billion Nigerian Oil Project' - Bloomberg"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

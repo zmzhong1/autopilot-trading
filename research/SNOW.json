@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SNOW",
-    "researched_at": "2026-07-10T13:27:35+00:00",
+    "researched_at": "2026-07-17T12:43:03+00:00",
     "name": "Snowflake Inc",
     "industry": "Technology",
-    "market_cap": 92712.0347667139,
+    "market_cap": 93588.93196722455,
     "metrics": {
       "net margin %": -23.79,
       "rev growth %": 31.07,
@@ -12,8 +12,9 @@
       "current ratio": 1.05
     },
     "news": [
-      "Forget OpenAI: D.A. Davidson Calls Alex Karp's Palantir the 'Best Company' in Software With 'Main Character' Energy",
-      "Palantir Thinks AI's Competitive Moat Is Moving Beyond OpenAI and Anthropic"
+      "The Magic Behind A Tap: Physical AI At Your Fingertips",
+      "Keybanc Maintains Overweight on Snowflake, Raises Price Target to $325",
+      "Snowflake: Fairly Valued But Fragile"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

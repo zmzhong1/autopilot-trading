@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PLTR",
-    "researched_at": "2026-07-10T13:27:29+00:00",
+    "researched_at": "2026-07-17T12:42:57+00:00",
     "name": "Palantir Technologies Inc",
     "industry": "Technology",
-    "market_cap": 309349.1806364048,
+    "market_cap": 322294.65090561484,
     "metrics": {
-      "P/E": 135.52,
+      "P/E": 141.26,
       "net margin %": 43.67,
       "rev growth %": 67.71,
       "ROE %": 32.18,
       "current ratio": 6.91
     },
     "news": [
-      "Palantir Stock Is Down 36% From Its All-Time High. Time to Buy?",
-      "1 Cash-Heavy Stock with Impressive Fundamentals and 2 Facing Challenges",
-      "Rackspace Stock Offering Overshadows AI Deal"
+      "Alex Karp Grouped Palantir With These 3 Unstoppable Stocks as the Only True Artificial Intelligence (AI) Infrastructure Winners",
+      "Palantir CTO Warns AI Distillation Threat Could Undermine U.S. AI Lead",
+      "Palantir Technologies Inc (PLTR) Pairs with SNP to Target SAP Transformation Projects"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
