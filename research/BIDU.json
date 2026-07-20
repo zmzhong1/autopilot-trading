@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "BIDU",
-    "researched_at": "2026-07-13T13:34:14+00:00",
+    "researched_at": "2026-07-20T13:26:31+00:00",
     "name": "Baidu Inc",
     "industry": "Media",
-    "market_cap": 40342.82588225796,
+    "market_cap": 38878.68043391296,
     "metrics": {
-      "P/E": 705.02,
+      "P/E": 649.81,
       "net margin %": 0.3,
       "rev growth %": -4.0,
       "ROE %": 0.15,
       "current ratio": 1.85
     },
     "news": [
-      "OpenAI, Google AI Models Being Sold to Pentagon-Blacklisted Chinese Tech Giants: Report",
-      "YSX Tech Sees 6 Months Ended Sept. 30, 2025 Revenue ~$41M",
-      "Baiya International Group shares are trading higher after the company announced that the Cryptocurrency Ark Plan completed its first round of public voting with Binance Coin"
+      "Baidu Q2 2026 Preview: Upgrade To HOLD; Focus On AI Catalysts",
+      "Is AI now the main driver of China\u2019s growth?",
+      "Will Baidu\u2019s Hong Kong Dual-Primary Listing and Apple AI Deal Change Baidu's (BIDU) Narrative"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

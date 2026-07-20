@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "BABA",
-    "researched_at": "2026-07-13T13:34:12+00:00",
+    "researched_at": "2026-07-20T13:26:28+00:00",
     "name": "Alibaba Group Holding Ltd",
     "industry": "Retail",
-    "market_cap": 264226.3590740625,
+    "market_cap": 285866.06791740924,
     "metrics": {
-      "P/E": 17.24,
+      "P/E": 17.6,
       "net margin %": 10.35,
       "rev growth %": 2.74,
       "ROE %": 10.22,
       "current ratio": 1.28
     },
     "news": [
-      "Resilience In A Reflationary World: Navigating Concentration, Conflict, And Conviction In EM",
-      "Billionaire Investor Retreats From Retail, Exits Alibaba Entirely, Cuts Amazon Stake 10%",
-      "SK Hynix IPO Triggers Wall Street's Next Leveraged ETF Gold Rush"
+      "Korea Drives Semi Stocks Lower Despite Solid Taiwan Semi Earnings; Apple Boosts China AI Models",
+      "Apple's AI Catch-Up Plan May Include Buying Chip Companies",
+      "Gene Munster Says New Siri AI Makes It Feel 'Like Having a New Phone,' Ming-Chi Kuo Says Stock Rally Was Expected as Apple Stock Touches Record High"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

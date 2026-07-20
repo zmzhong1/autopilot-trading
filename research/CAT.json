@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "CAT",
-    "researched_at": "2026-07-13T13:34:17+00:00",
+    "researched_at": "2026-07-20T13:26:34+00:00",
     "name": "Caterpillar Inc",
     "industry": "Machinery",
-    "market_cap": 438715.3148052471,
+    "market_cap": 405489.55152149906,
     "metrics": {
-      "P/E": 46.52,
+      "P/E": 43.0,
       "net margin %": 13.33,
       "rev growth %": 11.85,
       "ROE %": 47.57,
       "current ratio": 1.35
     },
     "news": [
-      "Caterpillar vs. Oshkosh: Which Industrials Stock Is a Better Buy in 2026?",
-      "Amazon, Microsoft and Meta Among HSBC Earnings Picks",
-      "Top dow jones movers in Friday's session"
+      "Our Top 10 High Growth Dividend Stocks - July 2026",
+      "Mark Zuckerberg's Meta and Other Hyperscalers Face a Major Bottleneck. Here Are 2 Industrial Stocks That Will Benefit",
+      "Should You Buy This Sneaky AI Dividend Stock Up 330% In The Last 5 Years?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

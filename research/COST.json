@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "COST",
-    "researched_at": "2026-07-13T13:34:20+00:00",
+    "researched_at": "2026-07-20T13:26:38+00:00",
     "name": "Costco Wholesale Corp",
     "industry": "Retail",
-    "market_cap": 406337.4565195488,
+    "market_cap": 417255.92135908996,
     "metrics": {
-      "P/E": 45.98,
+      "P/E": 47.21,
       "net margin %": 3.01,
       "rev growth %": 9.23,
       "ROE %": 28.27,
       "current ratio": 1.07
     },
     "news": [
-      "Here Are Monday\u2019s Best Wall Street Analyst Research Calls: Atmos Energy, Best Buy, Biogen, Capital One, Costco, Disney, Papa John\u2019s International, Shopify, and More",
-      "Dollar Tree makes key move to keep popular items in stock",
-      "Costco Could Be Poised for Major Gains Before 2030. Here Is Why Now May Be the Time to Buy."
+      "Wall Street Breakfast Podcast: FDA's Lettuce U-Turn",
+      "If You'd Invested $1,000 in Costco Stock 20 Years Ago, Here's How Much You'd Have Today",
+      "Target wants rich parents to shop at its stores"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
