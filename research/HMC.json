@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "HMC",
-    "researched_at": "2026-07-14T12:48:10+00:00",
+    "researched_at": "2026-07-21T12:53:59+00:00",
     "name": "Honda Motor Co Ltd",
     "industry": "Automobiles",
-    "market_cap": 5821310.788696,
+    "market_cap": 5977012.849243,
     "metrics": {
       "net margin %": -1.94,
       "rev growth %": 0.5,
@@ -12,12 +12,14 @@
       "current ratio": 1.28
     },
     "news": [
-      "American Honda Motor Recalls 325,588 Odyssey Vehicles Over Rearview Camera Failure That Fails Federal Rear Visibility Standard"
+      "ETFs to Watch July 12, 2012 (HYD, SOXS, XLE)",
+      "NVIDIA Could Be the Missing Piece in Japan's AI Puzzle: Analyst",
+      "'Honda to Halt Sales of Last EV in Its US Lineup' - Bloomberg"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "no StockNews thesis on file"
+    "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

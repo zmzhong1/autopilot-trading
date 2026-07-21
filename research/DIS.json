@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DIS",
-    "researched_at": "2026-07-14T12:48:00+00:00",
+    "researched_at": "2026-07-21T12:53:51+00:00",
     "name": "Walt Disney Co",
     "industry": "Media",
-    "market_cap": 166705.09463191804,
+    "market_cap": 167417.05635981806,
     "metrics": {
-      "P/E": 15.03,
+      "P/E": 14.98,
       "net margin %": 11.54,
       "rev growth %": 3.43,
       "ROE %": 10.29,
       "current ratio": 0.68
     },
     "news": [
-      "How Moana\u2019s Soft Opening And Streaming Debate At Walt Disney (DIS) Has Changed Its Investment Story",
-      "Zacks Industry Outlook Disney, Sphere, Lionsgate, Align and Reservoir",
-      "FCC's Brendan Carr Reportedly Questions Antitrust Basis For Paramount, Says Disney Under Heightened Scrutiny"
+      "Avengers can't get an IMAX screen this December, so Disney invented its own premium format to fight back",
+      "Paramount-Warner Deal at Risk of Delays That Would Cost Billions",
+      "Stock Market Today, July 20: Warner Bros. Discovery Falls 4% as Judge Pauses $110 Billion Paramount Skydance Deal"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

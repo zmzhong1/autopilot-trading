@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "F",
-    "researched_at": "2026-07-14T12:48:02+00:00",
+    "researched_at": "2026-07-21T12:53:52+00:00",
     "name": "Ford Motor Co",
     "industry": "Automobiles",
-    "market_cap": 55187.99323217857,
+    "market_cap": 55745.848410248764,
     "metrics": {
       "net margin %": -3.22,
       "rev growth %": 3.82,
@@ -12,9 +12,9 @@
       "current ratio": 1.09
     },
     "news": [
-      "Stay informed about the most active stocks in the S&P500 index on Monday's session.",
-      "Why I Won\u2019t Buy A Rivian",
-      "Ford Locks in Labor Deal With Unifor: Is F Stock a Buy Now?"
+      "Ford Motor (F) Ratifies Canada Labor Deal, Is The Upside Already Priced In?",
+      "BlackRock, Carhartt, Ford and Google Launch New Alliance to Expand Skilled Workforce Training",
+      "Key auto parts maker closes factory, lays off 325 workers"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

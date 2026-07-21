@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "FCX",
-    "researched_at": "2026-07-14T12:48:04+00:00",
+    "researched_at": "2026-07-21T12:53:54+00:00",
     "name": "Freeport-McMoRan Inc",
     "industry": "Metals & Mining",
-    "market_cap": 86210.46271402323,
+    "market_cap": 84514.1430377076,
     "metrics": {
-      "P/E": 32.05,
+      "P/E": 30.96,
       "net margin %": 10.41,
       "rev growth %": -24.23,
       "ROE %": 14.52,
       "current ratio": 2.39
     },
     "news": [
-      "REalloys shares are trading higher after Clear Street initiated its coverage on the stock with a Buy rating and announced a price target of $35.",
-      "Natural Gas Stocks: Short-Term Pain, Long-Term Opportunity?",
-      "Company News for July 13, 2026"
+      "Amarc Announces 2026 Joy District Budget Increased to $20 Million to Advance Important Gold-Copper Discoveries",
+      "How Higher Profit Forecasts Amid Lower Sales Expectations Will Impact Freeport-McMoRan (FCX) Investors",
+      "Goldman Flags 3 AI-Resistant Investment Themes to Watch"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

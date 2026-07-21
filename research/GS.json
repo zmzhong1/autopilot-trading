@@ -1,26 +1,26 @@
 {
   "snapshot": {
     "ticker": "GS",
-    "researched_at": "2026-07-14T12:48:08+00:00",
+    "researched_at": "2026-07-21T12:53:57+00:00",
     "name": "Goldman Sachs Group Inc",
     "industry": "Financial Services",
-    "market_cap": 308551.22193559416,
+    "market_cap": 311241.6653009694,
     "metrics": {
-      "P/E": 17.15,
-      "net margin %": 14.13,
-      "rev growth %": 1.28,
-      "ROE %": 14.56,
-      "current ratio": 0.3
+      "P/E": 15.09,
+      "net margin %": 15.53,
+      "rev growth %": 6.67,
+      "ROE %": 16.94,
+      "current ratio": 0.32
     },
     "news": [
-      "Goldman Sachs (NYSE:GS) Reports Bullish Q2 CY2026",
-      "Goldman Sachs profits soar amid roaring Wall Street activity",
-      "Equity Futures Mixed Ahead of Key Inflation Data, Big Bank Earnings"
+      "Here Are Tuesday\u2019s Top Wall Street Analyst Research Calls: Adobe, Datadog, Five Below, Fortinet, Gilead Sciences, Goldman Sachs, Microsoft, Salesforce, and More",
+      "Goldman Sachs (GS) Stock Looks Near Fair Value After A 217% Run",
+      "China at Risk of 20% Youth Joblessness as Labor Distress Spreads"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "no StockNews thesis on file"
+    "analyst trend not upgrading vs buy-rated thesis"
   ]
 }
