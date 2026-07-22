@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MS",
-    "researched_at": "2026-07-15T12:52:13+00:00",
+    "researched_at": "2026-07-22T12:58:47+00:00",
     "name": "Morgan Stanley",
     "industry": "Financial Services",
-    "market_cap": 359100.4530520001,
+    "market_cap": 339857.58001263667,
     "metrics": {
-      "P/E": 19.84,
-      "net margin %": 14.65,
-      "rev growth %": 12.28,
+      "P/E": 16.86,
+      "net margin %": 15.65,
+      "rev growth %": 13.96,
       "ROE %": 16.32,
       "current ratio": 0.31
     },
     "news": [
-      "Morgan Stanley (NYSE:MS) Rallies on Record Trading Revenue and Latest Earnings Beat as Growth Stock Momentum Builds",
-      "Dow Jones Futures: Oil Prices Hit $80 On Iran News, ASML, Morgan Stanley Lead Earnings Movers",
-      "Morgan Stanley Reports Second Quarter 2026 Earnings Results"
+      "The Nightview Fund Q2 2026 Portfolio Review",
+      "Top Research Reports for Eli Lilly, Costco & Morgan Stanley",
+      "Rapid7 (RPD) Stock Trades Down, Here Is Why"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "META",
-    "researched_at": "2026-07-15T12:52:09+00:00",
+    "researched_at": "2026-07-22T12:58:43+00:00",
     "name": "Meta Platforms Inc",
     "industry": "Media",
-    "market_cap": 1677999.167538,
+    "market_cap": 1644644.3682979585,
     "metrics": {
-      "P/E": 23.62,
+      "P/E": 23.23,
       "net margin %": 32.84,
       "rev growth %": 26.18,
       "ROE %": 33.22,
       "current ratio": 2.35
     },
     "news": [
-      "Morgan Stanley Drops a $50 Billion Bombshell \u2014 Can Big Tech Still Afford to Build the AI Factories of the Future?",
-      "TappAlpha Expands Growth + Income ETF Platform with TMGN, Bringing Tax-Efficient Income to the Cboe Magnificent 10 Index",
-      "AI Is Reshaping a Trillion-Dollar Wall Street Catalyst, and It Has Terrifying Implications for the 2nd-Priciest Stock Market in History"
+      "Oracle severed 21,000 employees during an AI spending spree, then hit a $7 billion Wisconsin power hurdle",
+      "BlackRock draws Wall Street's attention with eye-catching move",
+      "GameChange Energy to provide solar trackers for Texas solar projects"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

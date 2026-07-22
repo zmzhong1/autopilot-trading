@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "MP",
-    "researched_at": "2026-07-15T12:52:11+00:00",
+    "researched_at": "2026-07-22T12:58:45+00:00",
     "name": "MP Materials Corp",
     "industry": "Metals & Mining",
-    "market_cap": 9041.747779,
+    "market_cap": 8162.318242961981,
     "metrics": {
       "net margin %": -20.48,
       "rev growth %": 60.93,
@@ -12,9 +12,9 @@
       "current ratio": 7.18
     },
     "news": [
-      "MP Materials: Execution Improves, But You're Paying For The Destination",
-      "REMX: Rare Earth Exposure Is Only One Half, And All Is Not Well On The Other Half",
-      "HyProMag is the Magnet Opportunity Hiding in America's Scrap Heap"
+      "CRML, MP, UAMY, USAR, Stocks Gain Premarket: Retail Cheers Trump's Defense Critical Metals Supply Chain Push",
+      "Trump Signs Orders On Aluminum And Defense Supply Chains \u2014 AA, KALU, CENX, MP Stocks In Focus",
+      "Trump Order to Secure Critical Minerals Supply Chain Underscores Risk to Defense Industry"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

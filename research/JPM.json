@@ -1,26 +1,25 @@
 {
   "snapshot": {
     "ticker": "JPM",
-    "researched_at": "2026-07-15T12:52:06+00:00",
+    "researched_at": "2026-07-22T12:58:41+00:00",
     "name": "JPMorgan Chase & Co",
     "industry": "Banking",
-    "market_cap": 918777.728779,
+    "market_cap": 923172.1048663685,
     "metrics": {
-      "P/E": 15.41,
+      "P/E": 14.2,
       "net margin %": 33.26,
       "rev growth %": 108.98,
-      "ROE %": 16.32
+      "ROE %": 17.81
     },
     "news": [
-      "Dow Jones Futures: Oil Prices Hit $80 On Iran News, ASML, Morgan Stanley Lead Earnings Movers",
-      "Market Chatter: JPMorgan Chase to Hire 30 Senior Bankers to Support EMEA Corporate Banking Business Expansion",
-      "JPMorgan\u2019s \u2018Aggressive Buy\u2019 Stock Pick Is Paying Off, Yet Insiders Aren\u2019t Convinced"
+      "\u2018Worse than people expect': Jamie Dimon sounds alarm about the next credit crisis \u2014 here's what big bank earnings show",
+      "What Bank Earnings Just Revealed About the Health of the American Consumer",
+      "\u201cIf You Own Too Much Tech, You\u2019re Going To Be Slaughtered.\u201d Cramer Urges Investors To Take Profits"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-07-14)",
     "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

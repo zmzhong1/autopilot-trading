@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "JD",
-    "researched_at": "2026-07-15T12:52:03+00:00",
+    "researched_at": "2026-07-22T12:58:38+00:00",
     "name": "JD.com Inc",
     "industry": "Retail",
-    "market_cap": 276118.370686,
+    "market_cap": 282184.239827,
     "metrics": {
-      "P/E": 17.17,
+      "P/E": 17.59,
       "net margin %": 1.05,
       "rev growth %": 10.32,
       "ROE %": 6.15,
       "current ratio": 1.18
     },
     "news": [
-      "JD.com: Add To Cart While China's On Sale",
-      "YSX Tech Sees 6 Months Ended Sept. 30, 2025 Revenue ~$41M",
-      "Baiya International Group shares are trading higher after the company announced that the Cryptocurrency Ark Plan completed its first round of public voting with Binance Coin"
+      "Xunlei Transfers 50% Equity Interest In Shenzhen Onething Technology For RMB125M; Shenzhen Xunlei To Transfer 20% Of Equity Interest To Kinsoft Cloud Holdings' Wuhan Kingsoft Cloud Information Technology For RMB50M",
+      "Barclays Maintains Overweight on JD.com, Lowers Price Target to $41",
+      "DeepSeek Plans to File for IPO as Soon as This Year: Report"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
