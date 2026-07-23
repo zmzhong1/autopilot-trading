@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PATH",
-    "researched_at": "2026-07-16T13:00:44+00:00",
+    "researched_at": "2026-07-23T13:01:51+00:00",
     "name": "UiPath Inc",
     "industry": "Technology",
-    "market_cap": 6191.54053947236,
+    "market_cap": 5543.890032524917,
     "metrics": {
-      "P/E": 18.91,
+      "P/E": 16.93,
       "net margin %": 19.58,
       "rev growth %": 15.24,
       "ROE %": 17.29,
       "current ratio": 2.31
     },
     "news": [
-      "UiPath (PATH) Could Be 10% Undervalued After The Very Group Contract",
-      "Did UiPath's First GAAP Profit and AI Retail Win Just Shift Its (PATH) Investment Narrative?",
-      "Has UiPath (PATH) Fallen Below Fair Value After Its AI Contract?"
+      "UiPath (PATH) Dips More Than Broader Market: What You Should Know",
+      "Curious about the most active stocks on Wednesday?",
+      "12 Information Technology Stocks Moving In Wednesday's Intraday Session"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

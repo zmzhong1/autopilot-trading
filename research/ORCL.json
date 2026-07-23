@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "ORCL",
-    "researched_at": "2026-07-16T13:00:42+00:00",
+    "researched_at": "2026-07-23T13:01:48+00:00",
     "name": "Oracle Corp",
     "industry": "Technology",
-    "market_cap": 381633.6030861712,
+    "market_cap": 362478.47271108575,
     "metrics": {
-      "P/E": 21.96,
+      "P/E": 21.35,
       "net margin %": 25.37,
       "rev growth %": 17.35,
       "ROE %": 50.38,
       "current ratio": 1.11
     },
     "news": [
-      "AI data centers divide communities and scramble midterm playbooks",
-      "2 Reasons Oracle Stock Could Double in Value by 2028",
-      "The Zacks Analyst Blog Highlights NVIDIA, Oracle, Analog Devices and Regis"
+      "Energy Storage Outlook Jumps As Hyperscalers, Suppliers Tighten Ties",
+      "Uber Cuts 10% of Customer Service Jobs, Citing \u2018Embrace\u2019 of AI",
+      "Here\u2019s Why Retail Investors Are Buying Microsoft (MSFT) on the Dip"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NEM",
-    "researched_at": "2026-07-16T13:00:11+00:00",
+    "researched_at": "2026-07-23T13:01:16+00:00",
     "name": "Newmont Corporation",
     "industry": "Metals & Mining",
-    "market_cap": 101641.69583981235,
+    "market_cap": 102218.17195568711,
     "metrics": {
-      "P/E": 12.06,
+      "P/E": 12.07,
       "net margin %": 33.87,
       "rev growth %": 26.93,
       "ROE %": 25.22,
       "current ratio": 2.44
     },
     "news": [
-      "Did Analyst Upgrades and Buybacks Just Shift Newmont's (NEM) Operational Efficiency Investment Narrative?",
-      "Newmont (NEM) Resumes Cadia Operations As It Pushes Ahead With Key Growth Projects",
-      "Newmont: The Permits That Set The Stage For A Re-Rating"
+      "I Couldn't Be More Bullish On These 2 Undervalued Dividend Growth Powerhouses",
+      "Discover the top S&P500 movers in Wednesday's pre-market session.",
+      "Newmont Corp (NYSE:NEM) Passes Peter Lynch's GARP Screen as a Growth at a Reasonable Price Stock"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

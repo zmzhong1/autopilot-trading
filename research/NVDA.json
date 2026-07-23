@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NVDA",
-    "researched_at": "2026-07-16T13:00:38+00:00",
+    "researched_at": "2026-07-23T13:01:46+00:00",
     "name": "NVIDIA Corp",
     "industry": "Semiconductors",
-    "market_cap": 5142500.074097084,
+    "market_cap": 5131851.833785226,
     "metrics": {
-      "P/E": 32.17,
+      "P/E": 31.43,
       "net margin %": 62.97,
       "rev growth %": 70.68,
       "ROE %": 111.66,
       "current ratio": 3.44
     },
     "news": [
-      "Dow Jones Futures Rise But AI Woes Continue; Taiwan Semi, GE, UnitedHealth Are Key Earnings Movers",
-      "Micron's Biggest Rival Just Got a Lot Easier for US Investors to Own",
-      "3 \"Magnificent Seven\" Stocks Worth Buying Right Now"
+      "Nvidia, Teradyne, and Omnicell Earnings Set to Test Robotics Sector\u2019s Divergent Momentum",
+      "Is Apple Stock a Buy Right Now?",
+      "You Can Do Better Than Coca-Cola Stock. Buy This High-Yield Dividend Stock Instead."
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

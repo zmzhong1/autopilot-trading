@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NOK",
-    "researched_at": "2026-07-16T13:00:29+00:00",
+    "researched_at": "2026-07-23T13:01:38+00:00",
     "name": "Nokia Oyj",
     "industry": "Communications",
-    "market_cap": 57350.055866,
+    "market_cap": 52388.090119,
     "metrics": {
-      "P/E": 73.43,
+      "P/E": 67.08,
       "net margin %": 3.91,
       "rev growth %": 4.33,
       "ROE %": 3.84,
       "current ratio": 1.57
     },
     "news": [
-      "Most active stocks in Wednesday's session",
-      "Nokia\u2019s New AI Platform Could Transform Future 5G and 6G Networks",
-      "Nokia: Q2 Needs To Justify The AI Revaluation"
+      "Nokia Oyj 2026 Q2 - Results - Earnings Call Presentation",
+      "Nokia Oyj (NOK) Stock Is Trending: Here's What You Should Know",
+      "'Wrong Picks or Just Bad Timing?' A Newbie Investor Wonders Why Their Stock Portfolio Fell 9%. Here Are the Stocks They Bought"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

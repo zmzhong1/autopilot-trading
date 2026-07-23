@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "NET",
-    "researched_at": "2026-07-16T13:00:24+00:00",
+    "researched_at": "2026-07-23T13:01:34+00:00",
     "name": "Cloudflare Inc",
     "industry": "Technology",
-    "market_cap": 96962.7134674428,
+    "market_cap": 95520.91427884038,
     "metrics": {
       "net margin %": -3.72,
       "rev growth %": 31.55,
@@ -12,9 +12,9 @@
       "current ratio": 1.96
     },
     "news": [
-      "IBM Says AI Spending Isn't Crowding Out Cybersecurity. These ETFs Are Gaining Momentum",
-      "Cloudflare: Valuation Is Now A Real Issue",
-      "IBM Heads for Worst Day Ever \u2014 But Why Are Cybersecurity Stocks Up?"
+      "Fastly Should Be Off To The Races",
+      "At AI's Edge: Precision Hardware Is Moving From Data Centers To Devices",
+      "Truist Securities Maintains Buy on Cloudflare, Raises Price Target to $300"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
