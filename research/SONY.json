@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SONY",
-    "researched_at": "2026-07-17T12:43:05+00:00",
+    "researched_at": "2026-07-24T12:58:43+00:00",
     "name": "Sony Group Corp",
     "industry": "Consumer products",
-    "market_cap": 20081633.680176,
+    "market_cap": 20407538.033203,
     "metrics": {
       "net margin %": -2.62,
       "rev growth %": 5.22,
@@ -12,9 +12,9 @@
       "current ratio": 1.18
     },
     "news": [
-      "Lionsgate Could Be Officially In Play",
-      "Disney Could Unlock 40% Upside by Returning to Its Pre-Streaming Model, Wells Fargo Says",
-      "Wall Street Week Ahead"
+      "BGY: A Good International CEF If You Are Willing To Sacrifice Upside For Income",
+      "Fast Track Events Collaborates With Sony Music Over Global Digital Content Platform",
+      "Cinema Operator AMC Entertainment Rides the Box Office Boom"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

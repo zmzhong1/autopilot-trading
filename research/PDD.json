@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PDD",
-    "researched_at": "2026-07-17T12:42:55+00:00",
+    "researched_at": "2026-07-24T12:58:34+00:00",
     "name": "PDD Holdings Inc",
     "industry": "Retail",
-    "market_cap": 122042.009611,
+    "market_cap": 118981.705046,
     "metrics": {
-      "P/E": 8.74,
+      "P/E": 8.42,
       "net margin %": 21.62,
       "rev growth %": 9.86,
       "ROE %": 24.06,
       "current ratio": 2.54
     },
     "news": [
-      "PDD Holdings Inc. Sponsored ADR (PDD) Outperforms Broader Market: What You Need to Know",
-      "Shein Wins China Approval for Potential $3 Billion Hong Kong IPO",
-      "Shein Is Said to Target Up to $3 Billion Hong Kong IPO by August"
+      "PDD Holdings Inc. Sponsored ADR (PDD) Stock Falls Amid Market Uptick: What Investors Need to Know",
+      "PDD Holdings Inc. Sponsored ADR (PDD) Is a Trending Stock: Facts to Know Before Betting on It",
+      "Are Options Traders Betting on a Big Move in PDD Holdings Stock?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

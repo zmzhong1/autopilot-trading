@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PLTR",
-    "researched_at": "2026-07-17T12:42:57+00:00",
+    "researched_at": "2026-07-24T12:58:36+00:00",
     "name": "Palantir Technologies Inc",
     "industry": "Technology",
-    "market_cap": 322294.65090561484,
+    "market_cap": 293191.29223415826,
     "metrics": {
-      "P/E": 141.26,
+      "P/E": 128.51,
       "net margin %": 43.67,
       "rev growth %": 67.71,
       "ROE %": 32.18,
       "current ratio": 6.91
     },
     "news": [
-      "Alex Karp Grouped Palantir With These 3 Unstoppable Stocks as the Only True Artificial Intelligence (AI) Infrastructure Winners",
-      "Palantir CTO Warns AI Distillation Threat Could Undermine U.S. AI Lead",
-      "Palantir Technologies Inc (PLTR) Pairs with SNP to Target SAP Transformation Projects"
+      "Surf Air Mobility to Announce Second Quarter 2026 Financial Results on August 10, 2026",
+      "Palantir Is Down 25%. Here's Why I'm Buying More.",
+      "Robert Half Q2 Earnings Call Highlights"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

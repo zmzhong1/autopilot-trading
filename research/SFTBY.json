@@ -1,19 +1,21 @@
 {
   "snapshot": {
     "ticker": "SFTBY",
-    "researched_at": "2026-07-17T12:42:59+00:00",
+    "researched_at": "2026-07-24T12:58:38+00:00",
     "name": "SoftBank Group Corp",
     "industry": "Telecommunication",
-    "market_cap": 36306087.949219,
+    "market_cap": 32555600.562012,
     "metrics": {
-      "P/E": 7.26,
+      "P/E": 6.51,
       "net margin %": 64.14,
       "rev growth %": 7.66,
       "ROE %": 34.06,
       "current ratio": 0.8
     },
     "news": [
-      "Hyundai Buys Out SoftBank Stake to Take Full Control of Boston Dynamics as Atlas Humanoid Robot Manufacturing Rollout Moves Closer"
+      "HPI: Fiscal Dominance Could Challenge Ability To Deliver Attractive Real Returns",
+      "Oracle: 7.8% On Bonds As CDS Goes Wild",
+      "'The Retail Investor Gets Inevitably Wiped Out': The Tickers Most Hit by the Chip Stocks Rout"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
