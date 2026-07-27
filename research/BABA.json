@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "BABA",
-    "researched_at": "2026-07-20T13:26:28+00:00",
+    "researched_at": "2026-07-27T13:54:19+00:00",
     "name": "Alibaba Group Holding Ltd",
     "industry": "Retail",
-    "market_cap": 285866.06791740924,
+    "market_cap": 268908.49808287626,
     "metrics": {
-      "P/E": 17.6,
+      "P/E": 17.18,
       "net margin %": 10.35,
       "rev growth %": 2.74,
       "ROE %": 10.22,
       "current ratio": 1.28
     },
     "news": [
-      "Korea Drives Semi Stocks Lower Despite Solid Taiwan Semi Earnings; Apple Boosts China AI Models",
-      "Apple's AI Catch-Up Plan May Include Buying Chip Companies",
-      "Gene Munster Says New Siri AI Makes It Feel 'Like Having a New Phone,' Ming-Chi Kuo Says Stock Rally Was Expected as Apple Stock Touches Record High"
+      "Alibaba: Qwen Powering AI Transformation",
+      "US Probes Whether Russia Helped Iran Target CIA Facilities With Advanced Drone Technology: Report",
+      "Conventum - Alluvium Global Fund Q2 2026 Performance Review"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

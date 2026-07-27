@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "CRWD",
-    "researched_at": "2026-07-20T13:26:41+00:00",
+    "researched_at": "2026-07-27T13:54:30+00:00",
     "name": "CrowdStrike Holdings Inc",
     "industry": "Technology",
-    "market_cap": 206788.08846807346,
+    "market_cap": 186626.559109,
     "metrics": {
       "net margin %": -0.48,
       "rev growth %": 23.17,
@@ -12,9 +12,9 @@
       "current ratio": 1.53
     },
     "news": [
-      "CrowdStrike vs. Snowflake: Which Technology Stock Is a Better Buy in 2026?",
-      "Salesforce vs. CrowdStrike: Which Technology Growth Stock Is a Better Buy in 2026?",
-      "CrowdStrike vs. NVIDIA: Which Growth Tech Stock Is a Better Buy in 2026, the Cybersecurity Giant or AI Leader?"
+      "Joins Industry Coalition to Launch Open Source AI Cybersecurity Alliance",
+      "Nvidia's New AI Security Alliance Unites Microsoft, SpaceX, IBM To Push Open-Source Defense \u2013 But Meta's Missing From The List",
+      "Consumer Tech (July 20-24): AI Boom Drives Big Tech Earnings, Oracle Grabs $7B Defense Deal & More"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

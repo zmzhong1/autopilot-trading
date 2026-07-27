@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DELL",
-    "researched_at": "2026-07-20T13:26:43+00:00",
+    "researched_at": "2026-07-27T13:54:32+00:00",
     "name": "Dell Technologies Inc",
     "industry": "Technology",
-    "market_cap": 256939.71174586643,
+    "market_cap": 283622.95626599994,
     "metrics": {
-      "P/E": 30.45,
+      "P/E": 33.73,
       "net margin %": 6.28,
       "rev growth %": 38.57,
       "ROE %": 130.7,
       "current ratio": 0.95
     },
     "news": [
-      "Dell, Super Micro Stocks Rise Premarket After Elon Musk Denies Report Of $52B AI Server Deal With Foxconn",
-      "Salesforce vs. Dell Technologies: Which High-Growth Tech Stock Is a Better Buy in 2026?",
-      "Our Top 10 High Growth Dividend Stocks - July 2026"
+      "Joins Industry Coalition to Launch Open Source AI Cybersecurity Alliance",
+      "Crypto Treasury Firms Pivot to AI in Bid to Win Back Investors",
+      "Nvidia's New AI Security Alliance Unites Microsoft, SpaceX, IBM To Push Open-Source Defense \u2013 But Meta's Missing From The List"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

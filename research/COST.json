@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "COST",
-    "researched_at": "2026-07-20T13:26:38+00:00",
+    "researched_at": "2026-07-27T13:54:28+00:00",
     "name": "Costco Wholesale Corp",
     "industry": "Retail",
-    "market_cap": 417255.92135908996,
+    "market_cap": 414666.014806,
     "metrics": {
-      "P/E": 47.21,
+      "P/E": 46.92,
       "net margin %": 3.01,
       "rev growth %": 9.23,
       "ROE %": 28.27,
       "current ratio": 1.07
     },
     "news": [
-      "Wall Street Breakfast Podcast: FDA's Lettuce U-Turn",
-      "If You'd Invested $1,000 in Costco Stock 20 Years Ago, Here's How Much You'd Have Today",
-      "Target wants rich parents to shop at its stores"
+      "Why Premium Grocers Skew CMBS Delinquency Rankings",
+      "Walmart Is at $108. Here's Why Investors Should Take Pause.",
+      "7-Eleven has a gas discount that challenges Costco"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

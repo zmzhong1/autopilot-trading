@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "COIN",
-    "researched_at": "2026-07-20T13:26:36+00:00",
+    "researched_at": "2026-07-27T13:54:26+00:00",
     "name": "Coinbase Global Inc",
     "industry": "Financial Services",
-    "market_cap": 41394.99232,
+    "market_cap": 41703.24169,
     "metrics": {
-      "P/E": 51.7,
+      "P/E": 52.09,
       "net margin %": 12.2,
       "rev growth %": -5.76,
       "ROE %": 5.68,
       "current ratio": 2.14
     },
     "news": [
-      "Chamath Palihapitiya Says Bitcoin Faces Two \u2018Structural\u2019 Headwinds \u2013 But Two Of Crypto's Biggest CEOs Call The Threat Overblown",
-      "Coinbase CEO Armstrong Dismisses Chamath\u2019s Bitcoin Mining Warning: Will Price Suffer?",
-      "Brian Armstrong Admits Bitcoin Didn\u2019t Deliver Satoshi\u2019s Vision, Something Else Did"
+      "Brian Armstrong Says the AI Megatrend Makes Crypto More Important",
+      "Brian Armstrong: Part of Crypto Business Could Leave the US if CLARITY Act Stalls",
+      "Coinbase CEO Brian Armstrong Says Pivot From Crypto To AI Is 'Zero Sum, Scarcity Thinking'"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
