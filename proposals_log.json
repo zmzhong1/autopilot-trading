@@ -469,7 +469,35 @@
         "held": null,
         "checked": false
       }
+    },
+    {
+      "date": "2026-07-27",
+      "ts": "2026-07-27T16:11:00+00:00",
+      "ticker": "NVDA",
+      "side": "buy",
+      "size_pct": 10.0,
+      "entry_price": 198.47,
+      "feeds": [
+        "corporate",
+        "insider",
+        "institutional"
+      ],
+      "feed_count": 3,
+      "status": "proposed",
+      "stocknews": {
+        "xii_score": 86,
+        "verdict": "strong-buy",
+        "h0": 82,
+        "durability": 21,
+        "conviction": "high",
+        "fatal_flags": 0,
+        "found": true
+      },
+      "portfolio": {
+        "held": null,
+        "checked": false
+      }
     }
   ],
-  "last_run": "2026-07-20T15:46:16+00:00"
+  "last_run": "2026-07-27T16:11:00+00:00"
 }
