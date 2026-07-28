@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DIS",
-    "researched_at": "2026-07-21T12:53:51+00:00",
+    "researched_at": "2026-07-28T13:10:01+00:00",
     "name": "Walt Disney Co",
     "industry": "Media",
-    "market_cap": 167417.05635981806,
+    "market_cap": 167833.82487300003,
     "metrics": {
-      "P/E": 14.98,
+      "P/E": 15.03,
       "net margin %": 11.54,
       "rev growth %": 3.43,
       "ROE %": 10.29,
       "current ratio": 0.68
     },
     "news": [
-      "Avengers can't get an IMAX screen this December, so Disney invented its own premium format to fight back",
-      "Paramount-Warner Deal at Risk of Delays That Would Cost Billions",
-      "Stock Market Today, July 20: Warner Bros. Discovery Falls 4% as Judge Pauses $110 Billion Paramount Skydance Deal"
+      "Disney or Salesforce: Which Beaten-Down Dow Giant Is the Smarter Dip-Buy?",
+      "Disney's Turnaround Is Here: Why I'm Buying The Upside",
+      "Warner Bros. Stock Hits Lowest Price Since Paramount Deal: Merger Odds Around 50%"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "FCX",
-    "researched_at": "2026-07-21T12:53:54+00:00",
+    "researched_at": "2026-07-28T13:10:06+00:00",
     "name": "Freeport-McMoRan Inc",
     "industry": "Metals & Mining",
-    "market_cap": 84514.1430377076,
+    "market_cap": 90163.753317,
     "metrics": {
-      "P/E": 30.96,
-      "net margin %": 10.41,
+      "P/E": 30.16,
+      "net margin %": 11.38,
       "rev growth %": -24.23,
-      "ROE %": 14.52,
-      "current ratio": 2.39
+      "ROE %": 15.26,
+      "current ratio": 2.07
     },
     "news": [
-      "Amarc Announces 2026 Joy District Budget Increased to $20 Million to Advance Important Gold-Copper Discoveries",
-      "How Higher Profit Forecasts Amid Lower Sales Expectations Will Impact Freeport-McMoRan (FCX) Investors",
-      "Goldman Flags 3 AI-Resistant Investment Themes to Watch"
+      "The Next Fort Knox? Why the Army is Going All-In On Rare Earths",
+      "SCCO Q2 Earnings Beat on Strong Metal Prices Despite Low Volumes",
+      "Barclays Maintains Overweight on Freeport-McMoRan, Raises Price Target to $82"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

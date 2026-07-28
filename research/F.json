@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "F",
-    "researched_at": "2026-07-21T12:53:52+00:00",
+    "researched_at": "2026-07-28T13:10:04+00:00",
     "name": "Ford Motor Co",
     "industry": "Automobiles",
-    "market_cap": 55745.848410248764,
+    "market_cap": 58495.28934999999,
     "metrics": {
       "net margin %": -3.22,
       "rev growth %": 3.82,
@@ -12,9 +12,9 @@
       "current ratio": 1.09
     },
     "news": [
-      "Ford Motor (F) Ratifies Canada Labor Deal, Is The Upside Already Priced In?",
-      "BlackRock, Carhartt, Ford and Google Launch New Alliance to Expand Skilled Workforce Training",
-      "Key auto parts maker closes factory, lays off 325 workers"
+      "Stocks Mostly Down Pre-Bell Amid Chip Sell-Off; Traders Await More Earnings",
+      "Dealer Pay Joins The Shop by FordDirect as a Preferred Vendor",
+      "AI Fears Just Raised the Stakes in a Critical Week for Stock Markets"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

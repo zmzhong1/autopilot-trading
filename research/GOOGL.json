@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "GOOGL",
-    "researched_at": "2026-07-21T12:53:56+00:00",
+    "researched_at": "2026-07-28T13:10:09+00:00",
     "name": "Alphabet Inc",
     "industry": "Media",
-    "market_cap": 4285323.3744,
+    "market_cap": 3975724.3136,
     "metrics": {
-      "P/E": 26.83,
-      "net margin %": 37.92,
-      "rev growth %": 17.45,
-      "ROE %": 38.98,
-      "current ratio": 1.92
+      "P/E": 16.27,
+      "net margin %": 54.77,
+      "rev growth %": 20.05,
+      "ROE %": 50.84,
+      "current ratio": 2.72
     },
     "news": [
-      "Why Micron Stock Is Jumping Ahead of Google Earnings",
-      "Google parent Alphabet to report Q2 earnings in latest test of AI trade",
-      "China\u2019s New AI Breakthrough Shows Tim Cook\u2019s Risky Final Bet Might Actually Be Genius"
+      "Get Paid 10% To Let Someone Else Chase GOOGL Stock Higher",
+      "Quantum Computing Stocks: Here's How WisdomTree Sizes Up The Industry",
+      "Warren Buffett and Greg Abel Have Been Loading Up on This Top Artificial Intelligence (AI) Stock That's Trading at a Bargain-Basement Price"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

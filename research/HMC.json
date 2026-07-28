@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "HMC",
-    "researched_at": "2026-07-21T12:53:59+00:00",
+    "researched_at": "2026-07-28T13:10:12+00:00",
     "name": "Honda Motor Co Ltd",
     "industry": "Automobiles",
-    "market_cap": 5977012.849243,
+    "market_cap": 6161909.046143,
     "metrics": {
       "net margin %": -1.94,
       "rev growth %": 0.5,
@@ -12,9 +12,7 @@
       "current ratio": 1.28
     },
     "news": [
-      "ETFs to Watch July 12, 2012 (HYD, SOXS, XLE)",
-      "NVIDIA Could Be the Missing Piece in Japan's AI Puzzle: Analyst",
-      "'Honda to Halt Sales of Last EV in Its US Lineup' - Bloomberg"
+      "'Honda Backs Flex Fuel Over EVs for Two-Wheelers in India' - Bloomberg"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

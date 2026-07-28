@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "HOOD",
-    "researched_at": "2026-07-21T12:54:01+00:00",
+    "researched_at": "2026-07-28T13:10:14+00:00",
     "name": "Robinhood Markets Inc",
     "industry": "Financial Services",
-    "market_cap": 89481.59059419048,
+    "market_cap": 86209.854505,
     "metrics": {
-      "P/E": 47.17,
+      "P/E": 45.45,
       "net margin %": 41.12,
       "rev growth %": 41.5,
       "ROE %": 21.62,
       "current ratio": 1.22
     },
     "news": [
-      "Charles Schwab Earnings Beat As Interactive Brokers Awaits",
-      "Analyst raises Robinhood price target in a bold new call",
-      "Trader Turns $80,000 Into $1.25 Million on Robinhood-Linked Meme Coin"
+      "Robinhood Leads Tokenized Stocks by Holders but Not by Money",
+      "HOOD Stock Dips Overnight: Robinhood Opens Ventures Fund II Roadshow To Retail Investors",
+      "Fanatics Pushes Into Prediction Markets"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "GS",
-    "researched_at": "2026-07-21T12:53:57+00:00",
+    "researched_at": "2026-07-28T13:10:11+00:00",
     "name": "Goldman Sachs Group Inc",
     "industry": "Financial Services",
-    "market_cap": 311241.6653009694,
+    "market_cap": 309235.6176720001,
     "metrics": {
-      "P/E": 15.09,
+      "P/E": 15.26,
       "net margin %": 15.53,
       "rev growth %": 6.67,
       "ROE %": 16.94,
       "current ratio": 0.32
     },
     "news": [
-      "Here Are Tuesday\u2019s Top Wall Street Analyst Research Calls: Adobe, Datadog, Five Below, Fortinet, Gilead Sciences, Goldman Sachs, Microsoft, Salesforce, and More",
-      "Goldman Sachs (GS) Stock Looks Near Fair Value After A 217% Run",
-      "China at Risk of 20% Youth Joblessness as Labor Distress Spreads"
+      "Goldman Sachs and Barclays lead power sector M&A in H1 2026",
+      "Zacks.com featured highlights include Alphabet, MasTec and Goldman Sachs",
+      "Hedge Fund Healthcare Bets Approach Five-Year High"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
