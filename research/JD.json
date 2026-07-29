@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "JD",
-    "researched_at": "2026-07-22T12:58:38+00:00",
+    "researched_at": "2026-07-29T13:14:48+00:00",
     "name": "JD.com Inc",
     "industry": "Retail",
-    "market_cap": 282184.239827,
+    "market_cap": 301109.740438,
     "metrics": {
-      "P/E": 17.59,
+      "P/E": 18.04,
       "net margin %": 1.05,
       "rev growth %": 10.32,
       "ROE %": 6.15,
       "current ratio": 1.18
     },
     "news": [
-      "Xunlei Transfers 50% Equity Interest In Shenzhen Onething Technology For RMB125M; Shenzhen Xunlei To Transfer 20% Of Equity Interest To Kinsoft Cloud Holdings' Wuhan Kingsoft Cloud Information Technology For RMB50M",
-      "Barclays Maintains Overweight on JD.com, Lowers Price Target to $41",
-      "DeepSeek Plans to File for IPO as Soon as This Year: Report"
+      "4 Consumer Discretionary Stocks With Whale Alerts In Today\u2019s Session",
+      "CXMT Rockets To Become The Largest Mainland-Listed Company",
+      "JD.com: Smart Money Doubles Down As Valuation Provides Deeper Value"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

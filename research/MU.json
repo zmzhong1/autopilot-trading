@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MU",
-    "researched_at": "2026-07-22T12:58:51+00:00",
+    "researched_at": "2026-07-29T13:14:58+00:00",
     "name": "Micron Technology Inc",
     "industry": "Semiconductors",
-    "market_cap": 1097374.7887526178,
+    "market_cap": 926700.9258660001,
     "metrics": {
-      "P/E": 21.28,
+      "P/E": 18.43,
       "net margin %": 55.91,
       "rev growth %": 166.98,
       "ROE %": 70.55,
       "current ratio": 3.42
     },
     "news": [
-      "Dow Jones Futures Fall As Oil Prices Jump; Two Big AI Earnings Movers With Google, Tesla Earnings Due",
-      "AI Chips Update - NVIDIA and Wowza Tackle Synthetic Video Threats Globally",
-      "Earnings Season Totally Hinges On Great Results From 5 Stocks"
+      "Memory Stocks' Selloff Opens Opportunity as Micron's Bargain Valuation and Earnings Catalysts Loom",
+      "Analysts Predict Sandisk And Micron Still Good For Huge Gains",
+      "SKHY, MU, Samsung's Memory Technology Lead Over China\u2019s CXMT Unlikely To Narrow Soon, Says Futurum Analyst"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MSFT",
-    "researched_at": "2026-07-22T12:58:48+00:00",
+    "researched_at": "2026-07-29T13:14:56+00:00",
     "name": "Microsoft Corp",
     "industry": "Technology",
-    "market_cap": 2962385.477389076,
+    "market_cap": 2921974.783572,
     "metrics": {
-      "P/E": 23.71,
+      "P/E": 23.41,
       "net margin %": 39.34,
       "rev growth %": 17.87,
       "ROE %": 33.13,
       "current ratio": 1.28
     },
     "news": [
-      "Oracle severed 21,000 employees during an AI spending spree, then hit a $7 billion Wisconsin power hurdle",
-      "Will SpaceX buy Tesla? Musk may soon offer clues on his plans",
-      "Social Buzz: Wallstreetbets Stocks Mixed Pre-Bell Wednesday; Super Micro Computer to Advance, Micron Technology to Decline"
+      "Microsoft (NASDAQ:MSFT) \u2013 A Quality Stock with Strong Growth and Financial Discipline",
+      "Watchdog investigating whether Microsoft misled customers on subscription costs",
+      "How much cash do you need invested in 2026 to completely live off dividends? Probably less than you think"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

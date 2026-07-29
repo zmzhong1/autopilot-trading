@@ -1,20 +1,20 @@
 {
   "snapshot": {
     "ticker": "JPM",
-    "researched_at": "2026-07-22T12:58:41+00:00",
+    "researched_at": "2026-07-29T13:14:50+00:00",
     "name": "JPMorgan Chase & Co",
     "industry": "Banking",
-    "market_cap": 923172.1048663685,
+    "market_cap": 957416.238451,
     "metrics": {
-      "P/E": 14.2,
+      "P/E": 14.64,
       "net margin %": 33.26,
       "rev growth %": 108.98,
       "ROE %": 17.81
     },
     "news": [
-      "\u2018Worse than people expect': Jamie Dimon sounds alarm about the next credit crisis \u2014 here's what big bank earnings show",
-      "What Bank Earnings Just Revealed About the Health of the American Consumer",
-      "\u201cIf You Own Too Much Tech, You\u2019re Going To Be Slaughtered.\u201d Cramer Urges Investors To Take Profits"
+      "Wall Street\u2019s Trading Records Leave European Banks in Their Wake",
+      "You bought SpaceX shares at the IPO price \u2014 and now you\u2019re losing money. Is it safe to buy the dip?",
+      "Ready to Buy Bonds? Here's How to Choose from These 3 Bond Funds."
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
