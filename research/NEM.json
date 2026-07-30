@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "NEM",
-    "researched_at": "2026-07-23T13:01:16+00:00",
+    "researched_at": "2026-07-30T13:06:36+00:00",
     "name": "Newmont Corporation",
     "industry": "Metals & Mining",
-    "market_cap": 102218.17195568711,
+    "market_cap": 96244.24756602316,
     "metrics": {
-      "P/E": 12.07,
-      "net margin %": 33.87,
-      "rev growth %": 26.93,
-      "ROE %": 25.22,
-      "current ratio": 2.44
+      "P/E": 11.25,
+      "net margin %": 33.36,
+      "rev growth %": 25.18,
+      "ROE %": 25.05,
+      "current ratio": 2.55
     },
     "news": [
-      "I Couldn't Be More Bullish On These 2 Undervalued Dividend Growth Powerhouses",
-      "Discover the top S&P500 movers in Wednesday's pre-market session.",
-      "Newmont Corp (NYSE:NEM) Passes Peter Lynch's GARP Screen as a Growth at a Reasonable Price Stock"
+      "Barclays Maintains Overweight on Newmont, Lowers Price Target to $124",
+      "Newmont Is Still Mispriced After A Strong Q2 2026",
+      "Newmont: A Higher Cost H2 On Deck"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "no StockNews thesis on file"
-  ]
+  "flags": []
 }

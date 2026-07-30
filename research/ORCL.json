@@ -1,26 +1,27 @@
 {
   "snapshot": {
     "ticker": "ORCL",
-    "researched_at": "2026-07-23T13:01:48+00:00",
+    "researched_at": "2026-07-30T13:06:46+00:00",
     "name": "Oracle Corp",
     "industry": "Technology",
-    "market_cap": 362478.47271108575,
+    "market_cap": 339146.64674287086,
     "metrics": {
-      "P/E": 21.35,
+      "P/E": 20.14,
       "net margin %": 25.37,
       "rev growth %": 17.35,
       "ROE %": 50.38,
       "current ratio": 1.11
     },
     "news": [
-      "Energy Storage Outlook Jumps As Hyperscalers, Suppliers Tighten Ties",
-      "Uber Cuts 10% of Customer Service Jobs, Citing \u2018Embrace\u2019 of AI",
-      "Here\u2019s Why Retail Investors Are Buying Microsoft (MSFT) on the Dip"
+      "NVDA, NBIS, SKHY, SNDK Stock Losses Reportedly Force Ex-OpenAI Researcher\u2019s $20B Fund To Seek Capital",
+      "3 Out-of-Favor Stocks We Keep Off Our Radar",
+      "Oracle: Bears May Pay A Big Price (Rating Upgrade)"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
+    "thesis stale (review due 2026-07-27)",
     "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

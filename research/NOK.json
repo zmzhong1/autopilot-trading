@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NOK",
-    "researched_at": "2026-07-23T13:01:38+00:00",
+    "researched_at": "2026-07-30T13:06:40+00:00",
     "name": "Nokia Oyj",
     "industry": "Communications",
-    "market_cap": 52388.090119,
+    "market_cap": 43692.093229,
     "metrics": {
-      "P/E": 67.08,
-      "net margin %": 3.91,
-      "rev growth %": 4.33,
-      "ROE %": 3.84,
-      "current ratio": 1.57
+      "P/E": 61.89,
+      "net margin %": 3.48,
+      "rev growth %": 5.29,
+      "ROE %": 3.41,
+      "current ratio": 1.5
     },
     "news": [
-      "Nokia Oyj 2026 Q2 - Results - Earnings Call Presentation",
-      "Nokia Oyj (NOK) Stock Is Trending: Here's What You Should Know",
-      "'Wrong Picks or Just Bad Timing?' A Newbie Investor Wonders Why Their Stock Portfolio Fell 9%. Here Are the Stocks They Bought"
+      "These stocks are the most active in today's session",
+      "'US looks to allies to prepare for 6G' - Semafor",
+      "Check out the stocks that are attracting the most attention and driving market activity."
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

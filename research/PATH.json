@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PATH",
-    "researched_at": "2026-07-23T13:01:51+00:00",
+    "researched_at": "2026-07-30T13:06:48+00:00",
     "name": "UiPath Inc",
     "industry": "Technology",
-    "market_cap": 5543.890032524917,
+    "market_cap": 6523.137694031994,
     "metrics": {
-      "P/E": 16.93,
+      "P/E": 19.92,
       "net margin %": 19.58,
       "rev growth %": 15.24,
       "ROE %": 17.29,
       "current ratio": 2.31
     },
     "news": [
-      "UiPath (PATH) Dips More Than Broader Market: What You Should Know",
-      "Curious about the most active stocks on Wednesday?",
-      "12 Information Technology Stocks Moving In Wednesday's Intraday Session"
+      "Marvell Technology vs. UiPath: Which Tech Stock Is a Better Buy in 2026?",
+      "UiPath vs. Snowflake: Which Artificial Intelligence Tech Stock Is a Better Buy in 2026?",
+      "Top Robotics Stocks Worth Investing Right Now for Solid Returns"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "NET",
-    "researched_at": "2026-07-23T13:01:34+00:00",
+    "researched_at": "2026-07-30T13:06:38+00:00",
     "name": "Cloudflare Inc",
     "industry": "Technology",
-    "market_cap": 95520.91427884038,
+    "market_cap": 96018.0891931176,
     "metrics": {
       "net margin %": -3.72,
       "rev growth %": 31.55,
@@ -12,9 +12,9 @@
       "current ratio": 1.96
     },
     "news": [
-      "Fastly Should Be Off To The Races",
-      "At AI's Edge: Precision Hardware Is Moving From Data Centers To Devices",
-      "Truist Securities Maintains Buy on Cloudflare, Raises Price Target to $300"
+      "Top Analyst Sees 85% Upside for Snowflake Stock, Says AI Fears Had It Backwards: 'The Game Has Changed'",
+      "Anthropic CEO Dario Amodei Says He 'Never Advocated' Open-Weight AI Ban, Calls for Tougher Curbs on China Instead",
+      "Sundar Pichai Backs Jensen Huang's Open-Weight AI Push as OpenAI Joins Letter, Anthropic and Amazon Remain Notably Absent"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
