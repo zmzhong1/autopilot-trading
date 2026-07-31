@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "SHEL",
-    "researched_at": "2026-07-24T12:58:40+00:00",
+    "researched_at": "2026-07-31T13:14:53+00:00",
     "name": "Shell PLC",
     "industry": "Energy",
-    "market_cap": 182415.046494,
+    "market_cap": 183313.44,
     "metrics": {
-      "P/E": 13.01,
+      "P/E": 13.16,
       "net margin %": 7.01,
       "rev growth %": -4.88,
       "ROE %": 10.05,
       "current ratio": 1.3
     },
     "news": [
-      "Piper Sandler Assumes Shell at Neutral, Announces Price Target of $88",
-      "'Egypt In Talks With Energy Majors Including Shell, BP And TotalEnergies For Multi-Year LNG Deal; Egypt Seeks 15-18 LNG Cargoes Per Month For 3-5 Years' - Reuters Exclusive",
-      "International Stocks Are Back. Harding Loevner's New LOEV ETF Wants In"
+      "Shell plc (SHEL) Q2 2026 Earnings Call Transcript",
+      "Shell plc 2026 Q2 - Results - Earnings Call Presentation",
+      "Energy Giant Shell Unveils $3 Billion Stock Buyback"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

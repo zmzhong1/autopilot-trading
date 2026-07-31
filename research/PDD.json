@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PDD",
-    "researched_at": "2026-07-24T12:58:34+00:00",
+    "researched_at": "2026-07-31T13:14:46+00:00",
     "name": "PDD Holdings Inc",
     "industry": "Retail",
-    "market_cap": 118981.705046,
+    "market_cap": 124461.79,
     "metrics": {
-      "P/E": 8.42,
+      "P/E": 8.88,
       "net margin %": 21.62,
       "rev growth %": 9.86,
       "ROE %": 24.06,
       "current ratio": 2.54
     },
     "news": [
-      "PDD Holdings Inc. Sponsored ADR (PDD) Stock Falls Amid Market Uptick: What Investors Need to Know",
-      "PDD Holdings Inc. Sponsored ADR (PDD) Is a Trending Stock: Facts to Know Before Betting on It",
-      "Are Options Traders Betting on a Big Move in PDD Holdings Stock?"
+      "PDD Holdings Inc. Sponsored ADR (PDD) Exceeds Market Returns: Some Facts to Consider",
+      "PDD Holdings (NASDAQ:PDD): A Deeply Undervalued Value Stock with Zero Debt and Strong Profitability",
+      "10 Consumer Discretionary Stocks With Whale Alerts In Today\u2019s Session"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

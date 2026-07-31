@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SNOW",
-    "researched_at": "2026-07-24T12:58:42+00:00",
+    "researched_at": "2026-07-31T13:14:56+00:00",
     "name": "Snowflake Inc",
     "industry": "Technology",
-    "market_cap": 91817.80343201509,
+    "market_cap": 103321.46,
     "metrics": {
       "net margin %": -23.79,
       "rev growth %": 31.07,
@@ -12,9 +12,9 @@
       "current ratio": 1.05
     },
     "news": [
-      "Jefferies Maintains Buy on Snowflake, Raises Price Target to $310",
-      "Databricks Targets $188 Billion Valuation With New Coatue Investment",
-      "RBC Capital Maintains Outperform on Snowflake, Raises Price Target to $313"
+      "Why Snowflake Stock's Rally May Be Running Out",
+      "Cursor Rolls Out Cursor Benchmark Partners Program Alongside Amazon Web Services, Nvidia, Snowflake",
+      "Snowflake Stock Rises as Wells Fargo Lifts Target to $500"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

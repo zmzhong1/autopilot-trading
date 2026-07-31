@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "STLD",
-    "researched_at": "2026-07-24T12:58:45+00:00",
+    "researched_at": "2026-07-31T13:15:00+00:00",
     "name": "Steel Dynamics Inc",
     "industry": "Metals & Mining",
-    "market_cap": 34627.65249657944,
+    "market_cap": 36190.34,
     "metrics": {
-      "P/E": 21.54,
+      "P/E": 22.44,
       "net margin %": 7.83,
       "rev growth %": 19.77,
       "ROE %": 17.6,
       "current ratio": 3.18
     },
     "news": [
-      "Stock Market Today, July 23: Cleveland-Cliffs Stock Soars on Robust Steel Demand and Pricing",
-      "Cleveland-Cliffs Shares Surge on Second-Quarter Beat, Upbeat Outlook",
-      "Cleveland-Cliffs Q2: A Make-Or-Break Moment For The Stock"
+      "Apple, Steel Dynamics, CBRE Group And More: CNBC\u2019s \u2018Final Trades\u2019",
+      "Final Trades: Steel Dynamics, U.S. 10 Year Treasury, CBRE and Apple",
+      "Here Are Wednesday\u2019s Top Wall Street Analyst Research Calls: Bloom Energy, Caesars Entertainment, CarMax, Caterpillar, Ford, MPLX LP, Noble, Reddit, Texas Instruments, and More"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

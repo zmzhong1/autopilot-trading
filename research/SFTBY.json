@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "SFTBY",
-    "researched_at": "2026-07-24T12:58:38+00:00",
+    "researched_at": "2026-07-31T13:14:51+00:00",
     "name": "SoftBank Group Corp",
     "industry": "Telecommunication",
-    "market_cap": 32555600.562012,
+    "market_cap": 30044321.11,
     "metrics": {
-      "P/E": 6.51,
+      "P/E": 5.41,
       "net margin %": 64.14,
       "rev growth %": 7.66,
       "ROE %": 34.06,
       "current ratio": 0.8
     },
     "news": [
-      "HPI: Fiscal Dominance Could Challenge Ability To Deliver Attractive Real Returns",
-      "Oracle: 7.8% On Bonds As CDS Goes Wild",
-      "'The Retail Investor Gets Inevitably Wiped Out': The Tickers Most Hit by the Chip Stocks Rout"
+      "6 Catalysts That Might Pop The AI Bubble",
+      "Nvidia's Potential $250 Billion OpenAI Financing Deal Is Reviving a 1990s Tech Bubble Habit, Analyst Warns: 'Usually Don't End Well'",
+      "Aggressive Buying On Nvidia Backing Massive OpenAI Data Center And Trump Pausing Iran Attacks"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
