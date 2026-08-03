@@ -497,7 +497,36 @@
         "held": null,
         "checked": false
       }
+    },
+    {
+      "date": "2026-08-03",
+      "ts": "2026-08-03T16:16:26+00:00",
+      "ticker": "MSFT",
+      "side": "buy",
+      "size_pct": 10.0,
+      "entry_price": 487.25,
+      "feeds": [
+        "analyst",
+        "corporate",
+        "insider",
+        "institutional"
+      ],
+      "feed_count": 4,
+      "status": "proposed",
+      "stocknews": {
+        "xii_score": 90,
+        "verdict": "strong-buy",
+        "h0": 63,
+        "durability": 21,
+        "conviction": "medium",
+        "fatal_flags": 0,
+        "found": true
+      },
+      "portfolio": {
+        "held": null,
+        "checked": false
+      }
     }
   ],
-  "last_run": "2026-07-27T16:11:00+00:00"
+  "last_run": "2026-08-03T16:16:26+00:00"
 }
