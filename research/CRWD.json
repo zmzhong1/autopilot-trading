@@ -1,21 +1,17 @@
 {
   "snapshot": {
     "ticker": "CRWD",
-    "researched_at": "2026-07-27T13:54:30+00:00",
+    "researched_at": "2026-08-03T14:01:20+00:00",
     "name": "CrowdStrike Holdings Inc",
     "industry": "Technology",
-    "market_cap": 186626.559109,
+    "market_cap": 194344.966295,
     "metrics": {
       "net margin %": -0.48,
       "rev growth %": 23.17,
       "ROE %": -0.58,
       "current ratio": 1.53
     },
-    "news": [
-      "Joins Industry Coalition to Launch Open Source AI Cybersecurity Alliance",
-      "Nvidia's New AI Security Alliance Unites Microsoft, SpaceX, IBM To Push Open-Source Defense \u2013 But Meta's Missing From The List",
-      "Consumer Tech (July 20-24): AI Boom Drives Big Tech Earnings, Oracle Grabs $7B Defense Deal & More"
-    ],
+    "news": [],
     "analyst_upgrade": false,
     "earnings_beat": false
   },

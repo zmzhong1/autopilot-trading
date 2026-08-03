@@ -1,22 +1,16 @@
 {
   "snapshot": {
     "ticker": "COIN",
-    "researched_at": "2026-07-27T13:54:26+00:00",
+    "researched_at": "2026-08-03T14:00:35+00:00",
     "name": "Coinbase Global Inc",
     "industry": "Financial Services",
-    "market_cap": 41703.24169,
+    "market_cap": 38533.80586,
     "metrics": {
-      "P/E": 52.09,
-      "net margin %": 12.2,
-      "rev growth %": -5.76,
-      "ROE %": 5.68,
-      "current ratio": 2.14
+      "net margin %": -15.72,
+      "rev growth %": -10.35,
+      "ROE %": -6.89,
+      "current ratio": 2.42
     },
-    "news": [
-      "Brian Armstrong Says the AI Megatrend Makes Crypto More Important",
-      "Brian Armstrong: Part of Crypto Business Could Leave the US if CLARITY Act Stalls",
-      "Coinbase CEO Brian Armstrong Says Pivot From Crypto To AI Is 'Zero Sum, Scarcity Thinking'"
-    ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },

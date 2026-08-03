@@ -1,22 +1,17 @@
 {
   "snapshot": {
     "ticker": "BABA",
-    "researched_at": "2026-07-27T13:54:19+00:00",
+    "researched_at": "2026-08-03T13:57:30+00:00",
     "name": "Alibaba Group Holding Ltd",
     "industry": "Retail",
-    "market_cap": 268908.49808287626,
+    "market_cap": 286020.8570516869,
     "metrics": {
-      "P/E": 17.18,
+      "P/E": 18.24,
       "net margin %": 10.35,
       "rev growth %": 2.74,
       "ROE %": 10.22,
       "current ratio": 1.28
     },
-    "news": [
-      "Alibaba: Qwen Powering AI Transformation",
-      "US Probes Whether Russia Helped Iran Target CIA Facilities With Advanced Drone Technology: Report",
-      "Conventum - Alluvium Global Fund Q2 2026 Performance Review"
-    ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },

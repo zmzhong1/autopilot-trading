@@ -1,22 +1,17 @@
 {
   "snapshot": {
     "ticker": "BIDU",
-    "researched_at": "2026-07-27T13:54:21+00:00",
+    "researched_at": "2026-08-03T13:58:32+00:00",
     "name": "Baidu Inc",
     "industry": "Media",
-    "market_cap": 36752.2611407388,
+    "market_cap": 37316.053662628845,
     "metrics": {
-      "P/E": 636.11,
+      "P/E": 644.56,
       "net margin %": 0.3,
       "rev growth %": -4.0,
       "ROE %": 0.15,
       "current ratio": 1.85
     },
-    "news": [
-      "Here\u2019s How Much You Would Have Made Owning Baidu Stock In The Last 20 Years",
-      "8 Communication Services Stocks With Whale Alerts In Today\u2019s Session",
-      "Xunlei Transfers 50% Equity Interest In Shenzhen Onething Technology For RMB125M; Shenzhen Xunlei To Transfer 20% Of Equity Interest To Kinsoft Cloud Holdings' Wuhan Kingsoft Cloud Information Technology For RMB50M"
-    ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },

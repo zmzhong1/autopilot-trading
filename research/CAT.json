@@ -1,22 +1,17 @@
 {
   "snapshot": {
     "ticker": "CAT",
-    "researched_at": "2026-07-27T13:54:23+00:00",
+    "researched_at": "2026-08-03T13:59:33+00:00",
     "name": "Caterpillar Inc",
     "industry": "Machinery",
-    "market_cap": 409381.9332769999,
+    "market_cap": 375331.65234,
     "metrics": {
-      "P/E": 43.41,
+      "P/E": 39.8,
       "net margin %": 13.33,
       "rev growth %": 11.85,
       "ROE %": 47.57,
       "current ratio": 1.35
     },
-    "news": [
-      "China\u2019s Rare Earth Strategy Is Forcing a U.S. Manufacturing Revolution",
-      "Caterpillar Stock Is Up 100% in a Year. Here's the Data Center Math Behind the Rally.",
-      "This Industrial Stock Is Up 533% in 2 Years. I Predict It Will Join the Dow if Caterpillar Issues a Stock Split."
-    ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },

@@ -1,22 +1,18 @@
 {
   "snapshot": {
     "ticker": "DELL",
-    "researched_at": "2026-07-27T13:54:32+00:00",
+    "researched_at": "2026-08-03T14:01:22+00:00",
     "name": "Dell Technologies Inc",
     "industry": "Technology",
-    "market_cap": 283622.95626599994,
+    "market_cap": 262793.683193,
     "metrics": {
-      "P/E": 33.73,
+      "P/E": 31.25,
       "net margin %": 6.28,
       "rev growth %": 38.57,
       "ROE %": 130.7,
       "current ratio": 0.95
     },
-    "news": [
-      "Joins Industry Coalition to Launch Open Source AI Cybersecurity Alliance",
-      "Crypto Treasury Firms Pivot to AI in Bid to Win Back Investors",
-      "Nvidia's New AI Security Alliance Unites Microsoft, SpaceX, IBM To Push Open-Source Defense \u2013 But Meta's Missing From The List"
-    ],
+    "news": [],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
