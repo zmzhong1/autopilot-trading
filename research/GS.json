@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "GS",
-    "researched_at": "2026-07-28T13:10:11+00:00",
+    "researched_at": "2026-08-04T13:16:10+00:00",
     "name": "Goldman Sachs Group Inc",
     "industry": "Financial Services",
-    "market_cap": 309235.6176720001,
+    "market_cap": 302990.31789517554,
     "metrics": {
-      "P/E": 15.26,
+      "P/E": 14.45,
       "net margin %": 15.53,
       "rev growth %": 6.67,
       "ROE %": 16.94,
       "current ratio": 0.32
     },
     "news": [
-      "Goldman Sachs and Barclays lead power sector M&A in H1 2026",
-      "Zacks.com featured highlights include Alphabet, MasTec and Goldman Sachs",
-      "Hedge Fund Healthcare Bets Approach Five-Year High"
+      "\u201cThis Is Unprecedented\u201d: Goldman Sachs Sees 3 Simultaneous Crises Pushing Oil as High as $120 a Barrel",
+      "Goldman Sachs Group (GS) Price Target Increased by 17.96% to 1,196.69",
+      "Transaction in Own Shares"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "analyst trend not upgrading vs buy-rated thesis"
-  ]
+  "flags": []
 }

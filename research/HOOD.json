@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "HOOD",
-    "researched_at": "2026-07-28T13:10:14+00:00",
+    "researched_at": "2026-08-04T13:16:15+00:00",
     "name": "Robinhood Markets Inc",
     "industry": "Financial Services",
-    "market_cap": 86209.854505,
+    "market_cap": 81272.59440439072,
     "metrics": {
-      "P/E": 45.45,
-      "net margin %": 41.12,
-      "rev growth %": 41.5,
-      "ROE %": 21.62,
+      "P/E": 39.2,
+      "net margin %": 42.01,
+      "rev growth %": 38.27,
+      "ROE %": 22.7,
       "current ratio": 1.22
     },
     "news": [
-      "Robinhood Leads Tokenized Stocks by Holders but Not by Money",
-      "HOOD Stock Dips Overnight: Robinhood Opens Ventures Fund II Roadshow To Retail Investors",
-      "Fanatics Pushes Into Prediction Markets"
+      "Robinhood Launches Second Venture Fund with Target of Up to $200 Million IPO",
+      "1 Large-Cap Stock to Target This Week and 2 We Brush Off",
+      "Big AI Bets Divide Venture Capital, Leaving Smaller Funds Behind"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "thesis stale (review due 2026-07-31)"
+  ]
 }

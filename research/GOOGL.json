@@ -1,27 +1,26 @@
 {
   "snapshot": {
     "ticker": "GOOGL",
-    "researched_at": "2026-07-28T13:10:09+00:00",
+    "researched_at": "2026-08-04T13:16:08+00:00",
     "name": "Alphabet Inc",
     "industry": "Media",
-    "market_cap": 3975724.3136,
+    "market_cap": 4568027.3,
     "metrics": {
-      "P/E": 16.27,
+      "P/E": 18.71,
       "net margin %": 54.77,
       "rev growth %": 20.05,
       "ROE %": 50.84,
       "current ratio": 2.72
     },
     "news": [
-      "Get Paid 10% To Let Someone Else Chase GOOGL Stock Higher",
-      "Quantum Computing Stocks: Here's How WisdomTree Sizes Up The Industry",
-      "Warren Buffett and Greg Abel Have Been Loading Up on This Top Artificial Intelligence (AI) Stock That's Trading at a Bargain-Basement Price"
+      "Google exec warns AI spending could trigger a painful revenue gap",
+      "Dow hits record, Palantir stock jumps 16% on Q2 earnings",
+      "Want to Buy SpaceX? Why You May Be Better Off Just Buying Alphabet's Stock"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
   "flags": [
-    "analyst trend not upgrading vs buy-rated thesis",
     "recent earnings did not beat, despite high H-0"
   ]
 }

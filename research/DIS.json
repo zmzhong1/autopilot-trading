@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "DIS",
-    "researched_at": "2026-07-28T13:10:01+00:00",
+    "researched_at": "2026-08-04T13:16:00+00:00",
     "name": "Walt Disney Co",
     "industry": "Media",
-    "market_cap": 167833.82487300003,
+    "market_cap": 170421.2284633912,
     "metrics": {
-      "P/E": 15.03,
+      "P/E": 15.18,
       "net margin %": 11.54,
       "rev growth %": 3.43,
       "ROE %": 10.29,
       "current ratio": 0.68
     },
     "news": [
-      "Disney or Salesforce: Which Beaten-Down Dow Giant Is the Smarter Dip-Buy?",
-      "Disney's Turnaround Is Here: Why I'm Buying The Upside",
-      "Warner Bros. Stock Hits Lowest Price Since Paramount Deal: Merger Odds Around 50%"
+      "Update: Dow Hits Record High as Oil Prices Slide on Iran Deal Hopes",
+      "Explore the top gainers and losers within the dow jones index in today's session.",
+      "Update: Equities Rise Intraday, Oil Slides Amid Middle East Deal Optimism"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "analyst trend not upgrading vs buy-rated thesis"
-  ]
+  "flags": []
 }

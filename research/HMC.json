@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "HMC",
-    "researched_at": "2026-07-28T13:10:12+00:00",
+    "researched_at": "2026-08-04T13:16:12+00:00",
     "name": "Honda Motor Co Ltd",
     "industry": "Automobiles",
-    "market_cap": 6161909.046143,
+    "market_cap": 6327342.485474,
     "metrics": {
       "net margin %": -1.94,
       "rev growth %": 0.5,
@@ -12,7 +12,8 @@
       "current ratio": 1.28
     },
     "news": [
-      "'Honda Backs Flex Fuel Over EVs for Two-Wheelers in India' - Bloomberg"
+      "American Honda July Sales Climbed 12.8% To 136,549 Units; July Electrified Vehicles Sales 38,169 Units",
+      "EV Company News For The Month Of July 2026"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

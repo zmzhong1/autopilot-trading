@@ -1,25 +1,23 @@
 {
   "snapshot": {
     "ticker": "F",
-    "researched_at": "2026-07-28T13:10:04+00:00",
+    "researched_at": "2026-08-04T13:16:03+00:00",
     "name": "Ford Motor Co",
     "industry": "Automobiles",
-    "market_cap": 58495.28934999999,
+    "market_cap": 57543.13857623093,
     "metrics": {
-      "net margin %": -3.22,
-      "rev growth %": 3.82,
-      "ROE %": -14.72,
+      "net margin %": -3.93,
+      "rev growth %": 1.47,
+      "ROE %": -18.9,
       "current ratio": 1.09
     },
     "news": [
-      "Stocks Mostly Down Pre-Bell Amid Chip Sell-Off; Traders Await More Earnings",
-      "Dealer Pay Joins The Shop by FordDirect as a Preferred Vendor",
-      "AI Fears Just Raised the Stakes in a Critical Week for Stock Markets"
+      "NHTSA Says 135,551 Ford Cars Pose an \u201cUnreasonable Risk\u201d as Recall Investigations Continue to Plague Ford Stock",
+      "Toyota plans $6.3bn buyback as weak yen boosts outlook",
+      "2 Small-Cap Stocks on Our Watchlist and 1 We Find Risky"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "analyst trend not upgrading vs buy-rated thesis"
-  ]
+  "flags": []
 }
