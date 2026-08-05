@@ -1,21 +1,15 @@
 {
   "snapshot": {
     "ticker": "JD",
-    "researched_at": "2026-07-29T13:14:48+00:00",
+    "researched_at": "2026-08-05T13:11:13+00:00",
     "name": "JD.com Inc",
     "industry": "Retail",
-    "market_cap": 301109.740438,
-    "metrics": {
-      "P/E": 18.04,
-      "net margin %": 1.05,
-      "rev growth %": 10.32,
-      "ROE %": 6.15,
-      "current ratio": 1.18
-    },
+    "market_cap": 313241.497231,
+    "metrics": {},
     "news": [
-      "4 Consumer Discretionary Stocks With Whale Alerts In Today\u2019s Session",
-      "CXMT Rockets To Become The Largest Mainland-Listed Company",
-      "JD.com: Smart Money Doubles Down As Valuation Provides Deeper Value"
+      "Alibaba: The Hub Of China's AI Ecosystem",
+      "Nike\u2019s 'Win Now' Plan May Be a Long Game, JPMorgan Warns",
+      "My Bullish Outlook For JD.com Aligns With Its Quant Rating (Technical Analysis)"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

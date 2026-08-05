@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "MS",
-    "researched_at": "2026-07-29T13:14:54+00:00",
+    "researched_at": "2026-08-05T13:11:20+00:00",
     "name": "Morgan Stanley",
     "industry": "Financial Services",
-    "market_cap": 333721.9445919999,
+    "market_cap": 342333.906735,
     "metrics": {
-      "P/E": 16.58,
+      "P/E": 17.05,
       "net margin %": 15.65,
       "rev growth %": 13.96,
       "ROE %": 16.32,
       "current ratio": 0.31
     },
     "news": [
-      "M&G (LSE:MNG) Stock Sees Modest Fair Value Lift As Analysts Fine Tune Targets",
-      "UPS Stock Under Pressure As Wall Street Weighs Amazon Shipping Cuts \u2014 But Retail Bulls Remain Unfazed",
-      "Hong Kong Data Center Loan Sale Shows Banks Hitting Sector Limits"
+      "Circle Revenue Misses Estimates as Crypto Markets Mired in Rout",
+      "Chambal Fertilisers And Chemicals (NSEI:CHAMBLFERT) Stock Fair Value Edges Lower On Margin Concerns",
+      "Morgan Stanley (MS) Stock May Be Slightly Overvalued Following New Crypto ETF Launch"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "analyst trend not upgrading vs buy-rated thesis"
-  ]
+  "flags": []
 }

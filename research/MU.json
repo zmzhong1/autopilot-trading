@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MU",
-    "researched_at": "2026-07-29T13:14:58+00:00",
+    "researched_at": "2026-08-05T13:11:24+00:00",
     "name": "Micron Technology Inc",
     "industry": "Semiconductors",
-    "market_cap": 926700.9258660001,
+    "market_cap": 1008175.289288,
     "metrics": {
-      "P/E": 18.43,
+      "P/E": 20.08,
       "net margin %": 55.91,
       "rev growth %": 166.98,
       "ROE %": 70.55,
       "current ratio": 3.42
     },
     "news": [
-      "Memory Stocks' Selloff Opens Opportunity as Micron's Bargain Valuation and Earnings Catalysts Loom",
-      "Analysts Predict Sandisk And Micron Still Good For Huge Gains",
-      "SKHY, MU, Samsung's Memory Technology Lead Over China\u2019s CXMT Unlikely To Narrow Soon, Says Futurum Analyst"
+      "Michael Burry warns of 1987-style crash, holds Nvidia shorts",
+      "9 Stocks' Cash Flow Seen Blowing The Doors Off The S&P 500",
+      "\u201cA Possible 1987-Type Fall\u201d: Why Michael Burry Refuses to Cover His Bets as Stocks Hit New Highs"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

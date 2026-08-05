@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "MSFT",
-    "researched_at": "2026-07-29T13:14:56+00:00",
+    "researched_at": "2026-08-05T13:11:22+00:00",
     "name": "Microsoft Corp",
     "industry": "Technology",
-    "market_cap": 2921974.783572,
+    "market_cap": 3659383.0154499994,
     "metrics": {
-      "P/E": 23.41,
-      "net margin %": 39.34,
-      "rev growth %": 17.87,
-      "ROE %": 33.13,
-      "current ratio": 1.28
+      "P/E": 26.95,
+      "net margin %": 40.31,
+      "rev growth %": 17.79,
+      "ROE %": 33.22,
+      "current ratio": 1.23
     },
     "news": [
-      "Microsoft (NASDAQ:MSFT) \u2013 A Quality Stock with Strong Growth and Financial Discipline",
-      "Watchdog investigating whether Microsoft misled customers on subscription costs",
-      "How much cash do you need invested in 2026 to completely live off dividends? Probably less than you think"
+      "Canada's Shopify forecasts revenue above estimates, shares surge",
+      "History Says Software-as-a-Service (SaaS) Stocks Will Be the Ultimate AI Winners. 3 SaaS Stocks to Buy Now.",
+      "Social Buzz: Wallstreetbets Stocks Mixed Premarket Wednesday; SpaceX, Advanced Micro Devices to Decline"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "thesis stale (review due 2026-07-31)"
+  ]
 }
