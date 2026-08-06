@@ -1,27 +1,27 @@
 {
   "snapshot": {
     "ticker": "NVDA",
-    "researched_at": "2026-07-30T13:06:44+00:00",
+    "researched_at": "2026-08-06T13:10:20+00:00",
     "name": "NVIDIA Corp",
     "industry": "Semiconductors",
-    "market_cap": 4598241.871788339,
+    "market_cap": 5305124.061111428,
     "metrics": {
-      "P/E": 29.78,
+      "P/E": 32.13,
       "net margin %": 62.97,
       "rev growth %": 70.68,
       "ROE %": 111.66,
       "current ratio": 3.44
     },
     "news": [
-      "Omdia: AI Demand Drives 94.1% Surge in Semiconductor Forecast for 2026",
-      "Meta Is Spending Whatever It Takes to Win AI \u2014 And That\u2019s What Worries Investors",
-      "This Old-School Sector Battles Semiconductor ETFs For Supremacy"
+      "Where Will Rocket Lab Stock Be in 5 Years?",
+      "Dow Jones Futures Rise But Techs Fall As Sandisk, Western Digital, Datadog Lead Earnings Losers",
+      "Prediction: The S&P 500 Will Pull Back This August. Here's What History Says About the Damage."
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-07-29)",
+    "analyst trend not upgrading vs buy-rated thesis",
     "recent earnings did not beat, despite high H-0"
   ]
 }

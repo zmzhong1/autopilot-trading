@@ -1,27 +1,26 @@
 {
   "snapshot": {
     "ticker": "ORCL",
-    "researched_at": "2026-07-30T13:06:46+00:00",
+    "researched_at": "2026-08-06T13:10:22+00:00",
     "name": "Oracle Corp",
     "industry": "Technology",
-    "market_cap": 339146.64674287086,
+    "market_cap": 415911.21575162635,
     "metrics": {
-      "P/E": 20.14,
+      "P/E": 24.57,
       "net margin %": 25.37,
       "rev growth %": 17.35,
       "ROE %": 50.38,
       "current ratio": 1.11
     },
     "news": [
-      "NVDA, NBIS, SKHY, SNDK Stock Losses Reportedly Force Ex-OpenAI Researcher\u2019s $20B Fund To Seek Capital",
-      "3 Out-of-Favor Stocks We Keep Off Our Radar",
-      "Oracle: Bears May Pay A Big Price (Rating Upgrade)"
+      "Cloud Infrastructure Stocks Surge as AI Spending Confirmed and Value Plays Surface",
+      "Larry Ellison Just Collected a $579 Million Dividend Check. Here\u2019s What $100,000 of Oracle Stock Would Pay You.",
+      "Retiring Soon? Good News\u2014the Market Is Cooperating."
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-07-27)",
     "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

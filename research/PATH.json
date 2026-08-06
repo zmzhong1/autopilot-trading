@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PATH",
-    "researched_at": "2026-07-30T13:06:48+00:00",
+    "researched_at": "2026-08-06T13:10:24+00:00",
     "name": "UiPath Inc",
     "industry": "Technology",
-    "market_cap": 6523.137694031994,
+    "market_cap": 7160.426407758866,
     "metrics": {
-      "P/E": 19.92,
+      "P/E": 21.87,
       "net margin %": 19.58,
       "rev growth %": 15.24,
       "ROE %": 17.29,
       "current ratio": 2.31
     },
     "news": [
-      "Marvell Technology vs. UiPath: Which Tech Stock Is a Better Buy in 2026?",
-      "UiPath vs. Snowflake: Which Artificial Intelligence Tech Stock Is a Better Buy in 2026?",
-      "Top Robotics Stocks Worth Investing Right Now for Solid Returns"
+      "UiPath (PATH) Registers a Bigger Fall Than the Market: Important Facts to Note",
+      "Live On CNBC, Rob Sechan Announces Bought ServiceNow; Sold Adobe",
+      "Palantir Rockets 16% After Q2 Blowout; C3.ai, UiPath Sit Out the Rally"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

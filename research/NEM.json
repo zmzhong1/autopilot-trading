@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NEM",
-    "researched_at": "2026-07-30T13:06:36+00:00",
+    "researched_at": "2026-08-06T13:10:11+00:00",
     "name": "Newmont Corporation",
     "industry": "Metals & Mining",
-    "market_cap": 96244.24756602316,
+    "market_cap": 109889.56964793001,
     "metrics": {
-      "P/E": 11.25,
+      "P/E": 12.82,
       "net margin %": 33.36,
       "rev growth %": 25.18,
       "ROE %": 25.05,
       "current ratio": 2.55
     },
     "news": [
-      "Barclays Maintains Overweight on Newmont, Lowers Price Target to $124",
-      "Newmont Is Still Mispriced After A Strong Q2 2026",
-      "Newmont: A Higher Cost H2 On Deck"
+      "Wednesday's session: top gainers and losers in the S&P500 index",
+      "Between Hormuz And the Fed: Gold Smashes $4,200 as Metal Hoarding Returns",
+      "Top S&P500 movers in Wednesday's session"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

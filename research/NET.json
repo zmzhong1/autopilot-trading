@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "NET",
-    "researched_at": "2026-07-30T13:06:38+00:00",
+    "researched_at": "2026-08-06T13:10:14+00:00",
     "name": "Cloudflare Inc",
     "industry": "Technology",
-    "market_cap": 96018.0891931176,
+    "market_cap": 104036.75385214617,
     "metrics": {
       "net margin %": -3.72,
       "rev growth %": 31.55,
@@ -12,9 +12,9 @@
       "current ratio": 1.96
     },
     "news": [
-      "Top Analyst Sees 85% Upside for Snowflake Stock, Says AI Fears Had It Backwards: 'The Game Has Changed'",
-      "Anthropic CEO Dario Amodei Says He 'Never Advocated' Open-Weight AI Ban, Calls for Tougher Curbs on China Instead",
-      "Sundar Pichai Backs Jensen Huang's Open-Weight AI Push as OpenAI Joins Letter, Anthropic and Amazon Remain Notably Absent"
+      "ConocoPhillips Could Swing $4.94 Billion In Value After Earnings",
+      "$130 Million Coldcard Hack Puts Cybersecurity ETFs on Investors' Radar",
+      "Didn't We Go Through The 'SaaS-pocalypse'?"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
