@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "SHEL",
-    "researched_at": "2026-07-31T13:14:53+00:00",
+    "researched_at": "2026-08-07T12:09:33+00:00",
     "name": "Shell PLC",
     "industry": "Energy",
-    "market_cap": 183313.44,
+    "market_cap": 181616.250452,
     "metrics": {
-      "P/E": 13.16,
-      "net margin %": 7.01,
-      "rev growth %": -4.88,
-      "ROE %": 10.05,
-      "current ratio": 1.3
+      "P/E": 9.41,
+      "net margin %": 8.76,
+      "rev growth %": 9.04,
+      "ROE %": 14.74,
+      "current ratio": 1.43
     },
     "news": [
-      "Shell plc (SHEL) Q2 2026 Earnings Call Transcript",
-      "Shell plc 2026 Q2 - Results - Earnings Call Presentation",
-      "Energy Giant Shell Unveils $3 Billion Stock Buyback"
+      "'White House Set To Extend Jones Act Waiver As Trump Hunts For Cheaper Gasoline' - Reuters Exclusive",
+      "Piper Sandler Maintains Neutral on Shell, Raises Price Target to $89",
+      "Trump Warns Oil Executives: 'Get Your Retail Prices Down, NOW!'"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

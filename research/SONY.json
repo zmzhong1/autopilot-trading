@@ -1,20 +1,20 @@
 {
   "snapshot": {
     "ticker": "SONY",
-    "researched_at": "2026-07-31T13:14:58+00:00",
+    "researched_at": "2026-08-07T12:09:38+00:00",
     "name": "Sony Group Corp",
     "industry": "Consumer products",
-    "market_cap": 22590652.93,
+    "market_cap": 21124527.609863,
     "metrics": {
-      "net margin %": -2.62,
-      "rev growth %": 5.22,
-      "ROE %": -4.05,
-      "current ratio": 1.18
+      "net margin %": -1.75,
+      "rev growth %": 6.54,
+      "ROE %": -2.74,
+      "current ratio": 1.25
     },
     "news": [
-      "Sony Group Corporation 2026 Q1 - Results - Earnings Call Presentation",
-      "If You Invested $1000 In Sony Group Stock 10 Years Ago, You Would Have This Much Today",
-      "Cinemark Will Blow By Earnings Estimates Tomorrow; What It Means For Movies And Investors"
+      "Spotify Says Its AI Music Plans Won't Miss a Beat Without Every Major Label\u2014 Here's Why",
+      "Spider-Man Swings Into the Record Books: How Sony\u2019s Bet on One Comic Book Character Keeps Paying Off",
+      "Microsoft: The Gaming Sun Will Rise Again"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

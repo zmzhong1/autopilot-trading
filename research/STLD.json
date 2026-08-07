@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "STLD",
-    "researched_at": "2026-07-31T13:15:00+00:00",
+    "researched_at": "2026-08-07T12:09:40+00:00",
     "name": "Steel Dynamics Inc",
     "industry": "Metals & Mining",
-    "market_cap": 36190.34,
+    "market_cap": 37477.428941345766,
     "metrics": {
-      "P/E": 22.44,
+      "P/E": 23.57,
       "net margin %": 7.83,
       "rev growth %": 19.77,
       "ROE %": 17.6,
       "current ratio": 3.18
     },
     "news": [
-      "Apple, Steel Dynamics, CBRE Group And More: CNBC\u2019s \u2018Final Trades\u2019",
-      "Final Trades: Steel Dynamics, U.S. 10 Year Treasury, CBRE and Apple",
-      "Here Are Wednesday\u2019s Top Wall Street Analyst Research Calls: Bloom Energy, Caesars Entertainment, CarMax, Caterpillar, Ford, MPLX LP, Noble, Reddit, Texas Instruments, and More"
+      "Theresa E. Wagler to become Steel Dynamics' President and Chief Executive Officer; Mark D. Millett to become Steel Dynamics' Executive Chairman",
+      "Dick's Sporting, TransDigm, Steel Dynamics And A Financial Stock: CNBC\u2019s \u2018Final Trades\u2019",
+      "Steel Dynamics Appoints CFO Theresa E. Wagler As President, CEO, Effective Jan. 1, 2027, Succeeding Mark D. Millett, Who Will Transition To Executive Chairman; Richard A. Poinsatte Named CFO, Succeeding CFO"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "no StockNews thesis on file"
-  ]
+  "flags": []
 }

@@ -1,26 +1,26 @@
 {
   "snapshot": {
     "ticker": "PLTR",
-    "researched_at": "2026-07-31T13:14:49+00:00",
+    "researched_at": "2026-08-07T12:09:28+00:00",
     "name": "Palantir Technologies Inc",
     "industry": "Technology",
-    "market_cap": 293095.36,
+    "market_cap": 374690.26425058895,
     "metrics": {
-      "P/E": 128.46,
-      "net margin %": 43.67,
-      "rev growth %": 67.71,
-      "ROE %": 32.18,
-      "current ratio": 6.91
+      "P/E": 124.21,
+      "net margin %": 49.0,
+      "rev growth %": 78.92,
+      "ROE %": 37.47,
+      "current ratio": 7.23
     },
     "news": [
-      "Prediction: Palantir Stock Is Going to Plunge on Aug. 4",
-      "EMCOR Group Q2 Earnings Call Highlights",
-      "Analyst compares SpaceX, Palantir to Bitcoin"
+      "Cathie Wood sells $17 million of popular AI stock",
+      "Innodata Q2 Earnings Call Highlights",
+      "USA Today Co Inc (TDAY) (Q2 2026) Earnings Call Highlights: AI Partnerships and Record ARPU ..."
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
   "flags": [
-    "analyst trend not upgrading vs buy-rated thesis"
+    "thesis stale (review due 2026-08-05)"
   ]
 }
