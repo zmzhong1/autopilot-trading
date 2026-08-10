@@ -1,17 +1,21 @@
 {
   "snapshot": {
     "ticker": "BIDU",
-    "researched_at": "2026-08-03T13:58:32+00:00",
+    "researched_at": "2026-08-10T12:08:37+00:00",
     "name": "Baidu Inc",
     "industry": "Media",
-    "market_cap": 37316.053662628845,
+    "market_cap": 37727.05587030361,
     "metrics": {
-      "P/E": 644.56,
+      "P/E": 648.91,
       "net margin %": 0.3,
       "rev growth %": -4.0,
       "ROE %": 0.15,
       "current ratio": 1.85
     },
+    "news": [
+      "Lyft Earnings Prediction Market Preview: What Will David Risher Say?",
+      "Mission Deflation: China, Chips, And The AI Price War"
+    ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },

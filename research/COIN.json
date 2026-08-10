@@ -1,20 +1,23 @@
 {
   "snapshot": {
     "ticker": "COIN",
-    "researched_at": "2026-08-03T14:00:35+00:00",
+    "researched_at": "2026-08-10T12:08:42+00:00",
     "name": "Coinbase Global Inc",
     "industry": "Financial Services",
-    "market_cap": 38533.80586,
+    "market_cap": 40525.3632,
     "metrics": {
       "net margin %": -15.72,
       "rev growth %": -10.35,
       "ROE %": -6.89,
       "current ratio": 2.42
     },
-    "analyst_upgrade": false,
+    "news": [
+      "Coinbase stock price today: August 7, 2026",
+      "Coinbase Global (COIN) Faces A Fresh Test Following Losses As Undervalued View Holds",
+      "Judge rejects Coinbase bid to block enforcement in key U.S. state"
+    ],
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "analyst trend not upgrading vs buy-rated thesis"
-  ]
+  "flags": []
 }

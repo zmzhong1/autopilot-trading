@@ -1,18 +1,22 @@
 {
   "snapshot": {
     "ticker": "COST",
-    "researched_at": "2026-08-03T14:01:18+00:00",
+    "researched_at": "2026-08-10T12:08:44+00:00",
     "name": "Costco Wholesale Corp",
     "industry": "Retail",
-    "market_cap": 422143.061228,
+    "market_cap": 420338.10674316366,
     "metrics": {
-      "P/E": 47.76,
+      "P/E": 47.56,
       "net margin %": 3.01,
       "rev growth %": 9.23,
       "ROE %": 28.27,
       "current ratio": 1.07
     },
-    "news": [],
+    "news": [
+      "Costco vs. General Mills: Comparing Revenue Trends Between These Consumer Staples Companies",
+      "Walmart (WMT) Stock Price Prediction: Where Our Price Target Sees the Stock Going Over the Next 12 Months",
+      "BofA Sounds Alarm On Extreme Bullishness. These ETFs Offer a Defensive Play"
+    ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },

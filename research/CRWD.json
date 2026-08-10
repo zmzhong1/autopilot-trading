@@ -1,21 +1,23 @@
 {
   "snapshot": {
     "ticker": "CRWD",
-    "researched_at": "2026-08-03T14:01:20+00:00",
+    "researched_at": "2026-08-10T12:08:46+00:00",
     "name": "CrowdStrike Holdings Inc",
     "industry": "Technology",
-    "market_cap": 194344.966295,
+    "market_cap": 218335.15360566537,
     "metrics": {
       "net margin %": -0.48,
       "rev growth %": 23.17,
       "ROE %": -0.58,
       "current ratio": 1.53
     },
-    "news": [],
-    "analyst_upgrade": false,
+    "news": [
+      "3 Mega-Cap Stocks to Research Further",
+      "Jim Cramer Favors Fortinet (FTNT) Alongside CrowdStrike (CRWD) and Palo Alto (PANW)",
+      "Jim Cramer Names 5 Investing Themes and 13 Stocks to Buy for 2026"
+    ],
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "analyst trend not upgrading vs buy-rated thesis"
-  ]
+  "flags": []
 }
