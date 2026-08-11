@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "GS",
-    "researched_at": "2026-08-04T13:16:10+00:00",
+    "researched_at": "2026-08-11T12:09:43+00:00",
     "name": "Goldman Sachs Group Inc",
     "industry": "Financial Services",
-    "market_cap": 302990.31789517554,
+    "market_cap": 301219.7386010178,
     "metrics": {
-      "P/E": 14.45,
+      "P/E": 14.48,
       "net margin %": 15.53,
       "rev growth %": 6.67,
       "ROE %": 16.94,
       "current ratio": 0.32
     },
     "news": [
-      "\u201cThis Is Unprecedented\u201d: Goldman Sachs Sees 3 Simultaneous Crises Pushing Oil as High as $120 a Barrel",
-      "Goldman Sachs Group (GS) Price Target Increased by 17.96% to 1,196.69",
-      "Transaction in Own Shares"
+      "Jim Cramer Recommends Goldman Sachs and Morgan Stanley to Profit From Accelerating M&A Deals",
+      "Nvidia Makes Massive Move to Fund AI Buildout",
+      "Nvidia Strikes Deals With Wall Street Firms to Fund Its Own Customers"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

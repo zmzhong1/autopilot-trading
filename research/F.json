@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "F",
-    "researched_at": "2026-08-04T13:16:03+00:00",
+    "researched_at": "2026-08-11T12:09:38+00:00",
     "name": "Ford Motor Co",
     "industry": "Automobiles",
-    "market_cap": 57543.13857623093,
+    "market_cap": 55828.40588655222,
     "metrics": {
       "net margin %": -3.93,
       "rev growth %": 1.47,
@@ -12,9 +12,9 @@
       "current ratio": 1.09
     },
     "news": [
-      "NHTSA Says 135,551 Ford Cars Pose an \u201cUnreasonable Risk\u201d as Recall Investigations Continue to Plague Ford Stock",
-      "Toyota plans $6.3bn buyback as weak yen boosts outlook",
-      "2 Small-Cap Stocks on Our Watchlist and 1 We Find Risky"
+      "Most active S&P500 stocks in Monday's session",
+      "Unifor opens negotiations with General Motors",
+      "Goodyear Q2 Earnings Miss Expectations on Volume Pressure"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

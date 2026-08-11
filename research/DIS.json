@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DIS",
-    "researched_at": "2026-08-04T13:16:00+00:00",
+    "researched_at": "2026-08-11T12:09:36+00:00",
     "name": "Walt Disney Co",
     "industry": "Media",
-    "market_cap": 170421.2284633912,
+    "market_cap": 178159.5594926402,
     "metrics": {
-      "P/E": 15.18,
-      "net margin %": 11.54,
-      "rev growth %": 3.43,
-      "ROE %": 10.29,
-      "current ratio": 0.68
+      "P/E": 20.64,
+      "net margin %": 8.7,
+      "rev growth %": 4.58,
+      "ROE %": 7.87,
+      "current ratio": 0.71
     },
     "news": [
-      "Update: Dow Hits Record High as Oil Prices Slide on Iran Deal Hopes",
-      "Explore the top gainers and losers within the dow jones index in today's session.",
-      "Update: Equities Rise Intraday, Oil Slides Amid Middle East Deal Optimism"
+      "Earnings Signals And Labor Slowdowns: Testing The Limits Of Consumer Resilience",
+      "All eyes on Disney as 'Toy Story 5' massively validates new strategy",
+      "NFLX Stock: Where Compounding Could Take The Price"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

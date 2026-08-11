@@ -1,26 +1,26 @@
 {
   "snapshot": {
     "ticker": "FCX",
-    "researched_at": "2026-08-04T13:16:05+00:00",
+    "researched_at": "2026-08-11T12:09:40+00:00",
     "name": "Freeport-McMoRan Inc",
     "industry": "Metals & Mining",
-    "market_cap": 91486.30815236467,
+    "market_cap": 101253.59482131357,
     "metrics": {
-      "P/E": 31.07,
+      "P/E": 34.53,
       "net margin %": 11.38,
       "rev growth %": -24.23,
       "ROE %": 15.26,
       "current ratio": 2.07
     },
     "news": [
-      "How Investors May Respond To Freeport-McMoRan (FCX) Upgraded Copper-Gold Outlook And Ongoing Buybacks",
-      "Dr. Copper Is Flashing An Economic Boom: Industrial Stocks Just Confirmed It",
-      "Olin Q2 Earnings Call Highlights"
+      "A Steel-Forged Materials Breakout",
+      "Nucor, ASML Lead Five Stocks Near Buy Points Without This Big Risk",
+      "Trump Touts $3 Billion in Minerals Projects to Counter China"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "no StockNews thesis on file"
+    "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

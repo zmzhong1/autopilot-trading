@@ -1,26 +1,26 @@
 {
   "snapshot": {
     "ticker": "HOOD",
-    "researched_at": "2026-08-04T13:16:15+00:00",
+    "researched_at": "2026-08-11T12:09:47+00:00",
     "name": "Robinhood Markets Inc",
     "industry": "Financial Services",
-    "market_cap": 81272.59440439072,
+    "market_cap": 84981.254846,
     "metrics": {
-      "P/E": 39.2,
+      "P/E": 41.01,
       "net margin %": 42.01,
       "rev growth %": 38.27,
       "ROE %": 22.7,
       "current ratio": 1.22
     },
     "news": [
-      "Robinhood Launches Second Venture Fund with Target of Up to $200 Million IPO",
-      "1 Large-Cap Stock to Target This Week and 2 We Brush Off",
-      "Big AI Bets Divide Venture Capital, Leaving Smaller Funds Behind"
+      "The Best Options Trading Platforms for Investors",
+      "HOOD Stock Alert: Robinhood Set to Launch Crypto Trading in UK This Week",
+      "Sector Update: Financial Stocks Mixed Late Afternoon"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-07-31)"
+    "recent earnings did not beat, despite high H-0"
   ]
 }
