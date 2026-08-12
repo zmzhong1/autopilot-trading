@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "MP",
-    "researched_at": "2026-08-05T13:11:18+00:00",
+    "researched_at": "2026-08-12T12:11:08+00:00",
     "name": "MP Materials Corp",
     "industry": "Metals & Mining",
-    "market_cap": 8450.714124,
+    "market_cap": 9838.331970660083,
     "metrics": {
       "net margin %": -20.48,
       "rev growth %": 60.93,
@@ -12,14 +12,12 @@
       "current ratio": 7.18
     },
     "news": [
-      "Should You Buy, Sell or Hold MP Stock Before Q2 Earnings Release?",
-      "Guardian Metal Resources Names 20-Year Mining Veteran Jake Mather As CFO Effective March 26, 2026",
-      "China Is Getting More Anxious About Mythos Before Trump Meets Xi"
+      "MP Materials (MP) Stock Is Rising Today: What\u2019s Behind the Rally in Rare Earth Stocks?",
+      "MP Materials Q2 Earnings Call Highlights",
+      "Rare Earth Rebound Splits Along Profit Lines: Cash-Flow Producers Outpace Pure Plays"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "thesis stale (review due 2026-08-03)"
-  ]
+  "flags": []
 }

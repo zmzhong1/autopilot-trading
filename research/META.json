@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "META",
-    "researched_at": "2026-08-05T13:11:17+00:00",
+    "researched_at": "2026-08-12T12:11:06+00:00",
     "name": "Meta Platforms Inc",
     "industry": "Media",
-    "market_cap": 1497780.762625,
+    "market_cap": 1526261.8311393098,
     "metrics": {
-      "P/E": 22.08,
+      "P/E": 22.15,
       "net margin %": 29.84,
       "rev growth %": 27.65,
       "ROE %": 29.73,
       "current ratio": 2.23
     },
     "news": [
-      "Aramark Declares Quarterly Dividend",
-      "Mark Zuckerberg's Meta Just Suffered an 11-Day Losing Streak That Erased $17.8 Billion From His Net Worth. Is the AI Bet Still Worth It?",
-      "Landowners Near Meta\u2019s New Data Center Struck Gold. Retirees Renting on Social Security Could Be Priced Out."
+      "Wall Street Breakfast Podcast: NYC Delivery Model Detour",
+      "License To Chase The AI Frontier",
+      "Meta's Open-Source Crusade Is Also A Fight For Control"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

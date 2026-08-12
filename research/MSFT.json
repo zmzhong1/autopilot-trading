@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "MSFT",
-    "researched_at": "2026-08-05T13:11:22+00:00",
+    "researched_at": "2026-08-12T12:11:12+00:00",
     "name": "Microsoft Corp",
     "industry": "Technology",
-    "market_cap": 3659383.0154499994,
+    "market_cap": 3741064.0150427506,
     "metrics": {
-      "P/E": 26.95,
+      "P/E": 28.08,
       "net margin %": 40.31,
       "rev growth %": 17.79,
       "ROE %": 33.22,
       "current ratio": 1.23
     },
     "news": [
-      "Canada's Shopify forecasts revenue above estimates, shares surge",
-      "History Says Software-as-a-Service (SaaS) Stocks Will Be the Ultimate AI Winners. 3 SaaS Stocks to Buy Now.",
-      "Social Buzz: Wallstreetbets Stocks Mixed Premarket Wednesday; SpaceX, Advanced Micro Devices to Decline"
+      "License To Chase The AI Frontier",
+      "Tracking AMG's Yacktman Asset Management Portfolio - Q2 2026 Update",
+      "Microsoft: Don't Get Too Excited (Rating Downgrade)"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "thesis stale (review due 2026-07-31)"
-  ]
+  "flags": []
 }

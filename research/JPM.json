@@ -1,20 +1,20 @@
 {
   "snapshot": {
     "ticker": "JPM",
-    "researched_at": "2026-08-05T13:11:15+00:00",
+    "researched_at": "2026-08-12T12:11:04+00:00",
     "name": "JPMorgan Chase & Co",
     "industry": "Banking",
-    "market_cap": 957978.9129640001,
+    "market_cap": 962369.7834124619,
     "metrics": {
-      "P/E": 14.84,
+      "P/E": 14.76,
       "net margin %": 33.26,
       "rev growth %": 108.98,
       "ROE %": 17.81
     },
     "news": [
-      "Jamie Dimon Reportedly Wants Banks, Tech Giants, Utilities, And Other Sectors To Team Up Against AI Risks As Trump Finalizes Frontier AI Guidelines",
-      "Should JPMorgan Diversified Return U.S. Equity ETF (JPUS) Be on Your Investing Radar?",
-      "5 Relatively Secure And Cheap Dividend Stocks, Yields Up To 8% (August 2026)"
+      "Uncover the latest developments among dow jones stocks in today's session.",
+      "Why JPMorgan is investing big in the 2028 LA Olympics",
+      "Rand Paul Inspects Fort Knox Gold, Says Dollar\u2019s 97% Collapse Since 1913 Is Behind America\u2019s 'Affordability' Crisis: 'The Real Point Is...'"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

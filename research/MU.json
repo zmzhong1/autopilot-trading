@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MU",
-    "researched_at": "2026-08-05T13:11:24+00:00",
+    "researched_at": "2026-08-12T12:11:13+00:00",
     "name": "Micron Technology Inc",
     "industry": "Semiconductors",
-    "market_cap": 1008175.289288,
+    "market_cap": 980900.4660353767,
     "metrics": {
-      "P/E": 20.08,
+      "P/E": 19.62,
       "net margin %": 55.91,
       "rev growth %": 166.98,
       "ROE %": 70.55,
       "current ratio": 3.42
     },
     "news": [
-      "Michael Burry warns of 1987-style crash, holds Nvidia shorts",
-      "9 Stocks' Cash Flow Seen Blowing The Doors Off The S&P 500",
-      "\u201cA Possible 1987-Type Fall\u201d: Why Michael Burry Refuses to Cover His Bets as Stocks Hit New Highs"
+      "Explore the S&P500 index on Tuesday and find out which stocks are the most active in today's session.",
+      "Navigating AI Waves: How Capital Rotation Will Propel SPY And QQQ",
+      "Nvidia's Chip Boom Is Spreading: JPMorgan Says These 6 Stocks Could Ride It"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

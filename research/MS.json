@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MS",
-    "researched_at": "2026-08-05T13:11:20+00:00",
+    "researched_at": "2026-08-12T12:11:10+00:00",
     "name": "Morgan Stanley",
     "industry": "Financial Services",
-    "market_cap": 342333.906735,
+    "market_cap": 337781.6936106411,
     "metrics": {
-      "P/E": 17.05,
+      "P/E": 16.85,
       "net margin %": 15.65,
       "rev growth %": 13.96,
       "ROE %": 16.32,
       "current ratio": 0.31
     },
     "news": [
-      "Circle Revenue Misses Estimates as Crypto Markets Mired in Rout",
-      "Chambal Fertilisers And Chemicals (NSEI:CHAMBLFERT) Stock Fair Value Edges Lower On Margin Concerns",
-      "Morgan Stanley (MS) Stock May Be Slightly Overvalued Following New Crypto ETF Launch"
+      "Riot Says Massive AI Data Center Deal Could Top $1 Billion In Annual Rent",
+      "Jim Cramer Recommends Goldman Sachs and Morgan Stanley to Profit From Accelerating M&A Deals",
+      "Morgan Stanley cuts Global-e rating to equal-weight, raises price target to $44"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
