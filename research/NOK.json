@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NOK",
-    "researched_at": "2026-08-06T13:10:16+00:00",
+    "researched_at": "2026-08-13T12:10:16+00:00",
     "name": "Nokia Oyj",
     "industry": "Communications",
-    "market_cap": 48146.143402,
+    "market_cap": 45891.210106,
     "metrics": {
-      "P/E": 68.2,
+      "P/E": 64.48,
       "net margin %": 3.48,
       "rev growth %": 5.29,
       "ROE %": 3.41,
       "current ratio": 1.5
     },
     "news": [
-      "These stocks are making the most noise in today's session.",
-      "Nokia Stock Rallies Tuesday: What's Driving the Rebound?",
-      "Most active stocks in Thursday's session"
+      "These stocks are the most active in today's session",
+      "10 Information Technology Stocks With Whale Alerts In Today\u2019s Session",
+      "Why Is Nokia Stock Surging Wednesday?"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PATH",
-    "researched_at": "2026-08-06T13:10:24+00:00",
+    "researched_at": "2026-08-13T12:10:25+00:00",
     "name": "UiPath Inc",
     "industry": "Technology",
-    "market_cap": 7160.426407758866,
+    "market_cap": 7906.519962851145,
     "metrics": {
-      "P/E": 21.87,
+      "P/E": 24.67,
       "net margin %": 19.58,
       "rev growth %": 15.24,
       "ROE %": 17.29,
       "current ratio": 2.31
     },
     "news": [
-      "UiPath (PATH) Registers a Bigger Fall Than the Market: Important Facts to Note",
-      "Live On CNBC, Rob Sechan Announces Bought ServiceNow; Sold Adobe",
-      "Palantir Rockets 16% After Q2 Blowout; C3.ai, UiPath Sit Out the Rally"
+      "UiPath (PATH) Stock Sinks As Market Gains: Here's Why",
+      "These Are the Stocks Wall Street Is Betting Against the Most",
+      "The Great Robotics Divergence: AI-Native Names Surge, Legacy Vendors Stall"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

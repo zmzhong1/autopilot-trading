@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NEM",
-    "researched_at": "2026-08-06T13:10:11+00:00",
+    "researched_at": "2026-08-13T12:10:11+00:00",
     "name": "Newmont Corporation",
     "industry": "Metals & Mining",
-    "market_cap": 109889.56964793001,
+    "market_cap": 124167.09503608293,
     "metrics": {
-      "P/E": 12.82,
+      "P/E": 14.41,
       "net margin %": 33.36,
       "rev growth %": 25.18,
       "ROE %": 25.05,
       "current ratio": 2.55
     },
     "news": [
-      "Wednesday's session: top gainers and losers in the S&P500 index",
-      "Between Hormuz And the Fed: Gold Smashes $4,200 as Metal Hoarding Returns",
-      "Top S&P500 movers in Wednesday's session"
+      "Barrick Mining's Q2 Earnings & Sales Top Estimates on Higher Prices",
+      "Gold Runner Exploration Appoints Justin Lowe as Senior Geologist and Manager of Exploration",
+      "Scotiabank Maintains Sector Outperform on Newmont, Raises Price Target to $149"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

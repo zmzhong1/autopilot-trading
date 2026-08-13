@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "ORCL",
-    "researched_at": "2026-08-06T13:10:22+00:00",
+    "researched_at": "2026-08-13T12:10:23+00:00",
     "name": "Oracle Corp",
     "industry": "Technology",
-    "market_cap": 415911.21575162635,
+    "market_cap": 441518.5738308671,
     "metrics": {
-      "P/E": 24.57,
+      "P/E": 24.93,
       "net margin %": 25.37,
       "rev growth %": 17.35,
       "ROE %": 50.38,
       "current ratio": 1.11
     },
     "news": [
-      "Cloud Infrastructure Stocks Surge as AI Spending Confirmed and Value Plays Surface",
-      "Larry Ellison Just Collected a $579 Million Dividend Check. Here\u2019s What $100,000 of Oracle Stock Would Pay You.",
-      "Retiring Soon? Good News\u2014the Market Is Cooperating."
+      "Cool CPI Lights the Fuse Under AI Hardware as Software Takes a Beating",
+      "AI Bubble Burst: The Huang's Warning And The AI Compute ABS Solution",
+      "Oracle sends another shocking message to employees"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

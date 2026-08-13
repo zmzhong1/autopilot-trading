@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NVDA",
-    "researched_at": "2026-08-06T13:10:20+00:00",
+    "researched_at": "2026-08-13T12:10:20+00:00",
     "name": "NVIDIA Corp",
     "industry": "Semiconductors",
-    "market_cap": 5305124.061111428,
+    "market_cap": 5422978,
     "metrics": {
-      "P/E": 32.13,
+      "P/E": 33.81,
       "net margin %": 62.97,
       "rev growth %": 70.68,
       "ROE %": 111.66,
       "current ratio": 3.44
     },
     "news": [
-      "Where Will Rocket Lab Stock Be in 5 Years?",
-      "Dow Jones Futures Rise But Techs Fall As Sandisk, Western Digital, Datadog Lead Earnings Losers",
-      "Prediction: The S&P 500 Will Pull Back This August. Here's What History Says About the Damage."
+      "Elon Musk Says SpaceX Short-Sellers Probably Won't Survive. These 3 Earnings Numbers Say He's Wrong.",
+      "AI Weekly: Nvidia does deal with Wall Street, China's AI weather forecasts",
+      "XRP (Ripple) Just Did Something It Hasn't Done Since 2024, and Here's What It Means for Investors"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
