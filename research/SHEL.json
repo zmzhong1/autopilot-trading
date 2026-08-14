@@ -1,26 +1,26 @@
 {
   "snapshot": {
     "ticker": "SHEL",
-    "researched_at": "2026-08-07T12:09:33+00:00",
+    "researched_at": "2026-08-14T12:09:00+00:00",
     "name": "Shell PLC",
     "industry": "Energy",
-    "market_cap": 181616.250452,
+    "market_cap": 183780.331513,
     "metrics": {
-      "P/E": 9.41,
+      "P/E": 9.55,
       "net margin %": 8.76,
       "rev growth %": 9.04,
       "ROE %": 14.74,
       "current ratio": 1.43
     },
     "news": [
-      "'White House Set To Extend Jones Act Waiver As Trump Hunts For Cheaper Gasoline' - Reuters Exclusive",
-      "Piper Sandler Maintains Neutral on Shell, Raises Price Target to $89",
-      "Trump Warns Oil Executives: 'Get Your Retail Prices Down, NOW!'"
+      "Here\u2019s How Much You Would Have Made Owning Shell Stock In The Last 5 Years",
+      "Shell (NYSE:SHEL) Stands Out for Dividend Quality and Sustainable Growth",
+      "FNDF: Proven Value Approach Yields Solid Returns"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "no StockNews thesis on file"
+    "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

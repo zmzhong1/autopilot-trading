@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "STLD",
-    "researched_at": "2026-08-07T12:09:40+00:00",
+    "researched_at": "2026-08-14T12:09:06+00:00",
     "name": "Steel Dynamics Inc",
     "industry": "Metals & Mining",
-    "market_cap": 37477.428941345766,
+    "market_cap": 37341.267416193026,
     "metrics": {
-      "P/E": 23.57,
+      "P/E": 23.58,
       "net margin %": 7.83,
       "rev growth %": 19.77,
       "ROE %": 17.6,
       "current ratio": 3.18
     },
     "news": [
-      "Theresa E. Wagler to become Steel Dynamics' President and Chief Executive Officer; Mark D. Millett to become Steel Dynamics' Executive Chairman",
-      "Dick's Sporting, TransDigm, Steel Dynamics And A Financial Stock: CNBC\u2019s \u2018Final Trades\u2019",
-      "Steel Dynamics Appoints CFO Theresa E. Wagler As President, CEO, Effective Jan. 1, 2027, Succeeding Mark D. Millett, Who Will Transition To Executive Chairman; Richard A. Poinsatte Named CFO, Succeeding CFO"
+      "Widening Spreads and Tariff Protection Drive Steel Dynamics\u2019 (STLD) Rally",
+      "Steel Dynamics (NASDAQ:STLD): An Affordable Growth Play With Solid Earnings Momentum",
+      "UBS Maintains Neutral on Steel Dynamics, Raises Price Target to $276"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

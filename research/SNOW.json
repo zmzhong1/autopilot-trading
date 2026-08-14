@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SNOW",
-    "researched_at": "2026-08-07T12:09:35+00:00",
+    "researched_at": "2026-08-14T12:09:02+00:00",
     "name": "Snowflake Inc",
     "industry": "Technology",
-    "market_cap": 110218.80066743468,
+    "market_cap": 116935.91349641226,
     "metrics": {
       "net margin %": -23.79,
       "rev growth %": 31.07,
@@ -12,9 +12,9 @@
       "current ratio": 1.05
     },
     "news": [
-      "Stock Picks From Seeking Alpha's July 2026 New Analysts",
-      "QUICK SPARK: SpaceX Tops Cathie Wood's Shopping List With $26 Million Bet Ahead Of First Earnings",
-      "10 Information Technology Stocks With Whale Alerts In Today\u2019s Session"
+      "Allspring Large Cap Growth Fund Q2 2026 Performance Update",
+      "Oppenheimer Maintains Outperform on Snowflake, Raises Price Target to $400",
+      "KLA, Snowflake, Airbnb And A Health Care Stock On CNBC\u2019s \u2018Final Trades\u2019"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

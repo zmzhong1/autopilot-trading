@@ -1,21 +1,20 @@
 {
   "snapshot": {
     "ticker": "SFTBY",
-    "researched_at": "2026-08-07T12:09:30+00:00",
+    "researched_at": "2026-08-14T12:08:57+00:00",
     "name": "SoftBank Group Corp",
     "industry": "Telecommunication",
-    "market_cap": 34011269.182617,
+    "market_cap": 31510944.257812,
     "metrics": {
-      "P/E": 6.8,
+      "P/E": 6.3,
       "net margin %": 64.14,
       "rev growth %": 7.66,
       "ROE %": 34.06,
       "current ratio": 0.8
     },
     "news": [
-      "SoftBank Shrugs Off AI Bubble Fears: 'Supply Is Very Much Short'",
-      "SoftBank Group Corp. (SFTB:CA) Q1 2027 Earnings Call Transcript",
-      "SoftBank Group Corp. 2027 Q1 - Results - Earnings Call Presentation"
+      "Impax International Sustainable Economy Fund Q2 2026 Contributors And Detractors",
+      "DigitalBridge: Strong Earnings, But The Upside Is Capped"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

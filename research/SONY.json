@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SONY",
-    "researched_at": "2026-08-07T12:09:38+00:00",
+    "researched_at": "2026-08-14T12:09:04+00:00",
     "name": "Sony Group Corp",
     "industry": "Consumer products",
-    "market_cap": 21124527.609863,
+    "market_cap": 22291857.74707,
     "metrics": {
       "net margin %": -1.75,
       "rev growth %": 6.54,
@@ -12,14 +12,14 @@
       "current ratio": 1.25
     },
     "news": [
-      "Spotify Says Its AI Music Plans Won't Miss a Beat Without Every Major Label\u2014 Here's Why",
-      "Spider-Man Swings Into the Record Books: How Sony\u2019s Bet on One Comic Book Character Keeps Paying Off",
-      "Microsoft: The Gaming Sun Will Rise Again"
+      "Reported Earlier, TSMC And Sony Semiconductor Solutions To Form JV For Next-Generation Image Sensors; TSMC To Contribute ~\u00a5282B And Sony To Contribute ~\u00a5465B",
+      "US-Japan Yen Intervention Signals Bond Market Fear",
+      "Nvidia Built the AI Brain, Now TSMC Wants to Give It Eyes"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "no StockNews thesis on file"
+    "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

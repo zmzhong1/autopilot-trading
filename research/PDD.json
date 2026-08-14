@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PDD",
-    "researched_at": "2026-08-07T12:09:25+00:00",
+    "researched_at": "2026-08-14T12:08:52+00:00",
     "name": "PDD Holdings Inc",
     "industry": "Retail",
-    "market_cap": 129443.677729,
+    "market_cap": 126732.109207,
     "metrics": {
-      "P/E": 9.13,
+      "P/E": 8.44,
       "net margin %": 21.62,
       "rev growth %": 9.86,
       "ROE %": 24.06,
       "current ratio": 2.54
     },
     "news": [
-      "Tracking Baillie Gifford's 13F Portfolio - Q2 2026 Update",
-      "Zohran Mamdani Targets Walmart, Amazon, Target and Others Over 'Illegal' E-Bikes and E-Scooters: 'Too Many Lives Have Been Cut Short'",
-      "Alibaba: The Hub Of China's AI Ecosystem"
+      "Z.ai Aims to Catch Anthropic, OpenAI in Coding With New AI Model",
+      "PetMed (PETS) Reports Q1 Loss, Misses Revenue Estimates",
+      "Shein Is Said to Consider Aug. 28 for Hong Kong Trading Debut"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
