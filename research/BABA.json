@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "BABA",
-    "researched_at": "2026-08-10T12:08:35+00:00",
+    "researched_at": "2026-08-17T11:50:49+00:00",
     "name": "Alibaba Group Holding Ltd",
     "industry": "Retail",
-    "market_cap": 303991.37074507825,
+    "market_cap": 297788.7222346582,
     "metrics": {
-      "P/E": 19.27,
+      "P/E": 18.96,
       "net margin %": 10.35,
       "rev growth %": 2.74,
       "ROE %": 10.22,
       "current ratio": 1.28
     },
     "news": [
-      "ByteDance Is Reportedly Training a Massive New AI Model to Rival Anthropic's Mythos",
-      "Alibaba's Next Qwen AI Model May No Longer Be Free for Large Enterprises as It Eyes Moonshot Kimi K3-Like Revenue-Sharing Strategy: Report",
-      "10 Consumer Discretionary Stocks Whale Activity In Today\u2019s Session"
+      "Wall Street Brunch: Walmart Leads Retail Earnings Week",
+      "Wall Street Week Ahead",
+      "Alibaba, Walmart To Headline Earnings Next Week, FOMC Minutes Of Meeting In Focus"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

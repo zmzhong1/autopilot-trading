@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DELL",
-    "researched_at": "2026-08-10T12:08:48+00:00",
+    "researched_at": "2026-08-17T11:51:00+00:00",
     "name": "Dell Technologies Inc",
     "industry": "Technology",
-    "market_cap": 294170.484731719,
+    "market_cap": 317845.71879795636,
     "metrics": {
-      "P/E": 34.98,
+      "P/E": 38.1,
       "net margin %": 6.28,
       "rev growth %": 38.57,
       "ROE %": 130.7,
       "current ratio": 0.95
     },
     "news": [
-      "Dell Technologies: Significant Upside Remains, The Bull Case Still Holds",
-      "SMCI's Q4 Has To Address A $14B Cash Hole (Earnings Preview)",
-      "Where Will Dell Technologies Stock Be in 3 Years?"
+      "Dell Stock Rally Pauses, But Supermicro, Lenovo Earnings Point to Upside",
+      "Wells Fargo Maintains Overweight on Dell Technologies, Raises Price Target to $545",
+      "Silver Lake's Workday Buyout Talks Could Be the First 'SaaSpocalypse' Opportunity: Analyst Says 'You've Got Data, You've Got Distribution, You're Still Gonna Win'"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

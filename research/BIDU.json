@@ -1,20 +1,21 @@
 {
   "snapshot": {
     "ticker": "BIDU",
-    "researched_at": "2026-08-10T12:08:37+00:00",
+    "researched_at": "2026-08-17T11:50:51+00:00",
     "name": "Baidu Inc",
     "industry": "Media",
-    "market_cap": 37727.05587030361,
+    "market_cap": 36271.4018141748,
     "metrics": {
-      "P/E": 648.91,
+      "P/E": 611.74,
       "net margin %": 0.3,
       "rev growth %": -4.0,
       "ROE %": 0.15,
       "current ratio": 1.85
     },
     "news": [
-      "Lyft Earnings Prediction Market Preview: What Will David Risher Say?",
-      "Mission Deflation: China, Chips, And The AI Price War"
+      "Wall Street Brunch: Walmart Leads Retail Earnings Week",
+      "Wall Street Week Ahead",
+      "Alibaba, Walmart To Headline Earnings Next Week, FOMC Minutes Of Meeting In Focus"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

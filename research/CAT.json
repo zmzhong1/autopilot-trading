@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "CAT",
-    "researched_at": "2026-08-10T12:08:39+00:00",
+    "researched_at": "2026-08-17T11:50:53+00:00",
     "name": "Caterpillar Inc",
     "industry": "Machinery",
-    "market_cap": 387133.58508919395,
+    "market_cap": 394152.79910240945,
     "metrics": {
-      "P/E": 35.7,
+      "P/E": 36.3,
       "net margin %": 14.51,
       "rev growth %": 18.36,
       "ROE %": 54.2,
       "current ratio": 1.37
     },
     "news": [
-      "A $72 Billion Reason to Buy Caterpillar Stock Now",
-      "Earnings beats ease concerns over record U.S. stock rally - WSJ",
-      "Caterpillar tariffs send major signal on margins"
+      "How To Invest $100,000 In A Retiree's SWAN Income Portfolio",
+      "What's going on in today's session: dow jones movers",
+      "Dividend Champion, Contender, And Challenger Highlights: Week August 16"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
