@@ -1,27 +1,26 @@
 {
   "snapshot": {
     "ticker": "GOOGL",
-    "researched_at": "2026-08-11T12:09:41+00:00",
+    "researched_at": "2026-08-18T11:52:04+00:00",
     "name": "Alphabet Inc",
     "industry": "Media",
-    "market_cap": 4372469.6,
+    "market_cap": 4207120,
     "metrics": {
-      "P/E": 17.76,
+      "P/E": 17.31,
       "net margin %": 54.77,
       "rev growth %": 20.05,
       "ROE %": 50.84,
       "current ratio": 2.72
     },
     "news": [
-      "This AI Cloud Stock Is Obliterating Amazon, Microsoft, and Alphabet With a 1-Year Return of 275%. Is It Still a Buy?",
-      "Hyperscalers Are 'All In' On Singularity, And OpenAI's Astra Gives Hope",
-      "AI\u2019s biggest buildout is here. These stocks offer a way to invest in the data center boom"
+      "Wall Street Breakfast Podcast: Return Of The Bond Vigilantes?",
+      "The Real Reason Markets Are Rising Despite A Bearish Macro Backdrop",
+      "Tracking Seth Klarman's Baupost Group Holdings - Q2 2026 Update"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-08-10)",
     "recent earnings did not beat, despite high H-0"
   ]
 }

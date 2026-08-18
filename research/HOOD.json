@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "HOOD",
-    "researched_at": "2026-08-11T12:09:47+00:00",
+    "researched_at": "2026-08-18T11:52:10+00:00",
     "name": "Robinhood Markets Inc",
     "industry": "Financial Services",
-    "market_cap": 84981.254846,
+    "market_cap": 86536.66801088321,
     "metrics": {
-      "P/E": 41.01,
+      "P/E": 43.12,
       "net margin %": 42.01,
       "rev growth %": 38.27,
       "ROE %": 22.7,
       "current ratio": 1.22
     },
     "news": [
-      "The Best Options Trading Platforms for Investors",
-      "HOOD Stock Alert: Robinhood Set to Launch Crypto Trading in UK This Week",
-      "Sector Update: Financial Stocks Mixed Late Afternoon"
+      "Here's How Much $100 Invested In Robinhood Markets 5 Years Ago Would Be Worth Today",
+      "Nasdaq's Going Almost 24/7: Exchange Eyes 23-Hour Trading Day",
+      "Top S&P500 movers in Friday's session"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

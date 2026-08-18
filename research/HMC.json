@@ -1,21 +1,17 @@
 {
   "snapshot": {
     "ticker": "HMC",
-    "researched_at": "2026-08-11T12:09:45+00:00",
+    "researched_at": "2026-08-18T11:52:08+00:00",
     "name": "Honda Motor Co Ltd",
     "industry": "Automobiles",
-    "market_cap": 6586197.161133,
+    "market_cap": 6453850.409668,
     "metrics": {
       "net margin %": -1.94,
       "rev growth %": 0.5,
       "ROE %": -3.53,
       "current ratio": 1.28
     },
-    "news": [
-      "Honda Motor Co., Ltd. (HMC) Q1 2027 Earnings Call Transcript",
-      "Honda Recalls 43,913 Motorcycles Over Handlebar Lock Screw That May Detach, Interfere With Steering",
-      "Honda Motor Co Raises FY2027 GAAP EPS Guidance from $1.28 to $1.93 vs $2.52 Est; Raises FY2027 Sales Guidance from $147.604B to $151.541B vs $139.900B Est"
-    ],
+    "news": [],
     "analyst_upgrade": false,
     "earnings_beat": false
   },

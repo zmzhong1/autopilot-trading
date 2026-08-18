@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DIS",
-    "researched_at": "2026-08-11T12:09:36+00:00",
+    "researched_at": "2026-08-18T11:51:57+00:00",
     "name": "Walt Disney Co",
     "industry": "Media",
-    "market_cap": 178159.5594926402,
+    "market_cap": 178712.09052628922,
     "metrics": {
-      "P/E": 20.64,
+      "P/E": 20.9,
       "net margin %": 8.7,
       "rev growth %": 4.58,
       "ROE %": 7.87,
       "current ratio": 0.71
     },
     "news": [
-      "Earnings Signals And Labor Slowdowns: Testing The Limits Of Consumer Resilience",
-      "All eyes on Disney as 'Toy Story 5' massively validates new strategy",
-      "NFLX Stock: Where Compounding Could Take The Price"
+      "Discover which dow jones stocks are making waves on Monday.",
+      "Uncover the latest developments among dow jones stocks in today's session.",
+      "AOC says she's been saving up to freeze her eggs. Here's how much the procedure can cost"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
