@@ -1,19 +1,21 @@
 {
   "snapshot": {
     "ticker": "JD",
-    "researched_at": "2026-08-12T12:11:02+00:00",
+    "researched_at": "2026-08-19T11:50:55+00:00",
     "name": "JD.com Inc",
     "industry": "Retail",
-    "market_cap": 316395.719566,
+    "market_cap": 272315.930176,
     "metrics": {
-      "P/E": 19.21,
+      "P/E": 18.53,
       "net margin %": 1.05,
       "rev growth %": 10.32,
       "ROE %": 6.15,
       "current ratio": 1.18
     },
     "news": [
-      "Wall Street Week Ahead"
+      "JD.com Beat Expectations, Investors Still Sold The Stock",
+      "JD.Com: Major Profitability Inflection, Strong Free Cash Flow, 6.9x P/E",
+      "David Tepper Gets More Selective on China With Alibaba Cut, Baidu Boost"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

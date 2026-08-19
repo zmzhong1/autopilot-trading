@@ -1,20 +1,20 @@
 {
   "snapshot": {
     "ticker": "JPM",
-    "researched_at": "2026-08-12T12:11:04+00:00",
+    "researched_at": "2026-08-19T11:50:57+00:00",
     "name": "JPMorgan Chase & Co",
     "industry": "Banking",
-    "market_cap": 962369.7834124619,
+    "market_cap": 965586.1430964877,
     "metrics": {
-      "P/E": 14.76,
+      "P/E": 14.8,
       "net margin %": 33.26,
       "rev growth %": 108.98,
       "ROE %": 17.81
     },
     "news": [
-      "Uncover the latest developments among dow jones stocks in today's session.",
-      "Why JPMorgan is investing big in the 2028 LA Olympics",
-      "Rand Paul Inspects Fort Knox Gold, Says Dollar\u2019s 97% Collapse Since 1913 Is Behind America\u2019s 'Affordability' Crisis: 'The Real Point Is...'"
+      "Which dow jones stocks are moving on Tuesday?",
+      "Discover which dow jones stocks are making waves on Monday.",
+      "Here\u2019s How Much You Would Have Made Owning JPMorgan Chase Stock In The Last 5 Years"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MS",
-    "researched_at": "2026-08-12T12:11:10+00:00",
+    "researched_at": "2026-08-19T11:51:02+00:00",
     "name": "Morgan Stanley",
     "industry": "Financial Services",
-    "market_cap": 337781.6936106411,
+    "market_cap": 341676.7056355495,
     "metrics": {
-      "P/E": 16.85,
+      "P/E": 17.09,
       "net margin %": 15.65,
       "rev growth %": 13.96,
-      "ROE %": 16.32,
-      "current ratio": 0.31
+      "ROE %": 17.83,
+      "current ratio": 0.35
     },
     "news": [
-      "Riot Says Massive AI Data Center Deal Could Top $1 Billion In Annual Rent",
-      "Jim Cramer Recommends Goldman Sachs and Morgan Stanley to Profit From Accelerating M&A Deals",
-      "Morgan Stanley cuts Global-e rating to equal-weight, raises price target to $44"
+      "Bitcoin Custody for Institutional Clients Is Coming to Citi Later This Year",
+      "'General Atlantic Is Working With JPMorgan to Lead Fresh IPO Push' - Bloomberg",
+      "Viking Global Bets Big On SpaceX While Ditching CoreWeave, Alphabet in Q2"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

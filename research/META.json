@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "META",
-    "researched_at": "2026-08-12T12:11:06+00:00",
+    "researched_at": "2026-08-19T11:50:59+00:00",
     "name": "Meta Platforms Inc",
     "industry": "Media",
-    "market_cap": 1526261.8311393098,
+    "market_cap": 1385002.5885392984,
     "metrics": {
-      "P/E": 22.15,
+      "P/E": 22.26,
       "net margin %": 29.84,
       "rev growth %": 27.65,
       "ROE %": 29.73,
       "current ratio": 2.23
     },
     "news": [
-      "Wall Street Breakfast Podcast: NYC Delivery Model Detour",
-      "License To Chase The AI Frontier",
-      "Meta's Open-Source Crusade Is Also A Fight For Control"
+      "Meta's AI Payoff Has Already Begun",
+      "AI Utilization May Be The Next Driver Of Growth",
+      "AMD: On Dilution And Insider Sales"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

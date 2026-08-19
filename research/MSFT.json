@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MSFT",
-    "researched_at": "2026-08-12T12:11:12+00:00",
+    "researched_at": "2026-08-19T11:51:04+00:00",
     "name": "Microsoft Corp",
     "industry": "Technology",
-    "market_cap": 3741064.0150427506,
+    "market_cap": 3576365.4813357694,
     "metrics": {
-      "P/E": 28.08,
+      "P/E": 27.66,
       "net margin %": 40.31,
       "rev growth %": 17.79,
       "ROE %": 33.22,
       "current ratio": 1.23
     },
     "news": [
-      "License To Chase The AI Frontier",
-      "Tracking AMG's Yacktman Asset Management Portfolio - Q2 2026 Update",
-      "Microsoft: Don't Get Too Excited (Rating Downgrade)"
+      "Tracking Al Gore's Generation Investment Management Portfolio - Q2 2026 Update",
+      "ReNew Energy: The Buy Paid Off, But Now It's Time To Hold (Rating Downgrade)",
+      "AI Utilization May Be The Next Driver Of Growth"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "MP",
-    "researched_at": "2026-08-12T12:11:08+00:00",
+    "researched_at": "2026-08-19T11:51:01+00:00",
     "name": "MP Materials Corp",
     "industry": "Metals & Mining",
-    "market_cap": 9838.331970660083,
+    "market_cap": 10093.016987233465,
     "metrics": {
       "net margin %": -20.48,
       "rev growth %": 60.93,
@@ -12,9 +12,9 @@
       "current ratio": 7.18
     },
     "news": [
-      "MP Materials (MP) Stock Is Rising Today: What\u2019s Behind the Rally in Rare Earth Stocks?",
-      "MP Materials Q2 Earnings Call Highlights",
-      "Rare Earth Rebound Splits Along Profit Lines: Cash-Flow Producers Outpace Pure Plays"
+      "MP Materials Stock Surges Friday Amid Defense Policy Shifts",
+      "Russell 2000 Extends Records, SanDisk Rallies 7%: Stock Market Today",
+      "Trading Halt: Halt status updated at 9:50:00 AM ET: Quotation Resumption: IPO Security - Released for Quotation"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
