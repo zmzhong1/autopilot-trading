@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PATH",
-    "researched_at": "2026-08-13T12:10:25+00:00",
+    "researched_at": "2026-08-20T11:53:43+00:00",
     "name": "UiPath Inc",
     "industry": "Technology",
-    "market_cap": 7906.519962851145,
+    "market_cap": 8175.94248258023,
     "metrics": {
-      "P/E": 24.67,
+      "P/E": 26.4,
       "net margin %": 19.58,
       "rev growth %": 15.24,
       "ROE %": 17.29,
       "current ratio": 2.31
     },
     "news": [
-      "UiPath (PATH) Stock Sinks As Market Gains: Here's Why",
-      "These Are the Stocks Wall Street Is Betting Against the Most",
-      "The Great Robotics Divergence: AI-Native Names Surge, Legacy Vendors Stall"
+      "UiPath: Why The Turnaround Could Be Real This Time",
+      "RBC Capital Maintains Sector Perform on UiPath, Raises Price Target to $15",
+      "UiPath Stock Carries A Market Multiple On Earnings And A Premium On Sales"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
