@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SHEL",
-    "researched_at": "2026-08-14T12:09:00+00:00",
+    "researched_at": "2026-08-21T11:52:55+00:00",
     "name": "Shell PLC",
     "industry": "Energy",
-    "market_cap": 183780.331513,
+    "market_cap": 188905.373233,
     "metrics": {
       "P/E": 9.55,
       "net margin %": 8.76,
@@ -13,9 +13,9 @@
       "current ratio": 1.43
     },
     "news": [
-      "Here\u2019s How Much You Would Have Made Owning Shell Stock In The Last 5 Years",
-      "Shell (NYSE:SHEL) Stands Out for Dividend Quality and Sustainable Growth",
-      "FNDF: Proven Value Approach Yields Solid Returns"
+      "Shell: ARC Acquisition Shows The Flexibility When Responding To The Middle East Situation",
+      "'Exxon Warns Kazakhstan\u2019s Top Oil Field to Peak Within Years' - Bloomberg",
+      "Stock Market Futures Mixed: Dow Jones Gains, Nasdaq 100 Drops as Trump Says 'No Talks' Are Happening With Iran\u2014 Keysight Technologies, Mercury Systems, SK Hynix in Focus (UPDATED)"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

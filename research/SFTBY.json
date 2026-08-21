@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SFTBY",
-    "researched_at": "2026-08-14T12:08:57+00:00",
+    "researched_at": "2026-08-21T11:52:53+00:00",
     "name": "SoftBank Group Corp",
     "industry": "Telecommunication",
-    "market_cap": 31510944.257812,
+    "market_cap": 29838352.470215,
     "metrics": {
       "P/E": 6.3,
       "net margin %": 64.14,
@@ -13,8 +13,9 @@
       "current ratio": 0.8
     },
     "news": [
-      "Impax International Sustainable Economy Fund Q2 2026 Contributors And Detractors",
-      "DigitalBridge: Strong Earnings, But The Upside Is Capped"
+      "Broadcom\u2019s AI Competition Fears Look Overblown: Analyst",
+      "Intel Eyes an Opening in Taiwan Semiconductor\u2019s AI Packaging Fortress",
+      "Elon Musk Warns Nvidia-Backed $105 Billion Ohio Data Center for OpenAI Will Take \u2018Much Longer\u2019 to Come Online Than Expected"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

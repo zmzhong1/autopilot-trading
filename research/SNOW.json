@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SNOW",
-    "researched_at": "2026-08-14T12:09:02+00:00",
+    "researched_at": "2026-08-21T11:52:57+00:00",
     "name": "Snowflake Inc",
     "industry": "Technology",
-    "market_cap": 116935.91349641226,
+    "market_cap": 111359.11930655895,
     "metrics": {
       "net margin %": -23.79,
       "rev growth %": 31.07,
@@ -12,9 +12,9 @@
       "current ratio": 1.05
     },
     "news": [
-      "Allspring Large Cap Growth Fund Q2 2026 Performance Update",
-      "Oppenheimer Maintains Outperform on Snowflake, Raises Price Target to $400",
-      "KLA, Snowflake, Airbnb And A Health Care Stock On CNBC\u2019s \u2018Final Trades\u2019"
+      "Truist Securities Maintains Buy on Snowflake, Raises Price Target to $375",
+      "Software's AI Panic Is Fading, and These 10 Stocks Are the First to Benefit",
+      "TD Cowen Maintains Buy on Snowflake, Raises Price Target to $370"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "STLD",
-    "researched_at": "2026-08-14T12:09:06+00:00",
+    "researched_at": "2026-08-21T11:53:01+00:00",
     "name": "Steel Dynamics Inc",
     "industry": "Metals & Mining",
-    "market_cap": 37341.267416193026,
+    "market_cap": 31388.85194520151,
     "metrics": {
       "P/E": 23.58,
       "net margin %": 7.83,
@@ -13,9 +13,9 @@
       "current ratio": 3.18
     },
     "news": [
-      "Widening Spreads and Tariff Protection Drive Steel Dynamics\u2019 (STLD) Rally",
-      "Steel Dynamics (NASDAQ:STLD): An Affordable Growth Play With Solid Earnings Momentum",
-      "UBS Maintains Neutral on Steel Dynamics, Raises Price Target to $276"
+      "Steel Dynamics (NASDAQ:STLD): A Lynch-Style Growth at a Reasonable Price Opportunity",
+      "Exploring the top movers within the S&P500 index during today's session.",
+      "Thursday's session: top gainers and losers in the S&P500 index"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

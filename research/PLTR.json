@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "PLTR",
-    "researched_at": "2026-08-14T12:08:55+00:00",
+    "researched_at": "2026-08-21T11:52:51+00:00",
     "name": "Palantir Technologies Inc",
     "industry": "Technology",
-    "market_cap": 430177.6851682668,
+    "market_cap": 418042.0875500435,
     "metrics": {
       "P/E": 143.22,
       "net margin %": 49.0,
@@ -13,9 +13,9 @@
       "current ratio": 7.23
     },
     "news": [
-      "My Near-Perfect $1 Million Retirement Portfolio",
-      "Michael Burry Loads Up On QQQ Puts, Boosts MU Short As He Braces For \u2018Larger Fall\u2019 \u2014 Here\u2019s What He Did To NVDA, PLTR And TSLA",
-      "What's going on in today's session: S&P500 most active stocks"
+      "Palantir: Why Michael Burry's Put Buys Should Not Deter Retail Investors",
+      "BUZZ Investing: Markets Look Through Intra-Period Volatility",
+      "Palantir: Buy Before The Next Leg Higher"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
