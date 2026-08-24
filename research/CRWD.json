@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "CRWD",
-    "researched_at": "2026-08-17T11:50:58+00:00",
+    "researched_at": "2026-08-24T11:55:04+00:00",
     "name": "CrowdStrike Holdings Inc",
     "industry": "Technology",
-    "market_cap": 221298.28754698747,
+    "market_cap": 195454.8645259848,
     "metrics": {
       "net margin %": -0.48,
       "rev growth %": 23.17,
@@ -12,9 +12,9 @@
       "current ratio": 1.53
     },
     "news": [
-      "Cloudflare: I Exited My Position Way Too Early",
-      "Gapping S&P500 stocks in Friday's session",
-      "Markets Are Finally Waking Up To Rubrik"
+      "Dow Jones Futures Due With Nvidia Earnings, Tariffs, Warsh In Focus",
+      "Top Wall Street analysts believe in the growth potential of these 3 stocks",
+      "Wall Street Week Ahead"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

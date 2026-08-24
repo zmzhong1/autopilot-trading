@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "DELL",
-    "researched_at": "2026-08-17T11:51:00+00:00",
+    "researched_at": "2026-08-24T11:55:06+00:00",
     "name": "Dell Technologies Inc",
     "industry": "Technology",
-    "market_cap": 317845.71879795636,
+    "market_cap": 286592.0826378376,
     "metrics": {
       "P/E": 38.1,
       "net margin %": 6.28,
@@ -13,9 +13,9 @@
       "current ratio": 0.95
     },
     "news": [
-      "Dell Stock Rally Pauses, But Supermicro, Lenovo Earnings Point to Upside",
-      "Wells Fargo Maintains Overweight on Dell Technologies, Raises Price Target to $545",
-      "Silver Lake's Workday Buyout Talks Could Be the First 'SaaSpocalypse' Opportunity: Analyst Says 'You've Got Data, You've Got Distribution, You're Still Gonna Win'"
+      "Top Wall Street analysts believe in the growth potential of these 3 stocks",
+      "Our Top 10 High Growth Dividend Stocks - August 2026",
+      "\u2018The Odyssey\u2019 Isn\u2019t a One-Off for IMAX, Analyst Says. Plus, Dell and 3 More Stocks."
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

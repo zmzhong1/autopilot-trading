@@ -1,21 +1,20 @@
 {
   "snapshot": {
     "ticker": "BIDU",
-    "researched_at": "2026-08-17T11:50:51+00:00",
+    "researched_at": "2026-08-24T11:54:54+00:00",
     "name": "Baidu Inc",
     "industry": "Media",
-    "market_cap": 36271.4018141748,
+    "market_cap": 32465.86277501868,
     "metrics": {
-      "P/E": 611.74,
-      "net margin %": 0.3,
-      "rev growth %": -4.0,
-      "ROE %": 0.15,
-      "current ratio": 1.85
+      "net margin %": -3.62,
+      "rev growth %": -4.16,
+      "ROE %": -1.72,
+      "current ratio": 2.33
     },
     "news": [
-      "Wall Street Brunch: Walmart Leads Retail Earnings Week",
-      "Wall Street Week Ahead",
-      "Alibaba, Walmart To Headline Earnings Next Week, FOMC Minutes Of Meeting In Focus"
+      "China\u2019s AI Agents Race To Become Digital Employees",
+      "Uber, ServiceNow And A Health Care Stock On CNBC\u2019s \u2018Final Trades\u2019",
+      "Deepseek Announced Experimental Multimodal Model DeepSeek-V4-Flash-Vision-Exp Is Now Live On API Platform"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

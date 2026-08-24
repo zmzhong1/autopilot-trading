@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "BABA",
-    "researched_at": "2026-08-17T11:50:49+00:00",
+    "researched_at": "2026-08-24T11:54:52+00:00",
     "name": "Alibaba Group Holding Ltd",
     "industry": "Retail",
-    "market_cap": 297788.7222346582,
+    "market_cap": 308438.34613993694,
     "metrics": {
-      "P/E": 18.96,
-      "net margin %": 10.35,
-      "rev growth %": 2.74,
-      "ROE %": 10.22,
-      "current ratio": 1.28
+      "P/E": 27.58,
+      "net margin %": 7.02,
+      "rev growth %": 4.42,
+      "ROE %": 7.01,
+      "current ratio": 1.36
     },
     "news": [
-      "Wall Street Brunch: Walmart Leads Retail Earnings Week",
-      "Wall Street Week Ahead",
-      "Alibaba, Walmart To Headline Earnings Next Week, FOMC Minutes Of Meeting In Focus"
+      "Wall Street Breakfast Podcast: AI Plans Weigh On BABA",
+      "These Analysts Revise Their Forecasts On Alibaba After Q1 Earnings",
+      "Alibaba: Pay 13x FWD Earnings For 45% AI Cloud Growth"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "COIN",
-    "researched_at": "2026-08-17T11:50:55+00:00",
+    "researched_at": "2026-08-24T11:54:59+00:00",
     "name": "Coinbase Global Inc",
     "industry": "Financial Services",
-    "market_cap": 39382.94899,
+    "market_cap": 49202.96213,
     "metrics": {
       "net margin %": -15.72,
       "rev growth %": -10.35,
@@ -12,9 +12,9 @@
       "current ratio": 2.42
     },
     "news": [
-      "AI Stocks Are Now More Volatile Than Bitcoin. They Could Also Be the Reason for Bitcoin's Reversal",
-      "White House Reporter For Semafor Eleanor Mueller Posts On X \"News: Executives from Coinbase, a16z, Ripple & Chainlink plus Kalshi & Paradigm (a Kalshi backer) as well as Digital Chamber are among those expected to attend Wednesday's meeting at the WH, people familiar with it tell me....\"",
-      "Gapping S&P500 stocks in Friday's session"
+      "Donald Trump Sold MicroStrategy and Bought Two Other Crypto Stocks",
+      "Ripple CEO Brad Garlinghouse Calls CFTC\u2019s New Crypto Panel An \u2018Olympic Roster\u2019",
+      "XRP Price Breaks $1.20 as Whales Scoop 300M Tokens \u2014 Is $2 Next After Ripple Prime\u2019s $275M Raise?"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
