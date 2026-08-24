@@ -2100,11 +2100,22 @@
       "trade_type": "Sell",
       "ts": "2026-08-07T19:55:51+00:00",
       "tx_date": "2025-10-07"
+    },
+    {
+      "issuer": "Qualcomm Inc QCOM",
+      "kind": "congress",
+      "politician": "Thomas H Tuberville",
+      "size_range": "$15,001 - $50,000",
+      "ticker": "QCOM",
+      "trade_id": "cc2b75e33e3e49c43",
+      "trade_type": "Sell",
+      "ts": "2026-08-24T20:38:52+00:00",
+      "tx_date": "2025-04-15"
     }
   ],
   "consecutive_fetch_failures": 0,
   "first_run_done": true,
-  "last_run": "2026-08-24T19:35:27+00:00",
+  "last_run": "2026-08-24T20:38:51+00:00",
   "seen_trade_ids": [
     "10000064890",
     "10000064891",
@@ -2335,6 +2346,7 @@
     "cbc73e9f996d34985",
     "cbf5cea0ae01926d9",
     "cbf855f7d7a3fffcb",
+    "cc2b75e33e3e49c43",
     "cc49fbace6728cccd",
     "cc53a1790cf3c0780",
     "cc546134b60bdd8ff",
