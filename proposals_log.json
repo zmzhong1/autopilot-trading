@@ -645,7 +645,67 @@
         "held": null,
         "checked": false
       }
+    },
+    {
+      "date": "2026-08-24",
+      "ts": "2026-08-24T14:34:04+00:00",
+      "ticker": "AAPL",
+      "side": "buy",
+      "size_pct": 10.0,
+      "entry_price": 313.15,
+      "feeds": [
+        "analyst",
+        "congress",
+        "corporate",
+        "insider",
+        "institutional"
+      ],
+      "feed_count": 5,
+      "status": "proposed",
+      "stocknews": {
+        "xii_score": 85,
+        "verdict": "strong-buy",
+        "h0": 67,
+        "durability": 19,
+        "conviction": "medium",
+        "fatal_flags": 0,
+        "found": true
+      },
+      "portfolio": {
+        "held": null,
+        "checked": false
+      }
+    },
+    {
+      "date": "2026-08-24",
+      "ts": "2026-08-24T14:34:04+00:00",
+      "ticker": "MSFT",
+      "side": "buy",
+      "size_pct": 10.0,
+      "entry_price": 486.69,
+      "feeds": [
+        "analyst",
+        "congress",
+        "corporate",
+        "insider",
+        "institutional"
+      ],
+      "feed_count": 5,
+      "status": "proposed",
+      "stocknews": {
+        "xii_score": 90,
+        "verdict": "strong-buy",
+        "h0": 65,
+        "durability": 21,
+        "conviction": "medium",
+        "fatal_flags": 0,
+        "found": true
+      },
+      "portfolio": {
+        "held": null,
+        "checked": false
+      }
     }
   ],
-  "last_run": "2026-08-17T14:20:24+00:00"
+  "last_run": "2026-08-24T14:34:04+00:00"
 }
