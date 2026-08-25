@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "GOOGL",
-    "researched_at": "2026-08-18T11:52:04+00:00",
+    "researched_at": "2026-08-25T11:55:07+00:00",
     "name": "Alphabet Inc",
     "industry": "Media",
-    "market_cap": 4207120,
+    "market_cap": 4256773.8,
     "metrics": {
       "P/E": 17.31,
       "net margin %": 54.77,
@@ -13,9 +13,9 @@
       "current ratio": 2.72
     },
     "news": [
-      "Wall Street Breakfast Podcast: Return Of The Bond Vigilantes?",
-      "The Real Reason Markets Are Rising Despite A Bearish Macro Backdrop",
-      "Tracking Seth Klarman's Baupost Group Holdings - Q2 2026 Update"
+      "My Game Plan For What Some Call A Fat AI Bubble",
+      "Exploring the top movers within the dow jones index during today's session.",
+      "Marvell: Google Strengthens The AI Thesis, But Q2 Must Justify The Premium"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

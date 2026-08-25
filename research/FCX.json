@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "FCX",
-    "researched_at": "2026-08-18T11:52:02+00:00",
+    "researched_at": "2026-08-25T11:55:05+00:00",
     "name": "Freeport-McMoRan Inc",
     "industry": "Metals & Mining",
-    "market_cap": 98194.87048973229,
+    "market_cap": 111722.16341810592,
     "metrics": {
       "P/E": 33.3,
       "net margin %": 11.38,
@@ -13,9 +13,9 @@
       "current ratio": 2.07
     },
     "news": [
-      "Is Freeport-McMoRan (FCX) Undervalued As Insider Selling Meets A Premium P/E?",
-      "Freeport McMoRan (FCX) Stock Looks Stretched As Fresh Copper Discovery News Emerges",
-      "Uncover the latest developments among S&P500 stocks in today's session."
+      "The Economically Sensitive Materials Sector Is Breaking Out",
+      "Dow Jones Futures Due With Nvidia Earnings, Tariffs, Warsh In Focus",
+      "Palantir, Freeport Clear Buy Points, Lead Five Stocks To Watch"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "DIS",
-    "researched_at": "2026-08-18T11:51:57+00:00",
+    "researched_at": "2026-08-25T11:55:01+00:00",
     "name": "Walt Disney Co",
     "industry": "Media",
-    "market_cap": 178712.09052628922,
+    "market_cap": 190988.83470137307,
     "metrics": {
       "P/E": 20.9,
       "net margin %": 8.7,
@@ -13,9 +13,9 @@
       "current ratio": 0.71
     },
     "news": [
-      "Discover which dow jones stocks are making waves on Monday.",
-      "Uncover the latest developments among dow jones stocks in today's session.",
-      "AOC says she's been saving up to freeze her eggs. Here's how much the procedure can cost"
+      "Exploring the top movers within the dow jones index during today's session.",
+      "Explore the top gainers and losers within the dow jones index in today's session.",
+      "'Disney Offering Voluntary Early Retirement Packages To Executives' - Deadline"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

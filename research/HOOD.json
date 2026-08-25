@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "HOOD",
-    "researched_at": "2026-08-18T11:52:10+00:00",
+    "researched_at": "2026-08-25T11:55:13+00:00",
     "name": "Robinhood Markets Inc",
     "industry": "Financial Services",
-    "market_cap": 86536.66801088321,
+    "market_cap": 93162.90431899289,
     "metrics": {
       "P/E": 43.12,
       "net margin %": 42.01,
@@ -13,9 +13,9 @@
       "current ratio": 1.22
     },
     "news": [
-      "Here's How Much $100 Invested In Robinhood Markets 5 Years Ago Would Be Worth Today",
-      "Nasdaq's Going Almost 24/7: Exchange Eyes 23-Hour Trading Day",
-      "Top S&P500 movers in Friday's session"
+      "The Bitcoin, Ethereum, XRP Record Week Was Just 'The Beginning,' Prominent Analyst Says",
+      "Dow Jones Futures Due With Nvidia Earnings, Tariffs, Warsh In Focus",
+      "Donald Trump Sold MicroStrategy and Bought Two Other Crypto Stocks"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
