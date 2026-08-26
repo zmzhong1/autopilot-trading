@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "META",
-    "researched_at": "2026-08-19T11:50:59+00:00",
+    "researched_at": "2026-08-26T11:56:42+00:00",
     "name": "Meta Platforms Inc",
     "industry": "Media",
-    "market_cap": 1385002.5885392984,
+    "market_cap": 1452205.9224064047,
     "metrics": {
       "P/E": 22.26,
       "net margin %": 29.84,
@@ -13,14 +13,15 @@
       "current ratio": 2.23
     },
     "news": [
-      "Meta's AI Payoff Has Already Begun",
-      "AI Utilization May Be The Next Driver Of Growth",
-      "AMD: On Dilution And Insider Sales"
+      "Big Tech Off-Balance Sheet Concerns",
+      "The Deep Unknowns Of AI",
+      "Broadcom: Moving Big Into Vendor Financing"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
+    "thesis stale (review due 2026-08-24)",
     "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

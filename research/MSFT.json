@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "MSFT",
-    "researched_at": "2026-08-19T11:51:04+00:00",
+    "researched_at": "2026-08-26T11:56:48+00:00",
     "name": "Microsoft Corp",
     "industry": "Technology",
-    "market_cap": 3576365.4813357694,
+    "market_cap": 3651214.915334995,
     "metrics": {
       "P/E": 27.66,
       "net margin %": 40.31,
@@ -13,9 +13,9 @@
       "current ratio": 1.23
     },
     "news": [
-      "Tracking Al Gore's Generation Investment Management Portfolio - Q2 2026 Update",
-      "ReNew Energy: The Buy Paid Off, But Now It's Time To Hold (Rating Downgrade)",
-      "AI Utilization May Be The Next Driver Of Growth"
+      "Big Tech Off-Balance Sheet Concerns",
+      "Tracking David Tepper's Appaloosa Management Portfolio - Q2 2026 Update",
+      "These dow jones stocks are moving in today's session"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "MU",
-    "researched_at": "2026-08-19T11:51:06+00:00",
+    "researched_at": "2026-08-26T11:56:50+00:00",
     "name": "Micron Technology Inc",
     "industry": "Semiconductors",
-    "market_cap": 1062487.821152787,
+    "market_cap": 1053689.8406879967,
     "metrics": {
       "P/E": 21.53,
       "net margin %": 55.91,
@@ -13,9 +13,9 @@
       "current ratio": 3.42
     },
     "news": [
-      "Wall Street Sinks as 30-Year Yield Hits 19-Year High, Chip Names Crumble",
-      "There Is So Much Alpha To Be Harvested In Micron's Options",
-      "Curious about the most active S&P500 stocks in today's session?"
+      "Tracking David Tepper's Appaloosa Management Portfolio - Q2 2026 Update",
+      "How To Retire: Stop Looking For Magic",
+      "Don't Sleep On Software"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

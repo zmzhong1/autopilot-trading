@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "JD",
-    "researched_at": "2026-08-19T11:50:55+00:00",
+    "researched_at": "2026-08-26T11:56:37+00:00",
     "name": "JD.com Inc",
     "industry": "Retail",
-    "market_cap": 272315.930176,
+    "market_cap": 273038.900177,
     "metrics": {
       "P/E": 18.53,
       "net margin %": 1.05,
@@ -13,9 +13,9 @@
       "current ratio": 1.18
     },
     "news": [
-      "JD.com Beat Expectations, Investors Still Sold The Stock",
-      "JD.Com: Major Profitability Inflection, Strong Free Cash Flow, 6.9x P/E",
-      "David Tepper Gets More Selective on China With Alibaba Cut, Baidu Boost"
+      "Alibaba: The Market Got This One Wrong",
+      "Michael Burry Planned to Move Back Into Alibaba After a Few Months. Now He Says BABA Stock Would Need to Fall 50% First (UPDATED)",
+      "BABA Stock Falls Nearly 4% Amid $10 Billion HK Placement: Analyst Nicholas Mugalli Says Market Reaction is 'Pure Relief' For Shortsellers"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

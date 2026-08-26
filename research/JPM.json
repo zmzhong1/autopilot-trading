@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "JPM",
-    "researched_at": "2026-08-19T11:50:57+00:00",
+    "researched_at": "2026-08-26T11:56:39+00:00",
     "name": "JPMorgan Chase & Co",
     "industry": "Banking",
-    "market_cap": 965586.1430964877,
+    "market_cap": 948148.5029335666,
     "metrics": {
       "P/E": 14.8,
       "net margin %": 33.26,
@@ -12,9 +12,9 @@
       "ROE %": 17.81
     },
     "news": [
-      "Which dow jones stocks are moving on Tuesday?",
-      "Discover which dow jones stocks are making waves on Monday.",
-      "Here\u2019s How Much You Would Have Made Owning JPMorgan Chase Stock In The Last 5 Years"
+      "Bank of Montreal Q3: Solid Quarter, But 'Just' A Hold",
+      "Elon Musk's Tesla Hikes Cybertruck Prices by More Than 7% Despite Sluggish Sales",
+      "SEC reportedly subpoenas Wall Street banks over AI hedge fund Situational Awareness's near collapse"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

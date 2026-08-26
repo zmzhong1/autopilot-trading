@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "MS",
-    "researched_at": "2026-08-19T11:51:02+00:00",
+    "researched_at": "2026-08-26T11:56:46+00:00",
     "name": "Morgan Stanley",
     "industry": "Financial Services",
-    "market_cap": 341676.7056355495,
+    "market_cap": 340451.6563335791,
     "metrics": {
       "P/E": 17.09,
       "net margin %": 15.65,
@@ -13,9 +13,9 @@
       "current ratio": 0.35
     },
     "news": [
-      "Bitcoin Custody for Institutional Clients Is Coming to Citi Later This Year",
-      "'General Atlantic Is Working With JPMorgan to Lead Fresh IPO Push' - Bloomberg",
-      "Viking Global Bets Big On SpaceX While Ditching CoreWeave, Alphabet in Q2"
+      "Why Morgan Stanley Stock Rocked the Market Today",
+      "Morgan Stanley Doubles Down on Gold After Breakout",
+      "DraftKings wraps upsized $700M TLB for convertible notes repurchase"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
