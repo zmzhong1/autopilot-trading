@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "NVDA",
-    "researched_at": "2026-08-20T11:53:39+00:00",
+    "researched_at": "2026-08-27T21:05:11+00:00",
     "name": "NVIDIA Corp",
     "industry": "Semiconductors",
-    "market_cap": 5264952.131616177,
+    "market_cap": 5455406.095288959,
     "metrics": {
       "P/E": 33.98,
       "net margin %": 62.97,
@@ -13,15 +13,14 @@
       "current ratio": 3.44
     },
     "news": [
-      "Investing In The Building Blocks Of The Humanoid Revolution - Part 2 (The Brain)",
-      "Which dow jones stocks are moving on Wednesday?",
+      "Thursday's session: top gainers and losers in the dow jones index",
+      "What's going on in today's session: S&P500 movers",
       "What's going on in today's session: S&P500 most active stocks"
     ],
     "analyst_upgrade": false,
-    "earnings_beat": false
+    "earnings_beat": true
   },
   "flags": [
-    "analyst trend not upgrading vs buy-rated thesis",
-    "recent earnings did not beat, despite high H-0"
+    "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "NOK",
-    "researched_at": "2026-08-20T11:53:35+00:00",
+    "researched_at": "2026-08-27T21:05:07+00:00",
     "name": "Nokia Oyj",
     "industry": "Communications",
-    "market_cap": 49675.473896,
+    "market_cap": 49240.120731,
     "metrics": {
       "P/E": 71.23,
       "net margin %": 3.48,
@@ -13,9 +13,9 @@
       "current ratio": 1.5
     },
     "news": [
-      "Which stocks are most active on Wednesday?",
-      "These stocks are the most active in today's session",
-      "Nokia Plans Near-Total China Exit As Domestic Rivals Gain Ground: Report"
+      "Nvidia is looking more like the central bank of AI: Chart of the Day",
+      "10 Information Technology Stocks With Whale Alerts In Today\u2019s Session",
+      "European Equities Traded in the US as American Depositary Receipts Track Slightly Lower in Monday Trading"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

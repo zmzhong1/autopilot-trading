@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "NEM",
-    "researched_at": "2026-08-20T11:53:31+00:00",
+    "researched_at": "2026-08-27T21:05:03+00:00",
     "name": "Newmont Corporation",
     "industry": "Metals & Mining",
-    "market_cap": 131795.83178828278,
+    "market_cap": 140573.09102539855,
     "metrics": {
       "P/E": 13.96,
       "net margin %": 33.36,
@@ -13,9 +13,9 @@
       "current ratio": 2.55
     },
     "news": [
-      "Barrick Mining: Major Progress Toward A Re-Rating",
-      "Why Newmont Mining Rallied Today",
-      "What's going on in today's session: S&P500 movers"
+      "Newmont: The Market Has Finally Caught Up (Rating Downgrade)",
+      "Newmont: Investors Punished Barrick For This Deal",
+      "Newmont (NYSE:NEM) Fits the Growth-at-a-Reasonable-Price Playbook"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "NET",
-    "researched_at": "2026-08-20T11:53:33+00:00",
+    "researched_at": "2026-08-27T21:05:05+00:00",
     "name": "Cloudflare Inc",
     "industry": "Technology",
-    "market_cap": 103932.54199143083,
+    "market_cap": 106920.06134425515,
     "metrics": {
       "net margin %": -8.21,
       "rev growth %": 33.53,
@@ -12,9 +12,9 @@
       "current ratio": 1.82
     },
     "news": [
-      "$1000 Invested In Cloudflare 5 Years Ago Would Be Worth This Much Today",
-      "5 Cybersecurity Stocks with More Upside Ahead",
-      "Cathie Wood's ARK Is Quietly Building an AI Picks-and-Shovels Portfolio"
+      "Shares of cybersecurity-related companies are trading higher amid sympathy with Crowdstrike and Okta after those companies reported better-than-expected financial results and raised their respective guidance metrics above estimates.",
+      "CrowdStrike Posts Best Quarter Ever, but Cathie Wood's Ark Sells Shares Amid Cloudflare, Cerebras Buys",
+      "Q2 Earnings Season Confirmed The AI Infrastructure Thesis, And Revealed What May Come Next"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

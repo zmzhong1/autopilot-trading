@@ -1,20 +1,21 @@
 {
   "snapshot": {
     "ticker": "NTES",
-    "researched_at": "2026-08-20T11:53:37+00:00",
+    "researched_at": "2026-08-27T21:05:09+00:00",
     "name": "NetEase Inc",
     "industry": "Media",
-    "market_cap": 78659.07284871131,
+    "market_cap": 79405.09654371378,
     "metrics": {
-      "P/E": 15.55,
-      "net margin %": 29.84,
-      "rev growth %": 6.63,
-      "ROE %": 21.64,
-      "current ratio": 3.28
+      "P/E": 16.71,
+      "net margin %": 27.88,
+      "rev growth %": 6.31,
+      "ROE %": 20.06,
+      "current ratio": 3.45
     },
     "news": [
-      "Z.ai Aims to Catch Anthropic, OpenAI in Coding With New AI Model",
-      "NetEase (NASDAQ:NTES) Shows Quality Investing Strength With Strong Fundamentals and Cash Generation"
+      "NetEase: An Interesting Idea For Long-Term Dividend Growth Investors",
+      "MARA Holdings, Coinbase Global, Ternium And Other Big Stocks Moving Higher On Friday",
+      "NetEase, Inc. 2026 Q2 - Results - Earnings Call Presentation"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
