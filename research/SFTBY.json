@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SFTBY",
-    "researched_at": "2026-08-21T11:52:53+00:00",
+    "researched_at": "2026-08-28T21:28:28+00:00",
     "name": "SoftBank Group Corp",
     "industry": "Telecommunication",
-    "market_cap": 29838352.470215,
+    "market_cap": 29684222.851562,
     "metrics": {
       "P/E": 6.3,
       "net margin %": 64.14,
@@ -13,9 +13,9 @@
       "current ratio": 0.8
     },
     "news": [
-      "Broadcom\u2019s AI Competition Fears Look Overblown: Analyst",
-      "Intel Eyes an Opening in Taiwan Semiconductor\u2019s AI Packaging Fortress",
-      "Elon Musk Warns Nvidia-Backed $105 Billion Ohio Data Center for OpenAI Will Take \u2018Much Longer\u2019 to Come Online Than Expected"
+      "Bloomberg Reported SoftBank Seeks Another $10B Loan For OpenAI Stake Funding",
+      "Tesla's Optimus Rival Could Be Worth $6 Billion As SoftBank Circles OpenAI-Backed 1X",
+      "Broadcom Expands Collaboration With Google Cloud, Cloud Network Insights  Now Enabled By Broadcom's AppNeta"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

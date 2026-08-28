@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SNOW",
-    "researched_at": "2026-08-21T11:52:57+00:00",
+    "researched_at": "2026-08-28T21:28:32+00:00",
     "name": "Snowflake Inc",
     "industry": "Technology",
-    "market_cap": 111359.11930655895,
+    "market_cap": 115559.90289191493,
     "metrics": {
       "net margin %": -23.79,
       "rev growth %": 31.07,
@@ -12,9 +12,9 @@
       "current ratio": 1.05
     },
     "news": [
-      "Truist Securities Maintains Buy on Snowflake, Raises Price Target to $375",
-      "Software's AI Panic Is Fading, and These 10 Stocks Are the First to Benefit",
-      "TD Cowen Maintains Buy on Snowflake, Raises Price Target to $370"
+      "AI Stocks Enter a High-Stakes Earnings Gauntlet",
+      "Software Is An AI Trade Now",
+      "Snowflake Stock Rises as Salesforce's Beat Lifts Enterprise Software"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,21 +1,17 @@
 {
   "snapshot": {
     "ticker": "SONY",
-    "researched_at": "2026-08-21T11:52:59+00:00",
+    "researched_at": "2026-08-28T21:28:33+00:00",
     "name": "Sony Group Corp",
     "industry": "Consumer products",
-    "market_cap": 21859293.787598,
+    "market_cap": 22931815.385742,
     "metrics": {
       "net margin %": -1.75,
       "rev growth %": 6.54,
       "ROE %": -2.74,
       "current ratio": 1.25
     },
-    "news": [
-      "Tracking Mario Gabelli's Gabelli Funds 13F Portfolio - Q2 2026 Update",
-      "10 Consumer Discretionary Stocks Whale Activity In Today\u2019s Session",
-      "Netflix Co-Founder Reed Hastings Says Companies Aren\u2019t Families: \u2018You Would Never Lay Off Two of Your Kids\u2019"
-    ],
+    "news": [],
     "analyst_upgrade": false,
     "earnings_beat": false
   },

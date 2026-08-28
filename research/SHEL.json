@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SHEL",
-    "researched_at": "2026-08-21T11:52:55+00:00",
+    "researched_at": "2026-08-28T21:28:30+00:00",
     "name": "Shell PLC",
     "industry": "Energy",
-    "market_cap": 188905.373233,
+    "market_cap": 182510.455361,
     "metrics": {
       "P/E": 9.55,
       "net margin %": 8.76,
@@ -13,9 +13,9 @@
       "current ratio": 1.43
     },
     "news": [
-      "Shell: ARC Acquisition Shows The Flexibility When Responding To The Middle East Situation",
-      "'Exxon Warns Kazakhstan\u2019s Top Oil Field to Peak Within Years' - Bloomberg",
-      "Stock Market Futures Mixed: Dow Jones Gains, Nasdaq 100 Drops as Trump Says 'No Talks' Are Happening With Iran\u2014 Keysight Technologies, Mercury Systems, SK Hynix in Focus (UPDATED)"
+      "'Shell-Unimot Talks on Russia-Linked Refinery Said to Have Ended' - Bloomberg",
+      "Zaza Energy Says Hess Agrees to Early Release of Escrow, Sees Net Cash Proceeds $11.5M",
+      "LNG Shipping Stocks: UPI Reached New All-Time Highs"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
