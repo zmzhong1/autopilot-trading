@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "DELL",
-    "researched_at": "2026-08-24T11:55:06+00:00",
+    "researched_at": "2026-08-31T18:05:08+00:00",
     "name": "Dell Technologies Inc",
     "industry": "Technology",
-    "market_cap": 286592.0826378376,
+    "market_cap": 295317.95238667243,
     "metrics": {
       "P/E": 38.1,
       "net margin %": 6.28,
@@ -13,9 +13,9 @@
       "current ratio": 0.95
     },
     "news": [
-      "Top Wall Street analysts believe in the growth potential of these 3 stocks",
-      "Our Top 10 High Growth Dividend Stocks - August 2026",
-      "\u2018The Odyssey\u2019 Isn\u2019t a One-Off for IMAX, Analyst Says. Plus, Dell and 3 More Stocks."
+      "Stock Market Today: S&P 500, Nasdaq 100, Dow Jones Futures Fall as US-Iran Tensions Flare Up\u2014WMT, RZLV, FNGR in Focus (UPDATED)",
+      "Snowflake To Rally More Than 23%? Here Are 10 Top Analyst Forecasts For Monday",
+      "Hewlett Packard Enterprise Q3: Margins Matter More Than AI Orders"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

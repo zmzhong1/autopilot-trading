@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "CAT",
-    "researched_at": "2026-08-24T11:54:57+00:00",
+    "researched_at": "2026-08-31T18:04:59+00:00",
     "name": "Caterpillar Inc",
     "industry": "Machinery",
-    "market_cap": 380564.8281684968,
+    "market_cap": 368751.1772823122,
     "metrics": {
       "P/E": 36.3,
       "net margin %": 14.51,
@@ -13,9 +13,9 @@
       "current ratio": 1.37
     },
     "news": [
-      "Bill Gates makes $180 million bet on backbone of America's economy",
-      "Our Top 10 High Growth Dividend Stocks - August 2026",
-      "What Separates DE Stock From Its Peers Right Now"
+      "These dow jones stocks are moving in today's session",
+      "Two Covered Call ETFs Built To Weather The Sell-Off",
+      "What's going on in today's session: dow jones movers"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

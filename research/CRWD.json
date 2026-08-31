@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "CRWD",
-    "researched_at": "2026-08-24T11:55:04+00:00",
+    "researched_at": "2026-08-31T18:05:05+00:00",
     "name": "CrowdStrike Holdings Inc",
     "industry": "Technology",
-    "market_cap": 195454.8645259848,
+    "market_cap": 221720.87287557687,
     "metrics": {
       "net margin %": -0.48,
       "rev growth %": 23.17,
@@ -12,12 +12,14 @@
       "current ratio": 1.53
     },
     "news": [
-      "Dow Jones Futures Due With Nvidia Earnings, Tariffs, Warsh In Focus",
-      "Top Wall Street analysts believe in the growth potential of these 3 stocks",
-      "Wall Street Week Ahead"
+      "Uncover the latest developments among S&P500 stocks in today's session.",
+      "Software Is Back: 5 Stocks To Buy",
+      "Wall Street Lunch: BoE Chief Warns G20 Of AI Risks To Global Financial Stability"
     ],
     "analyst_upgrade": true,
-    "earnings_beat": false
+    "earnings_beat": true
   },
-  "flags": []
+  "flags": [
+    "thesis stale (review due 2026-08-27)"
+  ]
 }
