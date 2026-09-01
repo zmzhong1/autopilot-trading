@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "FCX",
-    "researched_at": "2026-08-25T11:55:05+00:00",
+    "researched_at": "2026-09-01T15:30:54+00:00",
     "name": "Freeport-McMoRan Inc",
     "industry": "Metals & Mining",
-    "market_cap": 111722.16341810592,
+    "market_cap": 105848.84370042701,
     "metrics": {
       "P/E": 33.3,
       "net margin %": 11.38,
@@ -13,9 +13,9 @@
       "current ratio": 2.07
     },
     "news": [
-      "The Economically Sensitive Materials Sector Is Breaking Out",
-      "Dow Jones Futures Due With Nvidia Earnings, Tariffs, Warsh In Focus",
-      "Palantir, Freeport Clear Buy Points, Lead Five Stocks To Watch"
+      "Freeport-McMoRan: The Trailing Multiple Is Describing An Accident",
+      "Can Southern Copper's Investment Plan Fuel Long-Term Output Growth?",
+      "Freeport-McMoRan (FCX) Suffers a Larger Drop Than the General Market: Key Insights"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

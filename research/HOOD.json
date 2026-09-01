@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "HOOD",
-    "researched_at": "2026-08-25T11:55:13+00:00",
+    "researched_at": "2026-09-01T15:31:02+00:00",
     "name": "Robinhood Markets Inc",
     "industry": "Financial Services",
-    "market_cap": 93162.90431899289,
+    "market_cap": 95401.61936020828,
     "metrics": {
       "P/E": 43.12,
       "net margin %": 42.01,
@@ -13,14 +13,15 @@
       "current ratio": 1.22
     },
     "news": [
-      "The Bitcoin, Ethereum, XRP Record Week Was Just 'The Beginning,' Prominent Analyst Says",
-      "Dow Jones Futures Due With Nvidia Earnings, Tariffs, Warsh In Focus",
-      "Donald Trump Sold MicroStrategy and Bought Two Other Crypto Stocks"
+      "Robinhood Stock Upgraded On Growth Outlook, Shares Push Near Entry",
+      "Robinhood's Tokenization Push: Can Chain and Stock Tokens Fuel Growth?",
+      "Arbitrum Jumps 26% While Bitcoin and Ethereum Fall \u2014 Robinhood Is the Reason"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
   "flags": [
+    "thesis stale (review due 2026-08-31)",
     "recent earnings did not beat, despite high H-0"
   ]
 }

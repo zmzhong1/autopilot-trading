@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "GS",
-    "researched_at": "2026-08-25T11:55:09+00:00",
+    "researched_at": "2026-09-01T15:30:58+00:00",
     "name": "Goldman Sachs Group Inc",
     "industry": "Financial Services",
-    "market_cap": 301735.1247596664,
+    "market_cap": 294950.82925078657,
     "metrics": {
       "P/E": 14.55,
       "net margin %": 15.53,
@@ -13,9 +13,9 @@
       "current ratio": 0.32
     },
     "news": [
-      "Exploring the top movers within the dow jones index during today's session.",
-      "Explore the top gainers and losers within the dow jones index in today's session.",
-      "Goldman Sachs partner warns of 'huge danger' in letting AI replace bankers' reasoning skills"
+      "Silver Miners ETF Outperforms Gold Fund, but Carries Double Risk",
+      "5 Top Goldman Sachs Stock Picks Pay Big Dividends (One Yields Over 6%)",
+      "SharkNinja to Participate in the Goldman Sachs Global Consumer and Retail Conference"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

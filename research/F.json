@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "F",
-    "researched_at": "2026-08-25T11:55:03+00:00",
+    "researched_at": "2026-09-01T15:30:51+00:00",
     "name": "Ford Motor Co",
     "industry": "Automobiles",
-    "market_cap": 55549.265088322,
+    "market_cap": 55609.08015344082,
     "metrics": {
       "net margin %": -3.93,
       "rev growth %": 1.47,
@@ -12,9 +12,9 @@
       "current ratio": 1.09
     },
     "news": [
-      "Chips Take the Punch Ahead of Nvidia as Trump's Canada Tariffs Rattle Detroit",
-      "Geely's Remarkable Founder Steps Down As Chinese Automaker Raises Export Target",
-      "What's going on in today's session: S&P500 most active stocks"
+      "Why Toyota and Honda would get hit hardest by Trump's Canadian auto tariffs",
+      "Tesla Stock Crushes Rivian, Chinese EV Rivals In August \u2014 Wall Street Sees More Upside Before Cybercab Event",
+      "Stay informed about the most active stocks in the S&P500 index on Monday's session."
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

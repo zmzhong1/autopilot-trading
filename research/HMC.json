@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "HMC",
-    "researched_at": "2026-08-25T11:55:11+00:00",
+    "researched_at": "2026-09-01T15:31:00+00:00",
     "name": "Honda Motor Co Ltd",
     "industry": "Automobiles",
-    "market_cap": 6823642.803467,
+    "market_cap": 6656263.088379,
     "metrics": {
       "net margin %": -1.94,
       "rev growth %": 0.5,
@@ -12,8 +12,9 @@
       "current ratio": 1.28
     },
     "news": [
-      "'Nissan, Honda team with self-driving startups to chase US and China rivals' - Nikkei",
-      "'Hyundai to increase U.S. production at new Georgia plant, CEO tells CNBC'-CNBC"
+      "Toyota Motor: Growth, High Profitability, 9.5x P/E",
+      "Potential U.S. Tariff Piles More Risk On Honda Motor's Post-BEV Earnings Rebound",
+      "AI Threat To Global Financial System"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
