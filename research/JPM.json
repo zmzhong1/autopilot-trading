@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "JPM",
-    "researched_at": "2026-08-26T11:56:39+00:00",
+    "researched_at": "2026-09-02T15:13:10+00:00",
     "name": "JPMorgan Chase & Co",
     "industry": "Banking",
-    "market_cap": 948148.5029335666,
+    "market_cap": 943523.1907209213,
     "metrics": {
       "P/E": 14.8,
       "net margin %": 33.26,
@@ -12,12 +12,14 @@
       "ROE %": 17.81
     },
     "news": [
-      "Bank of Montreal Q3: Solid Quarter, But 'Just' A Hold",
-      "Elon Musk's Tesla Hikes Cybertruck Prices by More Than 7% Despite Sluggish Sales",
-      "SEC reportedly subpoenas Wall Street banks over AI hedge fund Situational Awareness's near collapse"
+      "Why Is Nvidia Willing to Pay $14 Billion for Hugging Face?",
+      "Zebra Technologies to Present at Citi's 2026 Global Technology, Media & Telecom Conference",
+      "Are Investors Undervaluing Industrial & Commercial Bank of China (IDCBY) Right Now?"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }

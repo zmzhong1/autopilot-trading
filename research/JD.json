@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "JD",
-    "researched_at": "2026-08-26T11:56:37+00:00",
+    "researched_at": "2026-09-02T15:13:05+00:00",
     "name": "JD.com Inc",
     "industry": "Retail",
-    "market_cap": 273038.900177,
+    "market_cap": 270388.022431,
     "metrics": {
       "P/E": 18.53,
       "net margin %": 1.05,
@@ -13,9 +13,9 @@
       "current ratio": 1.18
     },
     "news": [
-      "Alibaba: The Market Got This One Wrong",
-      "Michael Burry Planned to Move Back Into Alibaba After a Few Months. Now He Says BABA Stock Would Need to Fall 50% First (UPDATED)",
-      "BABA Stock Falls Nearly 4% Amid $10 Billion HK Placement: Analyst Nicholas Mugalli Says Market Reaction is 'Pure Relief' For Shortsellers"
+      "Everything I Learned from My Hot Chart Summer, and How My 21 Stocks Picks Have Performed.",
+      "China E-Commerce Stocks Sink While Baidu Climbs 4%: Alibaba Falls 4%, PDD Holdings Declines 3%",
+      "Why Michael Burry Is Doubling Down on JD.com Stock"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

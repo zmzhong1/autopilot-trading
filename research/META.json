@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "META",
-    "researched_at": "2026-08-26T11:56:42+00:00",
+    "researched_at": "2026-09-02T15:13:13+00:00",
     "name": "Meta Platforms Inc",
     "industry": "Media",
-    "market_cap": 1452205.9224064047,
+    "market_cap": 1473834.2679017195,
     "metrics": {
       "P/E": 22.26,
       "net margin %": 29.84,
@@ -13,15 +13,14 @@
       "current ratio": 2.23
     },
     "news": [
-      "Big Tech Off-Balance Sheet Concerns",
-      "The Deep Unknowns Of AI",
-      "Broadcom: Moving Big Into Vendor Financing"
+      "Is Interactive Brokers Quietly Becoming an AI Stock?",
+      "Warren Buffett's Successor, Greg Abel, Has Over 50% of Berkshire Hathaway's Portfolio Invested in These 3 Top Stocks",
+      "Why Is Nvidia Willing to Pay $14 Billion for Hugging Face?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-08-24)",
     "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

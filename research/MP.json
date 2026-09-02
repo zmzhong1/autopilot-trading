@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "MP",
-    "researched_at": "2026-08-26T11:56:44+00:00",
+    "researched_at": "2026-09-02T15:13:20+00:00",
     "name": "MP Materials Corp",
     "industry": "Metals & Mining",
-    "market_cap": 10716.372510181993,
+    "market_cap": 9571.17960904694,
     "metrics": {
       "net margin %": -20.48,
       "rev growth %": 60.93,
@@ -12,11 +12,11 @@
       "current ratio": 7.18
     },
     "news": [
-      "Why Trump's $1.55 Billion Rare Earth Move Matters For Lockheed Martin, RTX And Northrop Grumman",
-      "Rare Earth Rally Splits as Profitable Producers Outpace Speculative Pure Plays",
-      "MP Materials vs. The Metals Company: Which Rare-Earth Bet Actually Pays Off First?"
+      "Abcourt Closes US$10,000,000 Increase to Debenture Financing With Glencore",
+      "MBK Partners-Young Poong Consortium Urges Korea Zinc Shareholders to Strengthen Independent Board and Audit Committee Oversight Ahead of September 9th Meeting",
+      "Bond yields still high as investors weigh rate hike risk: AlphaCheck"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": []

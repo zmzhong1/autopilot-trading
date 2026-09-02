@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "MU",
-    "researched_at": "2026-08-26T11:56:50+00:00",
+    "researched_at": "2026-09-02T15:13:32+00:00",
     "name": "Micron Technology Inc",
     "industry": "Semiconductors",
-    "market_cap": 1053689.8406879967,
+    "market_cap": 1054220.6424294636,
     "metrics": {
       "P/E": 21.53,
       "net margin %": 55.91,
@@ -13,14 +13,12 @@
       "current ratio": 3.42
     },
     "news": [
-      "Tracking David Tepper's Appaloosa Management Portfolio - Q2 2026 Update",
-      "How To Retire: Stop Looking For Magic",
-      "Don't Sleep On Software"
+      "4 Stocks to Buy Now to Ride the AI Data Center Spending Boom",
+      "Dell Called Out the Memory Chip Shortage. Micron Stock Shrugs.",
+      "Taiwanese firms pledge additional $20bn US investment in chip industry"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "analyst trend not upgrading vs buy-rated thesis"
-  ]
+  "flags": []
 }

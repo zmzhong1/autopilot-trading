@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "MS",
-    "researched_at": "2026-08-26T11:56:46+00:00",
+    "researched_at": "2026-09-02T15:13:23+00:00",
     "name": "Morgan Stanley",
     "industry": "Financial Services",
-    "market_cap": 340451.6563335791,
+    "market_cap": 331452.3199931266,
     "metrics": {
       "P/E": 17.09,
       "net margin %": 15.65,
@@ -13,12 +13,14 @@
       "current ratio": 0.35
     },
     "news": [
-      "Why Morgan Stanley Stock Rocked the Market Today",
-      "Morgan Stanley Doubles Down on Gold After Breakout",
-      "DraftKings wraps upsized $700M TLB for convertible notes repurchase"
+      "Zoetis to Participate in the Morgan Stanley 24th Annual Global Healthcare Conference",
+      "Why Morgan Stanley (MS) Dipped More Than Broader Market Today",
+      "E*TRADE from Morgan Stanley Releases Monthly Sector Rotation Study"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }

@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "MSFT",
-    "researched_at": "2026-08-26T11:56:48+00:00",
+    "researched_at": "2026-09-02T15:13:29+00:00",
     "name": "Microsoft Corp",
     "industry": "Technology",
-    "market_cap": 3651214.915334995,
+    "market_cap": 3720346.8240630804,
     "metrics": {
       "P/E": 27.66,
       "net margin %": 40.31,
@@ -13,12 +13,14 @@
       "current ratio": 1.23
     },
     "news": [
-      "Big Tech Off-Balance Sheet Concerns",
-      "Tracking David Tepper's Appaloosa Management Portfolio - Q2 2026 Update",
-      "These dow jones stocks are moving in today's session"
+      "The Future of Website Building with Wix.com (WIX)",
+      "GitLab Stock Soars After Earnings. It\u2019s Still Not a Buy, Analyst Says.",
+      "NetApp (NTAP) May Find a Bottom Soon, Here's Why You Should Buy the Stock Now"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }
