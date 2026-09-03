@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "PATH",
-    "researched_at": "2026-08-27T21:05:14+00:00",
+    "researched_at": "2026-09-03T15:07:50+00:00",
     "name": "UiPath Inc",
     "industry": "Technology",
-    "market_cap": 9406.478993629175,
+    "market_cap": 9683.673244167318,
     "metrics": {
       "P/E": 26.4,
       "net margin %": 19.58,
@@ -13,9 +13,9 @@
       "current ratio": 2.31
     },
     "news": [
-      "Three Earnings Reports Put the Automation Rally to the Test",
-      "UiPath: Why I'm Bullish Ahead Of Q2 Earnings (Preview)",
-      "Is UiPath's Expanding ARR Strengthening Its Long-Term Growth Story?"
+      "NetApp (NTAP) Surpasses Q1 Earnings and Revenue Estimates",
+      "Ciena Could Swing By $6.22 Billion After Earnings",
+      "Samsara or UiPath: Which Stock Has a Clear Path to Profits?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "NET",
-    "researched_at": "2026-08-27T21:05:05+00:00",
+    "researched_at": "2026-09-03T15:07:35+00:00",
     "name": "Cloudflare Inc",
     "industry": "Technology",
-    "market_cap": 106920.06134425515,
+    "market_cap": 99020.42383739722,
     "metrics": {
       "net margin %": -8.21,
       "rev growth %": 33.53,
@@ -12,12 +12,14 @@
       "current ratio": 1.82
     },
     "news": [
-      "Shares of cybersecurity-related companies are trading higher amid sympathy with Crowdstrike and Okta after those companies reported better-than-expected financial results and raised their respective guidance metrics above estimates.",
-      "CrowdStrike Posts Best Quarter Ever, but Cathie Wood's Ark Sells Shares Amid Cloudflare, Cerebras Buys",
-      "Q2 Earnings Season Confirmed The AI Infrastructure Thesis, And Revealed What May Come Next"
+      "AGIX Vs. CHAT: I'm Buying The Loser",
+      "The Memory Wall And Next Leg Of The AI Story: The Connection Bottleneck",
+      "Citizens Reiterates Market Outperform on Cloudflare, Maintains $394 Price Target"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }

@@ -1,23 +1,21 @@
 {
   "snapshot": {
     "ticker": "NTES",
-    "researched_at": "2026-08-27T21:05:09+00:00",
+    "researched_at": "2026-09-03T15:07:42+00:00",
     "name": "NetEase Inc",
     "industry": "Media",
-    "market_cap": 79405.09654371378,
+    "market_cap": 75835.7764229068,
     "metrics": {
-      "P/E": 16.71,
+      "P/E": 15.68,
       "net margin %": 27.88,
       "rev growth %": 6.31,
       "ROE %": 20.06,
       "current ratio": 3.45
     },
     "news": [
-      "NetEase: An Interesting Idea For Long-Term Dividend Growth Investors",
-      "MARA Holdings, Coinbase Global, Ternium And Other Big Stocks Moving Higher On Friday",
-      "NetEase, Inc. 2026 Q2 - Results - Earnings Call Presentation"
+      "NetEase (NASDAQ:NTES) Qualifies as a Peter Lynch Growth-at-a-Reasonable-Price Stock"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
   "flags": [

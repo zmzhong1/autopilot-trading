@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "NOK",
-    "researched_at": "2026-08-27T21:05:07+00:00",
+    "researched_at": "2026-09-03T15:07:38+00:00",
     "name": "Nokia Oyj",
     "industry": "Communications",
-    "market_cap": 49240.120731,
+    "market_cap": 47487.524561,
     "metrics": {
       "P/E": 71.23,
       "net margin %": 3.48,
@@ -13,12 +13,13 @@
       "current ratio": 1.5
     },
     "news": [
-      "Nvidia is looking more like the central bank of AI: Chart of the Day",
       "10 Information Technology Stocks With Whale Alerts In Today\u2019s Session",
-      "European Equities Traded in the US as American Depositary Receipts Track Slightly Lower in Monday Trading"
+      "Curious about the most active stocks on Tuesday?"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }

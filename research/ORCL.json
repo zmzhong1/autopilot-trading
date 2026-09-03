@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "ORCL",
-    "researched_at": "2026-08-27T21:05:13+00:00",
+    "researched_at": "2026-09-03T15:07:48+00:00",
     "name": "Oracle Corp",
     "industry": "Technology",
-    "market_cap": 425426.2458025208,
+    "market_cap": 427346.66973636387,
     "metrics": {
-      "P/E": 26.45,
+      "P/E": 24.57,
       "net margin %": 25.37,
       "rev growth %": 17.35,
       "ROE %": 50.38,
       "current ratio": 1.11
     },
     "news": [
-      "Nvidia's Unusual Move Answers AI Trade\u2019s Key Question; $40 Trillion US Debt Bomb Ticks; Key Fed Speech Awaited",
-      "ETJ: Very High Tech Exposure Could Be A Risk",
-      "Broadcom Expands Collaboration With Google Cloud, Cloud Network Insights  Now Enabled By Broadcom's AppNeta"
+      "HPE and Oracle expand AI data center networking deal",
+      "Where Will Oracle Stock Be in 5 Years?",
+      "1 Cash-Heavy Stock for Long-Term Investors and 2 Facing Headwinds"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
