@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "STLD",
-    "researched_at": "2026-08-28T21:28:35+00:00",
+    "researched_at": "2026-09-04T15:03:16+00:00",
     "name": "Steel Dynamics Inc",
     "industry": "Metals & Mining",
-    "market_cap": 33813.96352538059,
+    "market_cap": 35263.010998452984,
     "metrics": {
-      "P/E": 23.58,
+      "P/E": 22.46,
       "net margin %": 7.83,
       "rev growth %": 19.77,
       "ROE %": 17.6,
       "current ratio": 3.18
     },
     "news": [
-      "Cleveland-Cliffs: A Levered Call Option On Steel Prices",
-      "Chips Take the Punch Ahead of Nvidia as Trump's Canada Tariffs Rattle Detroit",
-      "Schumer, Pritzker and Others Slam Trump\u2019s Canada Tariffs: \u2018Economic Warfare\u2019 Could Raise Costs for Americans"
+      "Stay informed with the top movers within the S&P500 index on Wednesday.",
+      "Ferroglobe Q4 Adj. EPS $(0.06) Misses $(0.05) Estimate, Sales $329.382M Beat $293.600M Estimate",
+      "Steel Dynamics (NASDAQ:STLD) Combines Dividend Quality with Sustainable Growth"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }

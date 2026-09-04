@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "SHEL",
-    "researched_at": "2026-08-28T21:28:30+00:00",
+    "researched_at": "2026-09-04T15:03:09+00:00",
     "name": "Shell PLC",
     "industry": "Energy",
-    "market_cap": 182510.455361,
+    "market_cap": 189641.500807,
     "metrics": {
-      "P/E": 9.55,
+      "P/E": 9.85,
       "net margin %": 8.76,
       "rev growth %": 9.04,
       "ROE %": 14.74,
       "current ratio": 1.43
     },
     "news": [
-      "'Shell-Unimot Talks on Russia-Linked Refinery Said to Have Ended' - Bloomberg",
-      "Zaza Energy Says Hess Agrees to Early Release of Escrow, Sees Net Cash Proceeds $11.5M",
-      "LNG Shipping Stocks: UPI Reached New All-Time Highs"
+      "Piper Sandler Maintains Neutral on Shell, Raises Price Target to $100",
+      "Shell (NYSE:SHEL) Passes Mark Minervini\u2019s Trend Template With Accelerating Fundamentals",
+      "BP Agrees To Sell 50% Stake In Tupinamba Exploration Block To Shell Offshore Brazil; Financial Terms Undisclosed"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,23 +1,23 @@
 {
   "snapshot": {
     "ticker": "SNOW",
-    "researched_at": "2026-08-28T21:28:32+00:00",
+    "researched_at": "2026-09-04T15:03:11+00:00",
     "name": "Snowflake Inc",
     "industry": "Technology",
-    "market_cap": 115559.90289191493,
+    "market_cap": 123552.50269582984,
     "metrics": {
-      "net margin %": -23.79,
-      "rev growth %": 31.07,
-      "ROE %": -57.21,
-      "current ratio": 1.05
+      "net margin %": -20.07,
+      "rev growth %": 32.04,
+      "ROE %": -53.56,
+      "current ratio": 0.94
     },
     "news": [
-      "AI Stocks Enter a High-Stakes Earnings Gauntlet",
-      "Software Is An AI Trade Now",
-      "Snowflake Stock Rises as Salesforce's Beat Lifts Enterprise Software"
+      "Waller Cracks the Door to a September Pause and the Tape Rewards the AI Software Layer",
+      "Momentum, Fear & The Case For Buying The Dip",
+      "JP Morgan Maintains Overweight on Snowflake, Raises Price Target to $426"
     ],
     "analyst_upgrade": false,
-    "earnings_beat": false
+    "earnings_beat": true
   },
   "flags": [
     "analyst trend not upgrading vs buy-rated thesis"

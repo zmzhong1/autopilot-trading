@@ -1,23 +1,23 @@
 {
   "snapshot": {
     "ticker": "PDD",
-    "researched_at": "2026-08-28T21:28:25+00:00",
+    "researched_at": "2026-09-04T15:03:01+00:00",
     "name": "PDD Holdings Inc",
     "industry": "Retail",
-    "market_cap": 120547.449842,
+    "market_cap": 117074.358999,
     "metrics": {
-      "P/E": 8.47,
-      "net margin %": 21.62,
-      "rev growth %": 9.86,
-      "ROE %": 24.06,
-      "current ratio": 2.54
+      "P/E": 8.54,
+      "net margin %": 20.43,
+      "rev growth %": 10.05,
+      "ROE %": 21.98,
+      "current ratio": 2.62
     },
     "news": [
-      "PDD Holdings: Core Ad Deceleration And 1P Pivot Cloud Risk-Reward (Rating Downgrade)",
-      "Tracking David Tepper's Appaloosa Management Portfolio - Q2 2026 Update",
-      "Benchmark Maintains Buy on PDD Holdings, Lowers Price Target to $114"
+      "How the Death of an $800 Tariff Loophole Erased 70% of Shein\u2019s Value",
+      "Shein Stock Waited Years to IPO Only to Flop. Blame Trump.",
+      "Shein\u2019s $1.74 Billion Hong Kong IPO Gets Off to a Rough Start as Shares Plunge 10% \u2014 Analyst Doubts Near-Term US Listing"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
   "flags": [

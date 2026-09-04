@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "PLTR",
-    "researched_at": "2026-08-28T21:28:27+00:00",
+    "researched_at": "2026-09-04T15:03:04+00:00",
     "name": "Palantir Technologies Inc",
     "industry": "Technology",
-    "market_cap": 448873.74896048696,
+    "market_cap": 438636.60726672976,
     "metrics": {
-      "P/E": 143.22,
+      "P/E": 145.4,
       "net margin %": 49.0,
       "rev growth %": 78.92,
       "ROE %": 37.47,
       "current ratio": 7.23
     },
     "news": [
-      "Cathie Wood Trims AMD After a 120% Rally \u2014 Is the AI Trade Getting Too Crowded?",
-      "AI Stocks Enter a High-Stakes Earnings Gauntlet",
-      "Meta, Palantir, Paramount Skydance Hedge Trump Ties by Courting Democrats as Midterms Raise Prospect of House Flip: Report"
+      "Palantir Technologies Inc. (PLTR) Just Flashed Golden Cross Signal: Do You Buy?",
+      "A Palantir Director Just Sold Nearly $245,000 of Stock",
+      "Goldman Sachs Says the AI Trade Is Barely Started. The Stocks That Got You Here Will Not Take You There"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "thesis stale (review due 2026-08-24)"
-  ]
+  "flags": []
 }

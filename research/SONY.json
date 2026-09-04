@@ -1,17 +1,21 @@
 {
   "snapshot": {
     "ticker": "SONY",
-    "researched_at": "2026-08-28T21:28:33+00:00",
+    "researched_at": "2026-09-04T15:03:14+00:00",
     "name": "Sony Group Corp",
     "industry": "Consumer products",
-    "market_cap": 22931815.385742,
+    "market_cap": 23228092.070312,
     "metrics": {
       "net margin %": -1.75,
       "rev growth %": 6.54,
       "ROE %": -2.74,
       "current ratio": 1.25
     },
-    "news": [],
+    "news": [
+      "Take-Two Interactive Software: The Street Is Missing The Big Picture",
+      "Billionaire Investor Raises TSMC Stake 67% as Profit Soars 77%, Revenue Climbs 36%",
+      "AI Threat To Global Financial System"
+    ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
