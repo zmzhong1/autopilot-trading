@@ -1,10 +1,60 @@
 # HANDOFF.md — autopilot-trading
 
-System-state handoff for future Claude sessions and the owner. Written
-2026-07-03 at the close of the 8-K-analysis / rules-tuning session. The repo
+System-state handoff for future Claude sessions and the owner. The repo
 itself is the persistence layer — everything below is either committed here,
 committed in the sister StockNews repo, or listed as an explicit owner action.
 No work exists only in a chat session.
+
+## 2026-09-05 — LIVE (read this first)
+
+Owner direction this session: *"review the rules for autopilot, utilize what's
+really given from StockNews, and start running the autopilot of Robinhood."*
+Full review: `research/rules_review_2026-09-05.md`.
+
+- **Posture is now `enabled: true`, `mode: "live"`.** CI still runs with
+  `EXECUTOR_KILL=1` and only proposes. Real orders go out ONLY through
+  `live_bridge.py` from a Claude session holding the Robinhood Agentic MCP
+  (path 3 in `robinhood_mcp.py`), into account ••••2732 (`live_account_last4`).
+- **Weekly live routine** — `routines/live-execution.md`; intended schedule
+  Mondays 14:40 UTC (after the 14:00 CI proposal run), fresh session per fire,
+  Robinhood connector attached. **NOT YET CREATED** — the go-live session's
+  `create_trigger` call was denied by the session's permission classifier, so
+  the owner must create it (claude.ai/code/routines → New routine, paste the
+  prompt from `routines/live-execution.md`, attach the Robinhood connector,
+  cron `40 14 * * 1`). Record the trigger id here once it exists.
+- **No order was placed this session.** The bridge, config and routine prompt
+  are complete; the first real placement is the first routine fire (or an
+  owner-confirmed interactive run). The two standing 08-31 proposals (AAPL,
+  MSFT, $50 each) previewed clean on the MSFT leg via `review_equity_order`
+  (no broker alerts); the AAPL preview was classifier-blocked.
+- **New gates from StockNews** (executor.py `gate_on_context`): decision-journal
+  action block (`skip/wait/avoid/sell/trim/exit`), `sovereign-impaired` block,
+  and the T-Capex-5 regime gate (`ai-capex-high` → 4 feeds + medium cap).
+- **New live-only guardrails**: per-name 25% cap on the *Agentic* book, 14-day
+  re-buy cooldown, deploy cap from live equity, OTC ADRs blocked (no fractional
+  orders), snapshot freshness, deterministic `ref_id`.
+- **Committed live record**: `live_orders.json` (every real order + fill),
+  `robinhood_snapshot.json` (last live read). `proposals_log.json` rows carry
+  `live: {order_id, state}` and status `live_placed` → `live_filled`.
+- **Stops, fastest first**: env `EXECUTOR_KILL=1` · `enabled: false` · empty
+  `allow_list` · `block_list` · disable the routine.
+- Tests: 207 → (this branch) all green, stdlib `unittest`.
+
+### Next session checklist
+
+0. **Owner:** create the routine (above) and merge the integration PR. Until
+   both are done nothing is placed — the account stays $500 cash.
+1. Confirm the Monday routine fired and what it did (`live_orders.json`, the
+   routine's report, `git log main`). First possible fire: 2026-09-07 14:40 UTC.
+2. If the integration PR is still unmerged, the routine prompt checks out `main`
+   and stops when `live_bridge.py` is absent — merge it, or point the routine at
+   the branch.
+3. `regime_gate.active` tracks StockNews T-Capex-5; flip it if the owner rejects
+   the trigger (StockNews HANDOFF decision #2).
+
+---
+
+## 2026-07-03 handoff (historical, still accurate for the watchers)
 
 ## What this system is (30-second refresher)
 

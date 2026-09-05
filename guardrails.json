@@ -1,14 +1,32 @@
 {
-  "_README": "Risk guardrails for executor.py. NOTHING is executed unless `enabled` is true AND `mode` is 'paper' or 'live'. The shipped default (enabled=false, mode='propose') is propose-only: the executor vets signals against these limits and posts/logs PROPOSED orders, but never places a trade. Read README.md > 'Agentic execution (Robinhood MCP)' before flipping `enabled`.",
+  "_README": "Risk guardrails for executor.py (proposal engine) and live_bridge.py (the only code path that emits a real order). NOTHING is executed unless `enabled` is true AND `mode` is 'live' AND the bridge is driven from a session holding the Robinhood Agentic MCP; CI runs with EXECUTOR_KILL=1 and can never trade. LIVE since 2026-09-05 per owner direction. Fastest stops, in order: env EXECUTOR_KILL=1 · `enabled: false` · empty `allow_list` (fail-closed) · `block_list` per ticker. Read README.md > 'Agentic execution (Robinhood MCP)' and routines/live-execution.md.",
 
-  "enabled": false,
-  "_enabled_help": "Master kill switch. false = propose-only no matter what `mode` says. The env var EXECUTOR_KILL=1 force-disables execution even when this is true.",
+  "enabled": true,
+  "_enabled_help": "Master kill switch. false = propose-only no matter what `mode` says. The env var EXECUTOR_KILL=1 force-disables execution even when this is true (CI sets it, so the cron can never trade). Flipped true 2026-09-05 per owner direction ('start running the autopilot'); live placement happens ONLY through live_bridge.py from an MCP-attached Claude session — see routines/live-execution.md.",
 
-  "mode": "propose",
-  "_mode_help": "'propose' = vet + log proposals, never execute (safe default). 'paper' = simulate fills against a virtual cash balance, no real money. 'live' = place real orders via the Robinhood Agentic MCP (requires enabled=true AND robinhood_mcp wiring — see robinhood_mcp.py; access is still rolling out).",
+  "mode": "live",
+  "_mode_help": "'propose' = vet + log proposals, never execute (safe default). 'paper' = simulate fills against a virtual cash balance, no real money. 'live' = real orders in the Robinhood Agentic account. executor.py itself never places (it stays a proposal engine even in live mode); orders are placed by live_bridge.py driven from a Claude session holding the Robinhood MCP, which re-vets every proposal against the LIVE account (buying power, concentration, deploy cap, daily cap, cooldown, tradability) before anything is sent.",
 
   "account_value_usd": 500.0,
-  "_account_value_help": "Sizing basis in propose/paper mode; set to the actual Agentic-account funding ($500, confirmed via Robinhood MCP 2026-06-27). In live mode this is ignored and the real Agentic-account buying power is read from the MCP.",
+  "_account_value_help": "Sizing basis for the CI proposal run; set to the Agentic-account funding ($500, re-confirmed via Robinhood MCP 2026-09-05). live_bridge.py ignores this and sizes against robinhood_snapshot.json total_value (the real account) at placement time.",
+
+  "live_account_last4": "2732",
+  "_live_account_last4_help": "Last 4 digits of the ONLY account live_bridge.py may place into (the isolated Robinhood 'Agentic' cash account). The bridge refuses to emit orders when the snapshot was read from any other account.",
+
+  "snapshot_max_age_min": 120,
+  "_snapshot_max_age_help": "live_bridge.py refuses to emit orders when robinhood_snapshot.json is older than this (minutes) — a stale read of buying power / positions must never size a real order.",
+
+  "max_proposal_age_days": 7,
+  "_max_proposal_age_help": "Only proposals dated within this many days are placeable. The CI executor proposes every Monday; anything older has been superseded by a newer signal read or has gone quiet.",
+
+  "rebuy_cooldown_days": 14,
+  "_rebuy_cooldown_help": "Minimum days between two live buys of the same ticker. The same name is re-proposed every Monday while its signals stay lit (AAPL/MSFT: 4 consecutive weeks Aug 2026); without this the account would concentrate into 2 names within a month. 14d = at most two adds per name per month; the 25% per-name cap still binds on top.",
+
+  "require_fractional_tradability": true,
+  "_require_fractional_help": "Live orders are dollar-based market orders ($50 of a $300-$1,000 stock = a fractional share). Robinhood does not allow fractional/dollar orders on OTC ADRs (AJNMY, TOTDY, SFTBY, TCEHY per get_equity_tradability 2026-09-05), so those names are skipped at the bridge even if they ever reach confluence — until a limit-order path exists.",
+
+  "min_order_notional_usd": 1.0,
+  "_min_order_notional_help": "Robinhood minimum for a dollar-based order.",
 
   "allow_list": [
     "AAPL", "AJNMY", "AMD", "AMZN", "ANET", "ASML", "AVGO", "BABA", "BIDU",
@@ -20,8 +38,8 @@
   ],
   "_allow_list_help": "ONLY these tickers can be traded. Empty list = nothing is tradable (fail-closed). This mirrors the StockNews stocknews_tickers coverage list, minus the non-tradable placeholders (ANTHROPIC, OPENAI, RESONAC). It is the primary blast-radius limit; trim it any time. Some entries are ADRs/foreign names that rarely surface in the SEC/Congress feeds — harmless, since a name still needs a live confluence signal to be proposed. REMOVED 2026-07-02: 'BYD' — on US exchanges that symbol is Boyd Gaming, NOT BYD Company (1211.HK, which the StockNews reports/BYD thesis covers); an order for 'BYD' would have bought the casino operator grounded in the Chinese EV maker's research, and the HK$305 anchor is unparseable so the price-sanity guard could not catch it. Re-add as BYDDY only once a reports/BYDDY thesis exists.",
 
-  "block_list": [],
-  "_block_list_help": "Hard deny, checked after allow_list. Use to pause a name without editing allow_list.",
+  "block_list": ["AJNMY", "TOTDY", "SFTBY", "TCEHY"],
+  "_block_list_help": "Hard deny, checked after allow_list. Use to pause a name without editing allow_list. 2026-09-05: the four OTC pink-sheet ADRs are blocked — no fractional/dollar orders on Robinhood, wide after-hours spreads (AJNMY showed $33.28 bid / $46.13 ask on 2026-08-12), and TCEHY is the sovereign-impaired bucket. Re-enable per name once a limit-order path exists in live_bridge.py.",
 
   "allowed_sides": ["buy"],
   "_allowed_sides_help": "['buy'] = accumulate-only (conservative default; the agent can never sell your position). Add 'sell' only once you trust the loop.",
@@ -67,10 +85,19 @@
   "_min_xii_score_help": "Skip a buy when the StockNews Section XII weighted score is below this %. Bands: >=85 strong, >=65 moderate-buy, >=45 wait, <45 avoid. 45 = never buy a name the research rates 'avoid'.",
 
   "max_existing_position_pct": 25.0,
-  "_max_existing_position_help": "Skip adding to a name already worth more than this % of the account, per the Stock-Portfolio app (read when STOCK_PORTFOLIO_URL + STOCK_PORTFOLIO_TOKEN are set; otherwise the portfolio check is skipped and noted, not failed).",
+  "_max_existing_position_help": "Per-name concentration cap. Two readers: (1) executor.py at proposal time against the Stock-Portfolio app (only when STOCK_PORTFOLIO_URL + STOCK_PORTFOLIO_TOKEN are set; otherwise noted, not failed — still unset as of 2026-09-05); (2) live_bridge.py at placement time against the REAL Agentic-account positions + open orders in robinhood_snapshot.json — this second check is the one that actually binds, and it needs no secrets. At $500 this is $125/name = 2 adds after the first buy.",
 
   "min_conviction": "medium",
   "_min_conviction_help": "Research-based purchase conviction floor: 'high' | 'medium' | 'low'. Conviction is computed from the FULL StockNews thesis (XII quality + H-0 confidence + durability/25 + bull/bear asymmetry + thesis freshness), not the headline XII alone — so a high-XII / low-confidence / unfavorable-asymmetry name (e.g. COST: XII 91% but H-0 60%, bull<bear) lands at LOW and is skipped, while a high-XII / high-confidence / favorable name (e.g. GOOGL) lands at HIGH. 'medium' = only buy names the research backs with real confidence.",
+
+  "block_decision_actions": ["skip", "wait", "avoid", "sell", "trim", "exit"],
+  "_block_decision_actions_help": "Added 2026-09-05. The executor now reads the StockNews decision journal (reports/{T}/decisions.jsonl, latest row). When the research's own latest call is one of these, the buy is skipped (TOTDY 'wait', MP 'skip' today). 'watch' — the corpus default meaning a 0% position under observation — does NOT block: acting on confluence for watch-rated, ownable names is the executor's job. 'buy' / 'hold' pass.",
+
+  "block_sovereign_bands": ["sovereign-impaired"],
+  "_block_sovereign_bands_help": "Added 2026-09-05. INDEX_META sovereign_exposure (schema v6, non-US names only). sovereign-impaired = home revenue + FX debt / capital controls / delisting risk (BABA, TCEHY per StockNews CLAUDE.md) — hard skip for this account. insulated / mixed / exposed pass and are sizing inputs, not gates.",
+
+  "regime_gate": {"active": true, "bands": ["ai-capex-high"], "extra_feeds": 1, "cap_conviction": "medium"},
+  "_regime_gate_help": "Added 2026-09-05 (R3 of research/agentic_decision_brief_2026-08-12.md). StockNews T-Capex-5 ('market de-rates capex increases') fired 2026-07-28 and is still lit per dashboards/macro_regime_overlay_2026-08.md. While active: names whose INDEX_META cycle_exposure is in `bands` need min_signal_feeds + extra_feeds corroboration (4 instead of 3) and their conviction is capped at cap_conviction (still >= min_conviction, so a 4-feed NVDA can trade — at medium, never high). Set active=false when StockNews retires the trigger. Names with no cycle_exposure field are unaffected.",
 
   "entry_price_anchor_max_ratio": 5.0,
   "_entry_price_anchor_max_ratio_help": "Sanity guard on the entry price recorded in the track record: if a quote is more than this multiple off the StockNews anchor price (in either direction), it's treated as a bad print (wrong symbol / decimal error) and the entry price is left null rather than polluting the scorecard. 5.0 catches order-of-magnitude errors while letting any realistic price move through. No anchor on file -> the quote is accepted as-is."
