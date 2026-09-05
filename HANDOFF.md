@@ -78,6 +78,12 @@ Full review: `research/rules_review_2026-09-05.md`.
   prompt (they must stay identical), use the guarded form already used in the
   workflows: `for f in live_orders.json proposals_log.json
   robinhood_snapshot.json; do [ -f "$f" ] && git add "$f"; done`.
+  **FIXED 2026-09-05** in `routines/live-execution.md` and pushed to the live
+  routine prompt in the same edit, so the two remain byte-identical. Verified in
+  a scratch repo: the old form exits 128 and stages nothing when
+  `live_orders.json` is absent; the loop exits 0 and stages what exists, in both
+  the zero-order and all-three-present cases. `robinhood_snapshot.json` is kept
+  LAST in the list because it always exists, so the loop's exit status is 0.
 - **No order has been placed yet.** The bridge, config and routine prompt are
   complete; the first real placement is the first routine fire (or an
   owner-placed order). The two standing 08-31 proposals (AAPL, MSFT, $50 each)

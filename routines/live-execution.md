@@ -81,9 +81,14 @@ never place options, margin, sells, or anything not on the bridge's list.
 
 5. Commit + push the record (even when nothing was placed — the snapshot is the
    liveness proof):
-     git add live_orders.json proposals_log.json robinhood_snapshot.json
+     for f in live_orders.json proposals_log.json robinhood_snapshot.json; do [ -f "$f" ] && git add "$f"; done
      git commit -m "chore(live): <N> order(s) placed <date> [skip ci]"
      git pull --rebase --autostash origin main && git push origin main
+   Stage with the loop, not a bare `git add a b c`: git FATALS on a missing
+   pathspec and stages NOTHING, and live_orders.json does not exist until the
+   first placement — so a zero-order run would stage nothing and fail to commit.
+   Keep robinhood_snapshot.json LAST in that list; it is always present, so the
+   loop always exits 0.
    If a rebase conflicts on proposals_log.json, keep BOTH sides' rows (append) and
    continue.
 
