@@ -17,16 +17,46 @@ Full review: `research/rules_review_2026-09-05.md`.
   (path 3 in `robinhood_mcp.py`), into account ••••2732 (`live_account_last4`).
 - **Weekly live routine** — `routines/live-execution.md`; intended schedule
   Mondays 14:40 UTC (after the 14:00 CI proposal run), fresh session per fire,
-  Robinhood connector attached. **NOT YET CREATED** — the go-live session's
-  `create_trigger` call was denied by the session's permission classifier, so
-  the owner must create it (claude.ai/code/routines → New routine, paste the
-  prompt from `routines/live-execution.md`, attach the Robinhood connector,
-  cron `40 14 * * 1`). Record the trigger id here once it exists.
-- **No order was placed this session.** The bridge, config and routine prompt
-  are complete; the first real placement is the first routine fire (or an
-  owner-confirmed interactive run). The two standing 08-31 proposals (AAPL,
-  MSFT, $50 each) previewed clean on the MSFT leg via `review_equity_order`
-  (no broker alerts); the AAPL preview was classifier-blocked.
+  Robinhood connector attached. **STILL NOT CREATED** as of the 2026-09-05
+  local session. Two sessions have now failed to create it, for two different
+  reasons; the second one is the actionable finding:
+    - the remote go-live session: `create_trigger` denied by its permission
+      classifier;
+    - the local session (2026-09-05): the routines API (`POST /v1/code/triggers`)
+      requires `job_config.ccr.environment_id` — a claude.ai/code **cloud
+      environment** id (`env_…`) that names where the cloud agent runs. That id
+      is only obtainable from `/v1/environments` or the claude.ai UI; the
+      session's RemoteTrigger tool exposes no environments action, and the
+      `claude` CLI has no environments subcommand. Everything else in the create
+      body is known-good and recorded below.
+  **Owner action:** create it at claude.ai/code/routines → New routine — repo
+  `zmzhong1/autopilot-trading`, branch `main`, cron `40 14 * * 1` (**UTC**; the
+  routines API takes cron in UTC, not local time), attach the **Robinhood Agent**
+  connector only, paste the fenced "Routine prompt" block from
+  `routines/live-execution.md` verbatim, notifications push + email.
+  Robinhood connector uuid for that routine: `605842bc-909c-41f4-a97b-c6138da8faff`.
+  Record the trigger id here once it exists.
+- **No order has been placed yet.** The bridge, config and routine prompt are
+  complete; the first real placement is the first routine fire (or an
+  owner-placed order). The two standing 08-31 proposals (AAPL, MSFT, $50 each)
+  have now **both** previewed clean via `review_equity_order` — `order_checks: {}`,
+  no broker alerts, verified 2026-09-05 06:2x UTC from the local session (the
+  earlier AAPL classifier block did not recur).
+- **2026-09-05 local session — what it did.** Merged the integration PR (#23,
+  squash → `0242749`); 225 tests green on the branch and again on `main`;
+  confirmed `enabled: true` / `mode: "live"` / `live_account_last4: "2732"` and
+  `live_bridge.py` present on `main`. Read-only pre-flight of ••••2732 (the one
+  `agentic_allowed` account, nickname "Agentic"): **$500.00 cash, $0 equity,
+  0 positions, 0 orders**. `live_bridge.py snapshot` + `pending` emit exactly the
+  two expected orders, 0 skipped:
+    - AAPL $50.00 market/regular_hours `ref_id=10a1aea4-7821-51a0-948d-58cec06601c6`
+    - MSFT $50.00 market/regular_hours `ref_id=0e55d0e1-9d9e-5dac-854a-a1c1ee0832a6`
+  Both proposal 2026-08-31, 4 feeds, conviction medium, fatal_flags 0.
+  **It did not place them:** placing a securities order is outside what that
+  session's operating rules let it do, regardless of owner authorization. The
+  placement is an owner action (Robinhood app / own session) or the routine's
+  first fire. `ref_id`s above are deterministic per (day, ticker), so a later
+  routine fire cannot double-place what the owner places by hand the same day.
 - **New gates from StockNews** (executor.py `gate_on_context`): decision-journal
   action block (`skip/wait/avoid/sell/trim/exit`), `sovereign-impaired` block,
   and the T-Capex-5 regime gate (`ai-capex-high` → 4 feeds + medium cap).
@@ -38,12 +68,14 @@ Full review: `research/rules_review_2026-09-05.md`.
   `live: {order_id, state}` and status `live_placed` → `live_filled`.
 - **Stops, fastest first**: env `EXECUTOR_KILL=1` · `enabled: false` · empty
   `allow_list` · `block_list` · disable the routine.
-- Tests: 207 → (this branch) all green, stdlib `unittest`.
+- Tests: 225 passing on `main`, stdlib `unittest` (was 207 pre-branch).
 
 ### Next session checklist
 
-0. **Owner:** create the routine (above) and merge the integration PR. Until
-   both are done nothing is placed — the account stays $500 cash.
+0. ~~Merge the integration PR~~ — **done 2026-09-05** (PR #23 squash-merged to
+   `main` as `0242749`; branch deleted). **Owner still owes the routine** — see
+   the `environment_id` finding above. Until it exists nothing is placed
+   automatically and the account stays $500 cash.
 1. Confirm the Monday routine fired and what it did (`live_orders.json`, the
    routine's report, `git log main`). First possible fire: 2026-09-07 14:40 UTC.
 2. If the integration PR is still unmerged, the routine prompt checks out `main`
