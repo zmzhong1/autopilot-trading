@@ -114,6 +114,14 @@ Full review: `research/rules_review_2026-09-05.md`.
 - **Committed live record**: `live_orders.json` (every real order + fill),
   `robinhood_snapshot.json` (last live read). `proposals_log.json` rows carry
   `live: {order_id, state}` and status `live_placed` → `live_filled`.
+- **Archived, not lost: the paper-mode branch.** `feat/paper-mode-guards` carried
+  806 uncommitted lines on the owner's Mac until 2026-09-05 (paper ledger,
+  `max_pct_account_per_ticker`, regime gate v1, guarded workflow staging, +380
+  test lines). Superseded by PR #23, whose `mode: live` posture contradicts its
+  `mode: paper`. Dropped at the owner's instruction, but tagged first and pushed:
+  **`archive/stash/paper-mode-guards-2026-09-05`** (`d8c43c2`). Recover with
+  `git checkout -b recover archive/stash/paper-mode-guards-2026-09-05`; delete
+  for good with `git push --delete origin archive/stash/paper-mode-guards-2026-09-05`.
 - **Stops, fastest first**: env `EXECUTOR_KILL=1` · `enabled: false` · empty
   `allow_list` · `block_list` · disable the routine.
 - Tests: 225 passing on `main`, stdlib `unittest` (was 207 pre-branch).
