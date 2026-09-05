@@ -223,9 +223,9 @@ This repo adds the layer that turns the signals it already computes (insider clu
 |---|---|---|
 | `propose` *(default)* | Vets signals against the guardrails, logs + posts a "PROPOSED orders" Discord card. **Never executes.** | No |
 | `paper` | Simulates fills against a virtual cash balance to watch the loop behave. | No |
-| `live` | Places real orders via the Robinhood Agentic MCP. Requires `enabled: true` **and** a wired [robinhood_mcp.py](robinhood_mcp.py) (not shipped — see below). | Yes |
+| `live` *(current)* | Real orders in the isolated Robinhood Agentic account. `executor.py` still only proposes; placement happens through [live_bridge.py](live_bridge.py) from an MCP-attached Claude session (Monday routine). | Yes |
 
-Two independent stops guard execution: `enabled: false` (master switch, shipped off) collapses any mode to propose-only, and `EXECUTOR_KILL=1` (set in the CI workflow) force-disables execution even if `enabled` is true. **Live trading is impossible by config alone** — it also needs the MCP adapter wired, which this repo deliberately leaves as a stub.
+Two independent stops guard execution: `enabled: false` (master switch) collapses any mode to propose-only, and `EXECUTOR_KILL=1` (set in the CI workflow) force-disables execution even if `enabled` is true. **Live trading is impossible from CI** — and impossible from `executor.py` at all: real orders only go out through `live_bridge.py` in an MCP-attached session (see *Live execution* below). **As of 2026-09-05 the config is `enabled: true`, `mode: "live"`.**
 
 ### Guardrails ([guardrails.json](guardrails.json))
 
@@ -303,9 +303,26 @@ Every proposal is appended to the committed [proposals_log.json](proposals_log.j
 
 The agentic output (proposal cards + scorecard) posts to its **own** webhook, `EXECUTOR_DISCORD_WEBHOOK`, falling back to `DISCORD_WEBHOOK` only when that isn't set. Point `EXECUTOR_DISCORD_WEBHOOK` at a channel you're happy to share, and the SEC/Congress/heartbeat watcher noise stays on your private `DISCORD_WEBHOOK` — so the shared channel is **agentic trades and nothing else**. Sizing on those cards is shown as **% of account** (`share_size_display: "pct"` in guardrails.json), so a channel with other people in it never leaks your balance — switch to `"usd"` or `"none"` if you prefer.
 
-### Going live (when you have access)
+### Live execution (LIVE since 2026-09-05)
 
-Live order placement is intentionally **not wired** — [robinhood_mcp.py](robinhood_mcp.py) is a documented stub, and `mode: live` degrades to clearly-labelled proposals until you implement it. The recommended path isn't an unattended cron: connect the MCP to **Claude Code** and review/place orders interactively from the proposal list —
+Real orders are placed by **[live_bridge.py](live_bridge.py)**, driven from a Claude Code session that holds the Robinhood Agentic MCP — scheduled as a Monday routine ([routines/live-execution.md](routines/live-execution.md)) that fires 40 minutes after the CI proposal run. The bridge is a pure, unit-tested vetting engine: it takes today's proposals from `proposals_log.json`, a fresh snapshot of the **real** account (portfolio, positions, open orders, quotes, tradability — saved to `robinhood_snapshot.json`), and re-checks every guardrail against that live book before emitting an exact order list with deterministic `ref_id`s (one per day+ticker, so a retried run can never double-place). The session places each order via the MCP (`review_equity_order` → `place_equity_order`) and records every order id and fill back through the CLI into the committed **`live_orders.json`** — the real track record, next to the proposal one.
+
+```bash
+python3 live_bridge.py snapshot --portfolio p.json --positions q.json --orders o.json \
+    --quotes qq.json --tradability t.json --account-last4 2732   # store a live read
+python3 live_bridge.py pending [--json]      # what clears the live guardrails right now
+python3 live_bridge.py record --ticker AAPL --notional 50 --order-id … --ref-id … --state placed
+python3 live_bridge.py reconcile --orders o2.json   # pull fills into the record
+python3 live_bridge.py status
+```
+
+What binds at placement (all in `guardrails.json`): `enabled` + `mode: live` · allow/block lists · $-size = min(`max_notional_per_order_usd`, `max_pct_account_per_order` × **live** account value) · `max_orders_per_day` (from `live_orders.json`) · `max_total_deployed_pct` (live equity + open buys) · `max_existing_position_pct` per name (live positions + open orders) · `rebuy_cooldown_days` · fractional/dollar tradability (OTC ADRs are skipped) · `live_account_last4` · snapshot ≤ `snapshot_max_age_min` old · proposal ≤ `max_proposal_age_days` old. Stops, fastest first: `EXECUTOR_KILL=1` · `enabled: false` · empty `allow_list` · `block_list` per ticker · disable the routine.
+
+Three StockNews inputs joined the gate the same day (see [research/rules_review_2026-09-05.md](research/rules_review_2026-09-05.md)): the **decision journal** (`reports/{T}/decisions.jsonl` — `skip`/`wait`/`avoid`/`sell` block a buy), the **sovereign band** (`sovereign-impaired` blocks), and a **macro-regime gate** (`regime_gate`: while StockNews' T-Capex-5 stands, `ai-capex-high` names need 4 feeds and cap at medium conviction).
+
+#### The older, manual path
+
+[robinhood_mcp.py](robinhood_mcp.py) remains a stub on purpose — `executor.py` itself never places, even in live mode. If you'd rather place by hand, connect the MCP to **Claude Code** and review/place orders interactively from the proposal list —
 
 ```bash
 claude mcp add robinhood-trading --transport http https://agent.robinhood.com/mcp/trading
@@ -476,13 +493,18 @@ The StockNews repo also pushes its own event-driven embeds (routine summaries, s
 - [confluence.py](confluence.py) — Weekly cross-feed confluence over congress + insider + 8-K + 13F (stdlib only)
 - [stocknews_digest.py](stocknews_digest.py) — Weekly cross-portfolio research digest fetched from the StockNews sister repo (stdlib only)
 - [executor.py](executor.py) — Guardrailed execution layer; turns confluence signals into vetted order proposals (propose-only by default), reuses confluence.py (stdlib only)
-- [robinhood_mcp.py](robinhood_mcp.py) — Robinhood Agentic MCP adapter; documented stub at the live-execution boundary until you wire it (stdlib only)
+- [live_bridge.py](live_bridge.py) — **Live execution bridge**: re-vets today's proposals against a fresh snapshot of the real Agentic account and emits the exact orders an MCP-holding Claude session places; records order ids + fills into the committed track record (stdlib only, pure core under [test_live_bridge.py](test_live_bridge.py))
+- [live_orders.json](live_orders.json) — Committed record of every REAL order placed (ticker, $, order id, ref_id, state, fill) (auto-managed by the live routine)
+- [robinhood_snapshot.json](robinhood_snapshot.json) — Last live read of the Agentic account the bridge sized against (auto-managed)
+- [routines/live-execution.md](routines/live-execution.md) — The Monday 14:40 UTC Claude routine that drives the bridge (prompt + setup)
+- [robinhood_mcp.py](robinhood_mcp.py) — Robinhood Agentic MCP adapter; deliberate stub so `executor.py` can never place in-process — real placement is the bridge above (stdlib only)
 - [finnhub_signals.py](finnhub_signals.py) — Market-wide signal layer (Finnhub free tier): insider buys + analyst upgrades + earnings beats as confluence feeds, so non-SEC-watched industries surface (stdlib only)
 - [research.py](research.py) — Daily rotating company research: fundamentals + news + earnings + analyst trend, cross-checked vs the StockNews thesis; caches research/ + posts a digest (stdlib only)
 - [prices.py](prices.py) — Equity price helper: Finnhub /quote (primary) + Stooq fallback; entry price + scorecard mark-to-market (stdlib only)
 - [enrichment.py](enrichment.py) — Per-trade grounding: reads the StockNews thesis (INDEX_META) + portfolio position so each proposal is gated on and acknowledges the research (stdlib only)
 - [scorecard.py](scorecard.py) — Weekly proposal track record: marks logged proposals to market, posts hit-rate + avg return to the agentic channel (stdlib only)
-- [guardrails.json](guardrails.json) — Risk limits for the executor: allow-list, per-order + daily + deployment caps, mode + kill switch, share_size_display
+- [guardrails.json](guardrails.json) — Risk limits for the executor + live bridge: allow/block lists, per-order + daily + deployment + per-name caps, re-buy cooldown, StockNews gates (decision journal, sovereign band, regime gate), mode + kill switch, share_size_display
+- [research/rules_review_2026-09-05.md](research/rules_review_2026-09-05.md) — Go-live rules review: what each guardrail does, the gaps closed, what StockNews feeds the gate
 - [proposals_log.json](proposals_log.json) — Committed track record: one entry-priced row per proposal, scored weekly (auto-managed)
 - [watchlist.json](watchlist.json) — CIK list + form-type filter + congress_members + stocknews_tickers exclusion list
 - [state.json](state.json) — SEC seen-accession state + rolling alert history (auto-managed)

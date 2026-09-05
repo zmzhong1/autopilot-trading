@@ -52,18 +52,24 @@ BAND_STRONG, BAND_MODERATE, BAND_WAIT = 85, 65, 45
 STALE_HARD_CAP_DAYS = 30
 
 
-def _read_local_tree(ticker):
+def _read_local_file(ticker, name):
+    """Read reports/{ticker}/{name} from a local StockNews checkout, or None."""
     if not STOCKNEWS_REPO_PATH:
         return None
-    p = Path(STOCKNEWS_REPO_PATH) / "reports" / ticker / "tree_v1_en.md"
+    p = Path(STOCKNEWS_REPO_PATH) / "reports" / ticker / name
     try:
         return p.read_text(encoding="utf-8")
     except OSError:
         return None
 
 
-def _fetch_remote_tree(ticker):
-    path = f"reports/{ticker}/tree_v1_en.md"
+def _read_local_tree(ticker):
+    return _read_local_file(ticker, "tree_v1_en.md")
+
+
+def _fetch_remote_file(ticker, name):
+    """Fetch reports/{ticker}/{name} from GitHub (raw, then contents API)."""
+    path = f"reports/{ticker}/{name}"
     raw_url = (f"https://raw.githubusercontent.com/{STOCKNEWS_REPO}/"
                f"{STOCKNEWS_BRANCH}/{path}")
     headers = {"User-Agent": USER_AGENT}
@@ -88,6 +94,29 @@ def _fetch_remote_tree(ticker):
             return r.read().decode("utf-8")
     except Exception:
         return None
+
+
+def _fetch_remote_tree(ticker):
+    return _fetch_remote_file(ticker, "tree_v1_en.md")
+
+
+# Canonical INDEX_META bands (StockNews CLAUDE.md, schema v3 / v6). A tree may
+# carry free text after the band ("uncorrelated — consumer-discretionary"), so
+# we match the leading token only.
+CYCLE_BANDS = ("ai-capex-high", "ai-capex-mid-s-curve", "ai-capex-low",
+               "uncorrelated")
+SOVEREIGN_BANDS = ("sovereign-insulated", "sovereign-mixed",
+                   "sovereign-exposed", "sovereign-impaired")
+
+
+def _parse_band(value, bands):
+    """'ai-capex-high' / 'uncorrelated — consumer...' -> the canonical band the
+    value starts with, or None when absent / unrecognised. Pure."""
+    if not value:
+        return None
+    parts = str(value).strip().lower().split()
+    tok = parts[0].rstrip(",;.—-") if parts else ""
+    return tok if tok in bands else None
 
 
 def parse_index_meta(text):
@@ -183,7 +212,59 @@ def stocknews_thesis(ticker, tree_text=None):
         "review_due": meta.get("review_due"),
         "updated": meta.get("updated"),
         "anchor_price": _parse_price(meta.get("price")),
+        # Macro overlays (optional INDEX_META fields; None when absent).
+        "cycle_exposure": _parse_band(meta.get("cycle_exposure"), CYCLE_BANDS),
+        "sovereign_exposure": _parse_band(meta.get("sovereign_exposure"),
+                                          SOVEREIGN_BANDS),
     }
+
+
+# Decision-journal actions that mean the research itself says "don't buy now".
+# StockNews `decisions.jsonl` `action` vocabulary: buy / watch / hold / wait /
+# skip (+ ad-hoc variants like 'hold-stub'). 'watch' is the corpus default
+# (a 0% position the owner is tracking) and does NOT block — the executor's
+# job is precisely to act on confluence for names the research rates
+# ownable; 'wait' / 'skip' are explicit research verdicts against entry.
+BLOCKING_DECISION_ACTIONS = ("skip", "wait", "avoid", "sell", "trim", "exit")
+
+
+def parse_latest_decision(text):
+    """Latest row of a StockNews decisions.jsonl (one JSON object per line).
+    Returns {found, action, date, size_pct, size_reason} — `found` False when
+    the file is empty/absent/unparseable. Pure."""
+    if not text:
+        return {"found": False}
+    last = None
+    for ln in text.splitlines():
+        ln = ln.strip()
+        if not ln:
+            continue
+        try:
+            row = json.loads(ln)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(row, dict):
+            last = row
+    if not last:
+        return {"found": False}
+    action = last.get("action")
+    action = str(action).strip().lower() if action else None
+    return {
+        "found": True,
+        "action": action,
+        "date": last.get("date"),
+        "size_pct": last.get("size_pct_of_portfolio"),
+        "size_reason": (str(last.get("size_reason") or "")[:160]),
+    }
+
+
+def stocknews_decision(ticker, text=None):
+    """Latest decision-journal entry for a ticker (reports/{T}/decisions.jsonl).
+    `text` lets tests inject the file; otherwise local checkout then GitHub."""
+    if text is None:
+        text = (_read_local_file(ticker, "decisions.jsonl")
+                or _fetch_remote_file(ticker, "decisions.jsonl"))
+    return parse_latest_decision(text)
 
 
 def assess_purchase(thesis, today=None):
@@ -380,9 +461,11 @@ def recent_8k_events(ticker, days=45, root=None, today=None):
 
 
 def enrich(ticker, account_value=None):
-    """Combined per-trade context: {thesis, portfolio, research, events_8k}."""
+    """Combined per-trade context:
+    {thesis, decision, portfolio, research, events_8k}."""
     return {
         "thesis": stocknews_thesis(ticker),
+        "decision": stocknews_decision(ticker),
         "portfolio": portfolio_context(ticker, account_value=account_value),
         "research": research_note(ticker),
         "events_8k": recent_8k_events(ticker),

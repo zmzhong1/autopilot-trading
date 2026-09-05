@@ -38,9 +38,20 @@ designed for the safer one:
    trading is the highest-risk configuration and should be opt-in, reviewed,
    and built only once you've watched the proposal loop behave for a while.
 
-Until you implement path 2, every function below raises NotImplementedError, and
-executor.py treats `mode: "live"` as "propose + clearly report that live is not
-wired" rather than ever placing an order. That is the intended safety posture.
+3. Bridge (LIVE since 2026-09-05 — see live_bridge.py + routines/live-execution.md).
+   The middle path. executor.py stays a proposal engine (this module stays a
+   stub, so an in-process live run can never place anything). A Claude session
+   that holds the Robinhood MCP runs `live_bridge.py`, which re-vets each
+   fresh proposal against a snapshot of the REAL account (buying power,
+   positions, open orders, tradability) and emits an exact order list with
+   deterministic ref_ids; the session places those via the MCP
+   (review_equity_order -> place_equity_order) and records every order id and
+   fill back through the CLI into the committed track record
+   (live_orders.json / proposals_log.json). Scheduled as a Monday routine.
+
+Every function below still raises NotImplementedError: executor.py treats
+`mode: "live"` as "propose + report that in-process live is not wired". The
+real placements happen through path 3 and are visible in live_orders.json.
 
 Stdlib-only, like the rest of the repo.
 """

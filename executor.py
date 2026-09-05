@@ -89,6 +89,16 @@ DEFAULT_GUARDRAILS = {
     "max_existing_position_pct": 25.0,
     "min_conviction": "medium",  # research-based purchase conviction floor
     "entry_price_anchor_max_ratio": 5.0,  # drop quotes >5x off the StockNews anchor
+    # StockNews decision journal (reports/{T}/decisions.jsonl): skip a buy when
+    # the latest journal action is an explicit verdict against entry.
+    "block_decision_actions": ["skip", "wait", "avoid", "sell", "trim", "exit"],
+    # INDEX_META sovereign_exposure bands that are unownable for this account.
+    "block_sovereign_bands": ["sovereign-impaired"],
+    # Macro-regime gate (StockNews dashboards/macro_regime_overlay_2026-08.md):
+    # while active, names in `bands` need `extra_feeds` more corroboration and
+    # their conviction is capped at `cap_conviction`.
+    "regime_gate": {"active": False, "bands": ["ai-capex-high"],
+                    "extra_feeds": 1, "cap_conviction": "medium"},
 }
 
 
@@ -310,15 +320,26 @@ def gate_on_context(approved, gr, account_value, enrich_fn, today=None):
     min_conv = gr.get("min_conviction", "medium")
     min_conv_rank = _CONVICTION_RANK.get(min_conv, 2)
 
+    block_actions = {str(a).lower() for a in gr.get("block_decision_actions", [])}
+    block_sov = {str(b).lower() for b in gr.get("block_sovereign_bands", [])}
+    regime = gr.get("regime_gate") or {}
+    regime_on = bool(regime.get("active"))
+    regime_bands = {str(b).lower() for b in regime.get("bands", [])}
+    regime_extra = int(regime.get("extra_feeds", 0) or 0)
+    regime_cap = regime.get("cap_conviction")
+    min_feeds = int(gr.get("min_signal_feeds", 3))
+
     kept, rejected = [], []
     for p in approved:
         ctx = enrich_fn(p["ticker"], account_value) or {}
         th = ctx.get("thesis", {}) or {}
+        dc = ctx.get("decision", {}) or {}
         pf = ctx.get("portfolio", {}) or {}
         rs = ctx.get("research", {}) or {}
         ev = ctx.get("events_8k") or []
         # acknowledge on the proposal
-        p = dict(p, thesis=th, portfolio=pf, research=rs, events_8k=ev)
+        p = dict(p, thesis=th, decision=dc, portfolio=pf, research=rs,
+                 events_8k=ev)
 
         if require and not th.get("found"):
             rejected.append(dict(p, reason="no StockNews thesis on file"))
@@ -333,9 +354,41 @@ def gate_on_context(approved, gr, account_value, enrich_fn, today=None):
                 f"StockNews XII {xii}% < {min_xii}% (verdict {th.get('verdict')})")))
             continue
 
+        # Decision journal: the research's own latest call on entry.
+        action = (dc.get("action") or "").lower() if dc.get("found") else ""
+        if action and action in block_actions:
+            rejected.append(dict(p, reason=(
+                f"StockNews decision '{action}' ({dc.get('date')}) blocks entry")))
+            continue
+
+        # Sovereign band: unownable buckets (home revenue + FX debt / capital
+        # controls / delisting risk) are a hard skip, not a sizing input here.
+        sov = th.get("sovereign_exposure")
+        if sov and sov in block_sov:
+            rejected.append(dict(p, reason=f"StockNews sovereign band {sov}"))
+            continue
+
         # Research-based conviction: quality + confidence + durability +
         # asymmetry + freshness, not just the headline XII number.
         assessment = enrichment.assess_purchase(th, today=today)
+
+        # Macro-regime gate: while the de-rating regime is on, first-order
+        # AI-capex sellers need extra corroboration and can't be bought on
+        # high conviction alone (the trees' h0 doesn't carry regime beta).
+        cyc = th.get("cycle_exposure")
+        if regime_on and cyc and cyc in regime_bands:
+            need = min_feeds + regime_extra
+            if int(p.get("feed_count", 0)) < need:
+                rejected.append(dict(p, assessment=assessment, reason=(
+                    f"regime gate: {cyc} needs >={need} feeds "
+                    f"(got {p.get('feed_count', 0)})")))
+                continue
+            if regime_cap and (_CONVICTION_RANK.get(assessment["conviction"], 0)
+                               > _CONVICTION_RANK.get(regime_cap, 3)):
+                assessment = dict(assessment, conviction=regime_cap,
+                                  reasons=list(assessment.get("reasons", []))
+                                  + [f"regime gate caps {cyc} at {regime_cap}"])
+
         p = dict(p, assessment=assessment)
         if _CONVICTION_RANK.get(assessment["conviction"], 0) < min_conv_rank:
             reasons = "; ".join(assessment.get("reasons", [])[:3])
@@ -502,6 +555,9 @@ def record_proposals_log(results, account_value, now, path=PROPOSALS_LOG_PATH,
                           "durability": th.get("durability"),
                           "conviction": (r.get("assessment") or {}).get("conviction"),
                           "fatal_flags": th.get("fatal_flags"),
+                          "cycle_exposure": th.get("cycle_exposure"),
+                          "sovereign_exposure": th.get("sovereign_exposure"),
+                          "decision": (r.get("decision") or {}).get("action"),
                           "found": th.get("found", False)},
             "portfolio": {"held": pf.get("held"), "checked": pf.get("checked")},
         })
@@ -578,9 +634,16 @@ def _ack_label(r):
             seg += " · ⏳stale"
         if th.get("fatal_flags"):
             seg += f" · {th['fatal_flags']}⚑"
+        if th.get("cycle_exposure"):
+            seg += f" · cycle {th['cycle_exposure']}"
+        if th.get("sovereign_exposure"):
+            seg += f" · {th['sovereign_exposure']}"
         parts.append(seg)
     elif th:
         parts.append("📚 no StockNews thesis")
+    dc = r.get("decision") or {}
+    if dc.get("found") and dc.get("action"):
+        parts.append(f"📓 journal {dc['action']} ({dc.get('date')})")
     if pf.get("checked"):
         parts.append("💼 " + ("already held" if pf.get("held") else "not held"))
     else:
@@ -648,7 +711,9 @@ def build_embed(results, rejected, mode, account_value, gr, notes):
                   f"≥{gr['min_signal_feeds']} feeds · "
                   f"{gr['max_orders_per_day']}/day · "
                   f"≤{gr['max_total_deployed_pct']:.0%} deployed · "
-                  f"sides {gr['allowed_sides']}"),
+                  f"sides {gr['allowed_sides']}"
+                  + (" · regime gate ON" if (gr.get("regime_gate") or {}).get("active")
+                     else "")),
         "inline": False,
     })
 
