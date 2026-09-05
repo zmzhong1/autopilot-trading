@@ -27,25 +27,29 @@ Full review: `research/rules_review_2026-09-05.md`.
   from `/v1/environments` or the claude.ai UI; the RemoteTrigger tool exposes no
   environments action and the `claude` CLI has no environments subcommand). The
   owner created it in the UI.
-- **Routine config audit (2026-09-05, post-creation) — 3 findings.** The routine
-  exists and is scheduled correctly, but as created it would **not** have placed
-  anything:
-    1. `session_context.allowed_tools` is `["Bash","Read","Write","Edit","Glob",
-       "Grep","WebFetch","WebSearch"]` — **no MCP tools**. Robinhood tools are
-       named `mcp__Robinhood-Agent__<tool>`; outside the allowlist they prompt for
-       permission, and an unattended routine has nobody to approve. Least-privilege
-       fix = add exactly the 8 the prompt calls: `get_accounts`, `get_portfolio`,
-       `get_equity_positions`, `get_equity_orders`, `get_equity_quotes`,
-       `get_equity_tradability`, `review_equity_order`, `place_equity_order`.
-       Deliberately NOT added: cancel/option/crypto tools.
-    2. `session_context.outcomes` pins branch `claude/eloquent-feynman` with
-       `autofix_on_pr_create: true`, but step 5 of the prompt pushes to `main`.
-       If the run lands `live_orders.json` on a side branch, the next fire's
-       daily-cap and cooldown reads (which read `main`) go stale — the cumulative
-       caps stop binding. Same class of bug as G1 in the rules review.
-    3. Two connectors attached (`Robinhood-Agent` **and** `Context7`); the spec
-       was Robinhood only. Harmless, but extra surface in a session that places
-       real orders.
+- **Routine config audit (2026-09-05) — 3 findings, all FIXED.** As first
+  created the routine was scheduled correctly but would have placed nothing.
+  Fixed via `POST /v1/code/triggers/{id}` (owner-approved), verified in the
+  response; `next_run_at`, `enabled`, `persist_session` and the prompt
+  (event uuid `9fd37924-…`) were unchanged by the edit:
+    1. `session_context.allowed_tools` had **no MCP tools**, so the
+       `mcp__Robinhood-Agent__*` calls had no permission path in an unattended
+       run. Added exactly the 8 the prompt uses — `get_accounts`,
+       `get_portfolio`, `get_equity_positions`, `get_equity_orders`,
+       `get_equity_quotes`, `get_equity_tradability`, `review_equity_order`,
+       `place_equity_order`. Deliberately NOT added: any cancel, option, crypto
+       or watchlist tool. **If you widen this list, widen it here and nowhere
+       else** — it is the routine's real capability boundary, narrower than the
+       connector's.
+    2. `outcomes` pinned branch `claude/eloquent-feynman` with
+       `autofix_on_pr_create: true`, while step 5 of the prompt pushes to `main`.
+       A run that landed `live_orders.json` on a side branch would leave the next
+       fire's daily-cap and cooldown reads (which read `main`) stale, so the
+       cumulative caps would stop binding — same class as G1 in the rules review.
+       Cleared to `outcomes: []`, `autofix_on_pr_create: false`.
+    3. A second connector (`Context7`) was attached beyond the Robinhood-only
+       spec. Removed; `mcp_connections` is now Robinhood-Agent alone.
+  Notifications confirmed `push: true, email: true`.
 - **No order has been placed yet.** The bridge, config and routine prompt are
   complete; the first real placement is the first routine fire (or an
   owner-placed order). The two standing 08-31 proposals (AAPL, MSFT, $50 each)
@@ -84,9 +88,8 @@ Full review: `research/rules_review_2026-09-05.md`.
 
 0. ~~Merge the integration PR~~ ~~and create the routine~~ — **both done
    2026-09-05** (PR #23 squash-merged as `0242749`, branch deleted; routine
-   `trig_011pfWZKjL6SUGVkPjUCN8gf`). **Open:** the 3 routine-config findings
-   above — until finding #1 is fixed the Monday fire cannot reach the Robinhood
-   MCP and will place nothing.
+   `trig_011pfWZKjL6SUGVkPjUCN8gf`, its 3 config findings fixed and verified).
+   Nothing is owed before the first fire.
 1. Confirm the Monday routine fired and what it did (`live_orders.json`, the
    routine's report, `git log main`). First possible fire: 2026-09-07 14:40 UTC.
 2. If the integration PR is still unmerged, the routine prompt checks out `main`
