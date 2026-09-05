@@ -15,27 +15,37 @@ Full review: `research/rules_review_2026-09-05.md`.
   `EXECUTOR_KILL=1` and only proposes. Real orders go out ONLY through
   `live_bridge.py` from a Claude session holding the Robinhood Agentic MCP
   (path 3 in `robinhood_mcp.py`), into account ••••2732 (`live_account_last4`).
-- **Weekly live routine** — `routines/live-execution.md`; intended schedule
-  Mondays 14:40 UTC (after the 14:00 CI proposal run), fresh session per fire,
-  Robinhood connector attached. **STILL NOT CREATED** as of the 2026-09-05
-  local session. Two sessions have now failed to create it, for two different
-  reasons; the second one is the actionable finding:
-    - the remote go-live session: `create_trigger` denied by its permission
-      classifier;
-    - the local session (2026-09-05): the routines API (`POST /v1/code/triggers`)
-      requires `job_config.ccr.environment_id` — a claude.ai/code **cloud
-      environment** id (`env_…`) that names where the cloud agent runs. That id
-      is only obtainable from `/v1/environments` or the claude.ai UI; the
-      session's RemoteTrigger tool exposes no environments action, and the
-      `claude` CLI has no environments subcommand. Everything else in the create
-      body is known-good and recorded below.
-  **Owner action:** create it at claude.ai/code/routines → New routine — repo
-  `zmzhong1/autopilot-trading`, branch `main`, cron `40 14 * * 1` (**UTC**; the
-  routines API takes cron in UTC, not local time), attach the **Robinhood Agent**
-  connector only, paste the fenced "Routine prompt" block from
-  `routines/live-execution.md` verbatim, notifications push + email.
-  Robinhood connector uuid for that routine: `605842bc-909c-41f4-a97b-c6138da8faff`.
-  Record the trigger id here once it exists.
+- **Weekly live routine — CREATED 2026-09-05.**
+  `trig_011pfWZKjL6SUGVkPjUCN8gf` · enabled · cron `40 14 * * 1` (UTC) ·
+  **first fire 2026-09-07T14:40:00Z** · fresh session per fire
+  (`persist_session: false`) · env `env_012TCX4zvbiGkQhaELFmC4is` · source
+  `github.com/zmzhong1/autopilot-trading` · prompt = the fenced block in
+  `routines/live-execution.md`. Console: https://claude.ai/code/routines
+  Historical note: two earlier attempts failed — the remote go-live session's
+  `create_trigger` was denied by its permission classifier, and the 2026-09-05
+  local session could not reach `job_config.ccr.environment_id` (only obtainable
+  from `/v1/environments` or the claude.ai UI; the RemoteTrigger tool exposes no
+  environments action and the `claude` CLI has no environments subcommand). The
+  owner created it in the UI.
+- **Routine config audit (2026-09-05, post-creation) — 3 findings.** The routine
+  exists and is scheduled correctly, but as created it would **not** have placed
+  anything:
+    1. `session_context.allowed_tools` is `["Bash","Read","Write","Edit","Glob",
+       "Grep","WebFetch","WebSearch"]` — **no MCP tools**. Robinhood tools are
+       named `mcp__Robinhood-Agent__<tool>`; outside the allowlist they prompt for
+       permission, and an unattended routine has nobody to approve. Least-privilege
+       fix = add exactly the 8 the prompt calls: `get_accounts`, `get_portfolio`,
+       `get_equity_positions`, `get_equity_orders`, `get_equity_quotes`,
+       `get_equity_tradability`, `review_equity_order`, `place_equity_order`.
+       Deliberately NOT added: cancel/option/crypto tools.
+    2. `session_context.outcomes` pins branch `claude/eloquent-feynman` with
+       `autofix_on_pr_create: true`, but step 5 of the prompt pushes to `main`.
+       If the run lands `live_orders.json` on a side branch, the next fire's
+       daily-cap and cooldown reads (which read `main`) go stale — the cumulative
+       caps stop binding. Same class of bug as G1 in the rules review.
+    3. Two connectors attached (`Robinhood-Agent` **and** `Context7`); the spec
+       was Robinhood only. Harmless, but extra surface in a session that places
+       real orders.
 - **No order has been placed yet.** The bridge, config and routine prompt are
   complete; the first real placement is the first routine fire (or an
   owner-placed order). The two standing 08-31 proposals (AAPL, MSFT, $50 each)
@@ -72,10 +82,11 @@ Full review: `research/rules_review_2026-09-05.md`.
 
 ### Next session checklist
 
-0. ~~Merge the integration PR~~ — **done 2026-09-05** (PR #23 squash-merged to
-   `main` as `0242749`; branch deleted). **Owner still owes the routine** — see
-   the `environment_id` finding above. Until it exists nothing is placed
-   automatically and the account stays $500 cash.
+0. ~~Merge the integration PR~~ ~~and create the routine~~ — **both done
+   2026-09-05** (PR #23 squash-merged as `0242749`, branch deleted; routine
+   `trig_011pfWZKjL6SUGVkPjUCN8gf`). **Open:** the 3 routine-config findings
+   above — until finding #1 is fixed the Monday fire cannot reach the Robinhood
+   MCP and will place nothing.
 1. Confirm the Monday routine fired and what it did (`live_orders.json`, the
    routine's report, `git log main`). First possible fire: 2026-09-07 14:40 UTC.
 2. If the integration PR is still unmerged, the routine prompt checks out `main`
