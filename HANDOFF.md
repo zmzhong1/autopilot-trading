@@ -50,6 +50,34 @@ Full review: `research/rules_review_2026-09-05.md`.
     3. A second connector (`Context7`) was attached beyond the Robinhood-only
        spec. Removed; `mcp_connections` is now Robinhood-Agent alone.
   Notifications confirmed `push: true, email: true`.
+- **Unattended smoke test PASSED 2026-09-05 14:15 UTC** (owner-approved,
+  on-demand fire of the routine; session `cse_01USRVkhRAZNriCtRJpLTG2x`,
+  `success`, 24 turns, 80s). AAPL+MSFT were temporarily block-listed
+  (`90f84ca`) so `pending` emitted 0 orders and **no order could be placed by
+  construction**; block_list reverted immediately after and verified
+  byte-identical to its pre-test state. What the run proved end to end:
+  sandbox allocation → clone of `main` → `live_bridge.py` + guardrails read →
+  **Robinhood MCP reached with no permission prompt** (the fix for finding #1;
+  the cloud session loaded the deferred tools via `ToolSearch` then called
+  `get_accounts`, `get_portfolio`, `get_equity_positions`, `get_equity_orders`,
+  `get_equity_tradability`, `get_equity_quotes`) → account ••••2732 matched
+  `live_account_last4` → `$500.00 / 0 positions / 0 open orders` →
+  `snapshot` → `pending` correctly skipped both names with
+  `"in block_list (re-checked live)"` → committed and **pushed to `main`**
+  (`4070470`, the fix for finding #2). Only `review_equity_order` /
+  `place_equity_order` remain unexercised in an unattended run.
+- **Latent bug found by the smoke test (step 5 of the routine prompt).**
+  `git add live_orders.json proposals_log.json robinhood_snapshot.json` **fatals
+  (exit 1) and stages nothing** when `live_orders.json` does not yet exist —
+  which is exactly the state of any run that places 0 orders before the first
+  ever placement. This is the same `git add` / `git status --porcelain`
+  mismatch that "killed every run in PR #21" (see the comments in
+  `.github/workflows/executor.yml`). The run self-recovered by retrying with the
+  one file that existed, so it cost 2 turns, not the commit. **Fix when
+  convenient** — in `routines/live-execution.md` *and* in the routine's own
+  prompt (they must stay identical), use the guarded form already used in the
+  workflows: `for f in live_orders.json proposals_log.json
+  robinhood_snapshot.json; do [ -f "$f" ] && git add "$f"; done`.
 - **No order has been placed yet.** The bridge, config and routine prompt are
   complete; the first real placement is the first routine fire (or an
   owner-placed order). The two standing 08-31 proposals (AAPL, MSFT, $50 each)

@@ -38,7 +38,7 @@
   ],
   "_allow_list_help": "ONLY these tickers can be traded. Empty list = nothing is tradable (fail-closed). This mirrors the StockNews stocknews_tickers coverage list, minus the non-tradable placeholders (ANTHROPIC, OPENAI, RESONAC). It is the primary blast-radius limit; trim it any time. Some entries are ADRs/foreign names that rarely surface in the SEC/Congress feeds — harmless, since a name still needs a live confluence signal to be proposed. REMOVED 2026-07-02: 'BYD' — on US exchanges that symbol is Boyd Gaming, NOT BYD Company (1211.HK, which the StockNews reports/BYD thesis covers); an order for 'BYD' would have bought the casino operator grounded in the Chinese EV maker's research, and the HK$305 anchor is unparseable so the price-sanity guard could not catch it. Re-add as BYDDY only once a reports/BYDDY thesis exists.",
 
-  "block_list": ["AJNMY", "TOTDY", "SFTBY", "TCEHY", "AAPL", "MSFT"],
+  "block_list": ["AJNMY", "TOTDY", "SFTBY", "TCEHY"],
   "_block_list_help": "Hard deny, checked after allow_list. Use to pause a name without editing allow_list. 2026-09-05: the four OTC pink-sheet ADRs are blocked — no fractional/dollar orders on Robinhood, wide after-hours spreads (AJNMY showed $33.28 bid / $46.13 ask on 2026-08-12), and TCEHY is the sovereign-impaired bucket. Re-enable per name once a limit-order path exists in live_bridge.py.",
 
   "allowed_sides": ["buy"],
