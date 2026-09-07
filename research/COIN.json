@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "COIN",
-    "researched_at": "2026-08-31T18:05:01+00:00",
+    "researched_at": "2026-09-07T16:36:26+00:00",
     "name": "Coinbase Global Inc",
     "industry": "Financial Services",
-    "market_cap": 47205.71604,
+    "market_cap": 48714.86368000001,
     "metrics": {
       "net margin %": -15.72,
       "rev growth %": -10.35,
@@ -12,9 +12,9 @@
       "current ratio": 2.42
     },
     "news": [
-      "Bullish: A $4.2 Billion Bet On Tokenized Securities Infrastructure",
-      "What Moved Markets This Week",
-      "Kalshi Loses Nevada Court Fight as Prediction Markets Battle Over Who Gets to Regulate Them (UPDATED)"
+      "Strategy Is Down More Than 50% in 12 Months. One Analyst Thinks the Stock Is About to Triple",
+      "Coinbase Brings BTC, ETH and SOL Derivatives to Canada as Eric Richmond Pushes \u2018Everything Exchange\u2019 Vision",
+      "Week Ahead: Two Market-Moving Events in 48 Hours \u2014 the CLARITY Act Vote and Circle Arc Mainnet"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

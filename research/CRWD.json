@@ -1,25 +1,26 @@
 {
   "snapshot": {
     "ticker": "CRWD",
-    "researched_at": "2026-08-31T18:05:05+00:00",
+    "researched_at": "2026-09-07T16:36:30+00:00",
     "name": "CrowdStrike Holdings Inc",
     "industry": "Technology",
-    "market_cap": 221720.87287557687,
+    "market_cap": 218200.51019909894,
     "metrics": {
-      "net margin %": -0.48,
-      "rev growth %": 23.17,
-      "ROE %": -0.58,
-      "current ratio": 1.53
+      "P/E": 3732.48,
+      "net margin %": 1.08,
+      "rev growth %": 24.3,
+      "ROE %": 1.29,
+      "current ratio": 1.57
     },
     "news": [
-      "Uncover the latest developments among S&P500 stocks in today's session.",
-      "Software Is Back: 5 Stocks To Buy",
-      "Wall Street Lunch: BoE Chief Warns G20 Of AI Risks To Global Financial Stability"
+      "Investors Pulled $700 Million From IGV Hours Before Snowflake Reignited Software",
+      "Brokers Suggest Investing in CrowdStrike (CRWD): Read This Before Placing a Bet",
+      "Breakfast News: Selling Is an Art. Your Art."
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": true
   },
   "flags": [
-    "thesis stale (review due 2026-08-27)"
+    "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "COST",
-    "researched_at": "2026-08-31T18:05:03+00:00",
+    "researched_at": "2026-09-07T16:36:28+00:00",
     "name": "Costco Wholesale Corp",
     "industry": "Retail",
-    "market_cap": 419428.9522975304,
+    "market_cap": 406111.2835743117,
     "metrics": {
-      "P/E": 48.26,
+      "P/E": 45.95,
       "net margin %": 3.01,
       "rev growth %": 9.23,
       "ROE %": 28.27,
       "current ratio": 1.07
     },
     "news": [
-      "Casey's General Stores: A Superior Operator Awarded Too Superior Valuations",
-      "Target Is Still an Attractive Value Stock",
-      "Is Costco Stock Underperforming the Dow?"
+      "1 Stat That Makes Costco Hard to Ignore this September",
+      "Loss of Costco deal helps push beverage brand into Chapter 11",
+      "Walmart's Ad Business Expands: Can High-Margin Growth Lift Profits?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

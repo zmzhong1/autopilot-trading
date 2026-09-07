@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DIS",
-    "researched_at": "2026-09-01T15:30:49+00:00",
+    "researched_at": "2026-09-07T16:36:33+00:00",
     "name": "Walt Disney Co",
     "industry": "Media",
-    "market_cap": 186387.22159176378,
+    "market_cap": 181837.40256298598,
     "metrics": {
-      "P/E": 20.9,
+      "P/E": 21.14,
       "net margin %": 8.7,
       "rev growth %": 4.58,
       "ROE %": 7.87,
       "current ratio": 0.71
     },
     "news": [
-      "Is Walt Disney Stock Underperforming the Dow?",
-      "The Bull Case for Netflix Stock Is Stronger Than You Think",
-      "Tim Cook's Exit Mirrors Jeff Bezos' Amazon Move \u2014 Real Test For New Apple CEO John Ternus Starts Now"
+      "Netflix Has Momentum Despite Being Down in 2026. One Analyst\u2019s Price Target Implies 70% Upside",
+      "Disney shuts down online store in major retail pullback",
+      "Prediction: Disney Will Hit $130 on This Date"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
