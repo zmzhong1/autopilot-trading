@@ -1,0 +1,36 @@
+{
+  "orders": [
+    {
+      "ts": "2026-09-07T14:41:52+00:00",
+      "date": "2026-09-07",
+      "ticker": "AAPL",
+      "side": "buy",
+      "notional_usd": 50.0,
+      "order_type": "market",
+      "order_id": "6a9ecd2d-2391-4d5a-b1de-6a1162b3d8e8",
+      "ref_id": "d4678fac-01a7-550a-bfdb-66ffa5d3263f",
+      "state": "queued",
+      "avg_price": null,
+      "quantity": null,
+      "account_last4": "2732",
+      "proposal_date": "2026-08-31",
+      "feeds": [
+        "analyst",
+        "congress",
+        "insider",
+        "institutional"
+      ],
+      "stocknews": {
+        "xii_score": 85,
+        "verdict": "strong-buy",
+        "h0": 67,
+        "durability": 19,
+        "conviction": "medium",
+        "fatal_flags": 0,
+        "found": true
+      },
+      "placed_by": "claude-live-bridge"
+    }
+  ],
+  "last_update": "2026-09-07T14:42:20+00:00"
+}

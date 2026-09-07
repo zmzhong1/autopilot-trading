@@ -720,7 +720,7 @@
         "institutional"
       ],
       "feed_count": 4,
-      "status": "proposed",
+      "status": "live_placed",
       "stocknews": {
         "xii_score": 85,
         "verdict": "strong-buy",
@@ -733,6 +733,11 @@
       "portfolio": {
         "held": null,
         "checked": false
+      },
+      "live": {
+        "order_id": "6a9ecd2d-2391-4d5a-b1de-6a1162b3d8e8",
+        "state": "queued",
+        "ts": "2026-09-07T14:41:52+00:00"
       }
     },
     {
