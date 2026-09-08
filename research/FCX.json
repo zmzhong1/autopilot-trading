@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "FCX",
-    "researched_at": "2026-09-01T15:30:54+00:00",
+    "researched_at": "2026-09-08T15:14:16+00:00",
     "name": "Freeport-McMoRan Inc",
     "industry": "Metals & Mining",
-    "market_cap": 105848.84370042701,
+    "market_cap": 104441.554399,
     "metrics": {
-      "P/E": 33.3,
+      "P/E": 35.46,
       "net margin %": 11.38,
       "rev growth %": -24.23,
       "ROE %": 15.26,
       "current ratio": 2.07
     },
     "news": [
-      "Freeport-McMoRan: The Trailing Multiple Is Describing An Accident",
-      "Can Southern Copper's Investment Plan Fuel Long-Term Output Growth?",
-      "Freeport-McMoRan (FCX) Suffers a Larger Drop Than the General Market: Key Insights"
+      "These S&P500 stocks are gapping in today's session",
+      "These S&P500 stocks are moving in today's pre-market session",
+      "Dr. Copper Says the AI Boom Is Spreading Through the Real Economy"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

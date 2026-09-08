@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "GS",
-    "researched_at": "2026-09-01T15:30:58+00:00",
+    "researched_at": "2026-09-08T15:14:23+00:00",
     "name": "Goldman Sachs Group Inc",
     "industry": "Financial Services",
-    "market_cap": 294950.82925078657,
+    "market_cap": 302413.541391,
     "metrics": {
-      "P/E": 14.55,
+      "P/E": 14.42,
       "net margin %": 15.53,
       "rev growth %": 6.67,
       "ROE %": 16.94,
       "current ratio": 0.32
     },
     "news": [
-      "Silver Miners ETF Outperforms Gold Fund, but Carries Double Risk",
-      "5 Top Goldman Sachs Stock Picks Pay Big Dividends (One Yields Over 6%)",
-      "SharkNinja to Participate in the Goldman Sachs Global Consumer and Retail Conference"
+      "Nvidia's 3-Year-Old H100 Chip Is Still Getting the Market to Pay Up, Jensen Huang Says Compute Is 'Fungible, Durable and Highly Rentable'",
+      "AI Is Moving Into Everyday Business \u2014 These 5 Stocks Sit Squarely in the Path of the Surge",
+      "C Nears China Brokerage License: Can Onshore Expansion Boost Growth?"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }

@@ -1,27 +1,26 @@
 {
   "snapshot": {
     "ticker": "GOOGL",
-    "researched_at": "2026-09-01T15:30:56+00:00",
+    "researched_at": "2026-09-08T15:14:19+00:00",
     "name": "Alphabet Inc",
     "industry": "Media",
-    "market_cap": 4107934.6999999997,
+    "market_cap": 4139365.8,
     "metrics": {
-      "P/E": 17.31,
+      "P/E": 16.95,
       "net margin %": 54.77,
       "rev growth %": 20.05,
       "ROE %": 50.84,
       "current ratio": 2.72
     },
     "news": [
-      "Fervo Energy and Google Sign 396 MW PPA",
-      "Marvell Is Putting The Pedal To The Metal",
-      "Tesla: This Week's Cybercab Launch Has A Lot To Prove"
+      "American Century Value Fund Q2 2026 Contributors And Detractors",
+      "Nvidia Braces For AI Bubble Burst - Hugging Face Is The Bridge It Needs To Survive",
+      "Gene Munster Predicts TSLA Stock Rally Amid NHTSA Cybercab Probe, Calls It a 'Speed Bump' For Elon Musk: 'Confidence in Safety\u2026'"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-08-28)",
     "recent earnings did not beat, despite high H-0"
   ]
 }

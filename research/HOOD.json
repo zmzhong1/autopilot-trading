@@ -1,27 +1,27 @@
 {
   "snapshot": {
     "ticker": "HOOD",
-    "researched_at": "2026-09-01T15:31:02+00:00",
+    "researched_at": "2026-09-08T15:14:29+00:00",
     "name": "Robinhood Markets Inc",
     "industry": "Financial Services",
-    "market_cap": 95401.61936020828,
+    "market_cap": 109786.93873900002,
     "metrics": {
-      "P/E": 43.12,
+      "P/E": 52.99,
       "net margin %": 42.01,
       "rev growth %": 38.27,
       "ROE %": 22.7,
       "current ratio": 1.22
     },
     "news": [
-      "Robinhood Stock Upgraded On Growth Outlook, Shares Push Near Entry",
-      "Robinhood's Tokenization Push: Can Chain and Stock Tokens Fuel Growth?",
-      "Arbitrum Jumps 26% While Bitcoin and Ethereum Fall \u2014 Robinhood Is the Reason"
+      "These S&P500 stocks are moving in today's pre-market session",
+      "Robinhood To Rally Around 23%? Here Are 10 Top Analyst Forecasts For Tuesday",
+      "\u2018That Caught Our Attention\u2019: Wall Street\u2019s Just Turned the Most Bullish Since 2022, But Robinhood Says Its Own Customers Are Quietly Selling"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-08-31)",
+    "analyst trend not upgrading vs buy-rated thesis",
     "recent earnings did not beat, despite high H-0"
   ]
 }

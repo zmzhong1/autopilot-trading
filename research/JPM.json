@@ -1,20 +1,20 @@
 {
   "snapshot": {
     "ticker": "JPM",
-    "researched_at": "2026-09-02T15:13:10+00:00",
+    "researched_at": "2026-09-08T15:14:33+00:00",
     "name": "JPMorgan Chase & Co",
     "industry": "Banking",
-    "market_cap": 943523.1907209213,
+    "market_cap": 953331.9661449998,
     "metrics": {
-      "P/E": 14.8,
+      "P/E": 14.65,
       "net margin %": 33.26,
       "rev growth %": 108.98,
       "ROE %": 17.81
     },
     "news": [
-      "Why Is Nvidia Willing to Pay $14 Billion for Hugging Face?",
-      "Zebra Technologies to Present at Citi's 2026 Global Technology, Media & Telecom Conference",
-      "Are Investors Undervaluing Industrial & Commercial Bank of China (IDCBY) Right Now?"
+      "High Mortgage Rates Keep Multifamily Demand Elevated",
+      "DBS, Citi Complete First Weekend Cross-Border Payment",
+      "Ascentivelab Group Expands Family Office Origination as Direct Deals Outpace Lean Teams"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

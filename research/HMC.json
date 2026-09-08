@@ -1,20 +1,20 @@
 {
   "snapshot": {
     "ticker": "HMC",
-    "researched_at": "2026-09-01T15:31:00+00:00",
+    "researched_at": "2026-09-08T15:14:26+00:00",
     "name": "Honda Motor Co Ltd",
     "industry": "Automobiles",
-    "market_cap": 6656263.088379,
+    "market_cap": 6603713.642944,
     "metrics": {
-      "net margin %": -1.94,
-      "rev growth %": 0.5,
-      "ROE %": -3.53,
-      "current ratio": 1.28
+      "net margin %": -0.75,
+      "rev growth %": 4.13,
+      "ROE %": -1.4,
+      "current ratio": 1.29
     },
     "news": [
-      "Toyota Motor: Growth, High Profitability, 9.5x P/E",
-      "Potential U.S. Tariff Piles More Risk On Honda Motor's Post-BEV Earnings Rebound",
-      "AI Threat To Global Financial System"
+      "Honda Motor: Uncertain Turnaround Priced Into Shares",
+      "Honda seeks $9.4 billion in supplier cost cuts by 2030",
+      "Should Value Investors Buy Honda Motor Co. (HMC) Stock?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
