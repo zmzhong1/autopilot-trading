@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "META",
-    "researched_at": "2026-09-02T15:13:13+00:00",
+    "researched_at": "2026-09-09T15:14:50+00:00",
     "name": "Meta Platforms Inc",
     "industry": "Media",
-    "market_cap": 1473834.2679017195,
+    "market_cap": 1562844.1125578317,
     "metrics": {
-      "P/E": 22.26,
+      "P/E": 23.07,
       "net margin %": 29.84,
       "rev growth %": 27.65,
       "ROE %": 29.73,
       "current ratio": 2.23
     },
     "news": [
-      "Is Interactive Brokers Quietly Becoming an AI Stock?",
-      "Warren Buffett's Successor, Greg Abel, Has Over 50% of Berkshire Hathaway's Portfolio Invested in These 3 Top Stocks",
-      "Why Is Nvidia Willing to Pay $14 Billion for Hugging Face?"
+      "Bond yields tick higher as oil tops $100: AlphaCheck",
+      "Meta Stock Jumps As Tech Giant Touts Early Interest In Muse AI Agent",
+      "Uber initiated, Thermo Fisher upgraded: Wall Street's top analyst calls"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

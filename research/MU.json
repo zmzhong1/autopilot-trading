@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MU",
-    "researched_at": "2026-09-02T15:13:32+00:00",
+    "researched_at": "2026-09-09T15:15:02+00:00",
     "name": "Micron Technology Inc",
     "industry": "Semiconductors",
-    "market_cap": 1054220.6424294636,
+    "market_cap": 1129686.7384463786,
     "metrics": {
-      "P/E": 21.53,
+      "P/E": 22.75,
       "net margin %": 55.91,
       "rev growth %": 166.98,
       "ROE %": 70.55,
       "current ratio": 3.42
     },
     "news": [
-      "4 Stocks to Buy Now to Ride the AI Data Center Spending Boom",
-      "Dell Called Out the Memory Chip Shortage. Micron Stock Shrugs.",
-      "Taiwanese firms pledge additional $20bn US investment in chip industry"
+      "The Next Winners May Not Be the Stocks You Expect",
+      "Tech Analyst Paul Meeks Has A Warning for Apple in the Face of Its Biggest Launch Ever",
+      "Seagate's HAMR Bet is Paying Off: Can Mozaic Sustain the Momentum?"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

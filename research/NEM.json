@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NEM",
-    "researched_at": "2026-09-03T15:07:32+00:00",
+    "researched_at": "2026-09-09T15:15:05+00:00",
     "name": "Newmont Corporation",
     "industry": "Metals & Mining",
-    "market_cap": 134983.25101167595,
+    "market_cap": 133913.7455893809,
     "metrics": {
-      "P/E": 13.96,
+      "P/E": 15.7,
       "net margin %": 33.36,
       "rev growth %": 25.18,
       "ROE %": 25.05,
       "current ratio": 2.55
     },
     "news": [
-      "Barrick Mining Trading at a Discount: Should You Buy the Stock Now?",
-      "3 Gold Mining Stocks To Own In September 2026",
-      "Newmont Stock Jumps 34.5% in August, and Gold's Rally Could Take It Higher"
+      "Oil Hits $100: Which Stocks And ETFs Win Or Lose?",
+      "Is Newmont Stock Outperforming the Nasdaq?",
+      "Kinross Gold Stock Up 13% in a Month: What Should Investors Do Now?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

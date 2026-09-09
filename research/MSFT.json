@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MSFT",
-    "researched_at": "2026-09-02T15:13:29+00:00",
+    "researched_at": "2026-09-09T15:14:59+00:00",
     "name": "Microsoft Corp",
     "industry": "Technology",
-    "market_cap": 3720346.8240630804,
+    "market_cap": 3667848.244947571,
     "metrics": {
-      "P/E": 27.66,
+      "P/E": 27.74,
       "net margin %": 40.31,
       "rev growth %": 17.79,
       "ROE %": 33.22,
       "current ratio": 1.23
     },
     "news": [
-      "The Future of Website Building with Wix.com (WIX)",
-      "GitLab Stock Soars After Earnings. It\u2019s Still Not a Buy, Analyst Says.",
-      "NetApp (NTAP) May Find a Bottom Soon, Here's Why You Should Buy the Stock Now"
+      "Arista vs. IBM: Which Cloud AI Stock Should Investors Buy Now?",
+      "Look Very Hard at Microsoft and Alphabet as Rate Hike Fears Roil Markets",
+      "Mindgard Expands AI and Cloud Ecosystem with Anthropic, NVIDIA, Microsoft, Google Cloud and AWS"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

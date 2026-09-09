@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MS",
-    "researched_at": "2026-09-02T15:13:23+00:00",
+    "researched_at": "2026-09-09T15:14:56+00:00",
     "name": "Morgan Stanley",
     "industry": "Financial Services",
-    "market_cap": 331452.3199931266,
+    "market_cap": 339619.25519538013,
     "metrics": {
-      "P/E": 17.09,
+      "P/E": 16.97,
       "net margin %": 15.65,
       "rev growth %": 13.96,
       "ROE %": 17.83,
       "current ratio": 0.35
     },
     "news": [
-      "Zoetis to Participate in the Morgan Stanley 24th Annual Global Healthcare Conference",
-      "Why Morgan Stanley (MS) Dipped More Than Broader Market Today",
-      "E*TRADE from Morgan Stanley Releases Monthly Sector Rotation Study"
+      "Raymond James Gains 17.2% in 3 Months: Should You Buy the Stock Now?",
+      "Brent Tops $100 as Morgan Stanley Warns Oil, Rates Are \u2018Main Risks\u2019 to Stocks",
+      "Morgan Stanley Is Too Expensive"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
