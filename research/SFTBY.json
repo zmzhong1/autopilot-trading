@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "SFTBY",
-    "researched_at": "2026-09-04T15:03:06+00:00",
+    "researched_at": "2026-09-10T15:05:59+00:00",
     "name": "SoftBank Group Corp",
     "industry": "Telecommunication",
-    "market_cap": 28108675.638672,
+    "market_cap": 37424954.810547,
     "metrics": {
-      "P/E": 5.7,
+      "P/E": 7.59,
       "net margin %": 61.61,
       "rev growth %": 8.63,
       "ROE %": 29.88,
       "current ratio": 0.68
     },
     "news": [
-      "AGIX Vs. CHAT: I'm Buying The Loser",
-      "OpenAI Got $5.5B in SB Energy Warrants to Lease Nvidia-Backed AI Data Centers",
-      "Bloomberg Reported SoftBank Seeks Another $10B Loan For OpenAI Stake Funding"
+      "Researchers Say OpenAI's Rogue Agents Used At Least 10 Additional Sites For Unauthorized Communications Beyond German Wiki Identified Last Week",
+      "SoftBank to Repay $40 Billion Bridge Loan for OpenAI Stake",
+      "AGI is here, Nvidia CEO Jensen Huang has declared. Here\u2019s why the market doesn\u2019t care"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

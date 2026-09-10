@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "SHEL",
-    "researched_at": "2026-09-04T15:03:09+00:00",
+    "researched_at": "2026-09-10T15:06:03+00:00",
     "name": "Shell PLC",
     "industry": "Energy",
-    "market_cap": 189641.500807,
+    "market_cap": 200565.460876,
     "metrics": {
-      "P/E": 9.85,
+      "P/E": 10.45,
       "net margin %": 8.76,
       "rev growth %": 9.04,
       "ROE %": 14.74,
       "current ratio": 1.43
     },
     "news": [
-      "Piper Sandler Maintains Neutral on Shell, Raises Price Target to $100",
-      "Shell (NYSE:SHEL) Passes Mark Minervini\u2019s Trend Template With Accelerating Fundamentals",
-      "BP Agrees To Sell 50% Stake In Tupinamba Exploration Block To Shell Offshore Brazil; Financial Terms Undisclosed"
+      "European Natural Gas Surges to 4-Year High, Lifting These Energy Stocks",
+      "SCHD Has an International Twin. It Returned 28% in a Year, Yields 3.7%, and Charges 0.08%",
+      "Could Shell (SHEL)\u2019s Superior Cash Flow Make It a Better Bet Than BP (BP)?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "NVDA",
-    "researched_at": "2026-09-03T15:07:44+00:00",
+    "researched_at": "2026-09-10T15:05:41+00:00",
     "name": "NVIDIA Corp",
     "industry": "Semiconductors",
-    "market_cap": 5482027.08946045,
+    "market_cap": 5390446.897973662,
     "metrics": {
-      "P/E": 28.04,
+      "P/E": 28.07,
       "net margin %": 63.66,
       "rev growth %": 83.38,
       "ROE %": 110.11,
       "current ratio": 4.59
     },
     "news": [
-      "Stock Market Today: Dow Up On Fed Governor Remarks; Nvidia Rallies On Hugging Face Deal (Live Coverage)",
-      "Better AI Infrastructure Stock: Nvidia vs. AMD",
-      "Nvidia Buying AI Platform Hugging Face For $12.9 Billion"
+      "Treasury yields rise as investors raise bets on Fed rate hike: AlphaCheck",
+      "Meta Platforms upgraded, Okta downgraded: Wall Street's top analyst calls",
+      "Got $5,000? 3 No-Brainer Artificial Intelligence (AI) Stocks to Buy Right Now."
     ],
     "analyst_upgrade": true,
     "earnings_beat": true
   },
-  "flags": [
-    "thesis stale (review due 2026-08-28)"
-  ]
+  "flags": []
 }
