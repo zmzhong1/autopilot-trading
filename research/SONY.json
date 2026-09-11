@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SONY",
-    "researched_at": "2026-09-04T15:03:14+00:00",
+    "researched_at": "2026-09-11T15:08:14+00:00",
     "name": "Sony Group Corp",
     "industry": "Consumer products",
-    "market_cap": 23228092.070312,
+    "market_cap": 21480059.631348,
     "metrics": {
       "net margin %": -1.75,
       "rev growth %": 6.54,
@@ -12,9 +12,9 @@
       "current ratio": 1.25
     },
     "news": [
-      "Take-Two Interactive Software: The Street Is Missing The Big Picture",
-      "Billionaire Investor Raises TSMC Stake 67% as Profit Soars 77%, Revenue Climbs 36%",
-      "AI Threat To Global Financial System"
+      "Sony: Quiet Quality, Stealthy Growth",
+      "Top 3 Streaming Stocks to Ride on Rising Ad and Viewing Trends",
+      "Wall Street Breakfast Podcast: Chime Finds Its Stride"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

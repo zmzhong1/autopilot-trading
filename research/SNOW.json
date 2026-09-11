@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SNOW",
-    "researched_at": "2026-09-04T15:03:11+00:00",
+    "researched_at": "2026-09-11T15:08:12+00:00",
     "name": "Snowflake Inc",
     "industry": "Technology",
-    "market_cap": 123552.50269582984,
+    "market_cap": 116325.21583090261,
     "metrics": {
       "net margin %": -20.07,
       "rev growth %": 32.04,
@@ -12,9 +12,9 @@
       "current ratio": 0.94
     },
     "news": [
-      "Waller Cracks the Door to a September Pause and the Tape Rewards the AI Software Layer",
-      "Momentum, Fear & The Case For Buying The Dip",
-      "JP Morgan Maintains Overweight on Snowflake, Raises Price Target to $426"
+      "Dow Jones Futures Rise, Oil Prices Fall, Oracle Jumps; CPI Inflation Data To Inform Fed",
+      "Top Funds Aren't Fooling Around. Witness Massive Bets On CrowdStrike And Beyond.",
+      "Dan Ives Says Software Stocks Just Got Their Clearest Buy Signal Yet"
     ],
     "analyst_upgrade": false,
     "earnings_beat": true

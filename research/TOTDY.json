@@ -1,20 +1,22 @@
 {
   "snapshot": {
     "ticker": "TOTDY",
-    "researched_at": "2026-07-01T13:52:11+00:00",
+    "researched_at": "2026-09-11T15:08:23+00:00",
     "name": "TOTO Ltd",
     "industry": "Building",
-    "market_cap": 1349034.650116,
+    "market_cap": 922078.68959,
     "metrics": {
-      "P/E": 33.51,
-      "net margin %": 5.46,
-      "rev growth %": 1.79,
-      "ROE %": 7.97,
-      "current ratio": 1.56
+      "P/E": 22.57,
+      "net margin %": 5.52,
+      "rev growth %": 2.01,
+      "ROE %": 7.95,
+      "current ratio": 1.64
     },
     "news": [],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }

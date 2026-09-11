@@ -1,23 +1,23 @@
 {
   "snapshot": {
     "ticker": "TSLA",
-    "researched_at": "2026-07-01T13:52:13+00:00",
+    "researched_at": "2026-09-11T15:08:26+00:00",
     "name": "Tesla Inc",
     "industry": "Automobiles",
-    "market_cap": 1579657.3459148952,
+    "market_cap": 1435897.5186228792,
     "metrics": {
-      "P/E": 409.03,
-      "net margin %": 3.95,
-      "rev growth %": 2.25,
-      "ROE %": 4.77,
-      "current ratio": 2.04
+      "P/E": 377.27,
+      "net margin %": 3.67,
+      "rev growth %": 11.75,
+      "ROE %": 4.57,
+      "current ratio": 1.94
     },
     "news": [
-      "Battery Theme Splits: Lithium Miners Outperform as Automakers Face EV Margin Squeeze",
-      "Tesla Deliveries Should Show a Second Straight Quarter of Growth",
-      "Tesla Q2 deliveries seen rising as European demand gathers pace (TSLA)"
+      "Tesla\u2019s Trucking Business Could Unlock A $17B Software Opportunity, Morgan Stanley Says",
+      "Should You Buy Ford Motor Stock Because It Is Selling Fewer Vehicles At Better Prices?",
+      "Tesla\u2019s Drag on XLY Was Softened by Amazon\u2019s Gain; QQQ Felt Almost Nothing"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
   "flags": []

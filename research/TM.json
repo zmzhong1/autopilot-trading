@@ -1,26 +1,26 @@
 {
   "snapshot": {
     "ticker": "TM",
-    "researched_at": "2026-07-01T13:52:09+00:00",
+    "researched_at": "2026-09-11T15:08:21+00:00",
     "name": "Toyota Motor Corp",
     "industry": "Automobiles",
-    "market_cap": 32823400.886719,
+    "market_cap": 35182088.767578,
     "metrics": {
-      "P/E": 8.53,
-      "net margin %": 7.59,
-      "rev growth %": 5.51,
-      "ROE %": 10.1,
-      "current ratio": 1.27
+      "P/E": 7.85,
+      "net margin %": 8.63,
+      "rev growth %": 7.23,
+      "ROE %": 11.67,
+      "current ratio": 1.17
     },
     "news": [
-      "Joby And Toyota Deepen Air Taxi Partnership With New Manufacturing JV",
-      "Toyota\u2019s May Was A Roller Coaster: EV Sales Soared 170%, Total Sales Fell 7%",
-      "Joby Aviation And Toyota Form JTAMPC JV To Manufacture The Company\u2019s S4 Series eVTOL Aircraft"
+      "Jim Cramer on Joby Aviation (JOBY): \u201cI Would Not Put My Money in It\u201d",
+      "Iridium, Deutsche Telekom IoT, and Toyota Demonstrate Voice Messaging over Satellite via Iridium NTN Direct",
+      "SCHD Has an International Twin. It Returned 28% in a Year, Yields 3.7%, and Charges 0.08%"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "no StockNews thesis on file"
+    "analyst trend not upgrading vs buy-rated thesis"
   ]
 }
