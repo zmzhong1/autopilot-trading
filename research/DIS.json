@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DIS",
-    "researched_at": "2026-09-07T16:36:33+00:00",
+    "researched_at": "2026-09-14T17:01:03+00:00",
     "name": "Walt Disney Co",
     "industry": "Media",
-    "market_cap": 181837.40256298598,
+    "market_cap": 183978.48756181067,
     "metrics": {
-      "P/E": 21.14,
+      "P/E": 21.39,
       "net margin %": 8.7,
       "rev growth %": 4.58,
       "ROE %": 7.87,
       "current ratio": 0.71
     },
     "news": [
-      "Netflix Has Momentum Despite Being Down in 2026. One Analyst\u2019s Price Target Implies 70% Upside",
-      "Disney shuts down online store in major retail pullback",
-      "Prediction: Disney Will Hit $130 on This Date"
+      "The Walt Disney Company (DIS) is Attracting Investor Attention: Here is What You Should Know",
+      "Walt Disney borrowed $60,000 against his life insurance to build Disneyland \u2014 how policy loans work",
+      "Disney\u2019s ABC Reportedly In Talks To Keep Jimmy Kimmel As Late-Night TV Ad Spending Slumps \u2014 DIS Stock In Focus"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DELL",
-    "researched_at": "2026-09-07T16:36:31+00:00",
+    "researched_at": "2026-09-14T17:01:01+00:00",
     "name": "Dell Technologies Inc",
     "industry": "Technology",
-    "market_cap": 339790.03546195937,
+    "market_cap": 360690.21658906,
     "metrics": {
-      "P/E": 29.86,
+      "P/E": 31.7,
       "net margin %": 7.53,
       "rev growth %": 49.03,
       "ROE %": 130.7,
       "current ratio": 0.96
     },
     "news": [
-      "The S&P 100 ETF Just Dumped Nike and Colgate for 4 AI Stocks. Here\u2019s What That Means for Your Portfolio",
-      "Investors Heavily Search Dell Technologies Inc. (DELL): Here is What You Need to Know",
-      "Nike Exits S&P 100 After Nearly 18 Years. Dell, SanDisk and 2 Tech Giants Take Its Place"
+      "Oracle\u2019s $664 billion backlog sends a signal to Dell, HPE",
+      "Friday's Oil-Relief Rally Meets a Weekend of Saudi Pipeline Fires, AI Pause Calls and Anthropic's Two-Trillion IPO Whisper",
+      "Dell Shares Reach Record High After RBC Starts Coverage With Outperform Rating"
     ],
     "analyst_upgrade": false,
     "earnings_beat": true

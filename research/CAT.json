@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "CAT",
-    "researched_at": "2026-09-07T16:36:25+00:00",
+    "researched_at": "2026-09-14T17:00:50+00:00",
     "name": "Caterpillar Inc",
     "industry": "Machinery",
-    "market_cap": 374147.7670561082,
+    "market_cap": 376276.05483486084,
     "metrics": {
-      "P/E": 34.5,
+      "P/E": 34.7,
       "net margin %": 14.51,
       "rev growth %": 18.36,
       "ROE %": 54.2,
       "current ratio": 1.37
     },
     "news": [
-      "Caterpillar's Power Generation Backlog Just Hit $72 Billion. The Construction Cycle Barely Matters Anymore.",
-      "Caterpillar: The Industrial Machine That Just Won't Give Up",
-      "Nike: Just Not Doing It"
+      "Buy These 5 Top-Ranked Wide Moat Stocks to Strengthen Your Portfolio",
+      "New Strong Buy Stocks for September 14th",
+      "Friday's session: top gainers and losers in the dow jones index"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

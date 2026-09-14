@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "BABA",
-    "researched_at": "2026-09-07T16:36:22+00:00",
+    "researched_at": "2026-09-14T17:00:47+00:00",
     "name": "Alibaba Group Holding Ltd",
     "industry": "Retail",
-    "market_cap": 272569.9969922374,
+    "market_cap": 270984.9087894679,
     "metrics": {
-      "P/E": 24.94,
+      "P/E": 24.79,
       "net margin %": 7.02,
       "rev growth %": 4.42,
       "ROE %": 7.01,
       "current ratio": 1.36
     },
     "news": [
-      "Xi Jinping Set To Bring Top Chinese Business Leaders To Trump Summit In Washington: Report",
-      "Nvidia, Tech Giants Flash Stunning Market Signal",
-      "Baidu Just Gained Shanghai and Shenzhen Stock Connect Access. Is It Now a Better AI Bet Than Alibaba?"
+      "President Trump On Sunday, Said U.S. Is Leading China In AI, Wants To Keep It That Way; Trump Said \u201cWhoever Wins AI, Wins\u201d",
+      "Alibaba and Amazon Face the Same AI Spending Question: How Quickly Does Capacity Become Cash?",
+      "Alibaba (BABA)\u2019s AI Bet Faces a $10.2 Billion Test"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

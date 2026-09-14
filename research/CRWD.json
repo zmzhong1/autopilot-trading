@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "CRWD",
-    "researched_at": "2026-09-07T16:36:30+00:00",
+    "researched_at": "2026-09-14T17:00:58+00:00",
     "name": "CrowdStrike Holdings Inc",
     "industry": "Technology",
-    "market_cap": 218200.51019909894,
+    "market_cap": 211688.28415901217,
     "metrics": {
-      "P/E": 3732.48,
+      "P/E": 3621.08,
       "net margin %": 1.08,
       "rev growth %": 24.3,
       "ROE %": 1.29,
       "current ratio": 1.57
     },
     "news": [
-      "Investors Pulled $700 Million From IGV Hours Before Snowflake Reignited Software",
-      "Brokers Suggest Investing in CrowdStrike (CRWD): Read This Before Placing a Bet",
-      "Breakfast News: Selling Is an Art. Your Art."
+      "Gapping S&P500 stocks in Monday's session",
+      "3 Reasons CRWD Has Explosive Upside Potential",
+      "These S&P500 stocks are moving in today's pre-market session"
     ],
     "analyst_upgrade": false,
     "earnings_beat": true
