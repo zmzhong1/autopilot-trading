@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "GS",
-    "researched_at": "2026-09-08T15:14:23+00:00",
+    "researched_at": "2026-09-15T15:38:46+00:00",
     "name": "Goldman Sachs Group Inc",
     "industry": "Financial Services",
-    "market_cap": 302413.541391,
+    "market_cap": 287808.40238705906,
     "metrics": {
-      "P/E": 14.42,
+      "P/E": 13.98,
       "net margin %": 15.53,
       "rev growth %": 6.67,
       "ROE %": 16.94,
       "current ratio": 0.32
     },
     "news": [
-      "Nvidia's 3-Year-Old H100 Chip Is Still Getting the Market to Pay Up, Jensen Huang Says Compute Is 'Fungible, Durable and Highly Rentable'",
-      "AI Is Moving Into Everyday Business \u2014 These 5 Stocks Sit Squarely in the Path of the Surge",
-      "C Nears China Brokerage License: Can Onshore Expansion Boost Growth?"
+      "Make the Most of Your Retirement with These Top-Ranked Mutual Funds",
+      "Meta\u2019s (META) Muse Math: 10 Million Paying Users Could Mean $2.4 Billion a Year",
+      "Transaction in Own Shares"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

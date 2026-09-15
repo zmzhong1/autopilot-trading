@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "HMC",
-    "researched_at": "2026-09-08T15:14:26+00:00",
+    "researched_at": "2026-09-15T15:38:48+00:00",
     "name": "Honda Motor Co Ltd",
     "industry": "Automobiles",
-    "market_cap": 6603713.642944,
+    "market_cap": 6477205.71875,
     "metrics": {
       "net margin %": -0.75,
       "rev growth %": 4.13,
@@ -12,9 +12,9 @@
       "current ratio": 1.29
     },
     "news": [
-      "Honda Motor: Uncertain Turnaround Priced Into Shares",
-      "Honda seeks $9.4 billion in supplier cost cuts by 2030",
-      "Should Value Investors Buy Honda Motor Co. (HMC) Stock?"
+      "Fantastic News For Tesla Stock Fans",
+      "Force Marketing Expands to 16 OEM Certified Partnerships with Addition of Acura, Honda, Hyundai and Nissan",
+      "Honda invests in US maker of rare-earth-free magnets"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

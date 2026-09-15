@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "F",
-    "researched_at": "2026-09-08T15:14:12+00:00",
+    "researched_at": "2026-09-15T15:38:38+00:00",
     "name": "Ford Motor Co",
     "industry": "Automobiles",
-    "market_cap": 58300.808172,
+    "market_cap": 55268.07446735432,
     "metrics": {
       "net margin %": -3.93,
       "rev growth %": 1.47,
@@ -12,9 +12,9 @@
       "current ratio": 1.09
     },
     "news": [
-      "GM, Ford Turn EV Battery Bust Into Energy Storage Bet",
-      "Ford (F)\u2019s Third Recall in a Week Hits Nearly 149,000 Mustangs",
-      "Elon Musk's Tesla Cybertruck Has A New Ford Rival That Wants To Outsell It 5-To-1"
+      "Tesla Takes Back America",
+      "Ford revamps 2027 F-150 with hands-free towing, more V8 options, giving customers what they want, exec says",
+      "Ignore rising factory costs at your peril, Ford boss warns Labour"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

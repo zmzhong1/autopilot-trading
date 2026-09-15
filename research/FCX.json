@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "FCX",
-    "researched_at": "2026-09-08T15:14:16+00:00",
+    "researched_at": "2026-09-15T15:38:41+00:00",
     "name": "Freeport-McMoRan Inc",
     "industry": "Metals & Mining",
-    "market_cap": 104441.554399,
+    "market_cap": 99573.44997568258,
     "metrics": {
-      "P/E": 35.46,
+      "P/E": 33.85,
       "net margin %": 11.38,
       "rev growth %": -24.23,
       "ROE %": 15.26,
       "current ratio": 2.07
     },
     "news": [
-      "These S&P500 stocks are gapping in today's session",
-      "These S&P500 stocks are moving in today's pre-market session",
-      "Dr. Copper Says the AI Boom Is Spreading Through the Real Economy"
+      "Will FCX's Margins Hold Up as Copper Production Costs Rise?",
+      "Freeport-McMoRan: Recovering From Grasberg Drives Potential 10% FCF Yield",
+      "Molybdenum Market Size to Surpass USD 8.69 Billion by 2035, Driven by High-Strength Steel Demand | SNS Insider"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
