@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MU",
-    "researched_at": "2026-09-09T15:15:02+00:00",
+    "researched_at": "2026-09-16T15:29:35+00:00",
     "name": "Micron Technology Inc",
     "industry": "Semiconductors",
-    "market_cap": 1129686.7384463786,
+    "market_cap": 1047625.0416139048,
     "metrics": {
-      "P/E": 22.75,
+      "P/E": 20.7,
       "net margin %": 55.91,
       "rev growth %": 166.98,
       "ROE %": 70.55,
       "current ratio": 3.42
     },
     "news": [
-      "The Next Winners May Not Be the Stocks You Expect",
-      "Tech Analyst Paul Meeks Has A Warning for Apple in the Face of Its Biggest Launch Ever",
-      "Seagate's HAMR Bet is Paying Off: Can Mozaic Sustain the Momentum?"
+      "Is Micron Technology (MU) Stock Outpacing Its Computer and Technology Peers This Year?",
+      "What Nvidia and SK Hynix Are Signaling About Micron's Outlook",
+      "Hang Ten Systems Raises Additional $53 Million Led by Xora, a Temasek-Backed Fund, Bringing Total Funding to $85 Million"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

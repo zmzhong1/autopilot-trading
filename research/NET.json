@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "NET",
-    "researched_at": "2026-09-09T15:15:08+00:00",
+    "researched_at": "2026-09-16T15:29:40+00:00",
     "name": "Cloudflare Inc",
     "industry": "Technology",
-    "market_cap": 101233.467681779,
+    "market_cap": 116519.95978130141,
     "metrics": {
       "net margin %": -8.21,
       "rev growth %": 33.53,
@@ -12,9 +12,9 @@
       "current ratio": 1.82
     },
     "news": [
-      "An Emerging AI Agent Economy: First A Software Apocalypse, Now A Renaissance?",
-      "Zscaler: The $640M Hidden Warning",
-      "Cloudflare Surges 41% YTD: Should You Buy, Sell or Hold the Stock?"
+      "Cloudflare (NYSE:NET) Clears Minervini Trend Template and High-Growth Momentum Screen, but Setup Quality Is Only 3/10",
+      "What Growth Are You Paying For In Zscaler Stock?",
+      "What Are You Actually Buying In Cloudflare Stock?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

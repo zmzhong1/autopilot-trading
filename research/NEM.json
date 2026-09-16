@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NEM",
-    "researched_at": "2026-09-09T15:15:05+00:00",
+    "researched_at": "2026-09-16T15:29:38+00:00",
     "name": "Newmont Corporation",
     "industry": "Metals & Mining",
-    "market_cap": 133913.7455893809,
+    "market_cap": 130858.04153710506,
     "metrics": {
-      "P/E": 15.7,
+      "P/E": 15.08,
       "net margin %": 33.36,
       "rev growth %": 25.18,
       "ROE %": 25.05,
       "current ratio": 2.55
     },
     "news": [
-      "Oil Hits $100: Which Stocks And ETFs Win Or Lose?",
-      "Is Newmont Stock Outperforming the Nasdaq?",
-      "Kinross Gold Stock Up 13% in a Month: What Should Investors Do Now?"
+      "Newmont Corp (NYSE:NEM): A Growth-at-a-Reasonable-Price Case Study",
+      "Is This Gold Stock Polishing \u2014 Or Losing \u2014 Its Luster? Watch These Lines",
+      "Trading Halt: Halt status updated at 8:25:00 AM ET: Quotation Resumption: New Issue Available"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

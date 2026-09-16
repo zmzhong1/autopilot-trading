@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "MSFT",
-    "researched_at": "2026-09-09T15:14:59+00:00",
+    "researched_at": "2026-09-16T15:29:33+00:00",
     "name": "Microsoft Corp",
     "industry": "Technology",
-    "market_cap": 3667848.244947571,
+    "market_cap": 3691387.161043772,
     "metrics": {
       "P/E": 27.74,
       "net margin %": 40.31,
@@ -13,9 +13,9 @@
       "current ratio": 1.23
     },
     "news": [
-      "Arista vs. IBM: Which Cloud AI Stock Should Investors Buy Now?",
-      "Look Very Hard at Microsoft and Alphabet as Rate Hike Fears Roil Markets",
-      "Mindgard Expands AI and Cloud Ecosystem with Anthropic, NVIDIA, Microsoft, Google Cloud and AWS"
+      "HUBS Benefits From Strong Cash Flow Growth: Will the Momentum Last?",
+      "Rate Hike Shock: Can the S&P Hold?",
+      "Slackbot Users Jump 150%: Can Slack Reignite Salesforce's Growth?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

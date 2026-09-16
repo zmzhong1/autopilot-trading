@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "MP",
-    "researched_at": "2026-09-09T15:14:53+00:00",
+    "researched_at": "2026-09-16T15:29:28+00:00",
     "name": "MP Materials Corp",
     "industry": "Metals & Mining",
-    "market_cap": 9861.48498478819,
+    "market_cap": 8757.255380938439,
     "metrics": {
       "net margin %": -15.21,
       "rev growth %": 64.66,
@@ -12,9 +12,9 @@
       "current ratio": 9.51
     },
     "news": [
-      "Drones Are Now Mapping the Tungsten Ground America Walked Away From",
-      "The U.S.-China Worry List: Here\u2019s What Could Rattle the Fragile Detente",
-      "What Does \"Reshoring\" Actually Mean for Industrial Investors?"
+      "Critical Metals Rallies 5% on Tanbreez Refinery Study Projecting Up to $2.2B in Annual Revenue; USA Rare Earth Inches Higher, MP Materials Unmoved",
+      "Elmet: Government Deal Is A Big Positive, But There's Still Uncertainty",
+      "China Lost 19-1: The Trump-Xi Meeting Could Test A New Alignment"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

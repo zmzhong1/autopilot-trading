@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "META",
-    "researched_at": "2026-09-09T15:14:50+00:00",
+    "researched_at": "2026-09-16T15:29:25+00:00",
     "name": "Meta Platforms Inc",
     "industry": "Media",
-    "market_cap": 1562844.1125578317,
+    "market_cap": 1707440.4486030466,
     "metrics": {
-      "P/E": 23.07,
+      "P/E": 24.24,
       "net margin %": 29.84,
       "rev growth %": 27.65,
       "ROE %": 29.73,
       "current ratio": 2.23
     },
     "news": [
-      "Bond yields tick higher as oil tops $100: AlphaCheck",
-      "Meta Stock Jumps As Tech Giant Touts Early Interest In Muse AI Agent",
-      "Uber initiated, Thermo Fisher upgraded: Wall Street's top analyst calls"
+      "Why this billionaire didn't invest in Facebook",
+      "Empower Strengthens Marketing Leadership Team with Senior Talent from Meta, Marriott, and Zeno",
+      "Why Meta's Zuckerberg, Nvidia's Huang Say An AI Slowdown Is Not Needed"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
