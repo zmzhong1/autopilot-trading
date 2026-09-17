@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PATH",
-    "researched_at": "2026-09-10T15:05:50+00:00",
+    "researched_at": "2026-09-17T15:36:35+00:00",
     "name": "UiPath Inc",
     "industry": "Technology",
-    "market_cap": 7030.896187494646,
+    "market_cap": 7103.351842347856,
     "metrics": {
-      "P/E": 19.43,
+      "P/E": 20.49,
       "net margin %": 21.03,
       "rev growth %": 14.98,
       "ROE %": 18.42,
       "current ratio": 2.39
     },
     "news": [
-      "Motive raises $1.3 billion from General Catalyst",
-      "Dips In UiPath Stock Have Mostly Kept Falling, Will This One Too?",
-      "UiPath (PATH) Q2 2027 Earnings Call Transcript"
+      "A Philippine Telecom\u2019s AI Makeover Tests UiPath\u2019s (PATH) Pitch",
+      "SoundHound AI Drops 4% as Selling Concentrates in Speculative Software Names; UiPath Falls 3%, C3.ai Dips",
+      "10 Information Technology Stocks With Whale Alerts In Today\u2019s Session"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

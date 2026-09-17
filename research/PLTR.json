@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "PLTR",
-    "researched_at": "2026-09-10T15:05:54+00:00",
+    "researched_at": "2026-09-17T15:36:37+00:00",
     "name": "Palantir Technologies Inc",
     "industry": "Technology",
-    "market_cap": 407396.38643707294,
+    "market_cap": 418949.17561314616,
     "metrics": {
-      "P/E": 135.45,
+      "P/E": 137.46,
       "net margin %": 49.0,
       "rev growth %": 78.92,
       "ROE %": 37.47,
       "current ratio": 7.23
     },
     "news": [
-      "Palantir\u2019s Stock Has Soared More Than 1,700% Since Its IPO. How High Can PLTR Go From Here?",
-      "Nvidia and Palantir Expand Dream AI Partnership. It\u2019s Not Helping the Stocks.",
-      "Where Will Nebius Stock Be in 3 Years?"
+      "SRFM Lands First OperatorOS Customer As Palantir-Powered Platform Goes Commercial",
+      "Chipotle Turns to Palantir After a Summer of Outbreaks",
+      "Palantir's Real Moat Just Got Stronger"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "thesis stale (review due 2026-09-16)"
+  ]
 }

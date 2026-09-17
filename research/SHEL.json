@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "SHEL",
-    "researched_at": "2026-09-10T15:06:03+00:00",
+    "researched_at": "2026-09-17T15:36:41+00:00",
     "name": "Shell PLC",
     "industry": "Energy",
-    "market_cap": 200565.460876,
+    "market_cap": 209060.12016,
     "metrics": {
-      "P/E": 10.45,
+      "P/E": 10.84,
       "net margin %": 8.76,
       "rev growth %": 9.04,
       "ROE %": 14.74,
       "current ratio": 1.43
     },
     "news": [
-      "European Natural Gas Surges to 4-Year High, Lifting These Energy Stocks",
-      "SCHD Has an International Twin. It Returned 28% in a Year, Yields 3.7%, and Charges 0.08%",
-      "Could Shell (SHEL)\u2019s Superior Cash Flow Make It a Better Bet Than BP (BP)?"
+      "Transaction in Own Shares",
+      "T Mobile US (TMUS) Sets Up A Long Term CFO Succession Plan",
+      "Shell Falls 2.5% as 36 Million Missing Tons Reprice LNG Demand"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

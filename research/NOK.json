@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NOK",
-    "researched_at": "2026-09-10T15:05:36+00:00",
+    "researched_at": "2026-09-17T15:36:28+00:00",
     "name": "Nokia Oyj",
     "industry": "Communications",
-    "market_cap": 51249.463913,
+    "market_cap": 48492.19349,
     "metrics": {
-      "P/E": 72.59,
+      "P/E": 67.91,
       "net margin %": 3.48,
       "rev growth %": 5.29,
       "ROE %": 3.41,
       "current ratio": 1.5
     },
     "news": [
-      "Nokia Unveils Cognitive Operations To Bring AI Intelligence Into Fields",
-      "These stocks are the most active in today's session",
-      "European Equities Traded in the US as American Depositary Receipts Decline in Wednesday Trading"
+      "Nokia stock jumps as Microsoft AI data partnership expands",
+      "Nokia Extends Microsoft Tie-Up With AI Platform For Telecom Network Automation \u2013 NOK Stock Rises Premarket",
+      "$1000 Invested In Nokia 5 Years Ago Would Be Worth This Much Today"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

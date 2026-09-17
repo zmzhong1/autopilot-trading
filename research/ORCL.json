@@ -1,24 +1,24 @@
 {
   "snapshot": {
     "ticker": "ORCL",
-    "researched_at": "2026-09-10T15:05:47+00:00",
+    "researched_at": "2026-09-17T15:36:33+00:00",
     "name": "Oracle Corp",
     "industry": "Technology",
-    "market_cap": 465570.5314455407,
+    "market_cap": 432878.0766085065,
     "metrics": {
-      "P/E": 27.63,
-      "net margin %": 25.37,
-      "rev growth %": 17.35,
-      "ROE %": 50.38,
-      "current ratio": 1.11
+      "P/E": 22.84,
+      "net margin %": 26.36,
+      "rev growth %": 21.62,
+      "ROE %": 42.48,
+      "current ratio": 1.17
     },
     "news": [
-      "Stock Market Today (Sept. 10, 2026): Dow futures edge higher ahead of inflation reports",
-      "AMD Stock\u2019s 10-Year, 6,800% Rally Was Just the Beginning. Here\u2019s Where AMD Could Be Headed Next",
-      "Update: US Equity Futures Lower Pre-Bell Thursday as Traders Assess Inflation Data Amid Higher Oil Prices"
+      "Oracle\u2019s 2026 Cratering: This Pro Is Sure It Will Nearly Triple in the Next 12 Months",
+      "1 AI Stock Poised to Outperform Micron and Sandisk on the Next Infrastructure Surge",
+      "Should You Buy Oracle Stock While It's Down 53% From Its Peak? The Answer Might Surprise You."
     ],
     "analyst_upgrade": false,
-    "earnings_beat": false
+    "earnings_beat": true
   },
   "flags": [
     "analyst trend not upgrading vs buy-rated thesis"

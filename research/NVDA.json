@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NVDA",
-    "researched_at": "2026-09-10T15:05:41+00:00",
+    "researched_at": "2026-09-17T15:36:31+00:00",
     "name": "NVIDIA Corp",
     "industry": "Semiconductors",
-    "market_cap": 5390446.897973662,
+    "market_cap": 5154989.955512188,
     "metrics": {
-      "P/E": 28.07,
+      "P/E": 26.83,
       "net margin %": 63.66,
       "rev growth %": 83.38,
       "ROE %": 110.11,
       "current ratio": 4.59
     },
     "news": [
-      "Treasury yields rise as investors raise bets on Fed rate hike: AlphaCheck",
-      "Meta Platforms upgraded, Okta downgraded: Wall Street's top analyst calls",
-      "Got $5,000? 3 No-Brainer Artificial Intelligence (AI) Stocks to Buy Right Now."
+      "Arm\u2019s CEO Says Demand Is \u2018Off the Charts.\u2019 The Problem Is Nobody Can Build Chips Fast Enough",
+      "10-year Treasury yield eases, oil falls to $100: AlphaCheck",
+      "Bill Ackman's Pershing Square Took a New Stake in Netflix in 2026, Years After a Money-Losing Bet on the Stock. Why He Says This Time Is Different."
     ],
     "analyst_upgrade": true,
     "earnings_beat": true
