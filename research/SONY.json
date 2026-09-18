@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SONY",
-    "researched_at": "2026-09-11T15:08:14+00:00",
+    "researched_at": "2026-09-18T15:05:13+00:00",
     "name": "Sony Group Corp",
     "industry": "Consumer products",
-    "market_cap": 21480059.631348,
+    "market_cap": 22037059.79834,
     "metrics": {
       "net margin %": -1.75,
       "rev growth %": 6.54,
@@ -12,9 +12,8 @@
       "current ratio": 1.25
     },
     "news": [
-      "Sony: Quiet Quality, Stealthy Growth",
-      "Top 3 Streaming Stocks to Ride on Rising Ad and Viewing Trends",
-      "Wall Street Breakfast Podcast: Chime Finds Its Stride"
+      "Sony Group (TSE:6758) Moved, What Is Behind The Attention Now?",
+      "Epic Games\u2019 Private Market Value Slides as Fortnite Struggles to Deliver its Next Growth Spurt"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

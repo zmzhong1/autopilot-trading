@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "TM",
-    "researched_at": "2026-09-11T15:08:21+00:00",
+    "researched_at": "2026-09-18T15:05:22+00:00",
     "name": "Toyota Motor Corp",
     "industry": "Automobiles",
-    "market_cap": 35182088.767578,
+    "market_cap": 35714971.296875,
     "metrics": {
-      "P/E": 7.85,
+      "P/E": 7.98,
       "net margin %": 8.63,
       "rev growth %": 7.23,
       "ROE %": 11.67,
       "current ratio": 1.17
     },
     "news": [
-      "Jim Cramer on Joby Aviation (JOBY): \u201cI Would Not Put My Money in It\u201d",
-      "Iridium, Deutsche Telekom IoT, and Toyota Demonstrate Voice Messaging over Satellite via Iridium NTN Direct",
-      "SCHD Has an International Twin. It Returned 28% in a Year, Yields 3.7%, and Charges 0.08%"
+      "Toyota: Rising Interest Rates And Plummeting Car Sales In China Force A Downgrade",
+      "Daimler Truck brings NextGenH2 to IAA as hydrogen pact forms",
+      "Why Is BlackBerry (BB) Stock Trending After Hours"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

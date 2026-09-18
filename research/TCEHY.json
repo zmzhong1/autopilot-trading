@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "TCEHY",
-    "researched_at": "2026-09-11T15:08:19+00:00",
+    "researched_at": "2026-09-18T15:05:19+00:00",
     "name": "Tencent Holdings Ltd",
     "industry": "Media",
-    "market_cap": 3914863.09375,
+    "market_cap": 3905950.572727,
     "metrics": {
-      "P/E": 14.22,
+      "P/E": 14.18,
       "net margin %": 29.87,
       "rev growth %": 11.97,
       "ROE %": 20.52,
       "current ratio": 1.29
     },
     "news": [
-      "Nvidia's Would-Be China Replacement Just Soared More Than 200% on Debut",
-      "Chinese Chipmakers Become Billionaires Without Turning a Profit",
-      "Nvidia's Chinese Rival Enflame Soars Over 220% in Shanghai Debut As Investors Bet on Domestic AI Chips"
+      "Manus Eyes $4 Billion Valuation in First Round Since Beijing Forced Meta to Walk Away",
+      "Josh Shapiro Slams Trump's Decision to Sell 'Most Advanced' Chips to China Amid AI Race, Giving Them an Edge: 'That Was a Mistake'",
+      "Meta Gets $4 Billion Reminder From China's AI Race"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

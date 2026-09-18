@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "TSLA",
-    "researched_at": "2026-09-11T15:08:26+00:00",
+    "researched_at": "2026-09-18T15:05:28+00:00",
     "name": "Tesla Inc",
     "industry": "Automobiles",
-    "market_cap": 1435897.5186228792,
+    "market_cap": 1446324.2796016487,
     "metrics": {
-      "P/E": 377.27,
+      "P/E": 381.57,
       "net margin %": 3.67,
       "rev growth %": 11.75,
       "ROE %": 4.57,
       "current ratio": 1.94
     },
     "news": [
-      "Tesla\u2019s Trucking Business Could Unlock A $17B Software Opportunity, Morgan Stanley Says",
-      "Should You Buy Ford Motor Stock Because It Is Selling Fewer Vehicles At Better Prices?",
-      "Tesla\u2019s Drag on XLY Was Softened by Amazon\u2019s Gain; QQQ Felt Almost Nothing"
+      "Tesla Trades at 331 Times Trailing Earnings While Facing Growing Competition From China's BYD. Is Elon Musk's Premium Valuation Still Justified?",
+      "Latest News In Electric Vehicles - Subaru Partners With onsemi To Advance Power Architecture Integration",
+      "Lemonade Targets First EBITDA-Positive Quarter as CFO Tim Bixby Transitions to Board"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
