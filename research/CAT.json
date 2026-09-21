@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "CAT",
-    "researched_at": "2026-09-14T17:00:50+00:00",
+    "researched_at": "2026-09-21T17:09:03+00:00",
     "name": "Caterpillar Inc",
     "industry": "Machinery",
-    "market_cap": 376276.05483486084,
+    "market_cap": 371872.3730317619,
     "metrics": {
-      "P/E": 34.7,
+      "P/E": 34.29,
       "net margin %": 14.51,
       "rev growth %": 18.36,
       "ROE %": 54.2,
       "current ratio": 1.37
     },
     "news": [
-      "Buy These 5 Top-Ranked Wide Moat Stocks to Strengthen Your Portfolio",
-      "New Strong Buy Stocks for September 14th",
-      "Friday's session: top gainers and losers in the dow jones index"
+      "SpaceX Finds Way Around Data Center Moratorium As 300-Plus Restrictions Delay 3 Projects",
+      "What Higher Interest Rates Mean for Caterpillar, GE Vernova, and Vertiv",
+      "The Caterpillar Correction Shouldn't Last Much Longer"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

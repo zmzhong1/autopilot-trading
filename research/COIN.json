@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "COIN",
-    "researched_at": "2026-09-14T17:00:53+00:00",
+    "researched_at": "2026-09-21T17:09:05+00:00",
     "name": "Coinbase Global Inc",
     "industry": "Financial Services",
-    "market_cap": 46240.07262,
+    "market_cap": 51250.33725,
     "metrics": {
       "net margin %": -15.72,
       "rev growth %": -10.35,
@@ -12,9 +12,9 @@
       "current ratio": 2.42
     },
     "news": [
-      "Nike downgraded, Affirm upgraded: Wall Street's top analyst calls",
-      "Coinbase Expands Stablecoin Reach Through Community Banks",
-      "COIN, BLSH Stocks Get Analyst Upgrades With Bitcoin Recovery, CLARITY Act Odds Lifting Crypto Outlook"
+      "Why Coinbase's CEO shouldn't be blamed for the failed Clarity Act",
+      "COIN Stock Hits 4-Month High Amid Crypto Rally As Coinbase Makes IPO Allocations Available To Retail Traders",
+      "Is Coinbase's Steadier Side Really A Cushion?"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "CRWD",
-    "researched_at": "2026-09-14T17:00:58+00:00",
+    "researched_at": "2026-09-21T17:09:10+00:00",
     "name": "CrowdStrike Holdings Inc",
     "industry": "Technology",
-    "market_cap": 211688.28415901217,
+    "market_cap": 243338.10563204275,
     "metrics": {
-      "P/E": 3621.08,
+      "P/E": 4162.47,
       "net margin %": 1.08,
       "rev growth %": 24.3,
       "ROE %": 1.29,
       "current ratio": 1.57
     },
     "news": [
-      "Gapping S&P500 stocks in Monday's session",
-      "3 Reasons CRWD Has Explosive Upside Potential",
-      "These S&P500 stocks are moving in today's pre-market session"
+      "Can Falcon Flex Momentum Keep Driving CrowdStrike's ARR Growth?",
+      "Zscaler's AI Bookings Jump 50%: Can AI Products Drive Growth?",
+      "CrowdStrike Stock Jumped 15% Last Week. Here\u2019s What Happened."
     ],
     "analyst_upgrade": false,
     "earnings_beat": true

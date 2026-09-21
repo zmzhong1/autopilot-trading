@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "BABA",
-    "researched_at": "2026-09-14T17:00:47+00:00",
+    "researched_at": "2026-09-21T17:09:00+00:00",
     "name": "Alibaba Group Holding Ltd",
     "industry": "Retail",
-    "market_cap": 270984.9087894679,
+    "market_cap": 266296.6173681262,
     "metrics": {
-      "P/E": 24.79,
+      "P/E": 24.32,
       "net margin %": 7.02,
       "rev growth %": 4.42,
       "ROE %": 7.01,
       "current ratio": 1.36
     },
     "news": [
-      "President Trump On Sunday, Said U.S. Is Leading China In AI, Wants To Keep It That Way; Trump Said \u201cWhoever Wins AI, Wins\u201d",
-      "Alibaba and Amazon Face the Same AI Spending Question: How Quickly Does Capacity Become Cash?",
-      "Alibaba (BABA)\u2019s AI Bet Faces a $10.2 Billion Test"
+      "Alibaba Burned RMB 44.73 Billion in Free Cash Flow Last Quarter. The Numbers Tell a Messier Story.",
+      "OpenAI Cash Burn to Hit $280 Billion by 2030 as Anthropic Profit Surges",
+      "OpenAI and Anthropic's Chinese Rivals Face a Revenue Reality Check"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

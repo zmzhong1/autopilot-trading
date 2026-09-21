@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DELL",
-    "researched_at": "2026-09-14T17:01:01+00:00",
+    "researched_at": "2026-09-21T17:09:12+00:00",
     "name": "Dell Technologies Inc",
     "industry": "Technology",
-    "market_cap": 360690.21658906,
+    "market_cap": 361179.81087590737,
     "metrics": {
-      "P/E": 31.7,
+      "P/E": 31.74,
       "net margin %": 7.53,
       "rev growth %": 49.03,
       "ROE %": 130.7,
       "current ratio": 0.96
     },
     "news": [
-      "Oracle\u2019s $664 billion backlog sends a signal to Dell, HPE",
-      "Friday's Oil-Relief Rally Meets a Weekend of Saudi Pipeline Fires, AI Pause Calls and Anthropic's Two-Trillion IPO Whisper",
-      "Dell Shares Reach Record High After RBC Starts Coverage With Outperform Rating"
+      "DELL Rides on Growing AI Clientele: Can the Stock Outpace SMCI & CSCO?",
+      "Dell Best Positioned to Benefit From On-Premises AI Growth, Morgan Stanley Says",
+      "HP Stock Drops After PC Maker Forecasts Industry Sales Decline"
     ],
     "analyst_upgrade": false,
     "earnings_beat": true

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "COST",
-    "researched_at": "2026-09-14T17:00:56+00:00",
+    "researched_at": "2026-09-21T17:09:08+00:00",
     "name": "Costco Wholesale Corp",
     "industry": "Retail",
-    "market_cap": 401246.33486745006,
+    "market_cap": 397051.0197976904,
     "metrics": {
-      "P/E": 45.4,
+      "P/E": 44.93,
       "net margin %": 3.01,
       "rev growth %": 9.23,
       "ROE %": 28.27,
       "current ratio": 1.07
     },
     "news": [
-      "Costco rations Kirkland motor oil, raises price to $57.99",
-      "Costco Hiked Its Dividend by 13%. Here Is What a $10,000 Investment Earns Annually.",
-      "This Hot Dog Has Cost $1.50 Since 1985"
+      "The TJX Companies Stock Trading at a Discount: Buy or Hold?",
+      "Can Walmart Turn Healthcare Expansion Into Deeper Engagement?",
+      "Trading Week Starts Up on Quiet Pre-Market"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
