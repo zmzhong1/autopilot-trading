@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "FCX",
-    "researched_at": "2026-09-15T15:38:41+00:00",
+    "researched_at": "2026-09-22T15:35:57+00:00",
     "name": "Freeport-McMoRan Inc",
     "industry": "Metals & Mining",
-    "market_cap": 99573.44997568258,
+    "market_cap": 103623.020955149,
     "metrics": {
-      "P/E": 33.85,
+      "P/E": 34.87,
       "net margin %": 11.38,
       "rev growth %": -24.23,
       "ROE %": 15.26,
       "current ratio": 2.07
     },
     "news": [
-      "Will FCX's Margins Hold Up as Copper Production Costs Rise?",
-      "Freeport-McMoRan: Recovering From Grasberg Drives Potential 10% FCF Yield",
-      "Molybdenum Market Size to Surpass USD 8.69 Billion by 2035, Driven by High-Strength Steel Demand | SNS Insider"
+      "Freeport-McMoRan's Low-Cost Secret to Take Advantage of Record Copper Prices",
+      "Basic Materials Sector Still Shows Promise In 2026, But Proceed With Caution",
+      "Trump, Greenland Deal Puts Rare-Earth ETFs In Focus: Funds to Watch as US Targets China\u2019s Supply Chain"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

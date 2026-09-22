@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "GS",
-    "researched_at": "2026-09-15T15:38:46+00:00",
+    "researched_at": "2026-09-22T15:36:03+00:00",
     "name": "Goldman Sachs Group Inc",
     "industry": "Financial Services",
-    "market_cap": 287808.40238705906,
+    "market_cap": 279346.9459827468,
     "metrics": {
-      "P/E": 13.98,
+      "P/E": 13.14,
       "net margin %": 15.53,
       "rev growth %": 6.67,
       "ROE %": 16.94,
       "current ratio": 0.32
     },
     "news": [
-      "Make the Most of Your Retirement with These Top-Ranked Mutual Funds",
-      "Meta\u2019s (META) Muse Math: 10 Million Paying Users Could Mean $2.4 Billion a Year",
-      "Transaction in Own Shares"
+      "Goldman Eyes Nearly $70B Revenue Base in 2026: What's Driving Growth?",
+      "Cyera Announces $400 Million Investment from Goldman Sachs to Build the Trust Layer for the Agentic Enterprise",
+      "Goldman, Morgan Stanley Ride $17.2B China Tech Boom as AI Truce Odds Sit at 10%"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

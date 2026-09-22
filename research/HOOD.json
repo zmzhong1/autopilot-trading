@@ -1,27 +1,26 @@
 {
   "snapshot": {
     "ticker": "HOOD",
-    "researched_at": "2026-09-15T15:38:51+00:00",
+    "researched_at": "2026-09-22T15:36:09+00:00",
     "name": "Robinhood Markets Inc",
     "industry": "Financial Services",
-    "market_cap": 102792.07771062486,
+    "market_cap": 110856.84583136455,
     "metrics": {
-      "P/E": 48.85,
+      "P/E": 53.5,
       "net margin %": 42.01,
       "rev growth %": 38.27,
       "ROE %": 22.7,
       "current ratio": 1.22
     },
     "news": [
-      "What's going on in today's session: S&P500 gap up and gap down stocks",
-      "What Is the Crypto Clarity Act? What Tuesday\u2019s Senate Vote Decides for XRP, Bitcoin, Ethereum, and Solana",
-      "These S&P500 stocks that are showing activity before the opening bell on Tuesday."
+      "SoFi Rises 5% After Getting Cut in Half: Is SOFI Stock Set to Double From Here?",
+      "Robinhood Markets, Inc. (HOOD) Is a Trending Stock: Facts to Know Before Betting on It",
+      "Forget Dogecoin: PEPE Is Outrunning Bitcoin and XRP\u2014Is FLOKI Next?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-09-12)",
     "analyst trend not upgrading vs buy-rated thesis",
     "recent earnings did not beat, despite high H-0"
   ]

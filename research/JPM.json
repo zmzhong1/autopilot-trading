@@ -1,20 +1,20 @@
 {
   "snapshot": {
     "ticker": "JPM",
-    "researched_at": "2026-09-15T15:38:53+00:00",
+    "researched_at": "2026-09-22T15:36:13+00:00",
     "name": "JPMorgan Chase & Co",
     "industry": "Banking",
-    "market_cap": 930710.7906742053,
+    "market_cap": 935787.9336988562,
     "metrics": {
-      "P/E": 14.23,
+      "P/E": 14.34,
       "net margin %": 33.26,
       "rev growth %": 108.98,
       "ROE %": 17.81
     },
     "news": [
-      "Gold miners still have room to run, says JP Morgan in new sector dashboard",
-      "Chase Freedom\u00ae Announces Q4 2026 5% Cash Back Categories: Grocery Stores, Dining and American Red Cross Donations",
-      "Is JPMorgan Small Cap Blend A (VSCOX) a Strong Mutual Fund Pick Right Now?"
+      "Goldman Eyes Nearly $70B Revenue Base in 2026: What's Driving Growth?",
+      "Fed Rate Hike: What it Means for Wells Fargo's NII Outlook",
+      "Sigma Lithium gets bullish start from JPMorgan"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

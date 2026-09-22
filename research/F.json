@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "F",
-    "researched_at": "2026-09-15T15:38:38+00:00",
+    "researched_at": "2026-09-22T15:35:55+00:00",
     "name": "Ford Motor Co",
     "industry": "Automobiles",
-    "market_cap": 55268.07446735432,
+    "market_cap": 52516.632678172595,
     "metrics": {
       "net margin %": -3.93,
       "rev growth %": 1.47,
@@ -12,9 +12,9 @@
       "current ratio": 1.09
     },
     "news": [
-      "Tesla Takes Back America",
-      "Ford revamps 2027 F-150 with hands-free towing, more V8 options, giving customers what they want, exec says",
-      "Ignore rising factory costs at your peril, Ford boss warns Labour"
+      "GM Wins $700 Million Pentagon Contract; Shares Gain",
+      "Ford Stock Is Down 24% From Its Peak. Here\u2019s Why the Services Business Could Be Worth More Than the Cars.",
+      "What's going on in today's session: S&P500 most active stocks"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
