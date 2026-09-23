@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "MP",
-    "researched_at": "2026-09-16T15:29:28+00:00",
+    "researched_at": "2026-09-23T15:31:26+00:00",
     "name": "MP Materials Corp",
     "industry": "Metals & Mining",
-    "market_cap": 8757.255380938439,
+    "market_cap": 9090.305307740799,
     "metrics": {
       "net margin %": -15.21,
       "rev growth %": 64.66,
@@ -12,9 +12,9 @@
       "current ratio": 9.51
     },
     "news": [
-      "Critical Metals Rallies 5% on Tanbreez Refinery Study Projecting Up to $2.2B in Annual Revenue; USA Rare Earth Inches Higher, MP Materials Unmoved",
-      "Elmet: Government Deal Is A Big Positive, But There's Still Uncertainty",
-      "China Lost 19-1: The Trump-Xi Meeting Could Test A New Alignment"
+      "America\u2019s Rare Earth Bet Nears a Real Test: MP Materials Closes In on GM Deliveries",
+      "Critical Metals Drops 6% as Greenland Surge Meets Profit Taking; USA Rare Earth Slips, MP Materials Eases",
+      "Critical Metals Corp.: At The Nexus Of America's Rare Earths Diplomacy (But Still No Trophy)"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MU",
-    "researched_at": "2026-09-16T15:29:35+00:00",
+    "researched_at": "2026-09-23T15:31:34+00:00",
     "name": "Micron Technology Inc",
     "industry": "Semiconductors",
-    "market_cap": 1047625.0416139048,
+    "market_cap": 1237995.4573494985,
     "metrics": {
-      "P/E": 20.7,
+      "P/E": 24.07,
       "net margin %": 55.91,
       "rev growth %": 166.98,
       "ROE %": 70.55,
       "current ratio": 3.42
     },
     "news": [
-      "Is Micron Technology (MU) Stock Outpacing Its Computer and Technology Peers This Year?",
-      "What Nvidia and SK Hynix Are Signaling About Micron's Outlook",
-      "Hang Ten Systems Raises Additional $53 Million Led by Xora, a Temasek-Backed Fund, Bringing Total Funding to $85 Million"
+      "Stock Market Today: Nasdaq Dips After Hitting Record Highs; Micron, Sandisk Sink In Buy Zones (Live Coverage)",
+      "Micron Wall Street Target Hits $2,000 as Traders Pile In Before Earnings",
+      "Micron vs. Sandisk: Which AI Memory Stock Has More Room to Run?"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

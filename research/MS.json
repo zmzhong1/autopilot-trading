@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MS",
-    "researched_at": "2026-09-16T15:29:30+00:00",
+    "researched_at": "2026-09-23T15:31:29+00:00",
     "name": "Morgan Stanley",
     "industry": "Financial Services",
-    "market_cap": 323976.4159725692,
+    "market_cap": 314395.9513189825,
     "metrics": {
-      "P/E": 16.02,
+      "P/E": 15.57,
       "net margin %": 15.65,
       "rev growth %": 13.96,
       "ROE %": 17.83,
       "current ratio": 0.35
     },
     "news": [
-      "Morgan Stanley Investment Management Closes Inaugural Growth Equity Investment Fund Oversubscribed at $1.3 Billion",
-      "Morgan Stanley Investment Management Announces Effort to Convert Nearly $10 Billion in Municipal Mutual Funds to ETFs",
-      "Morgan Stanley Lines Up $1.3 Billion for Growth Equity Fund"
+      "Morgan Stanley Investment-Bank Deal List Leaked in Email Misfire",
+      "October Could Bring New Market Surprises As Earnings Season Nears: Here's What To Watch",
+      "One AI Agent, Two Verdicts: Muse Lifts the Nasdaq to a Record and Knocks the Banks"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
