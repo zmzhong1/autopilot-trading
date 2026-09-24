@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "PLTR",
-    "researched_at": "2026-09-17T15:36:37+00:00",
+    "researched_at": "2026-09-24T15:52:40+00:00",
     "name": "Palantir Technologies Inc",
     "industry": "Technology",
-    "market_cap": 418949.17561314616,
+    "market_cap": 460882.56231242954,
     "metrics": {
-      "P/E": 137.46,
+      "P/E": 152.59,
       "net margin %": 49.0,
       "rev growth %": 78.92,
       "ROE %": 37.47,
       "current ratio": 7.23
     },
     "news": [
-      "SRFM Lands First OperatorOS Customer As Palantir-Powered Platform Goes Commercial",
-      "Chipotle Turns to Palantir After a Summer of Outbreaks",
-      "Palantir's Real Moat Just Got Stronger"
+      "Billions Behind the Autonomous Machine Boom as Unmanned Ground Vehicles Disrupts the Defense Industry",
+      "Palantir Just Hit a One-Year High. Here's What's Driving It",
+      "Prediction: This Will Be Palantir Technologies\u2019 Stock Price by the End of 2028"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "thesis stale (review due 2026-09-16)"
-  ]
+  "flags": []
 }

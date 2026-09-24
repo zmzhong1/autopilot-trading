@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PATH",
-    "researched_at": "2026-09-17T15:36:35+00:00",
+    "researched_at": "2026-09-24T15:52:39+00:00",
     "name": "UiPath Inc",
     "industry": "Technology",
-    "market_cap": 7103.351842347856,
+    "market_cap": 6795.87021285434,
     "metrics": {
-      "P/E": 20.49,
+      "P/E": 18.78,
       "net margin %": 21.03,
       "rev growth %": 14.98,
       "ROE %": 18.42,
       "current ratio": 2.39
     },
     "news": [
-      "A Philippine Telecom\u2019s AI Makeover Tests UiPath\u2019s (PATH) Pitch",
-      "SoundHound AI Drops 4% as Selling Concentrates in Speculative Software Names; UiPath Falls 3%, C3.ai Dips",
-      "10 Information Technology Stocks With Whale Alerts In Today\u2019s Session"
+      "UiPath Announces Winners of the 2026 Geekwire AI Breakthrough Awards, Recognizing Enterprises Running Agentic AI at Production Scale",
+      "Canaccord Genuity Maintains Hold on UiPath, Lowers Price Target to $14",
+      "TD Cowen Maintains Hold on UiPath, Lowers Price Target to $15"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

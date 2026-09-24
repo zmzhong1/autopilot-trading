@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "SFTBY",
-    "researched_at": "2026-09-17T15:36:39+00:00",
+    "researched_at": "2026-09-24T15:52:42+00:00",
     "name": "SoftBank Group Corp",
     "industry": "Telecommunication",
-    "market_cap": 35843699.093262,
+    "market_cap": 36049205.251465,
     "metrics": {
-      "P/E": 6.76,
+      "P/E": 7.32,
       "net margin %": 61.61,
       "rev growth %": 8.63,
       "ROE %": 29.88,
       "current ratio": 0.68
     },
     "news": [
-      "Market Chatter: Apollo Global Weighs Boosting SoftBank Loan to $9 Billion for OpenAI Investment",
-      "Apollo Mulls Raising SoftBank Loan to $9 Billion for OpenAI Bets",
-      "'Apollo Mulls Raising SoftBank Loan to $9 Billion for OpenAI Bets' - Bloomberg"
+      "SoftBank Just Raised $11.1 Billion to Fund Its Massive AI Bet",
+      "SoftBank Launches $11.1 Billion Bond Sale to Fund Final $10 Billion OpenAI Investment Tranche",
+      "SoftBank: Junk Bonds Tarnish Intriguing Investment Portfolio"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

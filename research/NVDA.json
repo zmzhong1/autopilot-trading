@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "NVDA",
-    "researched_at": "2026-09-17T15:36:31+00:00",
+    "researched_at": "2026-09-24T15:52:34+00:00",
     "name": "NVIDIA Corp",
     "industry": "Semiconductors",
-    "market_cap": 5154989.955512188,
+    "market_cap": 5434790.88405158,
     "metrics": {
-      "P/E": 26.83,
+      "P/E": 28.58,
       "net margin %": 63.66,
       "rev growth %": 83.38,
       "ROE %": 110.11,
       "current ratio": 4.59
     },
     "news": [
-      "Arm\u2019s CEO Says Demand Is \u2018Off the Charts.\u2019 The Problem Is Nobody Can Build Chips Fast Enough",
-      "10-year Treasury yield eases, oil falls to $100: AlphaCheck",
-      "Bill Ackman's Pershing Square Took a New Stake in Netflix in 2026, Years After a Money-Losing Bet on the Stock. Why He Says This Time Is Different."
+      "Prediction: Micron Stock Will Double Within 2 Years",
+      "USA Rare Earth Is Breaking Ground on Its $1.2 Billion South Carolina Facility. Is It Time to Buy the Critical Minerals Stock?",
+      "Nvidia leads tech stocks lower as Treasury yields surge: AlphaCheck"
     ],
     "analyst_upgrade": true,
     "earnings_beat": true
   },
-  "flags": []
+  "flags": [
+    "thesis stale (review due 2026-09-23)"
+  ]
 }

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "SHEL",
-    "researched_at": "2026-09-17T15:36:41+00:00",
+    "researched_at": "2026-09-24T15:52:44+00:00",
     "name": "Shell PLC",
     "industry": "Energy",
-    "market_cap": 209060.12016,
+    "market_cap": 200599.867598,
     "metrics": {
-      "P/E": 10.84,
+      "P/E": 10.27,
       "net margin %": 8.76,
       "rev growth %": 9.04,
       "ROE %": 14.74,
       "current ratio": 1.43
     },
     "news": [
+      "Is Shell (LSE:SHEL) Still Undervalued As Its LNG Led Growth Story Builds?",
       "Transaction in Own Shares",
-      "T Mobile US (TMUS) Sets Up A Long Term CFO Succession Plan",
-      "Shell Falls 2.5% as 36 Million Missing Tons Reprice LNG Demand"
+      "'Europe\u2019s Diesel Prices Race Ahead of US on Export-Ban Risks' - Bloomberg"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
