@@ -23,15 +23,17 @@ copy (`select_live_orders` fed the proposals that existed at each fire time).
 
 Step 5 of the prompt commits on every run, including runs that place nothing, so
 "SUCCEEDED + no commit" means the run stopped early. This session couldn't read those
-transcripts, and no routine report reached Gmail. **Likely cause (unconfirmed):** the
-09-21 run lasted 3m44s and produced ~18k output tokens, so it got well past the MCP
-reads. It ended with files *staged but not committed* (session metadata
-`staged_files: true`). That pattern fits the unattended session's permission
-classifier denying `place_equity_order` and then `git commit`/`git push origin main`.
-Classifier denials have happened in this setup before (09-05: `create_trigger`, and an
-earlier AAPL placement). To confirm, open
-https://claude.ai/code/session_01TjwBx66v7QeDGfE6aUr3aK and look for "denied by the
-Claude Code auto mode classifier".
+transcripts, and no routine report reached Gmail. **The cause is unknown.** The 09-21
+run lasted 3m44s and produced ~18k output tokens, which is more work than a run that
+failed at the first MCP call. Two explanations fit:
+- a Robinhood-MCP/connector problem partway through;
+- the unattended session's permission classifier denying `place_equity_order`, or the
+  `git push origin main` in step 5. Classifier denials have happened in this setup
+  before (09-05: `create_trigger`, and an earlier AAPL placement).
+
+To settle it, open https://claude.ai/code/session_01TjwBx66v7QeDGfE6aUr3aK and read
+the end of the transcript. The session metadata fields (`staged_files`, the tool list)
+are generic and say nothing about this.
 
 **Why the routine always acts on last week's proposals.** GitHub is running the Monday
 crons about 5h late: heartbeat (scheduled 13:00) ran 18:29, and executor (scheduled
