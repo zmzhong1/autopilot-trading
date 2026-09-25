@@ -9,9 +9,9 @@
       "order_type": "market",
       "order_id": "6a9ecd2d-2391-4d5a-b1de-6a1162b3d8e8",
       "ref_id": "d4678fac-01a7-550a-bfdb-66ffa5d3263f",
-      "state": "queued",
-      "avg_price": null,
-      "quantity": null,
+      "state": "filled",
+      "avg_price": 317.23,
+      "quantity": 0.157614,
       "account_last4": "2732",
       "proposal_date": "2026-08-31",
       "feeds": [
@@ -29,8 +29,9 @@
         "fatal_flags": 0,
         "found": true
       },
-      "placed_by": "claude-live-bridge"
+      "placed_by": "claude-live-bridge",
+      "updated_ts": "2026-09-25T06:13:51+00:00"
     }
   ],
-  "last_update": "2026-09-07T14:42:20+00:00"
+  "last_update": "2026-09-25T06:13:51+00:00"
 }

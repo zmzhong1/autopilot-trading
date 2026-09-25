@@ -712,7 +712,7 @@
       "ticker": "AAPL",
       "side": "buy",
       "size_pct": 10.0,
-      "entry_price": 316.49,
+      "entry_price": 317.23,
       "feeds": [
         "analyst",
         "congress",
@@ -720,7 +720,7 @@
         "institutional"
       ],
       "feed_count": 4,
-      "status": "live_placed",
+      "status": "live_filled",
       "stocknews": {
         "xii_score": 85,
         "verdict": "strong-buy",
@@ -736,7 +736,7 @@
       },
       "live": {
         "order_id": "6a9ecd2d-2391-4d5a-b1de-6a1162b3d8e8",
-        "state": "queued",
+        "state": "filled",
         "ts": "2026-09-07T14:41:52+00:00"
       }
     },
