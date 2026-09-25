@@ -23,14 +23,24 @@ copy (`select_live_orders` fed the proposals that existed at each fire time).
 
 Step 5 of the prompt commits on every run, including runs that place nothing, so
 "SUCCEEDED + no commit" means the run stopped early. This session couldn't read those
-transcripts. The routine's push/email report, or the run history at
-https://claude.ai/code/routines, has the reason.
+transcripts, and no routine report reached Gmail. **Likely cause (unconfirmed):** the
+09-21 run lasted 3m44s and produced ~18k output tokens, so it got well past the MCP
+reads. It ended with files *staged but not committed* (session metadata
+`staged_files: true`). That pattern fits the unattended session's permission
+classifier denying `place_equity_order` and then `git commit`/`git push origin main`.
+Classifier denials have happened in this setup before (09-05: `create_trigger`, and an
+earlier AAPL placement). To confirm, open
+https://claude.ai/code/session_01TjwBx66v7QeDGfE6aUr3aK and look for "denied by the
+Claude Code auto mode classifier".
 
 **Why the routine always acts on last week's proposals.** GitHub is running the Monday
 crons about 5h late: heartbeat (scheduled 13:00) ran 18:29, and executor (scheduled
-14:00) ran 18:59. The routine fires on time at 14:40, so each fire sees the previous
-Monday's proposals, which are still inside `max_proposal_age_days: 7`. The SEC watcher
-(`*/15`) is running only 3–4×/day. Every run is green; they're just throttled.
+14:00) ran 18:59 (08-31..09-21 range: 18:31–19:46). The routine fires on time at 14:40,
+so each fire saw the previous Monday's proposals, which are still inside
+`max_proposal_age_days: 7`. **Fixed on this branch:** `executor.yml` now runs Mondays
+06:23 UTC, which leaves about 8h of slack. The executor has no dependency on the heartbeat
+workflow. The SEC watcher (`*/15`) is running only 3–4×/day. Every run is green;
+they're just throttled.
 
 **Live account ••2732 (read 09-25):** $502.90 total = $450.00 cash + 0.157614 AAPL
 (cost $50.00). No open orders.
@@ -42,16 +52,30 @@ Monday's proposals, which are still inside `max_proposal_age_days: 7`. The SEC w
 2. Reconcile the AAPL fill into `live_orders.json` / `proposals_log.json`, using
    `live_bridge.py reconcile` against a fresh orders read. The next routine fire does
    this only if it gets to step 4.
-3. Pick a fix for the timing: move the routine to Tuesday, or trigger the executor
-   another way. Either one changes when real orders go out, so it's your call.
+3. Timing: merging this branch moves the executor to 06:23 UTC, so each routine fire
+   places *that Monday's* proposals, not the previous week's. That changes which
+   proposal real orders come from, so review it before merging.
+   `routines/live-execution.md` still describes the old 14:00 CI time in its prose
+   section. This session left the routine docs untouched.
 4. Set `STOCK_PORTFOLIO_URL` + `STOCK_PORTFOLIO_TOKEN`. The API-key auth this needs is
    now in `zmzhong1/stock-portfolio#2`. Until then every proposal logs
    `portfolio.checked: false`, so names that are already large in the personal accounts
    (NVDA, proposed 3 weeks running) never hit the 25% check.
 
-**Changed this session:** `heartbeat.py` now flags (a) `robinhood_snapshot.json`
-older than 8 days while live, and (b) a live order still in an open state 2+ days
-after it was recorded. On today's data it flags both. 234 tests.
+**Changed this session (PR branch `claude/tender-babbage-g6y5ci`):**
+- `heartbeat.py` now flags (a) `robinhood_snapshot.json` older than 8 days while live,
+  and (b) a live order still in an open state 2+ days after it was recorded. On today's
+  data it flags both.
+- New `.github/workflows/tests.yml` runs all 234 unit tests on every PR and on human
+  pushes to `main` (bot commits carry `[skip ci]`). This closes the "no CI runs the
+  tests" gap.
+- `executor.yml` cron changed from `0 14 * * 1` to `23 6 * * 1` (see above).
+  `EXECUTOR_KILL=1` is unchanged.
+
+**Checked and fine:** the Congress watcher has sent no alerts since 08-25 because the 4
+watched members (Pelosi, Crenshaw, Tuberville, Greene) haven't filed since 08-21. The
+kadoa feed itself is current through 09-22. The SEC, research and cluster-buy runs, and
+every digest producer, are green.
 
 ## 2026-09-05 — LIVE
 
@@ -248,7 +272,7 @@ Sister repos: **StockNews** (research trees this repo reads),
 | Weekday mornings | Deterministic company research | `research/*.json` + Discord |
 | Weekday evenings | Insider cluster buys | Discord |
 | Monday 13:00 UTC | Heartbeat + discovery + crowding + regime + confluence + StockNews digest | Discord |
-| Monday 14:00 UTC | Executor proposes (never places) + scorecard | Discord + `proposals_log.json` |
+| Monday 06:23 UTC | Executor proposes (never places) + scorecard | Discord + `proposals_log.json` |
 
 The heartbeat flags any producer that silently stops. A failed workflow shows
 red in the Actions tab; the 2026-07-02 lesson is that the *commit step* can
