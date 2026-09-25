@@ -61,10 +61,20 @@ they're just throttled.
    dated 09-28.
 3. Review the executor-cron change in this PR before merging: it changes which
    proposal real orders come from.
-4. Set `STOCK_PORTFOLIO_URL` + `STOCK_PORTFOLIO_TOKEN`. The API-key auth this needs is
-   in `zmzhong1/stock-portfolio#2`. Until then every proposal logs
-   `portfolio.checked: false`, so names that are already large in the personal accounts
-   (NVDA, proposed 3 weeks running) never hit the 25% check.
+4. ~~Set `STOCK_PORTFOLIO_URL` + `STOCK_PORTFOLIO_TOKEN`~~. **Done 2026-09-25.** Both secrets
+   are set. stock-portfolio is deployed (revision `stock-advisor-00026-wrr`, Neon at head),
+   and the key `autopilot-executor` has scope `portfolio:read`. **The app holds 0 holdings
+   for that account**, so every proposal now logs `portfolio.checked: true, held: false`
+   and nothing is gated.
+5. **Before loading real holdings into the app, fix the concentration math.**
+   `executor.py` (the `pf.get("checked") and pf.get("held")` block) computes
+   `value_usd / account_value_usd`. `value_usd` is the *personal* holding from the app;
+   `account_value_usd` is the *$500 Agentic* account. With real holdings loaded, any name
+   held above $125 would read as >25% and be rejected, e.g. NVDA ~$15k → "3000% of
+   acct", so the autopilot would stop buying anything already owned. Owner-facing
+   options (2026-09-25): (A) divide by the app's `total_value` instead, i.e. "skip a name
+   already >25% of my whole portfolio"; (B) keep it as "never buy what I already own";
+   (C) remove the secrets. Not decided yet.
 
 **Changed this session (PR branch `claude/tender-babbage-g6y5ci`):**
 - `heartbeat.py` now flags (a) `robinhood_snapshot.json` older than 8 days while live,
