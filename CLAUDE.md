@@ -22,7 +22,9 @@ reason.
 - Widen `allow_list`, shrink `block_list`, or raise any cap.
 - Modify, fire, re-create or re-enable the live-execution routine `trig_011pfWZKjL6SUGVkPjUCN8gf`
   (Mondays 14:40 UTC, created by Ming in the claude.ai UI on 2026-09-05; prompt =
-  `routines/live-execution.md`). Disabling it is a stop and is fine when Ming asks.
+  `routines/live-execution.md`, which must stay byte-identical to the live prompt). Disabling
+  it is a stop and is fine when Ming asks. It was created in the UI, so agents cannot edit its
+  prompt — Ming pastes changes at claude.ai/code/routines.
 
 **Stops, fastest first:** env `EXECUTOR_KILL=1` · `guardrails.json` `enabled: false` · empty
 `allow_list` · per-ticker `block_list` · disable the routine. Two are independent by design:

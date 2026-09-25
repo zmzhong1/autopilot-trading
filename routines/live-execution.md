@@ -12,8 +12,8 @@ Routine id and schedule are recorded in `HANDOFF.md`.
 
 | When (UTC, Mondays) | What | Runs where |
 |---|---|---|
-| 13:00 | heartbeat + feeds refresh | GitHub Actions |
-| 14:00 | `executor.py` **proposes** → commits `proposals_log.json` | GitHub Actions (kill switch on) |
+| 06:23 | `executor.py` **proposes** → commits `proposals_log.json` (GitHub often starts it hours late — hence the early slot) | GitHub Actions (kill switch on) |
+| 13:00 | heartbeat digest (flags a stale live snapshot / unreconciled live order) | GitHub Actions |
 | **14:40** | **this routine** re-vets today's proposals against the live account and places what clears | Claude routine + Robinhood MCP |
 
 The Python side stays a pure, tested vetting engine (`live_bridge.py`); the
@@ -36,6 +36,16 @@ Stops, fastest first: `EXECUTOR_KILL=1` in the env · `enabled: false` · empty
 
 ## Routine prompt
 
+**Keep this block byte-identical to the live routine's prompt.** The routine was
+created in the claude.ai UI, so only the owner can edit it (agents get "can only
+update routines they created"): paste this block at
+https://claude.ai/code/routines/trig_011pfWZKjL6SUGVkPjUCN8gf.
+
+Revision 2026-09-25 (hardening after the silent 09-14 / 09-21 runs): orders are read
+over 14 days so stuck records self-reconcile, step 4 always runs, step 5 always
+commits (`--allow-empty`, reasons via `-F`), and every skip/refusal is written into
+the commit message.
+
 ```
 You are the live-execution operator for zmzhong1/autopilot-trading. You hold the
 Robinhood Agentic MCP. You place ONLY what live_bridge.py emits, ONLY into the
@@ -49,23 +59,28 @@ never place options, margin, sells, or anything not on the bridge's list.
 
 1. Read the live account via the Robinhood MCP (the one agentic-allowed account):
    get_accounts -> note the agentic account number; then get_portfolio,
-   get_equity_positions, get_equity_orders (created_at_gte = today) for it, and
+   get_equity_positions, get_equity_orders (created_at_gte = 14 days ago) for it, and
    get_equity_tradability + get_equity_quotes for the tickers in today's proposals
    (proposals_log.json rows dated today or within max_proposal_age_days).
-   Save each raw tool result verbatim as JSON files under /tmp/rh/ and run:
+   Save each raw tool result verbatim as JSON files under /tmp/rh/ (if an orders
+   response has a non-empty `next`, fetch the rest and merge the `orders` arrays
+   into the one file) and run:
      python3 live_bridge.py snapshot --portfolio /tmp/rh/portfolio.json \
        --positions /tmp/rh/positions.json --orders /tmp/rh/orders.json \
        --quotes /tmp/rh/quotes.json --tradability /tmp/rh/tradability.json \
        --account-last4 <last 4 of the agentic account number>
 
 2. `python3 live_bridge.py pending --json` -> the orders to place. If the list is
-   empty, go to step 5.
+   empty, skip step 3.
 
 3. For EACH order, in the listed order:
    a. review_equity_order(account_number=<agentic>, symbol=ticker, side="buy",
       type="market", dollar_amount=<dollar_amount>, market_hours="regular_hours",
       time_in_force="gfd"). If the review reports a blocking alert (insufficient
       buying power, halted instrument, PDT, not tradable), skip this order and note why.
+      If review_equity_order or place_equity_order is refused, denied or errors, do
+      not retry with changed parameters: note the exact message as the skip reason
+      and go on to the next order.
    b. place_equity_order with the SAME parameters plus ref_id=<the bridge's ref_id>.
       Re-send the same ref_id on a transport retry; never invent a new one.
    c. Record immediately:
@@ -75,15 +90,25 @@ never place options, margin, sells, or anything not on the bridge's list.
    Never place an order the bridge did not list, never change the size, never place
    twice for one ticker in a day.
 
-4. Wait ~2 minutes, then get_equity_orders (created_at_gte = today) again, save it to
-   /tmp/rh/orders_after.json, and run:
+4. Always run this step, even when nothing was placed. If you placed anything in
+   step 3, first wait ~2 minutes. Then get_equity_orders (created_at_gte = 14 days
+   ago) again, save it to /tmp/rh/orders_after.json, and run:
      python3 live_bridge.py reconcile --orders /tmp/rh/orders_after.json
+   The 14-day window also settles orders an earlier run left open (e.g. one placed
+   on a market holiday that filled the next day).
 
-5. Commit + push the record (even when nothing was placed — the snapshot is the
-   liveness proof):
+5. ALWAYS run this step — also when nothing was placed, and also when an earlier
+   step errored, was refused, or you stopped early (a run that ends without a commit
+   on main is indistinguishable from a run that never happened). Write the commit
+   message to /tmp/rh/commit_msg.txt: first line
+   `chore(live): <N> placed, <M> skipped <date> [skip ci]`, a blank line, then one
+   line per skipped order `skipped <T> <amount> USD: <reason>`, one line per error
+   `error step <n>: <exact message>`, or `clean run`. Then commit + push:
      for f in live_orders.json proposals_log.json robinhood_snapshot.json; do [ -f "$f" ] && git add "$f"; done
-     git commit -m "chore(live): <N> order(s) placed <date> [skip ci]"
+     git commit --allow-empty -F /tmp/rh/commit_msg.txt
      git pull --rebase --autostash origin main && git push origin main
+   --allow-empty keeps the run on record even if the snapshot could not be written;
+   -F avoids shell quoting of the reasons.
    Stage with the loop, not a bare `git add a b c`: git FATALS on a missing
    pathspec and stages NOTHING, and live_orders.json does not exist until the
    first placement — so a zero-order run would stage nothing and fail to commit.
@@ -105,8 +130,8 @@ never place options, margin, sells, or anything not on the bridge's list.
   routine needs).
 - **Repository:** `zmzhong1/autopilot-trading`, default branch `main`.
 - **Schedule:** `40 14 * * 1` (Mondays 14:40 UTC = 10:40 ET, after the CI proposal
-  run at 14:00 UTC and inside regular hours so dollar-based market orders fill
-  immediately).
+  run (scheduled 06:23 UTC) and inside regular hours so dollar-based market orders
+  fill immediately; on a market holiday they queue and fill at the next open).
 - **Fresh session per fire** — the prompt is self-contained.
 - To pause: disable the routine, or set `enabled: false` in `guardrails.json`
   (the bridge refuses to emit orders either way).
