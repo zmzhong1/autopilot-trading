@@ -253,7 +253,7 @@ SEC_USER_AGENT='Your Name you@email.com' DISCORD_WEBHOOK='https://...' python3 e
 SEC_USER_AGENT='...' python3 executor.py
 ```
 
-CI runs [executor.yml](.github/workflows/executor.yml) every Monday at 14:00 UTC, **propose-only** (with `EXECUTOR_KILL=1` as a hard stop), so you get the proposal card weekly without any execution risk.
+CI runs [executor.yml](.github/workflows/executor.yml) every Monday at 06:23 UTC (early, so proposals exist before the 14:40 UTC live routine), **propose-only** (with `EXECUTOR_KILL=1` as a hard stop), so you get the proposal card weekly without any execution risk.
 
 ### Market-wide signal feeds (Finnhub)
 

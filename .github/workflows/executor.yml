@@ -13,9 +13,15 @@ name: Execution Proposals
 
 on:
   schedule:
-    # Mondays at 14:00 UTC (10 AM ET), after the heartbeat digest has refreshed
-    # the feeds the proposals are built from.
-    - cron: '0 14 * * 1'
+    # Mondays 06:23 UTC. The live-execution routine fires 14:40 UTC and places
+    # from the newest proposals <= max_proposal_age_days old, so today's must
+    # exist by then. GitHub has been starting this job 4-5h late (08-31..09-21:
+    # scheduled 14:00, ran 18:31-19:46), which left the routine placing the
+    # PREVIOUS Monday's proposals. 06:23 leaves ~8h of slack; off the hour
+    # because top-of-hour schedules are the most delayed. No dependency on the
+    # heartbeat workflow: executor.py reads the watchers' committed state
+    # (state.json, congress_state.json) and fetches the rest itself.
+    - cron: '23 6 * * 1'
   workflow_dispatch: {}
 
 permissions:

@@ -1,0 +1,32 @@
+name: Tests
+
+# The watchers, executor and live bridge are stdlib-only and their unit tests
+# need no network or secrets. Bot state commits carry [skip ci], so this runs on
+# human pushes to main and on pull requests only.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unittest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'  # same as the scheduled workflows
+
+      - name: Run unit tests
+        run: python3 -m unittest discover -v
