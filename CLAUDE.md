@@ -1,15 +1,5 @@
 # CLAUDE.md — autopilot-trading
 
-> **This file does not exist in the repo today.** The repo is README-driven: `README.md` (44,296
-> chars) + `HANDOFF.md` (16,272) carry everything, and Claude Code auto-loads neither — so a
-> session here starts with **zero** repo-specific safety context while `guardrails.json` reads
-> `enabled: true, mode: "live"` against a real Robinhood account (live since 2026-09-05).
->
-> This is a **proposal to ADD a small file**, not a trim. It is deliberately short: every line is
-> a stop condition or a pointer. Nothing is moved out of `README.md` / `HANDOFF.md`; they stay
-> the full reference. Adding this costs ~0.6k tokens a session and removes the failure mode where
-> a session learns the money is real only after it has already touched something.
-
 Instructions for Claude Code sessions working in `zmzhong1/autopilot-trading` (default branch
 `main`). Full architecture: `README.md`. Current state and decisions: `HANDOFF.md`.
 
@@ -30,8 +20,9 @@ reason.
 - Place, propose-for-placement, modify, or cancel any order; run `live_bridge.py` in anything but
   its read-only verbs (`status`, `pending`, `snapshot`).
 - Widen `allow_list`, shrink `block_list`, or raise any cap.
-- Attempt to unblock the live-execution routine. It is not created as of 2026-09-05 (blocked on a
-  cloud `environment_id` unobtainable from the CLI) — leave it blocked.
+- Modify, fire, re-create or re-enable the live-execution routine `trig_011pfWZKjL6SUGVkPjUCN8gf`
+  (Mondays 14:40 UTC, created by Ming in the claude.ai UI on 2026-09-05; prompt =
+  `routines/live-execution.md`). Disabling it is a stop and is fine when Ming asks.
 
 **Stops, fastest first:** env `EXECUTOR_KILL=1` · `guardrails.json` `enabled: false` · empty
 `allow_list` · per-ticker `block_list` · disable the routine. Two are independent by design:
@@ -63,7 +54,7 @@ by hand — nothing reads the overlay file.
   paths.
 - `producer_status.json` is the liveness ledger: every workflow writes it, `heartbeat.py` reads
   it to flag silent producers.
-- **225 stdlib tests exist but no CI workflow runs them** — run `python3 -m unittest discover`
+- **234 stdlib tests exist but no CI workflow runs them** — run `python3 -m unittest discover`
   locally before claiming green. Known gap versus StockNews's `tests.yml`.
 - Ticker collisions are real: "BYD" on US exchanges is Boyd Gaming, not BYD Company, and was
   removed from the allow-list. Verify a symbol resolves to the intended issuer.

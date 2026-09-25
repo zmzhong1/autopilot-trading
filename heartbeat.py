@@ -24,6 +24,7 @@ from collections import Counter
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+import live_bridge
 import producer_status
 
 # Windows consoles default to a non-UTF-8 codec (e.g. GBK), so printing the
@@ -39,6 +40,7 @@ ROOT = Path(__file__).parent
 WATCHLIST_PATH = ROOT / "watchlist.json"
 SEC_STATE_PATH = ROOT / "state.json"
 CONGRESS_STATE_PATH = ROOT / "congress_state.json"
+GUARDRAILS_PATH = ROOT / "guardrails.json"
 
 DISCORD_WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "").strip()
 DRY_RUN = os.environ.get("DRY_RUN", "").lower() in ("1", "true", "yes")
@@ -48,6 +50,15 @@ WINDOW_DAYS = int(os.environ.get("HEARTBEAT_WINDOW_DAYS", "7"))
 # here instead of the watcher still looking healthy.
 DIGEST_PRODUCERS = ("discovery", "crowding", "regime", "confluence", "stocknews",
                     "executor", "scorecard", "research", "cluster_buys")
+
+# The live-execution routine fires weekly and commits robinhood_snapshot.json
+# even when it places nothing (step 5 of routines/live-execution.md), so an
+# older snapshot means a run ended without committing. 8d = one missed Monday.
+LIVE_SNAPSHOT_MAX_AGE = timedelta(days=8)
+# A live order still in an open state this long after it was recorded means
+# `reconcile` never captured its fill/cancel: the record has drifted from the
+# broker (and a stale open buy blocks re-buys of that name in the bridge).
+LIVE_ORDER_OPEN_MAX_AGE = timedelta(days=2)
 
 COLOR_HEALTHY = 0x2ECC71
 COLOR_STALE = 0xE67E22
@@ -80,6 +91,32 @@ def filter_recent(history, cutoff):
         if ts and ts >= cutoff:
             out.append(h)
     return out
+
+
+def live_stale(guardrails, snapshot, live_orders, now):
+    """Stale notes for the live-execution leg. Empty unless guardrails are
+    enabled + live. Read-only: reports drift, never reconciles or places."""
+    if not guardrails.get("enabled") or (guardrails.get("mode") or "").lower() != "live":
+        return []
+    notes = []
+    snap_ts = parse_iso((snapshot or {}).get("ts"))
+    if not snap_ts or (now - snap_ts) > LIVE_SNAPSHOT_MAX_AGE:
+        notes.append(
+            f"live routine — robinhood_snapshot.json last written "
+            f"{snap_ts.isoformat(timespec='minutes') if snap_ts else 'never'} "
+            f"(weekly run did not commit)"
+        )
+    for o in live_orders or []:
+        state = (o.get("state") or "").lower()
+        if state not in live_bridge.OPEN_STATES:
+            continue
+        ts = parse_iso(o.get("updated_ts") or o.get("ts"))
+        if ts and (now - ts) > LIVE_ORDER_OPEN_MAX_AGE:
+            notes.append(
+                f"live order {o.get('ticker')} {o.get('date')} still '{state}' "
+                f"on record — fill/cancel never reconciled"
+            )
+    return notes
 
 
 def post_discord(embed):
@@ -140,6 +177,12 @@ def main():
     for name, note in producer_status.stale(producer_status.load(), DIGEST_PRODUCERS, now):
         healthy = False
         stale_notes.append(f"{name} digest — {note}")
+    for note in live_stale(load_json(GUARDRAILS_PATH, {}),
+                           load_json(live_bridge.SNAPSHOT_PATH, {}),
+                           load_json(live_bridge.LIVE_ORDERS_PATH, {}).get("orders", []),
+                           now):
+        healthy = False
+        stale_notes.append(note)
 
     cik_count = len(watchlist.get("sec_ciks", []))
     pol_count = len(watchlist.get("congress_members", []))

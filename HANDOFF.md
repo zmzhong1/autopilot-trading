@@ -5,7 +5,55 @@ itself is the persistence layer — everything below is either committed here,
 committed in the sister StockNews repo, or listed as an explicit owner action.
 No work exists only in a chat session.
 
-## 2026-09-05 — LIVE (read this first)
+## 2026-09-25 — status check (read this first)
+
+Read-only audit. Nothing was placed, cancelled, reconciled or re-configured, and
+`guardrails.json` was not touched. Sources: Robinhood MCP (read tools only),
+`get_trigger`, the Actions history, `git log main`, and a bridge replay in a scratch
+copy (`select_live_orders` fed the proposals that existed at each fire time).
+
+**The live routine has worked once in three fires.**
+
+| Fire (UTC) | Bridge would emit | What happened | On `main` |
+|---|---|---|---|
+| 09-07 14:40 (Labor Day, market closed) | AAPL $50 + MSFT $50 (08-31 proposals) | AAPL placed (`6a9ecd2d-…`), queued, **filled 09-08 13:30 at $317.23, 0.157614 sh**. **MSFT was never placed** and no reason was recorded. Commit came 33s after placement, so the step-4 wait + reconcile never ran | `f35d071`, AAPL still `queued` |
+| 09-14 14:40 | NVDA $50.29 (09-07 proposal) | Run status `SUCCEEDED`. No order at Robinhood, **no commit** | nothing |
+| 09-21 14:40 | NVDA $50.29 (09-14 proposal) | Run status `SUCCEEDED` (session `session_01TjwBx66v7QeDGfE6aUr3aK`). No order, **no commit** | nothing |
+| **09-28 14:40 (next)** | **NVDA $50.29** (09-21 proposal) if the run works | — | — |
+
+Step 5 of the prompt commits on every run, including runs that place nothing, so
+"SUCCEEDED + no commit" means the run stopped early. This session couldn't read those
+transcripts. The routine's push/email report, or the run history at
+https://claude.ai/code/routines, has the reason.
+
+**Why the routine always acts on last week's proposals.** GitHub is running the Monday
+crons about 5h late: heartbeat (scheduled 13:00) ran 18:29, and executor (scheduled
+14:00) ran 18:59. The routine fires on time at 14:40, so each fire sees the previous
+Monday's proposals, which are still inside `max_proposal_age_days: 7`. The SEC watcher
+(`*/15`) is running only 3–4×/day. Every run is green; they're just throttled.
+
+**Live account ••2732 (read 09-25):** $502.90 total = $450.00 cash + 0.157614 AAPL
+(cost $50.00). No open orders.
+
+**Owner actions, in priority order:**
+1. Read the 09-14 and 09-21 routine reports to find out why they stopped. Decide
+   whether the 09-28 fire should go ahead as scheduled; disabling the routine is the
+   stop.
+2. Reconcile the AAPL fill into `live_orders.json` / `proposals_log.json`, using
+   `live_bridge.py reconcile` against a fresh orders read. The next routine fire does
+   this only if it gets to step 4.
+3. Pick a fix for the timing: move the routine to Tuesday, or trigger the executor
+   another way. Either one changes when real orders go out, so it's your call.
+4. Set `STOCK_PORTFOLIO_URL` + `STOCK_PORTFOLIO_TOKEN`. The API-key auth this needs is
+   now in `zmzhong1/stock-portfolio#2`. Until then every proposal logs
+   `portfolio.checked: false`, so names that are already large in the personal accounts
+   (NVDA, proposed 3 weeks running) never hit the 25% check.
+
+**Changed this session:** `heartbeat.py` now flags (a) `robinhood_snapshot.json`
+older than 8 days while live, and (b) a live order still in an open state 2+ days
+after it was recorded. On today's data it flags both. 234 tests.
+
+## 2026-09-05 — LIVE
 
 Owner direction this session: *"review the rules for autopilot, utilize what's
 really given from StockNews, and start running the autopilot of Robinhood."*
