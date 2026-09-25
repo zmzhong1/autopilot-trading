@@ -52,13 +52,11 @@ they're just throttled.
 09-28 fire run as scheduled; harden the routine prompt.
 
 **Owner actions, in priority order:**
-1. **Paste the hardened prompt into the routine** at
-   https://claude.ai/code/routines/trig_011pfWZKjL6SUGVkPjUCN8gf. Copy it from the
-   fenced block in `routines/live-execution.md` on this branch. Agents can't edit a
-   routine created in the UI, so this session couldn't apply it. The changes: orders
-   read over 14 days, so stuck records self-reconcile; step 4 always runs; step 5
-   always commits (`--allow-empty`, message via `-F`); every skip or refusal is written
-   into the commit message. Until you paste it, the 09-28 fire runs the old prompt.
+1. ~~Paste the hardened prompt into the routine~~. **Done by Ming 2026-09-25 06:25 UTC.**
+   Verified via `get_trigger`: the live prompt is byte-identical to the fenced block in
+   `routines/live-execution.md` (sha256 `b2c11eac…`). Schedule `40 14 * * 1`, enabled,
+   Robinhood-Agent connector, push + email notifications are all unchanged. The 09-28
+   fire uses the hardened prompt.
 2. After 09-28, open that run's transcript if `main` has no `chore(live)` commit
    dated 09-28.
 3. Review the executor-cron change in this PR before merging: it changes which
@@ -78,7 +76,8 @@ they're just throttled.
 - `executor.yml` cron changed from `0 14 * * 1` to `23 6 * * 1` (see above).
   `EXECUTOR_KILL=1` is unchanged.
 - `routines/live-execution.md`: hardened prompt (revision 2026-09-25) and the
-  schedule table updated. **It only takes effect once pasted into the routine.**
+  schedule table updated. Pasted into the live routine by Ming 2026-09-25 and verified
+  byte-identical.
 
 **Checked and fine:** the Congress watcher has sent no alerts since 08-25 because the 4
 watched members (Pelosi, Crenshaw, Tuberville, Greene) haven't filed since 08-21. The
