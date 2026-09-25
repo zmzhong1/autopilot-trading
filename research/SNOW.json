@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SNOW",
-    "researched_at": "2026-09-18T15:05:10+00:00",
+    "researched_at": "2026-09-25T15:53:22+00:00",
     "name": "Snowflake Inc",
     "industry": "Technology",
-    "market_cap": 119383.98390673185,
+    "market_cap": 117835.19506397059,
     "metrics": {
       "net margin %": -20.07,
       "rev growth %": 32.04,
@@ -12,9 +12,9 @@
       "current ratio": 0.94
     },
     "news": [
-      "Snowflake (SNOW): Eight Firms Raised Targets. Nobody Wants to Talk About the Multiple",
-      "Snowflake, F5, onsemi, Impinj, and Power Integrations Shares Are Soaring, What You Need To Know",
-      "Exclusive: OpenAI poaches Brian McCarthy from SpaceX to be its VP of worldwide sales"
+      "Could CrowdStrike (CRWD)\u2019s Snowflake (SNOW) Partnership Unlock a New AI Growth Engine?",
+      "Palantir Stock Has\u00a0a Growth Story\u00a0Few Companies Can\u00a0Match",
+      "Does Palantir Stock Make Your Bad Market Days Worse?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": true

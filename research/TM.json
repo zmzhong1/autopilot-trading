@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "TM",
-    "researched_at": "2026-09-18T15:05:22+00:00",
+    "researched_at": "2026-09-25T15:53:32+00:00",
     "name": "Toyota Motor Corp",
     "industry": "Automobiles",
-    "market_cap": 35714971.296875,
+    "market_cap": 35821547.802734,
     "metrics": {
-      "P/E": 7.98,
+      "P/E": 7.99,
       "net margin %": 8.63,
       "rev growth %": 7.23,
       "ROE %": 11.67,
       "current ratio": 1.17
     },
     "news": [
-      "Toyota: Rising Interest Rates And Plummeting Car Sales In China Force A Downgrade",
-      "Daimler Truck brings NextGenH2 to IAA as hydrogen pact forms",
-      "Why Is BlackBerry (BB) Stock Trending After Hours"
+      "Toyota Motor (TSE:7203) Plans 400,000 Humanoid Robots Across Global Plants",
+      "GM, Ford Q3 US New Vehicle Sales Seen Dropping YOY, Cox Says",
+      "Toyoda Gosei to build new component plant in India"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

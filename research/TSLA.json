@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "TSLA",
-    "researched_at": "2026-09-18T15:05:28+00:00",
+    "researched_at": "2026-09-25T15:53:36+00:00",
     "name": "Tesla Inc",
     "industry": "Automobiles",
-    "market_cap": 1446324.2796016487,
+    "market_cap": 1492692.0035744216,
     "metrics": {
-      "P/E": 381.57,
+      "P/E": 394.46,
       "net margin %": 3.67,
       "rev growth %": 11.75,
       "ROE %": 4.57,
       "current ratio": 1.94
     },
     "news": [
-      "Tesla Trades at 331 Times Trailing Earnings While Facing Growing Competition From China's BYD. Is Elon Musk's Premium Valuation Still Justified?",
-      "Latest News In Electric Vehicles - Subaru Partners With onsemi To Advance Power Architecture Integration",
-      "Lemonade Targets First EBITDA-Positive Quarter as CFO Tim Bixby Transitions to Board"
+      "AMD CEO Lisa Su is having a September to remember",
+      "Tesla Starts Semi Deliveries. Here's The Final Production Target \u2014 With No Timeline",
+      "Tech stocks gain after tech titan dinner with Trump and China's Xi Jinping: AlphaCheck"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

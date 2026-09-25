@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "STLD",
-    "researched_at": "2026-09-18T15:05:16+00:00",
+    "researched_at": "2026-09-25T15:53:27+00:00",
     "name": "Steel Dynamics Inc",
     "industry": "Metals & Mining",
-    "market_cap": 35165.547350407585,
+    "market_cap": 33710.76685624141,
     "metrics": {
-      "P/E": 21.86,
+      "P/E": 21.0,
       "net margin %": 7.83,
       "rev growth %": 19.77,
       "ROE %": 17.6,
       "current ratio": 3.18
     },
     "news": [
-      "What's going on in today's session: S&P500 gap up and gap down stocks",
-      "Here's How Much a $1000 Investment in Steel Dynamics Made 10 Years Ago Would Be Worth Today",
-      "Steel Dynamics Expects Higher Q3 Earnings on Strong Steel Demand"
+      "Has Dakota Gold Corp. (DC) Outpaced Other Basic Materials Stocks This Year?",
+      "Cleveland-Cliffs Jumps 5% as Month-Long Rebound Extends; Nucor and Steel Dynamics Tick Up",
+      "Is It Worth Investing in Steel Dynamics (STLD) Based on Wall Street's Bullish Views?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
