@@ -10,10 +10,10 @@ Routine id and schedule are recorded in `HANDOFF.md`.
 
 ## How it fits
 
-| When (UTC, Mondays) | What | Runs where |
+| When (UTC, Mondays + Thursdays) | What | Runs where |
 |---|---|---|
 | 06:23 | `executor.py` **proposes** → commits `proposals_log.json` (GitHub often starts it hours late — hence the early slot) | GitHub Actions (kill switch on) |
-| 13:00 | heartbeat digest (flags a stale live snapshot / unreconciled live order) | GitHub Actions |
+| 13:00 (Mondays only) | heartbeat digest (flags a stale live snapshot / unreconciled live order) | GitHub Actions |
 | **14:40** | **this routine** re-vets today's proposals against the live account and places what clears | Claude routine + Robinhood MCP |
 
 The Python side stays a pure, tested vetting engine (`live_bridge.py`); the
@@ -129,7 +129,8 @@ never place options, margin, sells, or anything not on the bridge's list.
   attached (it is passed explicitly at creation — it is the only connector the
   routine needs).
 - **Repository:** `zmzhong1/autopilot-trading`, default branch `main`.
-- **Schedule:** `40 14 * * 1` (Mondays 14:40 UTC = 10:40 ET, after the CI proposal
+- **Schedule:** Mondays + Thursdays 14:40 UTC (`40 14 * * 1` plus a second trigger `40 14 * * 4`,
+  twice-weekly per owner decision 2026-09-26) = 10:40 ET, after the CI proposal
   run (scheduled 06:23 UTC) and inside regular hours so dollar-based market orders
   fill immediately; on a market holiday they queue and fill at the next open).
 - **Fresh session per fire** — the prompt is self-contained.

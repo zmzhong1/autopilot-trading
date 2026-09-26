@@ -61,10 +61,30 @@ they're just throttled.
    dated 09-28.
 3. Review the executor-cron change in this PR before merging: it changes which
    proposal real orders come from.
-4. Set `STOCK_PORTFOLIO_URL` + `STOCK_PORTFOLIO_TOKEN`. The API-key auth this needs is
-   in `zmzhong1/stock-portfolio#2`. Until then every proposal logs
-   `portfolio.checked: false`, so names that are already large in the personal accounts
-   (NVDA, proposed 3 weeks running) never hit the 25% check.
+4. ~~Set `STOCK_PORTFOLIO_URL` + `STOCK_PORTFOLIO_TOKEN`~~. **Done 2026-09-25.** Both secrets
+   are set. stock-portfolio is deployed (revision `stock-advisor-00026-wrr`, Neon at head),
+   and the key `autopilot-executor` has scope `portfolio:read`. **The app holds 0 holdings
+   for that account**, so every proposal now logs `portfolio.checked: true, held: false`
+   and nothing is gated.
+5. **Concentration check: keep as-is (Ming, 2026-09-26: "keep it").** `executor.py`
+   divides the *personal* holding value from the app by the *$500 Agentic* account
+   value. Once real holdings are in the app, that means in effect "never buy what I
+   already own" (anything held above $125 reads as >25%). This was option B of
+   A/B/C; the alternatives were to divide by the app's `total_value` (A) or to remove
+   the secrets (C). The app holds 0 holdings today, so nothing is gated yet.
+6. **Twice-weekly trading (Ming, 2026-09-26: "trade from time to time, say twice a
+   week").** `executor.yml` now proposes Mondays + Thursdays at 06:23 UTC.
+   **Owner action:** add a second trigger (Thursday 9:40 AM CDT = 14:40 UTC) to routine
+   `trig_011pfWZKjL6SUGVkPjUCN8gf` at https://claude.ai/code/routines. Agents can't edit
+   this UI-created routine, and the prompt needs no change. The heartbeat
+   stale-snapshot threshold is now 5 days, so it catches one missed fire. The
+   guardrails are unchanged, so the caps still bind per run:
+   ≤2 orders/day, a 14-day re-buy cooldown per name, ≤25% of the Agentic book per name,
+   and total deployed ≤70% of the account. At ~$50/order (10%) and $53 deployed, the
+   deploy cap allows **about 5 more buys**. After that every run skips with "would exceed
+   deploy cap" until cash is added or the cap is raised (both Ming's call). The bridge
+   is buy-only (`allowed_sides: ["buy"]`); selling would need an explicit guardrail
+   decision.
 
 **Changed this session (PR branch `claude/tender-babbage-g6y5ci`):**
 - `heartbeat.py` now flags (a) `robinhood_snapshot.json` older than 8 days while live,
