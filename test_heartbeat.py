@@ -7,7 +7,7 @@ import heartbeat
 
 NOW = datetime(2026, 9, 28, 13, 0, tzinfo=timezone.utc)
 LIVE = {"enabled": True, "mode": "live"}
-FRESH_SNAP = {"ts": "2026-09-21T14:41:00+00:00"}
+FRESH_SNAP = {"ts": "2026-09-24T14:41:00+00:00"}
 
 
 def order(state, ts="2026-09-21T14:41:52+00:00", **kw):
@@ -33,9 +33,15 @@ class LiveStaleTest(unittest.TestCase):
         self.assertEqual(len(notes), 1)
         self.assertIn("2026-09-07", notes[0])
 
-    def test_snapshot_one_week_old_is_ok(self):
-        # heartbeat can run before that Monday's routine; 7d old must not flag
-        self.assertEqual(heartbeat.live_stale(LIVE, {"ts": "2026-09-21T13:00:00+00:00"}, [], NOW), [])
+    def test_snapshot_from_last_thursday_is_ok(self):
+        # heartbeat can run before that Monday's routine; the Thu fire is 4d old
+        self.assertEqual(heartbeat.live_stale(LIVE, {"ts": "2026-09-24T14:41:00+00:00"}, [], NOW), [])
+
+    def test_missed_thursday_fire_flags(self):
+        # last snapshot the previous Monday (7d): the Thursday run never committed
+        notes = heartbeat.live_stale(LIVE, {"ts": "2026-09-21T14:41:00+00:00"}, [], NOW)
+        self.assertEqual(len(notes), 1)
+        self.assertIn("2026-09-21", notes[0])
 
     def test_old_open_order_flags(self):
         notes = heartbeat.live_stale(LIVE, FRESH_SNAP, [order("queued", "2026-09-07T14:41:52+00:00")], NOW)

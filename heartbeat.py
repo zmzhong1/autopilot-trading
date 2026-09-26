@@ -51,10 +51,11 @@ WINDOW_DAYS = int(os.environ.get("HEARTBEAT_WINDOW_DAYS", "7"))
 DIGEST_PRODUCERS = ("discovery", "crowding", "regime", "confluence", "stocknews",
                     "executor", "scorecard", "research", "cluster_buys")
 
-# The live-execution routine fires weekly and commits robinhood_snapshot.json
-# even when it places nothing (step 5 of routines/live-execution.md), so an
-# older snapshot means a run ended without committing. 8d = one missed Monday.
-LIVE_SNAPSHOT_MAX_AGE = timedelta(days=8)
+# The live-execution routine fires Mondays + Thursdays and commits
+# robinhood_snapshot.json even when it places nothing (step 5 of
+# routines/live-execution.md), so an older snapshot means a run ended without
+# committing. Longest normal gap is Thu -> Mon (4d); 5d = one missed fire.
+LIVE_SNAPSHOT_MAX_AGE = timedelta(days=5)
 # A live order still in an open state this long after it was recorded means
 # `reconcile` never captured its fill/cancel: the record has drifted from the
 # broker (and a stale open buy blocks re-buys of that name in the bridge).

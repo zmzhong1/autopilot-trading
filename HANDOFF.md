@@ -66,15 +66,25 @@ they're just throttled.
    and the key `autopilot-executor` has scope `portfolio:read`. **The app holds 0 holdings
    for that account**, so every proposal now logs `portfolio.checked: true, held: false`
    and nothing is gated.
-5. **Before loading real holdings into the app, fix the concentration math.**
-   `executor.py` (the `pf.get("checked") and pf.get("held")` block) computes
-   `value_usd / account_value_usd`. `value_usd` is the *personal* holding from the app;
-   `account_value_usd` is the *$500 Agentic* account. With real holdings loaded, any name
-   held above $125 would read as >25% and be rejected, e.g. NVDA ~$15k → "3000% of
-   acct", so the autopilot would stop buying anything already owned. Owner-facing
-   options (2026-09-25): (A) divide by the app's `total_value` instead, i.e. "skip a name
-   already >25% of my whole portfolio"; (B) keep it as "never buy what I already own";
-   (C) remove the secrets. Not decided yet.
+5. **Concentration check: keep as-is (Ming, 2026-09-26: "keep it").** `executor.py`
+   divides the *personal* holding value from the app by the *$500 Agentic* account
+   value. Once real holdings are in the app, that means in effect "never buy what I
+   already own" (anything held above $125 reads as >25%). This was option B of
+   A/B/C; the alternatives were to divide by the app's `total_value` (A) or to remove
+   the secrets (C). The app holds 0 holdings today, so nothing is gated yet.
+6. **Twice-weekly trading (Ming, 2026-09-26: "trade from time to time, say twice a
+   week").** `executor.yml` now proposes Mondays + Thursdays at 06:23 UTC.
+   **Owner action:** add a second trigger (Thursday 9:40 AM CDT = 14:40 UTC) to routine
+   `trig_011pfWZKjL6SUGVkPjUCN8gf` at https://claude.ai/code/routines. Agents can't edit
+   this UI-created routine, and the prompt needs no change. The heartbeat
+   stale-snapshot threshold is now 5 days, so it catches one missed fire. The
+   guardrails are unchanged, so the caps still bind per run:
+   ≤2 orders/day, a 14-day re-buy cooldown per name, ≤25% of the Agentic book per name,
+   and total deployed ≤70% of the account. At ~$50/order (10%) and $53 deployed, the
+   deploy cap allows **about 5 more buys**. After that every run skips with "would exceed
+   deploy cap" until cash is added or the cap is raised (both Ming's call). The bridge
+   is buy-only (`allowed_sides: ["buy"]`); selling would need an explicit guardrail
+   decision.
 
 **Changed this session (PR branch `claude/tender-babbage-g6y5ci`):**
 - `heartbeat.py` now flags (a) `robinhood_snapshot.json` older than 8 days while live,
