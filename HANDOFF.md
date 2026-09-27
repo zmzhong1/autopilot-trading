@@ -74,9 +74,9 @@ they're just throttled.
    the secrets (C). The app holds 0 holdings today, so nothing is gated yet.
 6. **Twice-weekly trading (Ming, 2026-09-26: "trade from time to time, say twice a
    week").** `executor.yml` now proposes Mondays + Thursdays at 06:23 UTC.
-   **Owner action:** add a second trigger (Thursday 9:40 AM CDT = 14:40 UTC) to routine
-   `trig_011pfWZKjL6SUGVkPjUCN8gf` at https://claude.ai/code/routines. Agents can't edit
-   this UI-created routine, and the prompt needs no change. The heartbeat
+   **Done 2026-09-27:** Ming set the routine cron to `40 14 * * 1,4` and it is verified
+   (next fires Mon 09-28 and Thu 10-01, both 14:40 UTC). The routine UI stores the cron in
+   UTC, whatever local time it displays. The prompt is unchanged. The heartbeat
    stale-snapshot threshold is now 5 days, so it catches one missed fire. The
    guardrails are unchanged, so the caps still bind per run:
    ≤2 orders/day, a 14-day re-buy cooldown per name, ≤25% of the Agentic book per name,

@@ -129,8 +129,8 @@ never place options, margin, sells, or anything not on the bridge's list.
   attached (it is passed explicitly at creation — it is the only connector the
   routine needs).
 - **Repository:** `zmzhong1/autopilot-trading`, default branch `main`.
-- **Schedule:** Mondays + Thursdays 14:40 UTC (`40 14 * * 1` plus a second trigger `40 14 * * 4`,
-  twice-weekly per owner decision 2026-09-26) = 10:40 ET, after the CI proposal
+- **Schedule:** cron `40 14 * * 1,4` (stored in UTC; Mondays + Thursdays 14:40 UTC, twice-weekly
+  per owner decision 2026-09-26; set by Ming 2026-09-27) = 10:40 ET, after the CI proposal
   run (scheduled 06:23 UTC) and inside regular hours so dollar-based market orders
   fill immediately; on a market holiday they queue and fill at the next open).
 - **Fresh session per fire** — the prompt is self-contained.
