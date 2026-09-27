@@ -21,7 +21,7 @@ reason.
   its read-only verbs (`status`, `pending`, `snapshot`).
 - Widen `allow_list`, shrink `block_list`, or raise any cap.
 - Modify, fire, re-create or re-enable the live-execution routine `trig_011pfWZKjL6SUGVkPjUCN8gf`
-  (Mondays 14:40 UTC, created by Ming in the claude.ai UI on 2026-09-05; prompt =
+  (Mondays + Thursdays 14:40 UTC, created by Ming in the claude.ai UI on 2026-09-05; prompt =
   `routines/live-execution.md`, which must stay byte-identical to the live prompt). Disabling
   it is a stop and is fine when Ming asks. It was created in the UI, so agents cannot edit its
   prompt — Ming pastes changes at claude.ai/code/routines.
@@ -33,7 +33,7 @@ execution even when `enabled` is true.
 
 **Dry-run is the default for anything you run yourself.** `DRY_RUN=1` logs alerts to stdout
 instead of Discord; `SEC_USER_AGENT='Name you@email.com' DRY_RUN=1 python3 executor.py` prints
-the card it would post. CI runs `executor.yml` Mondays 06:23 UTC propose-only (ahead of the
+the card it would post. CI runs `executor.yml` Mondays + Thursdays 06:23 UTC propose-only (ahead of the
 14:40 UTC live routine; GitHub starts scheduled jobs hours late).
 
 **Claude gives no investment advice here.** Report what the tooling produced and what it says
@@ -57,7 +57,7 @@ by hand — nothing reads the overlay file.
   paths.
 - `producer_status.json` is the liveness ledger: every workflow writes it, `heartbeat.py` reads
   it to flag silent producers.
-- **234 stdlib tests**, run by `.github/workflows/tests.yml` on every PR and human push to
+- **235 stdlib tests**, run by `.github/workflows/tests.yml` on every PR and human push to
   `main`. Still run `python3 -m unittest discover` locally before pushing.
 - Ticker collisions are real: "BYD" on US exchanges is Boyd Gaming, not BYD Company, and was
   removed from the allow-list. Verify a symbol resolves to the intended issuer.
