@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "COIN",
-    "researched_at": "2026-09-21T17:09:05+00:00",
+    "researched_at": "2026-09-28T18:41:11+00:00",
     "name": "Coinbase Global Inc",
     "industry": "Financial Services",
-    "market_cap": 51250.33725,
+    "market_cap": 51477.23707,
     "metrics": {
       "net margin %": -15.72,
       "rev growth %": -10.35,
@@ -12,9 +12,9 @@
       "current ratio": 2.42
     },
     "news": [
-      "Why Coinbase's CEO shouldn't be blamed for the failed Clarity Act",
-      "COIN Stock Hits 4-Month High Amid Crypto Rally As Coinbase Makes IPO Allocations Available To Retail Traders",
-      "Is Coinbase's Steadier Side Really A Cushion?"
+      "Citi Merchants Can Now Take Stablecoins Through Coinbase",
+      "The 3.75% Yield That Makes Citi\u2019s Stablecoin Play Work",
+      "Coinbase, Citi Team Up to Bring Stablecoin Payments to Businesses"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

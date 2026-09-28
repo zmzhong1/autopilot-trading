@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "CAT",
-    "researched_at": "2026-09-21T17:09:03+00:00",
+    "researched_at": "2026-09-28T18:41:09+00:00",
     "name": "Caterpillar Inc",
     "industry": "Machinery",
-    "market_cap": 371872.3730317619,
+    "market_cap": 377659.6761802476,
     "metrics": {
-      "P/E": 34.29,
+      "P/E": 34.83,
       "net margin %": 14.51,
       "rev growth %": 18.36,
       "ROE %": 54.2,
       "current ratio": 1.37
     },
     "news": [
-      "SpaceX Finds Way Around Data Center Moratorium As 300-Plus Restrictions Delay 3 Projects",
-      "What Higher Interest Rates Mean for Caterpillar, GE Vernova, and Vertiv",
-      "The Caterpillar Correction Shouldn't Last Much Longer"
+      "Best Dividend Aristocrats For October 2026",
+      "Rising Yields Hit Infrastructure: 2 CEFs Yielding 8%+ Worth Buying",
+      "Valmont Industries Targets $35 EPS by 2029 on Utility Infrastructure Boom"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DIS",
-    "researched_at": "2026-09-21T17:09:15+00:00",
+    "researched_at": "2026-09-28T18:41:19+00:00",
     "name": "Walt Disney Co",
     "industry": "Media",
-    "market_cap": 177278.94039276036,
+    "market_cap": 183287.80909733233,
     "metrics": {
-      "P/E": 20.61,
+      "P/E": 21.31,
       "net margin %": 8.7,
       "rev growth %": 4.58,
       "ROE %": 7.87,
       "current ratio": 0.71
     },
     "news": [
-      "Ackman Bets $1 Billion on Netflix Redemption After $400 Million 2022 Loss",
-      "Price Prediction: One Bank Sees Netflix at $57. We See Triple That.",
-      "Could You Have Seen Warner Bros Discovery Stock's Run Coming?"
+      "Investors Heavily Search The Walt Disney Company (DIS): Here is What You Need to Know",
+      "Guggenheim Reiterates Buy on Walt Disney, Maintains $120 Price Target",
+      "Former Disney CEO Bob Chapek on why he wrote his new memoir: 'I had to get the truth out there'"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

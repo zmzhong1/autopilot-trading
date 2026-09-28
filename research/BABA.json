@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "BABA",
-    "researched_at": "2026-09-21T17:09:00+00:00",
+    "researched_at": "2026-09-28T18:41:07+00:00",
     "name": "Alibaba Group Holding Ltd",
     "industry": "Retail",
-    "market_cap": 266296.6173681262,
+    "market_cap": 278821.3401832669,
     "metrics": {
-      "P/E": 24.32,
+      "P/E": 25.52,
       "net margin %": 7.02,
       "rev growth %": 4.42,
       "ROE %": 7.01,
       "current ratio": 1.36
     },
     "news": [
-      "Alibaba Burned RMB 44.73 Billion in Free Cash Flow Last Quarter. The Numbers Tell a Messier Story.",
-      "OpenAI Cash Burn to Hit $280 Billion by 2030 as Anthropic Profit Surges",
-      "OpenAI and Anthropic's Chinese Rivals Face a Revenue Reality Check"
+      "Is It Worth Investing in Alibaba (BABA) Based on Wall Street's Bullish Views?",
+      "Nvidia Stock Is Defying Chip Slump. 3 Reasons Why.",
+      "Alibaba Group Holding Limited (BABA) is Attracting Investor Attention: Here is What You Should Know"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

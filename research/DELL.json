@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DELL",
-    "researched_at": "2026-09-21T17:09:12+00:00",
+    "researched_at": "2026-09-28T18:41:17+00:00",
     "name": "Dell Technologies Inc",
     "industry": "Technology",
-    "market_cap": 361179.81087590737,
+    "market_cap": 357892.656966421,
     "metrics": {
-      "P/E": 31.74,
+      "P/E": 31.45,
       "net margin %": 7.53,
       "rev growth %": 49.03,
       "ROE %": 130.7,
       "current ratio": 0.96
     },
     "news": [
-      "DELL Rides on Growing AI Clientele: Can the Stock Outpace SMCI & CSCO?",
-      "Dell Best Positioned to Benefit From On-Premises AI Growth, Morgan Stanley Says",
-      "HP Stock Drops After PC Maker Forecasts Industry Sales Decline"
+      "What You Actually Pay To Join The AAPL Run",
+      "IBD Stock Of The Day: NetApp's AI-Powered Rally Faces Next Test",
+      "Dell Stock Drops Nearly 2.9% as OpenShell Reaches the Entire AI Factory"
     ],
     "analyst_upgrade": false,
     "earnings_beat": true
