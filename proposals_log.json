@@ -905,7 +905,7 @@
       "ticker": "NVDA",
       "side": "buy",
       "size_pct": 10.0,
-      "entry_price": 231.25,
+      "entry_price": 229.5743,
       "feeds": [
         "analyst",
         "corporate",
@@ -914,7 +914,7 @@
         "institutional"
       ],
       "feed_count": 5,
-      "status": "proposed",
+      "status": "live_filled",
       "stocknews": {
         "xii_score": 86,
         "verdict": "strong-buy",
@@ -930,6 +930,11 @@
       "portfolio": {
         "held": null,
         "checked": false
+      },
+      "live": {
+        "order_id": "6aba81bb-fd5f-47b5-adfb-91b6c09ed7d3",
+        "state": "filled",
+        "ts": "2026-09-28T21:13:03+00:00"
       }
     },
     {
@@ -938,14 +943,14 @@
       "ticker": "AAPL",
       "side": "buy",
       "size_pct": 10.0,
-      "entry_price": 341.95,
+      "entry_price": 339.7049,
       "feeds": [
         "corporate",
         "insider",
         "institutional"
       ],
       "feed_count": 3,
-      "status": "proposed",
+      "status": "live_filled",
       "stocknews": {
         "xii_score": 85,
         "verdict": "strong-buy",
@@ -961,6 +966,11 @@
       "portfolio": {
         "held": false,
         "checked": true
+      },
+      "live": {
+        "order_id": "6aba81c2-4fb8-4ee0-a445-b2e4444ad09f",
+        "state": "filled",
+        "ts": "2026-09-28T21:13:03+00:00"
       }
     }
   ],
