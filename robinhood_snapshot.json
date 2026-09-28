@@ -1,18 +1,25 @@
 {
-  "ts": "2026-09-07T14:41:38+00:00",
+  "ts": "2026-09-28T14:41:46+00:00",
   "account_last4": "2732",
-  "total_value": 500.0,
-  "equity_value": 0.0,
-  "cash": 500.0,
-  "buying_power": 500.0,
-  "positions": [],
+  "total_value": 503.71169892,
+  "equity_value": 53.71169892,
+  "cash": 450.0,
+  "buying_power": 450.0,
+  "positions": [
+    {
+      "symbol": "AAPL",
+      "quantity": 0.157614,
+      "average_buy_price": 317.23,
+      "market_value": 53.71
+    }
+  ],
   "open_orders": [],
   "quotes": {
-    "AAPL": 319.99,
-    "MSFT": 499.68
+    "NVDA": 231.12,
+    "AAPL": 340.74
   },
   "fractional_ok": {
-    "AAPL": true,
-    "MSFT": true
+    "NVDA": true,
+    "AAPL": true
   }
 }
