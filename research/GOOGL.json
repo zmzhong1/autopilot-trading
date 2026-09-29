@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "GOOGL",
-    "researched_at": "2026-09-22T15:36:01+00:00",
+    "researched_at": "2026-09-29T16:57:22+00:00",
     "name": "Alphabet Inc",
     "industry": "Media",
-    "market_cap": 4341283.100000001,
+    "market_cap": 4191832.5,
     "metrics": {
-      "P/E": 17.84,
+      "P/E": 17.16,
       "net margin %": 54.77,
       "rev growth %": 20.05,
       "ROE %": 50.84,
       "current ratio": 2.72
     },
     "news": [
-      "Netflix Faces Growing YouTube Threat As Viewer Share Hits Multi-Year Low, HSBC Says \u2014 Wells Fargo Flags Engagement Risk",
-      "Netflix downgraded, SanDisk initiated: Wall Street's top analyst calls",
-      "Nextech3D.ai unveils AI-powered training platform KATE"
+      "European Equities Decline in Tuesday Trading; BlackRock, Vanguard Face Pressure as European Banks Launch ETFs",
+      "The Trade Desk Stock Slides 18% Over 9 Straight Down Days",
+      "Nvidia Is Spending Big on Buybacks. Why Apple Is the Only Mag 7 Rival Joining In."
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

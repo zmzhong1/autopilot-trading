@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "GS",
-    "researched_at": "2026-09-22T15:36:03+00:00",
+    "researched_at": "2026-09-29T16:57:24+00:00",
     "name": "Goldman Sachs Group Inc",
     "industry": "Financial Services",
-    "market_cap": 279346.9459827468,
+    "market_cap": 266794.5496667424,
     "metrics": {
-      "P/E": 13.14,
+      "P/E": 12.84,
       "net margin %": 15.53,
       "rev growth %": 6.67,
       "ROE %": 16.94,
       "current ratio": 0.32
     },
     "news": [
-      "Goldman Eyes Nearly $70B Revenue Base in 2026: What's Driving Growth?",
-      "Cyera Announces $400 Million Investment from Goldman Sachs to Build the Trust Layer for the Agentic Enterprise",
-      "Goldman, Morgan Stanley Ride $17.2B China Tech Boom as AI Truce Odds Sit at 10%"
+      "Goldman Sachs opens up $100B Treasury fund to crypto firms",
+      "Goldman Sachs reportedly discussing John Waldron as next CEO",
+      "Polymarket Hires Goldman Sachs Banker To Attract Institutional Investors"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

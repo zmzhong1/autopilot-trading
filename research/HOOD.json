@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "HOOD",
-    "researched_at": "2026-09-22T15:36:09+00:00",
+    "researched_at": "2026-09-29T16:57:29+00:00",
     "name": "Robinhood Markets Inc",
     "industry": "Financial Services",
-    "market_cap": 110856.84583136455,
+    "market_cap": 104707.12460142814,
     "metrics": {
-      "P/E": 53.5,
+      "P/E": 50.53,
       "net margin %": 42.01,
       "rev growth %": 38.27,
       "ROE %": 22.7,
       "current ratio": 1.22
     },
     "news": [
-      "SoFi Rises 5% After Getting Cut in Half: Is SOFI Stock Set to Double From Here?",
-      "Robinhood Markets, Inc. (HOOD) Is a Trending Stock: Facts to Know Before Betting on It",
-      "Forget Dogecoin: PEPE Is Outrunning Bitcoin and XRP\u2014Is FLOKI Next?"
+      "CME vs. Robinhood Markets: Which Financial Stock Is a Better Buy in 2026?",
+      "Robinhood Markets vs. Morningstar: Which Financial Stock Is a Better Buy in 2026?",
+      "Best Momentum Stock to Buy for September 29th"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

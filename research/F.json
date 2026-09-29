@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "F",
-    "researched_at": "2026-09-22T15:35:55+00:00",
+    "researched_at": "2026-09-29T16:57:17+00:00",
     "name": "Ford Motor Co",
     "industry": "Automobiles",
-    "market_cap": 52516.632678172595,
+    "market_cap": 49366.432242272225,
     "metrics": {
       "net margin %": -3.93,
       "rev growth %": 1.47,
@@ -12,8 +12,8 @@
       "current ratio": 1.09
     },
     "news": [
-      "GM Wins $700 Million Pentagon Contract; Shares Gain",
-      "Ford Stock Is Down 24% From Its Peak. Here\u2019s Why the Services Business Could Be Worth More Than the Cars.",
+      "Ford says Ontario willing to bankroll 'nation-building' pipeline from Alberta to Sarnia",
+      "Ford and GM Just Got More Breathing Room on Their EV Plans",
       "What's going on in today's session: S&P500 most active stocks"
     ],
     "analyst_upgrade": true,

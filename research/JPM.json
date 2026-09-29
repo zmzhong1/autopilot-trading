@@ -1,20 +1,20 @@
 {
   "snapshot": {
     "ticker": "JPM",
-    "researched_at": "2026-09-22T15:36:13+00:00",
+    "researched_at": "2026-09-29T16:57:31+00:00",
     "name": "JPMorgan Chase & Co",
     "industry": "Banking",
-    "market_cap": 935787.9336988562,
+    "market_cap": 894718.9133813406,
     "metrics": {
-      "P/E": 14.34,
+      "P/E": 13.79,
       "net margin %": 33.26,
       "rev growth %": 108.98,
       "ROE %": 17.81
     },
     "news": [
-      "Goldman Eyes Nearly $70B Revenue Base in 2026: What's Driving Growth?",
-      "Fed Rate Hike: What it Means for Wells Fargo's NII Outlook",
-      "Sigma Lithium gets bullish start from JPMorgan"
+      "Michigan LIFT Launches to Accelerate Industrial Innovation, Scale Manufacturing Growth and Strengthen U.S. Competitiveness",
+      "Sterling Organization Acquires Pavilions Marketplace, a 69,622-Square-Foot Grocery-Anchored Shopping Center in West Hollywood, California",
+      "Penalties average 65% of tax liabilities on latest HMRC defaulters list \u2013 RSM UK"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

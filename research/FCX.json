@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "FCX",
-    "researched_at": "2026-09-22T15:35:57+00:00",
+    "researched_at": "2026-09-29T16:57:20+00:00",
     "name": "Freeport-McMoRan Inc",
     "industry": "Metals & Mining",
-    "market_cap": 103623.020955149,
+    "market_cap": 103335.81264835237,
     "metrics": {
-      "P/E": 34.87,
+      "P/E": 34.79,
       "net margin %": 11.38,
       "rev growth %": -24.23,
       "ROE %": 15.26,
       "current ratio": 2.07
     },
     "news": [
-      "Freeport-McMoRan's Low-Cost Secret to Take Advantage of Record Copper Prices",
-      "Basic Materials Sector Still Shows Promise In 2026, But Proceed With Caution",
-      "Trump, Greenland Deal Puts Rare-Earth ETFs In Focus: Funds to Watch as US Targets China\u2019s Supply Chain"
+      "Can Southern Copper's Mexican Projects Drive Long-Term Growth?",
+      "Glencore: I Like It Even Better Today",
+      "These S&P500 stocks that are showing activity before the opening bell on Monday."
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
