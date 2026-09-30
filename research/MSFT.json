@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MSFT",
-    "researched_at": "2026-09-23T15:31:31+00:00",
+    "researched_at": "2026-09-30T16:55:04+00:00",
     "name": "Microsoft Corp",
     "industry": "Technology",
-    "market_cap": 3697921.5062681525,
+    "market_cap": 3779305.601012731,
     "metrics": {
-      "P/E": 27.66,
+      "P/E": 27.92,
       "net margin %": 40.31,
       "rev growth %": 17.79,
       "ROE %": 33.22,
       "current ratio": 1.23
     },
     "news": [
-      "Trump Logged 1,156 Trades in One Month and Sold Microsoft. The Reason Is a Tax Strategy You Can Copy.",
-      "Microsoft upgraded, HubSpot initiated: Wall Street's top analyst calls",
-      "What Is Really Driving Palantir's Growth?"
+      "Is CrowdStrike Stock Paying You Enough For The Swings?",
+      "Stock Market Today: Nasdaq Leads Rise; AI Giant Microsoft Tests A New Entry (Live Coverage)",
+      "Why Gabelli Bought Microsoft Corporation (MSFT) Near Its 52-Week Lows"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

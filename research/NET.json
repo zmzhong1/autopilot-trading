@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "NET",
-    "researched_at": "2026-09-23T15:31:40+00:00",
+    "researched_at": "2026-09-30T16:55:09+00:00",
     "name": "Cloudflare Inc",
     "industry": "Technology",
-    "market_cap": 125696.14398725225,
+    "market_cap": 125432.6367390584,
     "metrics": {
       "net margin %": -8.21,
       "rev growth %": 33.53,
@@ -12,9 +12,9 @@
       "current ratio": 1.82
     },
     "news": [
-      "Zacks Investment Ideas feature highlights: Astera Labs, SpaceX, Cloudflare, NVIDIA and Meta Platforms",
-      "What Happens To Cloudflare Stock If Its Growth Cools?",
-      "Stocks making big moves yesterday: Xponential Fitness, Meta, Marvell Technology, Titan International, and Cloudflare"
+      "Zscaler Tanked Over One Year: A Prominent Firm Says 50% Gains to Arrive in 12 Months or Less",
+      "Bull of the Day: Astera Labs (ALAB)",
+      "Bot Traffic Will Be \u201c1000X\u201d Bigger Than Human Traffic in Just Five Years, According to Cloudflare CEO"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

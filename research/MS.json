@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MS",
-    "researched_at": "2026-09-23T15:31:29+00:00",
+    "researched_at": "2026-09-30T16:55:02+00:00",
     "name": "Morgan Stanley",
     "industry": "Financial Services",
-    "market_cap": 314395.9513189825,
+    "market_cap": 302742.3559842781,
     "metrics": {
-      "P/E": 15.57,
+      "P/E": 14.97,
       "net margin %": 15.65,
       "rev growth %": 13.96,
       "ROE %": 17.83,
       "current ratio": 0.35
     },
     "news": [
-      "Morgan Stanley Investment-Bank Deal List Leaked in Email Misfire",
-      "October Could Bring New Market Surprises As Earnings Season Nears: Here's What To Watch",
-      "One AI Agent, Two Verdicts: Muse Lifts the Nasdaq to a Record and Knocks the Banks"
+      "Robinhood Stock Falls Despite Bullish Wall Street Reaction To HOOD Summit \u2013 Morgan Stanley Eyes \u2018Two Key Products\u2019",
+      "Transmit Security Receives Morgan Stanley 2026 Innovation Award",
+      "Morgan Stanley (MS) Loses 8.7% in 4 Weeks, Here's Why a Trend Reversal May be Around the Corner"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
