@@ -13,35 +13,26 @@ below, was done at Ming's explicit instruction. Sources: Robinhood MCP (read too
 `get_trigger`, the Actions history, `git log main`, and a bridge replay in a scratch
 copy (`select_live_orders` fed the proposals that existed at each fire time).
 
-**The live routine has worked once in three fires.**
+**Live routine history.** It worked once in its first three fires; since the 2026-09-25 fixes and the 09-28 investor-profile completion it behaves as designed.
 
 | Fire (UTC) | Bridge would emit | What happened | On `main` |
 |---|---|---|---|
 | 09-07 14:40 (Labor Day, market closed) | AAPL $50 + MSFT $50 (08-31 proposals) | AAPL placed (`6a9ecd2d-…`), queued, **filled 09-08 13:30 at $317.23, 0.157614 sh**. **MSFT was never placed** and no reason was recorded. Commit came 33s after placement, so the step-4 wait + reconcile never ran | `f35d071`; reconciled 09-25 in `8b7f899` (now `filled @ 317.23`) |
 | 09-14 14:40 | NVDA $50.29 (09-07 proposal) | Run status `SUCCEEDED`. No order at Robinhood, **no commit** | nothing |
 | 09-21 14:40 | NVDA $50.29 (09-14 proposal) | Run status `SUCCEEDED` (session `session_01TjwBx66v7QeDGfE6aUr3aK`). No order, **no commit** | nothing |
-| **09-28 14:40 (next)** | **NVDA $50.29** (09-21 proposal) if the run works | Ming: let it run | — |
+| 09-28 14:40 | NVDA + AAPL $50.37 (09-28 proposals) | Both **refused by Robinhood**: 400 "answer some questions about your investing goals" (investor profile incomplete, `context=second_trade`). Logged as skips in `8cb5b1a`. After the profile was completed, both were placed through the routine at 15:03 UTC and **filled** (NVDA 0.219406 @ $229.57, AAPL 0.148275 @ $339.70) | `8cb5b1a`; fills recorded at Ming's instruction in `249e5ac` |
+| 10-01 14:40 (first Thursday) | NVDA (10-01 proposal) | **0 placed, 1 skipped**: re-buy cooldown (14d) from 09-28. Working as designed | `97d2b2b` |
 
 Step 5 of the prompt commits on every run, including runs that place nothing, so
 "SUCCEEDED + no commit" means the run stopped early. This session couldn't read those
-transcripts, and no routine report reached Gmail. **The cause is unknown.** The 09-21
-run lasted 3m44s and produced ~18k output tokens, which is more work than a run that
-failed at the first MCP call. Two explanations fit:
-- a Robinhood-MCP/connector problem partway through;
-- the unattended session's permission classifier denying `place_equity_order`, or the
-  `git push origin main` in step 5. Classifier denials have happened in this setup
-  before (09-05: `create_trigger`, and an earlier AAPL placement).
-
-To settle it, open https://claude.ai/code/session_01TjwBx66v7QeDGfE6aUr3aK and read
-the end of the transcript. The session metadata fields (`staged_files`, the tool list)
-are generic and say nothing about this.
+transcripts, and no routine report reached Gmail. **Root cause, found 2026-09-28:** Robinhood requires the investor-profile ("investing goals") questionnaire on account ••2732 before its *second* trade. `place_equity_order` returns HTTP 400 with `context=second_trade` until it is done. The 09-07 order was the account's first trade, so it went through. Every later placement was refused. The old prompt then stopped without committing; the hardened prompt (2026-09-25) records the refusal as a skip. Ming completed the questionnaire on 09-28. **If orders are ever refused again with a 400, read the skip line in the `chore(live)` commit first**: a broker-side requirement is not a code bug.
 
 **Why the routine always acts on last week's proposals.** GitHub is running the Monday
 crons about 5h late: heartbeat (scheduled 13:00) ran 18:29, and executor (scheduled
 14:00) ran 18:59 (08-31..09-21 range: 18:31–19:46). The routine fires on time at 14:40,
 so each fire saw the previous Monday's proposals, which are still inside
 `max_proposal_age_days: 7`. **Fixed on this branch:** `executor.yml` now runs Mondays
-06:23 UTC, which leaves about 8h of slack. The executor has no dependency on the heartbeat
+06:23 UTC (Mon + Thu since #26). **Observed slack is thin:** GitHub started it at 14:09 UTC on 09-28 (7h46m late) and 13:32 UTC on 10-01 (7h09m late), only 30–70 min before the 14:40 routine. If it ever slips past 14:40, that fire falls back to the previous proposal set (still ≤7 days old); moving the cron earlier (e.g. `23 1 * * 1,4`) would restore margin. The executor has no dependency on the heartbeat
 workflow. The SEC watcher (`*/15`) is running only 3–4×/day. Every run is green;
 they're just throttled.
 
