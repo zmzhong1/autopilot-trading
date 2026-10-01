@@ -13,16 +13,20 @@ name: Execution Proposals
 
 on:
   schedule:
-    # Mondays + Thursdays 06:23 UTC (twice-weekly trading, owner decision
+    # Mondays + Thursdays 01:23 UTC (twice-weekly trading, owner decision
     # 2026-09-26). The live-execution routine fires 14:40 UTC and places
     # from the newest proposals <= max_proposal_age_days old, so today's must
-    # exist by then. GitHub has been starting this job 4-5h late (08-31..09-21:
-    # scheduled 14:00, ran 18:31-19:46), which left the routine placing the
-    # PREVIOUS Monday's proposals. 06:23 leaves ~8h of slack; off the hour
-    # because top-of-hour schedules are the most delayed. No dependency on the
-    # heartbeat workflow: executor.py reads the watchers' committed state
-    # (state.json, congress_state.json) and fetches the rest itself.
-    - cron: '23 6 * * 1,4'
+    # exist by then. GitHub starts this job hours late: 4-5h at 14:00
+    # (08-31..09-21, ran 18:31-19:46), then 7-8h at 06:23 (09-28 ran 14:09,
+    # 10-01 ran 13:32 -- 30-70 min before the routine). 01:23 is ~13h before
+    # the routine (~5-6h at that lag); off the hour because top-of-hour
+    # schedules are the most delayed.
+    # Still the same UTC date as the routine, so the proposals carry today's
+    # date. Inputs are unchanged: the watchers stop at 23:xx UTC the previous
+    # weekday. No dependency on the heartbeat workflow: executor.py reads the
+    # watchers' committed state (state.json, congress_state.json) and fetches
+    # the rest itself.
+    - cron: '23 1 * * 1,4'
   workflow_dispatch: {}
 
 permissions:

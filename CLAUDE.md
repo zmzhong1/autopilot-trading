@@ -33,7 +33,7 @@ execution even when `enabled` is true.
 
 **Dry-run is the default for anything you run yourself.** `DRY_RUN=1` logs alerts to stdout
 instead of Discord; `SEC_USER_AGENT='Name you@email.com' DRY_RUN=1 python3 executor.py` prints
-the card it would post. CI runs `executor.yml` Mondays + Thursdays 06:23 UTC propose-only (ahead of the
+the card it would post. CI runs `executor.yml` Mondays + Thursdays 01:23 UTC propose-only (ahead of the
 14:40 UTC live routine; GitHub starts scheduled jobs hours late).
 
 **Claude gives no investment advice here.** Report what the tooling produced and what it says
