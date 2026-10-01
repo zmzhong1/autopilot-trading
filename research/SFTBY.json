@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "SFTBY",
-    "researched_at": "2026-09-24T15:52:42+00:00",
+    "researched_at": "2026-10-01T17:27:08+00:00",
     "name": "SoftBank Group Corp",
     "industry": "Telecommunication",
-    "market_cap": 36049205.251465,
+    "market_cap": 36705683.256836,
     "metrics": {
-      "P/E": 7.32,
+      "P/E": 6.99,
       "net margin %": 61.61,
       "rev growth %": 8.63,
       "ROE %": 29.88,
       "current ratio": 0.68
     },
     "news": [
-      "SoftBank Just Raised $11.1 Billion to Fund Its Massive AI Bet",
-      "SoftBank Launches $11.1 Billion Bond Sale to Fund Final $10 Billion OpenAI Investment Tranche",
-      "SoftBank: Junk Bonds Tarnish Intriguing Investment Portfolio"
+      "Oracle Just Sent A Notice That Has Everyone Staring At The Wrong Place",
+      "Asian shares mostly rise amid market optimism about AI, despite Iran worries",
+      "Sterlington Advises DigitalBridge Management Team on Acquisition by SoftBank Group"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

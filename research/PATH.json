@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PATH",
-    "researched_at": "2026-09-24T15:52:39+00:00",
+    "researched_at": "2026-10-01T17:27:03+00:00",
     "name": "UiPath Inc",
     "industry": "Technology",
-    "market_cap": 6795.87021285434,
+    "market_cap": 6861.014755639408,
     "metrics": {
-      "P/E": 18.78,
+      "P/E": 18.49,
       "net margin %": 21.03,
       "rev growth %": 14.98,
       "ROE %": 18.42,
       "current ratio": 2.39
     },
     "news": [
-      "UiPath Announces Winners of the 2026 Geekwire AI Breakthrough Awards, Recognizing Enterprises Running Agentic AI at Production Scale",
-      "Canaccord Genuity Maintains Hold on UiPath, Lowers Price Target to $14",
-      "TD Cowen Maintains Hold on UiPath, Lowers Price Target to $15"
+      "IBM Jumps 5% as Bob Coding Agent Gains Self-Hosted Deployment; Salesforce Rises 3%, Palantir Inches Higher",
+      "UiPath Joins NCQA AI Learning Collaborative to Advance Responsible AI in Healthcare",
+      "UiPath: AI Orchestration Leader With Deep-Value Price Tag - Reiterate Buy"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

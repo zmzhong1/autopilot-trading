@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "PLTR",
-    "researched_at": "2026-09-24T15:52:40+00:00",
+    "researched_at": "2026-10-01T17:27:05+00:00",
     "name": "Palantir Technologies Inc",
     "industry": "Technology",
-    "market_cap": 460882.56231242954,
+    "market_cap": 451666.8274700996,
     "metrics": {
-      "P/E": 152.59,
+      "P/E": 149.0,
       "net margin %": 49.0,
       "rev growth %": 78.92,
       "ROE %": 37.47,
       "current ratio": 7.23
     },
     "news": [
-      "Billions Behind the Autonomous Machine Boom as Unmanned Ground Vehicles Disrupts the Defense Industry",
-      "Palantir Just Hit a One-Year High. Here's What's Driving It",
-      "Prediction: This Will Be Palantir Technologies\u2019 Stock Price by the End of 2028"
+      "IBM Jumps 5% as Bob Coding Agent Gains Self-Hosted Deployment; Salesforce Rises 3%, Palantir Inches Higher",
+      "SoundHound's Agentic Voice AI Launches in India With Kia Sorento",
+      "Top Big Data Stocks to Tap the Growing AI Analytics Opportunity"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "thesis stale (review due 2026-09-28)"
+  ]
 }

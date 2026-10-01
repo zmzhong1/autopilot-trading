@@ -1,27 +1,26 @@
 {
   "snapshot": {
     "ticker": "ORCL",
-    "researched_at": "2026-09-24T15:52:37+00:00",
+    "researched_at": "2026-10-01T17:27:01+00:00",
     "name": "Oracle Corp",
     "industry": "Technology",
-    "market_cap": 437111.27936027944,
+    "market_cap": 410683.8440552322,
     "metrics": {
-      "P/E": 23.51,
+      "P/E": 22.01,
       "net margin %": 26.36,
       "rev growth %": 21.62,
       "ROE %": 42.58,
       "current ratio": 1.17
     },
     "news": [
-      "Gapping S&P500 stocks in Thursday's session",
-      "Oracle just declared a very unusual force majeure at its AI data center",
-      "MGM Resorts stock sinks after Barry Diller withdraws buyout offer"
+      "How Has Microsoft's Story Changed In A Year?",
+      "Which Dates Could Move Microsoft Stock Most?",
+      "3 Tech Stocks Trading At Least 25% Below Fair Value"
     ],
     "analyst_upgrade": false,
     "earnings_beat": true
   },
   "flags": [
-    "thesis stale (review due 2026-09-23)",
     "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

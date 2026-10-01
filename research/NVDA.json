@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "NVDA",
-    "researched_at": "2026-09-24T15:52:34+00:00",
+    "researched_at": "2026-10-01T17:26:58+00:00",
     "name": "NVIDIA Corp",
     "industry": "Semiconductors",
-    "market_cap": 5434790.88405158,
+    "market_cap": 5523358.618090788,
     "metrics": {
-      "P/E": 28.58,
+      "P/E": 28.83,
       "net margin %": 63.66,
       "rev growth %": 83.38,
       "ROE %": 110.11,
       "current ratio": 4.59
     },
     "news": [
-      "Prediction: Micron Stock Will Double Within 2 Years",
-      "USA Rare Earth Is Breaking Ground on Its $1.2 Billion South Carolina Facility. Is It Time to Buy the Critical Minerals Stock?",
-      "Nvidia leads tech stocks lower as Treasury yields surge: AlphaCheck"
+      "These dow jones stocks are moving in today's session",
+      "UBS Gets Told to Pack Its Bags",
+      "4 Reasons to Buy Meta Platforms Stock"
     ],
     "analyst_upgrade": true,
     "earnings_beat": true
   },
-  "flags": [
-    "thesis stale (review due 2026-09-23)"
-  ]
+  "flags": []
 }
