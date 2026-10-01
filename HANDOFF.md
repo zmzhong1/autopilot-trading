@@ -32,7 +32,7 @@ crons about 5h late: heartbeat (scheduled 13:00) ran 18:29, and executor (schedu
 14:00) ran 18:59 (08-31..09-21 range: 18:31–19:46). The routine fires on time at 14:40,
 so each fire saw the previous Monday's proposals, which are still inside
 `max_proposal_age_days: 7`. **Fixed on this branch:** `executor.yml` now runs Mondays
-06:23 UTC (Mon + Thu since #26). **Observed slack is thin:** GitHub started it at 14:09 UTC on 09-28 (7h46m late) and 13:32 UTC on 10-01 (7h09m late), only 30–70 min before the 14:40 routine. If it ever slips past 14:40, that fire falls back to the previous proposal set (still ≤7 days old); moving the cron earlier (e.g. `23 1 * * 1,4`) would restore margin. The executor has no dependency on the heartbeat
+06:23 UTC (Mon + Thu since #26). **Observed slack is thin:** GitHub started it at 14:09 UTC on 09-28 (7h46m late) and 13:32 UTC on 10-01 (7h09m late), only 30–70 min before the 14:40 routine. If it ever slips past 14:40, that fire falls back to the previous proposal set (still ≤7 days old). **Moved 2026-10-01 (Ming):** cron `23 1 * * 1,4` (01:23 UTC): ~13h before the routine on paper, ~5–6h at the observed 7–8h lag. The executor has no dependency on the heartbeat
 workflow. The SEC watcher (`*/15`) is running only 3–4×/day. Every run is green;
 they're just throttled.
 
@@ -64,7 +64,7 @@ they're just throttled.
    A/B/C; the alternatives were to divide by the app's `total_value` (A) or to remove
    the secrets (C). The app holds 0 holdings today, so nothing is gated yet.
 6. **Twice-weekly trading (Ming, 2026-09-26: "trade from time to time, say twice a
-   week").** `executor.yml` now proposes Mondays + Thursdays at 06:23 UTC.
+   week").** `executor.yml` now proposes Mondays + Thursdays at 01:23 UTC (06:23 until 2026-10-01).
    **Done 2026-09-27:** Ming set the routine cron to `40 14 * * 1,4` and it is verified
    (next fires Mon 09-28 and Thu 10-01, both 14:40 UTC). The routine UI stores the cron in
    UTC, whatever local time it displays. The prompt is unchanged. The heartbeat
@@ -290,7 +290,7 @@ Sister repos: **StockNews** (research trees this repo reads),
 | Weekday mornings | Deterministic company research | `research/*.json` + Discord |
 | Weekday evenings | Insider cluster buys | Discord |
 | Monday 13:00 UTC | Heartbeat + discovery + crowding + regime + confluence + StockNews digest | Discord |
-| Monday 06:23 UTC | Executor proposes (never places) + scorecard | Discord + `proposals_log.json` |
+| Mon + Thu 01:23 UTC | Executor proposes (never places) + scorecard | Discord + `proposals_log.json` |
 
 The heartbeat flags any producer that silently stops. A failed workflow shows
 red in the Actions tab; the 2026-07-02 lesson is that the *commit step* can

@@ -12,7 +12,7 @@ Routine id and schedule are recorded in `HANDOFF.md`.
 
 | When (UTC, Mondays + Thursdays) | What | Runs where |
 |---|---|---|
-| 06:23 | `executor.py` **proposes** → commits `proposals_log.json` (GitHub often starts it hours late — hence the early slot) | GitHub Actions (kill switch on) |
+| 01:23 | `executor.py` **proposes** → commits `proposals_log.json` (GitHub often starts it hours late — hence the early slot) | GitHub Actions (kill switch on) |
 | 13:00 (Mondays only) | heartbeat digest (flags a stale live snapshot / unreconciled live order) | GitHub Actions |
 | **14:40** | **this routine** re-vets today's proposals against the live account and places what clears | Claude routine + Robinhood MCP |
 
@@ -131,7 +131,7 @@ never place options, margin, sells, or anything not on the bridge's list.
 - **Repository:** `zmzhong1/autopilot-trading`, default branch `main`.
 - **Schedule:** cron `40 14 * * 1,4` (stored in UTC; Mondays + Thursdays 14:40 UTC, twice-weekly
   per owner decision 2026-09-26; set by Ming 2026-09-27) = 10:40 ET, after the CI proposal
-  run (scheduled 06:23 UTC) and inside regular hours so dollar-based market orders
+  run (scheduled 01:23 UTC) and inside regular hours so dollar-based market orders
   fill immediately; on a market holiday they queue and fill at the next open).
 - **Fresh session per fire** — the prompt is self-contained.
 - To pause: disable the routine, or set `enabled: false` in `guardrails.json`
