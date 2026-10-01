@@ -1,25 +1,29 @@
 {
-  "ts": "2026-09-28T14:41:46+00:00",
+  "ts": "2026-10-01T14:41:26+00:00",
   "account_last4": "2732",
-  "total_value": 503.71169892,
-  "equity_value": 53.71169892,
-  "cash": 450.0,
-  "buying_power": 450.0,
+  "total_value": 501.0988864245,
+  "equity_value": 151.8388864245,
+  "cash": 349.26,
+  "buying_power": 349.26,
   "positions": [
     {
       "symbol": "AAPL",
-      "quantity": 0.157614,
-      "average_buy_price": 317.23,
-      "market_value": 53.71
+      "quantity": 0.305889,
+      "average_buy_price": 328.13,
+      "market_value": 100.37
+    },
+    {
+      "symbol": "NVDA",
+      "quantity": 0.219406,
+      "average_buy_price": 229.57,
+      "market_value": 50.57
     }
   ],
   "open_orders": [],
   "quotes": {
-    "NVDA": 231.12,
-    "AAPL": 340.74
+    "NVDA": 230.4903
   },
   "fractional_ok": {
-    "NVDA": true,
-    "AAPL": true
+    "NVDA": true
   }
 }
