@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SNOW",
-    "researched_at": "2026-09-25T15:53:22+00:00",
+    "researched_at": "2026-10-02T16:45:43+00:00",
     "name": "Snowflake Inc",
     "industry": "Technology",
-    "market_cap": 117835.19506397059,
+    "market_cap": 120654.06695817548,
     "metrics": {
       "net margin %": -20.07,
       "rev growth %": 32.04,
@@ -12,9 +12,9 @@
       "current ratio": 0.94
     },
     "news": [
-      "Could CrowdStrike (CRWD)\u2019s Snowflake (SNOW) Partnership Unlock a New AI Growth Engine?",
-      "Palantir Stock Has\u00a0a Growth Story\u00a0Few Companies Can\u00a0Match",
-      "Does Palantir Stock Make Your Bad Market Days Worse?"
+      "Micron, Snowflake, Chubb And A Big Bank On CNBC\u2019s \u2018Final Trades\u2019",
+      "1 Growth Stock with All-Star Potential and 2 We Avoid",
+      "CNBC Halftime Report Final Trades: Micron Technology, iShares U.S. Oil & Gas Exploration & Production ETF, iShares U.S. Real Estate ETF"
     ],
     "analyst_upgrade": false,
     "earnings_beat": true

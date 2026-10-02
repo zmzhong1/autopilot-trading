@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "TSLA",
-    "researched_at": "2026-09-25T15:53:36+00:00",
+    "researched_at": "2026-10-02T16:45:58+00:00",
     "name": "Tesla Inc",
     "industry": "Automobiles",
-    "market_cap": 1492692.0035744216,
+    "market_cap": 1398574.293640828,
     "metrics": {
-      "P/E": 394.46,
+      "P/E": 368.19,
       "net margin %": 3.67,
       "rev growth %": 11.75,
       "ROE %": 4.57,
       "current ratio": 1.94
     },
     "news": [
-      "AMD CEO Lisa Su is having a September to remember",
-      "Tesla Starts Semi Deliveries. Here's The Final Production Target \u2014 With No Timeline",
-      "Tech stocks gain after tech titan dinner with Trump and China's Xi Jinping: AlphaCheck"
+      "Stock Market Today: Nasdaq Powers Up On U.S. Jobs Shortfall; Tesla Jumps, NetApp Extends Gains (Live Coverage)",
+      "Rivian Q3 Deliveries Hit Record \u2014 Retail Says Sub-$50K R2 Could Make It Stronger Rival To Tesla",
+      "Tesla Surges 5% as 486,532 Deliveries Top Company Consensus; Rivian Slides 3%"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "thesis stale (review due 2026-09-30)"
+  ]
 }
