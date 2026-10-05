@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "CAT",
-    "researched_at": "2026-09-28T18:41:09+00:00",
+    "researched_at": "2026-10-05T19:42:03+00:00",
     "name": "Caterpillar Inc",
     "industry": "Machinery",
-    "market_cap": 377659.6761802476,
+    "market_cap": 388618.3134973354,
     "metrics": {
-      "P/E": 34.83,
+      "P/E": 35.84,
       "net margin %": 14.51,
       "rev growth %": 18.36,
       "ROE %": 54.2,
       "current ratio": 1.37
     },
     "news": [
-      "Best Dividend Aristocrats For October 2026",
-      "Rising Yields Hit Infrastructure: 2 CEFs Yielding 8%+ Worth Buying",
-      "Valmont Industries Targets $35 EPS by 2029 on Utility Infrastructure Boom"
+      "Monday's session: top gainers and losers in the dow jones index",
+      "Industrial Companies Likely to Lift 2026 Guidance Despite Some Investor Concerns, Truist Says",
+      "AI Super-Cycle Fuels Record Infrastructure Investments: ETFs to Buy"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

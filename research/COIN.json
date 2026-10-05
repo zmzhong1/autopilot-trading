@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "COIN",
-    "researched_at": "2026-09-28T18:41:11+00:00",
+    "researched_at": "2026-10-05T19:42:06+00:00",
     "name": "Coinbase Global Inc",
     "industry": "Financial Services",
-    "market_cap": 51477.23707,
+    "market_cap": 48282.17100000001,
     "metrics": {
       "net margin %": -15.72,
       "rev growth %": -10.35,
@@ -12,9 +12,9 @@
       "current ratio": 2.42
     },
     "news": [
-      "Citi Merchants Can Now Take Stablecoins Through Coinbase",
-      "The 3.75% Yield That Makes Citi\u2019s Stablecoin Play Work",
-      "Coinbase, Citi Team Up to Bring Stablecoin Payments to Businesses"
+      "CFTC proposes federal registration framework for leveraged retail crypto trades",
+      "NYSE parent company's joint venture plans 24/7 tokenized stock trading, and it's a huge deal",
+      "Strategy buys 334 more bitcoin and $176M of STRC stock"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

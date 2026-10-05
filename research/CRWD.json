@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "CRWD",
-    "researched_at": "2026-09-28T18:41:15+00:00",
+    "researched_at": "2026-10-05T19:42:10+00:00",
     "name": "CrowdStrike Holdings Inc",
     "industry": "Technology",
-    "market_cap": 258164.69811779694,
+    "market_cap": 276503.35348942515,
     "metrics": {
-      "P/E": 4416.09,
+      "P/E": 4729.79,
       "net margin %": 1.08,
       "rev growth %": 24.3,
       "ROE %": 1.29,
       "current ratio": 1.57
     },
     "news": [
-      "Which S&P500 stocks are moving on Monday?",
-      "What Could Derail CrowdStrike Stock?",
-      "CSCO's Security Growth Accelerates: Can It Outpace DDOG & CRWD?"
+      "3 Reasons to Buy Fortinet Stock After a 119.9% Rise in 6 Months",
+      "Autonomous Agent Growth Broadens CrowdStrike\u2019s (CRWD) Opportunities",
+      "CrowdStrike (CRWD) Is a Trending Stock: Facts to Know Before Betting on It"
     ],
     "analyst_upgrade": false,
     "earnings_beat": true

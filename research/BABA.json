@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "BABA",
-    "researched_at": "2026-09-28T18:41:07+00:00",
+    "researched_at": "2026-10-05T19:42:01+00:00",
     "name": "Alibaba Group Holding Ltd",
     "industry": "Retail",
-    "market_cap": 278821.3401832669,
+    "market_cap": 270306.5587996737,
     "metrics": {
-      "P/E": 25.52,
+      "P/E": 24.72,
       "net margin %": 7.02,
       "rev growth %": 4.42,
       "ROE %": 7.01,
       "current ratio": 1.36
     },
     "news": [
-      "Is It Worth Investing in Alibaba (BABA) Based on Wall Street's Bullish Views?",
-      "Nvidia Stock Is Defying Chip Slump. 3 Reasons Why.",
-      "Alibaba Group Holding Limited (BABA) is Attracting Investor Attention: Here is What You Should Know"
+      "Chinese AI Chips Could Flood the Market. Alibaba\u2019s New Chip Is 3X Better Than Its Predecessor.",
+      "Axios Reported Earlier Sunday, Nvidia-Backed Reflection Prepares Powerful Open-Weight AI System To Challenge Chinese Upstarts, U.S. AI Giants",
+      "President Trump On Sunday, Announced Formation Of Super Intelligence Force To Coordinate Federal Government Super Intelligence Efforts, Led By Jay Clayton, Andrew Ferguson, Emil Michael, Scott Kupor"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

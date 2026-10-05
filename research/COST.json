@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "COST",
-    "researched_at": "2026-09-28T18:41:13+00:00",
+    "researched_at": "2026-10-05T19:42:08+00:00",
     "name": "Costco Wholesale Corp",
     "industry": "Retail",
-    "market_cap": 409226.72516079183,
+    "market_cap": 408092.83589756995,
     "metrics": {
-      "P/E": 44.36,
+      "P/E": 44.23,
       "net margin %": 3.04,
       "rev growth %": 10.14,
       "ROE %": 28.02,
       "current ratio": 1.06
     },
     "news": [
-      "How Tariff Refunds Could Shape Costco's Earnings in Fiscal 2027",
-      "Is Costco's Stock Overdue for a Big Rally?",
-      "Walmart's Membership Gains Scale: Is It the Next Major Profit Engine?"
+      "Costco vs. Dollar General: Which Retail Stock Is the Better Buy Now?",
+      "Costco's Kirkland Signature Price Cuts Aim to Widen the Value Moat",
+      "TGT vs. COST: Which Stock Is the Better Value Option?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
