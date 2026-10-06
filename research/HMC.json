@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "HMC",
-    "researched_at": "2026-09-29T16:57:27+00:00",
+    "researched_at": "2026-10-06T17:20:59+00:00",
     "name": "Honda Motor Co Ltd",
     "industry": "Automobiles",
-    "market_cap": 6755523.151978,
+    "market_cap": 6479151.994507,
     "metrics": {
       "net margin %": -0.75,
       "rev growth %": 4.13,
@@ -12,9 +12,9 @@
       "current ratio": 1.29
     },
     "news": [
-      "Sector Update: Consumer Stocks Mixed Late Afternoon",
-      "Nissan Motor Remains On Thin Financial Ice As Midsize Rogue Hybrid Debuts",
-      "Honda Motor Eyes First New North American Factory in Nearly 20 Years With $2.5 Billion Ohio Hybrid Plant: Report"
+      "'Honda, Nissan each team with US AI startup on next-gen vehicle software' - Nikkei Asia",
+      "Applied Intuition Partners with Honda to Accelerate Next-Generation Software-Defined Vehicles",
+      "Honda Explores Space Robotics Solution With Redwire"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

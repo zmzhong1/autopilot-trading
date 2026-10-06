@@ -1,26 +1,27 @@
 {
   "snapshot": {
     "ticker": "HOOD",
-    "researched_at": "2026-09-29T16:57:29+00:00",
+    "researched_at": "2026-10-06T17:21:01+00:00",
     "name": "Robinhood Markets Inc",
     "industry": "Financial Services",
-    "market_cap": 104707.12460142814,
+    "market_cap": 102594.27794225128,
     "metrics": {
-      "P/E": 50.53,
+      "P/E": 49.51,
       "net margin %": 42.01,
       "rev growth %": 38.27,
       "ROE %": 22.7,
       "current ratio": 1.22
     },
     "news": [
-      "CME vs. Robinhood Markets: Which Financial Stock Is a Better Buy in 2026?",
-      "Robinhood Markets vs. Morningstar: Which Financial Stock Is a Better Buy in 2026?",
-      "Best Momentum Stock to Buy for September 29th"
+      "Robinhood Got a $156 Target From Bank of America. Here\u2019s What the Stock Needs to Show on October 27",
+      "2 Growth Stocks to Add to Your Roster and 1 We Avoid",
+      "General Motors To Rally Around 40%? Here Are 10 Top Analyst Forecasts For Tuesday"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
+    "thesis stale (review due 2026-10-02)",
     "analyst trend not upgrading vs buy-rated thesis",
     "recent earnings did not beat, despite high H-0"
   ]

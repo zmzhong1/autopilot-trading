@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "FCX",
-    "researched_at": "2026-09-29T16:57:20+00:00",
+    "researched_at": "2026-10-06T17:20:53+00:00",
     "name": "Freeport-McMoRan Inc",
     "industry": "Metals & Mining",
-    "market_cap": 103335.81264835237,
+    "market_cap": 104254.8686346113,
     "metrics": {
-      "P/E": 34.79,
+      "P/E": 35.63,
       "net margin %": 11.38,
       "rev growth %": -24.23,
       "ROE %": 15.26,
       "current ratio": 2.07
     },
     "news": [
-      "Can Southern Copper's Mexican Projects Drive Long-Term Growth?",
-      "Glencore: I Like It Even Better Today",
-      "These S&P500 stocks that are showing activity before the opening bell on Monday."
+      "Barclays Maintains Overweight on Freeport-McMoRan, Raises Price Target to $83",
+      "Wells Fargo Maintains Overweight on Freeport-McMoRan, Raises Price Target to $87",
+      "2 Mining Stocks That Are Quietly Becoming the Trades of the Year"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "GOOGL",
-    "researched_at": "2026-09-29T16:57:22+00:00",
+    "researched_at": "2026-10-06T17:20:55+00:00",
     "name": "Alphabet Inc",
     "industry": "Media",
-    "market_cap": 4191832.5,
+    "market_cap": 4237328.100000001,
     "metrics": {
-      "P/E": 17.16,
+      "P/E": 17.37,
       "net margin %": 54.77,
       "rev growth %": 20.05,
       "ROE %": 50.84,
       "current ratio": 2.72
     },
     "news": [
-      "European Equities Decline in Tuesday Trading; BlackRock, Vanguard Face Pressure as European Banks Launch ETFs",
-      "The Trade Desk Stock Slides 18% Over 9 Straight Down Days",
-      "Nvidia Is Spending Big on Buybacks. Why Apple Is the Only Mag 7 Rival Joining In."
+      "Mistral Large 4 Doesn\u2019t Just Compete With Chinese Open-Weights \u2013 It Undercuts the Entire Proprietary Pricing Floor",
+      "Marvell stock surges after company raises 2028 revenue outlook to $20 billion",
+      "Top Midday Stories: Google Strikes 20-Year Nuclear Power Deal With Constellation; Marvell Raises Revenue Guidance for 2026-27"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

@@ -1,20 +1,20 @@
 {
   "snapshot": {
     "ticker": "JPM",
-    "researched_at": "2026-09-29T16:57:31+00:00",
+    "researched_at": "2026-10-06T17:21:04+00:00",
     "name": "JPMorgan Chase & Co",
     "industry": "Banking",
-    "market_cap": 894718.9133813406,
+    "market_cap": 883527.9684920001,
     "metrics": {
-      "P/E": 13.79,
+      "P/E": 13.58,
       "net margin %": 33.26,
       "rev growth %": 108.98,
       "ROE %": 17.81
     },
     "news": [
-      "Michigan LIFT Launches to Accelerate Industrial Innovation, Scale Manufacturing Growth and Strengthen U.S. Competitiveness",
-      "Sterling Organization Acquires Pavilions Marketplace, a 69,622-Square-Foot Grocery-Anchored Shopping Center in West Hollywood, California",
-      "Penalties average 65% of tax liabilities on latest HMRC defaulters list \u2013 RSM UK"
+      "Uncover the latest developments among dow jones stocks in today's session.",
+      "JPMorgan\u2019s Dimon warns of tenfold rise in cyber risk from AI",
+      "JPMorgan CEO Jamie Dimon sharpens warning about a corporate credit squeeze: 'The market will ask for more'"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

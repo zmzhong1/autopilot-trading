@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "F",
-    "researched_at": "2026-09-29T16:57:17+00:00",
+    "researched_at": "2026-10-06T17:20:50+00:00",
     "name": "Ford Motor Co",
     "industry": "Automobiles",
-    "market_cap": 49366.432242272225,
+    "market_cap": 48449.28666049588,
     "metrics": {
       "net margin %": -3.93,
       "rev growth %": 1.47,
@@ -12,9 +12,9 @@
       "current ratio": 1.09
     },
     "news": [
-      "Ford says Ontario willing to bankroll 'nation-building' pipeline from Alberta to Sarnia",
-      "Ford and GM Just Got More Breathing Room on Their EV Plans",
-      "What's going on in today's session: S&P500 most active stocks"
+      "Can Ford's Truck and SUV Strength Drive Q3 Earnings Growth?",
+      "United Kingdom Electric Vehicle Market Size and Forecast 2026-2030 by Vehicle Type and Charging Infrastructure | Policy, Affordable Models and Rapid Charging Drive 3.8% CAGR",
+      "Tesla\u2019s Delivery Beat Is Just the \u2018Appetizer,\u2019 Analyst Says 2027 Could Be the Main Event"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

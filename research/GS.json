@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "GS",
-    "researched_at": "2026-09-29T16:57:24+00:00",
+    "researched_at": "2026-10-06T17:20:57+00:00",
     "name": "Goldman Sachs Group Inc",
     "industry": "Financial Services",
-    "market_cap": 266794.5496667424,
+    "market_cap": 260150.01374031624,
     "metrics": {
-      "P/E": 12.84,
+      "P/E": 12.36,
       "net margin %": 15.53,
       "rev growth %": 6.67,
       "ROE %": 16.94,
       "current ratio": 0.32
     },
     "news": [
-      "Goldman Sachs opens up $100B Treasury fund to crypto firms",
-      "Goldman Sachs reportedly discussing John Waldron as next CEO",
-      "Polymarket Hires Goldman Sachs Banker To Attract Institutional Investors"
+      "Goldman Sachs & Ray Dalio issue fresh US debt warnings",
+      "Goldman Sachs Isn\u2019t Ready to Raise Its 14% to 16% ROE Target. Here\u2019s What That Means for the Stock Before October 13",
+      "Can Morgan Stanley's Integrated Model Drive Long-Term Earnings Growth?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
