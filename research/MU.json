@@ -1,24 +1,24 @@
 {
   "snapshot": {
     "ticker": "MU",
-    "researched_at": "2026-09-30T16:55:06+00:00",
+    "researched_at": "2026-10-07T17:55:19+00:00",
     "name": "Micron Technology Inc",
     "industry": "Semiconductors",
-    "market_cap": 1202893.9448767963,
+    "market_cap": 1180848.1711580723,
     "metrics": {
-      "P/E": 23.86,
-      "net margin %": 55.91,
-      "rev growth %": 166.98,
-      "ROE %": 70.55,
-      "current ratio": 3.42
+      "P/E": 14.14,
+      "net margin %": 63.8,
+      "rev growth %": 256.33,
+      "ROE %": 91.77,
+      "current ratio": 3.31
     },
     "news": [
-      "Stock Market Today: Nasdaq Leads Rise; AI Giant Microsoft Tests A New Entry (Live Coverage)",
-      "If You Buy Micron Today, Here's Where It Could Be in 5 Years",
-      "Did You Miss Out on Nvidia and Micron Technology? This Super Semiconductor Stock Could Soar Over the Next Few Years."
+      "Wednesday's session: top gainers and losers in the S&P500 index",
+      "Micron Technology (MU): Pullback Driven by Debates Over AI Capex Sustainability",
+      "Nvidia and Micron are about to dominate earnings season"
     ],
     "analyst_upgrade": true,
-    "earnings_beat": false
+    "earnings_beat": true
   },
   "flags": []
 }

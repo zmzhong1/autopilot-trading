@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "NET",
-    "researched_at": "2026-09-30T16:55:09+00:00",
+    "researched_at": "2026-10-07T17:55:22+00:00",
     "name": "Cloudflare Inc",
     "industry": "Technology",
-    "market_cap": 125432.6367390584,
+    "market_cap": 126411.85597976459,
     "metrics": {
       "net margin %": -8.21,
       "rev growth %": 33.53,
@@ -12,9 +12,9 @@
       "current ratio": 1.82
     },
     "news": [
-      "Zscaler Tanked Over One Year: A Prominent Firm Says 50% Gains to Arrive in 12 Months or Less",
-      "Bull of the Day: Astera Labs (ALAB)",
-      "Bot Traffic Will Be \u201c1000X\u201d Bigger Than Human Traffic in Just Five Years, According to Cloudflare CEO"
+      "An AI Rally Built On Infrastructure",
+      "Closing Cyber-Insurance Gap: Cowbell CEO, Founder & Chairman Jack Kudale, Live at Nasdaq",
+      "Cloudflare Just Gained 28% in a Month: Is It Too Late to Buy NET Stock Now?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

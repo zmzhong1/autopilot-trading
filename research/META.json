@@ -1,27 +1,26 @@
 {
   "snapshot": {
     "ticker": "META",
-    "researched_at": "2026-09-30T16:54:58+00:00",
+    "researched_at": "2026-10-07T17:55:12+00:00",
     "name": "Meta Platforms Inc",
     "industry": "Media",
-    "market_cap": 1882072.0438733213,
+    "market_cap": 1882301.3942082433,
     "metrics": {
-      "P/E": 26.77,
+      "P/E": 27.75,
       "net margin %": 29.84,
       "rev growth %": 27.65,
       "ROE %": 29.73,
       "current ratio": 2.23
     },
     "news": [
-      "Top Midday Stories: Fed's Preferred Inflation Gauge Rises as Expected in August; AI Companies Sign White House Accord",
-      "Jensen Huang's biggest Q3 moves, Rubrik CEO talks tech & cybersecurity",
-      "Meta Stock Could Be Worth Much More If Its AI Strategy Pays Off"
+      "Dow Jones AI Giant Nvidia Stock Hits New High And Fresh Buy Point",
+      "Everpure Stock Rides 10-Day Winning Streak. What\u2019s Driving the Rally.",
+      "Google DeepMind and Meta Join Biohub\u2019s $1.8 Billion AI Biology Push"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-09-28)",
     "analyst trend not upgrading vs buy-rated thesis"
   ]
 }
