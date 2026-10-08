@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "PLTR",
-    "researched_at": "2026-10-01T17:27:05+00:00",
+    "researched_at": "2026-10-08T17:57:11+00:00",
     "name": "Palantir Technologies Inc",
     "industry": "Technology",
-    "market_cap": 451666.8274700996,
+    "market_cap": 466481.6922216783,
     "metrics": {
-      "P/E": 149.0,
+      "P/E": 153.68,
       "net margin %": 49.0,
       "rev growth %": 78.92,
       "ROE %": 37.47,
       "current ratio": 7.23
     },
     "news": [
-      "IBM Jumps 5% as Bob Coding Agent Gains Self-Hosted Deployment; Salesforce Rises 3%, Palantir Inches Higher",
-      "SoundHound's Agentic Voice AI Launches in India With Kia Sorento",
-      "Top Big Data Stocks to Tap the Growing AI Analytics Opportunity"
+      "Securitize Brings Nvidia, Apple and Amazon Onchain With Tokenized Stocks on Solana",
+      "Stock Market Today: Dow Slides After Trump Remarks; Yields, Oil Prices Surge (Live Coverage)",
+      "Securitize Rolls Out 1:1-Backed Tokens of Apple, Nvidia and 10 Other U.S. Stocks on Solana"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "thesis stale (review due 2026-09-28)"
-  ]
+  "flags": []
 }

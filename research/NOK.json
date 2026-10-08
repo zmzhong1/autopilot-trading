@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NOK",
-    "researched_at": "2026-10-01T17:26:56+00:00",
+    "researched_at": "2026-10-08T17:57:00+00:00",
     "name": "Nokia Oyj",
     "industry": "Communications",
-    "market_cap": 50345.26028,
+    "market_cap": 53593.700286,
     "metrics": {
-      "P/E": 72.43,
+      "P/E": 75.91,
       "net margin %": 3.48,
       "rev growth %": 5.29,
       "ROE %": 3.41,
       "current ratio": 1.5
     },
     "news": [
-      "Inseego Completes Acquisition of Nokia\u2019s Fixed Wireless Access Business",
-      "ICEYE and Nokia partner to launch secure and sovereign satellite communications for governments and defense customers",
-      "Nokia Teams With ICEYE On Government-Owned Broadband Satellite Communications Covering Satellites, Ground Segment And Terminals, Targeting First Launches In 2028"
+      "Nokia Oyj (HLSE:NOKIA) Targets Sovereign Satellite Communications For Governments",
+      "Curious about the most active stocks on Wednesday?",
+      "Nokia\u2019s CEO Issues Bullish Verdict on AI Infrastructure Growth as NOK Stock Doubles"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

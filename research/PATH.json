@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PATH",
-    "researched_at": "2026-10-01T17:27:03+00:00",
+    "researched_at": "2026-10-08T17:57:09+00:00",
     "name": "UiPath Inc",
     "industry": "Technology",
-    "market_cap": 6861.014755639408,
+    "market_cap": 6811.505081809924,
     "metrics": {
-      "P/E": 18.49,
+      "P/E": 18.82,
       "net margin %": 21.03,
       "rev growth %": 14.98,
       "ROE %": 18.42,
       "current ratio": 2.39
     },
     "news": [
-      "IBM Jumps 5% as Bob Coding Agent Gains Self-Hosted Deployment; Salesforce Rises 3%, Palantir Inches Higher",
-      "UiPath Joins NCQA AI Learning Collaborative to Advance Responsible AI in Healthcare",
-      "UiPath: AI Orchestration Leader With Deep-Value Price Tag - Reiterate Buy"
+      "UiPath Named a Leader and Star Performer in the Everest Group Process Orchestration Products PEAK Matrix\u00ae Assessment 2026",
+      "ServiceNow vs. UiPath: Which AI Stock Is a Better Buy in 2026?",
+      "UiPath Recognized as a Leader in Analyst Evaluation for Adaptive Process Orchestration Software"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

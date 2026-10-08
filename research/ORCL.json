@@ -1,26 +1,27 @@
 {
   "snapshot": {
     "ticker": "ORCL",
-    "researched_at": "2026-10-01T17:27:01+00:00",
+    "researched_at": "2026-10-08T17:57:06+00:00",
     "name": "Oracle Corp",
     "industry": "Technology",
-    "market_cap": 410683.8440552322,
+    "market_cap": 434087.5650274043,
     "metrics": {
-      "P/E": 22.01,
+      "P/E": 22.91,
       "net margin %": 26.36,
       "rev growth %": 21.62,
       "ROE %": 42.58,
       "current ratio": 1.17
     },
     "news": [
-      "How Has Microsoft's Story Changed In A Year?",
-      "Which Dates Could Move Microsoft Stock Most?",
-      "3 Tech Stocks Trading At Least 25% Below Fair Value"
+      "SpaceX, Broadcom and Oracle All Want Billions in AI Chip Debt at the Same Time",
+      "YC-backed Oximy Names Former Oracle, Cox, Notion and Twitter Leaders to Advisory Council",
+      "AI's debt-fueled boom: Who's paying for the buildout?"
     ],
     "analyst_upgrade": false,
-    "earnings_beat": true
+    "earnings_beat": false
   },
   "flags": [
+    "thesis stale (review due 2026-10-05)",
     "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

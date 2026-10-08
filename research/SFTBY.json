@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "SFTBY",
-    "researched_at": "2026-10-01T17:27:08+00:00",
+    "researched_at": "2026-10-08T17:57:14+00:00",
     "name": "SoftBank Group Corp",
     "industry": "Telecommunication",
-    "market_cap": 36705683.256836,
+    "market_cap": 35935035.163574,
     "metrics": {
-      "P/E": 6.99,
+      "P/E": 7.29,
       "net margin %": 61.61,
       "rev growth %": 8.63,
       "ROE %": 29.88,
       "current ratio": 0.68
     },
     "news": [
-      "Oracle Just Sent A Notice That Has Everyone Staring At The Wrong Place",
-      "Asian shares mostly rise amid market optimism about AI, despite Iran worries",
-      "Sterlington Advises DigitalBridge Management Team on Acquisition by SoftBank Group"
+      "The AI Capex Wall: Why Financing Constraints Will Trigger A Slowdown",
+      "Visa And Mastercard Are At Risk Of Being Disrupted. It's Time To Underweight Them.",
+      "Tech Strength, Easing Oil Bills Lift Asian Stock Markets"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
