@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SONY",
-    "researched_at": "2026-10-02T16:45:45+00:00",
+    "researched_at": "2026-10-09T17:30:38+00:00",
     "name": "Sony Group Corp",
     "industry": "Consumer products",
-    "market_cap": 22274081.145996,
+    "market_cap": 22179272.606934,
     "metrics": {
       "net margin %": -1.75,
       "rev growth %": 6.54,
@@ -12,9 +12,9 @@
       "current ratio": 1.25
     },
     "news": [
-      "Netflix Ready to Play Nice with Movie Theaters: Will the Move Backfire with \u2018KPop Demon Hunters 2?\u2019",
-      "Sony Announces AI Upscaling Is Coming To PS5",
-      "Is It Worth Investing in Sony (SONY) Based on Wall Street's Bullish Views?"
+      "GameStop makes surprising PS5 Pro pricing move before GTA 6 launch",
+      "Sony (SONY) Advances While Market Declines: Some Information for Investors",
+      "Sony Brings Fair Human-Centric Image Benchmark to Mozilla Data Collective"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

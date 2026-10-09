@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "STLD",
-    "researched_at": "2026-10-02T16:45:48+00:00",
+    "researched_at": "2026-10-09T17:30:41+00:00",
     "name": "Steel Dynamics Inc",
     "industry": "Metals & Mining",
-    "market_cap": 32416.51521864546,
+    "market_cap": 33563.139360379384,
     "metrics": {
-      "P/E": 19.8,
+      "P/E": 20.94,
       "net margin %": 7.83,
       "rev growth %": 19.77,
       "ROE %": 17.6,
       "current ratio": 3.18
     },
     "news": [
-      "\u201cCleveland-Cliffs Rises 3% as Steel-Stock Selloff Subsides; Nucor and Steel Dynamics Tick Higher",
-      "Here's What to Expect From Steel Dynamics' Next Earnings Report",
-      "These S&P500 stocks are moving in today's session"
+      "Steel Dynamics Announces Third Quarter 2026 Earnings Conference Call and Webcast",
+      "Steel Dynamics (STLD) Stock Falls Amid Market Uptick: What Investors Need to Know",
+      "Cheniere Energy, Nvidia, Steel Dynamics And More On CNBC\u2019s \u2018Final Trades\u2019"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

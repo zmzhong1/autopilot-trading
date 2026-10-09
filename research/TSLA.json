@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "TSLA",
-    "researched_at": "2026-10-02T16:45:58+00:00",
+    "researched_at": "2026-10-09T17:30:52+00:00",
     "name": "Tesla Inc",
     "industry": "Automobiles",
-    "market_cap": 1398574.293640828,
+    "market_cap": 1481080.343212858,
     "metrics": {
-      "P/E": 368.19,
+      "P/E": 389.14,
       "net margin %": 3.67,
       "rev growth %": 11.75,
       "ROE %": 4.57,
       "current ratio": 1.94
     },
     "news": [
-      "Stock Market Today: Nasdaq Powers Up On U.S. Jobs Shortfall; Tesla Jumps, NetApp Extends Gains (Live Coverage)",
-      "Rivian Q3 Deliveries Hit Record \u2014 Retail Says Sub-$50K R2 Could Make It Stronger Rival To Tesla",
-      "Tesla Surges 5% as 486,532 Deliveries Top Company Consensus; Rivian Slides 3%"
+      "Tesla Rises 3% as Europe Rebrand Drops Full Self-Driving Name; Rivian Eases, Lucid Ticks Up",
+      "My Position on Tesla Will Not Change Until Two Things Happen",
+      "Tesla Spikes After Best China Sales Numbers Of The Year"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "thesis stale (review due 2026-09-30)"
-  ]
+  "flags": []
 }

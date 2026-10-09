@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "TCEHY",
-    "researched_at": "2026-10-02T16:45:50+00:00",
+    "researched_at": "2026-10-09T17:30:44+00:00",
     "name": "Tencent Holdings Ltd",
     "industry": "Media",
-    "market_cap": 3883252.336914,
+    "market_cap": 3789549.783312,
     "metrics": {
-      "P/E": 14.09,
+      "P/E": 13.74,
       "net margin %": 29.87,
       "rev growth %": 11.97,
       "ROE %": 20.52,
       "current ratio": 1.29
     },
     "news": [
-      "Oracle Lands Major Cloud Deal With Tencent: Report",
-      "Tencent Signs Major Lease Deal With Oracle to Access 100,000 Advanced AI Chips",
-      "Wall Street Lunch: All About AI"
+      "Tencent-Backed Uzum Talk Attracting US Investment",
+      "AI Startup Manus Raises $500 Million After China Nixed Meta\u2019s $2 Billion Acquisition",
+      "AI startup Manus raises $500m after Meta acquisition blocked by China"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

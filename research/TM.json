@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "TM",
-    "researched_at": "2026-10-02T16:45:53+00:00",
+    "researched_at": "2026-10-09T17:30:47+00:00",
     "name": "Toyota Motor Corp",
     "industry": "Automobiles",
-    "market_cap": 34578155.234375,
+    "market_cap": 34347239.47168,
     "metrics": {
-      "P/E": 7.71,
+      "P/E": 7.66,
       "net margin %": 8.63,
       "rev growth %": 7.23,
       "ROE %": 11.67,
       "current ratio": 1.17
     },
     "news": [
-      "Nvidia Authorizes a Record $150 Billion in Stock Buybacks. The Real Prize Is Where the Rest of Its Cash Is Going.",
-      "GM Q3 2026 U.S. sales fall 5.5% as EV demand drops",
-      "Toyota Battery Center of North America Unveiled at Michigan R&D Campus"
+      "Joby Aviation (JOBY) Stock Looks Overvalued Even After A 67% Fall",
+      "Hardee's Renews Multi-Year Partnership with 23XI Racing as Primary Partner of Bubba Wallace and the No. 23 Team",
+      "Japan Electric Vehicles Market Forecast to Reach US$2.68 Billion by 2030 as Compact EVs, Charging Infrastructure and Battery Innovation Drive Growth"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
