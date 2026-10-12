@@ -1,8 +1,8 @@
 {
-  "ts": "2026-10-08T14:41:29+00:00",
+  "ts": "2026-10-12T14:42:18+00:00",
   "account_last4": "2732",
-  "total_value": 504.5192116989,
-  "equity_value": 155.2592116989,
+  "total_value": 502.9356475425,
+  "equity_value": 153.6756475425,
   "cash": 349.26,
   "buying_power": 349.26,
   "positions": [
@@ -16,12 +16,12 @@
       "symbol": "NVDA",
       "quantity": 0.219406,
       "average_buy_price": 229.57,
-      "market_value": 51.94
+      "market_value": 49.46
     }
   ],
   "open_orders": [],
   "quotes": {
-    "NVDA": 236.75
+    "NVDA": 225.4266
   },
   "fractional_ok": {
     "NVDA": true
