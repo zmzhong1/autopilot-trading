@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DIS",
-    "researched_at": "2026-10-05T19:42:15+00:00",
+    "researched_at": "2026-10-12T20:23:33+00:00",
     "name": "Walt Disney Co",
     "industry": "Media",
-    "market_cap": 176450.13644193328,
+    "market_cap": 186568.51257455334,
     "metrics": {
-      "P/E": 20.52,
+      "P/E": 21.69,
       "net margin %": 8.7,
       "rev growth %": 4.58,
       "ROE %": 7.87,
       "current ratio": 0.71
     },
     "news": [
-      "Monday's session: top gainers and losers in the dow jones index",
-      "Disney Licenses Major Movie and Show Franchises to Netflix",
-      "Disney Stock Watch as Planned Television Division Restructuring Threatens Hundreds of Jobs"
+      "What Could Netflix Stock Be Worth In Three Years?",
+      "Epic Games Delays Disney Project, Asks Developers to Use More AI",
+      "5 Reasons Disney Stock Can Double in 5 Years"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

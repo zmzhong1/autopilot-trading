@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "BABA",
-    "researched_at": "2026-10-05T19:42:01+00:00",
+    "researched_at": "2026-10-12T20:23:16+00:00",
     "name": "Alibaba Group Holding Ltd",
     "industry": "Retail",
-    "market_cap": 270306.5587996737,
+    "market_cap": 264412.16683053545,
     "metrics": {
-      "P/E": 24.72,
+      "P/E": 24.13,
       "net margin %": 7.02,
       "rev growth %": 4.42,
       "ROE %": 7.01,
       "current ratio": 1.36
     },
     "news": [
-      "Chinese AI Chips Could Flood the Market. Alibaba\u2019s New Chip Is 3X Better Than Its Predecessor.",
-      "Axios Reported Earlier Sunday, Nvidia-Backed Reflection Prepares Powerful Open-Weight AI System To Challenge Chinese Upstarts, U.S. AI Giants",
-      "President Trump On Sunday, Announced Formation Of Super Intelligence Force To Coordinate Federal Government Super Intelligence Efforts, Led By Jay Clayton, Andrew Ferguson, Emil Michael, Scott Kupor"
+      "Tim Cook Meets China\u2019s Vice Premier as Apple Doubles Down on Its Biggest Overseas Market \u2014 Beijing Calls for \u2018Stable\u2019 US Ties",
+      "Reported Earlier, 'Moonshot Execs In Talks To Settle Dispute With Shareholder Ahead Of Planned IPO, People Say' - Reuters Exclusive",
+      "Baidu: A Value Trap With Robotaxi Call Option"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

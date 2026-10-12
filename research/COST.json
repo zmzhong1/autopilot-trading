@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "COST",
-    "researched_at": "2026-10-05T19:42:08+00:00",
+    "researched_at": "2026-10-12T20:23:25+00:00",
     "name": "Costco Wholesale Corp",
     "industry": "Retail",
-    "market_cap": 408092.83589756995,
+    "market_cap": 419608.02090949257,
     "metrics": {
-      "P/E": 44.23,
+      "P/E": 45.48,
       "net margin %": 3.04,
       "rev growth %": 10.14,
       "ROE %": 28.02,
       "current ratio": 1.06
     },
     "news": [
-      "Costco vs. Dollar General: Which Retail Stock Is the Better Buy Now?",
-      "Costco's Kirkland Signature Price Cuts Aim to Widen the Value Moat",
-      "TGT vs. COST: Which Stock Is the Better Value Option?"
+      "Should You Buy Target Stock At This Price?",
+      "Costco Wholesale Stock Loses to 10-Year U.S. Treasury Notes on Yield. Here's Why It Wins on Everything Else.",
+      "Is a $65 Costco Membership Worth It for Groceries? We Priced 27 Staples"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

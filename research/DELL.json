@@ -1,24 +1,24 @@
 {
   "snapshot": {
     "ticker": "DELL",
-    "researched_at": "2026-10-05T19:42:13+00:00",
+    "researched_at": "2026-10-12T20:23:31+00:00",
     "name": "Dell Technologies Inc",
     "industry": "Technology",
-    "market_cap": 357657.3867572908,
+    "market_cap": 372624.4176348447,
     "metrics": {
-      "P/E": 31.43,
+      "P/E": 32.75,
       "net margin %": 7.53,
       "rev growth %": 49.03,
       "ROE %": 130.7,
       "current ratio": 0.96
     },
     "news": [
-      "What Was Seagate Telling You Before Its Stock Ran?",
-      "What Could Arista Networks Stock Be Worth In Three Years?",
-      "What Changed For Western Digital Stock, And What Did Not?"
+      "Intel aims to boost AI turnaround with new GPU chips to take on Nvidia",
+      "The bull market\u2019s four-year run, EV demand, and interest rates threaten earnings",
+      "HPE Partners With NVDA: Can it Help Challenge SMCI & DELL?"
     ],
     "analyst_upgrade": false,
-    "earnings_beat": true
+    "earnings_beat": false
   },
   "flags": [
     "analyst trend not upgrading vs buy-rated thesis"

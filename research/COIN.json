@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "COIN",
-    "researched_at": "2026-10-05T19:42:06+00:00",
+    "researched_at": "2026-10-12T20:23:22+00:00",
     "name": "Coinbase Global Inc",
     "industry": "Financial Services",
-    "market_cap": 48282.17100000001,
+    "market_cap": 47329.71943,
     "metrics": {
       "net margin %": -15.72,
       "rev growth %": -10.35,
@@ -12,9 +12,9 @@
       "current ratio": 2.42
     },
     "news": [
-      "CFTC proposes federal registration framework for leveraged retail crypto trades",
-      "NYSE parent company's joint venture plans 24/7 tokenized stock trading, and it's a huge deal",
-      "Strategy buys 334 more bitcoin and $176M of STRC stock"
+      "Trump Bought Coinbase Stock in July and Sold Some of It on August 10. The Same Day, He Bought More Strategy. Here Is What Both Have Done Since.",
+      "Analysts Raise Targets on Securitize, Coinbase, Robinhood; BofA Cuts eToro",
+      "Tom Lee\u2019s Bitmine Nears 5% of Ether Supply, Trims Weekly Buy to 12,532 ETH"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
