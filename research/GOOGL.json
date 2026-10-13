@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "GOOGL",
-    "researched_at": "2026-10-06T17:20:55+00:00",
+    "researched_at": "2026-10-13T18:26:36+00:00",
     "name": "Alphabet Inc",
     "industry": "Media",
-    "market_cap": 4237328.100000001,
+    "market_cap": 4313765.600000001,
     "metrics": {
-      "P/E": 17.37,
+      "P/E": 17.65,
       "net margin %": 54.77,
       "rev growth %": 20.05,
       "ROE %": 50.84,
       "current ratio": 2.72
     },
     "news": [
-      "Mistral Large 4 Doesn\u2019t Just Compete With Chinese Open-Weights \u2013 It Undercuts the Entire Proprietary Pricing Floor",
-      "Marvell stock surges after company raises 2028 revenue outlook to $20 billion",
-      "Top Midday Stories: Google Strikes 20-Year Nuclear Power Deal With Constellation; Marvell Raises Revenue Guidance for 2026-27"
+      "Apple Is Taking on Amazon and Google in the Smart Home With a $299 Siri AI Device. Is HomeView the First Big Win for New CEO John Ternus?",
+      "MercadoLibre vs. Shopify: Which Consumer Stock Is a Better Buy in 2026?",
+      "Apple's privacy edge may not be enough to save it in AI phone race"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

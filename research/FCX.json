@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "FCX",
-    "researched_at": "2026-10-06T17:20:53+00:00",
+    "researched_at": "2026-10-13T18:26:34+00:00",
     "name": "Freeport-McMoRan Inc",
     "industry": "Metals & Mining",
-    "market_cap": 104254.8686346113,
+    "market_cap": 105245.72284154526,
     "metrics": {
-      "P/E": 35.63,
+      "P/E": 35.93,
       "net margin %": 11.38,
       "rev growth %": -24.23,
       "ROE %": 15.26,
       "current ratio": 2.07
     },
     "news": [
-      "Barclays Maintains Overweight on Freeport-McMoRan, Raises Price Target to $83",
-      "Wells Fargo Maintains Overweight on Freeport-McMoRan, Raises Price Target to $87",
-      "2 Mining Stocks That Are Quietly Becoming the Trades of the Year"
+      "Could Buying Freeport-McMoRan (FCX) Stock Today Set You Up for Life?",
+      "Get insights into the top movers in the S&P500 index of Friday's pre-market session.",
+      "JP Morgan Maintains Overweight on Freeport-McMoRan, Raises Price Target to $92"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

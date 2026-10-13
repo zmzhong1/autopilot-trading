@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "F",
-    "researched_at": "2026-10-06T17:20:50+00:00",
+    "researched_at": "2026-10-13T18:26:32+00:00",
     "name": "Ford Motor Co",
     "industry": "Automobiles",
-    "market_cap": 48449.28666049588,
+    "market_cap": 47851.146110435504,
     "metrics": {
       "net margin %": -3.93,
       "rev growth %": 1.47,
@@ -12,9 +12,9 @@
       "current ratio": 1.09
     },
     "news": [
-      "Can Ford's Truck and SUV Strength Drive Q3 Earnings Growth?",
-      "United Kingdom Electric Vehicle Market Size and Forecast 2026-2030 by Vehicle Type and Charging Infrastructure | Policy, Affordable Models and Rapid Charging Drive 3.8% CAGR",
-      "Tesla\u2019s Delivery Beat Is Just the \u2018Appetizer,\u2019 Analyst Says 2027 Could Be the Main Event"
+      "Will Ford Motor (F) Beat Estimates Again in Its Next Earnings Report?",
+      "Tesla Completes Comeback, Paving Way For 30% Upside",
+      "GM's Plans To Rival Tesla's Self-Driving On Track For 2028, CEO Says"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
