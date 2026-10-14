@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MS",
-    "researched_at": "2026-10-07T17:55:16+00:00",
+    "researched_at": "2026-10-14T15:55:01+00:00",
     "name": "Morgan Stanley",
     "industry": "Financial Services",
-    "market_cap": 300009.5754556048,
+    "market_cap": 285693.8589897209,
     "metrics": {
-      "P/E": 14.91,
+      "P/E": 14.69,
       "net margin %": 15.65,
       "rev growth %": 13.96,
       "ROE %": 17.83,
       "current ratio": 0.35
     },
     "news": [
-      "Billionaire Hedge Fund Founder Ray Dalio Warns China And Japan May Pull Back From U.S. Treasuries, But One Economist Says Hedge Funds Are A Bigger Threat",
-      "SpaceX Wants to Borrow $40 Billion to Buy Nvidia Chips",
-      "Morgan Stanley resets Hewlett Packard HPE target after earnings"
+      "Who's up and who's down among big bank earnings reports",
+      "Bank of America, Morgan Stanley, BlackRock: Key takeaways from bank earnings",
+      "Morgan Stanley\u2019s Investment Bank Has a Credit-Equity Trade Off in Mixed Results"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

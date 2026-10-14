@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NEM",
-    "researched_at": "2026-10-07T17:55:21+00:00",
+    "researched_at": "2026-10-14T15:55:09+00:00",
     "name": "Newmont Corporation",
     "industry": "Metals & Mining",
-    "market_cap": 122639.2419050425,
+    "market_cap": 118519.301732925,
     "metrics": {
-      "P/E": 14.34,
+      "P/E": 14.2,
       "net margin %": 33.36,
       "rev growth %": 25.18,
       "ROE %": 25.05,
       "current ratio": 2.55
     },
     "news": [
-      "9 Of 11 Sectors Fall Wednesday As Defensives Lead",
-      "Australian gold stocks rise as bullion gains, Fed hike bets fade",
-      "StrikePoint Completes Acquisition of the Northumberland Gold Project from Newmont Corporation"
+      "Newmont Corporation (NEM) Sees a More Significant Dip Than Broader Market: Some Facts to Know",
+      "$1000 Invested In Newmont 5 Years Ago Would Be Worth This Much Today",
+      "America\u2019s $6 Trillion Interest-Rate Trap Is Spreading Far Beyond the Bond Market \u2014 and Investors Are Taking Notice"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

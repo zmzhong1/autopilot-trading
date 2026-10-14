@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "NET",
-    "researched_at": "2026-10-07T17:55:22+00:00",
+    "researched_at": "2026-10-14T15:55:12+00:00",
     "name": "Cloudflare Inc",
     "industry": "Technology",
-    "market_cap": 126411.85597976459,
+    "market_cap": 123025.5456487892,
     "metrics": {
       "net margin %": -8.21,
       "rev growth %": 33.53,
@@ -12,9 +12,9 @@
       "current ratio": 1.82
     },
     "news": [
-      "An AI Rally Built On Infrastructure",
-      "Closing Cyber-Insurance Gap: Cowbell CEO, Founder & Chairman Jack Kudale, Live at Nasdaq",
-      "Cloudflare Just Gained 28% in a Month: Is It Too Late to Buy NET Stock Now?"
+      "What Was Cloudflare Telling You Before Its Stock Ran?",
+      "Cloudflare Announces Date of Third Quarter 2026 Financial Results",
+      "FRUIT Introduces PAVE, an Approach to Bringing Human Judgment Into AI Systems"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MSFT",
-    "researched_at": "2026-10-07T17:55:17+00:00",
+    "researched_at": "2026-10-14T15:55:04+00:00",
     "name": "Microsoft Corp",
     "industry": "Technology",
-    "market_cap": 3930341.1307831905,
+    "market_cap": 4035152.849697806,
     "metrics": {
-      "P/E": 29.5,
+      "P/E": 30.17,
       "net margin %": 40.31,
       "rev growth %": 17.79,
       "ROE %": 33.22,
       "current ratio": 1.23
     },
     "news": [
-      "Amazon Turned $10,000 Into More Than $230,000. Can It Happen Again?",
-      "America Got Addicted to Cheap Money \u2014 Now the Economy Is Cracking as Rates Exceed 5%",
-      "Airia Now Available on AWS Marketplace With \"Deployed on AWS\" Designation"
+      "Michael Burry Questions Microsoft\u2019s AI Spending. Is Its Valuation Misleading?",
+      "Chevron\u2019s Big Rally Couldn\u2019t Erase a Decade of Underperformance",
+      "Voice AI model built to accurately capture real multilingual medical conversations"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
