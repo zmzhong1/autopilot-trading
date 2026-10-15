@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NOK",
-    "researched_at": "2026-10-08T17:57:00+00:00",
+    "researched_at": "2026-10-15T15:41:14+00:00",
     "name": "Nokia Oyj",
     "industry": "Communications",
-    "market_cap": 53593.700286,
+    "market_cap": 49402.504734,
     "metrics": {
-      "P/E": 75.91,
+      "P/E": 69.02,
       "net margin %": 3.48,
       "rev growth %": 5.29,
       "ROE %": 3.41,
       "current ratio": 1.5
     },
     "news": [
-      "Nokia Oyj (HLSE:NOKIA) Targets Sovereign Satellite Communications For Governments",
-      "Curious about the most active stocks on Wednesday?",
-      "Nokia\u2019s CEO Issues Bullish Verdict on AI Infrastructure Growth as NOK Stock Doubles"
+      "Ericsson Plans Price Hikes As AI Boom Drives Up Equipment Costs",
+      "Global chipmakers sink as inflation data fuels rate-hike fears, AI rout",
+      "Compass Lexecon Continues to Expand Competition Expertise With Appointment of St\u00e9phane Dewulf as Head of Brussels"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

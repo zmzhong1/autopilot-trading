@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "SHEL",
-    "researched_at": "2026-10-08T17:57:17+00:00",
+    "researched_at": "2026-10-15T15:41:38+00:00",
     "name": "Shell PLC",
     "industry": "Energy",
-    "market_cap": 208198.247601,
+    "market_cap": 220186.951338,
     "metrics": {
-      "P/E": 10.6,
+      "P/E": 11.25,
       "net margin %": 8.76,
       "rev growth %": 9.04,
       "ROE %": 14.74,
       "current ratio": 1.43
     },
     "news": [
-      "Okeanis Eco Tankers Commences Trading Of Newly Issued Shares On New York Stock Exchange",
-      "Shell PLC-ADR (NYSE:SHEL) Looks Like a Decent Value Stock With a Cheap Valuation",
-      "What Investors Might Expect From September's Inflation Report"
+      "TotalEnergies Eyes Massive Profit Windfall as Refining Margins Soar",
+      "Transaction in Own Shares",
+      "How Investors Are Reacting To Transocean (RIG) Securing Over $1 Billion In Norwegian Rig Backlog"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

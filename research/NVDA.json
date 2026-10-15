@@ -1,26 +1,27 @@
 {
   "snapshot": {
     "ticker": "NVDA",
-    "researched_at": "2026-10-08T17:57:03+00:00",
+    "researched_at": "2026-10-15T15:41:17+00:00",
     "name": "NVIDIA Corp",
     "industry": "Semiconductors",
-    "market_cap": 5723027.1314055575,
+    "market_cap": 5333330.09971283,
     "metrics": {
-      "P/E": 29.73,
+      "P/E": 28.14,
       "net margin %": 63.66,
       "rev growth %": 83.38,
       "ROE %": 110.11,
       "current ratio": 4.59
     },
     "news": [
-      "These dow jones stocks are moving in today's session",
-      "Is the Buffett Indicator Flashing a Warning Sign to Stock Market Investors?",
-      "Should You Buy These 4 Quantum Computing Stocks Before 2027?"
+      "Tech sell-off rolls on as hot inflation data stokes rate worries",
+      "Apple Is Reportedly Bringing AI to China in December, but Not the New Siri",
+      "Nvidia stock sinks amid concerns over AI financing"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
   "flags": [
+    "thesis stale (review due 2026-10-13)",
     "recent earnings did not beat, despite high H-0"
   ]
 }

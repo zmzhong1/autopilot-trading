@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "SFTBY",
-    "researched_at": "2026-10-08T17:57:14+00:00",
+    "researched_at": "2026-10-15T15:41:33+00:00",
     "name": "SoftBank Group Corp",
     "industry": "Telecommunication",
-    "market_cap": 35935035.163574,
+    "market_cap": 30312158.334961,
     "metrics": {
-      "P/E": 7.29,
+      "P/E": 6.15,
       "net margin %": 61.61,
       "rev growth %": 8.63,
       "ROE %": 29.88,
       "current ratio": 0.68
     },
     "news": [
-      "The AI Capex Wall: Why Financing Constraints Will Trigger A Slowdown",
-      "Visa And Mastercard Are At Risk Of Being Disrupted. It's Time To Underweight Them.",
-      "Tech Strength, Easing Oil Bills Lift Asian Stock Markets"
+      "SK Hynix\u2019s Worst 7-Day Loss Since 2008: AI Bubble Bursting Or Historical Opportunity?",
+      "Deepening tech sell-off drags stocks lower as major markets slide",
+      "Asian markets plunge as AI fears deepen tech sell-off"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

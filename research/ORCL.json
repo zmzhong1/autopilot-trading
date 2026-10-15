@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "ORCL",
-    "researched_at": "2026-10-08T17:57:06+00:00",
+    "researched_at": "2026-10-15T15:41:21+00:00",
     "name": "Oracle Corp",
     "industry": "Technology",
-    "market_cap": 434087.5650274043,
+    "market_cap": 394748.73735174205,
     "metrics": {
-      "P/E": 22.91,
+      "P/E": 21.29,
       "net margin %": 26.36,
       "rev growth %": 21.62,
       "ROE %": 42.58,
       "current ratio": 1.17
     },
     "news": [
-      "SpaceX, Broadcom and Oracle All Want Billions in AI Chip Debt at the Same Time",
-      "YC-backed Oximy Names Former Oracle, Cox, Notion and Twitter Leaders to Advisory Council",
-      "AI's debt-fueled boom: Who's paying for the buildout?"
+      "Bloom Energy Got Good News From Oracle and Fell Anyway. Is It Time to Buy?",
+      "Treasury Yields Dive For Wrong Reason As Neocloud Bonds Blow Up",
+      "What Sent CoreWeave Stock Lower?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

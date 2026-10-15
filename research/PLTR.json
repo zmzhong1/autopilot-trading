@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "PLTR",
-    "researched_at": "2026-10-08T17:57:11+00:00",
+    "researched_at": "2026-10-15T15:41:29+00:00",
     "name": "Palantir Technologies Inc",
     "industry": "Technology",
-    "market_cap": 466481.6922216783,
+    "market_cap": 482942.6194529557,
     "metrics": {
-      "P/E": 153.68,
+      "P/E": 159.61,
       "net margin %": 49.0,
       "rev growth %": 78.92,
       "ROE %": 37.47,
       "current ratio": 7.23
     },
     "news": [
-      "Securitize Brings Nvidia, Apple and Amazon Onchain With Tokenized Stocks on Solana",
-      "Stock Market Today: Dow Slides After Trump Remarks; Yields, Oil Prices Surge (Live Coverage)",
-      "Securitize Rolls Out 1:1-Backed Tokens of Apple, Nvidia and 10 Other U.S. Stocks on Solana"
+      "Customers Bank and Palantir Collaborate to Build an AI-Native Future for Banking",
+      "3 Unpopular Stocks That Deserve Some Love",
+      "Surf Air Mobility Signs OperatorOS Contract with Flying Zebra"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "thesis stale (review due 2026-10-13)"
+  ]
 }
