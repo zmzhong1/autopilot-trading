@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SNOW",
-    "researched_at": "2026-10-09T17:30:35+00:00",
+    "researched_at": "2026-10-16T15:26:40+00:00",
     "name": "Snowflake Inc",
     "industry": "Technology",
-    "market_cap": 121151.51802946073,
+    "market_cap": 118212.68717226347,
     "metrics": {
       "net margin %": -20.07,
       "rev growth %": 32.04,
@@ -12,9 +12,9 @@
       "current ratio": 0.94
     },
     "news": [
-      "Dow Jones Futures Rise After AI Stocks Tumble On OpenAI News; SpaceX Move Slams Verizon, AT&T Late",
-      "Snowflake: Fairly Priced Until Migrations Prove Themselves",
-      "Dow Jones Futures: AI Stocks Tumble On OpenAI News; SpaceX Move Slams Verizon, AT&T Late"
+      "Snowflake: More Risk Than Reward At These Prices (Downgrade)",
+      "Snowflake (SNOW) Adds Jeff Naughton As It Showcases AI Platform Progress",
+      "Benchling launches Direct Data Share, Closing the Loop Between the Lab and the AI Data Cloud on Snowflake"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

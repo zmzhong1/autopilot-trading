@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "TSLA",
-    "researched_at": "2026-10-09T17:30:52+00:00",
+    "researched_at": "2026-10-16T15:26:53+00:00",
     "name": "Tesla Inc",
     "industry": "Automobiles",
-    "market_cap": 1481080.343212858,
+    "market_cap": 1431474.0491120277,
     "metrics": {
-      "P/E": 389.14,
+      "P/E": 376.11,
       "net margin %": 3.67,
       "rev growth %": 11.75,
       "ROE %": 4.57,
       "current ratio": 1.94
     },
     "news": [
-      "Tesla Rises 3% as Europe Rebrand Drops Full Self-Driving Name; Rivian Eases, Lucid Ticks Up",
-      "My Position on Tesla Will Not Change Until Two Things Happen",
-      "Tesla Spikes After Best China Sales Numbers Of The Year"
+      "Tesla pops, tech heads for losing week: AlphaCheck",
+      "Tesla takes to the skies, iPhone Duo pre-orders sell out, bond yields take a breather",
+      "Tesla Roadster takes flight \u2014 3 reasons why investors should be celebrating"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

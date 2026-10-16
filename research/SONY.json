@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SONY",
-    "researched_at": "2026-10-09T17:30:38+00:00",
+    "researched_at": "2026-10-16T15:26:42+00:00",
     "name": "Sony Group Corp",
     "industry": "Consumer products",
-    "market_cap": 22179272.606934,
+    "market_cap": 22866634.515137,
     "metrics": {
       "net margin %": -1.75,
       "rev growth %": 6.54,
@@ -12,9 +12,9 @@
       "current ratio": 1.25
     },
     "news": [
-      "GameStop makes surprising PS5 Pro pricing move before GTA 6 launch",
-      "Sony (SONY) Advances While Market Declines: Some Information for Investors",
-      "Sony Brings Fair Human-Centric Image Benchmark to Mozilla Data Collective"
+      "Sony (SONY) Outperforms Broader Market: What You Need to Know",
+      "Nintendo just made an unusual decision\u2014and it\u2019s going to be good for business",
+      "Meta acquires multiple VR patents from Sony"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
