@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "CAT",
-    "researched_at": "2026-10-12T20:23:19+00:00",
+    "researched_at": "2026-10-19T17:39:06+00:00",
     "name": "Caterpillar Inc",
     "industry": "Machinery",
-    "market_cap": 367955.9363798077,
+    "market_cap": 335912.01156460366,
     "metrics": {
-      "P/E": 33.93,
+      "P/E": 30.98,
       "net margin %": 14.51,
       "rev growth %": 18.36,
       "ROE %": 54.2,
       "current ratio": 1.37
     },
     "news": [
-      "Uncover the latest developments among dow jones stocks in today's session.",
-      "Caterpillar (CAT): Can Earnings Keep Growing After Dealers Stop Restocking?",
-      "Can Generac Preserve Profitability as Data Center Sales Accelerate?"
+      "Stock Market Today: Dow Up, Nasdaq Rallies; Sandisk Surges As This Biotech Play Tests Entry (Live Coverage)",
+      "GE Vernova vs. Caterpillar: Which Has More Exposure to the AI Power Build-Out?",
+      "Caterpillar announces $10 million workforce investment in North Carolina"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "BABA",
-    "researched_at": "2026-10-12T20:23:16+00:00",
+    "researched_at": "2026-10-19T17:39:04+00:00",
     "name": "Alibaba Group Holding Ltd",
     "industry": "Retail",
-    "market_cap": 264412.16683053545,
+    "market_cap": 269757.07339589205,
     "metrics": {
-      "P/E": 24.13,
+      "P/E": 24.6,
       "net margin %": 7.02,
       "rev growth %": 4.42,
       "ROE %": 7.01,
       "current ratio": 1.36
     },
     "news": [
-      "Tim Cook Meets China\u2019s Vice Premier as Apple Doubles Down on Its Biggest Overseas Market \u2014 Beijing Calls for \u2018Stable\u2019 US Ties",
-      "Reported Earlier, 'Moonshot Execs In Talks To Settle Dispute With Shareholder Ahead Of Planned IPO, People Say' - Reuters Exclusive",
-      "Baidu: A Value Trap With Robotaxi Call Option"
+      "AliExpress launches first free membership programme in Europe",
+      "JPMorgan and\u00a0Alibaba Are Said Among Investors in Dongshan\u2019s Listing",
+      "'JPMorgan and Alibaba Are Said Among Investors in Dongshan\u2019s Listing' - Bloomberg"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

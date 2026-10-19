@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DIS",
-    "researched_at": "2026-10-12T20:23:33+00:00",
+    "researched_at": "2026-10-19T17:39:17+00:00",
     "name": "Walt Disney Co",
     "industry": "Media",
-    "market_cap": 186568.51257455334,
+    "market_cap": 190954.30365250332,
     "metrics": {
-      "P/E": 21.69,
+      "P/E": 22.2,
       "net margin %": 8.7,
       "rev growth %": 4.58,
       "ROE %": 7.87,
       "current ratio": 0.71
     },
     "news": [
-      "What Could Netflix Stock Be Worth In Three Years?",
-      "Epic Games Delays Disney Project, Asks Developers to Use More AI",
-      "5 Reasons Disney Stock Can Double in 5 Years"
+      "What Has The Market Missed In Netflix Stock's Drop?",
+      "Trump Likes Walt Disney (DIS). Time to Buy The Stock?",
+      "The Zacks Analyst Blog Highlights Costco, Walt Disney, Marriott, Park Aerospace and Flanigan's"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

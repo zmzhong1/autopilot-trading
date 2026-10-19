@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "COIN",
-    "researched_at": "2026-10-12T20:23:22+00:00",
+    "researched_at": "2026-10-19T17:39:08+00:00",
     "name": "Coinbase Global Inc",
     "industry": "Financial Services",
-    "market_cap": 47329.71943,
+    "market_cap": 45686.01492,
     "metrics": {
       "net margin %": -15.72,
       "rev growth %": -10.35,
@@ -12,9 +12,9 @@
       "current ratio": 2.42
     },
     "news": [
-      "Trump Bought Coinbase Stock in July and Sold Some of It on August 10. The Same Day, He Bought More Strategy. Here Is What Both Have Done Since.",
-      "Analysts Raise Targets on Securitize, Coinbase, Robinhood; BofA Cuts eToro",
-      "Tom Lee\u2019s Bitmine Nears 5% of Ether Supply, Trims Weekly Buy to 12,532 ETH"
+      "CME vs. Coinbase Global: Which Financial Stock Is a Better Buy in 2026?",
+      "JPMorgan brings JPM Coin to Ethereum",
+      "Bitmine\u2019s Holdings Value Falls to $15.1 Billion Even as Its Ether Stash Keeps Growing"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

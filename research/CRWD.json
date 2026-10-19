@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "CRWD",
-    "researched_at": "2026-10-12T20:23:28+00:00",
+    "researched_at": "2026-10-19T17:39:12+00:00",
     "name": "CrowdStrike Holdings Inc",
     "industry": "Technology",
-    "market_cap": 281623.04182425374,
+    "market_cap": 232832.54443090854,
     "metrics": {
-      "P/E": 4817.36,
+      "P/E": 3982.77,
       "net margin %": 1.08,
       "rev growth %": 24.3,
       "ROE %": 1.29,
       "current ratio": 1.57
     },
     "news": [
-      "CrowdStrike Is Up 124% in 2026, Fortinet Is Up 142%: Take Profits, or Hold On for the Ride?",
-      "4 No-Brainer Chip Stocks to Own for the Next Decade",
-      "How to invest in cybersecurity stocks as consumer protection lags"
+      "What Was Okta Telling You Before Its Stock Doubled?",
+      "QIZ is Now Available for Purchase on the CrowdStrike Marketplace",
+      "Can BlackBerry's QNX Launchpad Drive Growth in Embedded Markets?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DELL",
-    "researched_at": "2026-10-12T20:23:31+00:00",
+    "researched_at": "2026-10-19T17:39:15+00:00",
     "name": "Dell Technologies Inc",
     "industry": "Technology",
-    "market_cap": 372624.4176348447,
+    "market_cap": 287202.9902648661,
     "metrics": {
-      "P/E": 32.75,
+      "P/E": 25.24,
       "net margin %": 7.53,
       "rev growth %": 49.03,
       "ROE %": 130.7,
       "current ratio": 0.96
     },
     "news": [
-      "Intel aims to boost AI turnaround with new GPU chips to take on Nvidia",
-      "The bull market\u2019s four-year run, EV demand, and interest rates threaten earnings",
-      "HPE Partners With NVDA: Can it Help Challenge SMCI & DELL?"
+      "Why Micron Stock Bounced on Monday",
+      "Fortanix Announces Confidential AI for Enterprise Grade Kubernetes Workloads on CNCF\u00ae Confidential Containers (CoCo)",
+      "How Much Of NetApp Stock's Rise Did The Business Earn?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
