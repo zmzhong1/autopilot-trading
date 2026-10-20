@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "HMC",
-    "researched_at": "2026-10-13T18:26:40+00:00",
+    "researched_at": "2026-10-20T15:45:24+00:00",
     "name": "Honda Motor Co Ltd",
     "industry": "Automobiles",
-    "market_cap": 6720490.188354,
+    "market_cap": 6996861.345825,
     "metrics": {
       "net margin %": -0.75,
       "rev growth %": 4.13,
@@ -12,9 +12,9 @@
       "current ratio": 1.29
     },
     "news": [
-      "Honda to launch Triton-based pickup truck in Southeast Asia",
-      "Redwire vs. Rocket Lab: Which Industrials Stock Is a Better Buy in 2026?",
-      "\u2018Honey, You Got Screwed\u2019: Ramsey to 18-Year-Old Who Traded a Paid-Off Car for a $24,260 Loan on $2,200 a Month"
+      "Zacks.com featured highlights include Honda Motor, Micron Technology, Avnet, Delek US and Plains GP",
+      "Q3 Earnings Season Scorecard and Analyst Reports for NVIDIA, Philip Morris & Home Depot",
+      "5 Value Stocks to Buy as Core Inflation Rises and Rate Hike Odds Climb"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

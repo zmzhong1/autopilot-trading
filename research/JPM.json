@@ -1,20 +1,20 @@
 {
   "snapshot": {
     "ticker": "JPM",
-    "researched_at": "2026-10-13T18:26:44+00:00",
+    "researched_at": "2026-10-20T15:45:28+00:00",
     "name": "JPMorgan Chase & Co",
     "industry": "Banking",
-    "market_cap": 888631.6471077545,
+    "market_cap": 886584.8729200206,
     "metrics": {
-      "P/E": 13.68,
+      "P/E": 13.59,
       "net margin %": 33.26,
       "rev growth %": 108.98,
-      "ROE %": 17.81
+      "ROE %": 17.91
     },
     "news": [
-      "Wealth Revenues Climb at Major Firms, Masking Weaknesses in Divisions",
-      "Why JPMorgan can 'do well' in any rate environment",
-      "JPMorgan Chase & Co. Q3 2026 Earnings Call Summary"
+      "Bank of America (BAC): Is Its Deposit Franchise Getting Stronger as Lending Accelerates?",
+      "Ethereum News: JPMorgan Just Brought JPM Coin to Ethereum. Could Wall Street Money Lift ETH?",
+      "55ip Expands UMA Offering to RIA Channel with J.P. Morgan Asset Management and BlackRock"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

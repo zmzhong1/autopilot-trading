@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "F",
-    "researched_at": "2026-10-13T18:26:32+00:00",
+    "researched_at": "2026-10-20T15:45:16+00:00",
     "name": "Ford Motor Co",
     "industry": "Automobiles",
-    "market_cap": 47851.146110435504,
+    "market_cap": 48568.914190465,
     "metrics": {
       "net margin %": -3.93,
       "rev growth %": 1.47,
@@ -12,9 +12,9 @@
       "current ratio": 1.09
     },
     "news": [
-      "Will Ford Motor (F) Beat Estimates Again in Its Next Earnings Report?",
-      "Tesla Completes Comeback, Paving Way For 30% Upside",
-      "GM's Plans To Rival Tesla's Self-Driving On Track For 2028, CEO Says"
+      "1 Volatile Stock to Target This Week and 2 That Underwhelm",
+      "Why GM\u2019s Massive Share Buyback Isn\u2019t Stopping a Post-Earnings Selloff",
+      "General Motors Sinks 6% Despite Earnings Beat and New Buyback as Outlook Narrows; Ford Slips, Tesla Barely Budges"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

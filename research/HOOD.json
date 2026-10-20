@@ -1,27 +1,27 @@
 {
   "snapshot": {
     "ticker": "HOOD",
-    "researched_at": "2026-10-13T18:26:42+00:00",
+    "researched_at": "2026-10-20T15:45:26+00:00",
     "name": "Robinhood Markets Inc",
     "industry": "Financial Services",
-    "market_cap": 98197.7644740675,
+    "market_cap": 86779.42485045738,
     "metrics": {
-      "P/E": 47.39,
+      "P/E": 41.88,
       "net margin %": 42.01,
       "rev growth %": 38.27,
       "ROE %": 22.7,
       "current ratio": 1.22
     },
     "news": [
-      "3 Financial Stocks Riding Fixed Income Trading Demand In US Markets",
-      "Is Coinbase Stock Ready For A Longer Revenue Slide?",
-      "Robinhood Gets A Price Target Hike From Truist As Wall Street\u2019s Earnings Outlook Improves"
+      "Robinhood Markets, Inc. (HOOD) Stock Falls Amid Market Uptick: What Investors Need to Know",
+      "Opendoor 3Q26 Financial Open House on November 5, 2026",
+      "Robinhood (HOOD) Has 13 $100M Businesses, but Can Trading Keep Funding Them?"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
   "flags": [
-    "analyst trend not upgrading vs buy-rated thesis",
+    "thesis stale (review due 2026-10-16)",
     "recent earnings did not beat, despite high H-0"
   ]
 }

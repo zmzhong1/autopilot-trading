@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "GS",
-    "researched_at": "2026-10-13T18:26:38+00:00",
+    "researched_at": "2026-10-20T15:45:22+00:00",
     "name": "Goldman Sachs Group Inc",
     "industry": "Financial Services",
-    "market_cap": 260292.6905681224,
+    "market_cap": 255002.10661286415,
     "metrics": {
-      "P/E": 12.45,
-      "net margin %": 15.53,
-      "rev growth %": 6.67,
-      "ROE %": 16.94,
-      "current ratio": 0.32
+      "P/E": 11.58,
+      "net margin %": 15.77,
+      "rev growth %": 10.5,
+      "ROE %": 17.9,
+      "current ratio": 0.3
     },
     "news": [
-      "Sector Update: Financial Stocks Mixed Tuesday Afternoon",
-      "The Goldman Sachs Group Q3 Earnings Call Highlights",
-      "Stock Market Today: Nasdaq-100, Small Caps Lead Dip; Apple Retakes Entry, Meta Near Pivot Point (Live Coverage)"
+      "Hedge Funds Dumped Tech Stocks at the Fastest Pace in a Decade, Goldman Says",
+      "Bank of America vs. Goldman Sachs: Which Financial Stock Is a Better Buy in 2026?",
+      "US housing market likely to stay bleak, Goldman Sachs warns"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

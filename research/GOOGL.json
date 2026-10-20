@@ -1,26 +1,27 @@
 {
   "snapshot": {
     "ticker": "GOOGL",
-    "researched_at": "2026-10-13T18:26:36+00:00",
+    "researched_at": "2026-10-20T15:45:20+00:00",
     "name": "Alphabet Inc",
     "industry": "Media",
-    "market_cap": 4313765.600000001,
+    "market_cap": 4209321.4,
     "metrics": {
-      "P/E": 17.65,
+      "P/E": 17.31,
       "net margin %": 54.77,
       "rev growth %": 20.05,
       "ROE %": 50.84,
       "current ratio": 2.72
     },
     "news": [
-      "Apple Is Taking on Amazon and Google in the Smart Home With a $299 Siri AI Device. Is HomeView the First Big Win for New CEO John Ternus?",
-      "MercadoLibre vs. Shopify: Which Consumer Stock Is a Better Buy in 2026?",
-      "Apple's privacy edge may not be enough to save it in AI phone race"
+      "Meta (META): Can WhatsApp Become a Meaningful Business Beyond Advertising?",
+      "Alphabet (GOOGL): Can YouTube Subscriptions Make Its Earnings More Resilient?",
+      "NVIDIA Gets the Attention, but Broadcom Could Deliver the Bigger Surprise"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
+    "analyst trend not upgrading vs buy-rated thesis",
     "recent earnings did not beat, despite high H-0"
   ]
 }

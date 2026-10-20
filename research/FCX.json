@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "FCX",
-    "researched_at": "2026-10-13T18:26:34+00:00",
+    "researched_at": "2026-10-20T15:45:18+00:00",
     "name": "Freeport-McMoRan Inc",
     "industry": "Metals & Mining",
-    "market_cap": 105245.72284154526,
+    "market_cap": 100162.21887874245,
     "metrics": {
-      "P/E": 35.93,
+      "P/E": 33.98,
       "net margin %": 11.38,
       "rev growth %": -24.23,
       "ROE %": 15.26,
       "current ratio": 2.07
     },
     "news": [
-      "Could Buying Freeport-McMoRan (FCX) Stock Today Set You Up for Life?",
-      "Get insights into the top movers in the S&P500 index of Friday's pre-market session.",
-      "JP Morgan Maintains Overweight on Freeport-McMoRan, Raises Price Target to $92"
+      "Are Basic Materials Stocks Lagging  FreeportMcMoRan (FCX) This Year?",
+      "Freeport-McMoRan (FCX) Is Considered a Good Investment by Brokers: Is That True?",
+      "Which Stocks Are Paying For $4.33 Gas?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
