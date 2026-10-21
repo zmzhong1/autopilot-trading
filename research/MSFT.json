@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MSFT",
-    "researched_at": "2026-10-14T15:55:04+00:00",
+    "researched_at": "2026-10-21T16:03:18+00:00",
     "name": "Microsoft Corp",
     "industry": "Technology",
-    "market_cap": 4035152.849697806,
+    "market_cap": 3930935.1931404546,
     "metrics": {
-      "P/E": 30.17,
+      "P/E": 29.39,
       "net margin %": 40.31,
       "rev growth %": 17.79,
       "ROE %": 33.22,
       "current ratio": 1.23
     },
     "news": [
-      "Michael Burry Questions Microsoft\u2019s AI Spending. Is Its Valuation Misleading?",
-      "Chevron\u2019s Big Rally Couldn\u2019t Erase a Decade of Underperformance",
-      "Voice AI model built to accurately capture real multilingual medical conversations"
+      "Why SpaceX has the potential to be the world's largest hyperscaler",
+      "CoreWeave's business model explained: Why investors are worried",
+      "Jim Cramer and Ken Fisher\u2019s AI Pick: Microsoft (MSFT)"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

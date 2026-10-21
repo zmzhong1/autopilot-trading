@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "MS",
-    "researched_at": "2026-10-14T15:55:01+00:00",
+    "researched_at": "2026-10-21T16:03:15+00:00",
     "name": "Morgan Stanley",
     "industry": "Financial Services",
-    "market_cap": 285693.8589897209,
+    "market_cap": 285261.9445441818,
     "metrics": {
-      "P/E": 14.69,
-      "net margin %": 15.65,
-      "rev growth %": 13.96,
+      "P/E": 13.89,
+      "net margin %": 15.63,
+      "rev growth %": 12.03,
       "ROE %": 17.83,
       "current ratio": 0.35
     },
     "news": [
-      "Who's up and who's down among big bank earnings reports",
-      "Bank of America, Morgan Stanley, BlackRock: Key takeaways from bank earnings",
-      "Morgan Stanley\u2019s Investment Bank Has a Credit-Equity Trade Off in Mixed Results"
+      "Ahead Of Schedule: Meta's Early Earnings Shift Driven By Muse AI Enthusiasm",
+      "Morgan Stanley Series A Preferreds: Yield Falls Short For A Compelling Allocation",
+      "Is Current Price Of Robinhood Stock A Strong Support?"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "analyst trend not upgrading vs buy-rated thesis"
-  ]
+  "flags": []
 }
