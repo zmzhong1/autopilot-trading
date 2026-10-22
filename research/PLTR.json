@@ -1,26 +1,26 @@
 {
   "snapshot": {
     "ticker": "PLTR",
-    "researched_at": "2026-10-15T15:41:29+00:00",
+    "researched_at": "2026-10-22T15:58:09+00:00",
     "name": "Palantir Technologies Inc",
     "industry": "Technology",
-    "market_cap": 482942.6194529557,
+    "market_cap": 484756.93562950153,
     "metrics": {
-      "P/E": 159.61,
+      "P/E": 160.69,
       "net margin %": 49.0,
       "rev growth %": 78.92,
       "ROE %": 37.47,
       "current ratio": 7.23
     },
     "news": [
-      "Customers Bank and Palantir Collaborate to Build an AI-Native Future for Banking",
-      "3 Unpopular Stocks That Deserve Some Love",
-      "Surf Air Mobility Signs OperatorOS Contract with Flying Zebra"
+      "Global Signals Intelligence (SIGINT) Market Size, Share, Growth, and Forecast 2026-2035 | Defense Modernization and AI Push Signals Intelligence Toward a $60 Billion Market",
+      "Stagwell (STGW) and Palantir (PLTR) Expand AI Partnership to Transform Enterprise Marketing",
+      "Palantir Stock Is Holding Above a Key Technical Level. Why Wall Street Sees 24% Upside."
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-10-13)"
+    "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

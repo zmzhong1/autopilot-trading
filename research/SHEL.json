@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "SHEL",
-    "researched_at": "2026-10-15T15:41:38+00:00",
+    "researched_at": "2026-10-22T15:58:14+00:00",
     "name": "Shell PLC",
     "industry": "Energy",
-    "market_cap": 220186.951338,
+    "market_cap": 222310.423334,
     "metrics": {
-      "P/E": 11.25,
+      "P/E": 11.45,
       "net margin %": 8.76,
       "rev growth %": 9.04,
       "ROE %": 14.74,
       "current ratio": 1.43
     },
     "news": [
-      "TotalEnergies Eyes Massive Profit Windfall as Refining Margins Soar",
-      "Transaction in Own Shares",
-      "How Investors Are Reacting To Transocean (RIG) Securing Over $1 Billion In Norwegian Rig Backlog"
+      "'Shell And Exxon\u2019s $8B UK Chemicals Unit Put Up For Sale' - Financial Times",
+      "'Kashagan Arbitration Court Invalidates $12 Billion of Cost Claim' - Bloomberg",
+      "Big Oil Eyes Record Profits but Keeps Spending in Check"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "analyst trend not upgrading vs buy-rated thesis"
-  ]
+  "flags": []
 }

@@ -1,27 +1,26 @@
 {
   "snapshot": {
     "ticker": "ORCL",
-    "researched_at": "2026-10-15T15:41:21+00:00",
+    "researched_at": "2026-10-22T15:58:05+00:00",
     "name": "Oracle Corp",
     "industry": "Technology",
-    "market_cap": 394748.73735174205,
+    "market_cap": 382593.3411733692,
     "metrics": {
-      "P/E": 21.29,
+      "P/E": 20.22,
       "net margin %": 26.36,
       "rev growth %": 21.62,
       "ROE %": 42.58,
       "current ratio": 1.17
     },
     "news": [
-      "Bloom Energy Got Good News From Oracle and Fell Anyway. Is It Time to Buy?",
-      "Treasury Yields Dive For Wrong Reason As Neocloud Bonds Blow Up",
-      "What Sent CoreWeave Stock Lower?"
+      "Neocloud stock rout has a silver lining: It's staying contained",
+      "Can Docusign Stock Get Back To Where It Was?",
+      "Oracle Vs. Microsoft: How The Wildcard AI Spender Plans to Disrupt"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-10-05)",
     "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

@@ -1,27 +1,26 @@
 {
   "snapshot": {
     "ticker": "NVDA",
-    "researched_at": "2026-10-15T15:41:17+00:00",
+    "researched_at": "2026-10-22T15:58:03+00:00",
     "name": "NVIDIA Corp",
     "industry": "Semiconductors",
-    "market_cap": 5333330.09971283,
+    "market_cap": 5247534.028858374,
     "metrics": {
-      "P/E": 28.14,
+      "P/E": 27.73,
       "net margin %": 63.66,
       "rev growth %": 83.38,
       "ROE %": 110.11,
       "current ratio": 4.59
     },
     "news": [
-      "Tech sell-off rolls on as hot inflation data stokes rate worries",
-      "Apple Is Reportedly Bringing AI to China in December, but Not the New Siri",
-      "Nvidia stock sinks amid concerns over AI financing"
+      "Elon Musk: SpaceX Revenue Could Hit \u201cSomewhere Between $500 Billion and a Trillion\u201d by 2027",
+      "Why Rivian's R2 Could Be Worth Far More Than Its Sales Numbers Suggest",
+      "Meta, Tesla, and chip stocks decline as AI trade comes under pressure: AlphaCheck"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-10-13)",
     "recent earnings did not beat, despite high H-0"
   ]
 }

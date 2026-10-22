@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "NOK",
-    "researched_at": "2026-10-15T15:41:14+00:00",
+    "researched_at": "2026-10-22T15:58:00+00:00",
     "name": "Nokia Oyj",
     "industry": "Communications",
-    "market_cap": 49402.504734,
+    "market_cap": 46584.359408,
     "metrics": {
-      "P/E": 69.02,
+      "P/E": 65.25,
       "net margin %": 3.48,
       "rev growth %": 5.29,
       "ROE %": 3.41,
       "current ratio": 1.5
     },
     "news": [
-      "Ericsson Plans Price Hikes As AI Boom Drives Up Equipment Costs",
-      "Global chipmakers sink as inflation data fuels rate-hike fears, AI rout",
-      "Compass Lexecon Continues to Expand Competition Expertise With Appointment of St\u00e9phane Dewulf as Head of Brussels"
+      "Nokia's AI Business Soars 126%, Data Center Boom Is Becoming a Big Profit Story",
+      "Nokia Q3 profit rises on AI-driven network demand, outlook unchanged",
+      "NOK Stock Heads For A Green Week After A 10% Jump In Q3 Sales As AI And Cloud Demand Drives Growth"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "analyst trend not upgrading vs buy-rated thesis"
-  ]
+  "flags": []
 }

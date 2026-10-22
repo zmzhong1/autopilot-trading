@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PATH",
-    "researched_at": "2026-10-15T15:41:26+00:00",
+    "researched_at": "2026-10-22T15:58:07+00:00",
     "name": "UiPath Inc",
     "industry": "Technology",
-    "market_cap": 6806.293326677736,
+    "market_cap": 7202.371672189643,
     "metrics": {
-      "P/E": 18.81,
+      "P/E": 19.74,
       "net margin %": 21.03,
       "rev growth %": 14.98,
       "ROE %": 18.42,
       "current ratio": 2.39
     },
     "news": [
-      "UiPath (PATH) Dips More Than Broader Market: What You Should Know",
-      "Open Cloud Security And Testing Partnerships Could Be A Game Changer For Oracle (ORCL)",
-      "Figma vs. UiPath: What Revenue Growth Trends Tell Investors About These Tech Companies"
+      "UiPath (PATH): Buy, Sell, or Hold Post Q2 Earnings?",
+      "UiPath (PATH) Outpaces Stock Market Gains: What You Should Know",
+      "UiPath vs. Snowflake: Which Technology Stock Is a Better Buy in 2026?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

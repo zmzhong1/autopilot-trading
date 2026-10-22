@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "SFTBY",
-    "researched_at": "2026-10-15T15:41:33+00:00",
+    "researched_at": "2026-10-22T15:58:11+00:00",
     "name": "SoftBank Group Corp",
     "industry": "Telecommunication",
-    "market_cap": 30312158.334961,
+    "market_cap": 26384707.311523,
     "metrics": {
-      "P/E": 6.15,
+      "P/E": 5.28,
       "net margin %": 61.61,
       "rev growth %": 8.63,
       "ROE %": 29.88,
       "current ratio": 0.68
     },
     "news": [
-      "SK Hynix\u2019s Worst 7-Day Loss Since 2008: AI Bubble Bursting Or Historical Opportunity?",
-      "Deepening tech sell-off drags stocks lower as major markets slide",
-      "Asian markets plunge as AI fears deepen tech sell-off"
+      "Asian stocks rally as tech firms enjoy bounce ahead of key earnings",
+      "OpenAI Is Racing To Raise $30 Billion Before Anthropic's IPO. Its Valuation Could Cross $1.4 Trillion.",
+      "Anthropic Will Be The Last AI IPO Of 2026, As Industry Collapses"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
