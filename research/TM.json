@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "TM",
-    "researched_at": "2026-10-16T15:26:49+00:00",
+    "researched_at": "2026-10-23T15:50:11+00:00",
     "name": "Toyota Motor Corp",
     "industry": "Automobiles",
-    "market_cap": 35655762.126953,
+    "market_cap": 36520216.007812,
     "metrics": {
-      "P/E": 7.95,
+      "P/E": 8.17,
       "net margin %": 8.63,
       "rev growth %": 7.23,
       "ROE %": 11.67,
       "current ratio": 1.17
     },
     "news": [
-      "VW Wants to Take On Wrangler and Bronco on Their US Home Turf",
-      "3 Asia Pacific Dividend Stocks Built For Rough Markets",
-      "Electric vehicle sales in the US are showing signs of life"
+      "EV Next-Generation Solid-State Battery Market Forecasts Growth from $346.7 Million (2025) to $16.4 Billion by 2035, Profiling Toyota, CATL, QuantumScape, Samsung SDI & Other Key Players",
+      "How to Approach Genuine Parts Stock Post its Q3 Earnings Release",
+      "Ford Plans to Overtake Toyota in a Critical Business. Here's Why It Matters."
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

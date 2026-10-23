@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "STLD",
-    "researched_at": "2026-10-16T15:26:44+00:00",
+    "researched_at": "2026-10-23T15:50:08+00:00",
     "name": "Steel Dynamics Inc",
     "industry": "Metals & Mining",
-    "market_cap": 34507.67176725359,
+    "market_cap": 34384.40899199999,
     "metrics": {
-      "P/E": 21.42,
-      "net margin %": 7.83,
-      "rev growth %": 19.77,
-      "ROE %": 17.6,
-      "current ratio": 3.18
+      "P/E": 17.27,
+      "net margin %": 8.82,
+      "rev growth %": 26.0,
+      "ROE %": 20.97,
+      "current ratio": 3.14
     },
     "news": [
-      "How Investors May Respond To Steel Dynamics (STLD) Strong Earnings Forecasts",
-      "Steel Dynamics (STLD) Has Investors Paying Closer Attention Today",
-      "Cleveland-Cliffs Drops 4% as Tariff Doubt Returns; Nucor and Steel Dynamics Slip"
+      "Barclays Maintains Overweight on Steel Dynamics, Lowers Price Target to $280",
+      "Keybanc Maintains Overweight on Steel Dynamics, Raises Price Target to $265",
+      "Steel Dynamics Stock Has One Thing Left To Prove"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

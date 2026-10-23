@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SONY",
-    "researched_at": "2026-10-16T15:26:42+00:00",
+    "researched_at": "2026-10-23T15:50:06+00:00",
     "name": "Sony Group Corp",
     "industry": "Consumer products",
-    "market_cap": 22866634.515137,
+    "market_cap": 24182102.994629,
     "metrics": {
       "net margin %": -1.75,
       "rev growth %": 6.54,
@@ -12,9 +12,9 @@
       "current ratio": 1.25
     },
     "news": [
-      "Sony (SONY) Outperforms Broader Market: What You Need to Know",
-      "Nintendo just made an unusual decision\u2014and it\u2019s going to be good for business",
-      "Meta acquires multiple VR patents from Sony"
+      "Wall Street Analysts Look Bullish on Sony (SONY): Should You Buy?",
+      "Here's How Much a $1000 Investment in Sony Made 10 Years Ago Would Be Worth Today",
+      "Sony: The Hardware Cycle Is Hiding A Better Earnings Mix"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

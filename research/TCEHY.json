@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "TCEHY",
-    "researched_at": "2026-10-16T15:26:47+00:00",
+    "researched_at": "2026-10-23T15:50:10+00:00",
     "name": "Tencent Holdings Ltd",
     "industry": "Media",
-    "market_cap": 3814793.837781,
+    "market_cap": 3445387.72157,
     "metrics": {
-      "P/E": 13.81,
+      "P/E": 12.82,
       "net margin %": 29.87,
       "rev growth %": 11.97,
       "ROE %": 20.52,
       "current ratio": 1.29
     },
     "news": [
-      "Reported October 15, 'DeepSeek offers user refunds after suffering another major outage' - SCMP",
-      "Microbiotica Raises \u00a336 Million ($48 Million) in Series C Financing to Advance Pipeline into Phase 2 Clinical Development",
-      "OpenAI, Anthropic\u2019s AI Lead Is \u2018Very Perishable,\u2019 IMD Professor Says: \u2018You Don\u2019t Need to Drive a Ferrari to Go to Walmart\u2019"
+      "Nvidia\u2019s China Market Has Effectively Vanished: \u2018Every Restriction Also Gives Chinese Suppliers a Larger Captive Market,\u2019 Says Shay Boloor",
+      "Oracle Is Down More Than a Third in 2026 Even as TD Cowen Flags Possible Nvidia Support. Here\u2019s Where the Stock Could Go by 2031",
+      "Nvidia has a $35 billion problem most companies would want"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }
