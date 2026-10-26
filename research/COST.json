@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "COST",
-    "researched_at": "2026-10-19T17:39:10+00:00",
+    "researched_at": "2026-10-26T17:32:27+00:00",
     "name": "Costco Wholesale Corp",
     "industry": "Retail",
-    "market_cap": 438303.65943092183,
+    "market_cap": 444600.532477853,
     "metrics": {
-      "P/E": 47.51,
+      "P/E": 48.19,
       "net margin %": 3.04,
       "rev growth %": 10.14,
       "ROE %": 28.02,
       "current ratio": 1.06
     },
     "news": [
-      "Walmart Dropped 5% In The Last 6 Months: This Wall Street Firm Says 30% Gains Are Coming Soon",
-      "The Zacks Analyst Blog Highlights Costco, Walt Disney, Marriott, Park Aerospace and Flanigan's",
-      "Should You Buy Costco Stock Before Oct. 30? Here's the Clear Answer."
+      "Costco's AI Search Traffic Soars: Can It Fuel Online Sales?",
+      "Can Walmart's AI Strategy Unlock the Next Phase of Digital Growth?",
+      "If You Buy Costco With $5,000 at a 43% Discount From Its High, Here's What I Predict It Could Be Worth in 10 Years."
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

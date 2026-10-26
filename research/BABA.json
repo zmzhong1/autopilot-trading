@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "BABA",
-    "researched_at": "2026-10-19T17:39:04+00:00",
+    "researched_at": "2026-10-26T17:32:20+00:00",
     "name": "Alibaba Group Holding Ltd",
     "industry": "Retail",
-    "market_cap": 269757.07339589205,
+    "market_cap": 247141.87038150887,
     "metrics": {
-      "P/E": 24.6,
+      "P/E": 22.48,
       "net margin %": 7.02,
       "rev growth %": 4.42,
       "ROE %": 7.01,
       "current ratio": 1.36
     },
     "news": [
-      "AliExpress launches first free membership programme in Europe",
-      "JPMorgan and\u00a0Alibaba Are Said Among Investors in Dongshan\u2019s Listing",
-      "'JPMorgan and Alibaba Are Said Among Investors in Dongshan\u2019s Listing' - Bloomberg"
+      "SKHY, BABA in the Crosshairs: Goldman Slashes KOSPI Ahead of Earnings, Morgan Stanley Warns on China AI",
+      "Apple's $2,000 Foldable iPhone Sparks Buying Frenzy",
+      "BABA, BIDU, SKHY in Focus: Morgan Stanley Sees More Downside In Chinese Stocks, Goldman Sachs Cuts KOSPI Target"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "CRWD",
-    "researched_at": "2026-10-19T17:39:12+00:00",
+    "researched_at": "2026-10-26T17:32:29+00:00",
     "name": "CrowdStrike Holdings Inc",
     "industry": "Technology",
-    "market_cap": 232832.54443090854,
+    "market_cap": 263734.89286496624,
     "metrics": {
-      "P/E": 3982.77,
+      "P/E": 4511.37,
       "net margin %": 1.08,
       "rev growth %": 24.3,
       "ROE %": 1.29,
       "current ratio": 1.57
     },
     "news": [
-      "What Was Okta Telling You Before Its Stock Doubled?",
-      "QIZ is Now Available for Purchase on the CrowdStrike Marketplace",
-      "Can BlackBerry's QNX Launchpad Drive Growth in Embedded Markets?"
+      "Cybersecurity Earnings Put Rich Valuations and Uneven Margins to the Test",
+      "Axon Enterprise vs. CrowdStrike: Which Security Stock Is a Better Buy?",
+      "Is CrowdStrike Holdings (CRWD) Expensive As Nvidia Deal Fuels Its AI Security Story?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

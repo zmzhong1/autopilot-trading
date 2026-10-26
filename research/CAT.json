@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "CAT",
-    "researched_at": "2026-10-19T17:39:06+00:00",
+    "researched_at": "2026-10-26T17:32:22+00:00",
     "name": "Caterpillar Inc",
     "industry": "Machinery",
-    "market_cap": 335912.01156460366,
+    "market_cap": 315796.6272763114,
     "metrics": {
-      "P/E": 30.98,
+      "P/E": 29.12,
       "net margin %": 14.51,
       "rev growth %": 18.36,
       "ROE %": 54.2,
       "current ratio": 1.37
     },
     "news": [
-      "Stock Market Today: Dow Up, Nasdaq Rallies; Sandisk Surges As This Biotech Play Tests Entry (Live Coverage)",
-      "GE Vernova vs. Caterpillar: Which Has More Exposure to the AI Power Build-Out?",
-      "Caterpillar announces $10 million workforce investment in North Carolina"
+      "Caterpillar Set to Report Q3 Earnings: Buy, Sell or Hold the Stock?",
+      "Caterpillar (CAT) Q3 Earnings Preview: What You Should Know Beyond the Headline Estimates",
+      "US Equity Investors to Monitor Mag-7 Earnings, Fed's Monetary Policy Path, Inflation Data This Week Amid Faltering AI Trade"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "analyst trend not upgrading vs buy-rated thesis"
-  ]
+  "flags": []
 }

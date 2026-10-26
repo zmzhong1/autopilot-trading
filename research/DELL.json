@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "DELL",
-    "researched_at": "2026-10-19T17:39:15+00:00",
+    "researched_at": "2026-10-26T17:32:31+00:00",
     "name": "Dell Technologies Inc",
     "industry": "Technology",
-    "market_cap": 287202.9902648661,
+    "market_cap": 290210.38354878547,
     "metrics": {
-      "P/E": 25.24,
+      "P/E": 25.51,
       "net margin %": 7.53,
       "rev growth %": 49.03,
       "ROE %": 130.7,
       "current ratio": 0.96
     },
     "news": [
-      "Why Micron Stock Bounced on Monday",
-      "Fortanix Announces Confidential AI for Enterprise Grade Kubernetes Workloads on CNCF\u00ae Confidential Containers (CoCo)",
-      "How Much Of NetApp Stock's Rise Did The Business Earn?"
+      "Intelligent Platform Management Interface (IPMI) - Global Strategic Business Report: Capitalize on a $9.9B Market by 2032 as Cisco, Dell, HPE, Intel and Microsoft Accelerate Data Center Automation",
+      "Global Converged Infrastructure Market Report 2026 | Capitalize on 13.9% CAGR Through 2030 as Dell, Cisco, Huawei, HPE and Nutanix Accelerate Hybrid Cloud and AI Infrastructure",
+      "Honeywell Teams up With NVIDIA, Dell To Chase Massive Oil Refinery Savings"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "analyst trend not upgrading vs buy-rated thesis"
-  ]
+  "flags": []
 }

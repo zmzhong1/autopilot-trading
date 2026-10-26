@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "COIN",
-    "researched_at": "2026-10-19T17:39:08+00:00",
+    "researched_at": "2026-10-26T17:32:25+00:00",
     "name": "Coinbase Global Inc",
     "industry": "Financial Services",
-    "market_cap": 45686.01492,
+    "market_cap": 43387.99465,
     "metrics": {
       "net margin %": -15.72,
       "rev growth %": -10.35,
@@ -12,9 +12,9 @@
       "current ratio": 2.42
     },
     "news": [
-      "CME vs. Coinbase Global: Which Financial Stock Is a Better Buy in 2026?",
-      "JPMorgan brings JPM Coin to Ethereum",
-      "Bitmine\u2019s Holdings Value Falls to $15.1 Billion Even as Its Ether Stash Keeps Growing"
+      "Ethereum News: BitMine Just Bought 10,452 ETH and Now Owns 4.95% of All Ethereum",
+      "Strategy Sinks 2% as It Pauses Bitcoin Buying Amid \u201cRisk Off\u201d Crypto Slide",
+      "XRP News: Ripple Now Lets Companies Earn Returns on RLUSD Around the Clock. What Role Does XRP Play?"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

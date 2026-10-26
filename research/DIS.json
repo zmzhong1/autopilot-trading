@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "DIS",
-    "researched_at": "2026-10-19T17:39:17+00:00",
+    "researched_at": "2026-10-26T17:32:33+00:00",
     "name": "Walt Disney Co",
     "industry": "Media",
-    "market_cap": 190954.30365250332,
+    "market_cap": 194286.80410588847,
     "metrics": {
-      "P/E": 22.2,
+      "P/E": 22.59,
       "net margin %": 8.7,
       "rev growth %": 4.58,
       "ROE %": 7.87,
       "current ratio": 0.71
     },
     "news": [
-      "What Has The Market Missed In Netflix Stock's Drop?",
-      "Trump Likes Walt Disney (DIS). Time to Buy The Stock?",
-      "The Zacks Analyst Blog Highlights Costco, Walt Disney, Marriott, Park Aerospace and Flanigan's"
+      "Skydance Stock Is Risky. Here\u2019s What Could Power a Rally Anyway.",
+      "What Could Surprise Comcast Stock Investors On The Upside?",
+      "In 1985, He Was Forced Out of the Company He Founded. Months Later He Bet $10 Million On A Graphics Unit He Bought From George Lucas. By 2006, That Bet Was Worth Far More Than His Apple Stock"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }
