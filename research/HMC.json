@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "HMC",
-    "researched_at": "2026-10-20T15:45:24+00:00",
+    "researched_at": "2026-10-27T16:47:45+00:00",
     "name": "Honda Motor Co Ltd",
     "industry": "Automobiles",
-    "market_cap": 6996861.345825,
+    "market_cap": 6987129.967041,
     "metrics": {
       "net margin %": -0.75,
       "rev growth %": 4.13,
@@ -12,14 +12,12 @@
       "current ratio": 1.29
     },
     "news": [
-      "Zacks.com featured highlights include Honda Motor, Micron Technology, Avnet, Delek US and Plains GP",
-      "Q3 Earnings Season Scorecard and Analyst Reports for NVIDIA, Philip Morris & Home Depot",
-      "5 Value Stocks to Buy as Core Inflation Rises and Rate Hike Odds Climb"
+      "Gentex Stock After Q3 Earnings: Buy, Hold or Sell the Stock?",
+      "3 Foreign Auto Stocks to Buy as Hybrids and EVs Gain Momentum",
+      "Take the Zacks Approach to Beat the Markets: Honda Motor, Accenture, CACI in Focus"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "analyst trend not upgrading vs buy-rated thesis"
-  ]
+  "flags": []
 }

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "GS",
-    "researched_at": "2026-10-20T15:45:22+00:00",
-    "name": "Goldman Sachs Group Inc",
+    "researched_at": "2026-10-27T16:47:43+00:00",
+    "name": "The Goldman Sachs Group, Inc.",
     "industry": "Financial Services",
-    "market_cap": 255002.10661286415,
+    "market_cap": 260097.6014134988,
     "metrics": {
-      "P/E": 11.58,
+      "P/E": 11.63,
       "net margin %": 15.77,
       "rev growth %": 10.5,
       "ROE %": 17.9,
       "current ratio": 0.3
     },
     "news": [
-      "Hedge Funds Dumped Tech Stocks at the Fastest Pace in a Decade, Goldman Says",
-      "Bank of America vs. Goldman Sachs: Which Financial Stock Is a Better Buy in 2026?",
-      "US housing market likely to stay bleak, Goldman Sachs warns"
+      "Can AI Adoption Sustain Morgan Stanley's Wealth Management Growth?",
+      "Goldman Sachs, Houlihan Lokey top consumer M&A charts in Q1\u2013Q3 \u2013 data",
+      "Stablecoin Firm RedotPay To Hold IPO By Year\u2019s End: Reports"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

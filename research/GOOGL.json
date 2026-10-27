@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "GOOGL",
-    "researched_at": "2026-10-20T15:45:20+00:00",
-    "name": "Alphabet Inc",
+    "researched_at": "2026-10-27T16:47:41+00:00",
+    "name": "Alphabet Inc.",
     "industry": "Media",
-    "market_cap": 4209321.4,
+    "market_cap": 3874464,
     "metrics": {
-      "P/E": 17.31,
+      "P/E": 15.93,
       "net margin %": 54.77,
       "rev growth %": 20.05,
       "ROE %": 50.84,
       "current ratio": 2.72
     },
     "news": [
-      "Meta (META): Can WhatsApp Become a Meaningful Business Beyond Advertising?",
-      "Alphabet (GOOGL): Can YouTube Subscriptions Make Its Earnings More Resilient?",
-      "NVIDIA Gets the Attention, but Broadcom Could Deliver the Bigger Surprise"
+      "Sunrun (RUN) Joins 1 GW Virtual Power Plant Push With Home Battery Capacity",
+      "Nucleus Research Releases 2026 Embedded Analytics Technology Value Matrix",
+      "Is Trade Desk Stock's Drop A Chance To Buy?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

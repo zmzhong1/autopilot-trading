@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "F",
-    "researched_at": "2026-10-20T15:45:16+00:00",
+    "researched_at": "2026-10-27T16:47:37+00:00",
     "name": "Ford Motor Co",
     "industry": "Automobiles",
-    "market_cap": 48568.914190465,
+    "market_cap": 46176.35722569311,
     "metrics": {
       "net margin %": -3.93,
       "rev growth %": 1.47,
@@ -12,9 +12,9 @@
       "current ratio": 1.09
     },
     "news": [
-      "1 Volatile Stock to Target This Week and 2 That Underwhelm",
-      "Why GM\u2019s Massive Share Buyback Isn\u2019t Stopping a Post-Earnings Selloff",
-      "General Motors Sinks 6% Despite Earnings Beat and New Buyback as Outlook Narrows; Ford Slips, Tesla Barely Budges"
+      "WCC students partner with Ford Motor Company to build Ford Bronco live at SEMA 2026",
+      "Brampton sale, tariffs loom over Stellantis-Unifor labor talks",
+      "JFrog and Industry Judges Recognize Global Brands Bringing Trust to the Software Supply Chain in the AI Era"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
