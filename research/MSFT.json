@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MSFT",
-    "researched_at": "2026-10-21T16:03:18+00:00",
-    "name": "Microsoft Corp",
+    "researched_at": "2026-10-28T17:15:44+00:00",
+    "name": "Microsoft Corporation",
     "industry": "Technology",
-    "market_cap": 3930935.1931404546,
+    "market_cap": 3917291.4546496687,
     "metrics": {
-      "P/E": 29.39,
+      "P/E": 29.51,
       "net margin %": 40.31,
       "rev growth %": 17.79,
       "ROE %": 33.22,
       "current ratio": 1.23
     },
     "news": [
-      "Why SpaceX has the potential to be the world's largest hyperscaler",
-      "CoreWeave's business model explained: Why investors are worried",
-      "Jim Cramer and Ken Fisher\u2019s AI Pick: Microsoft (MSFT)"
+      "Top Midday Stories: GE Vernova to Acquire Trench Group for $9 Billion; Wendy's Receives $1.4 Billion Takeover Offer From Trian-Led Group",
+      "Apple Is at a Record Going Into Earnings. Wall Street\u2019s Target Is Below It",
+      "Microsoft results to test whether AI investment is paying off"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

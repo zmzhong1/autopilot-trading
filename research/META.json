@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "META",
-    "researched_at": "2026-10-21T16:03:10+00:00",
-    "name": "Meta Platforms Inc",
+    "researched_at": "2026-10-28T17:15:37+00:00",
+    "name": "Meta Platforms, Inc.",
     "industry": "Media",
-    "market_cap": 1792068.665001855,
+    "market_cap": 1568426.439055448,
     "metrics": {
-      "P/E": 25.97,
-      "net margin %": 29.84,
-      "rev growth %": 27.65,
-      "ROE %": 29.73,
-      "current ratio": 2.23
+      "P/E": 21.07,
+      "net margin %": 31.15,
+      "rev growth %": 27.53,
+      "ROE %": 30.27,
+      "current ratio": 1.9
     },
     "news": [
-      "Tech stocks lead market higher as SpaceX shares surge: AlphaCheck",
-      "Stock Market Today: Tech Rallies With SpaceX Earnings; Meta, Tesla Reports Due (Live Coverage)",
-      "Meta Earnings Prediction Market Preview: What Will Mark Zuckerberg Say?"
+      "GE Vernova Stock Falls; 'New Orders And New Slots Missed By A Mile'",
+      "BofA clients dump communication services stocks at record pace after Meta slump",
+      "NVIDIA (NVDA) Could Be 22% Undervalued On Oracle Meta And Schneider Deals"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

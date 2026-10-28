@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "NET",
-    "researched_at": "2026-10-21T16:03:25+00:00",
-    "name": "Cloudflare Inc",
+    "researched_at": "2026-10-28T17:15:51+00:00",
+    "name": "Cloudflare, Inc.",
     "industry": "Technology",
-    "market_cap": 107178.21453736215,
+    "market_cap": 113774.58611245199,
     "metrics": {
       "net margin %": -8.21,
       "rev growth %": 33.53,
@@ -12,9 +12,9 @@
       "current ratio": 1.82
     },
     "news": [
-      "Are You Sure You Understand Cloudflare Stock's Risk?",
-      "Cloudflare (NET) Deepens Cloudflare OS Ties With Enterprise Software",
-      "What Does GoDaddy Offer That Akamai Does Not?"
+      "Cloudflare Inc - Class A (NYSE:NET) Meets Minervini Trend Template but Setup Rating Calls for Patience",
+      "Wells Fargo Maintains Overweight on Cloudflare, Raises Price Target to $400",
+      "Calamos Convertible Fund: Q3 2026 Contributors And Detractors"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

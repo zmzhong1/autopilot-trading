@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "NEM",
-    "researched_at": "2026-10-21T16:03:23+00:00",
+    "researched_at": "2026-10-28T17:15:49+00:00",
     "name": "Newmont Corporation",
     "industry": "Metals & Mining",
-    "market_cap": 123060.71656022558,
+    "market_cap": 116119.45170749146,
     "metrics": {
-      "P/E": 14.34,
-      "net margin %": 33.36,
-      "rev growth %": 25.18,
-      "ROE %": 25.05,
-      "current ratio": 2.55
+      "P/E": 12.65,
+      "net margin %": 34.73,
+      "rev growth %": 23.73,
+      "ROE %": 26.45,
+      "current ratio": 2.45
     },
     "news": [
-      "Goldstorm Metals Discovers Gold-Silver Mineralization over a 407.55-Meter (m) Length in Preliminary Drilling at the Crown Property on Trend with KSM and Treaty Creek Deposits, in British Columbia's Golden Triangle",
-      "Leverage Shares Is Shutting Down 13 Single-Stock Leveraged ETFs. None Drew Enough Money to Survive",
-      "Is There A Risk Hiding In Newmont Stock's Strong Cash Flow?"
+      "V Ten Metals Provides Update on Its Tanami Property, Located in NT, Australia",
+      "Cyclicals Lead Sectors In Wednesday Trading As Real Estate Trails",
+      "Noble Q3 Earnings Call Highlights"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "thesis stale (review due 2026-10-23)"
+  ]
 }

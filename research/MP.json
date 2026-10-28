@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "MP",
-    "researched_at": "2026-10-21T16:03:13+00:00",
-    "name": "MP Materials Corp",
+    "researched_at": "2026-10-28T17:15:40+00:00",
+    "name": "MP Materials Corp.",
     "industry": "Metals & Mining",
-    "market_cap": 7010.969071700769,
+    "market_cap": 7202.428233008075,
     "metrics": {
       "net margin %": -15.21,
       "rev growth %": 64.66,
@@ -12,9 +12,9 @@
       "current ratio": 9.51
     },
     "news": [
-      "Gabelli Releases Agenda for 50th Annual Automotive Symposium",
-      "MP Materials vs. USA Rare Earth: Which Rare Earth Stock Is the Better Buy?",
-      "USA Rare Earth Climbs 4% as Month-Long Selloff Pauses; MP Materials Ticks Up, United States Antimony Dips"
+      "Critical Metals Drops 7% as European Lithium Deal Sets Up New Share Issuance; United States Antimony and USA Rare Earth Decline 3%, MP Materials Eases",
+      "Liz Cheney Challenges Trump\u2019s Anti-Socialism Stance Over Taxpayer-Funded Stakes in Private Companies: 'A Level That We Haven't Seen Before\u201d",
+      "MP Materials: Incoming Earnings And Policy Risk Make It A Sell"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

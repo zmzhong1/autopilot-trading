@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MU",
-    "researched_at": "2026-10-21T16:03:20+00:00",
-    "name": "Micron Technology Inc",
+    "researched_at": "2026-10-28T17:15:47+00:00",
+    "name": "Micron Technology, Inc.",
     "industry": "Semiconductors",
-    "market_cap": 1011254.9923640369,
+    "market_cap": 1099771.664819658,
     "metrics": {
-      "P/E": 12.14,
+      "P/E": 12.36,
       "net margin %": 63.8,
       "rev growth %": 256.33,
       "ROE %": 91.77,
       "current ratio": 3.31
     },
     "news": [
-      "SpaceX Stock to $500? Strong Earnings Are Lifting Tech Stocks.",
-      "Tech stocks lead market higher as SpaceX shares surge: AlphaCheck",
-      "Prediction: $150 a Month Invested in Micron Stock Will Be Worth This Much by Year-End 2030"
+      "Cramer: Micron \u201cShould Be the Biggest Winner\u201d as SK Hynix Predicts Memory Shortage Through 2030",
+      "Stock Market Today: Dow Gains Meekly As Alphabet Rises Ahead Of Earnings (Live Coverage)",
+      "Top 5 AI Stocks in Billionaires Ray Dalio and Philippe Laffont\u2019s Portfolios"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
