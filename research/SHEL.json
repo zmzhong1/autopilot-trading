@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "SHEL",
-    "researched_at": "2026-10-22T15:58:14+00:00",
+    "researched_at": "2026-10-29T17:29:55+00:00",
     "name": "Shell PLC",
     "industry": "Energy",
-    "market_cap": 222310.423334,
+    "market_cap": 224825.747797,
     "metrics": {
-      "P/E": 11.45,
+      "P/E": 11.41,
       "net margin %": 8.76,
       "rev growth %": 9.04,
       "ROE %": 14.74,
       "current ratio": 1.43
     },
     "news": [
-      "'Shell And Exxon\u2019s $8B UK Chemicals Unit Put Up For Sale' - Financial Times",
-      "'Kashagan Arbitration Court Invalidates $12 Billion of Cost Claim' - Bloomberg",
-      "Big Oil Eyes Record Profits but Keeps Spending in Check"
+      "Artisan Global Value Fund Q3 2026 Portfolio Discussion",
+      "QatarEnergy CEO Says Two LNG Trains Damaged In Iranian Attacks Will Take About Three Years To Repair, Qatar To Lose 17% Of LNG Capacity (Two Trains) In Interim, Pearl GTL Expected Back By Q1 2027; Says Cannot Offer Long-Term Customers LNG From New Purchase Agreements As Hormuz Backup, Contracts Are Point-To-Point; Says Has Met Iranian Acting Petroleum Minister Twice In Past Two Weeks, Exploring Post-war Cooperation In Oil And Gas",
+      "QatarEnergy CEO Says Has Ruled Out Pipelines Bypassing Hormuz As Any Infrastructure Anywhere In The Region Can Be Targeted; Says No Cancellation Of Any Announced Project, North Field East, South And West Proceeding, 142 MTPA LNG Expansion Plan In Qatar Unchanged, All Contracts Awarded; Says Can Restart Full LNG Production Within One Week Of A Peace Deal, As Long As Ships Are Available"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

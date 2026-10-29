@@ -1,26 +1,27 @@
 {
   "snapshot": {
     "ticker": "ORCL",
-    "researched_at": "2026-10-22T15:58:05+00:00",
-    "name": "Oracle Corp",
+    "researched_at": "2026-10-29T17:29:44+00:00",
+    "name": "Oracle Corporation",
     "industry": "Technology",
-    "market_cap": 382593.3411733692,
+    "market_cap": 437050.793278,
     "metrics": {
-      "P/E": 20.22,
+      "P/E": 20.76,
       "net margin %": 26.36,
       "rev growth %": 21.62,
       "ROE %": 42.58,
       "current ratio": 1.17
     },
     "news": [
-      "Neocloud stock rout has a silver lining: It's staying contained",
-      "Can Docusign Stock Get Back To Where It Was?",
-      "Oracle Vs. Microsoft: How The Wildcard AI Spender Plans to Disrupt"
+      "Microsoft's AI Bet Pays Off",
+      "Configuration Management Systems - Global Strategic Business Report: Capitalize on 14.8% CAGR to US$9.8 Billion by 2032 as AWS, Microsoft, IBM, Oracle, and ServiceNow Disrupt IT Operations",
+      "IT Operations and Service Management (ITOSM) - Global Strategic Business Report: Secure Share of a $40.6B Market by 2030 as ServiceNow, IBM, Oracle and BMC Software Accelerate AI Automation"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
+    "thesis stale (review due 2026-10-28)",
     "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

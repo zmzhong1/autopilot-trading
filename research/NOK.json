@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NOK",
-    "researched_at": "2026-10-22T15:58:00+00:00",
+    "researched_at": "2026-10-29T17:29:38+00:00",
     "name": "Nokia Oyj",
     "industry": "Communications",
-    "market_cap": 46584.359408,
+    "market_cap": 46471.178106,
     "metrics": {
-      "P/E": 65.25,
-      "net margin %": 3.48,
-      "rev growth %": 5.29,
-      "ROE %": 3.41,
-      "current ratio": 1.5
+      "P/E": 58.41,
+      "net margin %": 3.78,
+      "rev growth %": 4.82,
+      "ROE %": 3.68,
+      "current ratio": 1.46
     },
     "news": [
-      "Nokia's AI Business Soars 126%, Data Center Boom Is Becoming a Big Profit Story",
-      "Nokia Q3 profit rises on AI-driven network demand, outlook unchanged",
-      "NOK Stock Heads For A Green Week After A 10% Jump In Q3 Sales As AI And Cloud Demand Drives Growth"
+      "Most Active Stocks in the 2026-10-28 US Session",
+      "TrustScale Acquires RagMetrics AI Configuration and Evaluation Systems, Expanding Its Portfolio for Safer and Better AI",
+      "UPDATE: On October 22, 2026 Nokia Reported Q3 Adj. EPS $0.10 Beats $0.08 Estimate, Sales $5.931B Beat $5.800B Estimate"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "SFTBY",
-    "researched_at": "2026-10-22T15:58:11+00:00",
+    "researched_at": "2026-10-29T17:29:52+00:00",
     "name": "SoftBank Group Corp",
     "industry": "Telecommunication",
-    "market_cap": 26384707.311523,
+    "market_cap": 26727217.575195,
     "metrics": {
-      "P/E": 5.28,
+      "P/E": 5.18,
       "net margin %": 61.61,
       "rev growth %": 8.63,
       "ROE %": 29.88,
       "current ratio": 0.68
     },
     "news": [
-      "Asian stocks rally as tech firms enjoy bounce ahead of key earnings",
-      "OpenAI Is Racing To Raise $30 Billion Before Anthropic's IPO. Its Valuation Could Cross $1.4 Trillion.",
-      "Anthropic Will Be The Last AI IPO Of 2026, As Industry Collapses"
+      "Asian shares and U.S. futures are mixed after Google parent Alphabet's earnings disappoint",
+      "Bedrock Robotics digs up $600M in new funding",
+      "Nvidia May Actually Raise Its 70% Growth Guide In November"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
