@@ -136,7 +136,42 @@
       },
       "placed_by": "claude-live-bridge",
       "updated_ts": "2026-10-15T14:42:59+00:00"
+    },
+    {
+      "ts": "2026-10-29T14:54:24+00:00",
+      "date": "2026-10-29",
+      "ticker": "MSFT",
+      "side": "buy",
+      "notional_usd": 50.2,
+      "order_type": "market",
+      "order_id": "6ae35e15-28f0-49d9-a2a9-c52a2bea6613",
+      "ref_id": "fbaba5e2-67f9-54ec-aa93-25fb27672618",
+      "state": "filled",
+      "avg_price": 521.1199,
+      "quantity": 0.09633,
+      "account_last4": "2732",
+      "proposal_date": "2026-10-29",
+      "feeds": [
+        "corporate",
+        "earnings",
+        "insider",
+        "institutional"
+      ],
+      "stocknews": {
+        "xii_score": 90,
+        "verdict": "strong-buy",
+        "h0": 55,
+        "durability": 21,
+        "conviction": "medium",
+        "fatal_flags": 0,
+        "cycle_exposure": "ai-capex-mid-s-curve",
+        "sovereign_exposure": null,
+        "decision": "hold",
+        "found": true
+      },
+      "placed_by": "claude-live-bridge",
+      "updated_ts": "2026-10-29T14:56:25+00:00"
     }
   ],
-  "last_update": "2026-10-26T14:42:26+00:00"
+  "last_update": "2026-10-29T14:56:25+00:00"
 }
