@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SNOW",
-    "researched_at": "2026-10-23T15:50:04+00:00",
-    "name": "Snowflake Inc",
+    "researched_at": "2026-10-30T17:05:39+00:00",
+    "name": "Snowflake Inc.",
     "industry": "Technology",
-    "market_cap": 110765.081153,
+    "market_cap": 116519.25322402579,
     "metrics": {
       "net margin %": -20.07,
       "rev growth %": 32.04,
@@ -12,9 +12,9 @@
       "current ratio": 0.94
     },
     "news": [
-      "Dan Ives Says Palantir and Snowflake Are Nearing the 'End of That Gap' Between AI CapEx and True Monetization, Warns Wall Street Is Underestimating Tech Earnings by Up to 25%",
-      "Is Snowflake (SNOW) Fully Valued After Its Latest AI Partnerships?",
-      "How New AI Partnerships At Snowflake (SNOW) Have Changed Its Investment Story"
+      "AI Stocks Are Splitting: Compute and Data Software Lead While Alphabet Stumbles",
+      "ServiceNow Stock Is Worst in S&P 500 After a Key Revenue Measure Fell Short",
+      "What Did Snowflake Stock Investors Miss Before The Run?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

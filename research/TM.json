@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "TM",
-    "researched_at": "2026-10-23T15:50:11+00:00",
+    "researched_at": "2026-10-30T17:05:49+00:00",
     "name": "Toyota Motor Corp",
     "industry": "Automobiles",
-    "market_cap": 36520216.007812,
+    "market_cap": 36129435.486328,
     "metrics": {
-      "P/E": 8.17,
+      "P/E": 8.06,
       "net margin %": 8.63,
       "rev growth %": 7.23,
       "ROE %": 11.67,
       "current ratio": 1.17
     },
     "news": [
-      "EV Next-Generation Solid-State Battery Market Forecasts Growth from $346.7 Million (2025) to $16.4 Billion by 2035, Profiling Toyota, CATL, QuantumScape, Samsung SDI & Other Key Players",
-      "How to Approach Genuine Parts Stock Post its Q3 Earnings Release",
-      "Ford Plans to Overtake Toyota in a Critical Business. Here's Why It Matters."
+      "Holley Performance Brands Acquires SXTH Element, Expanding Modern Truck & Off-Road Portfolio in Toyota Truck and SUV Performance",
+      "How Investors May Respond To Toyota (TSE:7203) Hybrid Sales Growth",
+      "Canada Used Car Market - Size, Share, Industry Trends, and Growth Forecasts, 2026-2031 | Market to Reach USD 26.19 Billion as CPO, Digital Sales, and SUVs Drive Growth"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

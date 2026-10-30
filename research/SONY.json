@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SONY",
-    "researched_at": "2026-10-23T15:50:06+00:00",
+    "researched_at": "2026-10-30T17:05:41+00:00",
     "name": "Sony Group Corp",
     "industry": "Consumer products",
-    "market_cap": 24182102.994629,
+    "market_cap": 23447336.816895,
     "metrics": {
       "net margin %": -1.75,
       "rev growth %": 6.54,
@@ -12,9 +12,9 @@
       "current ratio": 1.25
     },
     "news": [
-      "Wall Street Analysts Look Bullish on Sony (SONY): Should You Buy?",
-      "Here's How Much a $1000 Investment in Sony Made 10 Years Ago Would Be Worth Today",
-      "Sony: The Hardware Cycle Is Hiding A Better Earnings Mix"
+      "Advanced Micro Devices vs. Dell Technologies: Which Technology Stock Is a Better Buy in 2026?",
+      "If You Invested $100 In Sony Group Stock 15 Years Ago, You Would Have This Much Today",
+      "Sony (SONY) Stock Declines While Market Improves: Some Information for Investors"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "TCEHY",
-    "researched_at": "2026-10-23T15:50:10+00:00",
+    "researched_at": "2026-10-30T17:05:47+00:00",
     "name": "Tencent Holdings Ltd",
     "industry": "Media",
-    "market_cap": 3445387.72157,
+    "market_cap": 3492239.338976,
     "metrics": {
-      "P/E": 12.82,
+      "P/E": 12.59,
       "net margin %": 29.87,
       "rev growth %": 11.97,
       "ROE %": 20.52,
       "current ratio": 1.29
     },
     "news": [
-      "Nvidia\u2019s China Market Has Effectively Vanished: \u2018Every Restriction Also Gives Chinese Suppliers a Larger Captive Market,\u2019 Says Shay Boloor",
-      "Oracle Is Down More Than a Third in 2026 Even as TD Cowen Flags Possible Nvidia Support. Here\u2019s Where the Stock Could Go by 2031",
-      "Nvidia has a $35 billion problem most companies would want"
+      "Tencent Cloud Accelerates International Growth, Advances Enterprise AI and Expands Global Partnerships",
+      "Tencent Cloud Chief Says AI Demand Justifies Capex",
+      "Bilibili Inc. Announces Results of Extraordinary General Meeting"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

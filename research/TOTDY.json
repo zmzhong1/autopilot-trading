@@ -1,12 +1,12 @@
 {
   "snapshot": {
     "ticker": "TOTDY",
-    "researched_at": "2026-10-23T15:50:13+00:00",
+    "researched_at": "2026-10-30T17:05:51+00:00",
     "name": "TOTO Ltd",
     "industry": "Building",
-    "market_cap": 903964.443405,
+    "market_cap": 916676.195114,
     "metrics": {
-      "P/E": 22.32,
+      "P/E": 22.44,
       "net margin %": 5.52,
       "rev growth %": 2.01,
       "ROE %": 7.95,

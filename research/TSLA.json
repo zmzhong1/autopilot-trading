@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "TSLA",
-    "researched_at": "2026-10-23T15:50:15+00:00",
+    "researched_at": "2026-10-30T17:05:53+00:00",
     "name": "Tesla Inc",
     "industry": "Automobiles",
-    "market_cap": 1480613.6344580003,
+    "market_cap": 1594147.3290569098,
     "metrics": {
-      "P/E": 459.82,
+      "P/E": 496.21,
       "net margin %": 3.11,
       "rev growth %": 8.3,
       "ROE %": 3.76,
       "current ratio": 1.74
     },
     "news": [
-      "CFOs On the Move: Week ending Oct. 23",
-      "EV Battery Reuse Market Size, Share, Growth Opportunities, and Forecast, 2026-2035 | Old EV Batteries Get a Second Life and a Shot at a $32.9 Billion Market",
-      "Buy pullback in this chip stock, Mizuho says"
+      "Rivian\u2019s R2 Could Fill A \u2018Relatively Unique Position And Product Void\u2019 Between Tesla And Ford, Says Jefferies \u2013 Sees 45% Upside Potential",
+      "Most Magnificent Seven Stocks Are in Correction or Bear Market Territory",
+      "Tesla's Profits Took a Hit. Is It Building Something Worth the Cost?"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "thesis stale (review due 2026-10-28)"
+  ]
 }
