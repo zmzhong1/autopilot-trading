@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DIS",
-    "researched_at": "2026-10-26T17:32:33+00:00",
-    "name": "Walt Disney Co",
+    "researched_at": "2026-11-02T20:51:30+00:00",
+    "name": "The Walt Disney Company",
     "industry": "Media",
-    "market_cap": 194286.80410588847,
+    "market_cap": 191558.64,
     "metrics": {
-      "P/E": 22.59,
+      "P/E": 22.27,
       "net margin %": 8.7,
       "rev growth %": 4.58,
       "ROE %": 7.87,
       "current ratio": 0.71
     },
     "news": [
-      "Skydance Stock Is Risky. Here\u2019s What Could Power a Rally Anyway.",
-      "What Could Surprise Comcast Stock Investors On The Upside?",
-      "In 1985, He Was Forced Out of the Company He Founded. Months Later He Bet $10 Million On A Graphics Unit He Bought From George Lucas. By 2006, That Bet Was Worth Far More Than His Apple Stock"
+      "Utopai Studios Names Disney AI Strategy Leader Hans Ku as Chief Product Officer",
+      "Which Dates Could Move Disney Stock Most?",
+      "Comcast vs. Walt Disney: Which Entertainment Stock Is a Better Buy for 2027?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

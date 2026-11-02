@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "COST",
-    "researched_at": "2026-10-26T17:32:27+00:00",
+    "researched_at": "2026-11-02T20:51:24+00:00",
     "name": "Costco Wholesale Corp",
     "industry": "Retail",
-    "market_cap": 444600.532477853,
+    "market_cap": 448570.98,
     "metrics": {
-      "P/E": 48.19,
+      "P/E": 48.62,
       "net margin %": 3.04,
       "rev growth %": 10.14,
       "ROE %": 28.02,
       "current ratio": 1.06
     },
     "news": [
-      "Costco's AI Search Traffic Soars: Can It Fuel Online Sales?",
-      "Can Walmart's AI Strategy Unlock the Next Phase of Digital Growth?",
-      "If You Buy Costco With $5,000 at a 43% Discount From Its High, Here's What I Predict It Could Be Worth in 10 Years."
+      "SharkNinja Still Looks Sharp Heading Into Earnings",
+      "Nvidia and Nike Lead Biggest Wave Yet of Tokenized Stock Objections",
+      "Anthropic's long-term leadership in AI looks 'extremely strong': Fmr. Cisco CEO"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "analyst trend not upgrading vs buy-rated thesis"
-  ]
+  "flags": []
 }

@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "CAT",
-    "researched_at": "2026-10-26T17:32:22+00:00",
+    "researched_at": "2026-11-02T20:51:20+00:00",
     "name": "Caterpillar Inc",
     "industry": "Machinery",
-    "market_cap": 315796.6272763114,
+    "market_cap": 286262.54,
     "metrics": {
-      "P/E": 29.12,
-      "net margin %": 14.51,
-      "rev growth %": 18.36,
-      "ROE %": 54.2,
-      "current ratio": 1.37
+      "P/E": 24.2,
+      "net margin %": 15.21,
+      "rev growth %": 20.26,
+      "ROE %": 58.53,
+      "current ratio": 1.42
     },
     "news": [
-      "Caterpillar Set to Report Q3 Earnings: Buy, Sell or Hold the Stock?",
-      "Caterpillar (CAT) Q3 Earnings Preview: What You Should Know Beyond the Headline Estimates",
-      "US Equity Investors to Monitor Mag-7 Earnings, Fed's Monetary Policy Path, Inflation Data This Week Amid Faltering AI Trade"
+      "Caterpillar Stocks Move Lower With Target Cut Putting Its Margin Premium on Trial",
+      "What Could Caterpillar (CAT) Gain From This Dealer Acquisition?",
+      "CAT Stock Gets Price Target Cuts \u2013 Analyst Flags \u201850% Premium\u2019 To Peers"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }

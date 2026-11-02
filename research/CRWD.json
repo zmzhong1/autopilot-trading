@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "CRWD",
-    "researched_at": "2026-10-26T17:32:29+00:00",
-    "name": "CrowdStrike Holdings Inc",
+    "researched_at": "2026-11-02T20:51:26+00:00",
+    "name": "CrowdStrike Holdings, Inc.",
     "industry": "Technology",
-    "market_cap": 263734.89286496624,
+    "market_cap": 256424,
     "metrics": {
-      "P/E": 4511.37,
+      "P/E": 4386.32,
       "net margin %": 1.08,
       "rev growth %": 24.3,
       "ROE %": 1.29,
       "current ratio": 1.57
     },
     "news": [
-      "Cybersecurity Earnings Put Rich Valuations and Uneven Margins to the Test",
-      "Axon Enterprise vs. CrowdStrike: Which Security Stock Is a Better Buy?",
-      "Is CrowdStrike Holdings (CRWD) Expensive As Nvidia Deal Fuels Its AI Security Story?"
+      "CrowdStrike Makes Three Major AI Security Moves",
+      "CrowdStrike Stocks Decline 2.7% With Upgrade Testing AI Security Revenue Conversion",
+      "CrowdStrike Is Upgraded After Tech Selloff: \u2018You Ain\u2019t Seen Nothing Yet\u2019"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

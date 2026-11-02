@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "COIN",
-    "researched_at": "2026-10-26T17:32:25+00:00",
-    "name": "Coinbase Global Inc",
+    "researched_at": "2026-11-02T20:51:22+00:00",
+    "name": "Coinbase Global, Inc.",
     "industry": "Financial Services",
-    "market_cap": 43387.99465,
+    "market_cap": 38004.14,
     "metrics": {
       "net margin %": -15.72,
       "rev growth %": -10.35,
@@ -12,12 +12,14 @@
       "current ratio": 2.42
     },
     "news": [
-      "Ethereum News: BitMine Just Bought 10,452 ETH and Now Owns 4.95% of All Ethereum",
-      "Strategy Sinks 2% as It Pauses Bitcoin Buying Amid \u201cRisk Off\u201d Crypto Slide",
-      "XRP News: Ripple Now Lets Companies Earn Returns on RLUSD Around the Clock. What Role Does XRP Play?"
+      "Coinbase CEO could sell 8.2 million shares",
+      "New Jersey Ends Coinbase Staking Ban After 3 Years: Which States Are Next?",
+      "Bitcoin Bounce Fades After Binance Hack; Coinbase Target Slashed"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }
