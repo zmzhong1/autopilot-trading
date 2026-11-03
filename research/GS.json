@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "GS",
-    "researched_at": "2026-10-27T16:47:43+00:00",
+    "researched_at": "2026-11-03T18:34:40+00:00",
     "name": "The Goldman Sachs Group, Inc.",
     "industry": "Financial Services",
-    "market_cap": 260097.6014134988,
+    "market_cap": 261681.567568,
     "metrics": {
-      "P/E": 11.63,
+      "P/E": 11.8,
       "net margin %": 15.77,
       "rev growth %": 10.5,
       "ROE %": 17.9,
       "current ratio": 0.3
     },
     "news": [
-      "Can AI Adoption Sustain Morgan Stanley's Wealth Management Growth?",
-      "Goldman Sachs, Houlihan Lokey top consumer M&A charts in Q1\u2013Q3 \u2013 data",
-      "Stablecoin Firm RedotPay To Hold IPO By Year\u2019s End: Reports"
+      "Coinbase Rebounds 9% as Goldman Calls It \u201cBest-Positioned\u201d for the Binance Exodus",
+      "Goldman\u2019s Molavi Says 60% of S&P 500 Is in Bear Market Territory",
+      "Billionaires Are Wealthier Than Ever. Why Many Don\u2019t Have the Cash to Pay New Taxes."
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "analyst trend not upgrading vs buy-rated thesis"
-  ]
+  "flags": []
 }

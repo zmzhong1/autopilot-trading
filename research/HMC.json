@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "HMC",
-    "researched_at": "2026-10-27T16:47:45+00:00",
+    "researched_at": "2026-11-03T18:34:43+00:00",
     "name": "Honda Motor Co Ltd",
     "industry": "Automobiles",
-    "market_cap": 6987129.967041,
+    "market_cap": 7002700.173096,
     "metrics": {
       "net margin %": -0.75,
       "rev growth %": 4.13,
@@ -12,12 +12,14 @@
       "current ratio": 1.29
     },
     "news": [
-      "Gentex Stock After Q3 Earnings: Buy, Hold or Sell the Stock?",
-      "3 Foreign Auto Stocks to Buy as Hybrids and EVs Gain Momentum",
-      "Take the Zacks Approach to Beat the Markets: Honda Motor, Accenture, CACI in Focus"
+      "'Honda Weighs Restarting EU Car Output as New Rules Take Shape' - Bloomberg",
+      "Micware Expands North American Presence with Relocation of U.S. Office in Dublin, Ohio",
+      "Harley-Davidson Stock After Q3: Should You Buy, Hold or Sell?"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }
