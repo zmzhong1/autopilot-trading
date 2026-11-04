@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "MS",
-    "researched_at": "2026-10-28T17:15:42+00:00",
+    "researched_at": "2026-11-04T18:45:39+00:00",
     "name": "Morgan Stanley",
     "industry": "Financial Services",
-    "market_cap": 296774.2108736552,
+    "market_cap": 302271.1811043294,
     "metrics": {
-      "P/E": 14.32,
+      "P/E": 14.63,
       "net margin %": 15.63,
       "rev growth %": 12.03,
       "ROE %": 17.83,
       "current ratio": 0.35
     },
     "news": [
-      "How Wall Street\u2019s $30 Trillion Tokenization Push Will Reshape Investing",
-      "Block Sinks 3% as Morgan Stanley Downgrade Warns \u201cBullish Expectations\u201d Raise Risk Ahead of Q3",
-      "Wes Moss Says Never Give an AI Agent Access to Your Money. Here\u2019s Why"
+      "Wall Street\u2019s Plumbing Goes Onchain as Morgan Stanley Tokenizes Securities",
+      "Advanced Micro Devices 2027 Server CPU Growth Seen Reaching 100%, Morgan Stanley Says",
+      "Morgan Stanley Tokenizes U.S. Equities"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }

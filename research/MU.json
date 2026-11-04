@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "MU",
-    "researched_at": "2026-10-28T17:15:47+00:00",
+    "researched_at": "2026-11-04T18:45:46+00:00",
     "name": "Micron Technology, Inc.",
     "industry": "Semiconductors",
-    "market_cap": 1099771.664819658,
+    "market_cap": 914353.9902212779,
     "metrics": {
-      "P/E": 12.36,
+      "P/E": 10.82,
       "net margin %": 63.8,
       "rev growth %": 256.33,
       "ROE %": 91.77,
       "current ratio": 3.31
     },
     "news": [
-      "Cramer: Micron \u201cShould Be the Biggest Winner\u201d as SK Hynix Predicts Memory Shortage Through 2030",
-      "Stock Market Today: Dow Gains Meekly As Alphabet Rises Ahead Of Earnings (Live Coverage)",
-      "Top 5 AI Stocks in Billionaires Ray Dalio and Philippe Laffont\u2019s Portfolios"
+      "Apple\u2019s Pain Could Be Micron\u2019s Gain as Memory Prices Surge",
+      "Micron Leads Three AI Memory Stocks With Major Upside Potential",
+      "Got $5,000? Buy These 2 Growth Stocks Powering the AI Memory Boom (Hint: Micron Isn't One of Them)"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "analyst trend not upgrading vs buy-rated thesis"
+  ]
 }

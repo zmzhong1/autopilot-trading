@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "MP",
-    "researched_at": "2026-10-28T17:15:40+00:00",
+    "researched_at": "2026-11-04T18:45:36+00:00",
     "name": "MP Materials Corp.",
     "industry": "Metals & Mining",
-    "market_cap": 7202.428233008075,
+    "market_cap": 6498.909633643695,
     "metrics": {
       "net margin %": -15.21,
       "rev growth %": 64.66,
@@ -12,9 +12,9 @@
       "current ratio": 9.51
     },
     "news": [
-      "Critical Metals Drops 7% as European Lithium Deal Sets Up New Share Issuance; United States Antimony and USA Rare Earth Decline 3%, MP Materials Eases",
-      "Liz Cheney Challenges Trump\u2019s Anti-Socialism Stance Over Taxpayer-Funded Stakes in Private Companies: 'A Level That We Haven't Seen Before\u201d",
-      "MP Materials: Incoming Earnings And Policy Risk Make It A Sell"
+      "Ivanhoe Mines Ltd. (IVPAF) Q3 Earnings and Revenues Lag Estimates",
+      "MP Materials Corp. (MP) Presents at 50th Annual Automotive Symposium Transcript",
+      "Should You Buy, Sell or Hold MP Stock Before Q3 Earnings Release?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

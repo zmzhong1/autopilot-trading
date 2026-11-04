@@ -1,26 +1,27 @@
 {
   "snapshot": {
     "ticker": "NEM",
-    "researched_at": "2026-10-28T17:15:49+00:00",
+    "researched_at": "2026-11-04T18:45:49+00:00",
     "name": "Newmont Corporation",
     "industry": "Metals & Mining",
-    "market_cap": 116119.45170749146,
+    "market_cap": 121481.69082112034,
     "metrics": {
-      "P/E": 12.65,
+      "P/E": 12.07,
       "net margin %": 34.73,
       "rev growth %": 23.73,
       "ROE %": 26.45,
       "current ratio": 2.45
     },
     "news": [
-      "V Ten Metals Provides Update on Its Tanami Property, Located in NT, Australia",
-      "Cyclicals Lead Sectors In Wednesday Trading As Real Estate Trails",
-      "Noble Q3 Earnings Call Highlights"
+      "Can Newmont's Strong Free Cash Flow Momentum Carry Into Q4?",
+      "S&P 500 Premarket Movers for Nov. 4",
+      "Gold Mining Shares Rally as Democratic Midterm Victory Weakens US Dollar and Lifts Bullion Prices"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-10-23)"
+    "thesis stale (review due 2026-10-23)",
+    "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

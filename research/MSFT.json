@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MSFT",
-    "researched_at": "2026-10-28T17:15:44+00:00",
+    "researched_at": "2026-11-04T18:45:41+00:00",
     "name": "Microsoft Corporation",
     "industry": "Technology",
-    "market_cap": 3917291.4546496687,
+    "market_cap": 4126921.769982726,
     "metrics": {
-      "P/E": 29.51,
-      "net margin %": 40.31,
-      "rev growth %": 17.79,
-      "ROE %": 33.22,
-      "current ratio": 1.23
+      "P/E": 27.13,
+      "net margin %": 41.17,
+      "rev growth %": 17.91,
+      "ROE %": 33.21,
+      "current ratio": 1.22
     },
     "news": [
-      "Top Midday Stories: GE Vernova to Acquire Trench Group for $9 Billion; Wendy's Receives $1.4 Billion Takeover Offer From Trian-Led Group",
-      "Apple Is at a Record Going Into Earnings. Wall Street\u2019s Target Is Below It",
-      "Microsoft results to test whether AI investment is paying off"
+      "AIMG\u00ae Sizes AI Governance Platforms Market at $12.5 Billion by 2030; Microsoft, Databricks and Salesforce Top AI LeaderMap\u00ae",
+      "Alphabet\u2019s Asymmetry Is All You Need To Know About to Hit \u2018Buy\u2019",
+      "U.S. Stocks Jump After Democrats Sweep Congress"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
