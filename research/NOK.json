@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "NOK",
-    "researched_at": "2026-10-29T17:29:38+00:00",
+    "researched_at": "2026-11-05T18:53:56+00:00",
     "name": "Nokia Oyj",
     "industry": "Communications",
-    "market_cap": 46471.178106,
+    "market_cap": 41887.440637,
     "metrics": {
-      "P/E": 58.41,
+      "P/E": 55.56,
       "net margin %": 3.78,
       "rev growth %": 4.82,
       "ROE %": 3.68,
       "current ratio": 1.46
     },
     "news": [
-      "Most Active Stocks in the 2026-10-28 US Session",
-      "TrustScale Acquires RagMetrics AI Configuration and Evaluation Systems, Expanding Its Portfolio for Safer and Better AI",
-      "UPDATE: On October 22, 2026 Nokia Reported Q3 Adj. EPS $0.10 Beats $0.08 Estimate, Sales $5.931B Beat $5.800B Estimate"
+      "Inseego Q3 Earnings Call Highlights",
+      "Inseego Reports Third Quarter 2026 Financial Results",
+      "Can ASTS' Handoff Test With AT&T Strengthen Its Growth Prospects?"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "thesis stale (review due 2026-10-29)"
+  ]
 }

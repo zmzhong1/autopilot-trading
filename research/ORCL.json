@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "ORCL",
-    "researched_at": "2026-10-29T17:29:44+00:00",
+    "researched_at": "2026-11-05T18:54:01+00:00",
     "name": "Oracle Corporation",
     "industry": "Technology",
-    "market_cap": 437050.793278,
+    "market_cap": 374126.875822,
     "metrics": {
-      "P/E": 20.76,
+      "P/E": 19.77,
       "net margin %": 26.36,
       "rev growth %": 21.62,
       "ROE %": 42.58,
       "current ratio": 1.17
     },
     "news": [
-      "Microsoft's AI Bet Pays Off",
-      "Configuration Management Systems - Global Strategic Business Report: Capitalize on 14.8% CAGR to US$9.8 Billion by 2032 as AWS, Microsoft, IBM, Oracle, and ServiceNow Disrupt IT Operations",
-      "IT Operations and Service Management (ITOSM) - Global Strategic Business Report: Secure Share of a $40.6B Market by 2030 as ServiceNow, IBM, Oracle and BMC Software Accelerate AI Automation"
+      "Palantir and CrowdStrike stocks tumble as Wall Street dumps software's AI winners",
+      "Big Tech's massive AI spending is causing another problem for investors",
+      "Digital Transformation in BFSI - Global Strategic Business Report: Secure Your Share of US$220.2 Billion by 2030 as Accenture, AWS, IBM, Microsoft, and Oracle Accelerate AI-Led Disruption"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

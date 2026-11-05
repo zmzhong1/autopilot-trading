@@ -1,27 +1,28 @@
 {
   "snapshot": {
     "ticker": "NVDA",
-    "researched_at": "2026-10-29T17:29:41+00:00",
+    "researched_at": "2026-11-05T18:53:58+00:00",
     "name": "NVIDIA Corporation",
     "industry": "Semiconductors",
-    "market_cap": 5190658.117675999,
+    "market_cap": 4823133.117676,
     "metrics": {
-      "P/E": 27.36,
+      "P/E": 25.01,
       "net margin %": 63.66,
       "rev growth %": 83.38,
       "ROE %": 110.11,
       "current ratio": 4.59
     },
     "news": [
-      "Should You Buy MP Materials Stock at $38?",
-      "Cohere Announces Series E Fundraise Targeting CAD $7 Billion to Meet Surging Global Demand for Secure, Sovereign AI",
-      "The Ultimate Growth Stock to Buy With $1,000 Right Now"
+      "Why Arm Holdings Stock Is Crashing Today",
+      "2 Growth Stocks to Buy in November Without Any Hesitation",
+      "The Stocks Making Noise-And the Ones That Actually Matter"
     ],
-    "analyst_upgrade": true,
+    "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
     "thesis stale (review due 2026-10-28)",
+    "analyst trend not upgrading vs buy-rated thesis",
     "recent earnings did not beat, despite high H-0"
   ]
 }

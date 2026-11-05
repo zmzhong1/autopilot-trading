@@ -1,27 +1,26 @@
 {
   "snapshot": {
     "ticker": "PLTR",
-    "researched_at": "2026-10-29T17:29:49+00:00",
+    "researched_at": "2026-11-05T18:54:05+00:00",
     "name": "Palantir Technologies Inc.",
     "industry": "Technology",
-    "market_cap": 472945.895355,
+    "market_cap": 413710.68288,
     "metrics": {
-      "P/E": 156.78,
-      "net margin %": 49.0,
-      "rev growth %": 78.92,
-      "ROE %": 37.47,
-      "current ratio": 7.23
+      "P/E": 112.47,
+      "net margin %": 50.34,
+      "rev growth %": 87.06,
+      "ROE %": 39.84,
+      "current ratio": 7.1
     },
     "news": [
-      "JPMorgan starts Palantir at Overweight, calls it a disruptive AI leader",
-      "Alphabet downgraded, eBay upgraded: Wall Street's top analyst calls",
-      "What Did Snowflake Stock Investors Miss Before The Run?"
+      "Palantir and CrowdStrike stocks tumble as Wall Street dumps software's AI winners",
+      "The Stocks Making Noise-And the Ones That Actually Matter",
+      "Is Palantir Stock a Buy on the Dip as Revenue Continues to Surge?"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-10-28)",
-    "analyst trend not upgrading vs buy-rated thesis"
+    "thesis stale (review due 2026-10-28)"
   ]
 }

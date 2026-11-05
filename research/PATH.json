@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PATH",
-    "researched_at": "2026-10-29T17:29:47+00:00",
+    "researched_at": "2026-11-05T18:54:03+00:00",
     "name": "UiPath Inc",
     "industry": "Technology",
-    "market_cap": 7395.199039,
+    "market_cap": 7040.813507,
     "metrics": {
-      "P/E": 20.43,
+      "P/E": 19.45,
       "net margin %": 21.03,
       "rev growth %": 14.98,
       "ROE %": 18.42,
       "current ratio": 2.39
     },
     "news": [
-      "Can UiPath's Rising ARR Drive Sustained Growth for PATH Stock?",
-      "How Rare Is Tenable's Record Profit Margin?",
-      "PATH or APP: Which AI-driven Tech Stock Should You Bet on?"
+      "UiPath: AI Disruption Fears Are Overshadowing A Profitable Compounder",
+      "Is Most-Watched Stock UiPath, Inc. (PATH) Worth Betting on Now?",
+      "Optimus SBR Strengthens AI and Automation Capabilities with Acquisition of Greenlight Consulting"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
