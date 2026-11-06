@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "TSLA",
-    "researched_at": "2026-10-30T17:05:53+00:00",
+    "researched_at": "2026-11-06T18:15:08+00:00",
     "name": "Tesla Inc",
     "industry": "Automobiles",
-    "market_cap": 1594147.3290569098,
+    "market_cap": 1358523.425097668,
     "metrics": {
-      "P/E": 496.21,
+      "P/E": 427.71,
       "net margin %": 3.11,
       "rev growth %": 8.3,
       "ROE %": 3.76,
       "current ratio": 1.74
     },
     "news": [
-      "Rivian\u2019s R2 Could Fill A \u2018Relatively Unique Position And Product Void\u2019 Between Tesla And Ford, Says Jefferies \u2013 Sees 45% Upside Potential",
-      "Most Magnificent Seven Stocks Are in Correction or Bear Market Territory",
-      "Tesla's Profits Took a Hit. Is It Building Something Worth the Cost?"
+      "What Cybertruck winddown means for Tesla?",
+      "How much TSLA stock does Tesla CEO Elon Musk actually own?",
+      "Tesla Might be Giving Up On The Cybertruck"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

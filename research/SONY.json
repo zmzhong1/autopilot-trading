@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SONY",
-    "researched_at": "2026-10-30T17:05:41+00:00",
+    "researched_at": "2026-11-06T18:14:55+00:00",
     "name": "Sony Group Corp",
     "industry": "Consumer products",
-    "market_cap": 23447336.816895,
+    "market_cap": 23305124.008301,
     "metrics": {
       "net margin %": -1.75,
       "rev growth %": 6.54,
@@ -12,9 +12,9 @@
       "current ratio": 1.25
     },
     "news": [
-      "Advanced Micro Devices vs. Dell Technologies: Which Technology Stock Is a Better Buy in 2026?",
-      "If You Invested $100 In Sony Group Stock 15 Years Ago, You Would Have This Much Today",
-      "Sony (SONY) Stock Declines While Market Improves: Some Information for Investors"
+      "Sony Group Corporation Announces Status of Share Repurchase Program for October 2026",
+      "Sony's 45% profit surge hides a PlayStation problem",
+      "Sony Group (SONY) Q2 2026 Earnings Call Transcript"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

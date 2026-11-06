@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SNOW",
-    "researched_at": "2026-10-30T17:05:39+00:00",
+    "researched_at": "2026-11-06T18:14:53+00:00",
     "name": "Snowflake Inc.",
     "industry": "Technology",
-    "market_cap": 116519.25322402579,
+    "market_cap": 95093.71070702423,
     "metrics": {
       "net margin %": -20.07,
       "rev growth %": 32.04,
@@ -12,14 +12,12 @@
       "current ratio": 0.94
     },
     "news": [
-      "AI Stocks Are Splitting: Compute and Data Software Lead While Alphabet Stumbles",
-      "ServiceNow Stock Is Worst in S&P 500 After a Key Revenue Measure Fell Short",
-      "What Did Snowflake Stock Investors Miss Before The Run?"
+      "eGain (EGAN) Q1 Earnings and Revenues Top Estimates",
+      "Palantir Just Had Its Best Growth Quarter Ever. Why Are Investors Selling?",
+      "Palantir Sinks 10% as Democratic Sweep Deepens AI and Defense Stock Sell-Off"
     ],
-    "analyst_upgrade": false,
+    "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "analyst trend not upgrading vs buy-rated thesis"
-  ]
+  "flags": []
 }
