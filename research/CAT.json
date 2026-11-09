@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "CAT",
-    "researched_at": "2026-11-02T20:51:20+00:00",
+    "researched_at": "2026-11-09T21:33:33+00:00",
     "name": "Caterpillar Inc",
     "industry": "Machinery",
-    "market_cap": 286262.54,
+    "market_cap": 256788.1649378443,
     "metrics": {
-      "P/E": 24.2,
+      "P/E": 21.61,
       "net margin %": 15.21,
       "rev growth %": 20.26,
       "ROE %": 58.53,
       "current ratio": 1.42
     },
     "news": [
-      "Caterpillar Stocks Move Lower With Target Cut Putting Its Margin Premium on Trial",
-      "What Could Caterpillar (CAT) Gain From This Dealer Acquisition?",
-      "CAT Stock Gets Price Target Cuts \u2013 Analyst Flags \u201850% Premium\u2019 To Peers"
+      "Caterpillar Stocks Jump 6.61% as Anthropic Takes Over $3.4 Billion Generator Order",
+      "Why Is Caterpillar (CAT) Pushing Ultra Low Methane Gas Compression?",
+      "Anthropic joins AI\u2019s natural gas frenzy, buys $3.4B worth of turbines"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

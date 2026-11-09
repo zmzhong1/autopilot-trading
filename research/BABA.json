@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "BABA",
-    "researched_at": "2026-11-02T20:51:18+00:00",
+    "researched_at": "2026-11-09T21:33:31+00:00",
     "name": "Alibaba Group Holding Limited",
     "industry": "Retail",
-    "market_cap": 243700.74173180692,
+    "market_cap": 255112.32711379192,
     "metrics": {
-      "P/E": 22.12,
+      "P/E": 23.22,
       "net margin %": 7.02,
       "rev growth %": 4.42,
       "ROE %": 7.01,
       "current ratio": 1.36
     },
     "news": [
-      "Apple Made $64.85 Billion in China in 9 Months Without AI. Now Alibaba\u2019s Qwen Is Coming to Siri",
-      "China factory activity contracts in October as economic recovery falters",
-      "PDD Holdings Rose as Deutsche Bank Upgraded It to Buy. Here\u2019s Where the Stock Could Go by 2030"
+      "Sea Limited: Shopee's Profit Test Is Coming",
+      "Chinese robotics stock surge on Apple robotics research",
+      "President Trump, In CBS 60 Minutes Interview Sunday, Said AI Risks Can Be Managed, But Doesn't Mind Guardrails"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

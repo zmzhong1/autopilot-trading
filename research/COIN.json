@@ -1,20 +1,20 @@
 {
   "snapshot": {
     "ticker": "COIN",
-    "researched_at": "2026-11-02T20:51:22+00:00",
+    "researched_at": "2026-11-09T21:33:35+00:00",
     "name": "Coinbase Global, Inc.",
     "industry": "Financial Services",
-    "market_cap": 38004.14,
+    "market_cap": 35679.59664,
     "metrics": {
-      "net margin %": -15.72,
-      "rev growth %": -10.35,
-      "ROE %": -6.89,
+      "net margin %": -12.46,
+      "rev growth %": -26.62,
+      "ROE %": -5.08,
       "current ratio": 2.42
     },
     "news": [
-      "Coinbase CEO could sell 8.2 million shares",
-      "New Jersey Ends Coinbase Staking Ban After 3 Years: Which States Are Next?",
-      "Bitcoin Bounce Fades After Binance Hack; Coinbase Target Slashed"
+      "Is Coinbase Global (COIN) A Bargain After Its Federal Trust Charter Approval?",
+      "What Coinbase's final federal trust charter actually changes",
+      "PNC Bank Lets Corporate Clients Accept USDC Payments in New Coinbase-Powered Pilot"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

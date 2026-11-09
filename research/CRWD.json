@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "CRWD",
-    "researched_at": "2026-11-02T20:51:26+00:00",
+    "researched_at": "2026-11-09T21:33:40+00:00",
     "name": "CrowdStrike Holdings, Inc.",
     "industry": "Technology",
-    "market_cap": 256424,
+    "market_cap": 222091.4612547,
     "metrics": {
-      "P/E": 4386.32,
+      "P/E": 3799.03,
       "net margin %": 1.08,
       "rev growth %": 24.3,
       "ROE %": 1.29,
       "current ratio": 1.57
     },
     "news": [
-      "CrowdStrike Makes Three Major AI Security Moves",
-      "CrowdStrike Stocks Decline 2.7% With Upgrade Testing AI Security Revenue Conversion",
-      "CrowdStrike Is Upgraded After Tech Selloff: \u2018You Ain\u2019t Seen Nothing Yet\u2019"
+      "CrowdStrike Holdings (CRWD) Could Be 13% Undervalued Following Saudi Cloud Launch",
+      "Bernstein Stays Cautious on CrowdStrike Despite AI Tailwind",
+      "Where To Buy The Dip"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

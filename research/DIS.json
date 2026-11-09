@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DIS",
-    "researched_at": "2026-11-02T20:51:30+00:00",
+    "researched_at": "2026-11-09T21:33:44+00:00",
     "name": "The Walt Disney Company",
     "industry": "Media",
-    "market_cap": 191558.64,
+    "market_cap": 201590.68919423706,
     "metrics": {
-      "P/E": 22.27,
+      "P/E": 23.44,
       "net margin %": 8.7,
       "rev growth %": 4.58,
       "ROE %": 7.87,
       "current ratio": 0.71
     },
     "news": [
-      "Utopai Studios Names Disney AI Strategy Leader Hans Ku as Chief Product Officer",
-      "Which Dates Could Move Disney Stock Most?",
-      "Comcast vs. Walt Disney: Which Entertainment Stock Is a Better Buy for 2027?"
+      "Disney Signs Adobe AI Deal Amid Reported Job Cut Plans",
+      "5 Best Value Stocks Legendary Investor Donald Yacktman Was Buying Before AI Crash",
+      "Adobe and The Walt Disney Company Announce Multi-Year Strategic Alliance to Support Disney Innovation with New AI-Powered Tools"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
