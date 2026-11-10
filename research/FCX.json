@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "FCX",
-    "researched_at": "2026-11-03T18:34:33+00:00",
+    "researched_at": "2026-11-10T18:45:11+00:00",
     "name": "Freeport-McMoRan Inc",
     "industry": "Metals & Mining",
-    "market_cap": 90426.020961,
+    "market_cap": 89439.565699,
     "metrics": {
-      "P/E": 31.86,
+      "P/E": 30.57,
       "net margin %": 11.38,
       "rev growth %": 0.19,
       "ROE %": 15.26,
       "current ratio": 2.02
     },
     "news": [
-      "JPMorgan Highlights Top Copper Stocks Amid U.S. Supply Push",
-      "Freeport-McMoRan: Grasberg Remains On Schedule, And I Remain At Buy",
-      "Freeport-McMoRan Stock: Analyst Estimates & Ratings"
+      "Freeport-McMoRan, State Street, Deckers Outdoor And More On CNBC\u2019s \u2018Final Trades\u2019",
+      "Does Freeport (FCX) Still Have Room to Run? Analysts Think So",
+      "S&P 500 Opening Gap Movers for Nov. 9, 2026"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

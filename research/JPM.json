@@ -1,20 +1,20 @@
 {
   "snapshot": {
     "ticker": "JPM",
-    "researched_at": "2026-11-03T18:34:49+00:00",
+    "researched_at": "2026-11-10T18:45:23+00:00",
     "name": "JPMorgan Chase & Co.",
     "industry": "Banking",
-    "market_cap": 905325.0473100002,
+    "market_cap": 908430.902857,
     "metrics": {
-      "P/E": 13.74,
+      "P/E": 13.65,
       "net margin %": 33.26,
       "rev growth %": 108.98,
       "ROE %": 17.91
     },
     "news": [
-      "Savings Tech Platform: Vestwell Founder & CEO Aaron Schumm, Live from NYSE",
-      "CFTC Clears First Stock Perpetual Futures for Trading on US Exchanges",
-      "JPMorgan Highlights Top Copper Stocks Amid U.S. Supply Push"
+      "JPMorgan May Sell $2 Billion of Qualtrics Debt at About 85 Cents on the Dollar",
+      "JPMorgan reaffirms its top mid-cap pick in telecom",
+      "A $13 Billion Fund Dumps These 3 Stocks"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

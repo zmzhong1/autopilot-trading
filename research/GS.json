@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "GS",
-    "researched_at": "2026-11-03T18:34:40+00:00",
+    "researched_at": "2026-11-10T18:45:16+00:00",
     "name": "The Goldman Sachs Group, Inc.",
     "industry": "Financial Services",
-    "market_cap": 261681.567568,
+    "market_cap": 261385.195514,
     "metrics": {
-      "P/E": 11.8,
+      "P/E": 11.79,
       "net margin %": 15.77,
       "rev growth %": 10.5,
       "ROE %": 17.9,
       "current ratio": 0.3
     },
     "news": [
-      "Coinbase Rebounds 9% as Goldman Calls It \u201cBest-Positioned\u201d for the Binance Exodus",
-      "Goldman\u2019s Molavi Says 60% of S&P 500 Is in Bear Market Territory",
-      "Billionaires Are Wealthier Than Ever. Why Many Don\u2019t Have the Cash to Pay New Taxes."
+      "Market Chatter: Goldman, Citigroup Among Banks Committing $270 Million to Stablecoin Venture",
+      "Goldman, Citi join global banks in $270 million stablecoin venture - Bloomberg",
+      "JPMorgan May Sell $2 Billion of Qualtrics Debt at About 85 Cents on the Dollar"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "GOOGL",
-    "researched_at": "2026-11-03T18:34:37+00:00",
+    "researched_at": "2026-11-10T18:45:14+00:00",
     "name": "Alphabet Inc.",
     "industry": "Media",
-    "market_cap": 3429903.06,
+    "market_cap": 3542516.0999999996,
     "metrics": {
-      "P/E": 14.73,
+      "P/E": 15.16,
       "net margin %": 50.03,
       "rev growth %": 22.21,
       "ROE %": 42.62,
       "current ratio": 2.79
     },
     "news": [
-      "Elon Musk\u2019s Tesla and SpaceX Block Their Stock From OKX-ICE Tokenized Venue",
-      "Search Advertising \u201cWill Top as an Industry in Q1,\u201d Says Ex-Stability AI CEO. Alphabet Has the Most to Lose",
-      "Top VC Warns: \u201cDepreciation Is Going to Start Hitting\u201d Microsoft, Google and Meta. Here\u2019s Where Things Get Ugly"
+      "Advanced Micro Devices Stocks Rise 2.66% on $2.5 Billion Anthropic Stake Commitment",
+      "Dan Ives Says Wall Street Is Underestimating 2 Major Tech Stocks",
+      "Tesla Bull Predicts Democrats Will \u201cBlock Autonomy,\u201d a Bigger Risk Than Data Centers"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

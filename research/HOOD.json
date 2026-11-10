@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "HOOD",
-    "researched_at": "2026-11-03T18:34:46+00:00",
+    "researched_at": "2026-11-10T18:45:21+00:00",
     "name": "Robinhood Markets, Inc.",
     "industry": "Financial Services",
-    "market_cap": 75497.18191699998,
+    "market_cap": 75028.929497,
     "metrics": {
-      "P/E": 38.09,
+      "P/E": 37.82,
       "net margin %": 39.04,
       "rev growth %": 20.88,
       "ROE %": 20.92,
       "current ratio": 1.24
     },
     "news": [
-      "Coinbase Falls 4% as Morgan Stanley Downgrades, Says \u201cConfidence in the Earnings Recovery Has Deteriorated\u201d",
-      "Is Coinbase Successfully Reducing Its Dependence on Bitcoin Trading?",
-      "Coinbase Rebounds 9% as Goldman Calls It \u201cBest-Positioned\u201d for the Binance Exodus"
+      "Coinbase Falls 4%, Robinhood Slides 3% as Hot Inflation Data Drags Bitcoin Lower; Webull Declines 2%",
+      "Robinhood CFO on Anthropic\u2019s IPO: \u201cWe\u2019re Making Sure the Companies Know Retail Is Here\u201d After an 8% Drop",
+      "Q3 rundown: Robinhood (NASDAQ:HOOD) vs other financial technology stocks"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "thesis stale (review due 2026-11-03)"
+  ]
 }

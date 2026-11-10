@@ -1,20 +1,20 @@
 {
   "snapshot": {
     "ticker": "F",
-    "researched_at": "2026-11-03T18:34:29+00:00",
+    "researched_at": "2026-11-10T18:45:08+00:00",
     "name": "Ford Motor Co",
     "industry": "Automobiles",
-    "market_cap": 50316.406553,
+    "market_cap": 49995.08561,
     "metrics": {
-      "net margin %": -3.93,
-      "rev growth %": 1.47,
-      "ROE %": -18.9,
-      "current ratio": 1.09
+      "net margin %": -4.17,
+      "rev growth %": -1.38,
+      "ROE %": -21.35,
+      "current ratio": 1.08
     },
     "news": [
-      "Ford Outlook Lifted To Stable By S&P On Cost Efficiency, EV Plans After Q3 Profit Beat",
-      "GM vs Ford: how the two automakers stack up on quality, cash flow, and dividends",
-      "Should You Buy Ford Stock For Its Cash?"
+      "Last-Mile Delivery Vehicles Global Market Report 2026 | Capitalize on the $188.46B Industry by 2030 as Toyota, Volkswagen, Ford and Mercedes-Benz Accelerate Electric and Autonomous Fleets",
+      "How automakers are converting used car customers to buy new",
+      "Most-Active S&P 500 Stocks in Today's Session"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

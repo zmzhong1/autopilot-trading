@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "HMC",
-    "researched_at": "2026-11-03T18:34:43+00:00",
+    "researched_at": "2026-11-10T18:45:19+00:00",
     "name": "Honda Motor Co Ltd",
     "industry": "Automobiles",
-    "market_cap": 7002700.173096,
+    "market_cap": 7331620.776001,
     "metrics": {
       "net margin %": -0.75,
       "rev growth %": 4.13,
@@ -12,12 +12,12 @@
       "current ratio": 1.29
     },
     "news": [
-      "'Honda Weighs Restarting EU Car Output as New Rules Take Shape' - Bloomberg",
-      "Micware Expands North American Presence with Relocation of U.S. Office in Dublin, Ohio",
-      "Harley-Davidson Stock After Q3: Should You Buy, Hold or Sell?"
+      "Honda: Fiscal Q2 Earnings Snapshot",
+      "Honda Motor Co Raises FY2027 GAAP EPS Guidance from JPY 102.75 to JPY 128.44; Raises FY2027 Sales Revenue Guidance from JPY 24,150B to JPY 24,400B",
+      "Honda Recalls 635,808 Acura TLX, MDX, Pilot Vehicles Over Electric Power Steering Software That May Cause Loss Of Power Steering Assist"
     ],
     "analyst_upgrade": false,
-    "earnings_beat": false
+    "earnings_beat": true
   },
   "flags": [
     "analyst trend not upgrading vs buy-rated thesis"
