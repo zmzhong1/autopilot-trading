@@ -2188,11 +2188,22 @@
       "trade_type": "Buy",
       "ts": "2026-10-06T18:16:23+00:00",
       "tx_date": "2026-09-08"
+    },
+    {
+      "issuer": "Warner Bros Discover Inc WBD",
+      "kind": "congress",
+      "politician": "Nancy Pelosi",
+      "size_range": "$50,001 - $100,000",
+      "ticker": "WBD",
+      "trade_id": "c9838eddea8502526",
+      "trade_type": "Sell",
+      "ts": "2026-11-10T04:33:28+00:00",
+      "tx_date": "2026-10-07"
     }
   ],
   "consecutive_fetch_failures": 0,
   "first_run_done": true,
-  "last_run": "2026-11-09T22:14:02+00:00",
+  "last_run": "2026-11-10T04:33:26+00:00",
   "seen_trade_ids": [
     "10000064890",
     "10000064891",
@@ -2401,6 +2412,7 @@
     "c9539116de20bebee",
     "c96cf0ac543c1e31a",
     "c973a8baf3f0ef3c2",
+    "c9838eddea8502526",
     "c994acb4b406c5a55",
     "c9bd8fbc0bde0ab40",
     "c9e850e984959bcc9",
