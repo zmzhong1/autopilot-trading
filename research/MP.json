@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "MP",
-    "researched_at": "2026-11-04T18:45:36+00:00",
+    "researched_at": "2026-11-11T18:49:35+00:00",
     "name": "MP Materials Corp.",
     "industry": "Metals & Mining",
-    "market_cap": 6498.909633643695,
+    "market_cap": 6499.650363429404,
     "metrics": {
       "net margin %": -15.21,
       "rev growth %": 64.66,
@@ -12,12 +12,14 @@
       "current ratio": 9.51
     },
     "news": [
-      "Ivanhoe Mines Ltd. (IVPAF) Q3 Earnings and Revenues Lag Estimates",
-      "MP Materials Corp. (MP) Presents at 50th Annual Automotive Symposium Transcript",
-      "Should You Buy, Sell or Hold MP Stock Before Q3 Earnings Release?"
+      "MP Materials Clears GM Magnet Milestone, Targets Apple as Next Customer",
+      "USA Rare Earth Jumps 11% as It Rebounds From Post-Earnings Sell-Off; MP Materials Climbs 4%, United States Antimony Edges Higher",
+      "MP Materials gains following Freedom Broker upgrade to Buy with $51 price target"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "thesis stale (review due 2026-11-06)"
+  ]
 }

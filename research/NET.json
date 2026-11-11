@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "NET",
-    "researched_at": "2026-11-04T18:45:51+00:00",
+    "researched_at": "2026-11-11T18:49:46+00:00",
     "name": "Cloudflare, Inc.",
     "industry": "Technology",
-    "market_cap": 94866.75582097792,
+    "market_cap": 108839.34961568408,
     "metrics": {
       "net margin %": -8.21,
       "rev growth %": 33.53,
@@ -12,14 +12,15 @@
       "current ratio": 1.82
     },
     "news": [
-      "Cloudflare, MongoDB, Datadog, JFrog, and Elastic shares plummet, what you need to know",
-      "Astera Labs, Inc. (ALAB) Q3 Earnings and Revenues Beat Estimates",
-      "3 Cybersecurity Stocks To Watch After The Binance Crypto Theft"
+      "How Earnings Beat Will Impact Cloudflare Stock Investors",
+      "Cloudflare (NET) Beat On Growth And Guidance, Is It Fully Priced?",
+      "\u201cMissing Forest-for-the-Trees\u201d: Datadog Sinks 17% in a Week as Its Biggest AI Customer Cuts Back"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
+    "thesis stale (review due 2026-11-06)",
     "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

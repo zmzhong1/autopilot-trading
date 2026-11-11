@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NEM",
-    "researched_at": "2026-11-04T18:45:49+00:00",
+    "researched_at": "2026-11-11T18:49:44+00:00",
     "name": "Newmont Corporation",
     "industry": "Metals & Mining",
-    "market_cap": 121481.69082112034,
+    "market_cap": 124661.6243948907,
     "metrics": {
-      "P/E": 12.07,
+      "P/E": 13.49,
       "net margin %": 34.73,
       "rev growth %": 23.73,
       "ROE %": 26.45,
       "current ratio": 2.45
     },
     "news": [
-      "Can Newmont's Strong Free Cash Flow Momentum Carry Into Q4?",
-      "S&P 500 Premarket Movers for Nov. 4",
-      "Gold Mining Shares Rally as Democratic Midterm Victory Weakens US Dollar and Lifts Bullion Prices"
+      "These 5 Gold Mining Stocks Give You a Different Way to Own Gold",
+      "Will Higher Unit Costs Weigh on Newmont's Margins in Q4?",
+      "Gold mining stocks rise as bullion climbs after inflation-driven slide"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

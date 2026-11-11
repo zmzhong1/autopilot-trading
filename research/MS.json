@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MS",
-    "researched_at": "2026-11-04T18:45:39+00:00",
+    "researched_at": "2026-11-11T18:49:37+00:00",
     "name": "Morgan Stanley",
     "industry": "Financial Services",
-    "market_cap": 302271.1811043294,
+    "market_cap": 293164.5090511472,
     "metrics": {
-      "P/E": 14.63,
+      "P/E": 14.3,
       "net margin %": 15.63,
       "rev growth %": 12.03,
-      "ROE %": 17.83,
-      "current ratio": 0.35
+      "ROE %": 17.81,
+      "current ratio": 0.32
     },
     "news": [
-      "Wall Street\u2019s Plumbing Goes Onchain as Morgan Stanley Tokenizes Securities",
-      "Advanced Micro Devices 2027 Server CPU Growth Seen Reaching 100%, Morgan Stanley Says",
-      "Morgan Stanley Tokenizes U.S. Equities"
+      "Why Morgan Stanley still believes in Atlassian after the sell-off",
+      "72% Upside for NVIDIA? Morgan Stanley Thinks So, and Here\u2019s How",
+      "Why the iPhone Duo Could Kick Off a \u2018New Decade\u2019 for Apple"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

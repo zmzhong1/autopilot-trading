@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MU",
-    "researched_at": "2026-11-04T18:45:46+00:00",
+    "researched_at": "2026-11-11T18:49:42+00:00",
     "name": "Micron Technology, Inc.",
     "industry": "Semiconductors",
-    "market_cap": 914353.9902212779,
+    "market_cap": 820406.316759184,
     "metrics": {
-      "P/E": 10.82,
+      "P/E": 9.56,
       "net margin %": 63.8,
       "rev growth %": 256.33,
       "ROE %": 91.77,
       "current ratio": 3.31
     },
     "news": [
-      "Apple\u2019s Pain Could Be Micron\u2019s Gain as Memory Prices Surge",
-      "Micron Leads Three AI Memory Stocks With Major Upside Potential",
-      "Got $5,000? Buy These 2 Growth Stocks Powering the AI Memory Boom (Hint: Micron Isn't One of Them)"
+      "Update: US Equity Indexes Advance as CoreWeave's Quarterly Results Fire Up AI Trade",
+      "CoreWeave results lift AI infrastructure stocks as demand for computing power surges",
+      "TSMC Stocks Climb 3.37% After Record NT$586.9 Billion October Revenue"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MSFT",
-    "researched_at": "2026-11-04T18:45:41+00:00",
+    "researched_at": "2026-11-11T18:49:39+00:00",
     "name": "Microsoft Corporation",
     "industry": "Technology",
-    "market_cap": 4126921.769982726,
+    "market_cap": 3959349.7189562405,
     "metrics": {
-      "P/E": 27.13,
+      "P/E": 28.39,
       "net margin %": 41.17,
       "rev growth %": 17.91,
       "ROE %": 33.21,
       "current ratio": 1.22
     },
     "news": [
-      "AIMG\u00ae Sizes AI Governance Platforms Market at $12.5 Billion by 2030; Microsoft, Databricks and Salesforce Top AI LeaderMap\u00ae",
-      "Alphabet\u2019s Asymmetry Is All You Need To Know About to Hit \u2018Buy\u2019",
-      "U.S. Stocks Jump After Democrats Sweep Congress"
+      "This Number Tells Me The Microsoft Data Center Selloff Is Excessive, Prompting Me to Buy",
+      "Nvidia Vs. AMD: No, Neither is Getting Choked Out By Congress Come January",
+      "Microsoft Stock Suddenly Has an Anthropic Problem"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
