@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "ORCL",
-    "researched_at": "2026-11-05T18:54:01+00:00",
+    "researched_at": "2026-11-12T19:01:34+00:00",
     "name": "Oracle Corporation",
     "industry": "Technology",
-    "market_cap": 374126.875822,
+    "market_cap": 382321.2049999644,
     "metrics": {
-      "P/E": 19.77,
+      "P/E": 20.52,
       "net margin %": 26.36,
       "rev growth %": 21.62,
       "ROE %": 42.58,
       "current ratio": 1.17
     },
     "news": [
-      "Palantir and CrowdStrike stocks tumble as Wall Street dumps software's AI winners",
-      "Big Tech's massive AI spending is causing another problem for investors",
-      "Digital Transformation in BFSI - Global Strategic Business Report: Secure Your Share of US$220.2 Billion by 2030 as Accenture, AWS, IBM, Microsoft, and Oracle Accelerate AI-Led Disruption"
+      "Is There Hope for Oracle After Plummeting 35% This Year? \u2018Yes\u2019 Says One Analyst Predicting 210% Gains From Here",
+      "Michael Burry Warned About This AI Risk a Year Ago. Microsoft May Have Just Proved His Point",
+      "Oracle Commodity Holding Increases Private Placement to $150,000"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

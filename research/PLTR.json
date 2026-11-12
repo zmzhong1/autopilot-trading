@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PLTR",
-    "researched_at": "2026-11-05T18:54:05+00:00",
+    "researched_at": "2026-11-12T19:01:39+00:00",
     "name": "Palantir Technologies Inc.",
     "industry": "Technology",
-    "market_cap": 413710.68288,
+    "market_cap": 408614.588929956,
     "metrics": {
-      "P/E": 112.47,
+      "P/E": 113.58,
       "net margin %": 50.34,
       "rev growth %": 87.06,
       "ROE %": 39.84,
       "current ratio": 7.1
     },
     "news": [
-      "Palantir and CrowdStrike stocks tumble as Wall Street dumps software's AI winners",
-      "The Stocks Making Noise-And the Ones That Actually Matter",
-      "Is Palantir Stock a Buy on the Dip as Revenue Continues to Surge?"
+      "Palantir\u2019s Growth Story Could Be Just Getting Started",
+      "AI Governance for Boards, 6th Palm Beach CorpGov Forum",
+      "XYZ vs. PLTR: Which Stock Should Value Investors Buy Now?"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

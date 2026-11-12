@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "SFTBY",
-    "researched_at": "2026-11-05T18:54:07+00:00",
+    "researched_at": "2026-11-12T19:01:41+00:00",
     "name": "SoftBank Group Corp",
     "industry": "Telecommunication",
-    "market_cap": 24369605.260254,
+    "market_cap": 22006284.440918,
     "metrics": {
-      "P/E": 5.11,
+      "P/E": 4.49,
       "net margin %": 61.61,
       "rev growth %": 8.63,
       "ROE %": 29.88,
       "current ratio": 0.68
     },
     "news": [
-      "Shares advance after Wall Street rally following US midterm elections",
-      "What does the Democratic midterm sweep mean for Softbank\u2019s U.S. data center plans?",
-      "Softbank\u2019s $5.4 bln takeover of ABB robotics unit blocked by China- FT"
+      "Nvidia: Taking Profit After Jensen Huang's Resignation (Rating Downgrade)",
+      "SoftBank Group (TSE:9984) Lands Malaysia AI Deal, But Is The Valuation Opportunity Real",
+      "AI Stocks, Neoclouds Rebound From SoftBank Bump, Get CoreWeave Lift"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

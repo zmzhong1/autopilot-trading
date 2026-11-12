@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "NOK",
-    "researched_at": "2026-11-05T18:53:56+00:00",
+    "researched_at": "2026-11-12T19:01:29+00:00",
     "name": "Nokia Oyj",
     "industry": "Communications",
-    "market_cap": 41887.440637,
+    "market_cap": 43834.113688,
     "metrics": {
-      "P/E": 55.56,
+      "P/E": 54.03,
       "net margin %": 3.78,
       "rev growth %": 4.82,
       "ROE %": 3.68,
       "current ratio": 1.46
     },
     "news": [
-      "Inseego Q3 Earnings Call Highlights",
-      "Inseego Reports Third Quarter 2026 Financial Results",
-      "Can ASTS' Handoff Test With AT&T Strengthen Its Growth Prospects?"
+      "One New Zealand expands Nokia partnership to accelerate its autonomous networks transformation",
+      "Nokia vs. Verizon: Which Telecommunications Stock Is a Better Buy for 2027?",
+      "Nokia\u2019s Rebound Faces One Big Test Before the End of 2026"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

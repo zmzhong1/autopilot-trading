@@ -1,27 +1,26 @@
 {
   "snapshot": {
     "ticker": "NVDA",
-    "researched_at": "2026-11-05T18:53:58+00:00",
+    "researched_at": "2026-11-12T19:01:32+00:00",
     "name": "NVIDIA Corporation",
     "industry": "Semiconductors",
-    "market_cap": 4823133.117676,
+    "market_cap": 3974571.902255496,
     "metrics": {
-      "P/E": 25.01,
+      "P/E": 21.71,
       "net margin %": 63.66,
       "rev growth %": 83.38,
       "ROE %": 110.11,
       "current ratio": 4.59
     },
     "news": [
-      "Why Arm Holdings Stock Is Crashing Today",
-      "2 Growth Stocks to Buy in November Without Any Hesitation",
-      "The Stocks Making Noise-And the Ones That Actually Matter"
+      "Nvidia's CEO search has a 3- to 4-month clock: 'It's pretty urgent'",
+      "Prediction: This Will Be Intel\u2019s Stock Price After 1 Year (Hint: It Implies a Nice Jump)",
+      "Super Micro sinks as DOJ probes possible China smuggling links to Nvidia fallout"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-10-28)",
     "analyst trend not upgrading vs buy-rated thesis",
     "recent earnings did not beat, despite high H-0"
   ]

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PATH",
-    "researched_at": "2026-11-05T18:54:03+00:00",
+    "researched_at": "2026-11-12T19:01:37+00:00",
     "name": "UiPath Inc",
     "industry": "Technology",
-    "market_cap": 7040.813507,
+    "market_cap": 6759.389491184933,
     "metrics": {
-      "P/E": 19.45,
+      "P/E": 18.92,
       "net margin %": 21.03,
       "rev growth %": 14.98,
       "ROE %": 18.42,
       "current ratio": 2.39
     },
     "news": [
-      "UiPath: AI Disruption Fears Are Overshadowing A Profitable Compounder",
-      "Is Most-Watched Stock UiPath, Inc. (PATH) Worth Betting on Now?",
-      "Optimus SBR Strengthens AI and Automation Capabilities with Acquisition of Greenlight Consulting"
+      "Should Gemini Healthcare Tie Up Require Action From UiPath (PATH) Investors?",
+      "UiPath (PATH) Could Be 40% Undervalued Following Gemini For Healthcare Launch",
+      "UiPath (PATH) Stock Looks Cheap Based On Future Cash Flow"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
