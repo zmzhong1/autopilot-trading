@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "TCEHY",
-    "researched_at": "2026-11-06T18:14:59+00:00",
+    "researched_at": "2026-11-13T18:40:10+00:00",
     "name": "Tencent Holdings Ltd",
     "industry": "Media",
-    "market_cap": 3618378.012805,
+    "market_cap": 3593150.113063,
     "metrics": {
-      "P/E": 13.08,
+      "P/E": 12.97,
       "net margin %": 29.87,
       "rev growth %": 11.97,
       "ROE %": 20.52,
       "current ratio": 1.29
     },
     "news": [
-      "Oracle's $7 billion AI deal collapses over an unexpected risk",
-      "Oracle Just Walked Away From a $7 Billion Tencent AI Deal",
-      "Tencent Showcases Global Payment Connectivity and AI-Powered Finance at Hong Kong FinTech Week 2026"
+      "Why Jensen Huang\u2019s Exit Is Bad News for Alibaba and China",
+      "DBS\u2019s $290 Oracle Target Still Implies 126% Upside, Even After a Cut",
+      "Tencent Stocks Slip 2% as U.S. Remote Chip Rule Threatens AI Compute Access"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "STLD",
-    "researched_at": "2026-11-06T18:14:57+00:00",
+    "researched_at": "2026-11-13T18:40:07+00:00",
     "name": "Steel Dynamics Inc",
     "industry": "Metals & Mining",
-    "market_cap": 31557.347864508803,
+    "market_cap": 32944.680141987265,
     "metrics": {
-      "P/E": 17.43,
+      "P/E": 17.21,
       "net margin %": 8.82,
       "rev growth %": 26.0,
       "ROE %": 20.97,
       "current ratio": 3.14
     },
     "news": [
-      "What Just Hit Nucor Stock?",
-      "Where Did Steel Dynamics Stock's Gains Really Come From?",
-      "Can NUE's Strong Balance Sheet Power Bigger Shareholder Returns Ahead?"
+      "Nucor's Steel Mills Shipments Climb: Can Margins Hold in Q4?",
+      "Steel Dynamics (NASDAQ:STLD): Strong Growth With a Constructive Technical Setup",
+      "Is There Any Reason To Invest In Nucor Stock?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

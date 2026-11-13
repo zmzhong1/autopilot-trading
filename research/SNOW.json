@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SNOW",
-    "researched_at": "2026-11-06T18:14:53+00:00",
+    "researched_at": "2026-11-13T18:40:00+00:00",
     "name": "Snowflake Inc.",
     "industry": "Technology",
-    "market_cap": 95093.71070702423,
+    "market_cap": 100798.48863129765,
     "metrics": {
       "net margin %": -20.07,
       "rev growth %": 32.04,
@@ -12,9 +12,9 @@
       "current ratio": 0.94
     },
     "news": [
-      "eGain (EGAN) Q1 Earnings and Revenues Top Estimates",
-      "Palantir Just Had Its Best Growth Quarter Ever. Why Are Investors Selling?",
-      "Palantir Sinks 10% as Democratic Sweep Deepens AI and Defense Stock Sell-Off"
+      "3 AI Infrastructure Stocks To Watch As Nvidia Chip Curbs Reshape Cloud Spending",
+      "3 Top-Ranked AI Stocks Delivering Robust Results",
+      "Nebius Group N.V. Q3 2026 Earnings Call Summary"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

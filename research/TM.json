@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "TM",
-    "researched_at": "2026-11-06T18:15:02+00:00",
+    "researched_at": "2026-11-13T18:40:13+00:00",
     "name": "Toyota Motor Corp",
     "industry": "Automobiles",
-    "market_cap": 35857073.304688,
+    "market_cap": 40356970.21875,
     "metrics": {
-      "P/E": 8.0,
-      "net margin %": 8.63,
-      "rev growth %": 7.23,
-      "ROE %": 11.67,
-      "current ratio": 1.17
+      "P/E": 9.36,
+      "net margin %": 8.13,
+      "rev growth %": 7.35,
+      "ROE %": 11.22,
+      "current ratio": 1.19
     },
     "news": [
-      "Geely\u2019s i-HEV Intelligent Hybrid Technology Offers a New Direction for Gasoline-Powered Vehicles",
-      "ERI\u2019s John Shegerian Describes the Current State of Rare Earth Mineral Recovery at World Remanufacturing Summit in Tokyo",
-      "Toyota Motor (TM) Q2 2027 Earnings Call Transcript"
+      "Automated Guided Vehicle (AGV) Scheduling System Global Market Report 2026 | Capitalize on $39.61B by 2030 as Toyota, Daifuku, KUKA and Geekplus Accelerate Cloud Fleet Automation",
+      "Buy, Sell, or Hold? Thursday\u2019s Top Upgrades and Downgrades: Advanced Micro Devices, Alibaba Group, Cleveland-Cliffs, Conoco Phillips, Diamondback Energy, General Mills, NVIDIA, Toyota, Wendy\u2019s and More",
+      "Creative Realities Signs Exclusive Agreement with Toyota/Lexus Canada to Power the Dealership Digital Experience"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

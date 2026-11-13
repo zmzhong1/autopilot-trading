@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "TSLA",
-    "researched_at": "2026-11-06T18:15:08+00:00",
+    "researched_at": "2026-11-13T18:40:18+00:00",
     "name": "Tesla Inc",
     "industry": "Automobiles",
-    "market_cap": 1358523.425097668,
+    "market_cap": 1501178.4062791863,
     "metrics": {
-      "P/E": 427.71,
+      "P/E": 467.15,
       "net margin %": 3.11,
       "rev growth %": 8.3,
       "ROE %": 3.76,
       "current ratio": 1.74
     },
     "news": [
-      "What Cybertruck winddown means for Tesla?",
-      "How much TSLA stock does Tesla CEO Elon Musk actually own?",
-      "Tesla Might be Giving Up On The Cybertruck"
+      "Tesla Pulls $42K Model Y AWD From US Website Amid Musk\u2019s Pivot Toward Robotaxis",
+      "You Can Do Better Than Tesla: 3 Industrial Stocks With More Upside",
+      "Investors Just Got Big News on a SpaceX-Tesla Merger"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

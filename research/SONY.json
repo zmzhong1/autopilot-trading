@@ -1,20 +1,20 @@
 {
   "snapshot": {
     "ticker": "SONY",
-    "researched_at": "2026-11-06T18:14:55+00:00",
+    "researched_at": "2026-11-13T18:40:04+00:00",
     "name": "Sony Group Corp",
     "industry": "Consumer products",
-    "market_cap": 23305124.008301,
+    "market_cap": 25367209.73291,
     "metrics": {
-      "net margin %": -1.75,
-      "rev growth %": 6.54,
-      "ROE %": -2.74,
+      "net margin %": -1.03,
+      "rev growth %": 8.0,
+      "ROE %": -1.61,
       "current ratio": 1.25
     },
     "news": [
-      "Sony Group Corporation Announces Status of Share Repurchase Program for October 2026",
-      "Sony's 45% profit surge hides a PlayStation problem",
-      "Sony Group (SONY) Q2 2026 Earnings Call Transcript"
+      "Sony Group Corporation Repurchases 11,592,100 Shares for 45,604,126,353 Yen",
+      "Tracking Mario Gabelli's Gabelli Funds 13F Portfolio - Q3 2026 Update",
+      "Grand Theft Auto VI Makes Take-Two Stock Look Like a Steal"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
