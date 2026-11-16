@@ -1558,14 +1558,14 @@
       "ticker": "MSFT",
       "side": "buy",
       "size_pct": 10.0,
-      "entry_price": 523.88,
+      "entry_price": 520.1699,
       "feeds": [
         "corporate",
         "insider",
         "institutional"
       ],
       "feed_count": 3,
-      "status": "proposed",
+      "status": "live_filled",
       "stocknews": {
         "xii_score": 90,
         "verdict": "strong-buy",
@@ -1581,6 +1581,11 @@
       "portfolio": {
         "held": false,
         "checked": true
+      },
+      "live": {
+        "order_id": "6afb242a-574a-458a-97a1-a998f1780381",
+        "state": "filled",
+        "ts": "2026-11-16T15:41:37+00:00"
       }
     }
   ],
