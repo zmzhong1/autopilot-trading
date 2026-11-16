@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DELL",
-    "researched_at": "2026-11-09T21:33:42+00:00",
+    "researched_at": "2026-11-16T21:10:20+00:00",
     "name": "Dell Technologies Inc",
     "industry": "Technology",
-    "market_cap": 208883.5575043374,
+    "market_cap": 206442.04399568136,
     "metrics": {
-      "P/E": 18.36,
+      "P/E": 19.25,
       "net margin %": 7.53,
       "rev growth %": 49.03,
       "ROE %": 130.7,
       "current ratio": 0.96
     },
     "news": [
-      "DELL Rallies 130% in a Year: Can AI Momentum Fuel More Gains?",
-      "Dell and HPE Were AI Winners Until the Selloff. Can Earnings Put Them Back on Track?",
-      "The Zacks Analyst Blog Highlights Shell, Dell and Amphenol and Versus Systems"
+      "Dell and HPE Have an Opportunity Outside AI, Citi Says",
+      "Top Midday Decliners",
+      "5 Stocks to Buy as Investors Look Beyond NVIDIA"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

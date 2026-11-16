@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "BABA",
-    "researched_at": "2026-11-09T21:33:31+00:00",
+    "researched_at": "2026-11-16T21:10:05+00:00",
     "name": "Alibaba Group Holding Limited",
     "industry": "Retail",
-    "market_cap": 255112.32711379192,
+    "market_cap": 229626.46470255236,
     "metrics": {
-      "P/E": 23.22,
+      "P/E": 20.88,
       "net margin %": 7.02,
       "rev growth %": 4.42,
       "ROE %": 7.01,
       "current ratio": 1.36
     },
     "news": [
-      "Sea Limited: Shopee's Profit Test Is Coming",
-      "Chinese robotics stock surge on Apple robotics research",
-      "President Trump, In CBS 60 Minutes Interview Sunday, Said AI Risks Can Be Managed, But Doesn't Mind Guardrails"
+      "'US moves to tighten AI chip export rules' - Financial Times",
+      "Baidu Posts Sixth Straight Sales Drop After AI Drag Persists",
+      "BABA Stock Edges Lower Overnight: Alibaba Reportedly Launches Most-Advanced AI Model That Cuts Task Costs By 60%"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

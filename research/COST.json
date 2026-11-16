@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "COST",
-    "researched_at": "2026-11-09T21:33:37+00:00",
+    "researched_at": "2026-11-16T21:10:14+00:00",
     "name": "Costco Wholesale Corp",
     "industry": "Retail",
-    "market_cap": 466863.3275275277,
+    "market_cap": 491231.0053007651,
     "metrics": {
-      "P/E": 50.6,
+      "P/E": 53.13,
       "net margin %": 3.04,
       "rev growth %": 10.14,
       "ROE %": 28.02,
       "current ratio": 1.06
     },
     "news": [
-      "Amazon: Grocery & Alexa Deep Dive As Retail Margins Hit Records",
-      "Costco's Digital Sales Outpace Store Comps as Shopping Evolves",
-      "What Did Target Say Before Its Stock Took Off?"
+      "Is There A Risk Hiding In Walmart Stock's Latest Quarter?",
+      "Tyson, Starbucks Lead The S&P 500, Nasdaq 100 As Investors Play Defense",
+      "Costco Is Up Nearly 20% in a Year. Now Northcoast Research Says That\u2019s Enough"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

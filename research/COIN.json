@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "COIN",
-    "researched_at": "2026-11-09T21:33:35+00:00",
+    "researched_at": "2026-11-16T21:10:11+00:00",
     "name": "Coinbase Global, Inc.",
     "industry": "Financial Services",
-    "market_cap": 35679.59664,
+    "market_cap": 31440.725,
     "metrics": {
       "net margin %": -12.46,
       "rev growth %": -26.62,
@@ -12,9 +12,9 @@
       "current ratio": 2.42
     },
     "news": [
-      "Is Coinbase Global (COIN) A Bargain After Its Federal Trust Charter Approval?",
-      "What Coinbase's final federal trust charter actually changes",
-      "PNC Bank Lets Corporate Clients Accept USDC Payments in New Coinbase-Powered Pilot"
+      "Coinbase Stocks Fall 7.54% as Bitcoin Slides Toward $64,000 and Trading Volumes Shrink",
+      "Robinhood Stocks Fall 5.4% as Crypto Rout Pressures a Shrinking Revenue Line",
+      "Crypto Stocks Slide as Bitcoin Sinks and Strategy Leads the Retreat"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

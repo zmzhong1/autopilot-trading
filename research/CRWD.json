@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "CRWD",
-    "researched_at": "2026-11-09T21:33:40+00:00",
+    "researched_at": "2026-11-16T21:10:18+00:00",
     "name": "CrowdStrike Holdings, Inc.",
     "industry": "Technology",
-    "market_cap": 222091.4612547,
+    "market_cap": 224543.78574010744,
     "metrics": {
-      "P/E": 3799.03,
+      "P/E": 3969.1,
       "net margin %": 1.08,
       "rev growth %": 24.3,
       "ROE %": 1.29,
       "current ratio": 1.57
     },
     "news": [
-      "CrowdStrike Holdings (CRWD) Could Be 13% Undervalued Following Saudi Cloud Launch",
-      "Bernstein Stays Cautious on CrowdStrike Despite AI Tailwind",
-      "Where To Buy The Dip"
+      "CrowdStrike Named the Frost Radar\u2122 Visionary Leader for AI Security Operations Centers",
+      "NVIDIA To $200? Here Are 10 Top Analyst Forecasts For Monday",
+      "Cantor Fitzgerald Maintains Overweight on CrowdStrike Holdings, Raises Price Target to $275"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
