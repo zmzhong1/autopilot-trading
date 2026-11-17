@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "HOOD",
-    "researched_at": "2026-11-10T18:45:21+00:00",
+    "researched_at": "2026-11-17T19:58:40+00:00",
     "name": "Robinhood Markets, Inc.",
     "industry": "Financial Services",
-    "market_cap": 75028.929497,
+    "market_cap": 64889.396258,
     "metrics": {
-      "P/E": 37.82,
+      "P/E": 32.71,
       "net margin %": 39.04,
       "rev growth %": 20.88,
       "ROE %": 20.92,
       "current ratio": 1.24
     },
     "news": [
-      "Coinbase Falls 4%, Robinhood Slides 3% as Hot Inflation Data Drags Bitcoin Lower; Webull Declines 2%",
-      "Robinhood CFO on Anthropic\u2019s IPO: \u201cWe\u2019re Making Sure the Companies Know Retail Is Here\u201d After an 8% Drop",
-      "Q3 rundown: Robinhood (NASDAQ:HOOD) vs other financial technology stocks"
+      "Kalshi expands into stock trading with planned brokerage launch",
+      "Evercore ISI\u2019s $100 Target Says Robinhood\u2019s Selloff Went Too Far",
+      "Why Did Robinhood Stock Fall Another 7%?"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

@@ -1,26 +1,27 @@
 {
   "snapshot": {
     "ticker": "GOOGL",
-    "researched_at": "2026-11-10T18:45:14+00:00",
+    "researched_at": "2026-11-17T19:58:14+00:00",
     "name": "Alphabet Inc.",
     "industry": "Media",
-    "market_cap": 3542516.0999999996,
+    "market_cap": 3488053.68,
     "metrics": {
-      "P/E": 15.16,
+      "P/E": 14.96,
       "net margin %": 50.03,
       "rev growth %": 22.21,
       "ROE %": 42.62,
       "current ratio": 2.79
     },
     "news": [
-      "Advanced Micro Devices Stocks Rise 2.66% on $2.5 Billion Anthropic Stake Commitment",
-      "Dan Ives Says Wall Street Is Underestimating 2 Major Tech Stocks",
-      "Tesla Bull Predicts Democrats Will \u201cBlock Autonomy,\u201d a Bigger Risk Than Data Centers"
+      "Stanley Druckenmiller Owned $120 Million of Google in June and Zero by Sept. 30",
+      "Who Reaches $100 Billion in TPU Revenue First, Alphabet or Broadcom?",
+      "Rival Chipmakers Reportedly Chip Away At Nvidia Customers Since Jensen Huang\u2019s Exit"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
+    "thesis stale (review due 2026-11-11)",
     "analyst trend not upgrading vs buy-rated thesis",
     "recent earnings did not beat, despite high H-0"
   ]

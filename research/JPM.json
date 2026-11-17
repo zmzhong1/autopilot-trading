@@ -1,20 +1,20 @@
 {
   "snapshot": {
     "ticker": "JPM",
-    "researched_at": "2026-11-10T18:45:23+00:00",
+    "researched_at": "2026-11-17T19:58:47+00:00",
     "name": "JPMorgan Chase & Co.",
     "industry": "Banking",
-    "market_cap": 908430.902857,
+    "market_cap": 898153.706598,
     "metrics": {
-      "P/E": 13.65,
+      "P/E": 13.78,
       "net margin %": 33.26,
       "rev growth %": 108.98,
       "ROE %": 17.91
     },
     "news": [
-      "JPMorgan May Sell $2 Billion of Qualtrics Debt at About 85 Cents on the Dollar",
-      "JPMorgan reaffirms its top mid-cap pick in telecom",
-      "A $13 Billion Fund Dumps These 3 Stocks"
+      "Software bug freezes Chase: Is it the time for bitcoin?",
+      "JPMorgan Still Sees Moderna Overvalued Despite Raising Its Target",
+      "Banking disruption resolved after thousands report access issues"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
