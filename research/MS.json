@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MS",
-    "researched_at": "2026-11-11T18:49:37+00:00",
+    "researched_at": "2026-11-18T19:29:33+00:00",
     "name": "Morgan Stanley",
     "industry": "Financial Services",
-    "market_cap": 293164.5090511472,
+    "market_cap": 286865.430972,
     "metrics": {
-      "P/E": 14.3,
+      "P/E": 13.93,
       "net margin %": 15.63,
       "rev growth %": 12.03,
       "ROE %": 17.81,
       "current ratio": 0.32
     },
     "news": [
-      "Why Morgan Stanley still believes in Atlassian after the sell-off",
-      "72% Upside for NVIDIA? Morgan Stanley Thinks So, and Here\u2019s How",
-      "Why the iPhone Duo Could Kick Off a \u2018New Decade\u2019 for Apple"
+      "Will Morgan Stanley's European ETF Launch Unlock New Growth Prospects?",
+      "XRP Eyes $1 Recovery as Major Banks Disclose ETF Holdings",
+      "Ariston Holding (BIT:ARIS) Stock Sees Fair Value Falls As Analyst Targets Turn More Cautious"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

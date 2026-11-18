@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "META",
-    "researched_at": "2026-11-11T18:49:32+00:00",
+    "researched_at": "2026-11-18T19:29:29+00:00",
     "name": "Meta Platforms, Inc.",
     "industry": "Media",
-    "market_cap": 1639547.4371226903,
+    "market_cap": 1581980.8885880003,
     "metrics": {
-      "P/E": 21.79,
+      "P/E": 21.02,
       "net margin %": 31.15,
       "rev growth %": 27.53,
       "ROE %": 30.27,
       "current ratio": 1.9
     },
     "news": [
-      "Nvidia Vs. AMD: No, Neither is Getting Choked Out By Congress Come January",
-      "Google and Meta fight new rule that could change online news",
-      "Meta infrastructure chief Santosh Janardhan to step down in early 2027 - Bloomberg"
+      "Meta\u2019s hope to grow \u2018school communities\u2019 was really just a push to get teens hooked, internal docs show",
+      "Nvidia Stock At $155: Cheaper Than Its 2018 Low?",
+      "What Would It Take For Pinterest Stock To Reach Its High Again?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

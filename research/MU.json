@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MU",
-    "researched_at": "2026-11-11T18:49:42+00:00",
+    "researched_at": "2026-11-18T19:29:36+00:00",
     "name": "Micron Technology, Inc.",
     "industry": "Semiconductors",
-    "market_cap": 820406.316759184,
+    "market_cap": 806048.5094700002,
     "metrics": {
-      "P/E": 9.56,
+      "P/E": 9.02,
       "net margin %": 63.8,
       "rev growth %": 256.33,
       "ROE %": 91.77,
       "current ratio": 3.31
     },
     "news": [
-      "Update: US Equity Indexes Advance as CoreWeave's Quarterly Results Fire Up AI Trade",
-      "CoreWeave results lift AI infrastructure stocks as demand for computing power surges",
-      "TSMC Stocks Climb 3.37% After Record NT$586.9 Billion October Revenue"
+      "Nvidia\u2019s Supply Commitments Hit $390 Billion, Mostly Memory. SK Hynix Is the Real Winner",
+      "Micron Sees Tighter Memory Supply Through 2028 as AI Demand Remains Strong, RBC Says",
+      "SanDisk Slides 4% Ahead of 8-for-1 Stock Split as NAND Glut Worries Linger; Micron Drops 3%, Seagate Edges Lower"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
