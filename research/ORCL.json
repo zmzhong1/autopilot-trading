@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "ORCL",
-    "researched_at": "2026-11-12T19:01:34+00:00",
+    "researched_at": "2026-11-19T19:34:27+00:00",
     "name": "Oracle Corporation",
     "industry": "Technology",
-    "market_cap": 382321.2049999644,
+    "market_cap": 346066.59295695456,
     "metrics": {
-      "P/E": 20.52,
+      "P/E": 18.2,
       "net margin %": 26.36,
       "rev growth %": 21.62,
       "ROE %": 42.58,
       "current ratio": 1.17
     },
     "news": [
-      "Is There Hope for Oracle After Plummeting 35% This Year? \u2018Yes\u2019 Says One Analyst Predicting 210% Gains From Here",
-      "Michael Burry Warned About This AI Risk a Year Ago. Microsoft May Have Just Proved His Point",
-      "Oracle Commodity Holding Increases Private Placement to $150,000"
+      "Why Is Oracle Spending $1.61 For Every Cash Dollar?",
+      "Is Nvidia Stock Dead Money For A Year?",
+      "David Tepper and 27 Other Big Funds Bought Oracle Last Quarter, While 12 Sold. Who\u2019s Right?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

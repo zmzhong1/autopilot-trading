@@ -1,12 +1,12 @@
 {
   "snapshot": {
     "ticker": "SHEL",
-    "researched_at": "2026-11-12T19:01:43+00:00",
+    "researched_at": "2026-11-19T19:34:36+00:00",
     "name": "Shell PLC",
     "industry": "Energy",
-    "market_cap": 207922.078302,
+    "market_cap": 203313.36894,
     "metrics": {
-      "P/E": 8.44,
+      "P/E": 8.19,
       "net margin %": 10.18,
       "rev growth %": 19.41,
       "ROE %": 17.99,
@@ -14,8 +14,8 @@
     },
     "news": [
       "Transaction in Own Shares",
-      "Artisan Select Equity Fund Q3 2026 Portfolio Review",
-      "Exxon, Chevron, and Shell Just Reported. Here's What Each One Said About Where Oil Goes Next."
+      "Shell's Rosmari-Marjoram Startup Boosts Malaysia's Gas Supply",
+      "Shell (LSE:SHEL) Extends Buybacks, Is It Still A Bargain?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

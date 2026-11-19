@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PATH",
-    "researched_at": "2026-11-12T19:01:37+00:00",
+    "researched_at": "2026-11-19T19:34:30+00:00",
     "name": "UiPath Inc",
     "industry": "Technology",
-    "market_cap": 6759.389491184933,
+    "market_cap": 6081.886678749359,
     "metrics": {
-      "P/E": 18.92,
+      "P/E": 16.89,
       "net margin %": 21.03,
       "rev growth %": 14.98,
       "ROE %": 18.42,
       "current ratio": 2.39
     },
     "news": [
-      "Should Gemini Healthcare Tie Up Require Action From UiPath (PATH) Investors?",
-      "UiPath (PATH) Could Be 40% Undervalued Following Gemini For Healthcare Launch",
-      "UiPath (PATH) Stock Looks Cheap Based On Future Cash Flow"
+      "Why Did Netskope Stock Move?",
+      "Axon Enterprise vs. UiPath: Which Industrials Stock Is a Better Buy for 2027?",
+      "Could You Have Spotted Netskope Stock's Doubling Early?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

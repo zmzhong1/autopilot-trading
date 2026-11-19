@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "PLTR",
-    "researched_at": "2026-11-12T19:01:39+00:00",
+    "researched_at": "2026-11-19T19:34:32+00:00",
     "name": "Palantir Technologies Inc.",
     "industry": "Technology",
-    "market_cap": 408614.588929956,
+    "market_cap": 387326.6900269372,
     "metrics": {
-      "P/E": 113.58,
+      "P/E": 102.64,
       "net margin %": 50.34,
       "rev growth %": 87.06,
       "ROE %": 39.84,
       "current ratio": 7.1
     },
     "news": [
-      "Palantir\u2019s Growth Story Could Be Just Getting Started",
-      "AI Governance for Boards, 6th Palm Beach CorpGov Forum",
-      "XYZ vs. PLTR: Which Stock Should Value Investors Buy Now?"
+      "BigBear.ai Stock Down 19.4% in a Month: Is Buying the Dip Too Risky?",
+      "OLIGO Security Achieves FedRAMP\u00ae Class D (High) Certification Through Palantir\u2019s FedStart Program",
+      "iShares Expanded Tech-Software (IGV) Sells $17.3 Million More Microsoft on Nov. 17"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "thesis stale (review due 2026-10-28)"
-  ]
+  "flags": []
 }

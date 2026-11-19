@@ -1,27 +1,26 @@
 {
   "snapshot": {
     "ticker": "NVDA",
-    "researched_at": "2026-11-12T19:01:32+00:00",
+    "researched_at": "2026-11-19T19:34:25+00:00",
     "name": "NVIDIA Corporation",
     "industry": "Semiconductors",
-    "market_cap": 3974571.902255496,
+    "market_cap": 3680313.5736798164,
     "metrics": {
-      "P/E": 21.71,
-      "net margin %": 63.66,
-      "rev growth %": 83.38,
-      "ROE %": 110.11,
-      "current ratio": 4.59
+      "P/E": 16.08,
+      "net margin %": 62.53,
+      "rev growth %": 93.33,
+      "ROE %": 106.67,
+      "current ratio": 4.08
     },
     "news": [
-      "Nvidia's CEO search has a 3- to 4-month clock: 'It's pretty urgent'",
-      "Prediction: This Will Be Intel\u2019s Stock Price After 1 Year (Hint: It Implies a Nice Jump)",
-      "Super Micro sinks as DOJ probes possible China smuggling links to Nvidia fallout"
+      "Anthropic's $81 billion IPO puts AI valuations to the test",
+      "What to know about Anthropic's massive IPO as it breaks records on Wall Street",
+      "Futu Holdings Limited Q3 2026 Earnings Call Summary"
     ],
     "analyst_upgrade": false,
-    "earnings_beat": false
+    "earnings_beat": true
   },
   "flags": [
-    "analyst trend not upgrading vs buy-rated thesis",
-    "recent earnings did not beat, despite high H-0"
+    "analyst trend not upgrading vs buy-rated thesis"
   ]
 }
