@@ -205,7 +205,42 @@
       },
       "placed_by": "claude-live-bridge",
       "updated_ts": "2026-11-16T15:43:43+00:00"
+    },
+    {
+      "ts": "2026-11-19T15:41:56+00:00",
+      "date": "2026-11-19",
+      "ticker": "NVDA",
+      "side": "buy",
+      "notional_usd": 47.32,
+      "order_type": "market",
+      "order_id": "6aff18bd-60f1-4a01-bbeb-7cd3e4e32812",
+      "ref_id": "1d67dd93-bbe9-599e-a3c2-9422491b5592",
+      "state": "filled",
+      "avg_price": 152.247,
+      "quantity": 0.31081,
+      "account_last4": "2732",
+      "proposal_date": "2026-11-19",
+      "feeds": [
+        "corporate",
+        "earnings",
+        "insider",
+        "institutional"
+      ],
+      "stocknews": {
+        "xii_score": 86,
+        "verdict": "strong-buy",
+        "h0": 78,
+        "durability": 21,
+        "conviction": "medium",
+        "fatal_flags": 0,
+        "cycle_exposure": "ai-capex-high",
+        "sovereign_exposure": null,
+        "decision": "hold",
+        "found": true
+      },
+      "placed_by": "claude-live-bridge",
+      "updated_ts": "2026-11-19T15:43:57+00:00"
     }
   ],
-  "last_update": "2026-11-16T15:43:43+00:00"
+  "last_update": "2026-11-19T15:43:57+00:00"
 }

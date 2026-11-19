@@ -1594,7 +1594,7 @@
       "ticker": "NVDA",
       "side": "buy",
       "size_pct": 10.0,
-      "entry_price": 150.96,
+      "entry_price": 152.247,
       "feeds": [
         "corporate",
         "earnings",
@@ -1602,7 +1602,7 @@
         "institutional"
       ],
       "feed_count": 4,
-      "status": "proposed",
+      "status": "live_filled",
       "stocknews": {
         "xii_score": 86,
         "verdict": "strong-buy",
@@ -1618,6 +1618,11 @@
       "portfolio": {
         "held": null,
         "checked": false
+      },
+      "live": {
+        "order_id": "6aff18bd-60f1-4a01-bbeb-7cd3e4e32812",
+        "state": "filled",
+        "ts": "2026-11-19T15:41:56+00:00"
       }
     }
   ],
