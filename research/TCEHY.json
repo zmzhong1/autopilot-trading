@@ -1,26 +1,27 @@
 {
   "snapshot": {
     "ticker": "TCEHY",
-    "researched_at": "2026-11-13T18:40:10+00:00",
+    "researched_at": "2026-11-20T19:12:59+00:00",
     "name": "Tencent Holdings Ltd",
     "industry": "Media",
-    "market_cap": 3593150.113063,
+    "market_cap": 3358892.575953,
     "metrics": {
-      "P/E": 12.97,
+      "P/E": 12.12,
       "net margin %": 29.87,
       "rev growth %": 11.97,
       "ROE %": 20.52,
       "current ratio": 1.29
     },
     "news": [
-      "Why Jensen Huang\u2019s Exit Is Bad News for Alibaba and China",
-      "DBS\u2019s $290 Oracle Target Still Implies 126% Upside, Even After a Cut",
-      "Tencent Stocks Slip 2% as U.S. Remote Chip Rule Threatens AI Compute Access"
+      "Reported November 19, House Foreign Affairs Committee Publishes Export Control License Application Information Regarding NVIDIA And AMD's AI Chip Licenses For China; Includes Requested Sales Of 3.4M AI Chips And Approval Of 879k+",
+      "Asia shares drop on AI worries, echoing Wall Street's decline despite the strong Anthropic debut",
+      "Trump Admin Approved Nearly 900,000 AI Chips For China, House Data Shows: Nvidia Says H200 Shipments Were \u2018Legal And Authorized\u2019"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
+    "thesis stale (review due 2026-11-19)",
     "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SNOW",
-    "researched_at": "2026-11-13T18:40:00+00:00",
+    "researched_at": "2026-11-20T19:12:52+00:00",
     "name": "Snowflake Inc.",
     "industry": "Technology",
-    "market_cap": 100798.48863129765,
+    "market_cap": 94758.54706659664,
     "metrics": {
       "net margin %": -20.07,
       "rev growth %": 32.04,
@@ -12,9 +12,9 @@
       "current ratio": 0.94
     },
     "news": [
-      "3 AI Infrastructure Stocks To Watch As Nvidia Chip Curbs Reshape Cloud Spending",
-      "3 Top-Ranked AI Stocks Delivering Robust Results",
-      "Nebius Group N.V. Q3 2026 Earnings Call Summary"
+      "A Lesson In Picking Your Spots: The Curious Case Of Nebius (Rating Upgrade)",
+      "Anthropic Just Finished Its First Day as a Public Company. Five of the Six Biggest Tech IPOs Since Facebook Were Underwater Six Months After Theirs, and Elon Musk\u2019s SpaceX Is Following the Script",
+      "How MongoDB Survived a CEO Shakeup to Become a Quiet AI Play"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
