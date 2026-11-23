@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "COST",
-    "researched_at": "2026-11-16T21:10:14+00:00",
+    "researched_at": "2026-11-23T22:50:43+00:00",
     "name": "Costco Wholesale Corp",
     "industry": "Retail",
-    "market_cap": 491231.0053007651,
+    "market_cap": 483028.70938349515,
     "metrics": {
-      "P/E": 53.13,
+      "P/E": 52.94,
       "net margin %": 3.04,
       "rev growth %": 10.14,
       "ROE %": 28.02,
       "current ratio": 1.06
     },
     "news": [
-      "Is There A Risk Hiding In Walmart Stock's Latest Quarter?",
-      "Tyson, Starbucks Lead The S&P 500, Nasdaq 100 As Investors Play Defense",
-      "Costco Is Up Nearly 20% in a Year. Now Northcoast Research Says That\u2019s Enough"
+      "She Picks a Medicare Advantage Plan With Costco\u2019s Name on It, Expecting Familiar Prices to Reach Her Medical Bills. The New SCAN Partnership Still Leaves Her Facing the Plan\u2019s Copays and Out-of-Pocket Limit",
+      "Target Has \u201cOut-Comped Walmart Three Quarters in a Row.\u201d Walmart Still Trades at More Than 2x Its Multiple",
+      "Jensen Huang's return to Nvidia: Long or short accountability?"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

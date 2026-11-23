@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "COIN",
-    "researched_at": "2026-11-16T21:10:11+00:00",
+    "researched_at": "2026-11-23T22:50:41+00:00",
     "name": "Coinbase Global, Inc.",
     "industry": "Financial Services",
-    "market_cap": 31440.725,
+    "market_cap": 29425.87096,
     "metrics": {
       "net margin %": -12.46,
       "rev growth %": -26.62,
@@ -12,9 +12,9 @@
       "current ratio": 2.42
     },
     "news": [
-      "Coinbase Stocks Fall 7.54% as Bitcoin Slides Toward $64,000 and Trading Volumes Shrink",
-      "Robinhood Stocks Fall 5.4% as Crypto Rout Pressures a Shrinking Revenue Line",
-      "Crypto Stocks Slide as Bitcoin Sinks and Strategy Leads the Retreat"
+      "Strategy Is Still Down 45% in a Month: Can MSTR Stock Revisit $150 as Bitcoin Holds $60,000?",
+      "Why MoonPay wants a National Trust Bank",
+      "Crypto premarket wrap: What investors need to know before the bell"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

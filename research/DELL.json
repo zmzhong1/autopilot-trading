@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DELL",
-    "researched_at": "2026-11-16T21:10:20+00:00",
+    "researched_at": "2026-11-23T22:50:48+00:00",
     "name": "Dell Technologies Inc",
     "industry": "Technology",
-    "market_cap": 206442.04399568136,
+    "market_cap": 217325.87894781175,
     "metrics": {
-      "P/E": 19.25,
+      "P/E": 15.54,
       "net margin %": 7.53,
       "rev growth %": 49.03,
       "ROE %": 130.7,
       "current ratio": 0.96
     },
     "news": [
-      "Dell and HPE Have an Opportunity Outside AI, Citi Says",
-      "Top Midday Decliners",
-      "5 Stocks to Buy as Investors Look Beyond NVIDIA"
+      "Stock Market Today: Dow Surges As Trump Says This On Huang's Nvidia Return; AI Plays Rocket (Live Coverage)",
+      "Why Walmart and Other Defensive Stocks Are Losing Their Luster",
+      "5 Stocks Up 20% Or More on Monday Following NVIDIA CEO Jensen Huang\u2019s Return"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "BABA",
-    "researched_at": "2026-11-16T21:10:05+00:00",
+    "researched_at": "2026-11-23T22:50:36+00:00",
     "name": "Alibaba Group Holding Limited",
     "industry": "Retail",
-    "market_cap": 229626.46470255236,
+    "market_cap": 211566.9758926084,
     "metrics": {
-      "P/E": 20.88,
-      "net margin %": 7.02,
-      "rev growth %": 4.42,
-      "ROE %": 7.01,
-      "current ratio": 1.36
+      "P/E": 22.77,
+      "net margin %": 7.39,
+      "rev growth %": -17.23,
+      "ROE %": 7.43,
+      "current ratio": 1.5
     },
     "news": [
-      "'US moves to tighten AI chip export rules' - Financial Times",
-      "Baidu Posts Sixth Straight Sales Drop After AI Drag Persists",
-      "BABA Stock Edges Lower Overnight: Alibaba Reportedly Launches Most-Advanced AI Model That Cuts Task Costs By 60%"
+      "Alibaba Group Holding Limited Announces Grant of Awards Pursuant to the 2024 Plan",
+      "Susquehanna Maintains Positive on Alibaba Gr Hldgs, Lowers Price Target to $145",
+      "Pazhou Algorithm Competition: Turning AI Innovation into Real-World Impact"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

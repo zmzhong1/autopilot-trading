@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "CRWD",
-    "researched_at": "2026-11-16T21:10:18+00:00",
+    "researched_at": "2026-11-23T22:50:46+00:00",
     "name": "CrowdStrike Holdings, Inc.",
     "industry": "Technology",
-    "market_cap": 224543.78574010744,
+    "market_cap": 212794.13540396167,
     "metrics": {
-      "P/E": 3969.1,
+      "P/E": 4018.67,
       "net margin %": 1.08,
       "rev growth %": 24.3,
       "ROE %": 1.29,
       "current ratio": 1.57
     },
     "news": [
-      "CrowdStrike Named the Frost Radar\u2122 Visionary Leader for AI Security Operations Centers",
-      "NVIDIA To $200? Here Are 10 Top Analyst Forecasts For Monday",
-      "Cantor Fitzgerald Maintains Overweight on CrowdStrike Holdings, Raises Price Target to $275"
+      "US Equity Markets Rise After Nvidia Reinstates Jensen Huang as CEO",
+      "Zscaler Stock Surged on CrowdStrike's $43.9 Billion Buyout. Here's How Much Shareholders Will Actually Get",
+      "Sector Update: Tech Stocks Jump Late Afternoon"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

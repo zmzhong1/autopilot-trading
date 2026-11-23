@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "DIS",
-    "researched_at": "2026-11-16T21:10:23+00:00",
+    "researched_at": "2026-11-23T22:50:50+00:00",
     "name": "The Walt Disney Company",
     "industry": "Media",
-    "market_cap": 205251.2726782637,
+    "market_cap": 204109.55054676638,
     "metrics": {
-      "P/E": 23.87,
-      "net margin %": 8.7,
-      "rev growth %": 4.58,
-      "ROE %": 7.87,
-      "current ratio": 0.71
+      "P/E": 20.36,
+      "net margin %": 9.67,
+      "rev growth %": 8.39,
+      "ROE %": 9.02,
+      "current ratio": 0.74
     },
     "news": [
-      "Disney could break above $120 as cost cuts offer scope for earnings growth, says Jefferies",
-      "Disney Is Up 29% Since March on Cost Cuts. Here\u2019s What the November 17 Report Must Show",
-      "Which Disney cruise comes next? Inside Disney's multibillion-dollar bet"
+      "The Super Bowl Is Coming Live to IMAX Theaters. Here\u2019s the Appeal.",
+      "What Will Move Netflix Stock Over Six Months?",
+      "Is Trending Stock The Walt Disney Company (DIS) a Buy Now?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
