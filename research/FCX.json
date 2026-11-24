@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "FCX",
-    "researched_at": "2026-11-17T19:58:07+00:00",
+    "researched_at": "2026-11-24T21:26:57+00:00",
     "name": "Freeport-McMoRan Inc",
     "industry": "Metals & Mining",
-    "market_cap": 79194.11781,
+    "market_cap": 66717.34972593101,
     "metrics": {
-      "P/E": 27.57,
+      "P/E": 24.28,
       "net margin %": 11.38,
       "rev growth %": 0.19,
       "ROE %": 15.26,
       "current ratio": 2.02
     },
     "news": [
-      "What Explains Freeport-McMoRan Stock's Nearly 7% Drop?",
-      "Can Newmont Stock Fall 40%?",
-      "Freeport-McMoRan Subsidiary PT Freeport Indonesia Announces Proposed Senior Notes Offering"
+      "PT Freeport Indonesia Announces Redemption of 4.763% Senior Notes Due 2027",
+      "Bernstein backs these 2 metals and mining stocks amid market volatility",
+      "PT Freeport Indonesia Completes Sale of U.S.$750.0 Million of Senior Notes"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

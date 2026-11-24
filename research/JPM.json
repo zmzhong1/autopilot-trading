@@ -1,20 +1,20 @@
 {
   "snapshot": {
     "ticker": "JPM",
-    "researched_at": "2026-11-17T19:58:47+00:00",
+    "researched_at": "2026-11-24T21:27:08+00:00",
     "name": "JPMorgan Chase & Co.",
     "industry": "Banking",
-    "market_cap": 898153.706598,
+    "market_cap": 840925.3517220002,
     "metrics": {
-      "P/E": 13.78,
+      "P/E": 12.8,
       "net margin %": 33.26,
       "rev growth %": 108.98,
       "ROE %": 17.91
     },
     "news": [
-      "Software bug freezes Chase: Is it the time for bitcoin?",
-      "JPMorgan Still Sees Moderna Overvalued Despite Raising Its Target",
-      "Banking disruption resolved after thousands report access issues"
+      "$75,000 in These 5 Dividend Stocks Could Pay More Than $1,700 a Year Across 5 Sectors",
+      "Why Pump Prices Are Likely to Stay High in 2027\u2014Even if Oil Gets Cheaper",
+      "Bitcoin now counts as collateral: From the CFTC to the ECB"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

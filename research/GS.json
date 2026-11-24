@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "GS",
-    "researched_at": "2026-11-17T19:58:23+00:00",
+    "researched_at": "2026-11-24T21:27:01+00:00",
     "name": "The Goldman Sachs Group, Inc.",
     "industry": "Financial Services",
-    "market_cap": 257150.977686,
+    "market_cap": 229833.3416165822,
     "metrics": {
-      "P/E": 11.6,
+      "P/E": 10.72,
       "net margin %": 15.77,
       "rev growth %": 10.5,
       "ROE %": 17.9,
       "current ratio": 0.3
     },
     "news": [
-      "Action1 to Participate in Goldman Sachs Private Innovative Company Conference",
-      "Should You Buy the Dip? Why Goldman Sachs and Morgan Stanley Disagree.",
-      "Goldman Sachs is looking for a big year for stocks in 2027"
+      "Goldman Sachs officially takes over Radford Studio Center with $380M credit bid",
+      "Goldman, Morgan Stanley and Evercore Are Advising on What Could Be the Biggest Deal Ever",
+      "BlackRock\u2019s Martin S. Small to Present at the 2026 Goldman Sachs US Financial Services Conference on December 8th"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

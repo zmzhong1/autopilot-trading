@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "HMC",
-    "researched_at": "2026-11-17T19:58:32+00:00",
+    "researched_at": "2026-11-24T21:27:04+00:00",
     "name": "Honda Motor Co Ltd",
     "industry": "Automobiles",
-    "market_cap": 7144778.303345,
+    "market_cap": 6759415.703491,
     "metrics": {
       "net margin %": -0.94,
       "rev growth %": 7.79,
@@ -12,9 +12,9 @@
       "current ratio": 1.32
     },
     "news": [
-      "Honda Bounces Back From Battery Debacle With Gas Electric Hybrid Pivot",
-      "Sector Update: Consumer Stocks Mixed Late Afternoon",
-      "2026 Embodied AI Robot Large Models and Vision-Language-Action (VLA) Research Report | World Models and OEM Investment Accelerate Commercialization and Mass Production"
+      "Honda, Toyota recall over a million vehicles over airbag, camshaft risks",
+      "Honda unveils its new Avancier hybrid SUV",
+      "Market Chatter: Ford, Honda, Stellantis, Volkswagen Challenge New Jersey Warranty Repair Law"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

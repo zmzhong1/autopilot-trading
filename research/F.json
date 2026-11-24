@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "F",
-    "researched_at": "2026-11-17T19:57:58+00:00",
+    "researched_at": "2026-11-24T21:26:54+00:00",
     "name": "Ford Motor Co",
     "industry": "Automobiles",
-    "market_cap": 46201.52588700001,
+    "market_cap": 46680.71168395107,
     "metrics": {
       "net margin %": -4.17,
       "rev growth %": -1.38,
@@ -12,9 +12,9 @@
       "current ratio": 1.08
     },
     "news": [
-      "Ford Motor Company Vice Chair John Lawler to Retire Effective January 1, 2027",
-      "Key Ford exec John Lawler to retire. What we know about shift at top",
-      "Nvidia's \"Valuation Sanity Check\", tech software debacles, and Anthropic IPO preview"
+      "Ford to acquire minority stake in satellite maker Revolution Space",
+      "GM, Ford in Pentagon Talks to Build Military Drones",
+      "Red Cat Sinks 9%, Unusual Machines Slides 7%, Ondas Drops 4%: Is the Pentagon\u2019s Reported Push to Bring In General Motors and Ford a Threat to Drone Stocks?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
