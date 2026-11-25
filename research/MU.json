@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MU",
-    "researched_at": "2026-11-18T19:29:36+00:00",
+    "researched_at": "2026-11-25T20:34:38+00:00",
     "name": "Micron Technology, Inc.",
     "industry": "Semiconductors",
-    "market_cap": 806048.5094700002,
+    "market_cap": 636436.8520250355,
     "metrics": {
-      "P/E": 9.02,
+      "P/E": 7.49,
       "net margin %": 63.8,
       "rev growth %": 256.33,
       "ROE %": 91.77,
       "current ratio": 3.31
     },
     "news": [
-      "Nvidia\u2019s Supply Commitments Hit $390 Billion, Mostly Memory. SK Hynix Is the Real Winner",
-      "Micron Sees Tighter Memory Supply Through 2028 as AI Demand Remains Strong, RBC Says",
-      "SanDisk Slides 4% Ahead of 8-for-1 Stock Split as NAND Glut Worries Linger; Micron Drops 3%, Seagate Edges Lower"
+      "David Tepper Sold All of His AMD Stock. His Biggest Position Is Micron.",
+      "Tech stock sell-off deepens as AI fears outweigh Huang\u2019s Nvidia return",
+      "Why a Single Data-Center Delay Keeps Dogging This Tech Stock"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

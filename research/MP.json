@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "MP",
-    "researched_at": "2026-11-18T19:29:31+00:00",
+    "researched_at": "2026-11-25T20:34:32+00:00",
     "name": "MP Materials Corp.",
     "industry": "Metals & Mining",
-    "market_cap": 6214.421712,
+    "market_cap": 6029.022884126985,
     "metrics": {
       "net margin %": -15.21,
       "rev growth %": 64.66,
@@ -12,9 +12,9 @@
       "current ratio": 9.51
     },
     "news": [
-      "MP to Become Major Domestic Permanent Magnet Supplier Over Next 3 Years, Says Needham",
-      "Three MP Materials Insiders Just Bet $3.6 Million on Their Own Stock Near Its 52-Week Low",
-      "Trump Says the U.S. Will \u201cCatch\u201d China on Rare Earths Within 10 Months"
+      "TMC (TMC) Stock Is Up 14.3% Today Without Company News",
+      "Critical Metals (CRML) Stock Is Down 16.7% Today Amid Market Selloff",
+      "USA Rare Earth Drops 6% as China Extends Mineral Export Pause and New U.S. Tariffs Loom; Critical Metals Declines 5%, MP Materials Falls 3%"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

@@ -1,27 +1,26 @@
 {
   "snapshot": {
     "ticker": "NEM",
-    "researched_at": "2026-11-18T19:29:38+00:00",
+    "researched_at": "2026-11-25T20:34:40+00:00",
     "name": "Newmont Corporation",
     "industry": "Metals & Mining",
-    "market_cap": 115620.641802,
+    "market_cap": 99378.05171721657,
     "metrics": {
-      "P/E": 12.43,
+      "P/E": 11.25,
       "net margin %": 34.73,
       "rev growth %": 23.73,
       "ROE %": 26.45,
       "current ratio": 2.45
     },
     "news": [
-      "Newmont Stocks Fall 5.13% as Gold Slides Below $3,800 on Fed Hike Bets",
-      "Gold Is at a 14-Month Low as Traders Bet on More Fed Hikes",
-      "Stan Druckenmiller Says He\u2019s \u201cTaking a Break\u201d From Stocks"
+      "Gold and silver miners most exposed at 15-month lows, and who has a cushion",
+      "K2 Gold Drills 36.58m of 2.40 g/t Au Including 16.77m of 4.11 g/t Au at the Newmont Zone",
+      "How Much Can Newmont Stock Make You From Here?"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-10-23)",
     "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

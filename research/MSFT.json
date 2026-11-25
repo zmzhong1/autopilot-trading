@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MSFT",
-    "researched_at": "2026-11-18T19:29:34+00:00",
+    "researched_at": "2026-11-25T20:34:36+00:00",
     "name": "Microsoft Corporation",
     "industry": "Technology",
-    "market_cap": 3759436.5481039993,
+    "market_cap": 3565427.328688483,
     "metrics": {
-      "P/E": 26.36,
+      "P/E": 25.83,
       "net margin %": 41.17,
       "rev growth %": 17.91,
       "ROE %": 33.21,
       "current ratio": 1.22
     },
     "news": [
-      "How to find AI winners beyond Nvidia & the Mag-7",
-      "Is Salesforce's AI Sell-Off A Cash Bargain?",
-      "Nvidia Stock At $155: Cheaper Than Its 2018 Low?"
+      "Lee Ainslie\u2019s Maverick Capital Held $844 Million in Nvidia, Its Largest Position at 6.8% of Its Stocks",
+      "Amdocs (DOX) Stock Is Up 4.6% Today Without Company News",
+      "Will Funding Gap Change IREN Stock Narrative"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

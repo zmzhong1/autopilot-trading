@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "MS",
-    "researched_at": "2026-11-18T19:29:33+00:00",
+    "researched_at": "2026-11-25T20:34:34+00:00",
     "name": "Morgan Stanley",
     "industry": "Financial Services",
-    "market_cap": 286865.430972,
+    "market_cap": 254823.02436723697,
     "metrics": {
-      "P/E": 13.93,
+      "P/E": 12.46,
       "net margin %": 15.63,
       "rev growth %": 12.03,
       "ROE %": 17.81,
       "current ratio": 0.32
     },
     "news": [
-      "Will Morgan Stanley's European ETF Launch Unlock New Growth Prospects?",
-      "XRP Eyes $1 Recovery as Major Banks Disclose ETF Holdings",
-      "Ariston Holding (BIT:ARIS) Stock Sees Fair Value Falls As Analyst Targets Turn More Cautious"
+      "Starbucks explores sale in Japan, its fourth-largest market",
+      "Ambarella sinks as memory shortages hit chip orders",
+      "Morgan Stanley Cut Its MercadoLibre Target. It Still Sees 66% Upside"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

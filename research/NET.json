@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "NET",
-    "researched_at": "2026-11-18T19:29:39+00:00",
+    "researched_at": "2026-11-25T20:34:42+00:00",
     "name": "Cloudflare, Inc.",
     "industry": "Technology",
-    "market_cap": 101365.093008,
+    "market_cap": 95672.21139225247,
     "metrics": {
       "net margin %": -8.21,
       "rev growth %": 33.53,
@@ -12,15 +12,14 @@
       "current ratio": 1.82
     },
     "news": [
-      "Can Rising Cyber Threats Accelerate Cloudflare's Security Growth?",
-      "Cloudflare, Inc. (NET) Presents at RBC Global Technology, Internet, Media and Telecommunications Conference Transcript",
-      "Capital Group Growth (CGGR) Buys $56.4 Million More Cloudflare on Nov. 16"
+      "Cloudflare (NET) Could Be 72% Overvalued As Digital Identity Buzz Builds",
+      "Baron Technology ETF Q3 2026 Portfolio Activity",
+      "Dropbox (DBX) Stock Is Up 5.8% Today Without Company News"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-11-06)",
     "analyst trend not upgrading vs buy-rated thesis"
   ]
 }
