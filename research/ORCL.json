@@ -1,27 +1,26 @@
 {
   "snapshot": {
     "ticker": "ORCL",
-    "researched_at": "2026-11-19T19:34:27+00:00",
+    "researched_at": "2026-11-26T20:25:26+00:00",
     "name": "Oracle Corporation",
     "industry": "Technology",
-    "market_cap": 346066.59295695456,
+    "market_cap": 314105.70440402266,
     "metrics": {
-      "P/E": 18.2,
+      "P/E": 17.5,
       "net margin %": 26.36,
       "rev growth %": 21.62,
       "ROE %": 42.58,
       "current ratio": 1.17
     },
     "news": [
-      "Why Is Oracle Spending $1.61 For Every Cash Dollar?",
-      "Is Nvidia Stock Dead Money For A Year?",
-      "David Tepper and 27 Other Big Funds Bought Oracle Last Quarter, While 12 Sold. Who\u2019s Right?"
+      "Alphabet Stocks Slip 2.13% as Credit Swaps Hit Record Amid $9.1 Billion Cash Burn",
+      "Oracle Stocks Sink 5.13% to 52-Week Low as Default Swaps Hit Record",
+      "Oracle Stock Dipped Under $100 as Banks Try to Unload Its Data-Center Loans"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-10-28)",
     "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

@@ -1,26 +1,24 @@
 {
   "snapshot": {
     "ticker": "NOK",
-    "researched_at": "2026-11-19T19:34:23+00:00",
+    "researched_at": "2026-11-26T20:25:22+00:00",
     "name": "Nokia Oyj",
     "industry": "Communications",
-    "market_cap": 39352.237771,
+    "market_cap": 37699.829628,
     "metrics": {
-      "P/E": 50.37,
+      "P/E": 48.4,
       "net margin %": 3.78,
       "rev growth %": 4.82,
       "ROE %": 3.68,
       "current ratio": 1.46
     },
     "news": [
-      "What Is Nokia Oyj (HLSE:NOKIA) Gaining From The AI Gigafactory Northern Push?",
-      "Global Router Market Report 2026: Size, Share, Trends, and Forecast to 2030 | Capitalize on 5G, Wi-Fi 6 and AI as Cisco, Huawei, HPE and Nokia Drive Market to $42.93B",
-      "Global Grid Edge Cellular Router Market Size, Share, Trends, and Forecast 2026-2030 | Capture 14.3% CAGR as Cisco, Siemens, Nokia, and Digi International Scale 5G Edge Security"
+      "Nokia: AI Growth Is Accelerating While The Valuation Becomes Attractive (Rating Upgrade)",
+      "European Equities Traded in the US as American Depositary Receipts Fall Sharply in Wednesday Trading",
+      "Software-Defined Networking and Network Function Virtualization Market Report 2026 | Secure $172.49B as Cisco, Microsoft, Huawei, HPE and Nokia Drive Cloud Automation by 2030"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": [
-    "thesis stale (review due 2026-10-29)"
-  ]
+  "flags": []
 }

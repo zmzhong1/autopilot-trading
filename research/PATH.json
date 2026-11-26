@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "PATH",
-    "researched_at": "2026-11-19T19:34:30+00:00",
+    "researched_at": "2026-11-26T20:25:28+00:00",
     "name": "UiPath Inc",
     "industry": "Technology",
-    "market_cap": 6081.886678749359,
+    "market_cap": 6472.753437365609,
     "metrics": {
-      "P/E": 16.89,
+      "P/E": 17.88,
       "net margin %": 21.03,
       "rev growth %": 14.98,
       "ROE %": 18.42,
       "current ratio": 2.39
     },
     "news": [
-      "Why Did Netskope Stock Move?",
-      "Axon Enterprise vs. UiPath: Which Industrials Stock Is a Better Buy for 2027?",
-      "Could You Have Spotted Netskope Stock's Doubling Early?"
+      "Dear UiPath Stock Fans, Mark Your Calendars for December 3",
+      "UiPath (PATH) Gains As Market Dips: What You Should Know",
+      "UiPath's 2027 Outlook: Agentic AI Orchestration as the Driver of Future Growth"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

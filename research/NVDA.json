@@ -1,26 +1,27 @@
 {
   "snapshot": {
     "ticker": "NVDA",
-    "researched_at": "2026-11-19T19:34:25+00:00",
+    "researched_at": "2026-11-26T20:25:24+00:00",
     "name": "NVIDIA Corporation",
     "industry": "Semiconductors",
-    "market_cap": 3680313.5736798164,
+    "market_cap": 3598130.113071353,
     "metrics": {
-      "P/E": 16.08,
+      "P/E": 16.55,
       "net margin %": 62.53,
       "rev growth %": 93.33,
       "ROE %": 106.67,
       "current ratio": 4.08
     },
     "news": [
-      "Anthropic's $81 billion IPO puts AI valuations to the test",
-      "What to know about Anthropic's massive IPO as it breaks records on Wall Street",
-      "Futu Holdings Limited Q3 2026 Earnings Call Summary"
+      "Anthropic Stock Is Now Trading as ANT. Should You Buy Today or Wait?",
+      "I'd Buy Anthropic Stock Early \u2014 but Only If I Liked the Answers to These 3 Questions",
+      "Caterpillar's $78 Billion Backlog, Explained"
     ],
     "analyst_upgrade": false,
     "earnings_beat": true
   },
   "flags": [
+    "thesis stale (review due 2026-11-24)",
     "analyst trend not upgrading vs buy-rated thesis"
   ]
 }

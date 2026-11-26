@@ -1,24 +1,26 @@
 {
   "snapshot": {
     "ticker": "SFTBY",
-    "researched_at": "2026-11-19T19:34:34+00:00",
+    "researched_at": "2026-11-26T20:25:32+00:00",
     "name": "SoftBank Group Corp",
     "industry": "Telecommunication",
-    "market_cap": 19311870.366699,
+    "market_cap": 18073124.913086,
     "metrics": {
-      "P/E": 3.8,
+      "P/E": 3.67,
       "net margin %": 61.61,
       "rev growth %": 8.63,
       "ROE %": 29.88,
       "current ratio": 0.68
     },
     "news": [
-      "Asian Markets Mostly Red at Thursday's Close, Weighed by Tech, Rate Hike Concerns",
-      "Japan AI selloff: These chips and electronics stocks were the worst hit",
-      "SoftBank Takes a $3.7 Billion Hit to Cancel 13 GW of Turbines, Testing GE Vernova"
+      "Asian shares rebound led by AI stocks after Wall Street pares sharp losses",
+      "Global markets rebound as tech shares recover and tariff fears ease",
+      "SoftBank Credit Risk Tops 500 Basis Points as AI Worries Mount"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false
   },
-  "flags": []
+  "flags": [
+    "thesis stale (review due 2026-11-24)"
+  ]
 }
