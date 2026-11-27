@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SONY",
-    "researched_at": "2026-11-20T19:12:55+00:00",
+    "researched_at": "2026-11-27T20:09:54+00:00",
     "name": "Sony Group Corp",
     "industry": "Consumer products",
-    "market_cap": 25130188.385254,
+    "market_cap": 26741933.549316,
     "metrics": {
       "net margin %": -1.03,
       "rev growth %": 8.0,
@@ -12,9 +12,9 @@
       "current ratio": 1.25
     },
     "news": [
-      "GTA VI: Why the 13-year wait could be worth $8 billion",
-      "YouTube Marks GTA 6 Release With Dedicated Interactive Features, 24 Hour Livestream And More\u2014TTWO Declines Over 2% in Premarket",
-      "Sony shares rise as Playstation dominates GTA VI sales"
+      "Harbor Large Cap Value Fund Q3 2026 Portfolio Activity",
+      "Vertex Pharmaceuticals, Blue Gold And Other Big Stocks Moving Lower In Friday\u2019s Pre-Market Session",
+      "PS5 Black Friday Deals 2026: Sony DualSense Controllers Drop to $54, Popular PlayStation Games Fall Below $30"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false

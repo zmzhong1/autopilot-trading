@@ -1,21 +1,21 @@
 {
   "snapshot": {
     "ticker": "TSLA",
-    "researched_at": "2026-11-20T19:13:06+00:00",
+    "researched_at": "2026-11-27T20:10:06+00:00",
     "name": "Tesla Inc",
     "industry": "Automobiles",
     "market_cap": 1501178.4062791863,
     "metrics": {
-      "P/E": 445.83,
+      "P/E": 444.31,
       "net margin %": 3.11,
       "rev growth %": 8.3,
       "ROE %": 3.76,
       "current ratio": 1.74
     },
     "news": [
-      "SpaceX Vs. Anthropic: Who Hits a $3 Trillion Valuation First and Why",
-      "Einride AB\u2019s Autonomous Commercialization & NVIDIA Collaboration \u2013 Quarterly Update Report",
-      "Bitcoin sell-off versus the tech sell-off, and the SEC finds eight fake crypto trading platforms"
+      "Stock Market Today: Dow, Nasdaq Pop In Post-Holiday Trade; Nvidia Falls, Sandisk Vaults Higher (Live Coverage)",
+      "Sector Update: Consumer Stocks Advance Friday Afternoon",
+      "Tesla Rallies 5% Amid SpaceX Merger Speculation; Rivian and SpaceX Rise 3%: Is Tesla\u2019s 439x P/E a Warning Sign?"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

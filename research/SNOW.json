@@ -1,10 +1,10 @@
 {
   "snapshot": {
     "ticker": "SNOW",
-    "researched_at": "2026-11-20T19:12:52+00:00",
+    "researched_at": "2026-11-27T20:09:52+00:00",
     "name": "Snowflake Inc.",
     "industry": "Technology",
-    "market_cap": 94758.54706659664,
+    "market_cap": 94451.613163,
     "metrics": {
       "net margin %": -20.07,
       "rev growth %": 32.04,
@@ -12,9 +12,9 @@
       "current ratio": 0.94
     },
     "news": [
-      "A Lesson In Picking Your Spots: The Curious Case Of Nebius (Rating Upgrade)",
-      "Anthropic Just Finished Its First Day as a Public Company. Five of the Six Biggest Tech IPOs Since Facebook Were Underwater Six Months After Theirs, and Elon Musk\u2019s SpaceX Is Following the Script",
-      "How MongoDB Survived a CEO Shakeup to Become a Quiet AI Play"
+      "Snowflake Earnings Preview: Too Much Growth To Ignore",
+      "Steve Cohen\u2019s 10 Biggest Bets for 2027",
+      "Palantir Closed 212 Deals Worth at Least $1 Million. Here\u2019s What That Means for Its Growth"
     ],
     "analyst_upgrade": true,
     "earnings_beat": false

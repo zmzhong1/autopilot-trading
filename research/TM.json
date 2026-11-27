@@ -1,27 +1,26 @@
 {
   "snapshot": {
     "ticker": "TM",
-    "researched_at": "2026-11-20T19:13:02+00:00",
+    "researched_at": "2026-11-27T20:10:01+00:00",
     "name": "Toyota Motor Corp",
     "industry": "Automobiles",
-    "market_cap": 40155659.041016,
+    "market_cap": 40333286.550781,
     "metrics": {
-      "P/E": 9.31,
+      "P/E": 9.36,
       "net margin %": 8.13,
       "rev growth %": 7.35,
       "ROE %": 11.22,
       "current ratio": 1.19
     },
     "news": [
-      "Toyota Recalls 62,490 Tundra Vehicles Over Camshaft Cracks That May Cause Engine Stall, Loss Of Drive Power And Crash Risk",
-      "Moody\u2019s upgrades Toyota outlook to positive, projects modest EBIT margin expansion",
-      "TKAP invests $49.2m in new E-Drive line at Bidadi, India"
+      "Toyota Motor Corporation Reports Unaudited Condensed Consolidated Financial Statements for the First Half Ended September 30, 2026",
+      "Honda Motor (TSE:7267) Recalls 810,592 US Vehicles And Unveils Avancier Hybrid SUV",
+      "Six Japanese automakers plan over Bt134bn investment in Thailand by 2030"
     ],
     "analyst_upgrade": false,
     "earnings_beat": false
   },
   "flags": [
-    "thesis stale (review due 2026-11-19)",
     "analyst trend not upgrading vs buy-rated thesis"
   ]
 }
